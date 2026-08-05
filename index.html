@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotaract South Asia Analytics</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    
+    <!-- Libraries CSS -->
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <h1>Rotaract South Asia Analytics</h1>
+            </div>
+            <div class="header-actions">
+                <div class="filter-group">
+                    <select id="zone-filter" multiple placeholder="Search Zones..."></select>
+                </div>
+                <div class="filter-group">
+                    <select id="district-filter" multiple placeholder="Search Districts..."></select>
+                </div>
+                <div class="last-updated" id="last-updated">Last Updated: Loading...</div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Global Chart Filters Area -->
+            <div class="active-filters-container" id="active-filters">
+                <!-- Badges injected by JS when a user clicks on a chart -->
+            </div>
+
+            <h2 class="section-title" style="margin-top:0;">Overall Performance</h2>
+            <section class="metrics-grid five-cols">
+                <div class="metric-card card">
+                    <h3>Total Rotaract Clubs</h3>
+                    <div class="value" id="val-total">0</div>
+                    <div class="trend neutral" id="delta-total">Total active base</div>
+                </div>
+                <div class="metric-card card">
+                    <h3>Outstanding Dues</h3>
+                    <div class="value" id="val-outstanding">$0</div>
+                    <div class="trend" id="delta-outstanding">--</div>
+                </div>
+                <div class="metric-card card">
+                    <h3>Clubs in Arrears</h3>
+                    <div class="value" id="val-arrears">0</div>
+                    <div class="trend" id="delta-arrears">--</div>
+                </div>
+                <div class="metric-card card warning-card">
+                    <h3>Subject to Termination</h3>
+                    <div class="value" id="val-atrisk">0</div>
+                    <div class="trend" id="delta-atrisk">--</div>
+                </div>
+                <div class="metric-card card">
+                    <h3>Unreported Officers</h3>
+                    <div class="value" id="val-officers">0</div>
+                    <div class="trend" id="delta-officers">--</div>
+                </div>
+            </section>
+
+            <section class="charts-grid two-cols">
+                <div class="chart-container card" style="grid-column: 1 / -1;">
+                    <h2>Arrears Severity Split</h2>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </section>
+
+            <h2 class="section-title">Base Type Analysis (University vs Community)</h2>
+            <section class="charts-grid two-cols">
+                <div class="chart-container card">
+                    <h2>Arrears by Base Type</h2>
+                    <canvas id="chartBaseArrears"></canvas>
+                </div>
+                <div class="chart-container card">
+                    <h2>No Officers by Base Type</h2>
+                    <canvas id="chartBaseOfficers"></canvas>
+                </div>
+            </section>
+            
+            <h2 class="section-title">Rotary Sponsorship Penetration</h2>
+            <section class="metrics-grid three-cols">
+                <div class="metric-card card">
+                    <h3>Total Rotary Clubs</h3>
+                    <div class="value" id="val-rotary">0</div>
+                </div>
+                <div class="metric-card card">
+                    <h3>Rotary with Sponsored Rotaract</h3>
+                    <div class="value" id="val-rotary-sponsor" style="color:var(--success);">0</div>
+                    <div class="trend positive" id="val-rotary-pen-good">0% Penetration</div>
+                </div>
+                <div class="metric-card card warning-card">
+                    <h3>Rotary w/o Sponsored Rotaract</h3>
+                    <div class="value" id="val-rotary-no-sponsor">0</div>
+                    <div class="trend negative" id="val-rotary-pen-bad">0% Missed Opportunity</div>
+                </div>
+            </section>
+
+            <h2 class="section-title">Deep Data Drilldown</h2>
+            <section class="tables-section">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>District-Wise Summary</h2>
+                        <a href="data/zone_summary.csv" id="btn-dl-district" class="btn-download" download>Export to CSV</a>
+                    </div>
+                    <div class="card table-wrapper" id="district-table-container"></div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Detailed Clubs in Arrears</h2>
+                        <a href="#" id="btn-dl-arrears" class="btn-download">Export to CSV</a>
+                    </div>
+                    <div class="card table-wrapper" id="arrears-table-container"></div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Clubs without Officers</h2>
+                        <a href="#" id="btn-dl-officers" class="btn-download">Export to CSV</a>
+                    </div>
+                    <div class="card table-wrapper" id="officers-table-container"></div>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Rotary Clubs w/o Sponsored Rotaract</h2>
+                        <a href="#" id="btn-dl-rotary" class="btn-download">Export to CSV</a>
+                    </div>
+                    <div class="card table-wrapper" id="rotary-table-container"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Libraries JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "rotaract-south-asia-dashboard",
+  "version": "1.0.0",
+  "description": "Standalone Rotaract South Asia Analytics Dashboard",
+  "main": "scripts/generate_dashboard_data.js",
+  "scripts": {
+    "build": "node scripts/generate_dashboard_data.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
