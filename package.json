@@ -4,10 +4,20 @@
   "description": "Standalone Rotaract South Asia Analytics Dashboard",
   "main": "scripts/generate_dashboard_data.js",
   "scripts": {
-    "build": "node scripts/generate_dashboard_data.js",
-    "serve": "python3 -m http.server 8000"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate-data": "node scripts/generate_dashboard_data.js"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.21.3",
+    "chart.js": "^4.5.1",
+    "framer-motion": "^12.43.0",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.8",
+    "react-select": "^5.10.2",
     "xlsx": "^0.18.5"
   }
 }

@@ -1,0 +1,208 @@
+:root {
+    --primary: #0f4c81; /* Premium corporate blue */
+    --primary-light: #e6f0fa;
+    --danger: #d93025; /* Google-style red */
+    --success: #1e8e3e; /* Google-style green */
+    --bg-gradient: #f8f9fa; /* Flat, very clean off-white background */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --text-main: #202124;
+    --text-muted: #5f6368;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+/* Header */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-circle {
+    width: 36px;
+    height: 36px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-circle::after {
+    content: "📊";
+    font-size: 18px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text-main);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.section-title { 
+    font-size: 18px; 
+    font-weight: 700; 
+    color: var(--text-main); 
+    margin: 40px 0 20px 0; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+    box-sizing: border-box;
+}
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border-color: #cbd5e1;
+}
+
+.metrics-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.metrics-grid.five-cols { grid-template-columns: repeat(5, 1fr); }
+.metrics-grid.three-cols { grid-template-columns: repeat(3, 1fr); }
+
+.metric-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card .value {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -1px;
+    margin-bottom: auto;
+}
+
+.trend {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 15px;
+    width: max-content;
+}
+
+.trend.positive { background: #e6f4ea; color: var(--success); }
+.trend.negative { background: #fce8e6; color: var(--danger); }
+.trend.neutral { background: #f1f3f4; color: var(--text-muted); }
+
+.warning-card {
+    background: #fffafa;
+    border-color: #fdd;
+}
+.warning-card h3, .warning-card .value { color: var(--danger); }
+
+.charts-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.charts-grid.two-cols { grid-template-columns: 2fr 1fr; }
+.charts-grid.three-cols { grid-template-columns: 1fr 1fr 1fr; }
+
+.chart-container {
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+}
+.chart-container h2 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 0;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 10px 15px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+    .header h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .metrics-grid.five-cols, .metrics-grid.three-cols, .charts-grid.two-cols, .charts-grid.three-cols {
+        grid-template-columns: 1fr;
+    }
+}
