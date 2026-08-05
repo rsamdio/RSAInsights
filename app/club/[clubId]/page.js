@@ -1,6 +1,14 @@
 import { getClubDetails } from '@/lib/api';
 import Link from 'next/link';
 
+export async function generateMetadata({ params }) {
+    const { clubId } = await params;
+    const club = await getClubDetails(clubId);
+    return {
+        title: club ? `Club ${club.name} Report` : `Club ${clubId} Report`,
+    };
+}
+
 export default async function ClubPage({ params }) {
     const { clubId } = await params;
     const club = await getClubDetails(clubId);

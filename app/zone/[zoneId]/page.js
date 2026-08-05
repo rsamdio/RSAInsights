@@ -1,6 +1,15 @@
-import { getZoneData } from '@/lib/api';
+import { getZoneData, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
+import GlobalTables from '@/components/tables/GlobalTables';
+
+export async function generateMetadata({ params }) {
+    const { zoneId } = await params;
+    const fullZoneName = zoneId.toString().startsWith('Zone') ? zoneId : `Zone ${zoneId}`;
+    return {
+        title: `${fullZoneName} Analytics`,
+    };
+}
 
 export default async function ZonePage({ params }) {
     const { zoneId } = await params;
@@ -13,6 +22,19 @@ export default async function ZonePage({ params }) {
 
     const penGood = stats.totalRotary ? Math.round((stats.rotaryWithSponsor / stats.totalRotary) * 100) : 0;
     const penBad = stats.totalRotary ? Math.round((stats.rotaryWithoutSponsor / stats.totalRotary) * 100) : 0;
+
+    const allZoneTableData = await getZoneSummary() || [];
+    const allArrearsData = await getArrears() || [];
+    const allOfficersData = await getNoOfficers() || [];
+    const allRotaryData = await getRotaryNoSponsor() || [];
+
+    const normalizeZoneName = (val) => val.toString().startsWith('Zone') ? val.toString() : `Zone ${val.toString()}`;
+    const fullZoneName = normalizeZoneName(zoneId);
+
+    const zoneTableData = allZoneTableData.filter(z => normalizeZoneName(z['RI Zone']) === fullZoneName);
+    const arrearsData = allArrearsData.filter(c => normalizeZoneName(c['RI Zone']) === fullZoneName);
+    const officersData = allOfficersData.filter(c => normalizeZoneName(c['RI Zone']) === fullZoneName);
+    const rotaryData = allRotaryData.filter(c => normalizeZoneName(c['RI Zone']) === fullZoneName);
 
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
@@ -60,6 +82,14 @@ export default async function ZonePage({ params }) {
                     ))}
                 </div>
             </div>
+
+            <h2 className="section-title" style={{ marginTop: '40px' }}>Deep Data Drilldown - {zoneData.name}</h2>
+            <GlobalTables 
+                zoneTableData={zoneTableData} 
+                arrearsData={arrearsData} 
+                officersData={officersData} 
+                rotaryData={rotaryData} 
+            />
         </div>
     );
 }

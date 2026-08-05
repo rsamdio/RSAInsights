@@ -1,7 +1,15 @@
-import { getDistrictData, getUnifiedIssues } from '@/lib/api';
+import { getDistrictData, getUnifiedIssues, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
 import DistrictTable from '@/components/tables/DistrictTable';
+import GlobalTables from '@/components/tables/GlobalTables';
+
+export async function generateMetadata({ params }) {
+    const { districtId } = await params;
+    return {
+        title: `District ${districtId} Analytics`,
+    };
+}
 
 export default async function DistrictPage({ params }) {
     const { districtId } = await params;
@@ -17,6 +25,16 @@ export default async function DistrictPage({ params }) {
 
     const penGood = stats.totalRotary ? Math.round((stats.rotaryWithSponsor / stats.totalRotary) * 100) : 0;
     const penBad = stats.totalRotary ? Math.round((stats.rotaryWithoutSponsor / stats.totalRotary) * 100) : 0;
+
+    const allZoneTableData = await getZoneSummary() || [];
+    const allArrearsData = await getArrears() || [];
+    const allOfficersData = await getNoOfficers() || [];
+    const allRotaryData = await getRotaryNoSponsor() || [];
+
+    const zoneTableData = allZoneTableData.filter(z => z['RI District'].toString() === districtId.toString());
+    const arrearsData = allArrearsData.filter(c => c.District.toString() === districtId.toString());
+    const officersData = allOfficersData.filter(c => c.District.toString() === districtId.toString());
+    const rotaryData = allRotaryData.filter(c => c.District.toString() === districtId.toString());
 
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
@@ -44,6 +62,14 @@ export default async function DistrictPage({ params }) {
             
             <h2 className="section-title">Clubs with Issues in District {districtId}</h2>
             <DistrictTable districtClubs={districtClubs} />
+
+            <h2 className="section-title" style={{ marginTop: '40px' }}>Deep Data Drilldown - District {districtId}</h2>
+            <GlobalTables 
+                zoneTableData={zoneTableData} 
+                arrearsData={arrearsData} 
+                officersData={officersData} 
+                rotaryData={rotaryData} 
+            />
         </div>
     );
 }

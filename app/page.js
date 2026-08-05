@@ -23,70 +23,76 @@ export default async function GlobalDashboard({ searchParams }) {
     let filteredOfficersData = [...officersData];
     let filteredRotaryData = [...rotaryData];
 
+    const normalizeZoneName = (val) => val.toString().startsWith('Zone') ? val.toString() : `Zone ${val.toString()}`;
+    const selectedDistricts = district ? district.split(',') : [];
+    const selectedZones = zone ? zone.split(',') : [];
+
     // Apply strict filtering if a zone or district is selected
-    if (district) {
-        // Find zone containing this district to filter everything else out
-        let zoneStr = filteredZoneTableData.find(z => z['RI District'].toString() === district)?.['RI Zone'];
-        if (zoneStr) {
-            zoneStr = zoneStr.toString().startsWith('Zone') ? zoneStr : `Zone ${zoneStr}`;
-            if (summary.current.zones[zoneStr]) {
-                filteredZones = { [zoneStr]: summary.current.zones[zoneStr] };
-            } else {
-                filteredZones = {};
-            }
-        }
-        filteredZoneTableData = filteredZoneTableData.filter(z => z['RI District'].toString() === district);
-        filteredArrearsData = filteredArrearsData.filter(c => c.District.toString() === district);
-        filteredOfficersData = filteredOfficersData.filter(c => c.District.toString() === district);
-        filteredRotaryData = filteredRotaryData.filter(c => c.District.toString() === district);
+    if (selectedDistricts.length > 0) {
+        filteredZoneTableData = filteredZoneTableData.filter(z => selectedDistricts.includes(z['RI District'].toString()));
+        filteredArrearsData = filteredArrearsData.filter(c => selectedDistricts.includes(c.District.toString()));
+        filteredOfficersData = filteredOfficersData.filter(c => selectedDistricts.includes(c.District.toString()));
+        filteredRotaryData = filteredRotaryData.filter(c => selectedDistricts.includes(c.District.toString()));
         
-        // Recompute overall for this specific district using the comprehensive zoneTableData row
+        let zoneNames = Array.from(new Set(filteredZoneTableData.map(z => normalizeZoneName(z['RI Zone']))));
+        filteredZones = {};
+        zoneNames.forEach(zName => {
+            if (summary.current.zones[zName]) {
+                filteredZones[zName] = summary.current.zones[zName];
+            }
+        });
+        
+        // Recompute overall for these specific districts by summing rows
         overall = {
             ...overall,
-            totalClubs: filteredZoneTableData[0]?.['Total Clubs'] || 0,
-            outstanding: filteredZoneTableData[0]?.TotalUSD || 0,
-            arrearsClubs: filteredZoneTableData[0]?.TotalClubsArrears || 0,
-            atRisk: filteredZoneTableData[0]?.['75PlusClubs'] || 0,
-            noOfficers: filteredZoneTableData[0]?.['No Officer Total'] || 0,
+            totalClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['Total Clubs'] || 0), 0),
+            outstanding: filteredZoneTableData.reduce((sum, row) => sum + (row.TotalUSD || 0), 0),
+            arrearsClubs: filteredZoneTableData.reduce((sum, row) => sum + (row.TotalClubsArrears || 0), 0),
+            atRisk: filteredZoneTableData.reduce((sum, row) => sum + (row['75PlusClubs'] || 0), 0),
+            noOfficers: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer Total'] || 0), 0),
             
-            totalRotary: filteredZoneTableData[0]?.['Total Rotary Clubs'] || 0,
-            rotaryWithSponsor: filteredZoneTableData[0]?.['Rotary with Rotaract Club'] || 0,
-            rotaryWithoutSponsor: filteredZoneTableData[0]?.['Rotary without Rotaract Club'] || 0,
+            totalRotary: filteredZoneTableData.reduce((sum, row) => sum + (row['Total Rotary Clubs'] || 0), 0),
+            rotaryWithSponsor: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Rotaract Club'] || 0), 0),
+            rotaryWithoutSponsor: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary without Rotaract Club'] || 0), 0),
             
-            arrUniv: filteredZoneTableData[0]?.ArrearsUnivesityClubs || 0,
-            arrComm: filteredZoneTableData[0]?.ArrearsCommunityClubs || 0,
-            noOffUniv: filteredZoneTableData[0]?.['No Officer University'] || 0,
-            noOffComm: filteredZoneTableData[0]?.['No Officer Community'] || 0
+            arrUniv: filteredZoneTableData.reduce((sum, row) => sum + (row.ArrearsUnivesityClubs || 0), 0),
+            arrComm: filteredZoneTableData.reduce((sum, row) => sum + (row.ArrearsCommunityClubs || 0), 0),
+            noOffUniv: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer University'] || 0), 0),
+            noOffComm: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer Community'] || 0), 0)
         };
         prevOverall = {}; // Clear previous as we don't have historical district-level cuts in the JSON
-    } else if (zone) {
-        const fullZoneName = zone.startsWith('Zone') ? zone : `Zone ${zone}`;
-        filteredZones = { [fullZoneName]: summary.current.zones[fullZoneName] };
-        if (!summary.current.zones[fullZoneName]) filteredZones = {};
+    } else if (selectedZones.length > 0) {
+        const formattedZones = selectedZones.map(normalizeZoneName);
         
-        filteredZoneTableData = filteredZoneTableData.filter(z => z['RI Zone'] === fullZoneName);
-        filteredArrearsData = filteredArrearsData.filter(c => c['RI Zone'] === fullZoneName);
-        filteredOfficersData = filteredOfficersData.filter(c => c['RI Zone'] === fullZoneName);
-        filteredRotaryData = filteredRotaryData.filter(c => c['RI Zone'] === fullZoneName);
+        filteredZones = {};
+        formattedZones.forEach(zName => {
+            if (summary.current.zones[zName]) {
+                filteredZones[zName] = summary.current.zones[zName];
+            }
+        });
         
-        // Recompute overall for zone
-        const zStats = summary.current.zones[fullZoneName]?.stats || {};
+        filteredZoneTableData = filteredZoneTableData.filter(z => formattedZones.includes(normalizeZoneName(z['RI Zone'])));
+        filteredArrearsData = filteredArrearsData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
+        filteredOfficersData = filteredOfficersData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
+        filteredRotaryData = filteredRotaryData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
+        
+        // Recompute overall for zones
         overall = {
             ...overall,
-            totalClubs: zStats.totalClubs || 0,
-            outstanding: zStats.outstanding || 0,
-            arrearsClubs: zStats.arrearsClubs || 0,
-            atRisk: zStats.atRisk || 0,
-            noOfficers: zStats.noOfficers || 0,
+            totalClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalClubs || 0), 0),
+            outstanding: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.outstanding || 0), 0),
+            arrearsClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.arrearsClubs || 0), 0),
+            atRisk: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.atRisk || 0), 0),
+            noOfficers: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOfficers || 0), 0),
             
-            totalRotary: zStats.totalRotary || 0,
-            rotaryWithSponsor: zStats.rotaryWithSponsor || 0,
-            rotaryWithoutSponsor: zStats.rotaryWithoutSponsor || 0,
+            totalRotary: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalRotary || 0), 0),
+            rotaryWithSponsor: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithSponsor || 0), 0),
+            rotaryWithoutSponsor: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithoutSponsor || 0), 0),
             
-            arrUniv: zStats.arrUniv || 0,
-            arrComm: zStats.arrComm || 0,
-            noOffUniv: zStats.noOffUniv || 0,
-            noOffComm: zStats.noOffComm || 0
+            arrUniv: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.arrUniv || 0), 0),
+            arrComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.arrComm || 0), 0),
+            noOffUniv: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOffUniv || 0), 0),
+            noOffComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOffComm || 0), 0)
         };
         prevOverall = {};
     }

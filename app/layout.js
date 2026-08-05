@@ -3,8 +3,16 @@ import './globals.css';
 import HeaderFilters from '@/components/ui/HeaderFilters';
 
 export const metadata = {
-  title: 'Rotaract South Asia Analytics',
+  metadataBase: new URL('https://45678.rsamdio.org'),
+  title: {
+    template: '%s | Rotaract South Asia MDIO',
+    default: 'Rotaract South Asia Analysis | Rotaract South Asia MDIO',
+  },
   description: 'World Class Analytics Dashboard',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +25,10 @@ export default function RootLayout({ children }) {
       <body>
         <div className="app-container">
           <header className="header">
-            <h1>Rotaract South Asia Analytics</h1>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <img src="/rsamdio.webp" alt="RSAMDIO Logo" style={{ height: '40px', width: 'auto', borderRadius: '4px' }} />
+              <h1>Rotaract South Asia Analytics</h1>
+            </div>
             <Suspense fallback={<div>Loading filters...</div>}>
               <HeaderFilters />
             </Suspense>
