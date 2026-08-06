@@ -60,7 +60,25 @@ export default async function GlobalDashboard({ searchParams }) {
             noOffUniv: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer University'] || 0), 0),
             noOffComm: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer Community'] || 0), 0)
         };
-        prevOverall = {}; // Clear previous as we don't have historical district-level cuts in the JSON
+        // Compute prevOverall for filtered districts
+        const dSet = new Set(selectedDistricts);
+        let prevFilteredDistricts = [];
+        
+        Object.keys(summary.previous.zones).forEach(z => {
+            Object.keys(summary.previous.zones[z].districts || {}).forEach(d => {
+                if (dSet.has(d)) {
+                    prevFilteredDistricts.push(summary.previous.zones[z].districts[d]);
+                }
+            });
+        });
+        
+        prevOverall = {
+            totalClubs: prevFilteredDistricts.reduce((sum, d) => sum + (d.totalClubs || 0), 0),
+            outstanding: prevFilteredDistricts.reduce((sum, d) => sum + (d.outstanding || 0), 0),
+            arrearsClubs: prevFilteredDistricts.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
+            atRisk: prevFilteredDistricts.reduce((sum, d) => sum + (d.atRisk || 0), 0),
+            noOfficers: prevFilteredDistricts.reduce((sum, d) => sum + (d.noOfficers || 0), 0)
+        };
     } else if (selectedZones.length > 0) {
         const formattedZones = selectedZones.map(normalizeZoneName);
         
@@ -94,7 +112,21 @@ export default async function GlobalDashboard({ searchParams }) {
             noOffUniv: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOffUniv || 0), 0),
             noOffComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOffComm || 0), 0)
         };
-        prevOverall = {};
+        // Compute prevOverall for filtered zones
+        let prevFilteredZones = [];
+        formattedZones.forEach(zName => {
+            if (summary.previous.zones[zName]) {
+                prevFilteredZones.push(summary.previous.zones[zName]);
+            }
+        });
+        
+        prevOverall = {
+            totalClubs: prevFilteredZones.reduce((sum, z) => sum + (z.stats.totalClubs || 0), 0),
+            outstanding: prevFilteredZones.reduce((sum, z) => sum + (z.stats.outstanding || 0), 0),
+            arrearsClubs: prevFilteredZones.reduce((sum, z) => sum + (z.stats.arrearsClubs || 0), 0),
+            atRisk: prevFilteredZones.reduce((sum, z) => sum + (z.stats.atRisk || 0), 0),
+            noOfficers: prevFilteredZones.reduce((sum, z) => sum + (z.stats.noOfficers || 0), 0)
+        };
     }
 
     // --- Trend Computation Helpers ---
@@ -112,7 +144,7 @@ export default async function GlobalDashboard({ searchParams }) {
 
         const textStr = `${arrow} ${diffStr} (${pct}%)`;
 
-        return { text: textStr, type: isGood ? 'positive' : 'negative' };
+        return { text: textStr, type: isGood ? 'positive' : 'negative', baseline: 'since 9 July' };
     };
 
     // --- Chart Data Preps ---

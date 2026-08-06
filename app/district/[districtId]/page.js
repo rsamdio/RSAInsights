@@ -1,4 +1,4 @@
-import { getDistrictData, getUnifiedIssues, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor } from '@/lib/api';
+import { getDistrictData, getUnifiedIssues, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getDashboardSummary } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
 import DistrictTable from '@/components/tables/DistrictTable';
@@ -31,6 +31,32 @@ export default async function DistrictPage({ params }) {
     const allOfficersData = await getNoOfficers() || [];
     const allRotaryData = await getRotaryNoSponsor() || [];
 
+    const prevSummary = await getDashboardSummary();
+    let prevDistrictStats = null;
+    
+    if (prevSummary && prevSummary.previous && prevSummary.previous.zones) {
+        Object.keys(prevSummary.previous.zones).forEach(z => {
+            if (prevSummary.previous.zones[z].districts && prevSummary.previous.zones[z].districts[districtId]) {
+                prevDistrictStats = prevSummary.previous.zones[z].districts[districtId];
+            }
+        });
+    }
+
+    const getDelta = (key, format = 'number') => {
+        if (!prevDistrictStats || (!prevDistrictStats[key] && prevDistrictStats[key] !== 0)) return null;
+        const diff = stats[key] - prevDistrictStats[key];
+        if (diff === 0) return null;
+        
+        const pct = prevDistrictStats[key] ? Math.abs((diff / prevDistrictStats[key]) * 100).toFixed(1) : 0;
+        const isGood = key === 'totalClubs' ? diff > 0 : diff < 0; 
+        
+        const arrow = diff > 0 ? '↑' : '↓';
+        const absDiff = Math.abs(diff);
+        const diffStr = format === 'usd' ? `$${absDiff.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : absDiff.toLocaleString();
+
+        return { text: `${arrow} ${diffStr} (${pct}%)`, type: isGood ? 'positive' : 'negative', baseline: 'since 9 July' };
+    };
+
     const zoneTableData = allZoneTableData.filter(z => z['RI District'].toString() === districtId.toString());
     const arrearsData = allArrearsData.filter(c => c.District.toString() === districtId.toString());
     const officersData = allOfficersData.filter(c => c.District.toString() === districtId.toString());
@@ -45,13 +71,13 @@ export default async function DistrictPage({ params }) {
                 <h2 className="section-title" style={{ margin: 0 }}>District {districtId} Performance</h2>
             </div>
             
-            <section className="metrics-grid five-cols">
-                <MetricCard title="Total Clubs" value={stats.totalClubs.toLocaleString()} />
-                <MetricCard title="Outstanding Dues" value={`$${stats.outstanding.toLocaleString()}`} />
-                <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs.toLocaleString()} />
-                <MetricCard title="Subject to Termination" value={stats.atRisk.toLocaleString()} isWarning={true} />
-                <MetricCard title="Unreported Officers" value={stats.noOfficers.toLocaleString()} />
-            </section>
+            <div className="metrics-grid five-cols">
+                <MetricCard title="Total Rotaract Clubs" value={stats.totalClubs} trend={getDelta('totalClubs')} />
+                <MetricCard title="Outstanding Dues" value={`$${stats.outstanding.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} trend={getDelta('outstanding', 'usd')} />
+                <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs} trend={getDelta('arrearsClubs')} />
+                <MetricCard title="Subject to Termination" value={stats.atRisk} isWarning trend={getDelta('atRisk')} />
+                <MetricCard title="Unreported Officers" value={stats.noOfficers} trend={getDelta('noOfficers')} />
+            </div>
             
             <h2 className="section-title">Rotary Sponsorship Penetration</h2>
             <section className="metrics-grid three-cols" style={{ marginBottom: '40px' }}>

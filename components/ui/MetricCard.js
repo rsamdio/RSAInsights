@@ -13,8 +13,11 @@ export default function MetricCard({ title, value, trend, isWarning = false }) {
             <h3>{title}</h3>
             <div className="value">{value}</div>
             {trend && (
-                <div className={`trend ${trend.type}`}>
-                    {trend.text}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                    <div className={`trend ${trend.type}`} style={{ marginTop: 0 }}>
+                        {trend.text}
+                    </div>
+                    {trend.baseline && <span style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 500 }}>{trend.baseline}</span>}
                 </div>
             )}
         </motion.div>
