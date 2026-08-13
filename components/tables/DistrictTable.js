@@ -36,5 +36,5 @@ export default function DistrictTable({ districtClubs }) {
         }
     ];
 
-    return <DataTable data={districtClubs} columns={columns} />;
+    return <DataTable data={districtClubs} columns={columns} exportFilename="District_Clubs" />;
 }

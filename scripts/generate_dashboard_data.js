@@ -3,12 +3,12 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const currMasterFile = args[0] || 'fulldata/DataMaster-31july26.xlsx';
-const prevMasterFile = args[1] || '9July2026/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
+const currMasterFile = args[0] || 'fulldata/MasterData.xlsx';
+const prevMasterFile = args[1] || 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
 
-function readSheetAsJson(wb, sheetName) {
+function readSheetAsJson(wb, sheetName, options = { defval: "" }) {
   if (!wb.SheetNames.includes(sheetName)) return [];
-  return xlsx.utils.sheet_to_json(wb.Sheets[sheetName], { defval: "" });
+  return xlsx.utils.sheet_to_json(wb.Sheets[sheetName], options);
 }
 
 function parseCurrency(val) {
@@ -24,7 +24,13 @@ const zoneSheet = readSheetAsJson(currWb, 'Zone45678');
 let arrearsSheet = readSheetAsJson(currWb, 'Arrears');
 let noOfficersSheet = readSheetAsJson(currWb, 'No Rotaract club officers');
 let rotarySheet = readSheetAsJson(currWb, 'Rotary Club Details');
-
+let allClubsSheet = readSheetAsJson(currWb, 'All Rotaract Clubs');
+let trfSheet = readSheetAsJson(currWb, 'ClubsTRFContribution');
+let newClubsSheet = readSheetAsJson(currWb, 'NewClubs', { defval: "", raw: false, dateNF: 'dd-MMM-yyyy' });
+let districtOfficersSheet = readSheetAsJson(currWb, 'District Officers_Simplified');
+let rotaractByCountrySheet = readSheetAsJson(currWb, 'Rotaract by Country');
+let rotaractByDistrictSheet = readSheetAsJson(currWb, 'Rotaract by District');
+let rotaractByZoneSheet = readSheetAsJson(currWb, 'Rotaract by Zone');
 let prevZoneSheet = [];
 if (prevMasterFile && fs.existsSync(prevMasterFile)) {
     console.log(`Processing Previous Data: ${prevMasterFile}`);
@@ -39,13 +45,27 @@ function createEmptyStats() {
         atRisk: 0,
         noOfficers: 0,
         totalClubs: 0,
+        totalMembers: 0,
         totalRotary: 0,
         rotaryWithSponsor: 0,
         rotaryWithoutSponsor: 0,
         arrUniv: 0,
         arrComm: 0,
         noOffUniv: 0,
-        noOffComm: 0
+        noOffComm: 0,
+        trfClubs: 0,
+        trfContributionsUSD: 0,
+        trfAnnualUSD: 0,
+        trfPolioUSD: 0,
+        trfOtherUSD: 0,
+        trfEndowmentUSD: 0,
+        newTotalClubs: 0,
+        newCommunityClubs: 0,
+        newUniversityClubs: 0,
+        totalUniv: 0,
+        totalComm: 0,
+        membersUniv: 0,
+        membersComm: 0
     };
 }
 
@@ -61,6 +81,27 @@ const prevSummary = {
 
 // Also we need to build a map of District -> Zone to inject Zone into arrears/no_officers sheets if missing
 const districtToZone = {};
+
+const districtMembers = {};
+allClubsSheet.forEach(row => {
+    const dist = (row['District'] || '').toString().trim();
+    if (!dist) return;
+    const members = parseInt(row['Total Reported Members']) || 0;
+    const baseType = (row['Rotaract Club Base'] || '').toString().trim().toLowerCase();
+    
+    if (!districtMembers[dist]) {
+        districtMembers[dist] = { members: 0, univ: 0, comm: 0, membersUniv: 0, membersComm: 0 };
+    }
+    
+    districtMembers[dist].members += members;
+    if (baseType.includes('university') || baseType.includes('institution')) {
+        districtMembers[dist].univ += 1;
+        districtMembers[dist].membersUniv += members;
+    } else if (baseType.includes('community')) {
+        districtMembers[dist].comm += 1;
+        districtMembers[dist].membersComm += members;
+    }
+});
 
 zoneSheet.forEach(row => {
     const dist = (row['RI District'] || '').toString().trim();
@@ -95,7 +136,24 @@ zoneSheet.forEach(row => {
     const noOffUniv = parseInt(row['No Officer University']) || 0;
     const noOffComm = parseInt(row['No Officer Community']) || 0;
     
-    const toAdd = { outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor, arrUniv, arrComm, noOffUniv, noOffComm };
+    const trfClubs = parseInt(row['Clubs with Contribution']) || 0;
+    const trfContributionsUSD = parseCurrency(row['Total Contributions USD']);
+    const trfAnnualUSD = parseCurrency(row['Annual Fund Contribution USD']);
+    const trfPolioUSD = parseCurrency(row['PolioPlus Fund Contribution USD']);
+    const trfOtherUSD = parseCurrency(row['Other Funds Contribution USD']);
+    const trfEndowmentUSD = parseCurrency(row['Endowment Fund Contribution USD']);
+    const newTotalClubs = parseInt(row['NewTotalClubs']) || 0;
+    const newCommunityClubs = parseInt(row['NewCommunityClubs']) || 0;
+    const newUniversityClubs = parseInt(row['NewUniversityClubs']) || 0;
+    
+    const distInfo = districtMembers[dist] || { members: 0, univ: 0, comm: 0, membersUniv: 0, membersComm: 0 };
+    const totalMembers = distInfo.members;
+    const totalUniv = distInfo.univ;
+    const totalComm = distInfo.comm;
+    const membersUniv = distInfo.membersUniv;
+    const membersComm = distInfo.membersComm;
+    
+    const toAdd = { outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalMembers, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor, arrUniv, arrComm, noOffUniv, noOffComm, trfClubs, trfContributionsUSD, trfAnnualUSD, trfPolioUSD, trfOtherUSD, trfEndowmentUSD, newTotalClubs, newCommunityClubs, newUniversityClubs, totalUniv, totalComm, membersUniv, membersComm };
     
     // Add to District
     for (const key in toAdd) summary.zones[zone].districts[dist][key] += toAdd[key];
@@ -105,11 +163,30 @@ zoneSheet.forEach(row => {
     for (const key in toAdd) summary.overall[key] += toAdd[key];
 });
 
+const prevJulyData = {};
+try {
+    const wbJuly = xlsx.readFile('basedata/1july.csv');
+    const julySheet = xlsx.utils.sheet_to_json(wbJuly.Sheets[wbJuly.SheetNames[0]]);
+    julySheet.forEach(row => {
+        const dist = (row['District'] || '').toString().trim();
+        if (dist) {
+            prevJulyData[dist] = {
+                clubs: parseInt(row['Clubs']) || 0,
+                members: parseInt(row['Members']) || 0,
+                rotary: parseInt(row['RotaryClubs']) || 0
+            };
+        }
+    });
+} catch (e) {
+    console.error('Could not load 1july.csv', e);
+}
+
 prevZoneSheet.forEach(row => {
     const dist = (row['RI District'] || '').toString().trim();
     if (!dist || dist === 'Grand Total') return;
     
-    let zone = (row['RI Zone'] || districtToZone[dist] || 'Unknown').toString().trim();
+    // Force the use of the CURRENT zone mapping (so historical data is attributed to the new merged zones)
+    let zone = (districtToZone[dist] || row['RI Zone'] || 'Unknown').toString().trim();
     if (!zone.toLowerCase().startsWith('zone')) zone = `Zone ${zone}`;
     
     if (!prevSummary.zones[zone]) {
@@ -128,8 +205,17 @@ prevZoneSheet.forEach(row => {
     const atRisk = parseInt(row['75PlusClubs']) || 0;
     const noOfficers = parseInt(row['No Officer Total']) || 0;
     // We only care about deltas for the main metrics, not necessarily Rotary ones for now, but we'll add them if they exist
-    const totalClubs = parseInt(row['Total Clubs']) || 0;
-    const totalRotary = parseInt(row['Total Rotary Clubs']) || 0;
+    let totalClubs = parseInt(row['Total Clubs']) || 0;
+    let totalMembers = 0;
+    let totalRotary = parseInt(row['Total Rotary Clubs']) || 0;
+    
+    // Override with accurate 1 July data if available
+    if (prevJulyData[dist]) {
+        totalClubs = prevJulyData[dist].clubs;
+        totalMembers = prevJulyData[dist].members;
+        totalRotary = prevJulyData[dist].rotary || totalRotary;
+    }
+    
     const rotaryWithSponsor = parseInt(row['Rotary with Rotaract Club']) || 0;
     const rotaryWithoutSponsor = parseInt(row['Rotary without Rotaract Club']) || 0;
     const arrUniv = parseInt(row['ArrearsUnivesityClubs']) || 0;
@@ -137,7 +223,7 @@ prevZoneSheet.forEach(row => {
     const noOffUniv = parseInt(row['No Officer University']) || 0;
     const noOffComm = parseInt(row['No Officer Community']) || 0;
     
-    const toAdd = { outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor, arrUniv, arrComm, noOffUniv, noOffComm };
+    const toAdd = { outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalMembers, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor, arrUniv, arrComm, noOffUniv, noOffComm };
     
     for (const key in toAdd) prevSummary.zones[zone].districts[dist][key] += toAdd[key];
     for (const key in toAdd) prevSummary.zones[zone].stats[key] += toAdd[key];
@@ -145,14 +231,98 @@ prevZoneSheet.forEach(row => {
 });
 
 // Inject Zone into Arrears and No Officers Data so they can be easily filtered globally
-arrearsSheet = arrearsSheet.map(row => {
+arrearsSheet = arrearsSheet.reduce((acc, row) => {
+    if (!row['District']) return acc;
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    const zone = districtToZone[dist] || 'Unknown';
+    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+    
+    row['RI Zone'] = zone;
+    row['District'] = dist;
+    acc.push(row);
+    return acc;
+}, []);
+
+noOfficersSheet = noOfficersSheet.reduce((acc, row) => {
+    if (!row['District']) return acc;
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    const zone = districtToZone[dist] || 'Unknown';
+    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+    
+    row['RI Zone'] = zone;
+    row['District'] = dist;
+    acc.push(row);
+    return acc;
+}, []);
+
+// Clean up all clubs sheet, filter invalid rows and only include Zone 4-8
+allClubsSheet = allClubsSheet.reduce((acc, row) => {
+    const clubId = (row['Rotaract Club ID'] || '').toString().trim();
+    if (!clubId) return acc; // Skip empty rows
+
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    const zone = districtToZone[dist] || 'Unknown';
+    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+
+    row['RI Zone'] = zone;
+    row['Zone'] = zone; // Overwrite just in case
+    row['District'] = dist;
+    
+    // Map to clean frontend keys
+    row['Club ID'] = clubId;
+    row['Club Name'] = row['Rotaract Club Name'] || 'Unknown Club';
+    
+    acc.push(row);
+    return acc;
+}, []);
+
+// Map Club IDs to Names for TRF
+const clubIdToName = {};
+allClubsSheet.forEach(row => {
+    clubIdToName[row['Club ID']] = row['Club Name'];
+});
+
+// Clean up TRF sheet
+trfSheet = trfSheet.reduce((acc, row) => {
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    const zone = districtToZone[dist] || 'Unknown';
+    
+    row['RI Zone'] = zone;
+    row['District'] = dist;
+
+    // Use proper name from all clubs sheet if available
+    const clubId = (row['Club No'] || row['Club No.'] || '').toString().trim();
+    row['Club No.'] = clubId;
+    if (clubIdToName[clubId]) {
+        row['Club Name'] = clubIdToName[clubId];
+    } else {
+        row['Club Name'] = row['Name'] || 'Unknown Club';
+    }
+    
+    // Map messy headers to clean UI keys
+    const totalCont = parseCurrency(row['-- Total --'] || row['Total Contributions USD']);
+    row['Total Contributions USD'] = totalCont;
+    row['Annual Fund Contribution USD'] = parseCurrency(row['Annual Fund\nYTD']);
+    row['PolioPlus Fund Contribution USD'] = parseCurrency(row['PolioPlus Fund\nYTD']);
+    row['Other Funds Contribution USD'] = parseCurrency(row['Other Funds\nYTD']);
+    
+    // Only include rows that have actual TRF contribution data > 0
+    if (totalCont > 0) {
+        acc.push(row);
+    }
+    return acc;
+}, []);
+
+// Clean up New Clubs sheet
+newClubsSheet = newClubsSheet.filter(row => row['DISTRICT'] || row['District']).map(row => {
+    const dist = (row['DISTRICT'] || row['District'] || '').toString().replace(/\.0$/, '');
     row['RI Zone'] = districtToZone[dist] || 'Unknown';
     row['District'] = dist;
     return row;
 });
 
-noOfficersSheet = noOfficersSheet.map(row => {
+// Clean up District Officers sheet
+districtOfficersSheet = districtOfficersSheet.filter(row => row['District']).map(row => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
     row['RI Zone'] = districtToZone[dist] || 'Unknown';
     row['District'] = dist;
@@ -161,7 +331,7 @@ noOfficersSheet = noOfficersSheet.map(row => {
 
 // Filter Rotary Clubs with no Rotaract Sponsor
 let rotaryNoSponsorSheet = rotarySheet.filter(row => {
-    return parseInt(row['Total Clubs Sponsored']) === 0;
+    return parseInt(row['Total Clubs Sponsored']) === 0 && row['District'];
 }).map(row => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
     row['RI Zone'] = districtToZone[dist] || 'Unknown';
@@ -175,6 +345,44 @@ let rotaryNoSponsorSheet = rotarySheet.filter(row => {
         'Club ID': row['Club ID']
     };
 });
+
+// Calculate growth for districts
+Object.keys(summary.zones).forEach(z => {
+    const zoneData = summary.zones[z];
+    Object.keys(zoneData.districts).forEach(d => {
+        const curr = zoneData.districts[d];
+        const prev = prevSummary.zones[z]?.districts[d];
+
+        let membersGrowthAbs = 0;
+        let membersGrowthPct = 0;
+        let clubsGrowthAbs = 0;
+        let clubsGrowthPct = 0;
+
+        if (prev) {
+            membersGrowthAbs = curr.totalMembers - prev.totalMembers;
+            membersGrowthPct = prev.totalMembers > 0 ? (membersGrowthAbs / prev.totalMembers) * 100 : 0;
+            
+            clubsGrowthAbs = curr.totalClubs - prev.totalClubs;
+            clubsGrowthPct = prev.totalClubs > 0 ? (clubsGrowthAbs / prev.totalClubs) * 100 : 0;
+        } else {
+            membersGrowthAbs = curr.totalMembers;
+            membersGrowthPct = 100;
+            clubsGrowthAbs = curr.totalClubs;
+            clubsGrowthPct = 100;
+        }
+
+        curr.membersGrowthAbs = membersGrowthAbs;
+        curr.membersGrowthPct = membersGrowthPct;
+        curr.clubsGrowthAbs = clubsGrowthAbs;
+        curr.clubsGrowthPct = clubsGrowthPct;
+    });
+});
+
+const outputSummary = {
+    current: summary,
+    previous: prevSummary,
+    lastUpdated: new Date().toISOString()
+};
 
 const dashboardData = {
     current: summary,
@@ -247,5 +455,90 @@ fs.writeFileSync('data/no_officers.json', JSON.stringify(noOfficersSheet, null, 
 fs.writeFileSync('data/rotary_no_sponsor.json', JSON.stringify(rotaryNoSponsorSheet, null, 2));
 fs.writeFileSync('data/unified_issues.json', JSON.stringify(unifiedIssuesSheet, null, 2));
 fs.writeFileSync('data/zone_summary.json', JSON.stringify(zoneSheet, null, 2));
+fs.writeFileSync('data/all_clubs.json', JSON.stringify(allClubsSheet, null, 2));
+fs.writeFileSync('data/trf_contributions.json', JSON.stringify(trfSheet, null, 2));
+fs.writeFileSync('data/new_clubs.json', JSON.stringify(newClubsSheet, null, 2));
+fs.writeFileSync('data/district_officers.json', JSON.stringify(districtOfficersSheet, null, 2));
+
+let totalWorldwideClubs = 0;
+let totalWorldwideMembers = 0;
+rotaractByCountrySheet.forEach(row => {
+    totalWorldwideClubs += (parseInt(row['Total Active Rotaract Clubs']) || 0);
+    totalWorldwideMembers += (parseInt(row['Total Reported Members']) || 0);
+});
+
+let prevTotalWorldwideClubs = 0;
+let prevTotalWorldwideMembers = 0;
+
+if (prevMasterFile && fs.existsSync(prevMasterFile)) {
+    const prevWb = xlsx.readFile(prevMasterFile);
+    let prevRotaractByCountrySheet = readSheetAsJson(prevWb, 'Rotaract by Country');
+    let prevRotaractByDistrictSheet = readSheetAsJson(prevWb, 'Rotaract by District');
+    let prevRotaractByZoneSheet = readSheetAsJson(prevWb, 'Rotaract by Zone');
+    
+    prevRotaractByCountrySheet.forEach(row => {
+        prevTotalWorldwideClubs += (parseInt(row['Total Active Rotaract Clubs']) || 0);
+        prevTotalWorldwideMembers += (parseInt(row['Total Reported Members']) || 0);
+    });
+
+    // Helper to inject growth rates
+    const injectGrowth = (currSheet, prevSheet, matchKey) => {
+        currSheet.forEach(currRow => {
+            const currKey = (currRow[matchKey] || '').toString().trim();
+            const prevRow = prevSheet.find(r => (r[matchKey] || '').toString().trim() === currKey);
+            
+            const currClubs = parseInt(currRow['Total Active Rotaract Clubs']) || 0;
+            const currMembers = parseInt(currRow['Total Reported Members']) || 0;
+            
+            if (prevRow) {
+                const prevClubs = parseInt(prevRow['Total Active Rotaract Clubs']) || 0;
+                const prevMembers = parseInt(prevRow['Total Reported Members']) || 0;
+                
+                currRow['Clubs Growth Abs'] = currClubs - prevClubs;
+                currRow['Members Growth Abs'] = currMembers - prevMembers;
+                currRow['Clubs Growth (%)'] = prevClubs > 0 ? ((currClubs - prevClubs) / prevClubs) * 100 : 0;
+                currRow['Members Growth (%)'] = prevMembers > 0 ? ((currMembers - prevMembers) / prevMembers) * 100 : 0;
+            } else {
+                currRow['Clubs Growth Abs'] = currClubs;
+                currRow['Members Growth Abs'] = currMembers;
+                currRow['Clubs Growth (%)'] = 100;
+                currRow['Members Growth (%)'] = 100;
+            }
+        });
+    };
+
+    injectGrowth(rotaractByCountrySheet, prevRotaractByCountrySheet, ' '); // Country column is ' '
+    injectGrowth(rotaractByDistrictSheet, prevRotaractByDistrictSheet, 'District');
+    injectGrowth(rotaractByZoneSheet, prevRotaractByZoneSheet, 'Zone');
+}
+
+function calcDelta(curr, prev) {
+    if (!prev) return { text: 'New', type: 'positive', baseline: 'vs July 1st' };
+    const diff = curr - prev;
+    if (diff === 0) return { text: 'No change', type: 'neutral', baseline: 'vs July 1st' };
+    const pct = ((Math.abs(diff) / prev) * 100).toFixed(1);
+    return {
+        text: `${diff > 0 ? '+' : '-'}${Math.abs(diff).toFixed(curr % 1 !== 0 ? 3 : 0)} (${pct}%)`,
+        type: diff > 0 ? 'positive' : 'negative',
+        baseline: 'vs July 1st'
+    };
+}
+
+const avgMembersPerClub = totalWorldwideClubs > 0 ? parseFloat((totalWorldwideMembers / totalWorldwideClubs).toFixed(3)) : 0;
+const prevAvgMembersPerClub = prevTotalWorldwideClubs > 0 ? parseFloat((prevTotalWorldwideMembers / prevTotalWorldwideClubs).toFixed(3)) : 0;
+
+const worldwideSummary = {
+    totalClubs: totalWorldwideClubs,
+    totalClubsDelta: prevTotalWorldwideClubs > 0 ? calcDelta(totalWorldwideClubs, prevTotalWorldwideClubs) : null,
+    totalMembers: totalWorldwideMembers,
+    totalMembersDelta: prevTotalWorldwideMembers > 0 ? calcDelta(totalWorldwideMembers, prevTotalWorldwideMembers) : null,
+    avgMembersPerClub: avgMembersPerClub,
+    avgMembersDelta: prevAvgMembersPerClub > 0 ? calcDelta(avgMembersPerClub, prevAvgMembersPerClub) : null,
+    countryData: rotaractByCountrySheet,
+    districtData: rotaractByDistrictSheet,
+    zoneData: rotaractByZoneSheet
+};
+
+fs.writeFileSync('data/worldwide_summary.json', JSON.stringify(worldwideSummary, null, 2));
 
 console.log('Data generation complete.');

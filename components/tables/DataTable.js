@@ -10,8 +10,8 @@ import {
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function DataTable({ data, columns, onRowClick }) {
-    const [sorting, setSorting] = useState([]);
+export default function DataTable({ data, columns, onRowClick, exportFilename, initialSort = [] }) {
+    const [sorting, setSorting] = useState(initialSort);
     const [globalFilter, setGlobalFilter] = useState('');
 
     const table = useReactTable({
@@ -49,7 +49,7 @@ export default function DataTable({ data, columns, onRowClick }) {
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.setAttribute('href', url);
-        link.setAttribute('download', 'export.csv');
+        link.setAttribute('download', exportFilename ? `${exportFilename}.csv` : 'export.csv');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

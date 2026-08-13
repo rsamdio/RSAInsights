@@ -1,5 +1,5 @@
 'use client';
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
+import { useRouter, useSearchParams, useParams, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 
@@ -31,8 +31,21 @@ export default function HeaderFilters() {
             setSelectedZone(selected || []);
             if (selected && selected.length > 0) {
                 params.set('zone', selected.map(s => s.value).join(','));
-                params.delete('district');
-                setSelectedDistrict([]);
+                
+                // Filter selected districts to only those within the newly selected zones
+                const validZones = new Set(selected.map(s => s.value));
+                const validSelectedDistricts = selectedDistrict.filter(d => {
+                    const distZone = options.districtToZone[d.value.replace('District ', '')] || options.districtToZone[d.value];
+                    return validZones.has(distZone);
+                });
+                
+                if (validSelectedDistricts.length > 0) {
+                    params.set('district', validSelectedDistricts.map(s => s.value).join(','));
+                    setSelectedDistrict(validSelectedDistricts);
+                } else {
+                    params.delete('district');
+                    setSelectedDistrict([]);
+                }
             } else {
                 params.delete('zone');
             }
@@ -40,14 +53,31 @@ export default function HeaderFilters() {
             setSelectedDistrict(selected || []);
             if (selected && selected.length > 0) {
                 params.set('district', selected.map(s => s.value).join(','));
-                params.delete('zone');
-                setSelectedZone([]);
+                
+                // Auto-select the corresponding Zones for the selected districts
+                const requiredZonesSet = new Set(selected.map(d => options.districtToZone[d.value.replace('District ', '')] || options.districtToZone[d.value]).filter(Boolean));
+                
+                // If there are currently selected zones, merge them, otherwise just use the required ones
+                const currentZonesSet = new Set(selectedZone.map(z => z.value));
+                requiredZonesSet.forEach(z => currentZonesSet.add(z));
+                
+                const newZones = Array.from(currentZonesSet).map(z => ({ value: z, label: z }));
+                params.set('zone', newZones.map(z => z.value).join(','));
+                setSelectedZone(newZones);
+                
             } else {
                 params.delete('district');
             }
         }
         
-        router.push(`/?${params.toString()}`);
+        const isZoneRoute = !!pathParams?.zoneId;
+        
+        if (isZoneRoute) {
+            params.delete('zone');
+            router.push(`/zone/${pathParams.zoneId}?${params.toString()}`, { scroll: false });
+        } else {
+            router.push(`/?${params.toString()}`, { scroll: false });
+        }
     };
 
     const customStyles = {
@@ -103,10 +133,13 @@ export default function HeaderFilters() {
         })
     };
 
-    if (!mounted) return null;
-
+    const pathname = usePathname();
     const isZoneRoute = !!pathParams?.zoneId;
     const isDistrictRoute = !!pathParams?.districtId;
+    const isClubRoute = !!pathParams?.clubId;
+    const isWorldwideRoute = pathname === '/worldwide';
+    
+    if (!mounted || isClubRoute || isWorldwideRoute) return null;
     
     const pathZoneId = pathParams?.zoneId ? (pathParams.zoneId.startsWith('Zone') ? pathParams.zoneId : `Zone ${pathParams.zoneId}`) : null;
     const pathDistrictId = pathParams?.districtId;
@@ -114,6 +147,11 @@ export default function HeaderFilters() {
     
     const displayZone = (isZoneRoute || isDistrictRoute) && effectiveZone ? [{ value: effectiveZone, label: effectiveZone }] : selectedZone;
     const displayDistrict = isDistrictRoute ? [{ value: pathDistrictId, label: `District ${pathDistrictId}` }] : selectedDistrict;
+
+    const activeZoneValues = new Set(displayZone.map(z => z.value));
+    const availableDistricts = activeZoneValues.size > 0 
+        ? options.districts.filter(d => activeZoneValues.has(d.zone))
+        : options.districts;
 
     return (
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -131,11 +169,11 @@ export default function HeaderFilters() {
             <Select 
                 instanceId="district-select"
                 isMulti
-                options={options.districts} 
+                options={availableDistricts} 
                 value={displayDistrict}
                 onChange={(s) => handleFilterChange('district', s)}
-                isClearable={!isZoneRoute && !isDistrictRoute}
-                isDisabled={isZoneRoute || isDistrictRoute}
+                isClearable={!isDistrictRoute}
+                isDisabled={isDistrictRoute}
                 placeholder="All Districts" 
                 styles={customStyles}
             />
