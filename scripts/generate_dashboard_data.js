@@ -445,6 +445,22 @@ function exportToCsv(data, filename) {
     console.log(`Saved ${filename}`);
 }
 
+const sortByDistrict = (arr, key = 'District') => arr.sort((a, b) => {
+    const d1 = String(a[key] || '');
+    const d2 = String(b[key] || '');
+    return d1.localeCompare(d2, undefined, { numeric: true });
+});
+
+sortByDistrict(zoneSheet, 'RI District');
+sortByDistrict(arrearsSheet);
+sortByDistrict(noOfficersSheet);
+sortByDistrict(rotaryNoSponsorSheet);
+sortByDistrict(unifiedIssuesSheet, 'RI District'); // unified issues uses RI District
+sortByDistrict(allClubsSheet);
+sortByDistrict(trfSheet);
+sortByDistrict(newClubsSheet);
+sortByDistrict(districtOfficersSheet);
+
 exportToCsv(zoneSheet, 'data/zone_summary.csv');
 exportToCsv(arrearsSheet, 'data/arrears.csv');
 exportToCsv(noOfficersSheet, 'data/no_officers.csv');

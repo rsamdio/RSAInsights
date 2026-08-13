@@ -7,12 +7,20 @@ import {
     getPaginationRowModel,
     getFilteredRowModel
 } from '@tanstack/react-table';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function DataTable({ data, columns, onRowClick, exportFilename, initialSort = [] }) {
     const [sorting, setSorting] = useState(initialSort);
     const [globalFilter, setGlobalFilter] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setGlobalFilter(searchTerm);
+        }, 250);
+        return () => clearTimeout(timer);
+    }, [searchTerm]);
 
     const table = useReactTable({
         data,
@@ -60,8 +68,8 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
             <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
                 <input
                     type="text"
-                    value={globalFilter ?? ''}
-                    onChange={e => setGlobalFilter(e.target.value)}
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
                     placeholder="Search all columns..."
                     style={{
                         padding: '10px 15px',
