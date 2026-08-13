@@ -10,10 +10,32 @@ export const metadata = {
     template: '%s | Rotaract South Asia MDIO',
     default: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
   },
-  description: 'World Class Analytics Dashboard',
+  description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
   robots: {
     index: false,
     follow: false,
+  },
+  openGraph: {
+    title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
+    description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
+    url: 'https://insights.rsamdio.org',
+    siteName: 'Rotaract South Asia MDIO Insights',
+    images: [
+      {
+        url: '/rsamdio.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Rotaract South Asia MDIO Insights Dashboard',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
+    description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
+    images: ['/rsamdio.webp'],
   },
 };
 
