@@ -151,8 +151,6 @@ zoneSheet.forEach(row => {
     if (!zone.toLowerCase().startsWith('zone')) zone = `Zone ${zone}`;
     districtToZone[dist] = zone;
     
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return;
-    
     if (!summary.zones[zone]) {
         summary.zones[zone] = {
             stats: createEmptyStats(),
@@ -278,10 +276,9 @@ prevZoneSheet.forEach(row => {
     if (!dist || dist === 'Grand Total') return;
     
     // Force the use of the CURRENT zone mapping (so historical data is attributed to the new merged zones)
-    let zone = (districtToZone[dist] || row['RI Zone'] || 'Unknown').toString().trim();
-    if (!zone.toLowerCase().startsWith('zone')) zone = `Zone ${zone}`;
-    
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return;
+    // Map historical district to its current zone structure
+    let zone = districtToZone[dist];
+    if (!zone) return; // If the historical district doesn't exist in the current master data, drop it
     
     if (!prevSummary.zones[zone]) {
         prevSummary.zones[zone] = {
@@ -328,8 +325,8 @@ prevZoneSheet.forEach(row => {
 arrearsSheet = arrearsSheet.reduce((acc, row) => {
     if (!row['District']) return acc;
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    const zone = districtToZone[dist] || 'Unknown';
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return acc;
+    const zone = districtToZone[dist];
+    if (!zone) return acc;
     
     row['RI Zone'] = zone;
     row['District'] = dist;
@@ -340,8 +337,8 @@ arrearsSheet = arrearsSheet.reduce((acc, row) => {
 noOfficersSheet = noOfficersSheet.reduce((acc, row) => {
     if (!row['District']) return acc;
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    const zone = districtToZone[dist] || 'Unknown';
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return acc;
+    const zone = districtToZone[dist];
+    if (!zone) return acc;
     
     row['RI Zone'] = zone;
     row['District'] = dist;
@@ -349,14 +346,14 @@ noOfficersSheet = noOfficersSheet.reduce((acc, row) => {
     return acc;
 }, []);
 
-// Clean up all clubs sheet, filter invalid rows and only include Zone 4-8
+// Clean up all clubs sheet, strictly mapping only master districts
 allClubsSheet = allClubsSheet.reduce((acc, row) => {
     const clubId = (row['Rotaract Club ID'] || '').toString().trim();
     if (!clubId) return acc; // Skip empty rows
 
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    const zone = districtToZone[dist] || 'Unknown';
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+    const zone = districtToZone[dist];
+    if (!zone) return acc;
 
     row['RI Zone'] = zone;
     row['Zone'] = zone; // Overwrite just in case
