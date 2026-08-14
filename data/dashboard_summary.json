@@ -1570,7 +1570,7 @@
   "previous": {
     "overall": {
       "outstanding": 137049.66000000003,
-      "arrearsClubs": 1181,
+      "arrearsClubs": 1188,
       "atRisk": 626,
       "noOfficers": 1241,
       "totalClubs": 2755,
@@ -1600,7 +1600,7 @@
       "Zone 4": {
         "stats": {
           "outstanding": 31771.25,
-          "arrearsClubs": 277,
+          "arrearsClubs": 286,
           "atRisk": 151,
           "noOfficers": 292,
           "totalClubs": 643,
@@ -1629,7 +1629,7 @@
         "districts": {
           "3011": {
             "outstanding": 2576.73,
-            "arrearsClubs": 18,
+            "arrearsClubs": 20,
             "atRisk": 13,
             "noOfficers": 37,
             "totalClubs": 70,
@@ -1685,7 +1685,7 @@
           },
           "3040": {
             "outstanding": 1313.67,
-            "arrearsClubs": 13,
+            "arrearsClubs": 14,
             "atRisk": 9,
             "noOfficers": 16,
             "totalClubs": 41,
@@ -1797,7 +1797,7 @@
           },
           "3060": {
             "outstanding": 2104.25,
-            "arrearsClubs": 16,
+            "arrearsClubs": 17,
             "atRisk": 10,
             "noOfficers": 13,
             "totalClubs": 51,
@@ -1825,7 +1825,7 @@
           },
           "3070": {
             "outstanding": 1358.59,
-            "arrearsClubs": 21,
+            "arrearsClubs": 23,
             "atRisk": 7,
             "noOfficers": 27,
             "totalClubs": 34,
@@ -1853,7 +1853,7 @@
           },
           "3080": {
             "outstanding": 5888.83,
-            "arrearsClubs": 37,
+            "arrearsClubs": 38,
             "atRisk": 30,
             "noOfficers": 19,
             "totalClubs": 82,
@@ -1909,7 +1909,7 @@
           },
           "3141": {
             "outstanding": 8091.3,
-            "arrearsClubs": 43,
+            "arrearsClubs": 44,
             "atRisk": 23,
             "noOfficers": 59,
             "totalClubs": 124,
@@ -1937,7 +1937,7 @@
           },
           "3142": {
             "outstanding": 2473.83,
-            "arrearsClubs": 25,
+            "arrearsClubs": 26,
             "atRisk": 12,
             "noOfficers": 23,
             "totalClubs": 57,
@@ -1968,7 +1968,7 @@
       "Zone 5": {
         "stats": {
           "outstanding": 54787.45999999999,
-          "arrearsClubs": 397,
+          "arrearsClubs": 396,
           "atRisk": 194,
           "noOfficers": 393,
           "totalClubs": 900,
@@ -1997,7 +1997,7 @@
         "districts": {
           "2981": {
             "outstanding": 1415.33,
-            "arrearsClubs": 46,
+            "arrearsClubs": 47,
             "atRisk": 3,
             "noOfficers": 52,
             "totalClubs": 65,
@@ -2025,7 +2025,7 @@
           },
           "2982": {
             "outstanding": 2281.82,
-            "arrearsClubs": 25,
+            "arrearsClubs": 26,
             "atRisk": 14,
             "noOfficers": 20,
             "totalClubs": 47,
@@ -2081,7 +2081,7 @@
           },
           "3203": {
             "outstanding": 2785.21,
-            "arrearsClubs": 21,
+            "arrearsClubs": 22,
             "atRisk": 16,
             "noOfficers": 29,
             "totalClubs": 71,
@@ -2193,7 +2193,7 @@
           },
           "3211": {
             "outstanding": 1795.84,
-            "arrearsClubs": 18,
+            "arrearsClubs": 23,
             "atRisk": 13,
             "noOfficers": 11,
             "totalClubs": 33,
@@ -2249,7 +2249,7 @@
           },
           "3220": {
             "outstanding": 2285.14,
-            "arrearsClubs": 12,
+            "arrearsClubs": 0,
             "atRisk": 7,
             "noOfficers": 15,
             "totalClubs": 95,
@@ -2305,7 +2305,7 @@
           },
           "3233": {
             "outstanding": 21078.12,
-            "arrearsClubs": 25,
+            "arrearsClubs": 27,
             "atRisk": 18,
             "noOfficers": 28,
             "totalClubs": 70,
@@ -2333,7 +2333,7 @@
           },
           "3234": {
             "outstanding": 1402.45,
-            "arrearsClubs": 14,
+            "arrearsClubs": 15,
             "atRisk": 11,
             "noOfficers": 16,
             "totalClubs": 74,
@@ -2364,7 +2364,7 @@
       "Zone 6": {
         "stats": {
           "outstanding": 24384.52,
-          "arrearsClubs": 220,
+          "arrearsClubs": 202,
           "atRisk": 131,
           "noOfficers": 239,
           "totalClubs": 557,
@@ -2393,7 +2393,7 @@
         "districts": {
           "3030": {
             "outstanding": 4724.27,
-            "arrearsClubs": 43,
+            "arrearsClubs": 44,
             "atRisk": 24,
             "noOfficers": 41,
             "totalClubs": 83,
@@ -2449,7 +2449,7 @@
           },
           "3110": {
             "outstanding": 1473.96,
-            "arrearsClubs": 16,
+            "arrearsClubs": 17,
             "atRisk": 10,
             "noOfficers": 15,
             "totalClubs": 22,
@@ -2505,7 +2505,7 @@
           },
           "3240": {
             "outstanding": 1966.35,
-            "arrearsClubs": 19,
+            "arrearsClubs": 20,
             "atRisk": 15,
             "noOfficers": 21,
             "totalClubs": 56,
@@ -2533,7 +2533,7 @@
           },
           "3250": {
             "outstanding": 2497.61,
-            "arrearsClubs": 18,
+            "arrearsClubs": 25,
             "atRisk": 14,
             "noOfficers": 14,
             "totalClubs": 40,
@@ -2589,7 +2589,7 @@
           },
           "3262": {
             "outstanding": 4088.75,
-            "arrearsClubs": 52,
+            "arrearsClubs": 54,
             "atRisk": 21,
             "noOfficers": 51,
             "totalClubs": 73,
@@ -2617,7 +2617,7 @@
           },
           "3292": {
             "outstanding": 4161.2,
-            "arrearsClubs": 30,
+            "arrearsClubs": 0,
             "atRisk": 27,
             "noOfficers": 52,
             "totalClubs": 189,
@@ -2648,7 +2648,7 @@
       "Zone 7": {
         "stats": {
           "outstanding": 26106.43,
-          "arrearsClubs": 287,
+          "arrearsClubs": 304,
           "atRisk": 150,
           "noOfficers": 317,
           "totalClubs": 655,
@@ -2677,7 +2677,7 @@
         "districts": {
           "3020": {
             "outstanding": 2687.99,
-            "arrearsClubs": 24,
+            "arrearsClubs": 25,
             "atRisk": 16,
             "noOfficers": 26,
             "totalClubs": 44,
@@ -2705,7 +2705,7 @@
           },
           "3131": {
             "outstanding": 4614.92,
-            "arrearsClubs": 32,
+            "arrearsClubs": 34,
             "atRisk": 27,
             "noOfficers": 46,
             "totalClubs": 100,
@@ -2817,7 +2817,7 @@
           },
           "3170": {
             "outstanding": 3662.58,
-            "arrearsClubs": 53,
+            "arrearsClubs": 58,
             "atRisk": 22,
             "noOfficers": 65,
             "totalClubs": 108,
@@ -2845,7 +2845,7 @@
           },
           "3181": {
             "outstanding": 3084.53,
-            "arrearsClubs": 31,
+            "arrearsClubs": 35,
             "atRisk": 15,
             "noOfficers": 27,
             "totalClubs": 57,
@@ -2873,7 +2873,7 @@
           },
           "3182": {
             "outstanding": 1791.25,
-            "arrearsClubs": 38,
+            "arrearsClubs": 39,
             "atRisk": 6,
             "noOfficers": 43,
             "totalClubs": 54,
@@ -2901,7 +2901,7 @@
           },
           "3191": {
             "outstanding": 2589.86,
-            "arrearsClubs": 23,
+            "arrearsClubs": 26,
             "atRisk": 17,
             "noOfficers": 22,
             "totalClubs": 83,
@@ -2929,7 +2929,7 @@
           },
           "3192": {
             "outstanding": 4300.16,
-            "arrearsClubs": 32,
+            "arrearsClubs": 33,
             "atRisk": 26,
             "noOfficers": 30,
             "totalClubs": 86,
@@ -2959,5 +2959,5 @@
       }
     }
   },
-  "lastUpdated": "2026-08-13T19:16:41.690Z"
+  "lastUpdated": "2026-08-14T02:09:54.774Z"
 }

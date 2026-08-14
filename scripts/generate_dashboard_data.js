@@ -112,6 +112,8 @@ zoneSheet.forEach(row => {
     if (!zone.toLowerCase().startsWith('zone')) zone = `Zone ${zone}`;
     districtToZone[dist] = zone;
     
+    if (zone.toLowerCase().includes('8') || zone.toLowerCase().includes('oceania')) return;
+    
     if (!summary.zones[zone]) {
         summary.zones[zone] = {
             stats: createEmptyStats(),
@@ -181,6 +183,30 @@ try {
     console.error('Could not load 1july.csv', e);
 }
 
+const prevArrearsData = {};
+try {
+    const wbArrears = xlsx.readFile('basedata/Rotaract clubs in arrears - 9July2026.xlsx');
+    const arrSheet = xlsx.utils.sheet_to_json(wbArrears.Sheets['Clubs']);
+    arrSheet.forEach(row => {
+        const dist = (row['District'] || '').toString().trim();
+        if (dist) prevArrearsData[dist] = (prevArrearsData[dist] || 0) + 1;
+    });
+} catch (e) {
+    console.error('Could not load Rotaract clubs in arrears - 9July2026.xlsx', e);
+}
+
+const prevOfficersData = {};
+try {
+    const wbOfficers = xlsx.readFile('basedata/Current_Officer_Not_Reported - 9July2026.xlsx');
+    const offSheet = xlsx.utils.sheet_to_json(wbOfficers.Sheets['Rotaract club without Officer']);
+    offSheet.forEach(row => {
+        const dist = (row['District'] || '').toString().trim();
+        if (dist) prevOfficersData[dist] = (prevOfficersData[dist] || 0) + 1;
+    });
+} catch (e) {
+    console.error('Could not load Current_Officer_Not_Reported - 9July2026.xlsx', e);
+}
+
 prevZoneSheet.forEach(row => {
     const dist = (row['RI District'] || '').toString().trim();
     if (!dist || dist === 'Grand Total') return;
@@ -188,6 +214,8 @@ prevZoneSheet.forEach(row => {
     // Force the use of the CURRENT zone mapping (so historical data is attributed to the new merged zones)
     let zone = (districtToZone[dist] || row['RI Zone'] || 'Unknown').toString().trim();
     if (!zone.toLowerCase().startsWith('zone')) zone = `Zone ${zone}`;
+    
+    if (zone.toLowerCase().includes('8') || zone.toLowerCase().includes('oceania')) return;
     
     if (!prevSummary.zones[zone]) {
         prevSummary.zones[zone] = {
@@ -201,9 +229,9 @@ prevZoneSheet.forEach(row => {
     }
     
     const outstanding = parseCurrency(row['TotalUSD']);
-    const arrearsClubs = parseInt(row['TotalClubsArrears']) || 0;
+    let arrearsClubs = prevArrearsData[dist] || 0;
     const atRisk = parseInt(row['75PlusClubs']) || 0;
-    const noOfficers = parseInt(row['No Officer Total']) || 0;
+    let noOfficers = prevOfficersData[dist] || 0;
     // We only care about deltas for the main metrics, not necessarily Rotary ones for now, but we'll add them if they exist
     let totalClubs = parseInt(row['Total Clubs']) || 0;
     let totalMembers = 0;
@@ -235,7 +263,7 @@ arrearsSheet = arrearsSheet.reduce((acc, row) => {
     if (!row['District']) return acc;
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
     const zone = districtToZone[dist] || 'Unknown';
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return acc;
     
     row['RI Zone'] = zone;
     row['District'] = dist;
@@ -247,7 +275,7 @@ noOfficersSheet = noOfficersSheet.reduce((acc, row) => {
     if (!row['District']) return acc;
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
     const zone = districtToZone[dist] || 'Unknown';
-    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8'].includes(zone)) return acc;
+    if (!['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(zone)) return acc;
     
     row['RI Zone'] = zone;
     row['District'] = dist;
