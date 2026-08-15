@@ -39,12 +39,25 @@ export const metadata = {
   },
 };
 
+import Script from 'next/script';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-M9RZK0CBT5" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-M9RZK0CBT5');
+          `}
+        </Script>
       </head>
       <body>
         <div className="app-container">
