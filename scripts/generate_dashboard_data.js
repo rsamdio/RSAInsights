@@ -30,7 +30,16 @@ let newClubsSheet = readSheetAsJson(currWb, 'NewClubs', { defval: "", raw: false
 let districtOfficersSheet = readSheetAsJson(currWb, 'District Officers_Simplified');
 let rotaractByCountrySheet = readSheetAsJson(currWb, 'Rotaract by Country');
 let rotaractByDistrictSheet = readSheetAsJson(currWb, 'Rotaract by District');
-let rotaractByZoneSheet = readSheetAsJson(currWb, 'Rotaract by Zone');
+let rotaractByZoneSheetRaw = {};
+rotaractByDistrictSheet.forEach(row => {
+    const zone = (row['Zone'] || 'Unknown').toString().trim();
+    if (!rotaractByZoneSheetRaw[zone]) {
+        rotaractByZoneSheetRaw[zone] = { 'Zone': zone, 'Total Active Rotaract Clubs': 0, 'Total Reported Members': 0 };
+    }
+    rotaractByZoneSheetRaw[zone]['Total Active Rotaract Clubs'] += (parseInt(row['Total Active Rotaract Clubs']) || 0);
+    rotaractByZoneSheetRaw[zone]['Total Reported Members'] += (parseInt(row['Total Reported Members']) || 0);
+});
+let rotaractByZoneSheet = Object.values(rotaractByZoneSheetRaw);
 let prevZoneSheet = [];
 if (prevMasterFile && fs.existsSync(prevMasterFile)) {
     console.log(`Processing Previous Data: ${prevMasterFile}`);
@@ -569,7 +578,7 @@ fs.writeFileSync('data/district_officers.json', JSON.stringify(districtOfficersS
 
 let totalWorldwideClubs = 0;
 let totalWorldwideMembers = 0;
-rotaractByCountrySheet.forEach(row => {
+rotaractByDistrictSheet.forEach(row => {
     totalWorldwideClubs += (parseInt(row['Total Active Rotaract Clubs']) || 0);
     totalWorldwideMembers += (parseInt(row['Total Reported Members']) || 0);
 });
@@ -581,9 +590,18 @@ if (prevMasterFile && fs.existsSync(prevMasterFile)) {
     const prevWb = xlsx.readFile(prevMasterFile);
     let prevRotaractByCountrySheet = readSheetAsJson(prevWb, 'Rotaract by Country');
     let prevRotaractByDistrictSheet = readSheetAsJson(prevWb, 'Rotaract by District');
-    let prevRotaractByZoneSheet = readSheetAsJson(prevWb, 'Rotaract by Zone');
+    let prevRotaractByZoneSheetRaw = {};
+    prevRotaractByDistrictSheet.forEach(row => {
+        const zone = (row['Zone'] || 'Unknown').toString().trim();
+        if (!prevRotaractByZoneSheetRaw[zone]) {
+            prevRotaractByZoneSheetRaw[zone] = { 'Zone': zone, 'Total Active Rotaract Clubs': 0, 'Total Reported Members': 0 };
+        }
+        prevRotaractByZoneSheetRaw[zone]['Total Active Rotaract Clubs'] += (parseInt(row['Total Active Rotaract Clubs']) || 0);
+        prevRotaractByZoneSheetRaw[zone]['Total Reported Members'] += (parseInt(row['Total Reported Members']) || 0);
+    });
+    let prevRotaractByZoneSheet = Object.values(prevRotaractByZoneSheetRaw);
     
-    prevRotaractByCountrySheet.forEach(row => {
+    prevRotaractByDistrictSheet.forEach(row => {
         prevTotalWorldwideClubs += (parseInt(row['Total Active Rotaract Clubs']) || 0);
         prevTotalWorldwideMembers += (parseInt(row['Total Reported Members']) || 0);
     });
