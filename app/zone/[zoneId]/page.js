@@ -376,59 +376,13 @@ export default async function ZonePage({ params, searchParams }) {
             <section style={{ marginBottom: '40px' }}>
                 <div className="card">
                     <GlobalTables 
-                        zoneTableData={filteredZoneTableData.map(z => ({
-                            'RI Zone': z['RI Zone'],
-                            'RI District': z['RI District'],
-                            'Total Clubs': z['Total Clubs'],
-                            'TotalUSD': z['TotalUSD'],
-                            'TotalClubsArrears': z['TotalClubsArrears'],
-                            'No Officer Total': z['No Officer Total'],
-                            'Total Contributions USD': z['Total Contributions USD'] || 0
-                        }))} 
-                        arrearsData={filteredArrearsData.map(a => ({
-                            'RI Zone': a['RI Zone'],
-                            District: a.District,
-                            'Club Name': a['Club Name'],
-                            'Club Base': a['Club Base'],
-                            ' USD Outstanding ': a[' USD Outstanding ']
-                        }))} 
-                        officersData={filteredOfficersData.map(o => ({
-                            'RI Zone': o['RI Zone'],
-                            District: o.District,
-                            'Rotaract Club Name': o['Rotaract Club Name'],
-                            'Club Base': o['Club Base']
-                        }))} 
-                        rotaryData={filteredRotaryData.map(r => ({
-                            'RI Zone': r['RI Zone'],
-                            District: r.District,
-                            'Club Name': r['Club Name'],
-                            'Current Member Count': r['Current Member Count']
-                        }))}
-                        newClubsData={filteredNewClubsData.map(n => ({
-                            'RI Zone': n['RI Zone'],
-                            District: n.District,
-                            'Club Name': n['Club Name'],
-                            'Club Charter Date': n['Club Charter Date'],
-                            'Member Count': n['Member Count'],
-                            'Club Subtype': n['Club Subtype']
-                        }))}
-                        trfData={filteredTrfData.map(t => ({
-                            'RI Zone': t['RI Zone'],
-                            District: t.District,
-                            'Club Name': t['Club Name'],
-                            'Annual Fund Contribution USD': t['Annual Fund Contribution USD'],
-                            'PolioPlus Fund Contribution USD': t['PolioPlus Fund Contribution USD'],
-                            'Other Funds Contribution USD': t['Other Funds Contribution USD'],
-                            'Total Contributions USD': t['Total Contributions USD']
-                        }))}
-                        allClubsData={filteredAllClubsData.map(c => ({
-                            Zone: c.Zone,
-                            District: c.District,
-                            'Club ID': c['Club ID'],
-                            'Club Name': c['Club Name'],
-                            'Rotaract Club Base': c['Rotaract Club Base'],
-                            'Total Reported Members': c['Total Reported Members']
-                        }))}
+                        zoneTableData={filteredZoneTableData} 
+                        arrearsData={filteredArrearsData} 
+                        officersData={filteredOfficersData} 
+                        rotaryData={filteredRotaryData}
+                        newClubsData={filteredNewClubsData}
+                        trfData={filteredTrfData}
+                        allClubsData={filteredAllClubsData}
                     />
                 </div>
             </section>

@@ -1,6 +1,7 @@
 'use client';
 import Tabs from '@/components/ui/Tabs';
 import DataTable from './DataTable';
+import Link from 'next/link';
 
 export default function GlobalTables({ zoneTableData, arrearsData, officersData, rotaryData, newClubsData, trfData, allClubsData }) {
     const districtCols = [
@@ -53,22 +54,82 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     const arrearsCols = [
         { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
         { header: 'District', accessorKey: 'District' },
-        { header: 'Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
-        { header: 'Base Type', id: 'Club_Base', accessorKey: 'Club Base' },
+        { 
+            header: 'Club Name', 
+            id: 'Club_Name', 
+            accessorKey: 'Club Name',
+            cell: info => {
+                const clubId = info.row.original['NF Cust Number'] || info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                        {info.getValue()}
+                    </Link>
+                ) : info.getValue();
+            }
+        },
+        { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
         { 
             header: 'Outstanding USD', 
             id: 'USD_Outstanding',
             accessorKey: ' USD Outstanding ',
             accessorFn: row => Number(row[' USD Outstanding '] || 0),
             cell: info => `$${info.getValue().toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}` 
+        },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const clubId = info.row.original['NF Cust Number'] || info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        View Report →
+                    </Link>
+                ) : null;
+            }
         }
     ];
 
     const officersCols = [
         { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
         { header: 'District', accessorKey: 'District' },
-        { header: 'Club Name', id: 'Rotaract_Club_Name', accessorKey: 'Rotaract Club Name' },
-        { header: 'Base Type', id: 'Club_Base', accessorKey: 'Club Base' }
+        { 
+            header: 'Club Name', 
+            id: 'Rotaract_Club_Name', 
+            accessorKey: 'Rotaract Club Name',
+            cell: info => {
+                const clubId = info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                        {info.getValue()}
+                    </Link>
+                ) : info.getValue();
+            }
+        },
+        { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const clubId = info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        View Report →
+                    </Link>
+                ) : null;
+            }
+        }
     ];
 
     const rotaryCols = [
@@ -81,16 +142,61 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     const newClubsCols = [
         { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
         { header: 'District', accessorKey: 'District' },
-        { header: 'Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
+        { 
+            header: 'Club Name', 
+            id: 'Club_Name', 
+            accessorKey: 'Club Name',
+            cell: info => {
+                const clubId = info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                        {info.getValue()}
+                    </Link>
+                ) : info.getValue();
+            }
+        },
         { header: 'Charter Date', id: 'Club_Charter_Date', accessorKey: 'Club Charter Date' },
         { header: 'Members', id: 'Member_Count', accessorKey: 'Member Count' },
-        { header: 'Base Type', id: 'Club_Subtype', accessorKey: 'Club Subtype' }
+        { header: 'Club Base', id: 'Club_Subtype', accessorKey: 'Club Subtype' },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const clubId = info.row.original['Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        View Report →
+                    </Link>
+                ) : null;
+            }
+        }
     ];
 
     const trfCols = [
         { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
         { header: 'District', accessorKey: 'District' },
-        { header: 'Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
+        { 
+            header: 'Club Name', 
+            id: 'Club_Name', 
+            accessorKey: 'Club Name',
+            cell: info => {
+                const clubId = info.row.original['Club No.'] || info.row.original['Club No'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                        {info.getValue()}
+                    </Link>
+                ) : info.getValue();
+            }
+        },
         { 
             header: 'Annual Fund', 
             id: 'Annual_Fund_Contribution_USD',
@@ -118,6 +224,21 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             accessorKey: 'Total Contributions USD',
             accessorFn: row => Number(row['Total Contributions USD'] || 0),
             cell: info => `$${info.getValue().toLocaleString()}` 
+        },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const clubId = info.row.original['Club No.'] || info.row.original['Club No'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        View Report →
+                    </Link>
+                ) : null;
+            }
         }
     ];
 
@@ -125,9 +246,39 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         { header: 'Zone', accessorKey: 'Zone' },
         { header: 'District', accessorKey: 'District' },
         { header: 'Club ID', id: 'Club_ID', accessorKey: 'Club ID' },
-        { header: 'Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
-        { header: 'Base Type', id: 'Rotaract_Club_Base', accessorKey: 'Rotaract Club Base' },
-        { header: 'Members', id: 'Total_Reported_Members', accessorKey: 'Total Reported Members' }
+        { 
+            header: 'Club Name', 
+            id: 'Club_Name', 
+            accessorKey: 'Club Name',
+            cell: info => {
+                const clubId = info.row.original['Club ID'] || info.row.original['Rotaract Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                        {info.getValue()}
+                    </Link>
+                ) : info.getValue();
+            }
+        },
+        { header: 'Club Base', id: 'Rotaract_Club_Base', accessorKey: 'Rotaract Club Base' },
+        { header: 'Members', id: 'Total_Reported_Members', accessorKey: 'Total Reported Members' },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const clubId = info.row.original['Club ID'] || info.row.original['Rotaract Club ID'];
+                return clubId ? (
+                    <Link 
+                        href={`/club/${clubId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        View Report →
+                    </Link>
+                ) : null;
+            }
+        }
     ];
 
     const tabsData = [

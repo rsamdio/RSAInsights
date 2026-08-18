@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function DistrictTable({ districtClubs }) {
     const columns = [
         { header: 'Club Name', accessorKey: 'name' },
-        { header: 'Base Type', accessorKey: 'base' },
+        { header: 'Club Base', accessorKey: 'base' },
         { 
             header: 'Outstanding USD', 
             id: 'outstanding',

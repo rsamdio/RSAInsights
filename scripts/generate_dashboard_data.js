@@ -355,58 +355,27 @@ noOfficersSheet = noOfficersSheet.reduce((acc, row) => {
     return acc;
 }, []);
 
-// Clean up all clubs sheet, strictly mapping only master districts
-allClubsSheet = allClubsSheet.reduce((acc, row) => {
-    const clubId = (row['Rotaract Club ID'] || '').toString().trim();
-    if (!clubId) return acc; // Skip empty rows
-
-    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    const zone = districtToZone[dist];
-    if (!zone) return acc;
-
-    row['RI Zone'] = zone;
-    row['Zone'] = zone; // Overwrite just in case
-    row['District'] = dist;
-    
-    // Map to clean frontend keys
-    row['Club ID'] = clubId;
-    row['Club Name'] = row['Rotaract Club Name'] || 'Unknown Club';
-    
-    acc.push(row);
-    return acc;
-}, []);
-
-// Map Club IDs to Names for TRF
-const clubIdToName = {};
-allClubsSheet.forEach(row => {
-    clubIdToName[row['Club ID']] = row['Club Name'];
-});
-
-// Clean up TRF sheet
+// Clean up TRF sheet first so we can use it to enrich all clubs
 trfSheet = trfSheet.reduce((acc, row) => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
     const zone = districtToZone[dist] || 'Unknown';
+    if (!districtToZone[dist]) return acc;
     
     row['RI Zone'] = zone;
     row['District'] = dist;
 
-    // Use proper name from all clubs sheet if available
     const clubId = (row['Club No'] || row['Club No.'] || '').toString().trim();
     row['Club No.'] = clubId;
-    if (clubIdToName[clubId]) {
-        row['Club Name'] = clubIdToName[clubId];
-    } else {
-        row['Club Name'] = row['Name'] || 'Unknown Club';
-    }
+    row['Club Name'] = row['Name'] || 'Unknown Club';
     
-    // Map messy headers to clean UI keys
     const totalCont = parseCurrency(row['-- Total --'] || row['Total Contributions USD']);
     row['Total Contributions USD'] = totalCont;
     row['Annual Fund Contribution USD'] = parseCurrency(row['Annual Fund\nYTD']);
     row['PolioPlus Fund Contribution USD'] = parseCurrency(row['PolioPlus Fund\nYTD']);
     row['Other Funds Contribution USD'] = parseCurrency(row['Other Funds\nYTD']);
+    row['Endowment Fund Contribution USD'] = parseCurrency(row['Endowment Fund\nYTD']);
+    row['AF Per Capita'] = parseCurrency(row['AF Per Capita']);
     
-    // Only include rows that have actual TRF contribution data > 0
     if (totalCont > 0) {
         acc.push(row);
     }
@@ -414,11 +383,150 @@ trfSheet = trfSheet.reduce((acc, row) => {
 }, []);
 
 // Clean up New Clubs sheet
+function formatCharterDate(rawDate) {
+    if (!rawDate) return null;
+    if (typeof rawDate === 'number') {
+        const d = new Date((rawDate - 25569) * 86400 * 1000);
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+    return rawDate.toString();
+}
+
 newClubsSheet = newClubsSheet.filter(row => row['DISTRICT'] || row['District']).map(row => {
     const dist = (row['DISTRICT'] || row['District'] || '').toString().replace(/\.0$/, '');
     row['RI Zone'] = districtToZone[dist] || 'Unknown';
     row['District'] = dist;
+    row['Club ID'] = (row['Club ID'] || '').toString().trim();
+    row['Club Charter Date'] = formatCharterDate(row['Club Charter Date']);
     return row;
+});
+
+// Build lookup maps for enriching all clubs
+const arrearsMap = new Map();
+arrearsSheet.forEach(c => {
+    const id = String(c['NF Cust Number'] || '').trim();
+    if (!id) return;
+    const outstanding = parseCurrency(c[' USD Outstanding ']);
+    arrearsMap.set(id, {
+        isArrears: true,
+        outstanding: outstanding,
+        isAtRisk: outstanding >= 75
+    });
+});
+
+const officersMap = new Map();
+noOfficersSheet.forEach(c => {
+    const id = String(c['Club ID'] || '').trim();
+    if (!id) return;
+    officersMap.set(id, {
+        isNoOfficers: true,
+        role: c['Rotaract Role'] || c['Rotaract Role Name'] || 'Rotaract President',
+        lastReported: c['Last Reported'] || 'N/A',
+        myRotaryAccount: c['Online Account With My Rotary'] || c['Online Account with My Rotary'] || 'N'
+    });
+});
+
+const trfMap = new Map();
+trfSheet.forEach(c => {
+    const id = String(c['Club No.'] || c['Club No'] || '').trim();
+    if (!id) return;
+    trfMap.set(id, {
+        total: c['Total Contributions USD'] || 0,
+        annual: c['Annual Fund Contribution USD'] || 0,
+        polio: c['PolioPlus Fund Contribution USD'] || 0,
+        other: c['Other Funds Contribution USD'] || 0,
+        endowment: c['Endowment Fund Contribution USD'] || 0,
+        perCapita: c['AF Per Capita'] || 0
+    });
+});
+
+const newClubsMap = new Map();
+newClubsSheet.forEach(c => {
+    const id = String(c['Club ID'] || '').trim();
+    if (!id) return;
+    newClubsMap.set(id, {
+        isNewClub: true,
+        charterDate: c['Club Charter Date'] || null,
+        charterMembers: parseInt(c['Member Count']) || 0
+    });
+});
+
+// Clean up and enrich all clubs sheet, strictly mapping only master districts
+allClubsSheet = allClubsSheet.reduce((acc, row) => {
+    const clubId = (row['Rotaract Club ID'] || row['Club ID'] || '').toString().trim();
+    if (!clubId) return acc; // Skip empty rows
+
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    const zone = districtToZone[dist];
+    if (!zone) return acc;
+
+    const arrInfo = arrearsMap.get(clubId) || { isArrears: false, outstanding: 0, isAtRisk: false };
+    const offInfo = officersMap.get(clubId) || { isNoOfficers: false, role: 'N/A', lastReported: row['President / Advisor Term Reported'] || 'N/A', myRotaryAccount: 'N/A' };
+    const trfInfo = trfMap.get(clubId) || { total: 0, annual: 0, polio: 0, other: 0, endowment: 0, perCapita: 0 };
+    const newClubInfo = newClubsMap.get(clubId) || { isNewClub: false, charterDate: null, charterMembers: 0 };
+
+    const members = parseInt(row['Total Reported Members']) || 0;
+    const baseType = (row['Rotaract Club Base'] || 'Unknown').toString().trim();
+    const name = row['Rotaract Club Name'] || row['Club Name'] || 'Unknown Club';
+    const status = row['Rotaract Club Status'] || 'Active';
+    const country = row['Country/Geographic Area'] || 'Unknown';
+    const sponsorClubs = row['Sponsor Clubs'] || 'None Reported';
+    const termReported = (row['President /Advisor Term Reported'] || row['President / Advisor Term Reported'] || row['Last Reported'] || 'N/A').toString().trim();
+
+    const enrichedClub = {
+        'Club ID': clubId,
+        'Club Name': name,
+        'Rotaract Club Name': name,
+        'Rotaract Club ID': clubId,
+        'Rotaract Club Status': status,
+        'Rotaract Club Base': baseType,
+        'Country/Geographic Area': country,
+        'Sponsor Clubs': sponsorClubs,
+        'President / Advisor Term Reported': termReported,
+        'District': dist,
+        'Zone': zone,
+        'RI Zone': zone,
+        'Total Reported Members': members,
+        
+        // Compliance
+        'Arrears': arrInfo.isArrears ? 'Yes' : 'No',
+        'Officers': offInfo.isNoOfficers ? 'No' : 'Yes',
+        'isArrears': arrInfo.isArrears,
+        'outstanding': arrInfo.outstanding,
+        'isAtRisk': arrInfo.isAtRisk,
+        'isNoOfficers': offInfo.isNoOfficers,
+        'officerRole': offInfo.role,
+        'officerLastReported': offInfo.lastReported,
+        'myRotaryAccount': offInfo.myRotaryAccount,
+        
+        // TRF Details
+        'trfTotal': trfInfo.total,
+        'trfAnnual': trfInfo.annual,
+        'trfPolio': trfInfo.polio,
+        'trfOther': trfInfo.other,
+        'trfEndowment': trfInfo.endowment,
+        'afPerCapita': trfInfo.perCapita,
+        
+        // New Club Details
+        'isNewClub': newClubInfo.isNewClub,
+        'charterDate': newClubInfo.charterDate,
+        'charterMembers': newClubInfo.charterMembers
+    };
+
+    acc.push(enrichedClub);
+    return acc;
+}, []);
+
+// Update TRF club names from allClubsSheet
+const clubIdToName = {};
+allClubsSheet.forEach(row => {
+    clubIdToName[row['Club ID']] = row['Club Name'];
+});
+trfSheet.forEach(row => {
+    const clubId = row['Club No.'];
+    if (clubIdToName[clubId]) {
+        row['Club Name'] = clubIdToName[clubId];
+    }
 });
 
 // Clean up District Officers sheet
