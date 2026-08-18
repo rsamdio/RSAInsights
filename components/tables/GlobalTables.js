@@ -26,7 +26,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             accessorFn: row => String(row['RI Zone'] || '') 
         },
         { 
-            header: 'Total Clubs', 
+            header: 'Clubs', 
             id: 'Total_Clubs',
             accessorKey: 'Total Clubs',
             accessorFn: row => Number(row['Total Clubs'] || 0) 
@@ -39,7 +39,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
-            header: 'Avg. Membership', 
+            header: 'Avg. Members/Club', 
             id: 'Avg_Membership',
             accessorKey: 'Avg Membership',
             accessorFn: row => {

@@ -215,6 +215,72 @@ body {
     color: var(--primary);
 }
 
+/* Worldwide Banner Card */
+.worldwide-banner {
+    background: linear-gradient(135deg, #0f4c81 0%, #08294a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(15, 76, 129, 0.15);
+}
+
+.worldwide-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 76, 129, 0.25);
+}
+
+.worldwide-banner-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.worldwide-banner-title {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.3;
+}
+
+.worldwide-banner-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+}
+
+.worldwide-banner-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    padding: 10px 22px;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.worldwide-banner-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(3px);
+}
+
 @media (max-width: 768px) {
     .app-container {
         padding: 10px 15px;
@@ -247,6 +313,21 @@ body {
         flex-wrap: wrap;
         gap: 10px;
         font-size: 13px;
+    }
+
+    .worldwide-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+    }
+    .worldwide-banner-title {
+        font-size: 19px;
+    }
+    .worldwide-banner-btn {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
     }
 }
 

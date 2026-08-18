@@ -345,12 +345,20 @@ export default async function GlobalDashboard({ searchParams }) {
 
             <section style={{ marginBottom: '40px' }}>
                 <Link href="/worldwide" style={{ textDecoration: 'none' }}>
-                    <div className="card" style={{ padding: '20px', background: 'linear-gradient(135deg, var(--primary), #0a3a7a)', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>
-                            <h2 style={{ margin: '0 0 5px 0', fontSize: '24px', color: 'white' }}>🌍 Rotaract Worldwide Statistics</h2>
-                            <p style={{ margin: 0, opacity: 0.9 }}>View the Worldwide Rotaract Leaderboards and Statistics.</p>
+                    <div className="worldwide-banner">
+                        <div className="worldwide-banner-content">
+                            <h2 className="worldwide-banner-title">
+                                <span>🌍</span>
+                                <span>Rotaract Worldwide Statistics</span>
+                            </h2>
+                            <p className="worldwide-banner-subtitle">
+                                View the Worldwide Rotaract Leaderboards, global district standings, and historical growth statistics.
+                            </p>
                         </div>
-                        <div style={{ fontSize: '20px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Explore Statistics →</div>
+                        <div className="worldwide-banner-btn">
+                            <span>Explore</span>
+                            <span style={{ fontSize: '18px', lineHeight: 1 }}>→</span>
+                        </div>
                     </div>
                 </Link>
             </section>
