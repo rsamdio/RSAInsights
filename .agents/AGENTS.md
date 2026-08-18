@@ -1,18 +1,52 @@
 # Project Context: Rotaract South Asia Analytics Dashboard
 
-## Tech Stack Rules
-- **Frontend Stack:** HTML, Vanilla Javascript, and Vanilla CSS. No modern component frameworks (e.g., React, Vue, Svelte) unless explicitly migrating.
-- **Charts:** Chart.js for all visualizations. Prioritize Doughnut and Bar charts based on categorical data sizes. Keep tooltips and legends enabled.
-- **Data Tables:** Grid.js. Ensure `white-space: normal` is applied to `.gridjs-th` so column headers do not truncate.
-- **UI Libraries:** TomSelect for multi-select dropdowns.
+## Tech Stack & Architecture
+- **Framework:** Next.js (App Router) with React 19 server-side and client-side components.
+- **Charts:** Chart.js and `react-chartjs-2` for rich visual analytics. Doughnut and Bar charts for categorical breakdowns; Line/Bar charts for top-chart leaderboards.
+- **Data Tables:** TanStack Table (`@tanstack/react-table`) with client-side sorting, pagination, and multi-field search.
+- **Styling:** Modern Vanilla CSS (`app/globals.css`) with CSS custom properties, glassmorphism, responsive grid layouts, and mobile-first media queries.
+- **Analytics:** Google Analytics (`gtag.js` ID: `G-M9RZK0CBT5`) configured in `app/layout.js`.
 
-## Design Aesthetics
-- **Colors:** Maintain a vibrant, professional BI dashboard color palette. Primary chart colors: Blue (`#1a73e8`), Green (`#1e8e3e`), Red (`#d93025`). When a chart segment is unselected during cross-filtering, aggressively dim the unselected segments (e.g., 0.1 opacity) so the selected segment visually pops.
-- **Layout:** Mobile-first layout using CSS Grid (`.charts-grid`, `.metrics-grid`). Desktop layouts typically have 2 or 3 columns, which strictly collapse to a 1-column `1fr` stack on mobile devices. Always test `@media (max-width: 768px)` rules by placing them at the absolute bottom of `styles.css`.
+---
 
-## Data Pipeline Rules
-- The dashboard is statically generated. The underlying Javascript engine (`app.js`) fetches pre-aggregated JSON payloads (`dashboard_summary.json`, `unified_issues.json`, etc.).
-- When adding new metrics or drill-down capabilities, update `scripts/generate_dashboard_data.js` first to extract the data from the raw Excel sheets, map it appropriately, and export it into a unified JSON file.
-- The Javascript engine (`app.js`) must apply strict type checking (`Number()`, `String()`) to incoming raw data mapped to tables to prevent Grid.js internal sorting from crashing with `TypeError: Cannot read properties of undefined (reading 'length')`.
-- **Strict Whitelisting (Data Purity):** When parsing Excel files, strictly enforce positive inclusion for South Asia (only allow `['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7']`). Never use negative exclusion (e.g. dropping Oceania/Zone 8) to ensure immunity against unmapped extraneous data.
-- **Raw Data Prioritization:** Do not rely on historical summary sheets (e.g. `Zone45678.xlsx`) for critical metrics like arrears, outstanding dues, and missing officers, as they are notoriously flawed. The script natively parses raw club-level lists (`Rotaract clubs in arrears` and `Current_Officer_Not_Reported`) directly and overrides the noisy baseline data to guarantee mathematically pure comparisons.
+## Route Structure
+- `/` – Executive Dashboard (Multi-select zone/district filters, KPI metrics grid, charts, top leaderboards, worldwide statistics banner, zones directory, and deep data drilldown).
+- `/zone/[zoneId]` – Zone Drilldown (KPI grid, district summary tables, demographic charts, and zone-specific drilldown).
+- `/district/[districtId]` – District Deep Dive (District summary, club leaderboards, clubs with issues, and district drilldown tables).
+- `/club/[clubId]` – Universal Club Report (Covers all 2,820+ clubs across South Asia with 4-card KPI metric grid, Club Information & Sponsorship card, TRF contributions table, and Compliance Action Center).
+- `/worldwide` – Worldwide Rotaract Statistics (Global leaderboards, top districts/zones, and growth statistics).
+- `/api/filters` – Server endpoint providing dynamic filter options.
+
+---
+
+## Data Pipeline & Modeling Rules
+- **Static Generation & Caching:** The data engine (`scripts/generate_dashboard_data.js`) parses raw Excel workbooks (`fulldata/MasterData.xlsx` and `basedata/`) and exports pre-aggregated JSON/CSV payloads into `data/`.
+- **District-First Structural Fidelity:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`). Never hardcode static zone arrays to ensure resilience against future Rotary zone restructuring.
+- **Raw Club-Level Prioritization:** Never rely on flawed historical summary sheets for critical compliance metrics (arrears, dues, missing officers). The pipeline natively aggregates raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) to guarantee data purity.
+- **API Cache Invalidation:** `lib/api.js` tracks file `mtimeMs` to automatically detect and hot-reload updated JSON data files on disk without requiring server restarts.
+- **Strict Type Checking:** Ensure all numeric values (members, amounts, counts) are explicitly cast (`Number()`, `parseInt()`, `parseFloat()`) and string accessors apply fallback handling to prevent sorting crashes.
+
+---
+
+## Terminology & UI Standards
+- **Club Base Types:**
+  - Table column header: `"Club Base"` across all summary and drilldown tables.
+  - Club profile page: `"Rotaract Club Base"` with labels `"🏛️ University Based"` and `"👥 Community Based"`.
+- **District Summary Metrics:**
+  - Column names: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Sponsor"`, `"Outstanding USD"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
+  - `"Avg. Members/Club"` must be formatted to 2 decimal places (e.g. `15.65`, `50.82`).
+- **Sponsorship Terminology:**
+  - Use `"Sponsor Clubs"` (or `"Sponsor Club(s)"`) to accurately reflect Rotaract, Rotary, and joint sponsorships.
+- **Action Links & Navigation:**
+  - Use `"Explore →"` for Zone, District, and Worldwide navigation links.
+  - Use `"View Report →"` for individual club profile links (`/club/[clubId]`).
+- **Compliance Text Standards:**
+  - Good Standing: *"Club officer reporting is up to date and there are zero outstanding dues recorded for this club."*
+  - Missing Officers: *"Current Club officers have not been reported on MyRotary. The Club President, with the help of the District Rotaract Representative (DRR) or the Sponsor Club(s), must update officer details on MyRotary immediately to maintain active communication with RI."*
+
+---
+
+## Design Aesthetics & Mobile Responsiveness
+- **Color Palette:** Professional BI dashboard theme: Primary Blue (`#0f4c81`), Green (`#1e8e3e`), Red (`#d93025`), Warning Amber (`#b06000`).
+- **Mobile First:** Mobile layouts must collapse multi-column grids to a single column (`1fr`) under `@media (max-width: 768px)`.
+- **Glassmorphism & Micro-animations:** Use subtle shadows, rounded borders (`10px`–`12px`), frosted-glass pill buttons (`backdrop-filter: blur(8px)`), and smooth hover interactions.
