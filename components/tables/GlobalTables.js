@@ -9,7 +9,15 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'District', 
             id: 'RI_District', 
             accessorKey: 'RI District',
-            accessorFn: row => String(row['RI District'] || '') 
+            accessorFn: row => String(row['RI District'] || ''),
+            cell: info => (
+                <Link 
+                    href={`/district/${info.getValue()}`}
+                    style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}
+                >
+                    {info.getValue()}
+                </Link>
+            )
         },
         { 
             header: 'Zone', 
@@ -22,6 +30,41 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             id: 'Total_Clubs',
             accessorKey: 'Total Clubs',
             accessorFn: row => Number(row['Total Clubs'] || 0) 
+        },
+        { 
+            header: 'Members', 
+            id: 'Total_Members',
+            accessorKey: 'Total Reported Members',
+            accessorFn: row => Number(row['Total Reported Members'] ?? row['Members'] ?? row.totalMembers ?? 0),
+            cell: info => Number(info.getValue()).toLocaleString()
+        },
+        { 
+            header: 'Avg. Membership', 
+            id: 'Avg_Membership',
+            accessorKey: 'Avg Membership',
+            accessorFn: row => {
+                const clubs = Number(row['Total Clubs'] || 0);
+                const members = Number(row['Total Reported Members'] ?? row['Members'] ?? row.totalMembers ?? 0);
+                if (row['Avg Membership'] !== undefined && row['Avg Membership'] !== null) {
+                    return Number(row['Avg Membership']);
+                }
+                return clubs > 0 ? Number((members / clubs).toFixed(2)) : 0;
+            },
+            cell: info => Number(info.getValue()).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        },
+        { 
+            header: 'Rotary Clubs', 
+            id: 'Total_Rotary_Clubs',
+            accessorKey: 'Total Rotary Clubs',
+            accessorFn: row => Number(row['Total Rotary Clubs'] || 0),
+            cell: info => Number(info.getValue()).toLocaleString()
+        },
+        { 
+            header: 'Rotary w/o Sponsor', 
+            id: 'Rotary_without_Rotaract_Club',
+            accessorKey: 'Rotary without Rotaract Club',
+            accessorFn: row => Number(row['Rotary without Rotaract Club'] || 0),
+            cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
             header: 'Outstanding USD', 
@@ -48,6 +91,21 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             accessorKey: 'Total Contributions USD',
             accessorFn: row => Number(row['Total Contributions USD'] || 0),
             cell: info => `$${info.getValue().toLocaleString()}` 
+        },
+        {
+            header: 'Action',
+            id: 'action',
+            cell: info => {
+                const districtId = info.row.original['RI District'] || info.row.original.District;
+                return districtId ? (
+                    <Link 
+                        href={`/district/${districtId}`}
+                        style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    >
+                        Explore →
+                    </Link>
+                ) : null;
+            }
         }
     ];
 

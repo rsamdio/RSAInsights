@@ -200,6 +200,11 @@ zoneSheet.forEach(row => {
     const totalComm = distInfo.comm;
     const membersUniv = distInfo.membersUniv;
     const membersComm = distInfo.membersComm;
+    const avgMembership = totalClubs > 0 ? Number((totalMembers / totalClubs).toFixed(2)) : 0;
+    
+    row['Total Reported Members'] = totalMembers;
+    row['Members'] = totalMembers;
+    row['Avg Membership'] = avgMembership;
     
     const toAdd = { outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalMembers, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor, arrUniv, arrComm, noOffUniv, noOffComm, trfClubs, trfContributionsUSD, trfAnnualUSD, trfPolioUSD, trfOtherUSD, trfEndowmentUSD, newTotalClubs, newCommunityClubs, newUniversityClubs, totalUniv, totalComm, membersUniv, membersComm };
     
