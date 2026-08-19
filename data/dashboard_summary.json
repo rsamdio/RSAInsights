@@ -26,7 +26,14 @@
       "totalUniv": 1505,
       "totalComm": 1314,
       "membersUniv": 37044,
-      "membersComm": 22798
+      "membersComm": 22798,
+      "totalInteractClubs": 8600,
+      "suspendedInteractClubs": 741,
+      "rotaractWithInteract": 136,
+      "rotaryWithInteract": 2041,
+      "rotaryWithoutInteract": 2978,
+      "rotaryWithSuspendedInteract": 377,
+      "prevInteractClubs": 8524
     },
     "zones": {
       "Zone 4": {
@@ -56,7 +63,14 @@
           "totalUniv": 278,
           "totalComm": 377,
           "membersUniv": 5646,
-          "membersComm": 6258
+          "membersComm": 6258,
+          "totalInteractClubs": 2073,
+          "suspendedInteractClubs": 257,
+          "rotaractWithInteract": 51,
+          "rotaryWithInteract": 552,
+          "rotaryWithoutInteract": 860,
+          "rotaryWithSuspendedInteract": 115,
+          "prevInteractClubs": 2060
         },
         "districts": {
           "3011": {
@@ -86,10 +100,19 @@
             "totalComm": 37,
             "membersUniv": 689,
             "membersComm": 639,
+            "totalInteractClubs": 262,
+            "suspendedInteractClubs": 16,
+            "rotaractWithInteract": 5,
+            "rotaryWithInteract": 81,
+            "rotaryWithoutInteract": 66,
+            "rotaryWithSuspendedInteract": 8,
+            "prevInteractClubs": 262,
             "membersGrowthAbs": -64,
             "membersGrowthPct": -4.597701149425287,
             "clubsGrowthAbs": 2,
-            "clubsGrowthPct": 2.857142857142857
+            "clubsGrowthPct": 2.857142857142857,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3012": {
             "outstanding": 2107.9200000000014,
@@ -118,10 +141,19 @@
             "totalComm": 29,
             "membersUniv": 338,
             "membersComm": 184,
+            "totalInteractClubs": 134,
+            "suspendedInteractClubs": 18,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 46,
+            "rotaryWithoutInteract": 98,
+            "rotaryWithSuspendedInteract": 13,
+            "prevInteractClubs": 134,
             "membersGrowthAbs": 98,
             "membersGrowthPct": 23.11320754716981,
             "clubsGrowthAbs": 5,
-            "clubsGrowthPct": 9.433962264150944
+            "clubsGrowthPct": 9.433962264150944,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3040": {
             "outstanding": 1158.0299999999997,
@@ -150,10 +182,19 @@
             "totalComm": 26,
             "membersUniv": 245,
             "membersComm": 337,
+            "totalInteractClubs": 110,
+            "suspendedInteractClubs": 18,
+            "rotaractWithInteract": 6,
+            "rotaryWithInteract": 22,
+            "rotaryWithoutInteract": 82,
+            "rotaryWithSuspendedInteract": 8,
+            "prevInteractClubs": 109,
             "membersGrowthAbs": 26,
             "membersGrowthPct": 4.676258992805756,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.9174311926605505
           },
           "3053": {
             "outstanding": 1347.8199999999997,
@@ -182,10 +223,19 @@
             "totalComm": 16,
             "membersUniv": 90,
             "membersComm": 246,
+            "totalInteractClubs": 63,
+            "suspendedInteractClubs": 13,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 20,
+            "rotaryWithoutInteract": 58,
+            "rotaryWithSuspendedInteract": 6,
+            "prevInteractClubs": 62,
             "membersGrowthAbs": 0,
             "membersGrowthPct": 0,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 1.6129032258064515
           },
           "3055": {
             "outstanding": 1600.3000000000002,
@@ -214,10 +264,19 @@
             "totalComm": 44,
             "membersUniv": 95,
             "membersComm": 597,
+            "totalInteractClubs": 118,
+            "suspendedInteractClubs": 10,
+            "rotaractWithInteract": 1,
+            "rotaryWithInteract": 55,
+            "rotaryWithoutInteract": 48,
+            "rotaryWithSuspendedInteract": 5,
+            "prevInteractClubs": 118,
             "membersGrowthAbs": -6,
             "membersGrowthPct": -0.8595988538681949,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3056": {
             "outstanding": 627.1999999999999,
@@ -246,10 +305,19 @@
             "totalComm": 14,
             "membersUniv": 93,
             "membersComm": 127,
+            "totalInteractClubs": 129,
+            "suspendedInteractClubs": 23,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 26,
+            "rotaryWithoutInteract": 60,
+            "rotaryWithSuspendedInteract": 9,
+            "prevInteractClubs": 129,
             "membersGrowthAbs": 1,
             "membersGrowthPct": 0.45662100456621,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3060": {
             "outstanding": 860.6700000000001,
@@ -278,10 +346,19 @@
             "totalComm": 42,
             "membersUniv": 115,
             "membersComm": 1221,
+            "totalInteractClubs": 100,
+            "suspendedInteractClubs": 9,
+            "rotaractWithInteract": 7,
+            "rotaryWithInteract": 48,
+            "rotaryWithoutInteract": 57,
+            "rotaryWithSuspendedInteract": 7,
+            "prevInteractClubs": 98,
             "membersGrowthAbs": -115,
             "membersGrowthPct": -7.925568573397657,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.9607843137254901
+            "clubsGrowthPct": 1.9607843137254901,
+            "interactGrowthAbs": 2,
+            "interactGrowthPct": 2.0408163265306123
           },
           "3070": {
             "outstanding": 1222.6699999999998,
@@ -310,10 +387,19 @@
             "totalComm": 12,
             "membersUniv": 243,
             "membersComm": 90,
+            "totalInteractClubs": 86,
+            "suspendedInteractClubs": 16,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 29,
+            "rotaryWithoutInteract": 82,
+            "rotaryWithSuspendedInteract": 6,
+            "prevInteractClubs": 86,
             "membersGrowthAbs": -7,
             "membersGrowthPct": -2.0588235294117645,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3080": {
             "outstanding": 5827.57,
@@ -342,10 +428,19 @@
             "totalComm": 33,
             "membersUniv": 1382,
             "membersComm": 845,
+            "totalInteractClubs": 265,
+            "suspendedInteractClubs": 25,
+            "rotaractWithInteract": 2,
+            "rotaryWithInteract": 50,
+            "rotaryWithoutInteract": 86,
+            "rotaryWithSuspendedInteract": 14,
+            "prevInteractClubs": 261,
             "membersGrowthAbs": -112,
             "membersGrowthPct": -4.7883710987601535,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 4,
+            "interactGrowthPct": 1.532567049808429
           },
           "3090": {
             "outstanding": 1137.7600000000002,
@@ -374,10 +469,19 @@
             "totalComm": 28,
             "membersUniv": 136,
             "membersComm": 272,
+            "totalInteractClubs": 393,
+            "suspendedInteractClubs": 72,
+            "rotaractWithInteract": 18,
+            "rotaryWithInteract": 46,
+            "rotaryWithoutInteract": 125,
+            "rotaryWithSuspendedInteract": 16,
+            "prevInteractClubs": 393,
             "membersGrowthAbs": 1,
             "membersGrowthPct": 0.2457002457002457,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3141": {
             "outstanding": 5249.03,
@@ -406,10 +510,19 @@
             "totalComm": 58,
             "membersUniv": 1649,
             "membersComm": 1172,
+            "totalInteractClubs": 251,
+            "suspendedInteractClubs": 28,
+            "rotaractWithInteract": 12,
+            "rotaryWithInteract": 69,
+            "rotaryWithoutInteract": 53,
+            "rotaryWithSuspendedInteract": 16,
+            "prevInteractClubs": 246,
             "membersGrowthAbs": 945,
             "membersGrowthPct": 50.373134328358205,
             "clubsGrowthAbs": 4,
-            "clubsGrowthPct": 3.225806451612903
+            "clubsGrowthPct": 3.225806451612903,
+            "interactGrowthAbs": 5,
+            "interactGrowthPct": 2.0325203252032518
           },
           "3142": {
             "outstanding": 2313.4000000000005,
@@ -438,10 +551,19 @@
             "totalComm": 38,
             "membersUniv": 571,
             "membersComm": 528,
+            "totalInteractClubs": 162,
+            "suspendedInteractClubs": 9,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 60,
+            "rotaryWithoutInteract": 45,
+            "rotaryWithSuspendedInteract": 7,
+            "prevInteractClubs": 162,
             "membersGrowthAbs": 4,
             "membersGrowthPct": 0.365296803652968,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           }
         }
       },
@@ -472,7 +594,14 @@
           "totalUniv": 651,
           "totalComm": 257,
           "membersUniv": 21460,
-          "membersComm": 5078
+          "membersComm": 5078,
+          "totalInteractClubs": 2014,
+          "suspendedInteractClubs": 150,
+          "rotaractWithInteract": 16,
+          "rotaryWithInteract": 557,
+          "rotaryWithoutInteract": 946,
+          "rotaryWithSuspendedInteract": 78,
+          "prevInteractClubs": 1995
         },
         "districts": {
           "2981": {
@@ -502,10 +631,19 @@
             "totalComm": 9,
             "membersUniv": 227,
             "membersComm": 59,
+            "totalInteractClubs": 46,
+            "suspendedInteractClubs": 24,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 24,
+            "rotaryWithoutInteract": 137,
+            "rotaryWithSuspendedInteract": 11,
+            "prevInteractClubs": 46,
             "membersGrowthAbs": -8,
             "membersGrowthPct": -2.7210884353741496,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "2982": {
             "outstanding": 2113.000000000001,
@@ -534,10 +672,19 @@
             "totalComm": 18,
             "membersUniv": 505,
             "membersComm": 293,
+            "totalInteractClubs": 118,
+            "suspendedInteractClubs": 24,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 41,
+            "rotaryWithoutInteract": 55,
+            "rotaryWithSuspendedInteract": 11,
+            "prevInteractClubs": 118,
             "membersGrowthAbs": 48,
             "membersGrowthPct": 6.4,
             "clubsGrowthAbs": 4,
-            "clubsGrowthPct": 8.51063829787234
+            "clubsGrowthPct": 8.51063829787234,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3000": {
             "outstanding": 9328.000000000002,
@@ -566,10 +713,19 @@
             "totalComm": 24,
             "membersUniv": 7128,
             "membersComm": 342,
+            "totalInteractClubs": 487,
+            "suspendedInteractClubs": 17,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 85,
+            "rotaryWithoutInteract": 125,
+            "rotaryWithSuspendedInteract": 8,
+            "prevInteractClubs": 478,
             "membersGrowthAbs": 703,
             "membersGrowthPct": 10.388650805379045,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 9,
+            "interactGrowthPct": 1.882845188284519
           },
           "3203": {
             "outstanding": 2408.22,
@@ -598,10 +754,19 @@
             "totalComm": 23,
             "membersUniv": 1263,
             "membersComm": 254,
+            "totalInteractClubs": 228,
+            "suspendedInteractClubs": 14,
+            "rotaractWithInteract": 6,
+            "rotaryWithInteract": 52,
+            "rotaryWithoutInteract": 68,
+            "rotaryWithSuspendedInteract": 7,
+            "prevInteractClubs": 228,
             "membersGrowthAbs": 68,
             "membersGrowthPct": 4.692891649413388,
             "clubsGrowthAbs": 5,
-            "clubsGrowthPct": 7.042253521126761
+            "clubsGrowthPct": 7.042253521126761,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3204": {
             "outstanding": 1716.4700000000007,
@@ -630,10 +795,19 @@
             "totalComm": 9,
             "membersUniv": 194,
             "membersComm": 62,
+            "totalInteractClubs": 31,
+            "suspendedInteractClubs": 10,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 20,
+            "rotaryWithoutInteract": 79,
+            "rotaryWithSuspendedInteract": 5,
+            "prevInteractClubs": 31,
             "membersGrowthAbs": 4,
             "membersGrowthPct": 1.5873015873015872,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3205": {
             "outstanding": 398.26,
@@ -662,10 +836,19 @@
             "totalComm": 5,
             "membersUniv": 591,
             "membersComm": 53,
+            "totalInteractClubs": 60,
+            "suspendedInteractClubs": 6,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 37,
+            "rotaryWithoutInteract": 68,
+            "rotaryWithSuspendedInteract": 5,
+            "prevInteractClubs": 59,
             "membersGrowthAbs": 14,
             "membersGrowthPct": 2.2222222222222223,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 1.694915254237288
           },
           "3206": {
             "outstanding": 3290.9800000000005,
@@ -694,10 +877,19 @@
             "totalComm": 37,
             "membersUniv": 1165,
             "membersComm": 754,
+            "totalInteractClubs": 86,
+            "suspendedInteractClubs": 7,
+            "rotaractWithInteract": 5,
+            "rotaryWithInteract": 35,
+            "rotaryWithoutInteract": 43,
+            "rotaryWithSuspendedInteract": 3,
+            "prevInteractClubs": 85,
             "membersGrowthAbs": 172,
             "membersGrowthPct": 9.845449341728678,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 1.1764705882352942
           },
           "3211": {
             "outstanding": 1777.1400000000003,
@@ -726,10 +918,19 @@
             "totalComm": 18,
             "membersUniv": 256,
             "membersComm": 253,
+            "totalInteractClubs": 62,
+            "suspendedInteractClubs": 3,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 29,
+            "rotaryWithoutInteract": 136,
+            "rotaryWithSuspendedInteract": 3,
+            "prevInteractClubs": 61,
             "membersGrowthAbs": 2,
             "membersGrowthPct": 0.39447731755424065,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 1.639344262295082
           },
           "3212": {
             "outstanding": 3115.2500000000023,
@@ -758,10 +959,19 @@
             "totalComm": 11,
             "membersUniv": 536,
             "membersComm": 94,
+            "totalInteractClubs": 302,
+            "suspendedInteractClubs": 12,
+            "rotaractWithInteract": 3,
+            "rotaryWithInteract": 57,
+            "rotaryWithoutInteract": 67,
+            "rotaryWithSuspendedInteract": 5,
+            "prevInteractClubs": 299,
             "membersGrowthAbs": 2,
             "membersGrowthPct": 0.3184713375796179,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 3,
+            "interactGrowthPct": 1.0033444816053512
           },
           "3220": {
             "outstanding": 1214.7500000000002,
@@ -790,10 +1000,19 @@
             "totalComm": 52,
             "membersUniv": 2192,
             "membersComm": 1646,
+            "totalInteractClubs": 158,
+            "suspendedInteractClubs": 4,
+            "rotaractWithInteract": 1,
+            "rotaryWithInteract": 44,
+            "rotaryWithoutInteract": 28,
+            "rotaryWithSuspendedInteract": 2,
+            "prevInteractClubs": 158,
             "membersGrowthAbs": -306,
             "membersGrowthPct": -7.384169884169885,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3231": {
             "outstanding": 1472.8399999999995,
@@ -822,10 +1041,19 @@
             "totalComm": 4,
             "membersUniv": 919,
             "membersComm": 40,
+            "totalInteractClubs": 176,
+            "suspendedInteractClubs": 5,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 39,
+            "rotaryWithoutInteract": 58,
+            "rotaryWithSuspendedInteract": 2,
+            "prevInteractClubs": 176,
             "membersGrowthAbs": 0,
             "membersGrowthPct": 0,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3233": {
             "outstanding": 19652.929999999997,
@@ -854,10 +1082,19 @@
             "totalComm": 21,
             "membersUniv": 5197,
             "membersComm": 622,
+            "totalInteractClubs": 97,
+            "suspendedInteractClubs": 8,
+            "rotaractWithInteract": 1,
+            "rotaryWithInteract": 45,
+            "rotaryWithoutInteract": 47,
+            "rotaryWithSuspendedInteract": 6,
+            "prevInteractClubs": 93,
             "membersGrowthAbs": -16,
             "membersGrowthPct": -0.27420736932305056,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 4,
+            "interactGrowthPct": 4.301075268817205
           },
           "3234": {
             "outstanding": 1046.0600000000002,
@@ -886,10 +1123,19 @@
             "totalComm": 26,
             "membersUniv": 1287,
             "membersComm": 606,
+            "totalInteractClubs": 163,
+            "suspendedInteractClubs": 16,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 49,
+            "rotaryWithoutInteract": 35,
+            "rotaryWithSuspendedInteract": 10,
+            "prevInteractClubs": 163,
             "membersGrowthAbs": 17,
             "membersGrowthPct": 0.906183368869936,
             "clubsGrowthAbs": -1,
-            "clubsGrowthPct": -1.3513513513513513
+            "clubsGrowthPct": -1.3513513513513513,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           }
         }
       },
@@ -920,7 +1166,14 @@
           "totalUniv": 175,
           "totalComm": 400,
           "membersUniv": 2687,
-          "membersComm": 6535
+          "membersComm": 6535,
+          "totalInteractClubs": 2194,
+          "suspendedInteractClubs": 119,
+          "rotaractWithInteract": 41,
+          "rotaryWithInteract": 396,
+          "rotaryWithoutInteract": 692,
+          "rotaryWithSuspendedInteract": 74,
+          "prevInteractClubs": 2169
         },
         "districts": {
           "3030": {
@@ -950,10 +1203,19 @@
             "totalComm": 33,
             "membersUniv": 647,
             "membersComm": 448,
+            "totalInteractClubs": 595,
+            "suspendedInteractClubs": 29,
+            "rotaractWithInteract": 6,
+            "rotaryWithInteract": 64,
+            "rotaryWithoutInteract": 60,
+            "rotaryWithSuspendedInteract": 17,
+            "prevInteractClubs": 594,
             "membersGrowthAbs": 26,
             "membersGrowthPct": 2.432179607109448,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.2048192771084338
+            "clubsGrowthPct": 1.2048192771084338,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.16835016835016833
           },
           "3100": {
             "outstanding": 1120.8000000000002,
@@ -982,10 +1244,19 @@
             "totalComm": 20,
             "membersUniv": 91,
             "membersComm": 198,
+            "totalInteractClubs": 279,
+            "suspendedInteractClubs": 8,
+            "rotaractWithInteract": 4,
+            "rotaryWithInteract": 48,
+            "rotaryWithoutInteract": 84,
+            "rotaryWithSuspendedInteract": 7,
+            "prevInteractClubs": 278,
             "membersGrowthAbs": 1,
             "membersGrowthPct": 0.3472222222222222,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.3597122302158274
           },
           "3110": {
             "outstanding": 1458.6000000000006,
@@ -1014,10 +1285,19 @@
             "totalComm": 19,
             "membersUniv": 19,
             "membersComm": 166,
+            "totalInteractClubs": 114,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 3,
+            "rotaryWithInteract": 32,
+            "rotaryWithoutInteract": 98,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 114,
             "membersGrowthAbs": 9,
             "membersGrowthPct": 5.113636363636364,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3120": {
             "outstanding": 3315.6299999999997,
@@ -1046,10 +1326,19 @@
             "totalComm": 43,
             "membersUniv": 236,
             "membersComm": 661,
+            "totalInteractClubs": 81,
+            "suspendedInteractClubs": 6,
+            "rotaractWithInteract": 1,
+            "rotaryWithInteract": 27,
+            "rotaryWithoutInteract": 76,
+            "rotaryWithSuspendedInteract": 4,
+            "prevInteractClubs": 78,
             "membersGrowthAbs": 137,
             "membersGrowthPct": 18.026315789473685,
             "clubsGrowthAbs": 9,
-            "clubsGrowthPct": 18.367346938775512
+            "clubsGrowthPct": 18.367346938775512,
+            "interactGrowthAbs": 3,
+            "interactGrowthPct": 3.8461538461538463
           },
           "3240": {
             "outstanding": 1913.62,
@@ -1078,10 +1367,19 @@
             "totalComm": 41,
             "membersUniv": 205,
             "membersComm": 577,
+            "totalInteractClubs": 104,
+            "suspendedInteractClubs": 13,
+            "rotaractWithInteract": 2,
+            "rotaryWithInteract": 46,
+            "rotaryWithoutInteract": 52,
+            "rotaryWithSuspendedInteract": 8,
+            "prevInteractClubs": 103,
             "membersGrowthAbs": -25,
             "membersGrowthPct": -3.0376670716889427,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.9708737864077669
           },
           "3250": {
             "outstanding": 2079.38,
@@ -1110,10 +1408,19 @@
             "totalComm": 24,
             "membersUniv": 241,
             "membersComm": 352,
+            "totalInteractClubs": 132,
+            "suspendedInteractClubs": 5,
+            "rotaractWithInteract": 2,
+            "rotaryWithInteract": 35,
+            "rotaryWithoutInteract": 86,
+            "rotaryWithSuspendedInteract": 3,
+            "prevInteractClubs": 115,
             "membersGrowthAbs": 47,
             "membersGrowthPct": 8.608058608058608,
             "clubsGrowthAbs": 2,
-            "clubsGrowthPct": 5
+            "clubsGrowthPct": 5,
+            "interactGrowthAbs": 17,
+            "interactGrowthPct": 14.782608695652174
           },
           "3261": {
             "outstanding": 623.0199999999999,
@@ -1142,10 +1449,19 @@
             "totalComm": 10,
             "membersUniv": 58,
             "membersComm": 97,
+            "totalInteractClubs": 53,
+            "suspendedInteractClubs": 4,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 22,
+            "rotaryWithoutInteract": 72,
+            "rotaryWithSuspendedInteract": 3,
+            "prevInteractClubs": 53,
             "membersGrowthAbs": 57,
             "membersGrowthPct": 58.16326530612245,
             "clubsGrowthAbs": 3,
-            "clubsGrowthPct": 17.647058823529413
+            "clubsGrowthPct": 17.647058823529413,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3262": {
             "outstanding": 3689.01,
@@ -1174,10 +1490,19 @@
             "totalComm": 53,
             "membersUniv": 241,
             "membersComm": 428,
+            "totalInteractClubs": 686,
+            "suspendedInteractClubs": 36,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 47,
+            "rotaryWithoutInteract": 74,
+            "rotaryWithSuspendedInteract": 15,
+            "prevInteractClubs": 685,
             "membersGrowthAbs": 23,
             "membersGrowthPct": 3.560371517027864,
             "clubsGrowthAbs": 2,
-            "clubsGrowthPct": 2.73972602739726
+            "clubsGrowthPct": 2.73972602739726,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.145985401459854
           },
           "3292": {
             "outstanding": 2528.7700000000004,
@@ -1206,10 +1531,19 @@
             "totalComm": 157,
             "membersUniv": 949,
             "membersComm": 3608,
+            "totalInteractClubs": 150,
+            "suspendedInteractClubs": 18,
+            "rotaractWithInteract": 23,
+            "rotaryWithInteract": 75,
+            "rotaryWithoutInteract": 90,
+            "rotaryWithSuspendedInteract": 17,
+            "prevInteractClubs": 149,
             "membersGrowthAbs": 98,
             "membersGrowthPct": 2.197802197802198,
             "clubsGrowthAbs": 2,
-            "clubsGrowthPct": 1.0582010582010581
+            "clubsGrowthPct": 1.0582010582010581,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.6711409395973155
           }
         }
       },
@@ -1240,7 +1574,14 @@
           "totalUniv": 401,
           "totalComm": 280,
           "membersUniv": 7251,
-          "membersComm": 4927
+          "membersComm": 4927,
+          "totalInteractClubs": 2319,
+          "suspendedInteractClubs": 215,
+          "rotaractWithInteract": 28,
+          "rotaryWithInteract": 536,
+          "rotaryWithoutInteract": 480,
+          "rotaryWithSuspendedInteract": 110,
+          "prevInteractClubs": 2300
         },
         "districts": {
           "3020": {
@@ -1270,10 +1611,19 @@
             "totalComm": 18,
             "membersUniv": 364,
             "membersComm": 321,
+            "totalInteractClubs": 198,
+            "suspendedInteractClubs": 4,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 17,
+            "rotaryWithoutInteract": 61,
+            "rotaryWithSuspendedInteract": 2,
+            "prevInteractClubs": 198,
             "membersGrowthAbs": -41,
             "membersGrowthPct": -5.647382920110193,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3131": {
             "outstanding": 2639.3099999999995,
@@ -1302,10 +1652,19 @@
             "totalComm": 58,
             "membersUniv": 1007,
             "membersComm": 1033,
+            "totalInteractClubs": 363,
+            "suspendedInteractClubs": 48,
+            "rotaractWithInteract": 5,
+            "rotaryWithInteract": 100,
+            "rotaryWithoutInteract": 32,
+            "rotaryWithSuspendedInteract": 22,
+            "prevInteractClubs": 361,
             "membersGrowthAbs": -160,
             "membersGrowthPct": -7.2727272727272725,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 2,
+            "interactGrowthPct": 0.554016620498615
           },
           "3132": {
             "outstanding": 987.8299999999999,
@@ -1334,10 +1693,19 @@
             "totalComm": 22,
             "membersUniv": 179,
             "membersComm": 323,
+            "totalInteractClubs": 278,
+            "suspendedInteractClubs": 37,
+            "rotaractWithInteract": 13,
+            "rotaryWithInteract": 65,
+            "rotaryWithoutInteract": 38,
+            "rotaryWithSuspendedInteract": 14,
+            "prevInteractClubs": 279,
             "membersGrowthAbs": -11,
             "membersGrowthPct": -2.144249512670565,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": -1,
+            "interactGrowthPct": -0.35842293906810035
           },
           "3150": {
             "outstanding": 1379.4500000000003,
@@ -1366,10 +1734,19 @@
             "totalComm": 28,
             "membersUniv": 1356,
             "membersComm": 647,
+            "totalInteractClubs": 197,
+            "suspendedInteractClubs": 21,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 50,
+            "rotaryWithoutInteract": 57,
+            "rotaryWithSuspendedInteract": 11,
+            "prevInteractClubs": 193,
             "membersGrowthAbs": -2,
             "membersGrowthPct": -0.0997506234413965,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.8867924528301887
+            "clubsGrowthPct": 1.8867924528301887,
+            "interactGrowthAbs": 4,
+            "interactGrowthPct": 2.072538860103627
           },
           "3160": {
             "outstanding": 710.51,
@@ -1398,10 +1775,19 @@
             "totalComm": 8,
             "membersUniv": 123,
             "membersComm": 47,
+            "totalInteractClubs": 104,
+            "suspendedInteractClubs": 16,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 18,
+            "rotaryWithoutInteract": 61,
+            "rotaryWithSuspendedInteract": 11,
+            "prevInteractClubs": 103,
             "membersGrowthAbs": -39,
             "membersGrowthPct": -18.660287081339714,
             "clubsGrowthAbs": 0,
-            "clubsGrowthPct": 0
+            "clubsGrowthPct": 0,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.9708737864077669
           },
           "3170": {
             "outstanding": 3092.480000000002,
@@ -1430,10 +1816,19 @@
             "totalComm": 54,
             "membersUniv": 772,
             "membersComm": 773,
+            "totalInteractClubs": 305,
+            "suspendedInteractClubs": 18,
+            "rotaractWithInteract": 8,
+            "rotaryWithInteract": 80,
+            "rotaryWithoutInteract": 62,
+            "rotaryWithSuspendedInteract": 9,
+            "prevInteractClubs": 294,
             "membersGrowthAbs": 260,
             "membersGrowthPct": 20.233463035019454,
             "clubsGrowthAbs": 21,
-            "clubsGrowthPct": 19.444444444444446
+            "clubsGrowthPct": 19.444444444444446,
+            "interactGrowthAbs": 11,
+            "interactGrowthPct": 3.741496598639456
           },
           "3181": {
             "outstanding": 2941.8000000000006,
@@ -1462,10 +1857,19 @@
             "totalComm": 17,
             "membersUniv": 582,
             "membersComm": 266,
+            "totalInteractClubs": 193,
+            "suspendedInteractClubs": 8,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 53,
+            "rotaryWithoutInteract": 38,
+            "rotaryWithSuspendedInteract": 5,
+            "prevInteractClubs": 193,
             "membersGrowthAbs": -29,
             "membersGrowthPct": -3.30672748004561,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.7543859649122806
+            "clubsGrowthPct": 1.7543859649122806,
+            "interactGrowthAbs": 0,
+            "interactGrowthPct": 0
           },
           "3182": {
             "outstanding": 1328.9099999999996,
@@ -1494,10 +1898,19 @@
             "totalComm": 16,
             "membersUniv": 254,
             "membersComm": 183,
+            "totalInteractClubs": 185,
+            "suspendedInteractClubs": 19,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 42,
+            "rotaryWithoutInteract": 47,
+            "rotaryWithSuspendedInteract": 9,
+            "prevInteractClubs": 186,
             "membersGrowthAbs": 6,
             "membersGrowthPct": 1.3921113689095126,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.8518518518518516
+            "clubsGrowthPct": 1.8518518518518516,
+            "interactGrowthAbs": -1,
+            "interactGrowthPct": -0.5376344086021506
           },
           "3191": {
             "outstanding": 2405.0599999999995,
@@ -1526,10 +1939,19 @@
             "totalComm": 32,
             "membersUniv": 1186,
             "membersComm": 689,
+            "totalInteractClubs": 258,
+            "suspendedInteractClubs": 15,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 54,
+            "rotaryWithoutInteract": 48,
+            "rotaryWithSuspendedInteract": 11,
+            "prevInteractClubs": 256,
             "membersGrowthAbs": 21,
             "membersGrowthPct": 1.132686084142395,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.2048192771084338
+            "clubsGrowthPct": 1.2048192771084338,
+            "interactGrowthAbs": 2,
+            "interactGrowthPct": 0.78125
           },
           "3192": {
             "outstanding": 3912.55,
@@ -1558,10 +1980,19 @@
             "totalComm": 27,
             "membersUniv": 1428,
             "membersComm": 645,
+            "totalInteractClubs": 238,
+            "suspendedInteractClubs": 29,
+            "rotaractWithInteract": 2,
+            "rotaryWithInteract": 57,
+            "rotaryWithoutInteract": 36,
+            "rotaryWithSuspendedInteract": 16,
+            "prevInteractClubs": 237,
             "membersGrowthAbs": 37,
             "membersGrowthPct": 1.8172888015717092,
             "clubsGrowthAbs": 1,
-            "clubsGrowthPct": 1.1627906976744187
+            "clubsGrowthPct": 1.1627906976744187,
+            "interactGrowthAbs": 1,
+            "interactGrowthPct": 0.42194092827004215
           }
         }
       }
@@ -1594,7 +2025,14 @@
       "totalUniv": 0,
       "totalComm": 0,
       "membersUniv": 0,
-      "membersComm": 0
+      "membersComm": 0,
+      "totalInteractClubs": 8524,
+      "suspendedInteractClubs": 0,
+      "rotaractWithInteract": 0,
+      "rotaryWithInteract": 0,
+      "rotaryWithoutInteract": 0,
+      "rotaryWithSuspendedInteract": 0,
+      "prevInteractClubs": 0
     },
     "zones": {
       "Zone 4": {
@@ -1624,7 +2062,14 @@
           "totalUniv": 0,
           "totalComm": 0,
           "membersUniv": 0,
-          "membersComm": 0
+          "membersComm": 0,
+          "totalInteractClubs": 2060,
+          "suspendedInteractClubs": 0,
+          "rotaractWithInteract": 0,
+          "rotaryWithInteract": 0,
+          "rotaryWithoutInteract": 0,
+          "rotaryWithSuspendedInteract": 0,
+          "prevInteractClubs": 0
         },
         "districts": {
           "3011": {
@@ -1653,7 +2098,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 262,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3012": {
             "outstanding": 2399.869999999998,
@@ -1681,7 +2133,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 134,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3040": {
             "outstanding": 1592.0600000000002,
@@ -1709,7 +2168,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 109,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3053": {
             "outstanding": 1633.36,
@@ -1737,7 +2203,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 62,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3055": {
             "outstanding": 1901.7300000000002,
@@ -1765,7 +2238,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 118,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3056": {
             "outstanding": 780.1500000000001,
@@ -1793,7 +2273,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 129,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3060": {
             "outstanding": 2225.0499999999997,
@@ -1821,7 +2308,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 98,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3070": {
             "outstanding": 1666.1399999999999,
@@ -1849,7 +2343,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 86,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3080": {
             "outstanding": 5983.8499999999985,
@@ -1877,7 +2378,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 261,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3090": {
             "outstanding": 1248.9399999999998,
@@ -1905,7 +2413,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 393,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3141": {
             "outstanding": 8582.259999999997,
@@ -1933,7 +2448,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 246,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3142": {
             "outstanding": 2663.4899999999993,
@@ -1961,7 +2483,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 162,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           }
         }
       },
@@ -1992,7 +2521,14 @@
           "totalUniv": 0,
           "totalComm": 0,
           "membersUniv": 0,
-          "membersComm": 0
+          "membersComm": 0,
+          "totalInteractClubs": 1995,
+          "suspendedInteractClubs": 0,
+          "rotaractWithInteract": 0,
+          "rotaryWithInteract": 0,
+          "rotaryWithoutInteract": 0,
+          "rotaryWithSuspendedInteract": 0,
+          "prevInteractClubs": 0
         },
         "districts": {
           "2981": {
@@ -2021,7 +2557,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 46,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "2982": {
             "outstanding": 2423.46,
@@ -2049,7 +2592,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 118,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3000": {
             "outstanding": 10156.339999999998,
@@ -2077,7 +2627,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 478,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3203": {
             "outstanding": 2880.7500000000005,
@@ -2105,7 +2662,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 228,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3204": {
             "outstanding": 1734.5099999999998,
@@ -2133,7 +2697,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 31,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3205": {
             "outstanding": 598.07,
@@ -2161,7 +2732,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 59,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3206": {
             "outstanding": 3654.8699999999994,
@@ -2189,7 +2767,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 85,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3211": {
             "outstanding": 2367.3399999999997,
@@ -2217,7 +2802,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 61,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3212": {
             "outstanding": 4178.59,
@@ -2245,7 +2837,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 299,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3220": {
             "outstanding": 0,
@@ -2273,7 +2872,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 158,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3231": {
             "outstanding": 1488.24,
@@ -2301,7 +2907,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 176,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3233": {
             "outstanding": 21245.14000000001,
@@ -2329,7 +2942,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 93,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3234": {
             "outstanding": 1681.9199999999998,
@@ -2357,7 +2977,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 163,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           }
         }
       },
@@ -2388,7 +3015,14 @@
           "totalUniv": 0,
           "totalComm": 0,
           "membersUniv": 0,
-          "membersComm": 0
+          "membersComm": 0,
+          "totalInteractClubs": 2169,
+          "suspendedInteractClubs": 0,
+          "rotaractWithInteract": 0,
+          "rotaryWithInteract": 0,
+          "rotaryWithoutInteract": 0,
+          "rotaryWithSuspendedInteract": 0,
+          "prevInteractClubs": 0
         },
         "districts": {
           "3030": {
@@ -2417,7 +3051,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 594,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3100": {
             "outstanding": 1132.59,
@@ -2445,7 +3086,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 278,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3110": {
             "outstanding": 1598.9399999999998,
@@ -2473,7 +3121,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 114,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3120": {
             "outstanding": 3457.8300000000004,
@@ -2501,7 +3156,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 78,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3240": {
             "outstanding": 2078.14,
@@ -2529,7 +3191,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 103,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3250": {
             "outstanding": 3137.3199999999997,
@@ -2557,7 +3226,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 115,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3261": {
             "outstanding": 881.9600000000002,
@@ -2585,7 +3261,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 53,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3262": {
             "outstanding": 4336.139999999997,
@@ -2613,7 +3296,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 685,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3292": {
             "outstanding": 0,
@@ -2641,7 +3331,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 149,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           }
         }
       },
@@ -2672,7 +3369,14 @@
           "totalUniv": 0,
           "totalComm": 0,
           "membersUniv": 0,
-          "membersComm": 0
+          "membersComm": 0,
+          "totalInteractClubs": 2300,
+          "suspendedInteractClubs": 0,
+          "rotaractWithInteract": 0,
+          "rotaryWithInteract": 0,
+          "rotaryWithoutInteract": 0,
+          "rotaryWithSuspendedInteract": 0,
+          "prevInteractClubs": 0
         },
         "districts": {
           "3020": {
@@ -2701,7 +3405,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 198,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3131": {
             "outstanding": 4887.850000000001,
@@ -2729,7 +3440,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 361,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3132": {
             "outstanding": 1132.3500000000001,
@@ -2757,7 +3475,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 279,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3150": {
             "outstanding": 1393.9899999999998,
@@ -2785,7 +3510,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 193,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3160": {
             "outstanding": 848.7999999999998,
@@ -2813,7 +3545,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 103,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3170": {
             "outstanding": 4252.599999999997,
@@ -2841,7 +3580,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 294,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3181": {
             "outstanding": 3672.0800000000004,
@@ -2869,7 +3615,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 193,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3182": {
             "outstanding": 2048.69,
@@ -2897,7 +3650,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 186,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3191": {
             "outstanding": 3131.2200000000003,
@@ -2925,7 +3685,14 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 256,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           },
           "3192": {
             "outstanding": 4401.71,
@@ -2953,11 +3720,18 @@
             "totalUniv": 0,
             "totalComm": 0,
             "membersUniv": 0,
-            "membersComm": 0
+            "membersComm": 0,
+            "totalInteractClubs": 237,
+            "suspendedInteractClubs": 0,
+            "rotaractWithInteract": 0,
+            "rotaryWithInteract": 0,
+            "rotaryWithoutInteract": 0,
+            "rotaryWithSuspendedInteract": 0,
+            "prevInteractClubs": 0
           }
         }
       }
     }
   },
-  "lastUpdated": "2026-08-18T05:51:13.799Z"
+  "lastUpdated": "2026-08-19T19:07:20.984Z"
 }

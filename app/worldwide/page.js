@@ -20,9 +20,15 @@ export default function WorldwidePage() {
         totalMembersDelta,
         avgMembersPerClub,
         avgMembersDelta,
+        totalInteractClubs,
+        totalActiveInteractClubs,
+        totalSuspendedInteractClubs,
+        totalInteractDelta,
         countryData, 
         districtData, 
-        zoneData 
+        zoneData,
+        interactDistrictData = [],
+        interactZoneData = []
     } = summary;
 
     // Process Top 10s for Leaderboards
@@ -37,9 +43,9 @@ export default function WorldwidePage() {
         .map(d => ({ label: d.label, value: d.valueNum.toLocaleString() }));
         
     const topCountriesByMembers = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '')
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '')
         .sort((a, b) => (b['Total Reported Members'] || 0) - (a['Total Reported Members'] || 0))
-        .map(c => ({ label: c[' '], valueNum: parseInt(c['Total Reported Members']) || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: parseInt(c['Total Reported Members']) || 0 }))
         .map(c => ({ label: c.label, value: c.valueNum.toLocaleString() }));
 
     const topZonesByMembers = [...zoneData]
@@ -53,9 +59,9 @@ export default function WorldwidePage() {
         .map(z => ({ label: z.label, value: z.valueNum.toLocaleString() }));
 
     const topCountriesByClubs = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '')
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '')
         .sort((a, b) => (b['Total Active Rotaract Clubs'] || 0) - (a['Total Active Rotaract Clubs'] || 0))
-        .map(c => ({ label: c[' '], valueNum: parseInt(c['Total Active Rotaract Clubs']) || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: parseInt(c['Total Active Rotaract Clubs']) || 0 }))
         .map(c => ({ label: c.label, value: c.valueNum.toLocaleString() }));
 
     const getAvg = (item) => {
@@ -71,9 +77,9 @@ export default function WorldwidePage() {
         .map(d => ({ label: d.label, value: d.valueNum.toFixed(3) }));
 
     const topCountriesByAvg = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '' && (parseInt(c['Total Active Rotaract Clubs']) || 0) > 0)
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '' && (parseInt(c['Total Active Rotaract Clubs']) || 0) > 0)
         .sort((a, b) => getAvg(b) - getAvg(a))
-        .map(c => ({ label: c[' '], valueNum: getAvg(c) }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: getAvg(c) }))
         .map(c => ({ label: c.label, value: c.valueNum.toFixed(3) }));
 
     const topZonesByAvg = [...zoneData]
@@ -107,27 +113,27 @@ export default function WorldwidePage() {
         .map(d => ({ label: d.label, value: d.valueNum.toLocaleString() }));
 
     const topCountriesByMemberGrowth = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '' && (c['Members Growth (%)'] || 0) > 0)
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '' && (c['Members Growth (%)'] || 0) > 0)
         .sort((a, b) => (b['Members Growth (%)'] || 0) - (a['Members Growth (%)'] || 0))
-        .map(c => ({ label: c[' '], valueNum: c['Members Growth (%)'] || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: c['Members Growth (%)'] || 0 }))
         .map(c => ({ label: c.label, value: `${c.valueNum.toFixed(1)}%` }));
 
     const topCountriesByMemberGrowthAbs = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '' && (c['Members Growth Abs'] || 0) > 0)
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '' && (c['Members Growth Abs'] || 0) > 0)
         .sort((a, b) => (b['Members Growth Abs'] || 0) - (a['Members Growth Abs'] || 0))
-        .map(c => ({ label: c[' '], valueNum: c['Members Growth Abs'] || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: c['Members Growth Abs'] || 0 }))
         .map(c => ({ label: c.label, value: c.valueNum.toLocaleString() }));
 
     const topCountriesByClubGrowth = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '' && (c['Clubs Growth (%)'] || 0) > 0)
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '' && (c['Clubs Growth (%)'] || 0) > 0)
         .sort((a, b) => (b['Clubs Growth (%)'] || 0) - (a['Clubs Growth (%)'] || 0))
-        .map(c => ({ label: c[' '], valueNum: c['Clubs Growth (%)'] || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: c['Clubs Growth (%)'] || 0 }))
         .map(c => ({ label: c.label, value: `${c.valueNum.toFixed(1)}%` }));
 
     const topCountriesByClubGrowthAbs = [...countryData]
-        .filter(c => (c[' '] || '').trim() !== '' && (c['Clubs Growth Abs'] || 0) > 0)
+        .filter(c => (c[' '] || c['Country'] || '').trim() !== '' && (c['Clubs Growth Abs'] || 0) > 0)
         .sort((a, b) => (b['Clubs Growth Abs'] || 0) - (a['Clubs Growth Abs'] || 0))
-        .map(c => ({ label: c[' '], valueNum: c['Clubs Growth Abs'] || 0 }))
+        .map(c => ({ label: c[' '] || c['Country'], valueNum: c['Clubs Growth Abs'] || 0 }))
         .map(c => ({ label: c.label, value: c.valueNum.toLocaleString() }));
 
     const topZonesByMemberGrowth = [...zoneData]
@@ -154,6 +160,41 @@ export default function WorldwidePage() {
         .map(z => ({ label: z['Zone'].toString().startsWith('Zone') ? z['Zone'] : `Zone ${z['Zone']}`, valueNum: z['Clubs Growth Abs'] || 0 }))
         .map(z => ({ label: z.label, value: z.valueNum.toLocaleString() }));
 
+    // Process Interact Leaderboards
+    const topDistrictsByInteractClubs = [...interactDistrictData]
+        .sort((a, b) => (b['Total Interact Clubs'] || b['Total Active Interact Clubs'] || 0) - (a['Total Interact Clubs'] || a['Total Active Interact Clubs'] || 0))
+        .map(d => ({ label: `District ${d.District}`, valueNum: parseInt(d['Total Interact Clubs'] || d['Total Active Interact Clubs']) || 0 }))
+        .map(d => ({ label: d.label, value: d.valueNum.toLocaleString() }));
+
+    const topDistrictsByInteractGrowth = [...interactDistrictData]
+        .filter(d => (d['Interact Growth Abs'] || 0) > 0)
+        .sort((a, b) => (b['Interact Growth Abs'] || 0) - (a['Interact Growth Abs'] || 0))
+        .map(d => ({ label: `District ${d.District}`, valueNum: d['Interact Growth Abs'] || 0 }))
+        .map(d => ({ label: d.label, value: `+${d.valueNum.toLocaleString()}` }));
+
+    const topDistrictsByInteractGrowthPct = [...interactDistrictData]
+        .filter(d => (d['Interact Growth (%)'] || 0) > 0)
+        .sort((a, b) => (b['Interact Growth (%)'] || 0) - (a['Interact Growth (%)'] || 0))
+        .map(d => ({ label: `District ${d.District}`, valueNum: d['Interact Growth (%)'] || 0 }))
+        .map(d => ({ label: d.label, value: `+${d.valueNum.toFixed(1)}%` }));
+
+    const topZonesByInteractClubs = [...interactZoneData]
+        .sort((a, b) => (b['Total Interact Clubs'] || b['Total Active Interact Clubs'] || 0) - (a['Total Interact Clubs'] || a['Total Active Interact Clubs'] || 0))
+        .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: parseInt(z['Total Interact Clubs'] || z['Total Active Interact Clubs']) || 0 }))
+        .map(z => ({ label: z.label, value: z.valueNum.toLocaleString() }));
+
+    const topZonesByInteractGrowth = [...interactZoneData]
+        .filter(z => (z['Interact Growth Abs'] || 0) > 0)
+        .sort((a, b) => (b['Interact Growth Abs'] || 0) - (a['Interact Growth Abs'] || 0))
+        .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: z['Interact Growth Abs'] || 0 }))
+        .map(z => ({ label: z.label, value: `+${z.valueNum.toLocaleString()}` }));
+
+    const topZonesByInteractGrowthPct = [...interactZoneData]
+        .filter(z => (z['Interact Growth (%)'] || 0) > 0)
+        .sort((a, b) => (b['Interact Growth (%)'] || 0) - (a['Interact Growth (%)'] || 0))
+        .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: z['Interact Growth (%)'] || 0 }))
+        .map(z => ({ label: z.label, value: `+${z.valueNum.toFixed(1)}%` }));
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
@@ -164,25 +205,32 @@ export default function WorldwidePage() {
 
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <h1 style={{ fontSize: '32px', margin: '0 0 10px 0' }}>Rotaract Worldwide Statistics</h1>
-                <p style={{ color: 'var(--text-muted)', fontSize: '18px', margin: 0 }}>Worldwide leaderboards for Clubs and Memberships.</p>
+                <p style={{ color: 'var(--text-muted)', fontSize: '18px', margin: 0 }}>Worldwide leaderboards for Rotaract Clubs, Rotaract Memberships, and Interact.</p>
             </div>
 
-            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '50px' }}>
+            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginBottom: '50px' }}>
                 <MetricCard 
-                    title="Total Worldwide Rotaract Clubs" 
+                    title="Total Rotaract Clubs" 
                     value={totalClubs.toLocaleString()} 
                     trend={totalClubsDelta}
                 />
                 <MetricCard 
-                    title="Total Worldwide Members" 
+                    title="Total Members" 
                     value={totalMembers.toLocaleString()} 
                     trend={totalMembersDelta}
                 />
                 <MetricCard 
-                    title="Average Members Per Club" 
+                    title="Average Membership" 
                     value={avgMembersPerClub.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} 
                     trend={avgMembersDelta}
                 />
+                {totalInteractClubs > 0 && (
+                    <MetricCard 
+                        title="Total Interact Clubs" 
+                        value={totalInteractClubs.toLocaleString()} 
+                        trend={totalInteractDelta}
+                    />
+                )}
             </section>
 
             <h2 className="section-title">Worldwide Leaderboards</h2>
@@ -196,6 +244,9 @@ export default function WorldwidePage() {
                 <Leaderboard title="Districts by Clubs" description="Districts with the most active Rotaract clubs worldwide." data={topDistrictsByClubs} maxItems={10} />
                 <Leaderboard title="Districts by Club Growth" description="Districts with the largest increase in active clubs." data={topDistrictsByClubGrowthAbs} maxItems={10} />
                 <Leaderboard title="Districts by Club Growth (%)" description="Districts with the largest percentage increase in active clubs." data={topDistrictsByClubGrowth} maxItems={10} />
+                <Leaderboard title="Districts by Interact Clubs" description="Districts with the most Interact clubs worldwide." data={topDistrictsByInteractClubs} maxItems={10} />
+                <Leaderboard title="Districts by Interact Club Growth" description="Districts with the largest increase in Interact clubs." data={topDistrictsByInteractGrowth} maxItems={10} />
+                <Leaderboard title="Districts by Interact Club Growth (%)" description="Districts with the largest percentage increase in Interact clubs." data={topDistrictsByInteractGrowthPct} maxItems={10} />
             </div>
 
             <h3 style={{ margin: '10px 0 15px 0', fontSize: '20px', color: 'var(--text-main)' }}>By Country</h3>
@@ -218,6 +269,9 @@ export default function WorldwidePage() {
                 <Leaderboard title="Zones by Clubs" description="Zones with the most active Rotaract clubs." data={topZonesByClubs} maxItems={10} />
                 <Leaderboard title="Zones by Club Growth" description="Zones with the largest increase in active clubs." data={topZonesByClubGrowthAbs} maxItems={10} />
                 <Leaderboard title="Zones by Club Growth (%)" description="Zones with the largest percentage increase in active clubs." data={topZonesByClubGrowth} maxItems={10} />
+                <Leaderboard title="Zones by Interact Clubs" description="Zones with the most Interact clubs worldwide." data={topZonesByInteractClubs} maxItems={10} />
+                <Leaderboard title="Zones by Interact Club Growth" description="Zones with the largest increase in Interact clubs." data={topZonesByInteractGrowth} maxItems={10} />
+                <Leaderboard title="Zones by Interact Club Growth (%)" description="Zones with the largest percentage increase in Interact clubs." data={topZonesByInteractGrowthPct} maxItems={10} />
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import { getDistrictData, getUnifiedIssues, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getDashboardSummary, getDistrictOfficers, getNewClubs, getTRFContributions, getAllClubs } from '@/lib/api';
+import { getDistrictData, getUnifiedIssues, getZoneSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getRotaryNoInteract, getDashboardSummary, getDistrictOfficers, getNewClubs, getTRFContributions, getAllClubs } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
 import DistrictTable from '@/components/tables/DistrictTable';
@@ -32,6 +32,7 @@ export default async function DistrictPage({ params }) {
     const allArrearsData = await getArrears() || [];
     const allOfficersData = await getNoOfficers() || [];
     const allRotaryData = await getRotaryNoSponsor() || [];
+    const allRotaryNoInteractData = await getRotaryNoInteract() || [];
     const allNewClubs = await getNewClubs() || [];
     const allTrfData = await getTRFContributions() || [];
     const allClubsRoster = await getAllClubs() || [];
@@ -53,7 +54,7 @@ export default async function DistrictPage({ params }) {
         if (diff === 0) return null;
         
         const pct = prevDistrictStats[key] ? Math.abs((diff / prevDistrictStats[key]) * 100).toFixed(1) : 0;
-        const isGood = key === 'totalClubs' || key === 'totalMembers' || key === 'totalRotary' ? diff > 0 : diff < 0; 
+        const isGood = key === 'totalClubs' || key === 'totalMembers' || key === 'totalRotary' || key === 'totalInteractClubs' ? diff > 0 : diff < 0; 
         
         const arrow = diff > 0 ? '↑' : '↓';
         const absDiff = Math.abs(diff);
@@ -67,6 +68,7 @@ export default async function DistrictPage({ params }) {
     const arrearsData = allArrearsData.filter(c => c.District.toString() === districtId.toString());
     const officersData = allOfficersData.filter(c => c.District.toString() === districtId.toString());
     const rotaryData = allRotaryData.filter(c => c.District.toString() === districtId.toString());
+    const rotaryNoInteractData = allRotaryNoInteractData.filter(c => c.District.toString() === districtId.toString());
     const newClubsData = allNewClubs.filter(c => c.District.toString() === districtId.toString());
     const trfData = allTrfData.filter(c => c.District.toString() === districtId.toString());
     const allClubsData = allClubsRoster.filter(c => c.District.toString() === districtId.toString());
@@ -154,6 +156,10 @@ export default async function DistrictPage({ params }) {
         }
     }
 
+    const activeInteract = (stats.totalInteractClubs || 0) - (stats.suspendedInteractClubs || 0);
+    const activeInteractPct = stats.totalInteractClubs > 0 ? Math.round((activeInteract / stats.totalInteractClubs) * 100) : 0;
+    const rotaractSponsorPct = stats.totalClubs > 0 ? ((stats.rotaractWithInteract / stats.totalClubs) * 100).toFixed(1) : 0;
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
@@ -205,12 +211,21 @@ export default async function DistrictPage({ params }) {
                 <MetricCard title="Rotary w/o Sponsored Rotaract" value={stats.rotaryWithoutSponsor?.toLocaleString() || '0'} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} />
             </section>
 
+            <h2 className="section-title">Interact Ecosystem</h2>
+            <section className="metrics-grid four-cols" style={{ marginBottom: '40px' }}>
+                <MetricCard title="Total Interact Clubs" value={stats.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} />
+                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} />
+                <MetricCard title="Rotary w/o Interact Club" value={stats.rotaryWithoutInteract?.toLocaleString() || '0'} trend={stats.totalRotary ? {text: `${Math.round(((stats.rotaryWithoutInteract || 0) / stats.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} />
+                <MetricCard title="Rotaract Sponsoring Interact" value={stats.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} />
+            </section>
+
             <h2 className="section-title">Compliance & Risks</h2>
-            <section className="metrics-grid four-cols" style={{ marginBottom: '20px' }}>
+            <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues" value={`$${stats.outstanding?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} trend={getDelta('outstanding', 'usd')} />
                 <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
+                <MetricCard title="Suspended Interact" value={stats.suspendedInteractClubs?.toLocaleString() || '0'} trend={stats.totalInteractClubs ? {text: `${Math.round(((stats.suspendedInteractClubs || 0) / stats.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} />
             </section>
             
             <section className="charts-grid three-cols" style={{ marginBottom: '40px' }}>
@@ -234,6 +249,7 @@ export default async function DistrictPage({ params }) {
                 arrearsData={arrearsData} 
                 officersData={officersData} 
                 rotaryData={rotaryData} 
+                rotaryNoInteractData={rotaryNoInteractData}
                 newClubsData={newClubsData}
                 trfData={trfData}
                 allClubsData={allClubsData}

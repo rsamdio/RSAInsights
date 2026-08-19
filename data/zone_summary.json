@@ -53,9 +53,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 46,
+    "SuspendedInteractClubs": 24,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 24,
+    "Rotary without Interact Club": 137,
+    "% Rotary without Interact Club": 0.8509316770186336,
+    "Rotary with Suspended Interact Clubs": 11,
     "Total Reported Members": 286,
     "Members": 286,
-    "Avg Membership": 4.4
+    "Avg Membership": 4.4,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 2982,
@@ -111,9 +120,18 @@
     "NewTotalClubs": 4,
     "NewCommunityClubs": 2,
     "NewUniversityClubs": 2,
+    "TotalInteractClubs": 118,
+    "SuspendedInteractClubs": 24,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 41,
+    "Rotary without Interact Club": 55,
+    "% Rotary without Interact Club": 0.5729166666666666,
+    "Rotary with Suspended Interact Clubs": 11,
     "Total Reported Members": 798,
     "Members": 798,
-    "Avg Membership": 15.65
+    "Avg Membership": 15.65,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3000,
@@ -169,9 +187,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 487,
+    "SuspendedInteractClubs": 17,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 85,
+    "Rotary without Interact Club": 125,
+    "% Rotary without Interact Club": 0.5952380952380952,
+    "Rotary with Suspended Interact Clubs": 8,
     "Total Reported Members": 7470,
     "Members": 7470,
-    "Avg Membership": 50.82
+    "Avg Membership": 50.82,
+    "Interact Growth Abs": 9,
+    "Interact Growth (%)": 1.9
   },
   {
     "RI District": 3011,
@@ -227,9 +254,18 @@
     "NewTotalClubs": 2,
     "NewCommunityClubs": 2,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 262,
+    "SuspendedInteractClubs": 16,
+    "Rotaract with Interact": 5,
+    "Rotary with Interact Club": 81,
+    "Rotary without Interact Club": 66,
+    "% Rotary without Interact Club": 0.4489795918367347,
+    "Rotary with Suspended Interact Clubs": 8,
     "Total Reported Members": 1328,
     "Members": 1328,
-    "Avg Membership": 18.44
+    "Avg Membership": 18.44,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3012,
@@ -285,9 +321,18 @@
     "NewTotalClubs": 5,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 4,
+    "TotalInteractClubs": 134,
+    "SuspendedInteractClubs": 18,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 46,
+    "Rotary without Interact Club": 98,
+    "% Rotary without Interact Club": 0.6805555555555556,
+    "Rotary with Suspended Interact Clubs": 13,
     "Total Reported Members": 522,
     "Members": 522,
-    "Avg Membership": 9
+    "Avg Membership": 9,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3020,
@@ -343,9 +388,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 198,
+    "SuspendedInteractClubs": 4,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 17,
+    "Rotary without Interact Club": 61,
+    "% Rotary without Interact Club": 0.782051282051282,
+    "Rotary with Suspended Interact Clubs": 2,
     "Total Reported Members": 685,
     "Members": 685,
-    "Avg Membership": 15.57
+    "Avg Membership": 15.57,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3030,
@@ -401,9 +455,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 595,
+    "SuspendedInteractClubs": 29,
+    "Rotaract with Interact": 6,
+    "Rotary with Interact Club": 64,
+    "Rotary without Interact Club": 60,
+    "% Rotary without Interact Club": 0.4838709677419355,
+    "Rotary with Suspended Interact Clubs": 17,
     "Total Reported Members": 1095,
     "Members": 1095,
-    "Avg Membership": 13.04
+    "Avg Membership": 13.04,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.2
   },
   {
     "RI District": 3040,
@@ -459,9 +522,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 110,
+    "SuspendedInteractClubs": 18,
+    "Rotaract with Interact": 6,
+    "Rotary with Interact Club": 22,
+    "Rotary without Interact Club": 82,
+    "% Rotary without Interact Club": 0.7884615384615384,
+    "Rotary with Suspended Interact Clubs": 8,
     "Total Reported Members": 582,
     "Members": 582,
-    "Avg Membership": 14.2
+    "Avg Membership": 14.2,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.9
   },
   {
     "RI District": 3053,
@@ -517,9 +589,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 63,
+    "SuspendedInteractClubs": 13,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 20,
+    "Rotary without Interact Club": 58,
+    "% Rotary without Interact Club": 0.7435897435897436,
+    "Rotary with Suspended Interact Clubs": 6,
     "Total Reported Members": 336,
     "Members": 336,
-    "Avg Membership": 14.61
+    "Avg Membership": 14.61,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1.6
   },
   {
     "RI District": 3055,
@@ -575,9 +656,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 118,
+    "SuspendedInteractClubs": 10,
+    "Rotaract with Interact": 1,
+    "Rotary with Interact Club": 55,
+    "Rotary without Interact Club": 48,
+    "% Rotary without Interact Club": 0.46601941747572817,
+    "Rotary with Suspended Interact Clubs": 5,
     "Total Reported Members": 692,
     "Members": 692,
-    "Avg Membership": 13.06
+    "Avg Membership": 13.06,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3056,
@@ -633,9 +723,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 129,
+    "SuspendedInteractClubs": 23,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 26,
+    "Rotary without Interact Club": 60,
+    "% Rotary without Interact Club": 0.6976744186046512,
+    "Rotary with Suspended Interact Clubs": 9,
     "Total Reported Members": 220,
     "Members": 220,
-    "Avg Membership": 9.57
+    "Avg Membership": 9.57,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3060,
@@ -691,9 +790,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 100,
+    "SuspendedInteractClubs": 9,
+    "Rotaract with Interact": 7,
+    "Rotary with Interact Club": 48,
+    "Rotary without Interact Club": 57,
+    "% Rotary without Interact Club": 0.5428571428571428,
+    "Rotary with Suspended Interact Clubs": 7,
     "Total Reported Members": 1336,
     "Members": 1336,
-    "Avg Membership": 25.69
+    "Avg Membership": 25.69,
+    "Interact Growth Abs": 2,
+    "Interact Growth (%)": 2
   },
   {
     "RI District": 3070,
@@ -749,9 +857,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 86,
+    "SuspendedInteractClubs": 16,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 29,
+    "Rotary without Interact Club": 82,
+    "% Rotary without Interact Club": 0.7387387387387387,
+    "Rotary with Suspended Interact Clubs": 6,
     "Total Reported Members": 333,
     "Members": 333,
-    "Avg Membership": 9.79
+    "Avg Membership": 9.79,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3080,
@@ -807,9 +924,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 265,
+    "SuspendedInteractClubs": 25,
+    "Rotaract with Interact": 2,
+    "Rotary with Interact Club": 50,
+    "Rotary without Interact Club": 86,
+    "% Rotary without Interact Club": 0.6323529411764706,
+    "Rotary with Suspended Interact Clubs": 14,
     "Total Reported Members": 2227,
     "Members": 2227,
-    "Avg Membership": 27.16
+    "Avg Membership": 27.16,
+    "Interact Growth Abs": 4,
+    "Interact Growth (%)": 1.5
   },
   {
     "RI District": 3090,
@@ -865,9 +991,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 393,
+    "SuspendedInteractClubs": 72,
+    "Rotaract with Interact": 18,
+    "Rotary with Interact Club": 46,
+    "Rotary without Interact Club": 125,
+    "% Rotary without Interact Club": 0.7309941520467836,
+    "Rotary with Suspended Interact Clubs": 16,
     "Total Reported Members": 408,
     "Members": 408,
-    "Avg Membership": 12.75
+    "Avg Membership": 12.75,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3100,
@@ -923,9 +1058,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 279,
+    "SuspendedInteractClubs": 8,
+    "Rotaract with Interact": 4,
+    "Rotary with Interact Club": 48,
+    "Rotary without Interact Club": 84,
+    "% Rotary without Interact Club": 0.6363636363636364,
+    "Rotary with Suspended Interact Clubs": 7,
     "Total Reported Members": 289,
     "Members": 289,
-    "Avg Membership": 10.32
+    "Avg Membership": 10.32,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.4
   },
   {
     "RI District": 3110,
@@ -981,9 +1125,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 114,
+    "SuspendedInteractClubs": 0,
+    "Rotaract with Interact": 3,
+    "Rotary with Interact Club": 32,
+    "Rotary without Interact Club": 98,
+    "% Rotary without Interact Club": 0.7538461538461538,
+    "Rotary with Suspended Interact Clubs": 0,
     "Total Reported Members": 185,
     "Members": 185,
-    "Avg Membership": 8.41
+    "Avg Membership": 8.41,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3120,
@@ -1039,9 +1192,18 @@
     "NewTotalClubs": 9,
     "NewCommunityClubs": 5,
     "NewUniversityClubs": 4,
+    "TotalInteractClubs": 81,
+    "SuspendedInteractClubs": 6,
+    "Rotaract with Interact": 1,
+    "Rotary with Interact Club": 27,
+    "Rotary without Interact Club": 76,
+    "% Rotary without Interact Club": 0.7378640776699029,
+    "Rotary with Suspended Interact Clubs": 4,
     "Total Reported Members": 897,
     "Members": 897,
-    "Avg Membership": 15.47
+    "Avg Membership": 15.47,
+    "Interact Growth Abs": 3,
+    "Interact Growth (%)": 3.8
   },
   {
     "RI District": 3131,
@@ -1097,9 +1259,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 363,
+    "SuspendedInteractClubs": 48,
+    "Rotaract with Interact": 5,
+    "Rotary with Interact Club": 100,
+    "Rotary without Interact Club": 32,
+    "% Rotary without Interact Club": 0.24242424242424243,
+    "Rotary with Suspended Interact Clubs": 22,
     "Total Reported Members": 2040,
     "Members": 2040,
-    "Avg Membership": 20.4
+    "Avg Membership": 20.4,
+    "Interact Growth Abs": 2,
+    "Interact Growth (%)": 0.6
   },
   {
     "RI District": 3132,
@@ -1155,9 +1326,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 278,
+    "SuspendedInteractClubs": 37,
+    "Rotaract with Interact": 13,
+    "Rotary with Interact Club": 65,
+    "Rotary without Interact Club": 38,
+    "% Rotary without Interact Club": 0.36893203883495146,
+    "Rotary with Suspended Interact Clubs": 14,
     "Total Reported Members": 502,
     "Members": 502,
-    "Avg Membership": 13.94
+    "Avg Membership": 13.94,
+    "Interact Growth Abs": -1,
+    "Interact Growth (%)": -0.4
   },
   {
     "RI District": 3141,
@@ -1213,9 +1393,18 @@
     "NewTotalClubs": 4,
     "NewCommunityClubs": 4,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 251,
+    "SuspendedInteractClubs": 28,
+    "Rotaract with Interact": 12,
+    "Rotary with Interact Club": 69,
+    "Rotary without Interact Club": 53,
+    "% Rotary without Interact Club": 0.4344262295081967,
+    "Rotary with Suspended Interact Clubs": 16,
     "Total Reported Members": 2821,
     "Members": 2821,
-    "Avg Membership": 22.04
+    "Avg Membership": 22.04,
+    "Interact Growth Abs": 5,
+    "Interact Growth (%)": 2
   },
   {
     "RI District": 3142,
@@ -1271,9 +1460,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 162,
+    "SuspendedInteractClubs": 9,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 60,
+    "Rotary without Interact Club": 45,
+    "% Rotary without Interact Club": 0.42857142857142855,
+    "Rotary with Suspended Interact Clubs": 7,
     "Total Reported Members": 1099,
     "Members": 1099,
-    "Avg Membership": 19.28
+    "Avg Membership": 19.28,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3150,
@@ -1329,9 +1527,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 197,
+    "SuspendedInteractClubs": 21,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 50,
+    "Rotary without Interact Club": 57,
+    "% Rotary without Interact Club": 0.5327102803738317,
+    "Rotary with Suspended Interact Clubs": 11,
     "Total Reported Members": 2003,
     "Members": 2003,
-    "Avg Membership": 37.09
+    "Avg Membership": 37.09,
+    "Interact Growth Abs": 4,
+    "Interact Growth (%)": 2.1
   },
   {
     "RI District": 3160,
@@ -1387,9 +1594,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 104,
+    "SuspendedInteractClubs": 16,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 18,
+    "Rotary without Interact Club": 61,
+    "% Rotary without Interact Club": 0.7721518987341772,
+    "Rotary with Suspended Interact Clubs": 11,
     "Total Reported Members": 170,
     "Members": 170,
-    "Avg Membership": 5
+    "Avg Membership": 5,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1
   },
   {
     "RI District": 3170,
@@ -1445,9 +1661,18 @@
     "NewTotalClubs": 21,
     "NewCommunityClubs": 9,
     "NewUniversityClubs": 12,
+    "TotalInteractClubs": 305,
+    "SuspendedInteractClubs": 18,
+    "Rotaract with Interact": 8,
+    "Rotary with Interact Club": 80,
+    "Rotary without Interact Club": 62,
+    "% Rotary without Interact Club": 0.43661971830985913,
+    "Rotary with Suspended Interact Clubs": 9,
     "Total Reported Members": 1545,
     "Members": 1545,
-    "Avg Membership": 11.98
+    "Avg Membership": 11.98,
+    "Interact Growth Abs": 11,
+    "Interact Growth (%)": 3.7
   },
   {
     "RI District": 3181,
@@ -1503,9 +1728,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 193,
+    "SuspendedInteractClubs": 8,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 53,
+    "Rotary without Interact Club": 38,
+    "% Rotary without Interact Club": 0.4175824175824176,
+    "Rotary with Suspended Interact Clubs": 5,
     "Total Reported Members": 848,
     "Members": 848,
-    "Avg Membership": 14.62
+    "Avg Membership": 14.62,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3182,
@@ -1561,9 +1795,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 1,
+    "TotalInteractClubs": 185,
+    "SuspendedInteractClubs": 19,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 42,
+    "Rotary without Interact Club": 47,
+    "% Rotary without Interact Club": 0.5280898876404494,
+    "Rotary with Suspended Interact Clubs": 9,
     "Total Reported Members": 437,
     "Members": 437,
-    "Avg Membership": 7.95
+    "Avg Membership": 7.95,
+    "Interact Growth Abs": -1,
+    "Interact Growth (%)": -0.5
   },
   {
     "RI District": 3191,
@@ -1619,9 +1862,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 1,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 258,
+    "SuspendedInteractClubs": 15,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 54,
+    "Rotary without Interact Club": 48,
+    "% Rotary without Interact Club": 0.47058823529411764,
+    "Rotary with Suspended Interact Clubs": 11,
     "Total Reported Members": 1875,
     "Members": 1875,
-    "Avg Membership": 22.32
+    "Avg Membership": 22.32,
+    "Interact Growth Abs": 2,
+    "Interact Growth (%)": 0.8
   },
   {
     "RI District": 3192,
@@ -1677,9 +1929,18 @@
     "NewTotalClubs": 1,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 1,
+    "TotalInteractClubs": 238,
+    "SuspendedInteractClubs": 29,
+    "Rotaract with Interact": 2,
+    "Rotary with Interact Club": 57,
+    "Rotary without Interact Club": 36,
+    "% Rotary without Interact Club": 0.3870967741935484,
+    "Rotary with Suspended Interact Clubs": 16,
     "Total Reported Members": 2073,
     "Members": 2073,
-    "Avg Membership": 23.83
+    "Avg Membership": 23.83,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.4
   },
   {
     "RI District": 3203,
@@ -1735,9 +1996,18 @@
     "NewTotalClubs": 5,
     "NewCommunityClubs": 3,
     "NewUniversityClubs": 2,
+    "TotalInteractClubs": 228,
+    "SuspendedInteractClubs": 14,
+    "Rotaract with Interact": 6,
+    "Rotary with Interact Club": 52,
+    "Rotary without Interact Club": 68,
+    "% Rotary without Interact Club": 0.5666666666666667,
+    "Rotary with Suspended Interact Clubs": 7,
     "Total Reported Members": 1517,
     "Members": 1517,
-    "Avg Membership": 19.96
+    "Avg Membership": 19.96,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3204,
@@ -1793,9 +2063,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 31,
+    "SuspendedInteractClubs": 10,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 20,
+    "Rotary without Interact Club": 79,
+    "% Rotary without Interact Club": 0.797979797979798,
+    "Rotary with Suspended Interact Clubs": 5,
     "Total Reported Members": 256,
     "Members": 256,
-    "Avg Membership": 9.85
+    "Avg Membership": 9.85,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3205,
@@ -1851,9 +2130,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 60,
+    "SuspendedInteractClubs": 6,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 37,
+    "Rotary without Interact Club": 68,
+    "% Rotary without Interact Club": 0.6476190476190476,
+    "Rotary with Suspended Interact Clubs": 5,
     "Total Reported Members": 644,
     "Members": 644,
-    "Avg Membership": 16.95
+    "Avg Membership": 16.95,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1.7
   },
   {
     "RI District": 3206,
@@ -1909,9 +2197,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 86,
+    "SuspendedInteractClubs": 7,
+    "Rotaract with Interact": 5,
+    "Rotary with Interact Club": 35,
+    "Rotary without Interact Club": 43,
+    "% Rotary without Interact Club": 0.5512820512820513,
+    "Rotary with Suspended Interact Clubs": 3,
     "Total Reported Members": 1919,
     "Members": 1919,
-    "Avg Membership": 18.45
+    "Avg Membership": 18.45,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1.2
   },
   {
     "RI District": 3211,
@@ -1967,9 +2264,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 62,
+    "SuspendedInteractClubs": 3,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 29,
+    "Rotary without Interact Club": 136,
+    "% Rotary without Interact Club": 0.8242424242424242,
+    "Rotary with Suspended Interact Clubs": 3,
     "Total Reported Members": 509,
     "Members": 509,
-    "Avg Membership": 15.42
+    "Avg Membership": 15.42,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1.6
   },
   {
     "RI District": 3212,
@@ -2025,9 +2331,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 302,
+    "SuspendedInteractClubs": 12,
+    "Rotaract with Interact": 3,
+    "Rotary with Interact Club": 57,
+    "Rotary without Interact Club": 67,
+    "% Rotary without Interact Club": 0.5403225806451613,
+    "Rotary with Suspended Interact Clubs": 5,
     "Total Reported Members": 630,
     "Members": 630,
-    "Avg Membership": 7.33
+    "Avg Membership": 7.33,
+    "Interact Growth Abs": 3,
+    "Interact Growth (%)": 1
   },
   {
     "RI District": 3220,
@@ -2083,9 +2398,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 158,
+    "SuspendedInteractClubs": 4,
+    "Rotaract with Interact": 1,
+    "Rotary with Interact Club": 44,
+    "Rotary without Interact Club": 28,
+    "% Rotary without Interact Club": 0.3888888888888889,
+    "Rotary with Suspended Interact Clubs": 2,
     "Total Reported Members": 3838,
     "Members": 3838,
-    "Avg Membership": 40.4
+    "Avg Membership": 40.4,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3231,
@@ -2141,9 +2465,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 176,
+    "SuspendedInteractClubs": 5,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 39,
+    "Rotary without Interact Club": 58,
+    "% Rotary without Interact Club": 0.5979381443298969,
+    "Rotary with Suspended Interact Clubs": 2,
     "Total Reported Members": 959,
     "Members": 959,
-    "Avg Membership": 21.8
+    "Avg Membership": 21.8,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3233,
@@ -2199,9 +2532,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 97,
+    "SuspendedInteractClubs": 8,
+    "Rotaract with Interact": 1,
+    "Rotary with Interact Club": 45,
+    "Rotary without Interact Club": 47,
+    "% Rotary without Interact Club": 0.5108695652173914,
+    "Rotary with Suspended Interact Clubs": 6,
     "Total Reported Members": 5819,
     "Members": 5819,
-    "Avg Membership": 83.13
+    "Avg Membership": 83.13,
+    "Interact Growth Abs": 4,
+    "Interact Growth (%)": 4.3
   },
   {
     "RI District": 3234,
@@ -2257,9 +2599,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 163,
+    "SuspendedInteractClubs": 16,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 49,
+    "Rotary without Interact Club": 35,
+    "% Rotary without Interact Club": 0.4166666666666667,
+    "Rotary with Suspended Interact Clubs": 10,
     "Total Reported Members": 1893,
     "Members": 1893,
-    "Avg Membership": 25.93
+    "Avg Membership": 25.93,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3240,
@@ -2315,9 +2666,18 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 104,
+    "SuspendedInteractClubs": 13,
+    "Rotaract with Interact": 2,
+    "Rotary with Interact Club": 46,
+    "Rotary without Interact Club": 52,
+    "% Rotary without Interact Club": 0.5306122448979592,
+    "Rotary with Suspended Interact Clubs": 8,
     "Total Reported Members": 798,
     "Members": 798,
-    "Avg Membership": 14.25
+    "Avg Membership": 14.25,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 1
   },
   {
     "RI District": 3250,
@@ -2373,9 +2733,18 @@
     "NewTotalClubs": 2,
     "NewCommunityClubs": 2,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 132,
+    "SuspendedInteractClubs": 5,
+    "Rotaract with Interact": 2,
+    "Rotary with Interact Club": 35,
+    "Rotary without Interact Club": 86,
+    "% Rotary without Interact Club": 0.7107438016528925,
+    "Rotary with Suspended Interact Clubs": 3,
     "Total Reported Members": 593,
     "Members": 593,
-    "Avg Membership": 14.12
+    "Avg Membership": 14.12,
+    "Interact Growth Abs": 17,
+    "Interact Growth (%)": 14.8
   },
   {
     "RI District": 3261,
@@ -2431,9 +2800,18 @@
     "NewTotalClubs": 3,
     "NewCommunityClubs": 3,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 53,
+    "SuspendedInteractClubs": 4,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 22,
+    "Rotary without Interact Club": 72,
+    "% Rotary without Interact Club": 0.7659574468085106,
+    "Rotary with Suspended Interact Clubs": 3,
     "Total Reported Members": 155,
     "Members": 155,
-    "Avg Membership": 7.75
+    "Avg Membership": 7.75,
+    "Interact Growth Abs": 0,
+    "Interact Growth (%)": 0
   },
   {
     "RI District": 3262,
@@ -2489,9 +2867,18 @@
     "NewTotalClubs": 2,
     "NewCommunityClubs": 2,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 686,
+    "SuspendedInteractClubs": 36,
+    "Rotaract with Interact": 0,
+    "Rotary with Interact Club": 47,
+    "Rotary without Interact Club": 74,
+    "% Rotary without Interact Club": 0.6115702479338843,
+    "Rotary with Suspended Interact Clubs": 15,
     "Total Reported Members": 669,
     "Members": 669,
-    "Avg Membership": 8.92
+    "Avg Membership": 8.92,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.1
   },
   {
     "RI District": 3292,
@@ -2547,8 +2934,17 @@
     "NewTotalClubs": 0,
     "NewCommunityClubs": 0,
     "NewUniversityClubs": 0,
+    "TotalInteractClubs": 150,
+    "SuspendedInteractClubs": 18,
+    "Rotaract with Interact": 23,
+    "Rotary with Interact Club": 75,
+    "Rotary without Interact Club": 90,
+    "% Rotary without Interact Club": 0.5454545454545454,
+    "Rotary with Suspended Interact Clubs": 17,
     "Total Reported Members": 4557,
     "Members": 4557,
-    "Avg Membership": 23.86
+    "Avg Membership": 23.86,
+    "Interact Growth Abs": 1,
+    "Interact Growth (%)": 0.7
   }
 ]

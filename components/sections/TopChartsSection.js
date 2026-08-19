@@ -291,6 +291,74 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         .slice(0, 5)
         .map(d => ({ label: `District ${d.district}`, value: `+${(d.clubsGrowthPct || 0).toFixed(1)}%` }));
 
+    // Interact Ecosystem Leaderboards
+    const topDistInteractClubs = [...distStats]
+        .filter(s => (s.totalInteractClubs || 0) > 0)
+        .sort((a, b) => (b.totalInteractClubs || 0) - (a.totalInteractClubs || 0))
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: d.totalInteractClubs.toLocaleString() }));
+
+    const topDistInteractGrowth = [...distStats]
+        .map(s => ({ ...s, growth: (s.totalInteractClubs || 0) - (s.prevInteractClubs || 0) }))
+        .filter(s => s.growth > 0)
+        .sort((a, b) => b.growth - a.growth)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `+${d.growth.toLocaleString()}` }));
+
+    const topDistInteractGrowthPct = [...distStats]
+        .filter(s => (s.prevInteractClubs || 0) > 0)
+        .map(s => ({ ...s, growthPct: (((s.totalInteractClubs || 0) - (s.prevInteractClubs || 0)) / s.prevInteractClubs) * 100 }))
+        .filter(s => s.growthPct > 0)
+        .sort((a, b) => b.growthPct - a.growthPct)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `+${d.growthPct.toFixed(1)}%` }));
+
+    const topDistInteractHealth = [...distStats]
+        .filter(s => (s.totalInteractClubs || 0) > 0)
+        .map(s => ({ ...s, healthPct: (((s.totalInteractClubs - (s.suspendedInteractClubs || 0)) / s.totalInteractClubs) * 100) }))
+        .sort((a, b) => b.healthPct - a.healthPct)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `${d.healthPct.toFixed(1)}%` }));
+
+    const topDistRotaractSponsorInteract = [...distStats]
+        .filter(s => (s.rotaractWithInteract || 0) > 0)
+        .sort((a, b) => (b.rotaractWithInteract || 0) - (a.rotaractWithInteract || 0))
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: d.rotaractWithInteract.toLocaleString() }));
+
+    const topDistRotaractSponsorInteractPct = [...distStats]
+        .filter(s => (s.totalClubs || 0) > 0 && (s.rotaractWithInteract || 0) > 0)
+        .map(s => ({ ...s, spPct: ((s.rotaractWithInteract || 0) / s.totalClubs) * 100 }))
+        .sort((a, b) => b.spPct - a.spPct)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `${d.spPct.toFixed(1)}%` }));
+
+    const topDistRotaryNoInteract = [...distStats]
+        .filter(s => (s.rotaryWithoutInteract || 0) > 0)
+        .sort((a, b) => (b.rotaryWithoutInteract || 0) - (a.rotaryWithoutInteract || 0))
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: d.rotaryWithoutInteract.toLocaleString() }));
+
+    const topDistRotaryNoInteractPct = [...distStats]
+        .filter(s => (s.totalRotary || 0) > 0 && (s.rotaryWithoutInteract || 0) > 0)
+        .map(s => ({ ...s, noIntPct: ((s.rotaryWithoutInteract || 0) / s.totalRotary) * 100 }))
+        .sort((a, b) => b.noIntPct - a.noIntPct)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `${d.noIntPct.toFixed(1)}%` }));
+
+    const topDistSuspendedInteract = [...distStats]
+        .filter(s => (s.suspendedInteractClubs || 0) > 0)
+        .sort((a, b) => (b.suspendedInteractClubs || 0) - (a.suspendedInteractClubs || 0))
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: d.suspendedInteractClubs.toLocaleString() }));
+
+    const topDistSuspendedInteractPct = [...distStats]
+        .filter(s => (s.totalInteractClubs || 0) > 0 && (s.suspendedInteractClubs || 0) > 0)
+        .map(s => ({ ...s, suspPct: ((s.suspendedInteractClubs || 0) / s.totalInteractClubs) * 100 }))
+        .sort((a, b) => b.suspPct - a.suspPct)
+        .slice(0, 5)
+        .map(d => ({ label: `District ${d.district}`, value: `${d.suspPct.toFixed(1)}%` }));
+
     return (
         <div style={{ marginTop: '50px', marginBottom: '50px' }}>
             <h2 className="section-title">Top Charts</h2>
@@ -308,6 +376,18 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Highest Membership (Clubs)" description="Clubs with the largest total reported membership." data={topMemberClubs} maxItems={5} />
                 <Leaderboard title="Largest Community Clubs" description="Community-based clubs with the most members." data={topCommunityClubs} maxItems={5} />
                 <Leaderboard title="Largest University Clubs" description="University-based clubs with the most members." data={topUniversityClubs} maxItems={5} />
+            </div>
+
+            <h3 style={{ fontSize: '18px', color: 'var(--text-main)', marginBottom: '15px' }}>Interact Ecosystem</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+                <Leaderboard title="Most Interact Clubs" description="Districts with the highest total number of Interact clubs." data={topDistInteractClubs} maxItems={5} />
+                <Leaderboard title="Highest Interact Growth" description="Districts with the largest increase in Interact clubs since July 1." data={topDistInteractGrowth} maxItems={5} />
+                <Leaderboard title="Highest Interact Growth (%)" description="Districts with the largest percentage increase in Interact clubs since July 1." data={topDistInteractGrowthPct} maxItems={5} />
+                <Leaderboard title="Highest Active Interact Rate (%)" description="Districts with the highest percentage of active Interact clubs." data={topDistInteractHealth} maxItems={5} />
+                <Leaderboard title="Most Rotaract Sponsoring Interact" description="Districts with the highest number of Rotaract clubs sponsoring Interact." data={topDistRotaractSponsorInteract} maxItems={5} />
+                <Leaderboard title="Highest Rotaract Sponsoring Rate (%)" description="Districts with the highest percentage of Rotaract clubs sponsoring Interact." data={topDistRotaractSponsorInteractPct} maxItems={5} />
+                <Leaderboard title="Highest % Rotary w/o Interact" description="Districts with the highest percentage of Rotary clubs without an Interact Club." data={topDistRotaryNoInteractPct} isNegative={true} maxItems={5} />
+                <Leaderboard title="Most Rotary w/o Interact" description="Districts with the highest number of Rotary clubs without an Interact Club." data={topDistRotaryNoInteract} isNegative={true} maxItems={5} />
             </div>
 
             <h3 style={{ fontSize: '18px', color: 'var(--text-main)', marginBottom: '15px' }}>Rotary-Rotaract Integration</h3>
@@ -333,6 +413,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Most Clubs in Arrears" description="Districts with the highest number of clubs in arrears." data={topDistArrearsClubsAbs} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest Outstanding Dues (Districts)" description="Districts with the largest combined outstanding balances in USD." data={topDistOutstanding} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Clubs Subject to Termination" description="Districts with the highest number of clubs at risk of termination." data={topDistAtRiskAbs} isNegative={true} maxItems={5} />
+                <Leaderboard title="Most Suspended Interact Clubs" description="Districts with the highest number of suspended Interact clubs." data={topDistSuspendedInteract} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest Outstanding Dues (Clubs)" description="Individual clubs with the largest outstanding balances in USD." data={topArrearsClubs} isNegative={true} maxItems={5} />
             </div>
 
@@ -343,6 +424,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Highest % Unreported Officers" description="Districts with the highest percentage of clubs missing officer data." data={topDistMissing} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest % Clubs in Arrears" description="Districts with the highest percentage of clubs in arrears." data={topDistArrearsPct} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest % Subject to Termination" description="Districts with the highest percentage of clubs with Outstanding Dues of $75 or more." data={topDistAtRisk} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest % Suspended Interact" description="Districts with the highest percentage of Interact clubs currently suspended." data={topDistSuspendedInteractPct} isNegative={true} maxItems={5} />
             </div>
         </div>
     );

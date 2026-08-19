@@ -1,4 +1,4 @@
-import { getDashboardSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getZoneSummary, getAllClubs, getTRFContributions, getNewClubs, getZoneData } from '@/lib/api';
+import { getDashboardSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getRotaryNoInteract, getZoneSummary, getAllClubs, getTRFContributions, getNewClubs, getZoneData } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
 import DoughnutChart from '@/components/charts/DoughnutChart';
@@ -26,6 +26,7 @@ export default async function ZonePage({ params, searchParams }) {
     const arrearsData = await getArrears() || [];
     const officersData = await getNoOfficers() || [];
     const rotaryData = await getRotaryNoSponsor() || [];
+    const rotaryNoInteractData = await getRotaryNoInteract() || [];
     const zoneTableData = await getZoneSummary() || [];
     const allClubsData = await getAllClubs() || [];
     const trfData = await getTRFContributions() || [];
@@ -39,6 +40,7 @@ export default async function ZonePage({ params, searchParams }) {
     let filteredArrearsData = arrearsData;
     let filteredOfficersData = officersData;
     let filteredRotaryData = rotaryData;
+    let filteredRotaryNoInteractData = rotaryNoInteractData;
     let filteredNewClubsData = await getNewClubs() || [];
     let filteredTrfData = trfData;
     let filteredAllClubsData = allClubsData;
@@ -53,6 +55,7 @@ export default async function ZonePage({ params, searchParams }) {
         filteredArrearsData = filteredArrearsData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredOfficersData = filteredOfficersData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredRotaryData = filteredRotaryData.filter(c => selectedDistricts.includes(c.District?.toString()));
+        filteredRotaryNoInteractData = filteredRotaryNoInteractData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredNewClubsData = filteredNewClubsData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredTrfData = filteredTrfData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredAllClubsData = filteredAllClubsData.filter(c => selectedDistricts.includes(c.District?.toString()));
@@ -106,7 +109,14 @@ export default async function ZonePage({ params, searchParams }) {
             totalUniv: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.totalUniv || 0), 0),
             totalComm: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.totalComm || 0), 0),
             membersUniv: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.membersUniv || 0), 0),
-            membersComm: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.membersComm || 0), 0)
+            membersComm: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.membersComm || 0), 0),
+
+            totalInteractClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['TotalInteractClubs'] || 0), 0),
+            suspendedInteractClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['SuspendedInteractClubs'] || 0), 0),
+            rotaractWithInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotaract with Interact'] || 0), 0),
+            rotaryWithInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Interact Club'] || 0), 0),
+            rotaryWithoutInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary without Interact Club'] || 0), 0),
+            rotaryWithSuspendedInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Suspended Interact Clubs'] || 0), 0)
         };
         // Compute prevOverall for filtered districts
         const dSet = new Set(selectedDistricts);
@@ -127,7 +137,8 @@ export default async function ZonePage({ params, searchParams }) {
             outstanding: prevFilteredDistricts.reduce((sum, d) => sum + (d.outstanding || 0), 0),
             arrearsClubs: prevFilteredDistricts.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
             atRisk: prevFilteredDistricts.reduce((sum, d) => sum + (d.atRisk || 0), 0),
-            noOfficers: prevFilteredDistricts.reduce((sum, d) => sum + (d.noOfficers || 0), 0)
+            noOfficers: prevFilteredDistricts.reduce((sum, d) => sum + (d.noOfficers || 0), 0),
+            totalInteractClubs: prevFilteredDistricts.reduce((sum, d) => sum + (d.totalInteractClubs || 0), 0)
         };
     } else {
         const formattedZones = selectedZones.map(normalizeZoneName);
@@ -143,6 +154,7 @@ export default async function ZonePage({ params, searchParams }) {
         filteredArrearsData = filteredArrearsData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredOfficersData = filteredOfficersData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredRotaryData = filteredRotaryData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
+        filteredRotaryNoInteractData = filteredRotaryNoInteractData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredNewClubsData = filteredNewClubsData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredTrfData = filteredTrfData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredAllClubsData = filteredAllClubsData.filter(c => c['Zone'] && formattedZones.includes(normalizeZoneName(c['Zone'])));
@@ -176,7 +188,14 @@ export default async function ZonePage({ params, searchParams }) {
             totalUniv: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalUniv || 0), 0),
             totalComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalComm || 0), 0),
             membersUniv: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.membersUniv || 0), 0),
-            membersComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.membersComm || 0), 0)
+            membersComm: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.membersComm || 0), 0),
+
+            totalInteractClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalInteractClubs || 0), 0),
+            suspendedInteractClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.suspendedInteractClubs || 0), 0),
+            rotaractWithInteract: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaractWithInteract || 0), 0),
+            rotaryWithInteract: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithInteract || 0), 0),
+            rotaryWithoutInteract: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithoutInteract || 0), 0),
+            rotaryWithSuspendedInteract: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithSuspendedInteract || 0), 0)
         };
         // Compute prevOverall for filtered zones
         let prevFilteredZones = [];
@@ -193,7 +212,8 @@ export default async function ZonePage({ params, searchParams }) {
             outstanding: prevFilteredZones.reduce((sum, z) => sum + (z.stats.outstanding || 0), 0),
             arrearsClubs: prevFilteredZones.reduce((sum, z) => sum + (z.stats.arrearsClubs || 0), 0),
             atRisk: prevFilteredZones.reduce((sum, z) => sum + (z.stats.atRisk || 0), 0),
-            noOfficers: prevFilteredZones.reduce((sum, z) => sum + (z.stats.noOfficers || 0), 0)
+            noOfficers: prevFilteredZones.reduce((sum, z) => sum + (z.stats.noOfficers || 0), 0),
+            totalInteractClubs: prevFilteredZones.reduce((sum, z) => sum + (z.stats.totalInteractClubs || 0), 0)
         };
     }
 
@@ -204,7 +224,7 @@ export default async function ZonePage({ params, searchParams }) {
         if (diff === 0) return null;
         
         const pct = prevOverall[key] ? Math.abs((diff / prevOverall[key]) * 100).toFixed(1) : 0;
-        const isGood = key === 'totalClubs' || key === 'totalMembers' || key === 'totalRotary' ? diff > 0 : diff < 0; // Growth is good, arrears/dues are bad
+        const isGood = key === 'totalClubs' || key === 'totalMembers' || key === 'totalRotary' || key === 'totalInteractClubs' ? diff > 0 : diff < 0; // Growth is good, arrears/dues are bad
         
         const arrow = diff > 0 ? '↑' : '↓';
         const absDiff = Math.abs(diff);
@@ -301,6 +321,10 @@ export default async function ZonePage({ params, searchParams }) {
 
     const districtLabels = Object.keys(filteredZones[fullZoneName]?.districts || {});
 
+    const activeInteract = (overall.totalInteractClubs || 0) - (overall.suspendedInteractClubs || 0);
+    const activeInteractPct = overall.totalInteractClubs > 0 ? Math.round((activeInteract / overall.totalInteractClubs) * 100) : 0;
+    const rotaractSponsorPct = overall.totalClubs > 0 ? ((overall.rotaractWithInteract / overall.totalClubs) * 100).toFixed(1) : 0;
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
@@ -331,12 +355,21 @@ export default async function ZonePage({ params, searchParams }) {
                 <MetricCard title="Rotary w/o Sponsored Rotaract" value={overall.rotaryWithoutSponsor?.toLocaleString() || '0'} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} />
             </section>
 
+            <h2 className="section-title">Interact Ecosystem</h2>
+            <section className="metrics-grid four-cols" style={{ marginBottom: '40px' }}>
+                <MetricCard title="Total Interact Clubs" value={overall.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} />
+                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} />
+                <MetricCard title="Rotary w/o Interact Club" value={overall.rotaryWithoutInteract?.toLocaleString() || '0'} trend={overall.totalRotary ? {text: `${Math.round(((overall.rotaryWithoutInteract || 0) / overall.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} />
+                <MetricCard title="Rotaract Sponsoring Interact" value={overall.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} />
+            </section>
+
             <h2 className="section-title">Compliance & Risks</h2>
-            <section className="metrics-grid four-cols" style={{ marginBottom: '20px' }}>
+            <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues" value={`$${overall.outstanding?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} trend={getDelta('outstanding', 'usd')} />
                 <MetricCard title="Clubs in Arrears" value={overall.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={overall.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
+                <MetricCard title="Suspended Interact" value={overall.suspendedInteractClubs?.toLocaleString() || '0'} trend={overall.totalInteractClubs ? {text: `${Math.round(((overall.suspendedInteractClubs || 0) / overall.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} />
             </section>
             
             <section className="charts-grid three-cols" style={{ marginBottom: '40px' }}>
@@ -380,6 +413,7 @@ export default async function ZonePage({ params, searchParams }) {
                         arrearsData={filteredArrearsData} 
                         officersData={filteredOfficersData} 
                         rotaryData={filteredRotaryData}
+                        rotaryNoInteractData={filteredRotaryNoInteractData}
                         newClubsData={filteredNewClubsData}
                         trfData={filteredTrfData}
                         allClubsData={filteredAllClubsData}

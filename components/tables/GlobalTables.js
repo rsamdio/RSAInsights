@@ -3,7 +3,7 @@ import Tabs from '@/components/ui/Tabs';
 import DataTable from './DataTable';
 import Link from 'next/link';
 
-export default function GlobalTables({ zoneTableData, arrearsData, officersData, rotaryData, newClubsData, trfData, allClubsData }) {
+export default function GlobalTables({ zoneTableData, arrearsData, officersData, rotaryData, rotaryNoInteractData, newClubsData, trfData, allClubsData }) {
     const districtCols = [
         { 
             header: 'District', 
@@ -60,10 +60,24 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
-            header: 'Rotary w/o Sponsor', 
+            header: 'Rotary w/o Rotaract', 
             id: 'Rotary_without_Rotaract_Club',
             accessorKey: 'Rotary without Rotaract Club',
             accessorFn: row => Number(row['Rotary without Rotaract Club'] || 0),
+            cell: info => Number(info.getValue()).toLocaleString()
+        },
+        { 
+            header: 'Interact Clubs', 
+            id: 'TotalInteractClubs',
+            accessorKey: 'TotalInteractClubs',
+            accessorFn: row => Number(row['TotalInteractClubs'] || 0),
+            cell: info => Number(info.getValue()).toLocaleString()
+        },
+        { 
+            header: 'Rotary w/o Interact', 
+            id: 'Rotary_without_Interact_Club',
+            accessorKey: 'Rotary without Interact Club',
+            accessorFn: row => Number(row['Rotary without Interact Club'] || 0),
             cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
@@ -195,6 +209,14 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         { header: 'District', accessorKey: 'District' },
         { header: 'Rotary Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
         { header: 'Members', id: 'Current_Member_Count', accessorKey: 'Current Member Count' }
+    ];
+
+    const rotaryNoInteractCols = [
+        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { header: 'District', accessorKey: 'District' },
+        { header: 'Rotary Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
+        { header: 'Members', id: 'Current_Member_Count', accessorKey: 'Current Member Count' },
+        { header: 'Sponsored Rotaract', id: 'Total_Rotaract_Sponsored', accessorKey: 'Total Rotaract Sponsored' }
     ];
 
     const newClubsCols = [
@@ -343,7 +365,8 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         { label: 'District Summary', content: <DataTable data={zoneTableData} columns={districtCols} exportFilename="District_Summary" /> },
         { label: 'Clubs in Arrears', content: <DataTable data={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" /> },
         { label: 'Missing Officers', content: <DataTable data={officersData} columns={officersCols} exportFilename="Missing_Officers" /> },
-        { label: 'Rotary w/o Sponsor', content: <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Sponsor" /> },
+        { label: 'Rotary w/o Rotaract', content: <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" /> },
+        { label: 'Rotary w/o Interact', content: <DataTable data={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" /> },
         { label: 'New Clubs', content: <DataTable data={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" /> },
         { label: 'TRF Contributions', content: <DataTable data={trfData} columns={trfCols} exportFilename="TRF_Contributions" /> },
         { label: 'All Clubs Roster', content: <DataTable data={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" /> }

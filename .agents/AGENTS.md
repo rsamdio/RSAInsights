@@ -33,8 +33,12 @@
   - Table column header: `"Club Base"` across all summary and drilldown tables.
   - Club profile page: `"Rotaract Club Base"` with labels `"🏛️ University Based"` and `"👥 Community Based"`.
 - **District Summary Metrics:**
-  - Column names: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Sponsor"`, `"Outstanding USD"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
+  - Column names: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Rotaract"`, `"Interact Clubs"`, `"Rotary w/o Interact"`, `"Outstanding USD"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
   - `"Avg. Members/Club"` must be formatted to 2 decimal places (e.g. `15.65`, `50.82`).
+- **Interact & Youth Service Standards:**
+  - Dedicated drilldown tabs: `"Rotary w/o Rotaract"` (`data/rotary_no_sponsor.json` / `data/rotary_no_sponsor.csv`) and `"Rotary w/o Interact"` (`data/rotary_no_interact.json` / `data/rotary_no_interact.csv`).
+  - Worldwide statistics: Include `"Total Interact Clubs"` KPI metric and global leaderboards for Interact clubs and growth.
+  - Executive, Zone & District pages: Include `"Interact Ecosystem"` 4-card metric grid.
 - **Sponsorship Terminology:**
   - Use `"Sponsor Clubs"` (or `"Sponsor Club(s)"`) to accurately reflect Rotaract, Rotary, and joint sponsorships.
 - **Action Links & Navigation:**
