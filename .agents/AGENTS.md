@@ -5,7 +5,8 @@
 - **Charts:** Chart.js and `react-chartjs-2` for rich visual analytics. Doughnut and Bar charts for categorical breakdowns; Line/Bar charts for top-chart leaderboards.
 - **Data Tables:** TanStack Table (`@tanstack/react-table`) with client-side sorting, pagination, and multi-field search.
 - **Styling:** Modern Vanilla CSS (`app/globals.css`) with CSS custom properties, glassmorphism, responsive grid layouts, and mobile-first media queries.
-- **Analytics:** Google Analytics (`gtag.js` ID: `G-M9RZK0CBT5`) configured in `app/layout.js`.
+- **Analytics:** Google Analytics (`gtag.js` ID: `G-M9RZK0CBT5`) with `strategy="afterInteractive"` and real-time App Router client-side route tracking via `components/ui/Analytics.js` (`usePathname`, `useSearchParams`).
+- **Typography & Font Optimization:** Self-hosted `next/font/google` (`Inter`) with `font-display: swap` to eliminate external render-blocking network requests.
 
 ---
 
@@ -21,6 +22,7 @@
 
 ## Data Pipeline & Modeling Rules
 - **Static Generation & Caching:** The data engine (`scripts/generate_dashboard_data.js`) parses raw Excel workbooks (`fulldata/MasterData.xlsx` and `basedata/`) and exports pre-aggregated JSON/CSV payloads into `data/`.
+- **Data Date Configuration:** `DATA_AS_OF_DATE` (e.g. `'13 Aug 2026'`) is defined in `scripts/generate_dashboard_data.js` and propagates into `data/dashboard_summary.json` and `data/worldwide_summary.json`.
 - **District-First Structural Fidelity:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`). Never hardcode static zone arrays to ensure resilience against future Rotary zone restructuring.
 - **Raw Club-Level Prioritization:** Never rely on flawed historical summary sheets for critical compliance metrics (arrears, dues, missing officers). The pipeline natively aggregates raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) to guarantee data purity.
 - **API Cache Invalidation:** `lib/api.js` tracks file `mtimeMs` to automatically detect and hot-reload updated JSON data files on disk without requiring server restarts.
@@ -28,10 +30,20 @@
 
 ---
 
+## Performance & Optimization Standards
+- **Server Payload Pruning:** When Server Components pass array data into Client Component tables (`GlobalTables`, `DistrictTable`), map and trim rows to only the fields needed by the UI to keep HTML/Flight payloads minimal (<600 KB).
+- **Lazy Tab Rendering:** Tabs in `components/ui/Tabs.js` support render functions (`() => <DataTable ... />`), mounting only the active tab to prevent unnecessary initial DOM nodes and TanStack table model computation.
+- **Package Optimization:** `next.config.mjs` configures `optimizePackageImports` for `chart.js`, `react-chartjs-2`, `react-select`, and `@tanstack/react-table`.
+
+---
+
 ## Terminology & UI Standards
 - **Club Base Types:**
   - Table column header: `"Club Base"` across all summary and drilldown tables.
   - Club profile page: `"Rotaract Club Base"` with labels `"🏛️ University Based"` and `"👥 Community Based"`.
+- **Data Freshness Indicators:**
+  - Global Header: `● Data as of: [Date]` frosted pill badge beside the logo/title.
+  - Global Footer: `Data Source: Rotary International • Last Updated: [Date]` above the legal disclaimer.
 - **District Summary Metrics:**
   - Column names: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Rotaract"`, `"Interact Clubs"`, `"Rotary w/o Interact"`, `"Outstanding USD"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
   - `"Avg. Members/Club"` must be formatted to 2 decimal places (e.g. `15.65`, `50.82`).

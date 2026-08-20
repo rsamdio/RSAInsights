@@ -410,13 +410,35 @@ export default async function ZonePage({ params, searchParams }) {
                 <div className="card">
                     <GlobalTables 
                         zoneTableData={filteredZoneTableData} 
-                        arrearsData={filteredArrearsData} 
-                        officersData={filteredOfficersData} 
+                        arrearsData={filteredArrearsData.map(c => ({
+                            'RI Zone': c['RI Zone'] || c['Current Zone'] || c.Zone,
+                            'District': c.District,
+                            'Club Name': c['Club Name'],
+                            'Club Base': c['Club Base'],
+                            'Billable Member Count': c['Billable Member Count'] || 0,
+                            ' USD Outstanding ': c[' USD Outstanding '] || c.outstanding || 0,
+                            'NF Cust Number': c['NF Cust Number'] || c['Club ID'] || c.id
+                        }))} 
+                        officersData={filteredOfficersData.map(c => ({
+                            'RI Zone': c['RI Zone'] || c.Zone,
+                            'District': c.District,
+                            'Rotaract Club Name': c['Rotaract Club Name'] || c['Club Name'],
+                            'Club Base': c['Club Base'] || c['Rotaract Club Base'],
+                            'Club Status': c['Club Status'] || 'Active',
+                            'Club ID': c['Club ID'] || c['Rotaract Club ID']
+                        }))} 
                         rotaryData={filteredRotaryData}
                         rotaryNoInteractData={filteredRotaryNoInteractData}
                         newClubsData={filteredNewClubsData}
                         trfData={filteredTrfData}
-                        allClubsData={filteredAllClubsData}
+                        allClubsData={filteredAllClubsData.map(c => ({
+                            'Zone': c['RI Zone'] || c.Zone || c.zone,
+                            'District': c.District || c.district,
+                            'Club ID': c['Club ID'] || c.id,
+                            'Club Name': c['Club Name'] || c.name,
+                            'Rotaract Club Base': c['Rotaract Club Base'] || c.base,
+                            'Total Reported Members': c['Total Reported Members'] ?? c.members ?? 0
+                        }))}
                     />
                 </div>
             </section>

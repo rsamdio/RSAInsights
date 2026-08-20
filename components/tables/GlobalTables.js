@@ -362,14 +362,14 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const tabsData = [
-        { label: 'District Summary', content: <DataTable data={zoneTableData} columns={districtCols} exportFilename="District_Summary" /> },
-        { label: 'Clubs in Arrears', content: <DataTable data={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" /> },
-        { label: 'Missing Officers', content: <DataTable data={officersData} columns={officersCols} exportFilename="Missing_Officers" /> },
-        { label: 'Rotary w/o Rotaract', content: <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" /> },
-        { label: 'Rotary w/o Interact', content: <DataTable data={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" /> },
-        { label: 'New Clubs', content: <DataTable data={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" /> },
-        { label: 'TRF Contributions', content: <DataTable data={trfData} columns={trfCols} exportFilename="TRF_Contributions" /> },
-        { label: 'All Clubs Roster', content: <DataTable data={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" /> }
+        { label: 'District Summary', content: () => <DataTable data={zoneTableData} columns={districtCols} exportFilename="District_Summary" /> },
+        { label: 'Clubs in Arrears', content: () => <DataTable data={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" /> },
+        { label: 'Missing Officers', content: () => <DataTable data={officersData} columns={officersCols} exportFilename="Missing_Officers" /> },
+        { label: 'Rotary w/o Rotaract', content: () => <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" /> },
+        { label: 'Rotary w/o Interact', content: () => <DataTable data={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" /> },
+        { label: 'New Clubs', content: () => <DataTable data={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" /> },
+        { label: 'TRF Contributions', content: () => <DataTable data={trfData} columns={trfCols} exportFilename="TRF_Contributions" /> },
+        { label: 'All Clubs Roster', content: () => <DataTable data={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" /> }
     ];
 
     return <Tabs tabs={tabsData} />;

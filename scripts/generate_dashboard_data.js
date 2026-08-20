@@ -5,6 +5,7 @@ const path = require('path');
 const args = process.argv.slice(2);
 const currMasterFile = args[0] || 'fulldata/MasterData.xlsx';
 const prevMasterFile = args[1] || 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
+const DATA_AS_OF_DATE = args[2] || '13 Aug 2026'; // Configurable master data release date
 
 function readSheetAsJson(wb, sheetName, options = { defval: "" }) {
   if (!wb.SheetNames.includes(sheetName)) return [];
@@ -708,7 +709,8 @@ Object.keys(summary.zones).forEach(z => {
 const dashboardData = {
     current: summary,
     previous: prevSummary,
-    lastUpdated: new Date().toISOString()
+    dataAsOf: DATA_AS_OF_DATE,
+    lastUpdated: DATA_AS_OF_DATE
 };
 
 // Create Unified Data Model for Deep Cross-Filtering
@@ -969,7 +971,9 @@ const worldwideSummary = {
     districtData: rotaractByDistrictSheet,
     zoneData: rotaractByZoneSheet,
     interactDistrictData: interactDistrictData,
-    interactZoneData: interactZoneData
+    interactZoneData: interactZoneData,
+    dataAsOf: DATA_AS_OF_DATE,
+    lastUpdated: DATA_AS_OF_DATE
 };
 
 fs.writeFileSync('data/worldwide_summary.json', JSON.stringify(worldwideSummary, null, 2));

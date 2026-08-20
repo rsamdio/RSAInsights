@@ -59,7 +59,7 @@ export default function Tabs({ tabs }) {
                 ))}
             </div>
             <div style={{ animation: 'fadeIn 0.3s ease-out' }}>
-                {tabs[activeTab].content}
+                {typeof tabs[activeTab]?.content === 'function' ? tabs[activeTab].content() : tabs[activeTab]?.content}
             </div>
         </div>
     );
