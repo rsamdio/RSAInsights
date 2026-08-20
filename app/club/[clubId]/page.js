@@ -185,7 +185,7 @@ export default async function ClubPage({ params }) {
                         trend={club.trfTotal > 0 ? { text: 'TRF Contributor', type: 'positive' } : { text: 'No Donations', type: 'neutral' }}
                     />
                     <MetricCard 
-                        title="Outstanding Dues" 
+                        title="Outstanding Dues*" 
                         value={`₹${Math.round(club.outstanding || 0).toLocaleString('en-IN')}`} 
                         isWarning={club.outstanding > 0} 
                         trend={club.outstanding === 0 ? { text: 'Compliant (₹0)', type: 'positive' } : (club.isAtRisk ? { text: 'High Risk (≥ ₹7,200)', type: 'negative' } : { text: 'Arrears Pending', type: 'negative' })}

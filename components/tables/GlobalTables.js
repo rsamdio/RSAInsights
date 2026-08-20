@@ -81,7 +81,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
-            header: 'Outstanding (₹)', 
+            header: 'Outstanding (₹)*', 
             id: 'TotalINR',
             accessorKey: 'TotalINR',
             accessorFn: row => Number(row.TotalINR ?? row['Total Outstanding (INR)'] ?? row.outstanding ?? row.TotalUSD ?? 0),
@@ -144,7 +144,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         },
         { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
         { 
-            header: 'Outstanding (₹)', 
+            header: 'Outstanding (₹)*', 
             id: 'Outstanding_INR',
             accessorKey: 'Outstanding INR',
             accessorFn: row => Number(row['Outstanding INR'] ?? row.outstanding ?? row.outstandingINR ?? row[' USD Outstanding '] ?? 0),

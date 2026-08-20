@@ -62,7 +62,7 @@ export default function ClubLeaderboardsSection({ allClubsData, trfData, arrears
                 )}
                 {clubsByArrears.length > 0 && (
                     <Leaderboard 
-                        title="Highest Outstanding Dues" 
+                        title="Highest Outstanding Dues*" 
                         data={clubsByArrears} 
                         isNegative={true}
                     />

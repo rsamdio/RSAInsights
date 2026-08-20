@@ -413,7 +413,7 @@ export default async function GlobalDashboard({ searchParams }) {
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
+                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
                 <MetricCard title="Clubs in Arrears" value={overall.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={overall.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />

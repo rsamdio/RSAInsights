@@ -7,7 +7,7 @@ export default function DistrictTable({ districtClubs }) {
         { header: 'Club Name', accessorKey: 'name' },
         { header: 'Club Base', accessorKey: 'base' },
         { 
-            header: 'Outstanding (₹)', 
+            header: 'Outstanding (₹)*', 
             id: 'outstanding',
             accessorFn: row => Number(row.outstanding || 0),
             cell: info => `₹${Math.round(info.getValue()).toLocaleString('en-IN')}`

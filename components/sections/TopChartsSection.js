@@ -411,10 +411,10 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Highest Officer Reporting" description="Districts with the highest number of clubs reporting their officers." data={topReportedOfficersAbs} maxItems={5} />
                 <Leaderboard title="Most Unreported Officers" description="Districts with the highest number of clubs missing officer data." data={topDistMissingOfficersAbs} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Clubs in Arrears" description="Districts with the highest number of clubs in arrears." data={topDistArrearsClubsAbs} isNegative={true} maxItems={5} />
-                <Leaderboard title="Highest Outstanding Dues (Districts)" description="Districts with the largest combined outstanding balances in INR." data={topDistOutstanding} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest Outstanding Dues (Districts)*" description="Districts with the largest combined outstanding balances in INR." data={topDistOutstanding} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Clubs Subject to Termination" description="Districts with the highest number of clubs at risk of termination." data={topDistAtRiskAbs} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Suspended Interact Clubs" description="Districts with the highest number of suspended Interact clubs." data={topDistSuspendedInteract} isNegative={true} maxItems={5} />
-                <Leaderboard title="Highest Outstanding Dues (Clubs)" description="Individual clubs with the largest outstanding balances in INR." data={topArrearsClubs} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest Outstanding Dues (Clubs)*" description="Individual clubs with the largest outstanding balances in INR." data={topArrearsClubs} isNegative={true} maxItems={5} />
             </div>
 
             <h4 style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '15px', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.5px' }}>By The Percentages</h4>

@@ -281,7 +281,7 @@ export default async function DistrictPage({ params }) {
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
+                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
                 <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
