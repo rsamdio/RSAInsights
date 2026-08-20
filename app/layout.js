@@ -4,20 +4,64 @@ import './globals.css';
 import HeaderFilters from '@/components/ui/HeaderFilters';
 import Footer from '@/components/ui/Footer';
 
+import Script from 'next/script';
+import { Inter } from 'next/font/google';
+import { getDashboardSummary } from '@/lib/api';
+import Analytics from '@/components/ui/Analytics';
+import JsonLd from '@/components/seo/JsonLd';
+
 export const metadata = {
   metadataBase: new URL('https://insights.rsamdio.org'),
   title: {
     template: '%s | Rotaract South Asia MDIO',
     default: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
   },
-  description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
+  description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 (India, Sri Lanka, Nepal, Bhutan, Bangladesh, Maldives) by Rotaract South Asia MDIO.',
+  keywords: [
+    'Rotaract',
+    'Rotary International',
+    'Rotaract South Asia',
+    'RSAMDIO',
+    'Zone 4',
+    'Zone 5',
+    'Zone 6',
+    'Zone 7',
+    'Rotaract India',
+    'Rotaract Sri Lanka',
+    'Rotaract Nepal',
+    'Rotaract Bangladesh',
+    'Rotaract Bhutan',
+    'Rotaract Maldives',
+    'Rotaract Analytics',
+    'Rotaract Dashboard',
+    'Rotaract Clubs Directory',
+    'Rotaract Membership Statistics',
+    'The Rotary Foundation TRF Contributions',
+    'Interact Clubs',
+    'Rotary Club Sponsorship',
+    'Rotaract Arrears Compliance',
+  ],
+  authors: [{ name: 'Rotaract South Asia MDIO', url: 'https://rsamdio.org' }],
+  creator: 'Rotaract South Asia MDIO',
+  publisher: 'Rotaract South Asia MDIO',
+  category: 'Nonprofit & Community Analytics',
+  alternates: {
+    canonical: 'https://insights.rsamdio.org',
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
-    description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
+    description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 by Rotaract South Asia MDIO.',
     url: 'https://insights.rsamdio.org',
     siteName: 'Rotaract South Asia MDIO Insights',
     images: [
@@ -34,21 +78,78 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
-    description: 'Comprehensive analytics and metrics dashboard for Zone 4 to 7 by Rotaract South Asia MDIO',
+    description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 by Rotaract South Asia MDIO.',
     images: ['/rsamdio.webp'],
   },
+  other: {
+    'geo.region': 'IN;LK;NP;BT;BD;MV',
+    'geo.placename': 'South Asia',
+    'target-country': 'IN, LK, NP, BT, BD, MV',
+  },
 };
-
-import Script from 'next/script';
-import { Inter } from 'next/font/google';
-import { getDashboardSummary } from '@/lib/api';
-import Analytics from '@/components/ui/Analytics';
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });
+
+const globalSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://insights.rsamdio.org/#organization',
+    name: 'Rotaract South Asia Multi-District Information Organisation',
+    alternateName: 'Rotaract South Asia MDIO (RSAMDIO)',
+    url: 'https://insights.rsamdio.org',
+    logo: 'https://insights.rsamdio.org/rsamdio.webp',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Rotary International',
+      url: 'https://www.rotary.org',
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'India' },
+      { '@type': 'Country', name: 'Sri Lanka' },
+      { '@type': 'Country', name: 'Nepal' },
+      { '@type': 'Country', name: 'Bangladesh' },
+      { '@type': 'Country', name: 'Bhutan' },
+      { '@type': 'Country', name: 'Maldives' },
+    ],
+    knowsAbout: [
+      'Rotaract',
+      'Rotary International',
+      'Community Service',
+      'Youth Leadership',
+      'The Rotary Foundation',
+      'Interact',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://insights.rsamdio.org/#website',
+    url: 'https://insights.rsamdio.org',
+    name: 'Rotaract South Asia MDIO Insights',
+    description: 'Comprehensive analytics, membership metrics, and club performance directory for Rotaract Zones 4, 5, 6 & 7.',
+    publisher: {
+      '@id': 'https://insights.rsamdio.org/#organization',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    '@id': 'https://insights.rsamdio.org/#dataset',
+    name: 'Rotaract South Asia Membership, Performance and Compliance Master Dataset',
+    description: 'Master directory and performance analytics for 2,820+ Rotaract clubs, 40+ districts, and 4 zones (Zones 4, 5, 6 & 7) across South Asia.',
+    url: 'https://insights.rsamdio.org',
+    creator: {
+      '@id': 'https://insights.rsamdio.org/#organization',
+    },
+    spatialCoverage: 'South Asia (India, Sri Lanka, Nepal, Bangladesh, Bhutan, Maldives)',
+    temporalCoverage: '2026/2027',
+  },
+];
 
 export default function RootLayout({ children }) {
   const summary = getDashboardSummary();
@@ -66,6 +167,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <JsonLd schema={globalSchemas} />
         {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-M9RZK0CBT5" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

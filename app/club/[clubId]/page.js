@@ -1,13 +1,28 @@
 import { getClubDetails } from '@/lib/api';
 import Link from 'next/link';
 import MetricCard from '@/components/ui/MetricCard';
+import JsonLd from '@/components/seo/JsonLd';
 
 export async function generateMetadata({ params }) {
     const { clubId } = await params;
     const club = await getClubDetails(clubId);
+    if (!club) {
+        return {
+            title: `Club ${clubId} Not Found | Rotaract South Asia`,
+            description: `Club ${clubId} could not be located in the Rotaract South Asia master directory.`,
+        };
+    }
     return {
-        title: club ? `${club.name} (${club.id}) | Club Insights` : `Club ${clubId} Insights`,
-        description: club ? `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.` : 'Club Insights',
+        title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}, ${club.zone}`,
+        description: `Comprehensive club profile, membership statistics (${club.members} members), TRF contributions ($${club.trfTotal}), compliance status, and Rotary sponsor details for Rotaract Club of ${club.name} (${club.base} based, ${club.country}).`,
+        alternates: {
+            canonical: `https://insights.rsamdio.org/club/${club.id}`,
+        },
+        openGraph: {
+            title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}`,
+            description: `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.`,
+            url: `https://insights.rsamdio.org/club/${club.id}`,
+        },
     };
 }
 
@@ -38,8 +53,71 @@ export default async function ClubPage({ params }) {
     const zoneNumber = club.zone ? club.zone.replace(/[^0-9]/g, '') : '';
     const isCompliant = !club.isArrears && !club.isNoOfficers;
 
+    const clubSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'NGO',
+        '@id': `https://insights.rsamdio.org/club/${club.id}#organization`,
+        name: `Rotaract Club of ${club.name}`,
+        identifier: String(club.id),
+        url: `https://insights.rsamdio.org/club/${club.id}`,
+        description: `Rotaract Club of ${club.name}, ${club.base} based club in District ${club.district}, ${club.zone} (${club.country}).`,
+        parentOrganization: {
+            '@type': 'Organization',
+            name: `Rotary District ${club.district}`,
+            parentOrganization: {
+                '@type': 'Organization',
+                name: 'Rotary International',
+            },
+        },
+        sponsor: club.sponsorClubs && club.sponsorClubs !== 'None Reported' ? {
+            '@type': 'Organization',
+            name: club.sponsorClubs,
+        } : undefined,
+        address: {
+            '@type': 'PostalAddress',
+            addressCountry: club.country,
+        },
+        member: {
+            '@type': 'QuantitativeValue',
+            value: club.members,
+            unitText: 'Members',
+        },
+    };
+
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://insights.rsamdio.org',
+            },
+            ...(zoneNumber ? [{
+                '@type': 'ListItem',
+                position: 2,
+                name: club.zone,
+                item: `https://insights.rsamdio.org/zone/${zoneNumber}`,
+            }] : []),
+            {
+                '@type': 'ListItem',
+                position: zoneNumber ? 3 : 2,
+                name: `District ${club.district}`,
+                item: `https://insights.rsamdio.org/district/${club.district}`,
+            },
+            {
+                '@type': 'ListItem',
+                position: zoneNumber ? 4 : 3,
+                name: club.name,
+                item: `https://insights.rsamdio.org/club/${club.id}`,
+            },
+        ],
+    };
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out', maxWidth: '1000px', margin: '0 auto' }}>
+            <JsonLd schema={[clubSchema, breadcrumbSchema]} />
             {/* Breadcrumb Navigation */}
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px', gap: '15px' }}>
                 <Link href={`/district/${club.district}`} style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
@@ -108,9 +186,9 @@ export default async function ClubPage({ params }) {
                     />
                     <MetricCard 
                         title="Outstanding Dues" 
-                        value={`$${club.outstanding.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} 
+                        value={`₹${Math.round(club.outstanding || 0).toLocaleString('en-IN')}`} 
                         isWarning={club.outstanding > 0} 
-                        trend={club.outstanding === 0 ? { text: 'Compliant ($0.00)', type: 'positive' } : (club.isAtRisk ? { text: 'High Risk (≥ $75)', type: 'negative' } : { text: 'Arrears Pending', type: 'negative' })}
+                        trend={club.outstanding === 0 ? { text: 'Compliant (₹0)', type: 'positive' } : (club.isAtRisk ? { text: 'High Risk (≥ ₹7,200)', type: 'negative' } : { text: 'Arrears Pending', type: 'negative' })}
                     />
                     <MetricCard 
                         title="Officer Reporting" 
@@ -205,7 +283,7 @@ export default async function ClubPage({ params }) {
                                 <div>
                                     <h3 style={{ margin: '0 0 5px 0', fontSize: '16px', fontWeight: 700 }}>High Risk of Termination by Rotary International</h3>
                                     <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-                                        This club owes <strong>${club.outstanding.toFixed(2)} USD</strong> in outstanding dues (meeting or exceeding the <strong>$75.00 USD</strong> termination threshold). Immediate settlement of dues via Rotary Club Central / District leadership is required to prevent club de-chartering.
+                                        This club owes <strong>₹{Math.round(club.outstanding || 0).toLocaleString('en-IN')}</strong> in outstanding dues (meeting or exceeding the <strong>₹7,200 ($75.00 USD)</strong> termination threshold). Immediate settlement of dues via Rotary Club Central / District leadership is required to prevent club de-chartering.
                                     </p>
                                 </div>
                             </div>
@@ -216,7 +294,7 @@ export default async function ClubPage({ params }) {
                                 <div>
                                     <h3 style={{ margin: '0 0 5px 0', fontSize: '16px', fontWeight: 700 }}>Pending Dues in Arrears</h3>
                                     <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-                                        This club has an outstanding balance of <strong>${club.outstanding.toFixed(2)} USD</strong>. Please ensure timely payment to remain in good standing.
+                                        This club has an outstanding balance of <strong>₹{Math.round(club.outstanding || 0).toLocaleString('en-IN')}</strong>. Please ensure timely payment to remain in good standing.
                                     </p>
                                 </div>
                             </div>

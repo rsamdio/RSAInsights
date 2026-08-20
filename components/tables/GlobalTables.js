@@ -81,11 +81,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             cell: info => Number(info.getValue()).toLocaleString()
         },
         { 
-            header: 'Outstanding USD', 
-            id: 'TotalUSD',
-            accessorKey: 'TotalUSD',
-            accessorFn: row => Number(row.TotalUSD || 0),
-            cell: info => `$${info.getValue().toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}` 
+            header: 'Outstanding (₹)', 
+            id: 'TotalINR',
+            accessorKey: 'TotalINR',
+            accessorFn: row => Number(row.TotalINR ?? row['Total Outstanding (INR)'] ?? row.outstanding ?? row.TotalUSD ?? 0),
+            cell: info => `₹${Math.round(info.getValue()).toLocaleString('en-IN')}` 
         },
         { 
             header: 'Arrears Clubs', 
@@ -144,11 +144,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         },
         { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
         { 
-            header: 'Outstanding USD', 
-            id: 'USD_Outstanding',
-            accessorKey: ' USD Outstanding ',
-            accessorFn: row => Number(row[' USD Outstanding '] || 0),
-            cell: info => `$${info.getValue().toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}` 
+            header: 'Outstanding (₹)', 
+            id: 'Outstanding_INR',
+            accessorKey: 'Outstanding INR',
+            accessorFn: row => Number(row['Outstanding INR'] ?? row.outstanding ?? row.outstandingINR ?? row[' USD Outstanding '] ?? 0),
+            cell: info => `₹${Math.round(info.getValue()).toLocaleString('en-IN')}` 
         },
         {
             header: 'Action',

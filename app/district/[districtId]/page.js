@@ -5,11 +5,27 @@ import DistrictTable from '@/components/tables/DistrictTable';
 import GlobalTables from '@/components/tables/GlobalTables';
 import BarChart from '@/components/charts/BarChart';
 import ClubLeaderboardsSection from '@/components/sections/ClubLeaderboardsSection';
+import JsonLd from '@/components/seo/JsonLd';
 
 export async function generateMetadata({ params }) {
     const { districtId } = await params;
+    const districtData = await getDistrictData(districtId);
+    const stats = districtData?.stats || {};
+    const zoneName = districtData?.zone || 'South Asia';
+    const clubsCount = stats.totalClubs ? `${stats.totalClubs.toLocaleString()} clubs` : 'clubs';
+    const membersCount = stats.totalMembers ? `${stats.totalMembers.toLocaleString()} members` : 'members';
+
     return {
-        title: `District ${districtId} Insights`,
+        title: `District ${districtId} Performance & Directory (${zoneName})`,
+        description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}, TRF giving, dues compliance, and full club directory.`,
+        alternates: {
+            canonical: `https://insights.rsamdio.org/district/${districtId}`,
+        },
+        openGraph: {
+            title: `District ${districtId} Performance & Directory | Rotaract South Asia`,
+            description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}.`,
+            url: `https://insights.rsamdio.org/district/${districtId}`,
+        },
     };
 }
 
@@ -58,7 +74,12 @@ export default async function DistrictPage({ params }) {
         
         const arrow = diff > 0 ? '↑' : '↓';
         const absDiff = Math.abs(diff);
-        const diffStr = format === 'usd' ? `$${absDiff.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : absDiff.toLocaleString();
+        let diffStr = absDiff.toLocaleString();
+        if (format === 'inr') {
+            diffStr = `₹${Math.round(absDiff).toLocaleString('en-IN')}`;
+        } else if (format === 'usd') {
+            diffStr = `$${absDiff.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
 
         const textStr = `${arrow} ${diffStr} (${pct}%)`;
         return { text: textStr, type: isGood ? 'positive' : 'negative', baseline: 'vs July 1' };
@@ -160,8 +181,47 @@ export default async function DistrictPage({ params }) {
     const activeInteractPct = stats.totalInteractClubs > 0 ? Math.round((activeInteract / stats.totalInteractClubs) * 100) : 0;
     const rotaractSponsorPct = stats.totalClubs > 0 ? ((stats.rotaractWithInteract / stats.totalClubs) * 100).toFixed(1) : 0;
 
+    const zoneNum = districtData.zone ? districtData.zone.replace(/[^0-9]/g, '') : '';
+    const districtSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `https://insights.rsamdio.org/district/${districtId}#webpage`,
+        url: `https://insights.rsamdio.org/district/${districtId}`,
+        name: `District ${districtId} Insights & Performance`,
+        description: `Official performance metrics and club roster for District ${districtId} (${districtData.zone}).`,
+        breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: 'https://insights.rsamdio.org',
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: districtData.zone,
+                    item: `https://insights.rsamdio.org/zone/${zoneNum}`,
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 3,
+                    name: `District ${districtId}`,
+                    item: `https://insights.rsamdio.org/district/${districtId}`,
+                },
+            ],
+        },
+        about: {
+            '@type': 'AdministrativeArea',
+            name: `Rotary District ${districtId}`,
+            description: `Rotary & Rotaract District ${districtId} under ${districtData.zone}.`,
+        },
+    };
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
+            <JsonLd schema={districtSchema} />
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
                 <Link href={`/zone/${districtData.zone.replace('Zone ', '')}`} style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>
                     ← Back to {districtData.zone}
@@ -221,7 +281,7 @@ export default async function DistrictPage({ params }) {
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues" value={`$${stats.outstanding?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} trend={getDelta('outstanding', 'usd')} />
+                <MetricCard title="Outstanding Dues" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
                 <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />

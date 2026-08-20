@@ -14,8 +14,9 @@ This skill defines the design, terminology, and component patterns for the Rotar
   - Table column header: `"Club Base"` across all summary and drilldown tables.
   - Club profile page: `"Rotaract Club Base"` with labels `"🏛️ University Based"` and `"👥 Community Based"`.
 - **District Summary Table Columns:**
-  - Column headers: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Rotaract"`, `"Interact Clubs"`, `"Rotary w/o Interact"`, `"Outstanding USD"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
+  - Column headers: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Rotaract"`, `"Interact Clubs"`, `"Rotary w/o Interact"`, `"Outstanding (₹)"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
   - `"Avg. Members/Club"` must be formatted to 2 decimal places (e.g. `15.65`, `50.82`).
+  - `"Outstanding (₹)"` must be formatted as whole-number INR with `₹` symbol (e.g. `₹1,12,16,625`, `₹18,340`).
 - **Sponsorship & Youth Service:**
   - Dedicated drilldown tabs: `"Rotary w/o Rotaract"` and `"Rotary w/o Interact"`.
   - Terminology: Always use `"Sponsor Clubs"` (or `"Sponsor Club(s)"`) to reflect Rotaract, Rotary, and joint sponsorships.

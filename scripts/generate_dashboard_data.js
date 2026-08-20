@@ -6,6 +6,8 @@ const args = process.argv.slice(2);
 const currMasterFile = args[0] || 'fulldata/MasterData.xlsx';
 const prevMasterFile = args[1] || 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
 const DATA_AS_OF_DATE = args[2] || '13 Aug 2026'; // Configurable master data release date
+const CURRENT_EXCHANGE_RATE = Number(process.env.EXCHANGE_RATE || args[3] || 96); // Monthly exchange rate (INR per USD) for current data
+const BASELINE_EXCHANGE_RATE = 95; // Fixed 1 July baseline exchange rate (INR per USD)
 
 function readSheetAsJson(wb, sheetName, options = { defval: "" }) {
   if (!wb.SheetNames.includes(sheetName)) return [];
@@ -162,14 +164,22 @@ allClubsSheet.forEach(row => {
 const currentArrearsData = {};
 arrearsSheet.forEach(row => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '').trim();
-    const amt = parseCurrency(row[' USD Outstanding ']);
+    const amtUSD = parseCurrency(row[' USD Outstanding ']);
+    const amtINR = Math.round(amtUSD * CURRENT_EXCHANGE_RATE);
+    row['Outstanding INR'] = amtINR;
+    row['outstanding'] = amtINR;
+    row['outstandingINR'] = amtINR;
+    row['outstandingUSD'] = amtUSD;
+    row['isAtRisk'] = amtUSD >= 75;
+
     if (dist) {
         if (!currentArrearsData[dist]) {
-            currentArrearsData[dist] = { count: 0, atRisk: 0, outstanding: 0, arrUniv: 0, arrComm: 0 };
+            currentArrearsData[dist] = { count: 0, atRisk: 0, outstanding: 0, outstandingUSD: 0, arrUniv: 0, arrComm: 0 };
         }
         currentArrearsData[dist].count += 1;
-        currentArrearsData[dist].outstanding += amt;
-        if (amt >= 75) {
+        currentArrearsData[dist].outstanding += amtINR;
+        currentArrearsData[dist].outstandingUSD += amtUSD;
+        if (amtUSD >= 75) {
             currentArrearsData[dist].atRisk += 1;
         }
         const baseType = (row['Club Base'] || '').toString().toLowerCase();
@@ -219,6 +229,7 @@ zoneSheet.forEach(row => {
     }
     
     let outstanding = currentArrearsData[dist] ? currentArrearsData[dist].outstanding : 0;
+    let outstandingUSD = currentArrearsData[dist] ? currentArrearsData[dist].outstandingUSD : 0;
     let arrearsClubs = currentArrearsData[dist] ? currentArrearsData[dist].count : 0;
     let atRisk = currentArrearsData[dist] ? currentArrearsData[dist].atRisk : 0;
     let noOfficers = currentOfficersData[dist] ? currentOfficersData[dist].count : 0;
@@ -261,6 +272,12 @@ zoneSheet.forEach(row => {
     row['Total Reported Members'] = totalMembers;
     row['Members'] = totalMembers;
     row['Avg Membership'] = avgMembership;
+    row['TotalINR'] = outstanding;
+    row['Total Outstanding (INR)'] = outstanding;
+    row['TotalUSD'] = outstandingUSD;
+    row['TotalClubsArrears'] = arrearsClubs;
+    row['75PlusClubs'] = atRisk;
+    row['No Officer Total'] = noOfficers;
     row['TotalInteractClubs'] = totalInteractClubs;
     row['SuspendedInteractClubs'] = suspendedInteractClubs;
     row['Rotaract with Interact'] = rotaractWithInteract;
@@ -291,14 +308,16 @@ try {
     const arrSheet = xlsx.utils.sheet_to_json(wbArrears.Sheets['Clubs']);
     arrSheet.forEach(row => {
         const dist = (row['District'] || '').toString().trim();
-        const amt = parseCurrency(row[' USD Outstanding ']);
+        const amtUSD = parseCurrency(row[' USD Outstanding ']);
+        const amtINR = Math.round(amtUSD * BASELINE_EXCHANGE_RATE);
         if (dist) {
             if (!prevArrearsData[dist]) {
-                prevArrearsData[dist] = { count: 0, atRisk: 0, outstanding: 0, arrUniv: 0, arrComm: 0 };
+                prevArrearsData[dist] = { count: 0, atRisk: 0, outstanding: 0, outstandingUSD: 0, arrUniv: 0, arrComm: 0 };
             }
             prevArrearsData[dist].count += 1;
-            prevArrearsData[dist].outstanding += amt;
-            if (amt >= 75) {
+            prevArrearsData[dist].outstanding += amtINR;
+            prevArrearsData[dist].outstandingUSD += amtUSD;
+            if (amtUSD >= 75) {
                 prevArrearsData[dist].atRisk += 1;
             }
             const baseType = (row['Club Base'] || '').toString().toLowerCase();
@@ -466,11 +485,14 @@ const arrearsMap = new Map();
 arrearsSheet.forEach(c => {
     const id = String(c['NF Cust Number'] || '').trim();
     if (!id) return;
-    const outstanding = parseCurrency(c[' USD Outstanding ']);
+    const outstandingUSD = parseCurrency(c[' USD Outstanding ']);
+    const outstandingINR = Math.round(outstandingUSD * CURRENT_EXCHANGE_RATE);
     arrearsMap.set(id, {
         isArrears: true,
-        outstanding: outstanding,
-        isAtRisk: outstanding >= 75
+        outstanding: outstandingINR,
+        outstandingUSD: outstandingUSD,
+        outstandingINR: outstandingINR,
+        isAtRisk: outstandingUSD >= 75
     });
 });
 
@@ -548,7 +570,7 @@ allClubsSheet = allClubsSheet.reduce((acc, row) => {
     const zone = districtToZone[dist];
     if (!zone) return acc;
 
-    const arrInfo = arrearsMap.get(clubId) || { isArrears: false, outstanding: 0, isAtRisk: false };
+    const arrInfo = arrearsMap.get(clubId) || { isArrears: false, outstanding: 0, outstandingUSD: 0, outstandingINR: 0, isAtRisk: false };
     const offInfo = officersMap.get(clubId) || { isNoOfficers: false, role: 'N/A', lastReported: row['President / Advisor Term Reported'] || 'N/A', myRotaryAccount: 'N/A' };
     const trfInfo = trfMap.get(clubId) || { total: 0, annual: 0, polio: 0, other: 0, endowment: 0, perCapita: 0 };
     const newClubInfo = newClubsMap.get(clubId) || { isNewClub: false, charterDate: null, charterMembers: 0 };
@@ -582,6 +604,8 @@ allClubsSheet = allClubsSheet.reduce((acc, row) => {
         'Officers': offInfo.isNoOfficers ? 'No' : 'Yes',
         'isArrears': arrInfo.isArrears,
         'outstanding': arrInfo.outstanding,
+        'outstandingUSD': arrInfo.outstandingUSD,
+        'outstandingINR': arrInfo.outstandingINR,
         'isAtRisk': arrInfo.isAtRisk,
         'isNoOfficers': offInfo.isNoOfficers,
         'officerRole': offInfo.role,
@@ -719,6 +743,8 @@ const unifiedMap = new Map();
 arrearsSheet.forEach(c => {
     const id = c['NF Cust Number'];
     if (!id) return;
+    const outstandingUSD = parseCurrency(c[' USD Outstanding ']);
+    const outstandingINR = Math.round(outstandingUSD * CURRENT_EXCHANGE_RATE);
     unifiedMap.set(id, {
         id: id,
         name: c['Club Name'],
@@ -726,8 +752,10 @@ arrearsSheet.forEach(c => {
         district: c['District'],
         base: c['Club Base'] || 'Unknown',
         isArrears: true,
-        outstanding: parseCurrency(c[' USD Outstanding ']),
-        isAtRisk: parseCurrency(c[' USD Outstanding ']) >= 75,
+        outstanding: outstandingINR,
+        outstandingUSD: outstandingUSD,
+        outstandingINR: outstandingINR,
+        isAtRisk: outstandingUSD >= 75,
         isNoOfficers: false
     });
 });
@@ -747,6 +775,8 @@ noOfficersSheet.forEach(c => {
             base: c['Club Base'] || 'Unknown',
             isArrears: false,
             outstanding: 0,
+            outstandingUSD: 0,
+            outstandingINR: 0,
             isAtRisk: false,
             isNoOfficers: true
         });

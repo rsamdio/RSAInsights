@@ -2,10 +2,19 @@ import { getWorldwideSummary } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Leaderboard from '@/components/ui/Leaderboard';
 import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = {
-    title: 'Rotaract Worldwide Statistics',
-    description: 'Worldwide Rotaract Leaderboards and Statistics',
+    title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+    description: 'Worldwide Rotaract and Interact leaderboards, country rankings, district statistics, and membership growth metrics across 180+ countries and geographic areas.',
+    alternates: {
+        canonical: 'https://insights.rsamdio.org/worldwide',
+    },
+    openGraph: {
+        title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+        description: 'Worldwide Rotaract and Interact leaderboards, country rankings, and membership growth metrics.',
+        url: 'https://insights.rsamdio.org/worldwide',
+    },
 };
 
 export default function WorldwidePage() {
@@ -195,8 +204,40 @@ export default function WorldwidePage() {
         .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: z['Interact Growth (%)'] || 0 }))
         .map(z => ({ label: z.label, value: `+${z.valueNum.toFixed(1)}%` }));
 
+    const worldwideSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': 'https://insights.rsamdio.org/worldwide#webpage',
+        url: 'https://insights.rsamdio.org/worldwide',
+        name: 'Rotaract Worldwide Statistics',
+        description: 'Worldwide Rotaract and Interact leaderboards, country rankings, district statistics, and membership growth metrics.',
+        breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: 'https://insights.rsamdio.org',
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: 'Worldwide Statistics',
+                    item: 'https://insights.rsamdio.org/worldwide',
+                },
+            ],
+        },
+        about: {
+            '@type': 'Dataset',
+            name: 'Worldwide Rotaract & Interact Demographics',
+            description: 'Global statistics covering Rotaract & Interact clubs, membership counts, and growth across all Rotary Zones and countries.',
+        },
+    };
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
+            <JsonLd schema={worldwideSchema} />
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
                 <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>
                     ← Back to Home

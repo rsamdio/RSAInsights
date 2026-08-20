@@ -7,10 +7,10 @@ export default function DistrictTable({ districtClubs }) {
         { header: 'Club Name', accessorKey: 'name' },
         { header: 'Club Base', accessorKey: 'base' },
         { 
-            header: 'Outstanding USD', 
+            header: 'Outstanding (₹)', 
             id: 'outstanding',
             accessorFn: row => Number(row.outstanding || 0),
-            cell: info => `$${info.getValue().toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+            cell: info => `₹${Math.round(info.getValue()).toLocaleString('en-IN')}`
         },
         { 
             header: 'At Risk', 

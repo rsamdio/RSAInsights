@@ -27,13 +27,17 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
 
 - **District-First Structural Fidelity:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`). Never hardcode static zone arrays.
 - **Raw Club-Level Aggregation:** Never rely on summary sheets for critical compliance metrics (arrears, dues, missing officers). The pipeline aggregates raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) to guarantee data purity.
+- **Currency Conversion & Integer Rounding:**
+  - Exchange rates are configured in `scripts/generate_dashboard_data.js` via `CURRENT_EXCHANGE_RATE` (e.g. `96` INR/USD for current data) and `BASELINE_EXCHANGE_RATE` (`95` INR/USD for July 1st baseline).
+  - All club dues and rollups (district, zone, overall) must be converted to whole-number INR using `Math.round(amtUSD * RATE)`. No decimals are stored for INR dues.
+  - TRF Foundation contributions remain tracked globally in USD (`$`).
 - **Currency & String Formatting:** Clean currency strings with regex `parseFloat(val.toString().replace(/[^0-9.-]+/g, "")) || 0` to handle whitespace/newlines (e.g. `' USD Outstanding '`, `'Annual Fund\nYTD'`).
 - **Interact Sponsor Matching:** Master data does not contain numeric IDs for sponsor clubs in `All Interact Clubs`. Do not attempt name-based matching on individual club profile pages (`/club/[clubId]`).
 
 ## How to Update Master Data
 
 1. Place the new master Excel file in `fulldata/MasterData.xlsx`.
-2. Update the `DATA_AS_OF_DATE` constant at the top of `scripts/generate_dashboard_data.js` (e.g., `'13 Aug 2026'`).
+2. Update the `DATA_AS_OF_DATE` and `CURRENT_EXCHANGE_RATE` constants at the top of `scripts/generate_dashboard_data.js` (e.g., `'13 Aug 2026'`, `96`).
 3. Run the generator script:
    ```bash
    npm run generate-data

@@ -88,12 +88,12 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
             const district = c['District'] ? ` (D-${c['District'].toString().replace(/\.0$/, '')})` : '';
             return {
                 label: `${clubName}${district}`,
-                valueNum: parseFloat((c[' USD Outstanding '] || '0').toString().replace(/[^0-9.-]+/g, "")) || 0
+                valueNum: parseFloat((c['Outstanding INR'] || c.outstanding || c.outstandingINR || c[' USD Outstanding '] || '0').toString().replace(/[^0-9.-]+/g, "")) || 0
             };
         })
         .sort((a, b) => b.valueNum - a.valueNum)
         .slice(0, 5)
-        .map(c => ({ label: c.label, value: `$${c.valueNum.toLocaleString()}` }));
+        .map(c => ({ label: c.label, value: `₹${Math.round(c.valueNum).toLocaleString('en-IN')}` }));
 
     // 5. Districts with Highest % Missing Officers (Negative)
     const topDistMissing = [...distStats]
@@ -185,12 +185,12 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         .slice(0, 5)
         .map(d => ({ label: `District ${d.district}`, value: d.atRisk.toLocaleString() }));
 
-    // 15. Highest Total Outstanding Dues (USD)
+    // 15. Highest Total Outstanding Dues (INR)
     const topDistOutstanding = [...distStats]
         .filter(s => s.outstanding > 0)
         .sort((a, b) => b.outstanding - a.outstanding)
         .slice(0, 5)
-        .map(d => ({ label: `District ${d.district}`, value: `$${d.outstanding.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}` }));
+        .map(d => ({ label: `District ${d.district}`, value: `₹${Math.round(d.outstanding).toLocaleString('en-IN')}` }));
 
     // 15b. Most Clubs in Arrears (Absolute)
     const topDistArrearsClubsAbs = [...distStats]
@@ -411,10 +411,10 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Highest Officer Reporting" description="Districts with the highest number of clubs reporting their officers." data={topReportedOfficersAbs} maxItems={5} />
                 <Leaderboard title="Most Unreported Officers" description="Districts with the highest number of clubs missing officer data." data={topDistMissingOfficersAbs} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Clubs in Arrears" description="Districts with the highest number of clubs in arrears." data={topDistArrearsClubsAbs} isNegative={true} maxItems={5} />
-                <Leaderboard title="Highest Outstanding Dues (Districts)" description="Districts with the largest combined outstanding balances in USD." data={topDistOutstanding} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest Outstanding Dues (Districts)" description="Districts with the largest combined outstanding balances in INR." data={topDistOutstanding} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Clubs Subject to Termination" description="Districts with the highest number of clubs at risk of termination." data={topDistAtRiskAbs} isNegative={true} maxItems={5} />
                 <Leaderboard title="Most Suspended Interact Clubs" description="Districts with the highest number of suspended Interact clubs." data={topDistSuspendedInteract} isNegative={true} maxItems={5} />
-                <Leaderboard title="Highest Outstanding Dues (Clubs)" description="Individual clubs with the largest outstanding balances in USD." data={topArrearsClubs} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest Outstanding Dues (Clubs)" description="Individual clubs with the largest outstanding balances in INR." data={topArrearsClubs} isNegative={true} maxItems={5} />
             </div>
 
             <h4 style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '15px', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.5px' }}>By The Percentages</h4>
@@ -423,7 +423,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                 <Leaderboard title="Highest % Officer Reporting" description="Districts with the largest percentage of clubs that have reported their officers." data={topReportedOfficers} maxItems={5} />
                 <Leaderboard title="Highest % Unreported Officers" description="Districts with the highest percentage of clubs missing officer data." data={topDistMissing} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest % Clubs in Arrears" description="Districts with the highest percentage of clubs in arrears." data={topDistArrearsPct} isNegative={true} maxItems={5} />
-                <Leaderboard title="Highest % Subject to Termination" description="Districts with the highest percentage of clubs with Outstanding Dues of $75 or more." data={topDistAtRisk} isNegative={true} maxItems={5} />
+                <Leaderboard title="Highest % Subject to Termination" description="Districts with the highest percentage of clubs with Outstanding Dues of ₹7,200 ($75) or more." data={topDistAtRisk} isNegative={true} maxItems={5} />
                 <Leaderboard title="Highest % Suspended Interact" description="Districts with the highest percentage of Interact clubs currently suspended." data={topDistSuspendedInteractPct} isNegative={true} maxItems={5} />
             </div>
         </div>

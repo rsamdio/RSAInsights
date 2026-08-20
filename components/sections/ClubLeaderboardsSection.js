@@ -27,13 +27,20 @@ export default function ClubLeaderboardsSection({ allClubsData, trfData, arrears
 
     // 3. Highest Outstanding Dues
     const clubsByArrears = [...arrearsData]
-        .sort((a, b) => Number(b[' USD Outstanding '] || 0) - Number(a[' USD Outstanding '] || 0))
+        .map(club => {
+            const val = Number(club['Outstanding INR'] ?? club.outstanding ?? club.outstandingINR ?? club[' USD Outstanding '] ?? 0);
+            return {
+                ...club,
+                _inrVal: val
+            };
+        })
+        .sort((a, b) => b._inrVal - a._inrVal)
         .slice(0, 5)
-        .filter(club => Number(club[' USD Outstanding '] || 0) > 0)
+        .filter(club => club._inrVal > 0)
         .map((club, idx) => ({
             rank: idx + 1,
             label: club['Club Name'] || 'Unknown Club',
-            value: `$${Number(club[' USD Outstanding '] || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+            value: `₹${Math.round(club._inrVal).toLocaleString('en-IN')}`,
             subLabel: 'Outstanding'
         }));
 

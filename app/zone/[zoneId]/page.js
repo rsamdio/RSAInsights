@@ -5,12 +5,28 @@ import DoughnutChart from '@/components/charts/DoughnutChart';
 import BarChart from '@/components/charts/BarChart';
 import GlobalTables from '@/components/tables/GlobalTables';
 import TopChartsSection from '@/components/sections/TopChartsSection';
+import JsonLd from '@/components/seo/JsonLd';
 
 export async function generateMetadata({ params }) {
     const { zoneId } = await params;
+    const cleanZoneNum = zoneId.toString().replace(/[^0-9]/g, '');
     const fullZoneName = zoneId.toString().startsWith('Zone') ? zoneId : `Zone ${zoneId}`;
+    const zoneData = await getZoneData(zoneId);
+    const stats = zoneData?.stats || {};
+    const totalClubs = stats.totalClubs ? `${stats.totalClubs.toLocaleString()} clubs` : 'Rotaract clubs';
+    const totalMembers = stats.totalMembers ? `${stats.totalMembers.toLocaleString()} members` : 'members';
+
     return {
-        title: `${fullZoneName} Insights`,
+        title: `${fullZoneName} Insights & Performance`,
+        description: `Comprehensive analytics and performance metrics for Rotaract ${fullZoneName} (${totalClubs}, ${totalMembers}), covering district breakdown, TRF giving, compliance, and Interact sponsorships.`,
+        alternates: {
+            canonical: `https://insights.rsamdio.org/zone/${cleanZoneNum}`,
+        },
+        openGraph: {
+            title: `${fullZoneName} Insights & Performance | Rotaract South Asia MDIO`,
+            description: `Comprehensive analytics and performance metrics for Rotaract ${fullZoneName} (${totalClubs}, ${totalMembers}).`,
+            url: `https://insights.rsamdio.org/zone/${cleanZoneNum}`,
+        },
     };
 }
 
@@ -80,43 +96,50 @@ export default async function ZonePage({ params, searchParams }) {
             }
         });
         
-        // Recompute overall for these specific districts by summing rows
+        // Recompute overall for these specific districts by summing from filtered zones
+        const selectedDistStats = [];
+        Object.values(filteredZones).forEach(z => {
+            Object.values(z.districts || {}).forEach(d => {
+                selectedDistStats.push(d);
+            });
+        });
+
         overall = {
             ...overall,
-            totalClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['Total Clubs'] || 0), 0),
-            totalMembers: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.totalMembers || 0), 0),
-            outstanding: filteredZoneTableData.reduce((sum, row) => sum + (row.TotalUSD || 0), 0),
-            arrearsClubs: filteredZoneTableData.reduce((sum, row) => sum + (row.TotalClubsArrears || 0), 0),
-            atRisk: filteredZoneTableData.reduce((sum, row) => sum + (row['75PlusClubs'] || 0), 0),
-            noOfficers: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer Total'] || 0), 0),
+            totalClubs: selectedDistStats.reduce((sum, d) => sum + (d.totalClubs || 0), 0),
+            totalMembers: selectedDistStats.reduce((sum, d) => sum + (d.totalMembers || 0), 0),
+            outstanding: selectedDistStats.reduce((sum, d) => sum + (d.outstanding || 0), 0),
+            arrearsClubs: selectedDistStats.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
+            atRisk: selectedDistStats.reduce((sum, d) => sum + (d.atRisk || 0), 0),
+            noOfficers: selectedDistStats.reduce((sum, d) => sum + (d.noOfficers || 0), 0),
             
-            totalRotary: filteredZoneTableData.reduce((sum, row) => sum + (row['Total Rotary Clubs'] || 0), 0),
-            rotaryWithSponsor: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Rotaract Club'] || 0), 0),
-            rotaryWithoutSponsor: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary without Rotaract Club'] || 0), 0),
+            totalRotary: selectedDistStats.reduce((sum, d) => sum + (d.totalRotary || 0), 0),
+            rotaryWithSponsor: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithSponsor || 0), 0),
+            rotaryWithoutSponsor: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithoutSponsor || 0), 0),
             
-            arrUniv: filteredZoneTableData.reduce((sum, row) => sum + (row.ArrearsUnivesityClubs || 0), 0),
-            arrComm: filteredZoneTableData.reduce((sum, row) => sum + (row.ArrearsCommunityClubs || 0), 0),
-            noOffUniv: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer University'] || 0), 0),
-            noOffComm: filteredZoneTableData.reduce((sum, row) => sum + (row['No Officer Community'] || 0), 0),
+            arrUniv: selectedDistStats.reduce((sum, d) => sum + (d.arrUniv || 0), 0),
+            arrComm: selectedDistStats.reduce((sum, d) => sum + (d.arrComm || 0), 0),
+            noOffUniv: selectedDistStats.reduce((sum, d) => sum + (d.noOffUniv || 0), 0),
+            noOffComm: selectedDistStats.reduce((sum, d) => sum + (d.noOffComm || 0), 0),
 
-            trfClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['Clubs with Contribution'] || 0), 0),
-            trfContributionsUSD: filteredZoneTableData.reduce((sum, row) => sum + (row['Total Contributions USD'] || 0), 0),
-            trfAnnualUSD: filteredZoneTableData.reduce((sum, row) => sum + (row['Annual Fund Contribution USD'] || 0), 0),
-            trfPolioUSD: filteredZoneTableData.reduce((sum, row) => sum + (row['PolioPlus Fund Contribution USD'] || 0), 0),
-            trfOtherUSD: filteredZoneTableData.reduce((sum, row) => sum + (row['Other Funds Contribution USD'] || 0), 0),
-            trfEndowmentUSD: filteredZoneTableData.reduce((sum, row) => sum + (row['Endowment Fund Contribution USD'] || 0), 0),
-            newTotalClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['NewTotalClubs'] || 0), 0),
-            totalUniv: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.totalUniv || 0), 0),
-            totalComm: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.totalComm || 0), 0),
-            membersUniv: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.membersUniv || 0), 0),
-            membersComm: filteredZoneTableData.reduce((sum, row) => sum + (summary.current.zones[normalizeZoneName(row['RI Zone'])]?.districts[row['RI District']]?.membersComm || 0), 0),
+            trfClubs: selectedDistStats.reduce((sum, d) => sum + (d.trfClubs || 0), 0),
+            trfContributionsUSD: selectedDistStats.reduce((sum, d) => sum + (d.trfContributionsUSD || 0), 0),
+            trfAnnualUSD: selectedDistStats.reduce((sum, d) => sum + (d.trfAnnualUSD || 0), 0),
+            trfPolioUSD: selectedDistStats.reduce((sum, d) => sum + (d.trfPolioUSD || 0), 0),
+            trfOtherUSD: selectedDistStats.reduce((sum, d) => sum + (d.trfOtherUSD || 0), 0),
+            trfEndowmentUSD: selectedDistStats.reduce((sum, d) => sum + (d.trfEndowmentUSD || 0), 0),
+            newTotalClubs: selectedDistStats.reduce((sum, d) => sum + (d.newTotalClubs || 0), 0),
+            totalUniv: selectedDistStats.reduce((sum, d) => sum + (d.totalUniv || 0), 0),
+            totalComm: selectedDistStats.reduce((sum, d) => sum + (d.totalComm || 0), 0),
+            membersUniv: selectedDistStats.reduce((sum, d) => sum + (d.membersUniv || 0), 0),
+            membersComm: selectedDistStats.reduce((sum, d) => sum + (d.membersComm || 0), 0),
 
-            totalInteractClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['TotalInteractClubs'] || 0), 0),
-            suspendedInteractClubs: filteredZoneTableData.reduce((sum, row) => sum + (row['SuspendedInteractClubs'] || 0), 0),
-            rotaractWithInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotaract with Interact'] || 0), 0),
-            rotaryWithInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Interact Club'] || 0), 0),
-            rotaryWithoutInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary without Interact Club'] || 0), 0),
-            rotaryWithSuspendedInteract: filteredZoneTableData.reduce((sum, row) => sum + (row['Rotary with Suspended Interact Clubs'] || 0), 0)
+            totalInteractClubs: selectedDistStats.reduce((sum, d) => sum + (d.totalInteractClubs || 0), 0),
+            suspendedInteractClubs: selectedDistStats.reduce((sum, d) => sum + (d.suspendedInteractClubs || 0), 0),
+            rotaractWithInteract: selectedDistStats.reduce((sum, d) => sum + (d.rotaractWithInteract || 0), 0),
+            rotaryWithInteract: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithInteract || 0), 0),
+            rotaryWithoutInteract: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithoutInteract || 0), 0),
+            rotaryWithSuspendedInteract: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithSuspendedInteract || 0), 0)
         };
         // Compute prevOverall for filtered districts
         const dSet = new Set(selectedDistricts);
@@ -228,7 +251,12 @@ export default async function ZonePage({ params, searchParams }) {
         
         const arrow = diff > 0 ? '↑' : '↓';
         const absDiff = Math.abs(diff);
-        const diffStr = format === 'usd' ? `$${absDiff.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : absDiff.toLocaleString();
+        let diffStr = absDiff.toLocaleString();
+        if (format === 'inr') {
+            diffStr = `₹${Math.round(absDiff).toLocaleString('en-IN')}`;
+        } else if (format === 'usd') {
+            diffStr = `$${absDiff.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
 
         const textStr = `${arrow} ${diffStr} (${pct}%)`;
 
@@ -325,8 +353,40 @@ export default async function ZonePage({ params, searchParams }) {
     const activeInteractPct = overall.totalInteractClubs > 0 ? Math.round((activeInteract / overall.totalInteractClubs) * 100) : 0;
     const rotaractSponsorPct = overall.totalClubs > 0 ? ((overall.rotaractWithInteract / overall.totalClubs) * 100).toFixed(1) : 0;
 
+    const zoneSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `https://insights.rsamdio.org/zone/${zoneId.toString().replace(/[^0-9]/g, '')}#webpage`,
+        url: `https://insights.rsamdio.org/zone/${zoneId.toString().replace(/[^0-9]/g, '')}`,
+        name: `${fullZoneName} Performance & Insights`,
+        description: `Official analytics and directory for Rotaract ${fullZoneName}.`,
+        breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: 'https://insights.rsamdio.org',
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: fullZoneName,
+                    item: `https://insights.rsamdio.org/zone/${zoneId.toString().replace(/[^0-9]/g, '')}`,
+                },
+            ],
+        },
+        about: {
+            '@type': 'AdministrativeArea',
+            name: fullZoneName,
+            description: `Rotary/Rotaract ${fullZoneName} within South Asia.`,
+        },
+    };
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
+            <JsonLd schema={zoneSchema} />
             <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
                 <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>← Back to Home</Link>
                 <h2 className="section-title" style={{ margin: 0 }}>Executive Summary - {fullZoneName}</h2>
@@ -365,7 +425,7 @@ export default async function ZonePage({ params, searchParams }) {
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues" value={`$${overall.outstanding?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} trend={getDelta('outstanding', 'usd')} />
+                <MetricCard title="Outstanding Dues" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
                 <MetricCard title="Clubs in Arrears" value={overall.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
                 <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
                 <MetricCard title="Unreported Officers" value={overall.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
@@ -416,7 +476,9 @@ export default async function ZonePage({ params, searchParams }) {
                             'Club Name': c['Club Name'],
                             'Club Base': c['Club Base'],
                             'Billable Member Count': c['Billable Member Count'] || 0,
-                            ' USD Outstanding ': c[' USD Outstanding '] || c.outstanding || 0,
+                            'Outstanding INR': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
+                            'outstanding': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
+                            ' USD Outstanding ': c[' USD Outstanding '] || c.outstandingUSD || 0,
                             'NF Cust Number': c['NF Cust Number'] || c['Club ID'] || c.id
                         }))} 
                         officersData={filteredOfficersData.map(c => ({
