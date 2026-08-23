@@ -8,19 +8,31 @@ export async function generateMetadata({ params }) {
     const club = await getClubDetails(clubId);
     if (!club) {
         return {
-            title: `Club ${clubId} Not Found | Rotaract South Asia`,
+            title: 'Club Not Found',
             description: `Club ${clubId} could not be located in the Rotaract South Asia master directory.`,
+            openGraph: {
+                title: 'Club Not Found | Insights | Rotaract South Asia MDIO',
+                description: `Club ${clubId} could not be located in the Rotaract South Asia master directory.`,
+            },
+            twitter: {
+                title: 'Club Not Found | Insights | Rotaract South Asia MDIO',
+                description: `Club ${clubId} could not be located in the Rotaract South Asia master directory.`,
+            },
         };
     }
+
+    const cleanClubName = club.name.toLowerCase().startsWith('rotaract club') ? club.name : `Rotaract Club of ${club.name}`;
+    const clubTitle = `${cleanClubName} (${club.id})`;
+
     return {
-        title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}, ${club.zone}`,
-        description: `Comprehensive club profile, membership statistics (${club.members} members), TRF contributions ($${club.trfTotal}), compliance status, and Rotary sponsor details for Rotaract Club of ${club.name} (${club.base} based, ${club.country}).`,
+        title: clubTitle,
+        description: `Comprehensive club profile, membership statistics (${club.members} members), TRF contributions ($${club.trfTotal}), compliance status, and Rotary sponsor details for ${cleanClubName} (${club.base} based, ${club.country}).`,
         alternates: {
             canonical: `https://insights.rsamdio.org/club/${club.id}`,
         },
         openGraph: {
-            title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}`,
-            description: `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.`,
+            title: `${clubTitle} | Insights | Rotaract South Asia MDIO`,
+            description: `Comprehensive club report and performance metrics for ${cleanClubName}, District ${club.district}, ${club.zone}.`,
             url: `https://insights.rsamdio.org/club/${club.id}`,
             siteName: 'Rotaract South Asia MDIO Insights',
             images: [
@@ -28,7 +40,7 @@ export async function generateMetadata({ params }) {
                     url: '/rsamdio.webp',
                     width: 1200,
                     height: 630,
-                    alt: `Rotaract Club of ${club.name} (${club.id})`,
+                    alt: `${clubTitle} | Insights | Rotaract South Asia MDIO`,
                 },
             ],
             type: 'website',
@@ -37,8 +49,8 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             site: '@rsa_mdio',
             creator: '@rsa_mdio',
-            title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}`,
-            description: `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.`,
+            title: `${clubTitle} | Insights | Rotaract South Asia MDIO`,
+            description: `Comprehensive club report and performance metrics for ${cleanClubName}, District ${club.district}, ${club.zone}.`,
             images: ['/rsamdio.webp'],
         },
     };

@@ -8,14 +8,16 @@ import TopChartsSection from '@/components/sections/TopChartsSection';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = {
-    title: 'Executive Analytics & Directory (Zones 4-7)',
-    description: 'Comprehensive executive analytics and club directory for Rotaract Zones 4, 5, 6 & 7 across South Asia. Real-time metrics for membership, TRF giving, compliance, and Interact sponsorships.',
+    title: {
+        absolute: 'Insights | Rotaract South Asia MDIO',
+    },
+    description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 across South Asia by Rotaract South Asia MDIO.',
     alternates: {
         canonical: 'https://insights.rsamdio.org',
     },
     openGraph: {
-        title: 'Executive Analytics & Directory (Zones 4-7) | Rotaract South Asia MDIO',
-        description: 'Comprehensive executive analytics and club directory for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
+        title: 'Insights | Rotaract South Asia MDIO',
+        description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
         url: 'https://insights.rsamdio.org',
         siteName: 'Rotaract South Asia MDIO Insights',
         images: [
@@ -23,7 +25,7 @@ export const metadata = {
                 url: '/rsamdio.webp',
                 width: 1200,
                 height: 630,
-                alt: 'Rotaract South Asia MDIO Insights Dashboard',
+                alt: 'Insights | Rotaract South Asia MDIO',
             },
         ],
         locale: 'en_US',
@@ -33,8 +35,8 @@ export const metadata = {
         card: 'summary_large_image',
         site: '@rsa_mdio',
         creator: '@rsa_mdio',
-        title: 'Executive Analytics & Directory (Zones 4-7) | Rotaract South Asia MDIO',
-        description: 'Comprehensive executive analytics and club directory for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
+        title: 'Insights | Rotaract South Asia MDIO',
+        description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
         images: ['/rsamdio.webp'],
     },
 };
@@ -372,7 +374,7 @@ export default async function GlobalDashboard({ searchParams }) {
         '@type': 'WebPage',
         '@id': 'https://insights.rsamdio.org/#webpage',
         url: 'https://insights.rsamdio.org',
-        name: 'Rotaract South Asia Insights Dashboard',
+        name: 'Insights | Rotaract South Asia MDIO',
         isPartOf: {
             '@id': 'https://insights.rsamdio.org/#website',
         },

@@ -15,14 +15,16 @@ export async function generateMetadata({ params }) {
     const clubsCount = stats.totalClubs ? `${stats.totalClubs.toLocaleString()} clubs` : 'clubs';
     const membersCount = stats.totalMembers ? `${stats.totalMembers.toLocaleString()} members` : 'members';
 
+    const districtTitle = `District ${districtId}`;
+
     return {
-        title: `District ${districtId} Performance & Directory (${zoneName})`,
+        title: districtTitle,
         description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}, TRF giving, dues compliance, and full club directory.`,
         alternates: {
             canonical: `https://insights.rsamdio.org/district/${districtId}`,
         },
         openGraph: {
-            title: `District ${districtId} Performance & Directory | Rotaract South Asia`,
+            title: `${districtTitle} | Insights | Rotaract South Asia MDIO`,
             description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}.`,
             url: `https://insights.rsamdio.org/district/${districtId}`,
             siteName: 'Rotaract South Asia MDIO Insights',
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }) {
                     url: '/rsamdio.webp',
                     width: 1200,
                     height: 630,
-                    alt: `District ${districtId} Performance & Directory - Rotaract South Asia`,
+                    alt: `${districtTitle} | Insights | Rotaract South Asia MDIO`,
                 },
             ],
             type: 'website',
@@ -40,7 +42,7 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             site: '@rsa_mdio',
             creator: '@rsa_mdio',
-            title: `District ${districtId} Performance & Directory | Rotaract South Asia`,
+            title: `${districtTitle} | Insights | Rotaract South Asia MDIO`,
             description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}.`,
             images: ['/rsamdio.webp'],
         },
@@ -205,7 +207,7 @@ export default async function DistrictPage({ params }) {
         '@type': 'WebPage',
         '@id': `https://insights.rsamdio.org/district/${districtId}#webpage`,
         url: `https://insights.rsamdio.org/district/${districtId}`,
-        name: `District ${districtId} Insights & Performance`,
+        name: `District ${districtId} | Insights | Rotaract South Asia MDIO`,
         description: `Official performance metrics and club roster for District ${districtId} (${districtData.zone}).`,
         breadcrumb: {
             '@type': 'BreadcrumbList',

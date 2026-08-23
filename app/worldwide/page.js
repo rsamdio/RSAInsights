@@ -5,13 +5,13 @@ import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = {
-    title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+    title: 'Worldwide Statistics',
     description: 'Worldwide Rotaract and Interact leaderboards, country rankings, district statistics, and membership growth metrics across 180+ countries and geographic areas.',
     alternates: {
         canonical: 'https://insights.rsamdio.org/worldwide',
     },
     openGraph: {
-        title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+        title: 'Worldwide Statistics | Insights | Rotaract South Asia MDIO',
         description: 'Worldwide Rotaract and Interact leaderboards, country rankings, and membership growth metrics.',
         url: 'https://insights.rsamdio.org/worldwide',
         siteName: 'Rotaract South Asia MDIO Insights',
@@ -20,7 +20,7 @@ export const metadata = {
                 url: '/rsamdio.webp',
                 width: 1200,
                 height: 630,
-                alt: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+                alt: 'Worldwide Statistics | Insights | Rotaract South Asia MDIO',
             },
         ],
         type: 'website',
@@ -29,7 +29,7 @@ export const metadata = {
         card: 'summary_large_image',
         site: '@rsa_mdio',
         creator: '@rsa_mdio',
-        title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+        title: 'Worldwide Statistics | Insights | Rotaract South Asia MDIO',
         description: 'Worldwide Rotaract and Interact leaderboards, country rankings, and membership growth metrics.',
         images: ['/rsamdio.webp'],
     },
@@ -227,7 +227,7 @@ export default function WorldwidePage() {
         '@type': 'WebPage',
         '@id': 'https://insights.rsamdio.org/worldwide#webpage',
         url: 'https://insights.rsamdio.org/worldwide',
-        name: 'Rotaract Worldwide Statistics',
+        name: 'Worldwide Statistics | Insights | Rotaract South Asia MDIO',
         description: 'Worldwide Rotaract and Interact leaderboards, country rankings, district statistics, and membership growth metrics.',
         breadcrumb: {
             '@type': 'BreadcrumbList',

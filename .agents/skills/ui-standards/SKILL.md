@@ -38,6 +38,15 @@ This skill defines the design, terminology, and component patterns for the Rotar
 - **Global Header Badge:** `● Data as of: [Date]` frosted pill badge beside the logo/title in `app/layout.js`.
 - **Global Footer Notice:** `Data Source: Rotary International • Last Updated: [Date]` in `components/ui/Footer.js`.
 
+## Metadata & OpenGraph Title Standards
+
+- **Title Template:** `%s | Insights | Rotaract South Asia MDIO` (defined in `app/layout.js`).
+- **Home Page (`/`):** `Insights | Rotaract South Asia MDIO`
+- **Zone Drilldown (`/zone/[zoneId]`):** `Zone {{Number}} | Insights | Rotaract South Asia MDIO` (e.g. `Zone 4 | Insights | Rotaract South Asia MDIO`)
+- **District Drilldown (`/district/[districtId]`):** `District {{Number}} | Insights | Rotaract South Asia MDIO` (e.g. `District 3011 | Insights | Rotaract South Asia MDIO`)
+- **Club Drilldown (`/club/[clubId]`):** `Rotaract Club of {{Club Name}} ({{Club ID}}) | Insights | Rotaract South Asia MDIO`
+- **Worldwide Statistics (`/worldwide`):** `Worldwide Statistics | Insights | Rotaract South Asia MDIO`
+
 ## Styling & Theme
 
 - **Palette:** Primary Blue (`#0f4c81`), Green (`#1e8e3e`), Red (`#d93025`), Warning Amber (`#b06000`), Background (`#f8fafc`).

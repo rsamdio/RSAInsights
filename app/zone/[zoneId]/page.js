@@ -17,13 +17,13 @@ export async function generateMetadata({ params }) {
     const totalMembers = stats.totalMembers ? `${stats.totalMembers.toLocaleString()} members` : 'members';
 
     return {
-        title: `${fullZoneName} Insights & Performance`,
+        title: fullZoneName,
         description: `Comprehensive analytics and performance metrics for Rotaract ${fullZoneName} (${totalClubs}, ${totalMembers}), covering district breakdown, TRF giving, compliance, and Interact sponsorships.`,
         alternates: {
             canonical: `https://insights.rsamdio.org/zone/${cleanZoneNum}`,
         },
         openGraph: {
-            title: `${fullZoneName} Insights & Performance | Rotaract South Asia MDIO`,
+            title: `${fullZoneName} | Insights | Rotaract South Asia MDIO`,
             description: `Comprehensive analytics and performance metrics for Rotaract ${fullZoneName} (${totalClubs}, ${totalMembers}).`,
             url: `https://insights.rsamdio.org/zone/${cleanZoneNum}`,
             siteName: 'Rotaract South Asia MDIO Insights',
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
                     url: '/rsamdio.webp',
                     width: 1200,
                     height: 630,
-                    alt: `${fullZoneName} Insights & Performance - Rotaract South Asia MDIO`,
+                    alt: `${fullZoneName} | Insights | Rotaract South Asia MDIO`,
                 },
             ],
             type: 'website',
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             site: '@rsa_mdio',
             creator: '@rsa_mdio',
-            title: `${fullZoneName} Insights & Performance | Rotaract South Asia MDIO`,
+            title: `${fullZoneName} | Insights | Rotaract South Asia MDIO`,
             description: `Comprehensive analytics and performance metrics for Rotaract ${fullZoneName} (${totalClubs}, ${totalMembers}).`,
             images: ['/rsamdio.webp'],
         },
@@ -376,7 +376,7 @@ export default async function ZonePage({ params, searchParams }) {
         '@type': 'WebPage',
         '@id': `https://insights.rsamdio.org/zone/${zoneId.toString().replace(/[^0-9]/g, '')}#webpage`,
         url: `https://insights.rsamdio.org/zone/${zoneId.toString().replace(/[^0-9]/g, '')}`,
-        name: `${fullZoneName} Performance & Insights`,
+        name: `${fullZoneName} | Insights | Rotaract South Asia MDIO`,
         description: `Official analytics and directory for Rotaract ${fullZoneName}.`,
         breadcrumb: {
             '@type': 'BreadcrumbList',

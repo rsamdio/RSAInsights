@@ -13,8 +13,8 @@ import JsonLd from '@/components/seo/JsonLd';
 export const metadata = {
   metadataBase: new URL('https://insights.rsamdio.org'),
   title: {
-    template: '%s | Rotaract South Asia MDIO',
-    default: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
+    template: '%s | Insights | Rotaract South Asia MDIO',
+    default: 'Insights | Rotaract South Asia MDIO',
   },
   description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 (India, Sri Lanka, Nepal, Bhutan, Bangladesh, Maldives) by Rotaract South Asia MDIO.',
   keywords: [
@@ -60,7 +60,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
+    title: 'Insights | Rotaract South Asia MDIO',
     description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 by Rotaract South Asia MDIO.',
     url: 'https://insights.rsamdio.org',
     siteName: 'Rotaract South Asia MDIO Insights',
@@ -69,7 +69,7 @@ export const metadata = {
         url: '/rsamdio.webp',
         width: 1200,
         height: 630,
-        alt: 'Rotaract South Asia MDIO Insights Dashboard',
+        alt: 'Insights | Rotaract South Asia MDIO',
       },
     ],
     locale: 'en_US',
@@ -79,7 +79,7 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@rsa_mdio',
     creator: '@rsa_mdio',
-    title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
+    title: 'Insights | Rotaract South Asia MDIO',
     description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 by Rotaract South Asia MDIO.',
     images: ['/rsamdio.webp'],
   },
