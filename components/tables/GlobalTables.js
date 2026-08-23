@@ -124,7 +124,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const arrearsCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { 
             header: 'Club Name', 
@@ -174,7 +179,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const officersCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { 
             header: 'Club Name', 
@@ -217,14 +227,24 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const rotaryCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { header: 'Rotary Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
         { header: 'Members', id: 'Current_Member_Count', accessorKey: 'Current Member Count' }
     ];
 
     const rotaryNoInteractCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { header: 'Rotary Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
         { header: 'Members', id: 'Current_Member_Count', accessorKey: 'Current Member Count' },
@@ -232,7 +252,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const newClubsCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { 
             header: 'Club Name', 
@@ -277,7 +302,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const trfCols = [
-        { header: 'Zone', id: 'RI_Zone', accessorKey: 'RI Zone' },
+        { 
+            header: 'Zone', 
+            id: 'RI_Zone', 
+            accessorKey: 'RI Zone',
+            accessorFn: row => String(row['RI Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { 
             header: 'Club Name', 
@@ -347,7 +377,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const allClubsCols = [
-        { header: 'Zone', accessorKey: 'Zone' },
+        { 
+            header: 'Zone', 
+            id: 'Zone', 
+            accessorKey: 'Zone',
+            accessorFn: row => String(row['Zone'] || '').replace('Zone ', '').trim()
+        },
         { header: 'District', accessorKey: 'District' },
         { header: 'Club ID', id: 'Club_ID', accessorKey: 'Club ID' },
         { 

@@ -53,18 +53,6 @@ export default function HeaderFilters() {
             setSelectedDistrict(selected || []);
             if (selected && selected.length > 0) {
                 params.set('district', selected.map(s => s.value).join(','));
-                
-                // Auto-select the corresponding Zones for the selected districts
-                const requiredZonesSet = new Set(selected.map(d => options.districtToZone[d.value.replace('District ', '')] || options.districtToZone[d.value]).filter(Boolean));
-                
-                // If there are currently selected zones, merge them, otherwise just use the required ones
-                const currentZonesSet = new Set(selectedZone.map(z => z.value));
-                requiredZonesSet.forEach(z => currentZonesSet.add(z));
-                
-                const newZones = Array.from(currentZonesSet).map(z => ({ value: z, label: z }));
-                params.set('zone', newZones.map(z => z.value).join(','));
-                setSelectedZone(newZones);
-                
             } else {
                 params.delete('district');
             }
@@ -84,9 +72,6 @@ export default function HeaderFilters() {
         } else {
             router.push(`/?${params.toString()}`, { scroll: false });
         }
-        
-        // Scroll to top to ensure new KPIs are visible
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const customStyles = {
