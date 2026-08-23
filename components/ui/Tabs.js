@@ -1,15 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Tabs({ tabs }) {
     const [activeTab, setActiveTab] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const handleTabClick = (index, e) => {
         // Determine direction before updating state
         const isMovingForward = index > activeTab;
         const scrollAlignment = isMovingForward ? 'start' : 'end';
         
+        // Add 1-frame delay to let browser paint the tab selection before mounting heavy tables
+        setIsTransitioning(true);
         setActiveTab(index);
+        
+        requestAnimationFrame(() => {
+            setIsTransitioning(false);
+        });
         
         // Auto-scroll the clicked tab based on direction
         if (e.target) {
@@ -59,7 +66,16 @@ export default function Tabs({ tabs }) {
                 ))}
             </div>
             <div style={{ animation: 'fadeIn 0.3s ease-out' }}>
-                {typeof tabs[activeTab]?.content === 'function' ? tabs[activeTab].content() : tabs[activeTab]?.content}
+                {isTransitioning ? (
+                    <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                        <div style={{ height: '40px', background: '#f1f5f9', borderRadius: '6px', animation: 'pulse 1.5s infinite' }}></div>
+                        <div style={{ height: '40px', background: '#f1f5f9', borderRadius: '6px', animation: 'pulse 1.5s infinite', animationDelay: '0.1s' }}></div>
+                        <div style={{ height: '40px', background: '#f1f5f9', borderRadius: '6px', animation: 'pulse 1.5s infinite', animationDelay: '0.2s' }}></div>
+                        <div style={{ height: '40px', background: '#f1f5f9', borderRadius: '6px', animation: 'pulse 1.5s infinite', animationDelay: '0.3s' }}></div>
+                    </div>
+                ) : (
+                    typeof tabs[activeTab]?.content === 'function' ? tabs[activeTab].content() : tabs[activeTab]?.content
+                )}
             </div>
         </div>
     );

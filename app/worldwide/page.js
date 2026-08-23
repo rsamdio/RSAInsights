@@ -4,6 +4,9 @@ import Leaderboard from '@/components/ui/Leaderboard';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export const metadata = {
     title: 'Worldwide Statistics',
     description: 'Worldwide Rotaract and Interact leaderboards, country rankings, district statistics, and membership growth metrics across 180+ countries and geographic areas.',

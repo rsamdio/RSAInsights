@@ -5,7 +5,7 @@ export async function GET() {
     const options = await getFilterOptions();
     return NextResponse.json(options, {
         headers: {
-            'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
+            'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
         },
     });
 }

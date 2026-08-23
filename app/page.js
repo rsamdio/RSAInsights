@@ -402,12 +402,12 @@ export default async function GlobalDashboard({ searchParams }) {
                 Executive Summary
             </h2>
             <section className="metrics-grid three-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Total Rotaract Clubs" value={overall.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} />
-                <MetricCard title="Total Members" value={overall.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} />
-                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} />
-                <MetricCard title="New Chartered Clubs" value={overall.newTotalClubs?.toLocaleString()} />
-                <MetricCard title="Clubs w/ TRF Contribution" value={overall.trfClubs?.toLocaleString()} />
-                <MetricCard title="Total TRF Contributions" value={`$${overall.trfContributionsUSD?.toLocaleString()}`} />
+                <MetricCard title="Total Rotaract Clubs" value={overall.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} delay={0.05} />
+                <MetricCard title="Total Members" value={overall.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} delay={0.1} />
+                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} delay={0.15} />
+                <MetricCard title="New Chartered Clubs" value={overall.newTotalClubs?.toLocaleString()} delay={0.2} />
+                <MetricCard title="Clubs w/ TRF Contribution" value={overall.trfClubs?.toLocaleString()} delay={0.25} />
+                <MetricCard title="Total TRF Contributions" value={`$${overall.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
             </section>
 
             <h2 className="section-title">Demographics & Foundation Breakdown</h2>
@@ -419,26 +419,26 @@ export default async function GlobalDashboard({ searchParams }) {
 
             <h2 className="section-title">Rotary-Rotaract Integration</h2>
             <section className="metrics-grid three-cols" style={{ marginBottom: '40px' }}>
-                <MetricCard title="Total Rotary Clubs" value={overall.totalRotary?.toLocaleString()} trend={getDelta('totalRotary')} />
-                <MetricCard title="Rotary with Sponsored Rotaract" value={overall.rotaryWithSponsor.toLocaleString()} trend={{text: `${penGood}% Integration`, type: 'positive'}} />
-                <MetricCard title="Rotary w/o Sponsored Rotaract" value={overall.rotaryWithoutSponsor.toLocaleString()} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} />
+                <MetricCard title="Total Rotary Clubs" value={overall.totalRotary?.toLocaleString()} trend={getDelta('totalRotary')} delay={0.05} />
+                <MetricCard title="Rotary with Sponsored Rotaract" value={overall.rotaryWithSponsor.toLocaleString()} trend={{text: `${penGood}% Integration`, type: 'positive'}} delay={0.1} />
+                <MetricCard title="Rotary w/o Sponsored Rotaract" value={overall.rotaryWithoutSponsor.toLocaleString()} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} delay={0.15} />
             </section>
 
             <h2 className="section-title">Interact Ecosystem</h2>
             <section className="metrics-grid four-cols" style={{ marginBottom: '40px' }}>
-                <MetricCard title="Total Interact Clubs" value={overall.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} />
-                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} />
-                <MetricCard title="Rotary w/o Interact Club" value={overall.rotaryWithoutInteract?.toLocaleString() || '0'} trend={overall.totalRotary ? {text: `${Math.round(((overall.rotaryWithoutInteract || 0) / overall.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} />
-                <MetricCard title="Rotaract Sponsoring Interact" value={overall.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} />
+                <MetricCard title="Total Interact Clubs" value={overall.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} delay={0.05} />
+                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} delay={0.1} />
+                <MetricCard title="Rotary w/o Interact Club" value={overall.rotaryWithoutInteract?.toLocaleString() || '0'} trend={overall.totalRotary ? {text: `${Math.round(((overall.rotaryWithoutInteract || 0) / overall.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} delay={0.15} />
+                <MetricCard title="Rotaract Sponsoring Interact" value={overall.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} delay={0.2} />
             </section>
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
-                <MetricCard title="Clubs in Arrears" value={overall.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
-                <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
-                <MetricCard title="Unreported Officers" value={overall.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
-                <MetricCard title="Suspended Interact" value={overall.suspendedInteractClubs?.toLocaleString() || '0'} trend={overall.totalInteractClubs ? {text: `${Math.round(((overall.suspendedInteractClubs || 0) / overall.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} />
+                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
+                <MetricCard title="Clubs in Arrears" value={overall.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} delay={0.1} />
+                <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
+                <MetricCard title="Unreported Officers" value={overall.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} delay={0.2} />
+                <MetricCard title="Suspended Interact" value={overall.suspendedInteractClubs?.toLocaleString() || '0'} trend={overall.totalInteractClubs ? {text: `${Math.round(((overall.suspendedInteractClubs || 0) / overall.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
             
             <section className="charts-grid three-cols" style={{ marginBottom: '40px' }}>
@@ -505,7 +505,24 @@ export default async function GlobalDashboard({ searchParams }) {
             <section style={{ marginBottom: '40px' }}>
                 <div className="card">
                     <GlobalTables 
-                        zoneTableData={filteredZoneTableData} 
+                        zoneTableData={filteredZoneTableData.map(z => ({
+                            'RI District': z['RI District'],
+                            'RI Zone': z['RI Zone'],
+                            'Total Clubs': z['Total Clubs'],
+                            'Total Reported Members': z['Total Reported Members'] || z['Members'],
+                            'Members': z['Members'] || z['Total Reported Members'],
+                            'Avg Membership': z['Avg Membership'],
+                            'Total Rotary Clubs': z['Total Rotary Clubs'],
+                            'Rotary without Rotaract Club': z['Rotary without Rotaract Club'],
+                            'TotalInteractClubs': z['TotalInteractClubs'],
+                            'Rotary without Interact Club': z['Rotary without Interact Club'],
+                            'Total Outstanding (INR)': z['Total Outstanding (INR)'] || z['TotalINR'],
+                            'TotalINR': z['TotalINR'] || z['Total Outstanding (INR)'],
+                            '% Clubs Arrears': z['% Clubs Arrears'],
+                            'No Officer Total': z['No Officer Total'],
+                            'Total Contributions USD': z['Total Contributions USD'],
+                            'NewTotalClubs': z['NewTotalClubs']
+                        }))} 
                         arrearsData={filteredArrearsData.map(c => ({
                             'RI Zone': c['RI Zone'] || c['Current Zone'] || c.Zone,
                             'District': c.District,

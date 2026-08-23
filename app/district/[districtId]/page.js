@@ -7,6 +7,19 @@ import BarChart from '@/components/charts/BarChart';
 import ClubLeaderboardsSection from '@/components/sections/ClubLeaderboardsSection';
 import JsonLd from '@/components/seo/JsonLd';
 
+export const revalidate = false; // build-time static, regenerated on next build
+
+export async function generateStaticParams() {
+    // Generate static pages for all districts
+    const zoneTableData = getZoneSummary() || [];
+    const districtSet = new Set();
+    zoneTableData.forEach(item => {
+        const dist = item['RI District']?.toString()?.trim();
+        if (dist) districtSet.add(dist);
+    });
+    return Array.from(districtSet).map(dist => ({ districtId: dist }));
+}
+
 export async function generateMetadata({ params }) {
     const { districtId } = await params;
     const districtData = await getDistrictData(districtId);
@@ -269,12 +282,12 @@ export default async function DistrictPage({ params }) {
             )}
             
             <section className="metrics-grid three-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Total Rotaract Clubs" value={stats.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} />
-                <MetricCard title="Total Members" value={stats.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} />
-                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} />
-                <MetricCard title="New Chartered Clubs" value={stats.newTotalClubs?.toLocaleString()} />
-                <MetricCard title="Clubs w/ TRF Contribution" value={stats.trfClubs?.toLocaleString()} />
-                <MetricCard title="Total TRF Contributions" value={`$${stats.trfContributionsUSD?.toLocaleString()}`} />
+                <MetricCard title="Total Rotaract Clubs" value={stats.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} delay={0.05} />
+                <MetricCard title="Total Members" value={stats.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} delay={0.1} />
+                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} delay={0.15} />
+                <MetricCard title="New Chartered Clubs" value={stats.newTotalClubs?.toLocaleString()} delay={0.2} />
+                <MetricCard title="Clubs w/ TRF Contribution" value={stats.trfClubs?.toLocaleString()} delay={0.25} />
+                <MetricCard title="Total TRF Contributions" value={`$${stats.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
             </section>
 
             <h2 className="section-title">Demographics & Foundation Breakdown</h2>
@@ -286,26 +299,26 @@ export default async function DistrictPage({ params }) {
 
             <h2 className="section-title">Rotary-Rotaract Integration</h2>
             <section className="metrics-grid three-cols" style={{ marginBottom: '40px' }}>
-                <MetricCard title="Total Rotary Clubs" value={stats.totalRotary?.toLocaleString() || '0'} trend={getDelta('totalRotary')} />
-                <MetricCard title="Rotary with Sponsored Rotaract" value={stats.rotaryWithSponsor?.toLocaleString() || '0'} trend={{text: `${penGood}% Integration`, type: 'positive'}} />
-                <MetricCard title="Rotary w/o Sponsored Rotaract" value={stats.rotaryWithoutSponsor?.toLocaleString() || '0'} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} />
+                <MetricCard title="Total Rotary Clubs" value={stats.totalRotary?.toLocaleString() || '0'} trend={getDelta('totalRotary')} delay={0.05} />
+                <MetricCard title="Rotary with Sponsored Rotaract" value={stats.rotaryWithSponsor?.toLocaleString() || '0'} trend={{text: `${penGood}% Integration`, type: 'positive'}} delay={0.1} />
+                <MetricCard title="Rotary w/o Sponsored Rotaract" value={stats.rotaryWithoutSponsor?.toLocaleString() || '0'} trend={{text: `${penBad}% Missed Opportunity`, type: 'negative'}} isWarning={true} delay={0.15} />
             </section>
 
             <h2 className="section-title">Interact Ecosystem</h2>
             <section className="metrics-grid four-cols" style={{ marginBottom: '40px' }}>
-                <MetricCard title="Total Interact Clubs" value={stats.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} />
-                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} />
-                <MetricCard title="Rotary w/o Interact Club" value={stats.rotaryWithoutInteract?.toLocaleString() || '0'} trend={stats.totalRotary ? {text: `${Math.round(((stats.rotaryWithoutInteract || 0) / stats.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} />
-                <MetricCard title="Rotaract Sponsoring Interact" value={stats.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} />
+                <MetricCard title="Total Interact Clubs" value={stats.totalInteractClubs?.toLocaleString() || '0'} trend={getDelta('totalInteractClubs')} delay={0.05} />
+                <MetricCard title="Active Interact Clubs" value={activeInteract.toLocaleString()} trend={{text: `${activeInteractPct}% Active Rate`, type: 'positive'}} delay={0.1} />
+                <MetricCard title="Rotary w/o Interact Club" value={stats.rotaryWithoutInteract?.toLocaleString() || '0'} trend={stats.totalRotary ? {text: `${Math.round(((stats.rotaryWithoutInteract || 0) / stats.totalRotary) * 100)}% Opportunity`, type: 'negative'} : null} isWarning={true} delay={0.15} />
+                <MetricCard title="Rotaract Sponsoring Interact" value={stats.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} delay={0.2} />
             </section>
 
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
-                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} />
-                <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} />
-                <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} />
-                <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} />
-                <MetricCard title="Suspended Interact" value={stats.suspendedInteractClubs?.toLocaleString() || '0'} trend={stats.totalInteractClubs ? {text: `${Math.round(((stats.suspendedInteractClubs || 0) / stats.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} />
+                <MetricCard title="Outstanding Dues*" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
+                <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} delay={0.1} />
+                <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
+                <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} delay={0.2} />
+                <MetricCard title="Suspended Interact" value={stats.suspendedInteractClubs?.toLocaleString() || '0'} trend={stats.totalInteractClubs ? {text: `${Math.round(((stats.suspendedInteractClubs || 0) / stats.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
             
             <section className="charts-grid three-cols" style={{ marginBottom: '40px' }}>

@@ -66,19 +66,42 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
     return (
         <div className="card" style={{ overflowX: 'auto' }}>
             <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={e => setSearchTerm(e.target.value)}
-                    placeholder="Search all columns..."
-                    style={{
-                        padding: '10px 15px',
-                        border: '1px solid var(--border-color)',
-                        borderRadius: '6px',
-                        width: '300px',
-                        fontFamily: 'Inter'
-                    }}
-                />
+                <div style={{ position: 'relative' }}>
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={e => setSearchTerm(e.target.value)}
+                        placeholder="Search all columns..."
+                        style={{
+                            padding: '10px 15px',
+                            paddingRight: searchTerm ? '30px' : '15px',
+                            border: '1px solid var(--border-color)',
+                            borderRadius: '6px',
+                            width: '300px',
+                            fontFamily: 'Inter'
+                        }}
+                    />
+                    {searchTerm && (
+                        <button
+                            onClick={() => setSearchTerm('')}
+                            style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                color: 'var(--text-muted)',
+                                fontSize: '16px',
+                                padding: '0'
+                            }}
+                            aria-label="Clear search"
+                        >
+                            ×
+                        </button>
+                    )}
+                </div>
                 <button 
                     onClick={exportToCSV}
                     style={{
@@ -133,32 +156,65 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
                     ))}
                 </thead>
                 <tbody>
-                    {table.getRowModel().rows.map(row => (
-                        <tr 
-                            key={row.id}
-                            onClick={() => onRowClick && onRowClick(row.original)}
-                            style={{ 
-                                cursor: onRowClick ? 'pointer' : 'default',
-                                borderBottom: '1px solid var(--border-color)',
-                                transition: 'background 0.2s',
-                            }}
-                            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
-                        >
-                            {row.getVisibleCells().map(cell => (
-                                <td key={cell.id} style={{ padding: '12px 15px', fontSize: '14px', color: 'var(--text-main)' }}>
-                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                </td>
-                            ))}
+                    {table.getRowModel().rows.length === 0 ? (
+                        <tr>
+                            <td colSpan={table.getAllColumns().length} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
+                                <div style={{ fontSize: '24px', marginBottom: '10px' }}>🔍</div>
+                                <p style={{ margin: 0, fontWeight: 500 }}>No results found.</p>
+                                <p style={{ margin: '5px 0 0 0', fontSize: '13px' }}>Try a different search term.</p>
+                            </td>
                         </tr>
-                    ))}
+                    ) : (
+                        table.getRowModel().rows.map(row => (
+                            <tr 
+                                key={row.id}
+                                onClick={() => onRowClick && onRowClick(row.original)}
+                                style={{ 
+                                    cursor: onRowClick ? 'pointer' : 'default',
+                                    borderBottom: '1px solid var(--border-color)',
+                                    transition: 'background 0.2s',
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+                            >
+                                {row.getVisibleCells().map(cell => (
+                                    <td key={cell.id} style={{ padding: '12px 15px', fontSize: '14px', color: 'var(--text-main)' }}>
+                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))
+                    )}
                 </tbody>
             </table>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px' }}>
-                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                    Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+                        Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}–{Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, table.getFilteredRowModel().rows.length)} of {table.getFilteredRowModel().rows.length} results
+                    </span>
+                    <select
+                        value={table.getState().pagination.pageSize}
+                        onChange={e => {
+                            table.setPageSize(Number(e.target.value))
+                        }}
+                        style={{
+                            padding: '4px 8px',
+                            borderRadius: '4px',
+                            border: '1px solid var(--border-color)',
+                            background: 'white',
+                            fontSize: '13px',
+                            color: 'var(--text-main)',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {[15, 25, 50, 100].map(pageSize => (
+                            <option key={pageSize} value={pageSize}>
+                                Show {pageSize}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                     <button 
                         onClick={() => table.previousPage()} 

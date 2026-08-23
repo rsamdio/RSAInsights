@@ -72,12 +72,21 @@ export default function HeaderFilters() {
         
         const isZoneRoute = !!pathParams?.zoneId;
         
+        // Trigger visual feedback before navigation
+        document.documentElement.setAttribute('data-loading', 'true');
+        if (typeof window !== 'undefined' && window.triggerNavigationProgress) {
+            window.triggerNavigationProgress();
+        }
+        
         if (isZoneRoute) {
             params.delete('zone');
             router.push(`/zone/${pathParams.zoneId}?${params.toString()}`, { scroll: false });
         } else {
             router.push(`/?${params.toString()}`, { scroll: false });
         }
+        
+        // Scroll to top to ensure new KPIs are visible
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const customStyles = {

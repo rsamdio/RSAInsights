@@ -8,6 +8,8 @@ import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import { getDashboardSummary } from '@/lib/api';
 import Analytics from '@/components/ui/Analytics';
+import NavigationProgress from '@/components/ui/NavigationProgress';
+import BackToTop from '@/components/ui/BackToTop';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = {
@@ -186,7 +188,12 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body>
-        <Analytics />
+        <Suspense fallback={null}>
+          <NavigationProgress />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <div className="app-container">
           <header className="header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '18px', flexWrap: 'wrap' }}>
@@ -221,6 +228,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer lastUpdated={formattedDate} />
         </div>
+        <BackToTop />
       </body>
     </html>
   );
