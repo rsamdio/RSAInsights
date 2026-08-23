@@ -8,7 +8,94 @@ import {
     getFilteredRowModel
 } from '@tanstack/react-table';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Select from 'react-select';
+
+const pageSizeOptions = [
+    { value: 15, label: 'Show 15' },
+    { value: 25, label: 'Show 25' },
+    { value: 50, label: 'Show 50' },
+    { value: 100, label: 'Show 100' },
+];
+
+const pageSizeSelectStyles = {
+    control: (provided, state) => ({
+        ...provided,
+        minHeight: '32px',
+        height: '32px',
+        width: '115px',
+        borderRadius: '6px',
+        border: state.isFocused ? '1px solid var(--primary)' : '1px solid var(--border-color)',
+        background: '#ffffff',
+        boxShadow: 'none',
+        fontSize: '13px',
+        cursor: 'pointer',
+        '&:hover': {
+            borderColor: 'var(--primary)'
+        }
+    }),
+    valueContainer: (provided) => ({
+        ...provided,
+        padding: '0 8px',
+        height: '32px',
+        display: 'flex',
+        alignItems: 'center'
+    }),
+    input: (provided) => ({
+        ...provided,
+        margin: '0px',
+        padding: '0px'
+    }),
+    singleValue: (provided) => ({
+        ...provided,
+        color: 'var(--text-main)',
+        fontWeight: 500,
+        margin: 0
+    }),
+    indicatorSeparator: () => ({
+        display: 'none'
+    }),
+    indicatorsContainer: (provided) => ({
+        ...provided,
+        height: '32px'
+    }),
+    dropdownIndicator: (provided) => ({
+        ...provided,
+        padding: '4px 6px',
+        color: 'var(--text-muted)',
+        '&:hover': {
+            color: 'var(--primary)'
+        }
+    }),
+    menu: (provided) => ({
+        ...provided,
+        fontSize: '13px',
+        borderRadius: '6px',
+        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
+        border: '1px solid var(--border-color)',
+        overflow: 'hidden',
+        zIndex: 9999
+    }),
+    menuPortal: (provided) => ({
+        ...provided,
+        zIndex: 9999
+    }),
+    option: (provided, state) => ({
+        ...provided,
+        backgroundColor: state.isSelected 
+            ? 'var(--primary)' 
+            : state.isFocused 
+                ? 'var(--primary-light)' 
+                : 'transparent',
+        color: state.isSelected 
+            ? '#ffffff' 
+            : state.isFocused 
+                ? 'var(--primary)' 
+                : 'var(--text-main)',
+        cursor: 'pointer',
+        padding: '6px 12px',
+        fontWeight: state.isSelected ? 600 : 400
+    })
+};
 
 export default function DataTable({ data, columns, onRowClick, exportFilename, initialSort = [] }) {
     const [sorting, setSorting] = useState(initialSort);
@@ -193,40 +280,53 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
                     <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                         Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}–{Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, table.getFilteredRowModel().rows.length)} of {table.getFilteredRowModel().rows.length} results
                     </span>
-                    <select
-                        value={table.getState().pagination.pageSize}
-                        onChange={e => {
-                            table.setPageSize(Number(e.target.value))
-                        }}
-                        style={{
-                            padding: '4px 8px',
-                            borderRadius: '4px',
-                            border: '1px solid var(--border-color)',
-                            background: 'white',
-                            fontSize: '13px',
-                            color: 'var(--text-main)',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        {[15, 25, 50, 100].map(pageSize => (
-                            <option key={pageSize} value={pageSize}>
-                                Show {pageSize}
-                            </option>
-                        ))}
-                    </select>
+                    <div style={{ width: '120px' }}>
+                        <Select
+                            instanceId={`page-size-select-${exportFilename || 'table'}`}
+                            isSearchable={false}
+                            options={pageSizeOptions}
+                            value={pageSizeOptions.find(opt => opt.value === table.getState().pagination.pageSize) || { value: table.getState().pagination.pageSize, label: `Show ${table.getState().pagination.pageSize}` }}
+                            onChange={opt => opt && table.setPageSize(Number(opt.value))}
+                            styles={pageSizeSelectStyles}
+                            menuPlacement="auto"
+                            menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
+                        />
+                    </div>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                     <button 
                         onClick={() => table.previousPage()} 
                         disabled={!table.getCanPreviousPage()}
-                        style={{ padding: '6px 12px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'white', cursor: table.getCanPreviousPage() ? 'pointer' : 'not-allowed' }}
+                        style={{ 
+                            padding: '6px 14px', 
+                            borderRadius: '6px', 
+                            border: '1px solid var(--border-color)', 
+                            background: '#ffffff', 
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            color: table.getCanPreviousPage() ? 'var(--text-main)' : 'var(--text-muted)',
+                            cursor: table.getCanPreviousPage() ? 'pointer' : 'not-allowed',
+                            transition: 'all 0.2s ease',
+                            opacity: table.getCanPreviousPage() ? 1 : 0.6
+                        }}
                     >
                         Previous
                     </button>
                     <button 
                         onClick={() => table.nextPage()} 
                         disabled={!table.getCanNextPage()}
-                        style={{ padding: '6px 12px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'white', cursor: table.getCanNextPage() ? 'pointer' : 'not-allowed' }}
+                        style={{ 
+                            padding: '6px 14px', 
+                            borderRadius: '6px', 
+                            border: '1px solid var(--border-color)', 
+                            background: '#ffffff', 
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            color: table.getCanNextPage() ? 'var(--text-main)' : 'var(--text-muted)',
+                            cursor: table.getCanNextPage() ? 'pointer' : 'not-allowed',
+                            transition: 'all 0.2s ease',
+                            opacity: table.getCanNextPage() ? 1 : 0.6
+                        }}
                     >
                         Next
                     </button>
