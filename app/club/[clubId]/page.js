@@ -22,6 +22,24 @@ export async function generateMetadata({ params }) {
             title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}`,
             description: `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.`,
             url: `https://insights.rsamdio.org/club/${club.id}`,
+            siteName: 'Rotaract South Asia MDIO Insights',
+            images: [
+                {
+                    url: '/rsamdio.webp',
+                    width: 1200,
+                    height: 630,
+                    alt: `Rotaract Club of ${club.name} (${club.id})`,
+                },
+            ],
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            site: '@rsa_mdio',
+            creator: '@rsa_mdio',
+            title: `Rotaract Club of ${club.name} (${club.id}) | District ${club.district}`,
+            description: `Comprehensive club report and performance metrics for Rotaract Club of ${club.name}, District ${club.district}, ${club.zone}.`,
+            images: ['/rsamdio.webp'],
         },
     };
 }

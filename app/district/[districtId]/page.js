@@ -25,6 +25,24 @@ export async function generateMetadata({ params }) {
             title: `District ${districtId} Performance & Directory | Rotaract South Asia`,
             description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}.`,
             url: `https://insights.rsamdio.org/district/${districtId}`,
+            siteName: 'Rotaract South Asia MDIO Insights',
+            images: [
+                {
+                    url: '/rsamdio.webp',
+                    width: 1200,
+                    height: 630,
+                    alt: `District ${districtId} Performance & Directory - Rotaract South Asia`,
+                },
+            ],
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            site: '@rsa_mdio',
+            creator: '@rsa_mdio',
+            title: `District ${districtId} Performance & Directory | Rotaract South Asia`,
+            description: `Official performance metrics for Rotary/Rotaract District ${districtId} (${zoneName}): ${clubsCount}, ${membersCount}.`,
+            images: ['/rsamdio.webp'],
         },
     };
 }

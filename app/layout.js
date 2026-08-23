@@ -77,6 +77,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@rsa_mdio',
+    creator: '@rsa_mdio',
     title: 'Insights (Zones 4-7) | Rotaract South Asia MDIO',
     description: 'Official analytics, membership demographics, TRF giving, and club performance dashboard for Rotaract Zones 4, 5, 6 & 7 by Rotaract South Asia MDIO.',
     images: ['/rsamdio.webp'],
@@ -102,6 +104,10 @@ const globalSchemas = [
     name: 'Rotaract South Asia Multi-District Information Organisation',
     alternateName: 'Rotaract South Asia MDIO (RSAMDIO)',
     url: 'https://insights.rsamdio.org',
+    sameAs: [
+      'https://x.com/rsa_mdio',
+      'https://rsamdio.org',
+    ],
     logo: 'https://insights.rsamdio.org/rsamdio.webp',
     parentOrganization: {
       '@type': 'Organization',

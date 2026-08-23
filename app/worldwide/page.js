@@ -14,6 +14,24 @@ export const metadata = {
         title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
         description: 'Worldwide Rotaract and Interact leaderboards, country rankings, and membership growth metrics.',
         url: 'https://insights.rsamdio.org/worldwide',
+        siteName: 'Rotaract South Asia MDIO Insights',
+        images: [
+            {
+                url: '/rsamdio.webp',
+                width: 1200,
+                height: 630,
+                alt: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+            },
+        ],
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@rsa_mdio',
+        creator: '@rsa_mdio',
+        title: 'Worldwide Rotaract & Interact Statistics | Global Leaderboard',
+        description: 'Worldwide Rotaract and Interact leaderboards, country rankings, and membership growth metrics.',
+        images: ['/rsamdio.webp'],
     },
 };
 

@@ -17,6 +17,25 @@ export const metadata = {
         title: 'Executive Analytics & Directory (Zones 4-7) | Rotaract South Asia MDIO',
         description: 'Comprehensive executive analytics and club directory for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
         url: 'https://insights.rsamdio.org',
+        siteName: 'Rotaract South Asia MDIO Insights',
+        images: [
+            {
+                url: '/rsamdio.webp',
+                width: 1200,
+                height: 630,
+                alt: 'Rotaract South Asia MDIO Insights Dashboard',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@rsa_mdio',
+        creator: '@rsa_mdio',
+        title: 'Executive Analytics & Directory (Zones 4-7) | Rotaract South Asia MDIO',
+        description: 'Comprehensive executive analytics and club directory for Rotaract Zones 4, 5, 6 & 7 across South Asia.',
+        images: ['/rsamdio.webp'],
     },
 };
 
