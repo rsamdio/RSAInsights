@@ -144,6 +144,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         },
         { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
         { 
+            header: 'Sponsor Clubs', 
+            id: 'Sponsor_Clubs', 
+            accessorKey: 'Sponsor Clubs',
+            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+        },
+        { 
             header: 'Outstanding (₹)*', 
             id: 'Outstanding_INR',
             accessorKey: 'Outstanding INR',
@@ -187,6 +193,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             }
         },
         { header: 'Club Base', id: 'Club_Base', accessorKey: 'Club Base' },
+        { 
+            header: 'Sponsor Clubs', 
+            id: 'Sponsor_Clubs', 
+            accessorKey: 'Sponsor Clubs',
+            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+        },
         {
             header: 'Action',
             id: 'action',
@@ -238,9 +250,15 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
                 ) : info.getValue();
             }
         },
+        { header: 'Club Base', id: 'Club_Subtype', accessorKey: 'Club Subtype' },
+        { 
+            header: 'Sponsor Clubs', 
+            id: 'Sponsor_Clubs', 
+            accessorKey: 'Sponsor Clubs',
+            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+        },
         { header: 'Charter Date', id: 'Club_Charter_Date', accessorKey: 'Club Charter Date' },
         { header: 'Members', id: 'Member_Count', accessorKey: 'Member Count' },
-        { header: 'Club Base', id: 'Club_Subtype', accessorKey: 'Club Subtype' },
         {
             header: 'Action',
             id: 'action',
@@ -276,6 +294,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
                     </Link>
                 ) : info.getValue();
             }
+        },
+        { 
+            header: 'Sponsor Clubs', 
+            id: 'Sponsor_Clubs', 
+            accessorKey: 'Sponsor Clubs',
+            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
         },
         { 
             header: 'Annual Fund', 
@@ -343,6 +367,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             }
         },
         { header: 'Club Base', id: 'Rotaract_Club_Base', accessorKey: 'Rotaract Club Base' },
+        { 
+            header: 'Sponsor Clubs', 
+            id: 'Sponsor_Clubs', 
+            accessorKey: 'Sponsor Clubs',
+            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+        },
         { header: 'Members', id: 'Total_Reported_Members', accessorKey: 'Total Reported Members' },
         {
             header: 'Action',

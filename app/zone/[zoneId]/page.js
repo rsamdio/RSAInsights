@@ -493,6 +493,7 @@ export default async function ZonePage({ params, searchParams }) {
                             'District': c.District,
                             'Club Name': c['Club Name'],
                             'Club Base': c['Club Base'],
+                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
                             'Billable Member Count': c['Billable Member Count'] || 0,
                             'Outstanding INR': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
                             'outstanding': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
@@ -504,6 +505,7 @@ export default async function ZonePage({ params, searchParams }) {
                             'District': c.District,
                             'Rotaract Club Name': c['Rotaract Club Name'] || c['Club Name'],
                             'Club Base': c['Club Base'] || c['Rotaract Club Base'],
+                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
                             'Club Status': c['Club Status'] || 'Active',
                             'Club ID': c['Club ID'] || c['Rotaract Club ID']
                         }))} 
@@ -517,6 +519,7 @@ export default async function ZonePage({ params, searchParams }) {
                             'Club ID': c['Club ID'] || c.id,
                             'Club Name': c['Club Name'] || c.name,
                             'Rotaract Club Base': c['Rotaract Club Base'] || c.base,
+                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
                             'Total Reported Members': c['Total Reported Members'] ?? c.members ?? 0
                         }))}
                     />

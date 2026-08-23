@@ -7,6 +7,12 @@ export default function DistrictTable({ districtClubs }) {
         { header: 'Club Name', accessorKey: 'name' },
         { header: 'Club Base', accessorKey: 'base' },
         { 
+            header: 'Sponsor Clubs', 
+            id: 'sponsorClubs',
+            accessorKey: 'sponsorClubs',
+            accessorFn: row => row.sponsorClubs || row['Sponsor Clubs'] || 'None Reported'
+        },
+        { 
             header: 'Outstanding (₹)*', 
             id: 'outstanding',
             accessorFn: row => Number(row.outstanding || 0),

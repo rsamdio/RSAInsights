@@ -480,7 +480,45 @@ newClubsSheet = newClubsSheet.filter(row => row['DISTRICT'] || row['District']).
     return row;
 });
 
-// Build lookup maps for enriching all clubs
+// Build lookup maps for enriching all clubs and drilldown tables
+const sponsorMap = new Map();
+allClubsSheet.forEach(r => {
+    const id = (r['Rotaract Club ID'] || r['Club ID'] || '').toString().trim();
+    const sponsor = (r['Sponsor Clubs'] || '').toString().trim();
+    if (id) {
+        sponsorMap.set(id, sponsor || 'None Reported');
+    }
+});
+
+// Enrich sheets with Sponsor Clubs
+arrearsSheet.forEach(row => {
+    const id = (row['NF Cust Number'] || row['Club ID'] || '').toString().trim();
+    const sponsor = sponsorMap.get(id) || 'None Reported';
+    row['Sponsor Clubs'] = sponsor;
+    row['sponsorClubs'] = sponsor;
+});
+
+noOfficersSheet.forEach(row => {
+    const id = (row['Club ID'] || '').toString().trim();
+    const sponsor = sponsorMap.get(id) || 'None Reported';
+    row['Sponsor Clubs'] = sponsor;
+    row['sponsorClubs'] = sponsor;
+});
+
+trfSheet.forEach(row => {
+    const id = (row['Club No.'] || row['Club No'] || '').toString().trim();
+    const sponsor = sponsorMap.get(id) || 'None Reported';
+    row['Sponsor Clubs'] = sponsor;
+    row['sponsorClubs'] = sponsor;
+});
+
+newClubsSheet.forEach(row => {
+    const id = (row['Club ID'] || '').toString().trim();
+    const sponsor = sponsorMap.get(id) || 'None Reported';
+    row['Sponsor Clubs'] = sponsor;
+    row['sponsorClubs'] = sponsor;
+});
+
 const arrearsMap = new Map();
 arrearsSheet.forEach(c => {
     const id = String(c['NF Cust Number'] || '').trim();
@@ -745,12 +783,15 @@ arrearsSheet.forEach(c => {
     if (!id) return;
     const outstandingUSD = parseCurrency(c[' USD Outstanding ']);
     const outstandingINR = Math.round(outstandingUSD * CURRENT_EXCHANGE_RATE);
+    const sponsor = sponsorMap.get(String(id).trim()) || c['Sponsor Clubs'] || 'None Reported';
     unifiedMap.set(id, {
         id: id,
         name: c['Club Name'],
         zone: c['RI Zone'],
         district: c['District'],
         base: c['Club Base'] || 'Unknown',
+        sponsorClubs: sponsor,
+        'Sponsor Clubs': sponsor,
         isArrears: true,
         outstanding: outstandingINR,
         outstandingUSD: outstandingUSD,
@@ -763,9 +804,14 @@ arrearsSheet.forEach(c => {
 noOfficersSheet.forEach(c => {
     const id = c['Club ID'];
     if (!id) return;
+    const sponsor = sponsorMap.get(String(id).trim()) || c['Sponsor Clubs'] || 'None Reported';
     if (unifiedMap.has(id)) {
         const existing = unifiedMap.get(id);
         existing.isNoOfficers = true;
+        if (!existing.sponsorClubs || existing.sponsorClubs === 'None Reported') {
+            existing.sponsorClubs = sponsor;
+            existing['Sponsor Clubs'] = sponsor;
+        }
     } else {
         unifiedMap.set(id, {
             id: id,
@@ -773,6 +819,8 @@ noOfficersSheet.forEach(c => {
             zone: c['RI Zone'],
             district: c['District'],
             base: c['Club Base'] || 'Unknown',
+            sponsorClubs: sponsor,
+            'Sponsor Clubs': sponsor,
             isArrears: false,
             outstanding: 0,
             outstandingUSD: 0,
@@ -820,6 +868,9 @@ exportToCsv(arrearsSheet, 'data/arrears.csv');
 exportToCsv(noOfficersSheet, 'data/no_officers.csv');
 exportToCsv(rotaryNoSponsorSheet, 'data/rotary_no_sponsor.csv');
 exportToCsv(rotaryNoInteractSheet, 'data/rotary_no_interact.csv');
+exportToCsv(allClubsSheet, 'data/all_clubs.csv');
+exportToCsv(trfSheet, 'data/trf_contributions.csv');
+exportToCsv(newClubsSheet, 'data/new_clubs.csv');
 
 fs.writeFileSync('data/arrears.json', JSON.stringify(arrearsSheet, null, 2));
 fs.writeFileSync('data/no_officers.json', JSON.stringify(noOfficersSheet, null, 2));
