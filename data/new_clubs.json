@@ -81,8 +81,8 @@
     "Verify": "Yes",
     "RI Zone": "Zone 4",
     "District": "3011",
-    "Sponsor Clubs": "None Reported",
-    "sponsorClubs": "None Reported"
+    "Sponsor Clubs": "",
+    "sponsorClubs": ""
   },
   {
     "ZONE": "4",
@@ -506,8 +506,8 @@
     "Verify": "Yes",
     "RI Zone": "Zone 7",
     "District": "3170",
-    "Sponsor Clubs": "None Reported",
-    "sponsorClubs": "None Reported"
+    "Sponsor Clubs": "",
+    "sponsorClubs": ""
   },
   {
     "ZONE": "7",
@@ -982,8 +982,8 @@
     "Verify": "Yes",
     "RI Zone": "Zone 6",
     "District": "3250",
-    "Sponsor Clubs": "None Reported",
-    "sponsorClubs": "None Reported"
+    "Sponsor Clubs": "",
+    "sponsorClubs": ""
   },
   {
     "ZONE": "6",
@@ -999,8 +999,8 @@
     "Verify": "Yes",
     "RI Zone": "Zone 6",
     "District": "3250",
-    "Sponsor Clubs": "None Reported",
-    "sponsorClubs": "None Reported"
+    "Sponsor Clubs": "",
+    "sponsorClubs": ""
   },
   {
     "ZONE": "6",

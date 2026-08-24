@@ -10,7 +10,11 @@ export default function DistrictTable({ districtClubs }) {
             header: 'Sponsor Clubs', 
             id: 'sponsorClubs',
             accessorKey: 'sponsorClubs',
-            accessorFn: row => row.sponsorClubs || row['Sponsor Clubs'] || 'None Reported'
+            accessorFn: row => {
+                const val = row.sponsorClubs || row['Sponsor Clubs'] || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         { 
             header: 'Outstanding (₹)*', 

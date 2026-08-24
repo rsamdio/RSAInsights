@@ -238,8 +238,8 @@ export default async function ClubPage({ params }) {
                             <div style={{ fontSize: '12px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
                                 Sponsor Clubs
                             </div>
-                            <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-main)' }}>
-                                {club.sponsorClubs || 'None Reported'}
+                            <div style={{ fontSize: '15px', fontWeight: 600, color: (club.sponsorClubs && club.sponsorClubs !== 'None Reported') ? 'var(--text-main)' : 'var(--text-muted)' }}>
+                                {(club.sponsorClubs && club.sponsorClubs !== 'None Reported') ? club.sponsorClubs : '---'}
                             </div>
                         </div>
 

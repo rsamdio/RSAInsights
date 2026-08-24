@@ -1,5 +1,5 @@
 ﻿Business Unit,NF Cust Number,Club Name,Club Type,Club Base,Collector,District,Zone / Section,Billable Member Count,Country,No. Items, USD Outstanding ,Current Zone,Officer,Verify,Outstanding INR,outstanding,outstandingINR,outstandingUSD,isAtRisk,RI Zone,Sponsor Clubs,sponsorClubs
-RTY IND BU,8826662,God City Kumbakonam,ROTARACT CLUB,Community,Ruma Mondal,2981,5,21,India,1,191.04,5,No,Yes,18340,18340,18340,191.04,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8826662,God City Kumbakonam,ROTARACT CLUB,Community,Ruma Mondal,2981,5,21,India,1,191.04,5,No,Yes,18340,18340,18340,191.04,TRUE,Zone 5,,
 RTY IND BU,8827767,Cuddalore Waves,ROTARACT CLUB,Community,Ruma Mondal,2981,5,17,India,1,150.45,5,Yes,Yes,14443,14443,14443,150.45,TRUE,Zone 5,Cuddalore Central (Rotary); Cuddalore Coastal City (Rotary),Cuddalore Central (Rotary); Cuddalore Coastal City (Rotary)
 RTY IND BU,8827706,Indira Gandhi Medical College & Research Institute,ROTARACT CLUB,University,Ruma Mondal,2981,5,24,India,1,132.75,5,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 5,Pondicherry Beach Town (Rotary),Pondicherry Beach Town (Rotary)
 RTY IND BU,91146,A.V.C. Polytechnic College,ROTARACT CLUB,University,Ruma Mondal,2981,5,3,India,4,63.05,5,No,Yes,6053,6053,6053,63.05,FALSE,Zone 5,Mayiladuthurai Kings (Rotary),Mayiladuthurai Kings (Rotary)
@@ -7,7 +7,7 @@ RTY IND BU,8824298,Physiotherapy SBV University,ROTARACT CLUB,University,Ruma Mo
 RTY IND BU,213168,M.R.G. Arts College Mannargudi,ROTARACT CLUB,University,Ruma Mondal,2981,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Mannargudi Mid Town (Rotary),Mannargudi Mid Town (Rotary)
 RTY IND BU,8824169,Pondicherry Cosmos,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,Pondicherry-Cosmos (Rotary),Pondicherry-Cosmos (Rotary)
 RTY IND BU,218694,Meyyathur,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,Chidambaram Central (Rotary),Chidambaram Central (Rotary)
-RTY IND BU,218701,Bhuvanagiri Ragavendhra,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,None Reported,None Reported
+RTY IND BU,218701,Bhuvanagiri Ragavendhra,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,,
 RTY IND BU,8823979,Pondicherry Beachtown,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,Pondicherry Beach Town (Rotary),Pondicherry Beach Town (Rotary)
 RTY IND BU,218166,Venkateswara Educational Institutions,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,4,33.63,5,No,Yes,3228,3228,3228,33.63,FALSE,Zone 5,Kumbakonam (Rotary),Kumbakonam (Rotary)
 RTY IND BU,8824168,Pattukkottai,ROTARACT CLUB,Community,Ruma Mondal,2981,5,1,India,3,25.47,5,No,Yes,2445,2445,2445,25.47,FALSE,Zone 5,Pattukkottai (Rotary),Pattukkottai (Rotary)
@@ -75,18 +75,18 @@ RTY IND BU,8827924,GTN Medical College of Naturopathy and Yogic Science Research
 RTY IND BU,8826231,Care College of Engineering,ROTARACT CLUB,University,Ruma Mondal,3000,5,29,India,2,183.79,5,No,Yes,17644,17644,17644,183.79,TRUE,Zone 5,Tiruchirapalli Greater (Rotary),Tiruchirapalli Greater (Rotary)
 RTY IND BU,8826092,Servite Arts and Science College for Women,ROTARACT CLUB,University,Ruma Mondal,3000,5,30,India,1,165.94,5,No,Yes,15930,15930,15930,165.94,TRUE,Zone 5,Vaiyampatti (Rotary),Vaiyampatti (Rotary)
 RTY IND BU,8827902,KDM NATRIVA,ROTARACT CLUB,University,Ruma Mondal,3000,5,29,India,1,160.41,5,No,Yes,15399,15399,15399,160.41,TRUE,Zone 5,Pudukkottai Crown City (Rotary),Pudukkottai Crown City (Rotary)
-RTY IND BU,8827404,Vidiyal Aranthangi,ROTARACT CLUB,Community,Ruma Mondal,3000,5,17,India,1,150.45,5,Yes,Yes,14443,14443,14443,150.45,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8827404,Vidiyal Aranthangi,ROTARACT CLUB,Community,Ruma Mondal,3000,5,17,India,1,150.45,5,Yes,Yes,14443,14443,14443,150.45,TRUE,Zone 5,,
 RTY IND BU,8827929,NPR College of Engineering and Technology,ROTARACT CLUB,University,Ruma Mondal,3000,5,25,India,1,138.28,5,Yes,Yes,13275,13275,13275,138.28,TRUE,Zone 5,Dindigul Mid-Town (Rotary),Dindigul Mid-Town (Rotary)
 RTY IND BU,8826257,Seethalakshmi Ramasamy College,ROTARACT CLUB,University,Ruma Mondal,3000,5,24,India,1,132.75,5,No,Yes,12744,12744,12744,132.75,TRUE,Zone 5,Trichy Gems Innovators (Rotary),Trichy Gems Innovators (Rotary)
 RTY IND BU,8824426,"Velammal College Of Engineering & Technology, Madurai",ROTARACT CLUB,University,Ruma Mondal,3000,5,24,India,1,132.75,5,No,Yes,12744,12744,12744,132.75,TRUE,Zone 5,Madurai Metro Heritage (Rotary),Madurai Metro Heritage (Rotary)
-RTY IND BU,8826902,Pudukkottai Yugan,ROTARACT CLUB,Community,Ruma Mondal,3000,5,14,India,1,124.64,5,No,Yes,11965,11965,11965,124.64,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8826902,Pudukkottai Yugan,ROTARACT CLUB,Community,Ruma Mondal,3000,5,14,India,1,124.64,5,No,Yes,11965,11965,11965,124.64,TRUE,Zone 5,,
 RTY IND BU,8827922,NPR Arts and Science College,ROTARACT CLUB,University,Ruma Mondal,3000,5,21,India,1,116.16,5,Yes,Yes,11151,11151,11151,116.16,TRUE,Zone 5,Dindigul Mid-Town (Rotary),Dindigul Mid-Town (Rotary)
 RTY IND BU,8826721,Perambalur,ROTARACT CLUB,Community,Ruma Mondal,3000,5,13,India,1,115.05,5,No,Yes,11045,11045,11045,115.05,TRUE,Zone 5,Perambalur (Rotary),Perambalur (Rotary)
 RTY IND BU,8827894,KDM Agri Crown,ROTARACT CLUB,University,Ruma Mondal,3000,5,20,India,1,110.63,5,No,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Pudukkottai Crown City (Rotary),Pudukkottai Crown City (Rotary)
 RTY IND BU,8827835,SLS MAVMM Ayira Vaisyar College,ROTARACT CLUB,University,Ruma Mondal,3000,5,20,India,1,110.63,5,Yes,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Madurai Down Town (Rotary),Madurai Down Town (Rotary)
 RTY IND BU,8825998,M.A.M. Business School,ROTARACT CLUB,University,Ruma Mondal,3000,5,20,India,1,110.63,5,No,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Tiruchirapalli Phoenix (Rotary),Tiruchirapalli Phoenix (Rotary)
 RTY IND BU,8825306,Sri Bharathi Arts & Science College for Women,ROTARACT CLUB,University,Ruma Mondal,3000,5,10,India,2,108.16,5,No,Yes,10383,10383,10383,108.16,TRUE,Zone 5,Pudukkottai Crown City (Rotary),Pudukkottai Crown City (Rotary)
-RTY IND BU,8827563,Madurai Kalasam,ROTARACT CLUB,Community,Ruma Mondal,3000,5,12,India,1,106.2,5,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8827563,Madurai Kalasam,ROTARACT CLUB,Community,Ruma Mondal,3000,5,12,India,1,106.2,5,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 5,,
 RTY IND BU,8825432,Srinivasan College of Arts and Science,ROTARACT CLUB,Community,Ruma Mondal,3000,5,12,India,1,106.2,5,No,Yes,10195,10195,10195,106.2,TRUE,Zone 5,Perambalur (Rotary),Perambalur (Rotary)
 RTY IND BU,8827361,SSM College of Arts and Science,ROTARACT CLUB,University,Ruma Mondal,3000,5,19,India,1,105.09,5,Yes,Yes,10089,10089,10089,105.09,TRUE,Zone 5,Dindigul (Rotary),Dindigul (Rotary)
 RTY IND BU,90543,Dindigul Rock Fort,ROTARACT CLUB,Community,Ruma Mondal,3000,5,11,India,1,100.31,5,Yes,Yes,9630,9630,9630,100.31,TRUE,Zone 5,Dindigul Queencity (Rotary),Dindigul Queencity (Rotary)
@@ -145,7 +145,7 @@ RTY IND BU,8824348,Delhi-Pankh,ROTARACT CLUB,Community,Ruma Mondal,3011,4,14,Ind
 RTY IND BU,8827666,Delhi Nexus,ROTARACT CLUB,Community,Ruma Mondal,3011,4,12,India,1,108.42,4,No,Yes,10408,10408,10408,108.42,TRUE,Zone 4,Delhi-West (Rotary),Delhi-West (Rotary)
 RTY IND BU,8826477,Starex University,ROTARACT CLUB,University,Ruma Mondal,3011,4,9,India,3,100.46,4,No,Yes,9644,9644,9644,100.46,TRUE,Zone 4,Delhi Midwest (Rotary),Delhi Midwest (Rotary)
 RTY IND BU,8823740,Guru Tegh Bahadur Institute of Technology,ROTARACT CLUB,University,Ruma Mondal,3011,4,4,India,4,84.07,4,No,Yes,8071,8071,8071,84.07,TRUE,Zone 4,Delhi Westend (Rotary),Delhi Westend (Rotary)
-RTY IND BU,8825068,Virasat,ROTARACT CLUB,Community,Ruma Mondal,3011,4,2,India,4,82.51,4,No,Yes,7921,7921,7921,82.51,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8825068,Virasat,ROTARACT CLUB,Community,Ruma Mondal,3011,4,2,India,4,82.51,4,No,Yes,7921,7921,7921,82.51,TRUE,Zone 4,,
 RTY IND BU,217446,Delhi Philanthropists,ROTARACT CLUB,Community,Ruma Mondal,3011,4,8,India,1,70.8,4,No,Yes,6797,6797,6797,70.8,FALSE,Zone 4,Delhi Central Next (Rotary),Delhi Central Next (Rotary)
 RTY IND BU,8826848,Indraprastha College For Women (DU),ROTARACT CLUB,University,Ruma Mondal,3011,4,12,India,1,66.38,4,No,Yes,6372,6372,6372,66.38,FALSE,Zone 4,Delhi South (Rotary),Delhi South (Rotary)
 RTY IND BU,8826443,Delhi Phoenix Midwest,ROTARACT CLUB,Community,Ruma Mondal,3011,4,1,India,2,55.63,4,No,Yes,5340,5340,5340,55.63,FALSE,Zone 4,Delhi Midwest (Rotary),Delhi Midwest (Rotary)
@@ -155,7 +155,7 @@ RTY IND BU,8825114,Delhi North,ROTARACT CLUB,Community,Ruma Mondal,3012,4,13,Ind
 RTY IND BU,8827082,Delhi Institute of Higher Education,ROTARACT CLUB,University,Ruma Mondal,3012,4,27,India,1,149.34,4,No,Yes,14337,14337,14337,149.34,TRUE,Zone 4,Green Greater Noida (Rotary),Green Greater Noida (Rotary)
 RTY IND BU,8827649,Delhi Metropolitan Education,ROTARACT CLUB,University,Ruma Mondal,3012,4,26,India,1,143.81,4,Yes,Yes,13806,13806,13806,143.81,TRUE,Zone 4,Noida (Rotary),Noida (Rotary)
 RTY IND BU,213233,Capital City New Delhi,ROTARACT CLUB,Community,Ruma Mondal,3012,4,13,India,1,130.62,4,No,Yes,12540,12540,12540,130.62,TRUE,Zone 4,Capital City New Delhi (Rotary),Capital City New Delhi (Rotary)
-RTY IND BU,8823176,Ardent Creators,ROTARACT CLUB,Community,Ruma Mondal,3012,4,13,India,1,124.69,4,Yes,Yes,11970,11970,11970,124.69,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8823176,Ardent Creators,ROTARACT CLUB,Community,Ruma Mondal,3012,4,13,India,1,124.69,4,Yes,Yes,11970,11970,11970,124.69,TRUE,Zone 4,,
 RTY IND BU,8827379,IPEM Group of Institutions Ghaziabad,ROTARACT CLUB,University,Ruma Mondal,3012,4,22,India,1,124.48,4,No,Yes,11950,11950,11950,124.48,TRUE,Zone 4,Ghaziabad Greater (Rotary),Ghaziabad Greater (Rotary)
 RTY IND BU,8827656,Delhi Shahadra,ROTARACT CLUB,Community,Ruma Mondal,3012,4,12,India,1,106.2,4,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 4,Delhi Shahdara (Rotary),Delhi Shahdara (Rotary)
 RTY IND BU,8827670,Gita Vidya Mandir Girls College,ROTARACT CLUB,University,Ruma Mondal,3012,4,19,India,1,105.09,4,Yes,Yes,10089,10089,10089,105.09,TRUE,Zone 4,Sonepat Midtown (Rotary),Sonepat Midtown (Rotary)
@@ -167,12 +167,12 @@ RTY IND BU,8827464,Noida Institute of Engineering and Technology,ROTARACT CLUB,U
 RTY IND BU,8827915,Sri Ramaswamy Memorial University,ROTARACT CLUB,University,Ruma Mondal,3012,4,12,India,1,66.38,4,Yes,Yes,6372,6372,6372,66.38,FALSE,Zone 4,Kundli (Rotary),Kundli (Rotary)
 RTY IND BU,216147,Physiotherapy Scholars,ROTARACT CLUB,Community,Ruma Mondal,3012,4,3,India,2,51.92,4,No,Yes,4984,4984,4984,51.92,FALSE,Zone 4,Delhi Monarch (Rotary),Delhi Monarch (Rotary)
 RTY IND BU,8824852,Noida Gen Z,ROTARACT CLUB,University,Ruma Mondal,3012,4,2,India,4,42.03,4,No,Yes,4035,4035,4035,42.03,FALSE,Zone 4,Noida (Rotary),Noida (Rotary)
-RTY IND BU,213222,Noida Youth,ROTARACT CLUB,Community,Ruma Mondal,3012,4,3,India,2,40.67,4,No,Yes,3904,3904,3904,40.67,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,213222,Noida Youth,ROTARACT CLUB,Community,Ruma Mondal,3012,4,3,India,2,40.67,4,No,Yes,3904,3904,3904,40.67,FALSE,Zone 4,,
 RTY IND BU,218044,GVM ITM,ROTARACT CLUB,University,Ruma Mondal,3012,4,5,India,1,38.81,4,No,Yes,3726,3726,3726,38.81,FALSE,Zone 4,Sonepat Midtown (Rotary),Sonepat Midtown (Rotary)
 RTY IND BU,8824849,Ghaziabad Golf Links,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,Ghaziabad Golf Links (Rotary),Ghaziabad Golf Links (Rotary)
 RTY IND BU,8824922,Ganaur,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,Ganaur (Rotary),Ganaur (Rotary)
 RTY IND BU,8823777,O.P. Jindal Global University Alumnus,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,O.P. Jindal Global University (Rotaract),O.P. Jindal Global University (Rotaract)
-RTY IND BU,8823168,Shatabdi Elite,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,8823168,Shatabdi Elite,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,,
 RTY IND BU,8823178,Delhi Regals,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,Delhi Regals (Rotary),Delhi Regals (Rotary)
 RTY IND BU,222263,Ghaziabad Prime,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,Ghaziabad Chiranjeev Vihar (Rotary),Ghaziabad Chiranjeev Vihar (Rotary)
 RTY IND BU,218612,Delhi Royals,ROTARACT CLUB,Community,Ruma Mondal,3012,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,Delhi Royals (Rotary),Delhi Royals (Rotary)
@@ -190,7 +190,7 @@ RTY IND BU,8827369,Kakinada Elite City,ROTARACT CLUB,Community,Ruma Mondal,3020,
 RTY IND BU,8827185,Vijayawada Sena,ROTARACT CLUB,Community,Ruma Mondal,3020,7,15,India,1,147.57,7,Yes,Yes,14167,14167,14167,147.57,TRUE,Zone 7,Vijayawada Midtown (Rotary),Vijayawada Midtown (Rotary)
 RTY IND BU,8827174,Padmavathi of Pithapur Raja Govt. College,ROTARACT CLUB,University,Ruma Mondal,3020,7,24,India,1,132.75,7,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 7,Kakinada Green City (Rotary),Kakinada Green City (Rotary)
 RTY IND BU,212347,Dharmapuri,ROTARACT CLUB,Community,Ruma Mondal,3020,7,12,India,1,116.58,7,Yes,Yes,11192,11192,11192,116.58,TRUE,Zone 7,Vizianagaram Central (Rotary),Vizianagaram Central (Rotary)
-RTY IND BU,8827027,Vizag Royal Claws,ROTARACT CLUB,Community,Ruma Mondal,3020,7,13,India,1,115.05,7,Yes,Yes,11045,11045,11045,115.05,TRUE,Zone 7,None Reported,None Reported
+RTY IND BU,8827027,Vizag Royal Claws,ROTARACT CLUB,Community,Ruma Mondal,3020,7,13,India,1,115.05,7,Yes,Yes,11045,11045,11045,115.05,TRUE,Zone 7,,
 RTY IND BU,8826954,Atoma of Aditya Degree College,ROTARACT CLUB,University,Ruma Mondal,3020,7,16,India,1,110.34,7,No,Yes,10593,10593,10593,110.34,TRUE,Zone 7,Vijayawada (Rotary),Vijayawada (Rotary)
 RTY IND BU,8826262,Naipunya Aditya Degree College Tuni,ROTARACT CLUB,University,Ruma Mondal,3020,7,9,India,3,106.23,7,No,Yes,10198,10198,10198,106.23,TRUE,Zone 7,Tuni (Rotary),Tuni (Rotary)
 RTY IND BU,8827177,Venkateswara of Pithapur Raja Govt. College,ROTARACT CLUB,University,Ruma Mondal,3020,7,19,India,1,105.09,7,Yes,Yes,10089,10089,10089,105.09,TRUE,Zone 7,Kakinada Green City (Rotary),Kakinada Green City (Rotary)
@@ -225,7 +225,7 @@ RTY IND BU,89949,RCOEM Nagpur,ROTARACT CLUB,University,Ruma Mondal,3030,6,14,Ind
 RTY IND BU,8827338,Anjuman College Of Engineering & Technology,ROTARACT CLUB,University,Ruma Mondal,3030,6,13,India,1,71.91,6,Yes,Yes,6903,6903,6903,71.91,FALSE,Zone 6,Nagpur North (Rotary),Nagpur North (Rotary)
 RTY IND BU,8827298,G H Raisoni Law College,ROTARACT CLUB,University,Ruma Mondal,3030,6,13,India,1,71.91,6,No,Yes,6903,6903,6903,71.91,FALSE,Zone 6,Nagpur Fort (Rotary),Nagpur Fort (Rotary)
 RTY IND BU,8826935,City Premier College,ROTARACT CLUB,University,Ruma Mondal,3030,6,13,India,1,71.91,6,No,Yes,6903,6903,6903,71.91,FALSE,Zone 6,Nagpur (Rotary),Nagpur (Rotary)
-RTY IND BU,8827638,Ignite Nagpur,ROTARACT CLUB,Community,Ruma Mondal,3030,6,8,India,1,70.8,6,Yes,Yes,6797,6797,6797,70.8,FALSE,Zone 6,None Reported,None Reported
+RTY IND BU,8827638,Ignite Nagpur,ROTARACT CLUB,Community,Ruma Mondal,3030,6,8,India,1,70.8,6,Yes,Yes,6797,6797,6797,70.8,FALSE,Zone 6,,
 RTY IND BU,8827353,Panjabrao Deshmukh Institute of Management Technology & Research Nagpur,ROTARACT CLUB,University,Ruma Mondal,3030,6,12,India,1,66.38,6,Yes,Yes,6372,6372,6372,66.38,FALSE,Zone 6,Nagpur North (Rotary),Nagpur North (Rotary)
 RTY IND BU,8827335,Dhanwate National College Nagpur,ROTARACT CLUB,University,Ruma Mondal,3030,6,12,India,1,66.38,6,Yes,Yes,6372,6372,6372,66.38,FALSE,Zone 6,Nagpur North (Rotary),Nagpur North (Rotary)
 RTY IND BU,8828050,Ramdeobaba University (RBU),ROTARACT CLUB,University,Ruma Mondal,3030,6,14,India,1,66.38,6,Yes,Yes,6372,6372,6372,66.38,FALSE,Zone 6,Nagpur Mihan Town (Rotary),Nagpur Mihan Town (Rotary)
@@ -242,7 +242,7 @@ RTY IND BU,8825995,Meghdoot Symbiosis Indore,ROTARACT CLUB,University,Ruma Monda
 RTY IND BU,8824425,Prashanti,ROTARACT CLUB,University,Ruma Mondal,3040,4,18,India,3,148.93,4,No,Yes,14297,14297,14297,148.93,TRUE,Zone 4,Ujjain (Rotary),Ujjain (Rotary)
 RTY IND BU,8827876,Chhindwara City,ROTARACT CLUB,Community,Ruma Mondal,3040,4,15,India,1,132.75,4,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 4,Chhindwara (Rotary),Chhindwara (Rotary)
 RTY IND BU,218416,Indore United,ROTARACT CLUB,Community,Ruma Mondal,3040,4,7,India,2,122.56,4,No,Yes,11766,11766,11766,122.56,TRUE,Zone 4,Indore United (Rotary),Indore United (Rotary)
-RTY IND BU,8823998,Bhopal Marvels,ROTARACT CLUB,Community,Ruma Mondal,3040,4,5,India,2,102.78,4,No,Yes,9867,9867,9867,102.78,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8823998,Bhopal Marvels,ROTARACT CLUB,Community,Ruma Mondal,3040,4,5,India,2,102.78,4,No,Yes,9867,9867,9867,102.78,TRUE,Zone 4,,
 RTY IND BU,8825285,Ujjain Greater,ROTARACT CLUB,Community,Ruma Mondal,3040,4,5,India,2,94.32,4,No,Yes,9055,9055,9055,94.32,TRUE,Zone 4,Ujjain Greater (Rotary),Ujjain Greater (Rotary)
 RTY IND BU,217630,Mhow Community,ROTARACT CLUB,Community,Ruma Mondal,3040,4,9,India,1,85.58,4,No,Yes,8216,8216,8216,85.58,TRUE,Zone 4,Mhow (Rotary),Mhow (Rotary)
 RTY IND BU,217732,Chhindwara,ROTARACT CLUB,Community,Ruma Mondal,3040,4,9,India,1,79.65,4,No,Yes,7646,7646,7646,79.65,TRUE,Zone 4,Chhindwara (Rotary),Chhindwara (Rotary)
@@ -264,11 +264,11 @@ RTY IND BU,217718,III TM GWALIOR,ROTARACT CLUB,University,Ruma Mondal,3053,4,3,I
 RTY IND BU,8823242,Achiever Point Morena,ROTARACT CLUB,Community,Ruma Mondal,3053,4,3,India,1,26.55,4,No,Yes,2549,2549,2549,26.55,FALSE,Zone 4,Gwalior Youth (Rotaract),Gwalior Youth (Rotaract)
 RTY IND BU,215692,IIT Jodhpur,ROTARACT CLUB,University,Ruma Mondal,3053,4,2,India,1,11.06,4,No,Yes,1062,1062,1062,11.06,FALSE,Zone 4,Jodhpur Padmini (Rotary),Jodhpur Padmini (Rotary)
 RTY IND BU,8824019,Vyas Dental College and Hospital,ROTARACT CLUB,University,Ruma Mondal,3053,4,1,India,1,5.53,4,No,Yes,531,531,531,5.53,FALSE,Zone 4,Jodhpur Padmini (Rotary),Jodhpur Padmini (Rotary)
-RTY IND BU,8827440,Ahmedabad Harmony,ROTARACT CLUB,Community,Ruma Mondal,3055,4,25,India,1,221.25,4,Yes,Yes,21240,21240,21240,221.25,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8827440,Ahmedabad Harmony,ROTARACT CLUB,Community,Ruma Mondal,3055,4,25,India,1,221.25,4,Yes,Yes,21240,21240,21240,221.25,TRUE,Zone 4,,
 RTY IND BU,8827436,Ahmedabad Skyline Stars,ROTARACT CLUB,Community,Ruma Mondal,3055,4,18,India,1,166.71,4,Yes,Yes,16004,16004,16004,166.71,TRUE,Zone 4,Ahmedabad Skyline (Rotary),Ahmedabad Skyline (Rotary)
 RTY IND BU,8827712,Ahmedabad Vasna Young,ROTARACT CLUB,Community,Ruma Mondal,3055,4,16,India,1,141.6,4,Yes,Yes,13594,13594,13594,141.6,TRUE,Zone 4,Ahmedabad Vasna (Rotary),Ahmedabad Vasna (Rotary)
 RTY IND BU,218424,Ahmedabad Transcend,ROTARACT CLUB,Community,Ruma Mondal,3055,4,14,India,1,128.35,4,No,Yes,12322,12322,12322,128.35,TRUE,Zone 4,Kankaria (Ahmedabad) (Rotary),Kankaria (Ahmedabad) (Rotary)
-RTY IND BU,214130,Ahmedabad Emerald,ROTARACT CLUB,Community,Ruma Mondal,3055,4,13,India,1,126.91,4,Yes,Yes,12183,12183,12183,126.91,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,214130,Ahmedabad Emerald,ROTARACT CLUB,Community,Ruma Mondal,3055,4,13,India,1,126.91,4,Yes,Yes,12183,12183,12183,126.91,TRUE,Zone 4,,
 RTY IND BU,213987,Ahmedabad Supreme,ROTARACT CLUB,Community,Ruma Mondal,3055,4,14,India,1,123.9,4,No,Yes,11894,11894,11894,123.9,TRUE,Zone 4,Ahmedabad Supreme (Rotary),Ahmedabad Supreme (Rotary)
 RTY IND BU,218476,Abu Road,ROTARACT CLUB,Community,Ruma Mondal,3055,4,3,India,4,92.73,4,No,Yes,8902,8902,8902,92.73,TRUE,Zone 4,Abu Road (Rotary),Abu Road (Rotary)
 RTY IND BU,218344,Palanpur Youth Town,ROTARACT CLUB,Community,Ruma Mondal,3055,4,3,India,3,84.57,4,No,Yes,8119,8119,8119,84.57,TRUE,Zone 4,Palanpur Diamond City (Rotary),Palanpur Diamond City (Rotary)
@@ -286,7 +286,7 @@ RTY IND BU,217802,GLS Institute of Design,ROTARACT CLUB,University,Ruma Mondal,3
 RTY IND BU,74890,Ahmedabad Zankar,ROTARACT CLUB,Community,Ruma Mondal,3055,4,1,India,2,17.31,4,No,Yes,1662,1662,1662,17.31,FALSE,Zone 4,Ahmedabad Airport (Rotary),Ahmedabad Airport (Rotary)
 RTY IND BU,215326,L.D.C.E.,ROTARACT CLUB,University,Ruma Mondal,3055,4,14,India,1,6,4,Yes,Yes,576,576,576,6,FALSE,Zone 4,Kankaria (Ahmedabad) (Rotary),Kankaria (Ahmedabad) (Rotary)
 RTY IND BU,92012,Yuva Bhardwaj Foundation,ROTARACT CLUB,Community,Ruma Mondal,3056,4,4,India,3,101.88,4,No,Yes,9780,9780,9780,101.88,TRUE,Zone 4,Jaipur Bapu Nagar (Rotary),Jaipur Bapu Nagar (Rotary)
-RTY IND BU,8827881,Shri Mahaveer College,ROTARACT CLUB,University,Ruma Mondal,3056,4,18,India,1,99.56,4,Yes,Yes,9558,9558,9558,99.56,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8827881,Shri Mahaveer College,ROTARACT CLUB,University,Ruma Mondal,3056,4,18,India,1,99.56,4,Yes,Yes,9558,9558,9558,99.56,TRUE,Zone 4,,
 RTY IND BU,8825907,"Swami Keshvanand Institute of Technology, Management and Gramothan",ROTARACT CLUB,University,Ruma Mondal,3056,4,5,India,3,76.07,4,No,Yes,7303,7303,7303,76.07,TRUE,Zone 4,Jaipur Kohinoor (Rotary),Jaipur Kohinoor (Rotary)
 RTY IND BU,8827009,Doomshell Academy of Advance Computing,ROTARACT CLUB,University,Ruma Mondal,3056,4,13,India,1,71.91,4,No,Yes,6903,6903,6903,71.91,FALSE,Zone 4,Jaipur Elite (Rotary),Jaipur Elite (Rotary)
 RTY IND BU,8826747,Udaipur Aishwarya Drishty,ROTARACT CLUB,University,Ruma Mondal,3056,4,12,India,1,66.38,4,No,Yes,6372,6372,6372,66.38,FALSE,Zone 4,Udaipur Drishty (Rotary),Udaipur Drishty (Rotary)
@@ -297,7 +297,7 @@ RTY IND BU,8823270,Jaipur Bapu Nagar,ROTARACT CLUB,Community,Ruma Mondal,3056,4,
 RTY IND BU,218514,Brij Nagar Jhalawar,ROTARACT CLUB,Community,Ruma Mondal,3056,4,1,India,3,25.47,4,No,Yes,2445,2445,2445,25.47,FALSE,Zone 4,Brij Nagar Jhalawar (Rotary),Brij Nagar Jhalawar (Rotary)
 RTY IND BU,218423,Bundi Veer Kumbha,ROTARACT CLUB,Community,Ruma Mondal,3056,4,2,India,1,17.7,4,No,Yes,1699,1699,1699,17.7,FALSE,Zone 4,Bundi (Rotary),Bundi (Rotary)
 RTY IND BU,218579,Ahan,ROTARACT CLUB,Community,Ruma Mondal,3056,4,1,India,1,8.85,4,No,Yes,850,850,850,8.85,FALSE,Zone 4,Jaipur Bapu Nagar (Rotary),Jaipur Bapu Nagar (Rotary)
-RTY IND BU,8824024,Aravali Institute of Technical Studies,ROTARACT CLUB,University,Ruma Mondal,3056,4,1,India,1,5.53,4,No,Yes,531,531,531,5.53,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,8824024,Aravali Institute of Technical Studies,ROTARACT CLUB,University,Ruma Mondal,3056,4,1,India,1,5.53,4,No,Yes,531,531,531,5.53,FALSE,Zone 4,,
 RTY IND BU,8827446,Mahemdabad Femina,ROTARACT CLUB,Community,Ruma Mondal,3060,4,16,India,1,141.6,4,No,Yes,13594,13594,13594,141.6,TRUE,Zone 4,Mahemdabad (Rotaract),Mahemdabad (Rotaract)
 RTY IND BU,8827321,Navapur,ROTARACT CLUB,Community,Ruma Mondal,3060,4,15,India,1,132.75,4,No,Yes,12744,12744,12744,132.75,TRUE,Zone 4,Nandnagari Nandurbar (Rotary),Nandnagari Nandurbar (Rotary)
 RTY IND BU,8823225,Ankleshwar,ROTARACT CLUB,Community,Ruma Mondal,3060,4,15,India,1,132.75,4,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 4,Ankleshwar (Rotary),Ankleshwar (Rotary)
@@ -305,8 +305,8 @@ RTY IND BU,215372,Jamnagar Smile,ROTARACT CLUB,University,Ruma Mondal,3060,4,12,
 RTY IND BU,217712,NANDNAGARI,ROTARACT CLUB,Community,Ruma Mondal,3060,4,8,India,2,127.01,4,Yes,Yes,12193,12193,12193,127.01,TRUE,Zone 4,Nandnagari Nandurbar (Rotary),Nandnagari Nandurbar (Rotary)
 RTY IND BU,218248,TNRAO College,ROTARACT CLUB,University,Ruma Mondal,3060,4,3,India,4,63.05,4,No,Yes,6053,6053,6053,63.05,FALSE,Zone 4,Rajkot Midtown (Rotary),Rajkot Midtown (Rotary)
 RTY IND BU,80072,Shindkheda,ROTARACT CLUB,Community,Ruma Mondal,3060,4,2,India,2,34.61,4,No,Yes,3323,3323,3323,34.61,FALSE,Zone 4,Shindakheda (Rotary),Shindakheda (Rotary)
-RTY IND BU,218548,Amreli,ROTARACT CLUB,Community,Ruma Mondal,3060,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,None Reported,None Reported
-RTY IND BU,8823549,Surat,ROTARACT CLUB,Community,Ruma Mondal,3060,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,218548,Amreli,ROTARACT CLUB,Community,Ruma Mondal,3060,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,,
+RTY IND BU,8823549,Surat,ROTARACT CLUB,Community,Ruma Mondal,3060,4,1,India,4,33.63,4,No,Yes,3228,3228,3228,33.63,FALSE,Zone 4,,
 RTY IND BU,213392,GCET College,ROTARACT CLUB,University,Ruma Mondal,3060,4,2,India,3,31.83,4,No,Yes,3056,3056,3056,31.83,FALSE,Zone 4,Baroda Sayajinagari (Rotary),Baroda Sayajinagari (Rotary)
 RTY IND BU,8824195,Akhnoor Supreme,ROTARACT CLUB,Community,Ruma Mondal,3070,4,19,India,1,168.15,4,No,Yes,16142,16142,16142,168.15,TRUE,Zone 4,Akhnoor (Rotary),Akhnoor (Rotary)
 RTY IND BU,215082,Ludhiana North,ROTARACT CLUB,Community,Ruma Mondal,3070,4,14,India,1,149.84,4,No,Yes,14385,14385,14385,149.84,TRUE,Zone 4,Ludhiana North (Rotary),Ludhiana North (Rotary)
@@ -324,7 +324,7 @@ RTY IND BU,8823392,Mandi,ROTARACT CLUB,Community,Ruma Mondal,3070,4,1,India,4,33
 RTY IND BU,8824259,"Medicos RPGMC Tanda, Kangra",ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,Dhauladhar Palampur (Rotary),Dhauladhar Palampur (Rotary)
 RTY IND BU,8824325,Vallabhian,ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,Mandi (Rotary),Mandi (Rotary)
 RTY IND BU,8823995,Dharamshala Central,ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,Dharamsala Central (Rotary),Dharamsala Central (Rotary)
-RTY IND BU,8824152,AIMETC,ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,8824152,AIMETC,ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,,
 RTY IND BU,8823443,MLSM College Sunder Nagar,ROTARACT CLUB,University,Ruma Mondal,3070,4,1,India,4,21.02,4,No,Yes,2018,2018,2018,21.02,FALSE,Zone 4,Sundar Nagar (Rotary),Sundar Nagar (Rotary)
 RTY IND BU,8824403,Pt. Mohan Lal S.D. College,ROTARACT CLUB,University,Ruma Mondal,3070,4,3,India,1,16.59,4,No,Yes,1593,1593,1593,16.59,FALSE,Zone 4,Gurdaspur (Rotary),Gurdaspur (Rotary)
 RTY IND BU,8826498,Noble Nexus,ROTARACT CLUB,Community,Ruma Mondal,3080,4,79,India,1,748.81,4,Yes,Yes,71886,71886,71886,748.81,TRUE,Zone 4,Chandigarh City Beautiful (Rotary); Panchkula Greens (Rotary),Chandigarh City Beautiful (Rotary); Panchkula Greens (Rotary)
@@ -365,7 +365,7 @@ RTY IND BU,8827206,IMS Unison University Dehradun,ROTARACT CLUB,University,Ruma 
 RTY IND BU,216132,Guru Nanak Institutes (GNITM),ROTARACT CLUB,University,Ruma Mondal,3080,4,11,India,1,60.84,4,No,Yes,5841,5841,5841,60.84,FALSE,Zone 4,Yamuna Nagar-Riviera (Rotary),Yamuna Nagar-Riviera (Rotary)
 RTY IND BU,8824883,Doon Shivalik Hills,ROTARACT CLUB,Community,Ruma Mondal,3080,4,1,India,3,35.72,4,No,Yes,3429,3429,3429,35.72,FALSE,Zone 4,Doon Shivalik Hills (Rotary),Doon Shivalik Hills (Rotary)
 RTY IND BU,8825914,Hanumangarh Pink,ROTARACT CLUB,Community,Ruma Mondal,3090,4,14,India,1,177.27,4,No,Yes,17018,17018,17018,177.27,TRUE,Zone 4,Hanumangarh (Rotaract),Hanumangarh (Rotaract)
-RTY IND BU,8827534,Sunam Star,ROTARACT CLUB,Community,Ruma Mondal,3090,4,14,India,1,123.9,4,No,Yes,11894,11894,11894,123.9,TRUE,Zone 4,None Reported,None Reported
+RTY IND BU,8827534,Sunam Star,ROTARACT CLUB,Community,Ruma Mondal,3090,4,14,India,1,123.9,4,No,Yes,11894,11894,11894,123.9,TRUE,Zone 4,,
 RTY IND BU,8827473,Pilibanga Pioneering,ROTARACT CLUB,Community,Ruma Mondal,3090,4,12,India,1,106.2,4,No,Yes,10195,10195,10195,106.2,TRUE,Zone 4,Hanumangarh (Rotaract); Hanumangarh Vision (Rotary),Hanumangarh (Rotaract); Hanumangarh Vision (Rotary)
 RTY IND BU,8827633,Mansa Star Pioneering,ROTARACT CLUB,Community,Ruma Mondal,3090,4,12,India,1,106.2,4,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 4,Mansa Star (Rotary),Mansa Star (Rotary)
 RTY IND BU,8827469,Tibbi Pioneering,ROTARACT CLUB,Community,Ruma Mondal,3090,4,12,India,1,106.2,4,No,Yes,10195,10195,10195,106.2,TRUE,Zone 4,Tibbi (Rotary),Tibbi (Rotary)
@@ -374,15 +374,15 @@ RTY IND BU,8826879,"District Institute of Education & Training (DIET), Nabha",RO
 RTY IND BU,8826118,Sri Ganganagar Visionaries,ROTARACT CLUB,Community,Ruma Mondal,3090,4,6,India,1,77.56,4,Yes,Yes,7446,7446,7446,77.56,TRUE,Zone 4,City Ganga Nagar Royals (Rotaract),City Ganga Nagar Royals (Rotaract)
 RTY IND BU,8824037,Moga City,ROTARACT CLUB,Community,Ruma Mondal,3090,4,4,India,2,69.23,4,No,Yes,6646,6646,6646,69.23,FALSE,Zone 4,Moga City (Rotary),Moga City (Rotary)
 RTY IND BU,8827007,Nabha Vibrant,ROTARACT CLUB,Community,Ruma Mondal,3090,4,7,India,1,61.95,4,Yes,Yes,5947,5947,5947,61.95,FALSE,Zone 4,Nabha Greater (Rotaract); Nabha Greater (Rotary),Nabha Greater (Rotaract); Nabha Greater (Rotary)
-RTY IND BU,8825838,Ganganagar Youth,ROTARACT CLUB,Community,Ruma Mondal,3090,4,5,India,1,44.25,4,No,Yes,4248,4248,4248,44.25,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,8825838,Ganganagar Youth,ROTARACT CLUB,Community,Ruma Mondal,3090,4,5,India,1,44.25,4,No,Yes,4248,4248,4248,44.25,FALSE,Zone 4,,
 RTY IND BU,218370,Rajpura Greater,ROTARACT CLUB,Community,Ruma Mondal,3090,4,1,India,3,25.47,4,No,Yes,2445,2445,2445,25.47,FALSE,Zone 4,Greater Rajpura (Rotary),Greater Rajpura (Rotary)
 RTY IND BU,8823932,Shine-Sunam,ROTARACT CLUB,Community,Ruma Mondal,3090,4,1,India,3,25.47,4,Yes,Yes,2445,2445,2445,25.47,FALSE,Zone 4,Sunam (Rotary),Sunam (Rotary)
-RTY IND BU,218367,Sunam Main,ROTARACT CLUB,Community,Ruma Mondal,3090,4,1,India,3,25.47,4,No,Yes,2445,2445,2445,25.47,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,218367,Sunam Main,ROTARACT CLUB,Community,Ruma Mondal,3090,4,1,India,3,25.47,4,No,Yes,2445,2445,2445,25.47,FALSE,Zone 4,,
 RTY IND BU,8827505,Chandausi Sunrise,ROTARACT CLUB,Community,Ruma Mondal,3100,6,13,India,1,115.05,6,Yes,Yes,11045,11045,11045,115.05,TRUE,Zone 6,Chandausi Royals (Rotary),Chandausi Royals (Rotary)
-RTY IND BU,8827755,Moradabad ImpactHub,ROTARACT CLUB,Community,Ruma Mondal,3100,6,13,India,1,115.05,6,Yes,Yes,11045,11045,11045,115.05,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8827755,Moradabad ImpactHub,ROTARACT CLUB,Community,Ruma Mondal,3100,6,13,India,1,115.05,6,Yes,Yes,11045,11045,11045,115.05,TRUE,Zone 6,,
 RTY IND BU,8827760,Moradabad Samarpan Vibe,ROTARACT CLUB,Community,Ruma Mondal,3100,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,Moradabad Samarpan (Rotary),Moradabad Samarpan (Rotary)
-RTY IND BU,8827753,Bulandshahar Baran,ROTARACT CLUB,Community,Ruma Mondal,3100,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,None Reported,None Reported
-RTY IND BU,8826949,Bulandshahr Youth,ROTARACT CLUB,Community,Ruma Mondal,3100,6,12,India,1,106.2,6,No,Yes,10195,10195,10195,106.2,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8827753,Bulandshahar Baran,ROTARACT CLUB,Community,Ruma Mondal,3100,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,,
+RTY IND BU,8826949,Bulandshahr Youth,ROTARACT CLUB,Community,Ruma Mondal,3100,6,12,India,1,106.2,6,No,Yes,10195,10195,10195,106.2,TRUE,Zone 6,,
 RTY IND BU,8824555,Meerut Mahan,ROTARACT CLUB,Community,Ruma Mondal,3100,6,6,India,2,103.84,6,No,Yes,9969,9969,9969,103.84,TRUE,Zone 6,Meerut Mahan (Rotary),Meerut Mahan (Rotary)
 RTY IND BU,8824906,Vijay Singh Pathik Govt. P.G. College Kairana,ROTARACT CLUB,University,Ruma Mondal,3100,6,10,India,2,103.06,6,No,Yes,9894,9894,9894,103.06,TRUE,Zone 6,Shamli (Rotary),Shamli (Rotary)
 RTY IND BU,8826731,Chandausi Optometry,ROTARACT CLUB,University,Ruma Mondal,3100,6,9,India,2,83.62,6,Yes,Yes,8028,8028,8028,83.62,TRUE,Zone 6,Chandausi (Rotary),Chandausi (Rotary)
@@ -407,13 +407,13 @@ RTY IND BU,218052,Sky Academy,ROTARACT CLUB,Community,Ruma Mondal,3110,6,3,India
 RTY IND BU,214134,SC Guria IMT,ROTARACT CLUB,University,Ruma Mondal,3110,6,3,India,3,47.75,6,No,Yes,4584,4584,4584,47.75,FALSE,Zone 6,Kashipur Corbett (Rotary),Kashipur Corbett (Rotary)
 RTY IND BU,8823760,Aligarh Smart City,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,4,33.63,6,No,Yes,3228,3228,3228,33.63,FALSE,Zone 6,Aligarh Smart City (Rotary),Aligarh Smart City (Rotary)
 RTY IND BU,8824020,Pilibhit Greater,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,4,33.63,6,No,Yes,3228,3228,3228,33.63,FALSE,Zone 6,Pilibhit Greater (Rotary),Pilibhit Greater (Rotary)
-RTY IND BU,8824154,Aligarh Panther,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,3,25.47,6,No,Yes,2445,2445,2445,25.47,FALSE,Zone 6,None Reported,None Reported
-RTY IND BU,8823744,Kanpur Youth,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,3,25.47,6,No,Yes,2445,2445,2445,25.47,FALSE,Zone 6,None Reported,None Reported
+RTY IND BU,8824154,Aligarh Panther,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,3,25.47,6,No,Yes,2445,2445,2445,25.47,FALSE,Zone 6,,
+RTY IND BU,8823744,Kanpur Youth,ROTARACT CLUB,Community,Ruma Mondal,3110,6,1,India,3,25.47,6,No,Yes,2445,2445,2445,25.47,FALSE,Zone 6,,
 RTY IND BU,217689,Kanpur West,ROTARACT CLUB,University,Ruma Mondal,3110,6,1,India,3,15.92,6,No,Yes,1528,1528,1528,15.92,FALSE,Zone 6,Kanpur West (Rotary),Kanpur West (Rotary)
-RTY IND BU,8825990,Gorakhpur Galaxy,ROTARACT CLUB,Community,Ruma Mondal,3120,6,88,India,1,922.59,6,No,Yes,88569,88569,88569,922.59,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8825990,Gorakhpur Galaxy,ROTARACT CLUB,Community,Ruma Mondal,3120,6,88,India,1,922.59,6,No,Yes,88569,88569,88569,922.59,TRUE,Zone 6,,
 RTY IND BU,8827508,Lucknow Phoenix,ROTARACT CLUB,Community,Ruma Mondal,3120,6,86,India,1,876.73,6,No,Yes,84166,84166,84166,876.73,TRUE,Zone 6,Lucknow Trans Gomti (Rotary),Lucknow Trans Gomti (Rotary)
 RTY IND BU,8827716,Raebareli Elite,ROTARACT CLUB,Community,Ruma Mondal,3120,6,86,India,1,870.8,6,Yes,Yes,83597,83597,83597,870.8,TRUE,Zone 6,Rae Bareli (Rotaract),Rae Bareli (Rotaract)
-RTY IND BU,8825844,Gorakhpur Sunrisers,ROTARACT CLUB,Community,Ruma Mondal,3120,6,15,India,1,170.55,6,No,Yes,16373,16373,16373,170.55,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8825844,Gorakhpur Sunrisers,ROTARACT CLUB,Community,Ruma Mondal,3120,6,15,India,1,170.55,6,No,Yes,16373,16373,16373,170.55,TRUE,Zone 6,,
 RTY IND BU,8826396,Sardar Bhagat Singh College of Higher Education,ROTARACT CLUB,University,Ruma Mondal,3120,6,12,India,2,129.81,6,No,Yes,12462,12462,12462,129.81,TRUE,Zone 6,Lucknow (Rotary),Lucknow (Rotary)
 RTY IND BU,8827773,Gola Chhoti Kashi,ROTARACT CLUB,Community,Ruma Mondal,3120,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,Gola Central (Rotary),Gola Central (Rotary)
 RTY IND BU,8827780,Allahabad Academia,ROTARACT CLUB,Community,Ruma Mondal,3120,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,Allahabad Academia (Rotary),Allahabad Academia (Rotary)
@@ -444,7 +444,7 @@ RTY IND BU,8827222,Beed Diamond,ROTARACT CLUB,Community,Ruma Mondal,3132,7,15,In
 RTY IND BU,8824738,Wai,ROTARACT CLUB,Community,Ruma Mondal,3132,7,10,India,1,88.5,7,No,Yes,8496,8496,8496,88.5,TRUE,Zone 7,Wai (Rotary),Wai (Rotary)
 RTY IND BU,8826648,Balasaheb Desai College,ROTARACT CLUB,University,Ruma Mondal,3132,7,14,India,1,77.44,7,No,Yes,7434,7434,7434,77.44,TRUE,Zone 7,Patan (Rotary),Patan (Rotary)
 RTY IND BU,218334,Shree Nageshwar Private Industrial Training Institute,ROTARACT CLUB,Community,Ruma Mondal,3132,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Ahmednagar (Rotary),Ahmednagar (Rotary)
-RTY IND BU,218270,Shrirampur,ROTARACT CLUB,Community,Ruma Mondal,3132,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,None Reported,None Reported
+RTY IND BU,218270,Shrirampur,ROTARACT CLUB,Community,Ruma Mondal,3132,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,,
 RTY IND BU,218329,Ahmednagar Midtown Vadagao Savatal,ROTARACT CLUB,Community,Ruma Mondal,3132,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Ahmednagar Mid Town (Rotary),Ahmednagar Mid Town (Rotary)
 RTY IND BU,8824364,Ambajogai City,ROTARACT CLUB,Community,Ruma Mondal,3132,7,1,India,1,31.82,7,Yes,Yes,3055,3055,3055,31.82,FALSE,Zone 7,Ambajogai City (Rotary),Ambajogai City (Rotary)
 RTY IND BU,8823204,"Chhatrapati Shivaji College, Omerga (Girls) Jijau",ROTARACT CLUB,University,Ruma Mondal,3132,7,1,India,4,21.02,7,No,Yes,2018,2018,2018,21.02,FALSE,Zone 7,Omerga (Rotary),Omerga (Rotary)
@@ -477,7 +477,7 @@ RTY IND BU,8823869,Amity Global Business School,ROTARACT CLUB,University,Ruma Mo
 RTY IND BU,215988,K.E.S College of Commerce and Economics,ROTARACT CLUB,University,Ruma Mondal,3141,4,3,India,4,63.05,4,No,Yes,6053,6053,6053,63.05,FALSE,Zone 4,Bombay Airport (Rotary),Bombay Airport (Rotary)
 RTY IND BU,214378,St. Mathew's Jr. College,ROTARACT CLUB,University,Ruma Mondal,3141,4,3,India,4,63.05,4,No,Yes,6053,6053,6053,63.05,FALSE,Zone 4,Queen's Necklace (Rotary),Queen's Necklace (Rotary)
 RTY IND BU,212610,Bombay Queens Town,ROTARACT CLUB,Community,Ruma Mondal,3141,4,7,India,1,61.95,4,No,Yes,5947,5947,5947,61.95,FALSE,Zone 4,Bombay Queen City (Rotary),Bombay Queen City (Rotary)
-RTY IND BU,91260,G.N. Khalsa College,ROTARACT CLUB,University,Ruma Mondal,3141,4,10,India,1,55.31,4,No,Yes,5310,5310,5310,55.31,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,91260,G.N. Khalsa College,ROTARACT CLUB,University,Ruma Mondal,3141,4,10,India,1,55.31,4,No,Yes,5310,5310,5310,55.31,FALSE,Zone 4,,
 RTY IND BU,218484,Anjuman Islam Saiftaybji,ROTARACT CLUB,University,Ruma Mondal,3141,4,3,India,3,50.32,4,No,Yes,4831,4831,4831,50.32,FALSE,Zone 4,Mumbai South Cuffe Parade (Rotary),Mumbai South Cuffe Parade (Rotary)
 RTY IND BU,8824428,Kapol Vidyanidhi College,ROTARACT CLUB,University,Ruma Mondal,3141,4,8,India,1,50.29,4,No,Yes,4828,4828,4828,50.29,FALSE,Zone 4,Mumbai Kandivli West (Rotary),Mumbai Kandivli West (Rotary)
 RTY IND BU,212558,Lotus College of Optometry,ROTARACT CLUB,University,Ruma Mondal,3141,4,8,India,1,48.9,4,No,Yes,4694,4694,4694,48.9,FALSE,Zone 4,Bombay Seacoast (Rotary),Bombay Seacoast (Rotary)
@@ -488,7 +488,7 @@ RTY IND BU,8824026,Bombay Teachers Training College,ROTARACT CLUB,University,Rum
 RTY IND BU,8823750,MMK College,ROTARACT CLUB,University,Ruma Mondal,3141,4,3,India,1,19.38,4,No,Yes,1860,1860,1860,19.38,FALSE,Zone 4,Mumbai Iconic (Rotary),Mumbai Iconic (Rotary)
 RTY IND BU,8824122,SOBO,ROTARACT CLUB,Community,Ruma Mondal,3141,4,2,India,1,17.7,4,No,Yes,1699,1699,1699,17.7,FALSE,Zone 4,Mumbai Sobo (Rotary),Mumbai Sobo (Rotary)
 RTY IND BU,217533,SNDT College,ROTARACT CLUB,University,Ruma Mondal,3141,4,3,India,1,16.59,4,No,Yes,1593,1593,1593,16.59,FALSE,Zone 4,Mumbai South Cuffe Parade (Rotary),Mumbai South Cuffe Parade (Rotary)
-RTY IND BU,90917,Adv. Balasaheb Apte College of Law,ROTARACT CLUB,University,Ruma Mondal,3141,4,1,India,1,5.53,4,No,Yes,531,531,531,5.53,FALSE,Zone 4,None Reported,None Reported
+RTY IND BU,90917,Adv. Balasaheb Apte College of Law,ROTARACT CLUB,University,Ruma Mondal,3141,4,1,India,1,5.53,4,No,Yes,531,531,531,5.53,FALSE,Zone 4,,
 RTY IND BU,89852,Thane Suburban,ROTARACT CLUB,Community,Ruma Mondal,3142,4,27,India,1,270.08,4,Yes,Yes,25928,25928,25928,270.08,TRUE,Zone 4,Thane Suburban (Rotary),Thane Suburban (Rotary)
 RTY IND BU,7391,Thane Hills,ROTARACT CLUB,Community,Ruma Mondal,3142,4,26,India,1,248.63,4,Yes,Yes,23868,23868,23868,248.63,TRUE,Zone 4,Thane Hills (Rotary),Thane Hills (Rotary)
 RTY IND BU,8827841,Kalyan West,ROTARACT CLUB,Community,Ruma Mondal,3142,4,20,India,1,177,4,Yes,Yes,16992,16992,16992,177,TRUE,Zone 4,Kalyan (Rotary),Kalyan (Rotary)
@@ -531,7 +531,7 @@ RTY IND BU,8826959,R G Institute of Commerce & Management,ROTARACT CLUB,Universi
 RTY IND BU,8827057,Guntakal Elites,ROTARACT CLUB,Community,Ruma Mondal,3160,7,14,India,1,71.82,7,Yes,Yes,6895,6895,6895,71.82,FALSE,Zone 7,Guntakal (Rotary),Guntakal (Rotary)
 RTY IND BU,8824240,Nellore Shakthi,ROTARACT CLUB,Community,Ruma Mondal,3160,7,6,India,1,57.55,7,No,Yes,5525,5525,5525,57.55,FALSE,Zone 7,Nellore Shakthi (Rotary),Nellore Shakthi (Rotary)
 RTY IND BU,8824226,Servo,ROTARACT CLUB,Community,Ruma Mondal,3160,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Chitradurga (Rotary),Chitradurga (Rotary)
-RTY IND BU,8824225,Rajampet,ROTARACT CLUB,Community,Ruma Mondal,3160,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,None Reported,None Reported
+RTY IND BU,8824225,Rajampet,ROTARACT CLUB,Community,Ruma Mondal,3160,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,,
 RTY IND BU,217688,Gulbarga Suncity,ROTARACT CLUB,Community,Ruma Mondal,3160,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Gulbarga Suncity (Rotary),Gulbarga Suncity (Rotary)
 RTY IND BU,8824227,Spoorthi,ROTARACT CLUB,Community,Ruma Mondal,3160,7,2,India,2,29.05,7,No,Yes,2789,2789,2789,29.05,FALSE,Zone 7,Chitradurga (Rotary),Chitradurga (Rotary)
 RTY IND BU,8824291,"Virat Degree College, Yapaladinni",ROTARACT CLUB,University,Ruma Mondal,3160,7,2,India,2,22.07,7,No,Yes,2119,2119,2119,22.07,FALSE,Zone 7,Cotton City Raichur (Rotary); Raichur Central (Rotary); Raichur Krishna Tunge (Rotary),Cotton City Raichur (Rotary); Raichur Central (Rotary); Raichur Krishna Tunge (Rotary)
@@ -561,7 +561,7 @@ RTY IND BU,218019,Presentation Girl's Composite P.U. College,ROTARACT CLUB,Unive
 RTY IND BU,217852,Hupari,ROTARACT CLUB,Community,Ruma Mondal,3170,7,4,India,4,105.71,7,No,Yes,10148,10148,10148,105.71,TRUE,Zone 7,Hupari (Rotary),Hupari (Rotary)
 RTY IND BU,8827402,Uttara Kannada United,ROTARACT CLUB,Community,Ruma Mondal,3170,7,10,India,1,98.88,7,Yes,Yes,9492,9492,9492,98.88,TRUE,Zone 7,Bhatkal (Rotary),Bhatkal (Rotary)
 RTY IND BU,216141,KIT Sunshine,ROTARACT CLUB,University,Ruma Mondal,3170,7,8,India,2,91.42,7,No,Yes,8776,8776,8776,91.42,TRUE,Zone 7,Kolhapur Sunrise (Rotary),Kolhapur Sunrise (Rotary)
-RTY IND BU,8827532,KLE College of BCA Khanapur,ROTARACT CLUB,University,Ruma Mondal,3170,7,16,India,1,88.5,7,Yes,Yes,8496,8496,8496,88.5,TRUE,Zone 7,None Reported,None Reported
+RTY IND BU,8827532,KLE College of BCA Khanapur,ROTARACT CLUB,University,Ruma Mondal,3170,7,16,India,1,88.5,7,Yes,Yes,8496,8496,8496,88.5,TRUE,Zone 7,,
 RTY IND BU,8827734,KLE Society's College of BCA Bailhongal,ROTARACT CLUB,University,Ruma Mondal,3170,7,15,India,1,82.97,7,Yes,Yes,7965,7965,7965,82.97,TRUE,Zone 7,Bailhongal (Rotary),Bailhongal (Rotary)
 RTY IND BU,8827552,KLE's MP Commerce College Raibag,ROTARACT CLUB,University,Ruma Mondal,3170,7,15,India,1,82.97,7,No,Yes,7965,7965,7965,82.97,TRUE,Zone 7,Chikodi (Rotary),Chikodi (Rotary)
 RTY IND BU,8827550,Chhatrapati Shivaji College of Agriculture Oros,ROTARACT CLUB,University,Ruma Mondal,3170,7,15,India,1,82.97,7,Yes,Yes,7965,7965,7965,82.97,TRUE,Zone 7,Sindhudurg Central (Rotary),Sindhudurg Central (Rotary)
@@ -576,7 +576,7 @@ RTY IND BU,8827416,Karwar Paschim,ROTARACT CLUB,Community,Ruma Mondal,3170,7,5,I
 RTY IND BU,8823882,Belgaum Lingraj College,ROTARACT CLUB,University,Ruma Mondal,3170,7,2,India,4,42.03,7,No,Yes,4035,4035,4035,42.03,FALSE,Zone 7,Belgaum Central (Rotary),Belgaum Central (Rotary)
 RTY IND BU,217898,"Rajarshi Shahu College, Rukadi",ROTARACT CLUB,University,Ruma Mondal,3170,7,2,India,4,42.03,7,No,Yes,4035,4035,4035,42.03,FALSE,Zone 7,Ichalkaranji Central (Rotary),Ichalkaranji Central (Rotary)
 RTY IND BU,8825628,MES College of Nursing,ROTARACT CLUB,University,Ruma Mondal,3170,7,7,India,1,40.11,7,No,Yes,3851,3851,3851,40.11,FALSE,Zone 7,Lote (Rotary),Lote (Rotary)
-RTY IND BU,8825555,KLE Society's College of BCA RLS Institute Belagavi,ROTARACT CLUB,University,Ruma Mondal,3170,7,5,India,2,36.2,7,No,Yes,3475,3475,3475,36.2,FALSE,Zone 7,None Reported,None Reported
+RTY IND BU,8825555,KLE Society's College of BCA RLS Institute Belagavi,ROTARACT CLUB,University,Ruma Mondal,3170,7,5,India,2,36.2,7,No,Yes,3475,3475,3475,36.2,FALSE,Zone 7,,
 RTY IND BU,8823546,Swarajya,ROTARACT CLUB,Community,Ruma Mondal,3170,7,2,India,2,34.61,7,No,Yes,3323,3323,3323,34.61,FALSE,Zone 7,Kolhapur (Rotaract),Kolhapur (Rotaract)
 RTY IND BU,8824526,Gokak,ROTARACT CLUB,Community,Ruma Mondal,3170,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Gokak (Rotary),Gokak (Rotary)
 RTY IND BU,8824878,Dharwad Pristine,ROTARACT CLUB,Community,Ruma Mondal,3170,7,1,India,4,33.63,7,No,Yes,3228,3228,3228,33.63,FALSE,Zone 7,Seven Hills Dharwad (Rotary),Seven Hills Dharwad (Rotary)
@@ -726,7 +726,7 @@ RTY IND BU,8827579,Dr. R.A.N.M. Arts and Science College,ROTARACT CLUB,Universit
 RTY IND BU,218162,Erode Cosmos,ROTARACT CLUB,Community,Ruma Mondal,3203,5,14,India,1,135.76,5,Yes,Yes,13033,13033,13033,135.76,TRUE,Zone 5,Erode North (Rotary),Erode North (Rotary)
 RTY IND BU,8827311,Shree Venkateshwara Arts and Science (Co-education) College,ROTARACT CLUB,University,Ruma Mondal,3203,5,24,India,1,132.75,5,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 5,Bhavani Koodal (Rotary),Bhavani Koodal (Rotary)
 RTY IND BU,8823253,SIIMS,ROTARACT CLUB,University,Ruma Mondal,3203,5,20,India,1,110.63,5,No,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Pollachi (Rotary),Pollachi (Rotary)
-RTY IND BU,8827593,Tirupur Redeemers,ROTARACT CLUB,Community,Ruma Mondal,3203,5,12,India,1,106.2,5,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8827593,Tirupur Redeemers,ROTARACT CLUB,Community,Ruma Mondal,3203,5,12,India,1,106.2,5,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 5,,
 RTY IND BU,8827747,Bharathidasan College of Arts & Science,ROTARACT CLUB,University,Ruma Mondal,3203,5,17,India,1,94.03,5,No,Yes,9027,9027,9027,94.03,TRUE,Zone 5,Erode Central (Rotary),Erode Central (Rotary)
 RTY IND BU,8827757,Government Arts and Science College Thittamalai,ROTARACT CLUB,University,Ruma Mondal,3203,5,15,India,1,82.97,5,Yes,Yes,7965,7965,7965,82.97,TRUE,Zone 5,Gobi (Rotary),Gobi (Rotary)
 RTY IND BU,8827583,Government Erode Medical College,ROTARACT CLUB,University,Ruma Mondal,3203,5,15,India,1,82.97,5,No,Yes,7965,7965,7965,82.97,TRUE,Zone 5,Erode North (Rotary),Erode North (Rotary)
@@ -769,7 +769,7 @@ RTY IND BU,8827255,KGiSL Institute of Technology,ROTARACT CLUB,University,Ruma M
 RTY IND BU,8824668,Karpagam Institute of Technology,ROTARACT CLUB,University,Ruma Mondal,3206,5,22,India,1,143.99,5,No,Yes,13823,13823,13823,143.99,TRUE,Zone 5,Coimbatore Millennium (Rotary),Coimbatore Millennium (Rotary)
 RTY IND BU,92157,Kovai Knights,ROTARACT CLUB,Community,Ruma Mondal,3206,5,15,India,1,143.13,5,Yes,Yes,13740,13740,13740,143.13,TRUE,Zone 5,Coimbatore Cosmopolitan (Rotary),Coimbatore Cosmopolitan (Rotary)
 RTY IND BU,214318,Coimbatore-Vadavalli,ROTARACT CLUB,Community,Ruma Mondal,3206,5,16,India,1,141.6,5,No,Yes,13594,13594,13594,141.6,TRUE,Zone 5,Coimbatore Vadavalli (Rotary),Coimbatore Vadavalli (Rotary)
-RTY IND BU,8826821,Atlanta College,ROTARACT CLUB,University,Ruma Mondal,3206,5,20,India,2,126.76,5,No,Yes,12169,12169,12169,126.76,TRUE,Zone 5,None Reported,None Reported
+RTY IND BU,8826821,Atlanta College,ROTARACT CLUB,University,Ruma Mondal,3206,5,20,India,2,126.76,5,No,Yes,12169,12169,12169,126.76,TRUE,Zone 5,,
 RTY IND BU,218054,Happy Valley,ROTARACT CLUB,University,Ruma Mondal,3206,5,14,India,1,112.28,5,No,Yes,10779,10779,10779,112.28,TRUE,Zone 5,Coimbatore (Rotary),Coimbatore (Rotary)
 RTY IND BU,8827856,Akshaya College of Arts and Science,ROTARACT CLUB,University,Ruma Mondal,3206,5,20,India,1,110.63,5,Yes,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Coimbatore Heritage (Rotary),Coimbatore Heritage (Rotary)
 RTY IND BU,8827000,JCT College of Arts and Science,ROTARACT CLUB,University,Ruma Mondal,3206,5,20,India,1,110.63,5,Yes,Yes,10620,10620,10620,110.63,TRUE,Zone 5,Coimbatore Aakruthi (Rotary),Coimbatore Aakruthi (Rotary)
@@ -845,7 +845,7 @@ RTY IND BU,213339,Sri Raaja Raajan College of Engg. & Technology,ROTARACT CLUB,U
 RTY IND BU,213613,"Universal College of Education, Valliyoor",ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Valliyoor Central (Rotary),Valliyoor Central (Rotary)
 RTY IND BU,213583,"PSN Institute of Technology and Science, Tirunelveli",ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Nagercoil Blossoms (Rotary),Nagercoil Blossoms (Rotary)
 RTY IND BU,214728,Sri Vidya College of Engineering & Technology,ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Virudhunagar (Rotary),Virudhunagar (Rotary)
-RTY IND BU,214077,Maria College of Engineering and Technology,ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,None Reported,None Reported
+RTY IND BU,214077,Maria College of Engineering and Technology,ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,,
 RTY IND BU,212666,Universal College of Engineering & Technology Valliyur,ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Valliyoor Central (Rotary),Valliyoor Central (Rotary)
 RTY IND BU,212919,"Arignar Anna College, Aralvaimozhi",ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Nagercoil (Rotary),Nagercoil (Rotary)
 RTY IND BU,91826,"Jayamatha Engineering College, Aralvaimozhi",ROTARACT CLUB,University,Ruma Mondal,3212,5,2,India,4,42.03,5,No,Yes,4035,4035,4035,42.03,FALSE,Zone 5,Nagercoil (Rotary),Nagercoil (Rotary)
@@ -858,8 +858,8 @@ RTY IND BU,212834,"Vivek Institute, Kanyakumari",ROTARACT CLUB,University,Ruma M
 RTY IND BU,8823455,Kumarapuram Thoppur Elite,ROTARACT CLUB,Community,Ruma Mondal,3212,5,1,India,3,25.47,5,No,Yes,2445,2445,2445,25.47,FALSE,Zone 5,Nagercoil Elite (Rotary),Nagercoil Elite (Rotary)
 RTY IND BU,217320,Rojavanam Paramedical College,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Nagercoil (Rotary),Nagercoil (Rotary)
 RTY IND BU,8824659,Thamirabharani Engineering College Tirunelveli,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Tirunelveli Suburbs (Rotary),Tirunelveli Suburbs (Rotary)
-RTY IND BU,8823459,"Sundareshwari Institutions, Srivilliputtur",ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,None Reported,None Reported
-RTY IND BU,217584,Bishop Agniswamy College of Education,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,None Reported,None Reported
+RTY IND BU,8823459,"Sundareshwari Institutions, Srivilliputtur",ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,,
+RTY IND BU,217584,Bishop Agniswamy College of Education,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,,
 RTY IND BU,216906,St. John's College of Arts and Science,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Nagercoil South (Rotary),Nagercoil South (Rotary)
 RTY IND BU,217552,St. Jerome's College,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Nagercoil Mid Town (Rotary),Nagercoil Mid Town (Rotary)
 RTY IND BU,217285,Sri Vidya Arts and Science College,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Virudhunagar (Rotary),Virudhunagar (Rotary)
@@ -873,11 +873,11 @@ RTY IND BU,8824439,Moderator Gnanadason Polytechnic College,ROTARACT CLUB,Univer
 RTY IND BU,217176,Salvation Army Catherene Booth College of Nursing,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,2,10.82,5,No,Yes,1039,1039,1039,10.82,FALSE,Zone 5,Nagercoil Town (Rotary),Nagercoil Town (Rotary)
 RTY IND BU,217177,Arunachala College of Engineering for Women,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,2,10.82,5,No,Yes,1039,1039,1039,10.82,FALSE,Zone 5,Nagercoil Town (Rotary),Nagercoil Town (Rotary)
 RTY IND BU,8824729,AAA College of Engineering & Technology,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,1,5.53,5,No,Yes,531,531,531,5.53,FALSE,Zone 5,Sivakasi Sparkler (Rotary),Sivakasi Sparkler (Rotary)
-RTY IND BU,8824713,Annammal College and School of Nursing,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,1,5.53,5,No,Yes,531,531,531,5.53,FALSE,Zone 5,None Reported,None Reported
+RTY IND BU,8824713,Annammal College and School of Nursing,ROTARACT CLUB,University,Ruma Mondal,3212,5,1,India,1,5.53,5,No,Yes,531,531,531,5.53,FALSE,Zone 5,,
 RTY FA SRI LANKA BU,217914,Athugalpura,ROTARACT CLUB,Community,Riya Singh,3220,5,46,Sri Lanka,1,359.76,5,No,Yes,34537,34537,34537,359.76,TRUE,Zone 5,Athugalpura (Rotary),Athugalpura (Rotary)
 RTY FA SRI LANKA BU,92276,Excellence,ROTARACT CLUB,Community,Riya Singh,3220,5,28,Sri Lanka,1,235.18,5,No,Yes,22577,22577,22577,235.18,TRUE,Zone 5,Colombo Metropolitan (Rotary),Colombo Metropolitan (Rotary)
 RTY FA SRI LANKA BU,8827060,Ratmalana,ROTARACT CLUB,Community,Riya Singh,3220,5,27,Sri Lanka,1,199.88,5,Yes,Yes,19188,19188,19188,199.88,TRUE,Zone 5,Colombo West (Rotary),Colombo West (Rotary)
-RTY FA SRI LANKA BU,72293,Battaramulla,ROTARACT CLUB,Community,Riya Singh,3220,5,19,Sri Lanka,1,140.66,5,No,Yes,13503,13503,13503,140.66,TRUE,Zone 5,None Reported,None Reported
+RTY FA SRI LANKA BU,72293,Battaramulla,ROTARACT CLUB,Community,Riya Singh,3220,5,19,Sri Lanka,1,140.66,5,No,Yes,13503,13503,13503,140.66,TRUE,Zone 5,,
 RTY FA SRI LANKA BU,214142,Nallur Heritage,ROTARACT CLUB,Community,Riya Singh,3220,5,7,Sri Lanka,2,105.49,5,No,Yes,10127,10127,10127,105.49,TRUE,Zone 5,Nallur (Rotary),Nallur (Rotary)
 RTY FA SRI LANKA BU,91868,Jaffna Peninsula,ROTARACT CLUB,Community,Riya Singh,3220,5,3,Sri Lanka,2,70.05,5,No,Yes,6725,6725,6725,70.05,FALSE,Zone 5,Nallur (Rotary),Nallur (Rotary)
 RTY FA SRI LANKA BU,212329,Chulipuram,ROTARACT CLUB,Community,Riya Singh,3220,5,3,Sri Lanka,2,65.47,5,No,Yes,6285,6285,6285,65.47,FALSE,Zone 5,Nallur (Rotary),Nallur (Rotary)
@@ -903,7 +903,7 @@ RTY IND BU,8824767,Government Thiruvannamalai Medical College,ROTARACT CLUB,Univ
 RTY IND BU,8825005,Meenakshi Ammal Arts and Science College Uthiramerur,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Kancheepuram (Rotary),Kancheepuram (Rotary)
 RTY IND BU,8824383,Nethra College of Optometry,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Arni (Rotary),Arni (Rotary)
 RTY IND BU,8824619,Pallavan Pharmacy College,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Kancheepuram East (Rotary),Kancheepuram East (Rotary)
-RTY IND BU,217740,Vishwakasena Angels,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,None Reported,None Reported
+RTY IND BU,217740,Vishwakasena Angels,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,,
 RTY IND BU,217636,Best Paramedical College,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Vellore Golden City (Rotary),Vellore Golden City (Rotary)
 RTY IND BU,216846,Voorhees College,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Vellore (Rotary),Vellore (Rotary)
 RTY IND BU,213850,Srikrishna College of Engineering,ROTARACT CLUB,University,Ruma Mondal,3231,5,1,India,4,21.02,5,No,Yes,2018,2018,2018,21.02,FALSE,Zone 5,Arkonam (Rotary),Arkonam (Rotary)
@@ -943,7 +943,7 @@ RTY IND BU,89870,Greater Tezpur,ROTARACT CLUB,Community,Ruma Mondal,3240,6,19,In
 RTY IND BU,8827955,Greater Silchar Royals,ROTARACT CLUB,Community,Ruma Mondal,3240,6,16,India,1,141.6,6,Yes,Yes,13594,13594,13594,141.6,TRUE,Zone 6,Greater Silchar (Rotary),Greater Silchar (Rotary)
 RTY IND BU,8827686,AK Chanda Law College Silchar,ROTARACT CLUB,University,Ruma Mondal,3240,6,24,India,1,132.75,6,Yes,Yes,12744,12744,12744,132.75,TRUE,Zone 6,Silchar (Rotary),Silchar (Rotary)
 RTY IND BU,218341,Namsai,ROTARACT CLUB,Community,Ruma Mondal,3240,6,7,India,2,124.69,6,No,Yes,11970,11970,11970,124.69,TRUE,Zone 6,Tinsukia (Rotaract),Tinsukia (Rotaract)
-RTY IND BU,8827788,Tezpur,ROTARACT CLUB,Community,Ruma Mondal,3240,6,14,India,1,123.9,6,Yes,Yes,11894,11894,11894,123.9,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8827788,Tezpur,ROTARACT CLUB,Community,Ruma Mondal,3240,6,14,India,1,123.9,6,Yes,Yes,11894,11894,11894,123.9,TRUE,Zone 6,,
 RTY IND BU,216693,Ukhra,ROTARACT CLUB,Community,Ruma Mondal,3240,6,14,India,1,123.9,6,Yes,Yes,11894,11894,11894,123.9,TRUE,Zone 6,Ukhra (Rotary),Ukhra (Rotary)
 RTY IND BU,218656,Silchar Royals,ROTARACT CLUB,Community,Ruma Mondal,3240,6,14,India,1,109.67,6,No,Yes,10528,10528,10528,109.67,TRUE,Zone 6,Green Land Silchar (Rotary),Green Land Silchar (Rotary)
 RTY IND BU,215807,"G C College, Silchar",ROTARACT CLUB,University,Ruma Mondal,3240,6,9,India,2,109.34,6,No,Yes,10497,10497,10497,109.34,TRUE,Zone 6,Green Land Silchar (Rotary),Green Land Silchar (Rotary)
@@ -987,7 +987,7 @@ RTY IND BU,216270,G.S. College,ROTARACT CLUB,University,Ruma Mondal,3261,6,1,Ind
 RTY IND BU,216379,Navyug College,ROTARACT CLUB,University,Ruma Mondal,3261,6,1,India,4,21.02,6,No,Yes,2018,2018,2018,21.02,FALSE,Zone 6,Jabalpur South (Rotary),Jabalpur South (Rotary)
 RTY IND BU,8824860,Hrushikesh Ray Degree Mahavidyalaya Rourkela,ROTARACT CLUB,University,Ruma Mondal,3261,6,1,India,4,21.02,6,No,Yes,2018,2018,2018,21.02,FALSE,Zone 6,Rourkela Riverside (Rotary),Rourkela Riverside (Rotary)
 RTY IND BU,8824676,Baripada Mayur,ROTARACT CLUB,Community,Ruma Mondal,3262,6,19,India,1,263.76,6,Yes,Yes,25321,25321,25321,263.76,TRUE,Zone 6,Baripada (Rotary),Baripada (Rotary)
-RTY IND BU,218218,Byasabhoomi Jajpur Road,ROTARACT CLUB,Community,Ruma Mondal,3262,6,25,India,1,221.25,6,No,Yes,21240,21240,21240,221.25,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,218218,Byasabhoomi Jajpur Road,ROTARACT CLUB,Community,Ruma Mondal,3262,6,25,India,1,221.25,6,No,Yes,21240,21240,21240,221.25,TRUE,Zone 6,,
 RTY IND BU,91597,Bhubaneswar Capital,ROTARACT CLUB,University,Ruma Mondal,3262,6,34,India,1,188.06,6,No,Yes,18054,18054,18054,188.06,TRUE,Zone 6,Bhubaneswar Capital (Rotary),Bhubaneswar Capital (Rotary)
 RTY IND BU,215196,KSOM Bhubaneswar North,ROTARACT CLUB,University,Ruma Mondal,3262,6,21,India,1,172.38,6,Yes,Yes,16548,16548,16548,172.38,TRUE,Zone 6,Bhubaneswar North (Rotary),Bhubaneswar North (Rotary)
 RTY IND BU,8827013,Fakir Mohan University,ROTARACT CLUB,University,Ruma Mondal,3262,6,28,India,1,154.88,6,No,Yes,14868,14868,14868,154.88,TRUE,Zone 6,Balasore (Rotary),Balasore (Rotary)
@@ -995,7 +995,7 @@ RTY IND BU,91476,Bhubaneswar Friends,ROTARACT CLUB,Community,Ruma Mondal,3262,6,
 RTY IND BU,8823872,Bhubaneswar Changemakers,ROTARACT CLUB,Community,Ruma Mondal,3262,6,8,India,2,138.7,6,No,Yes,13315,13315,13315,138.7,TRUE,Zone 6,Cuttack Cantonment (Rotary),Cuttack Cantonment (Rotary)
 RTY IND BU,8826579,Link Eye Hospital & Research Institute,ROTARACT CLUB,University,Ruma Mondal,3262,6,12,India,2,129.81,6,No,Yes,12462,12462,12462,129.81,TRUE,Zone 6,Cuttack Abhinav (Rotary); Cuttack Central (Rotary),Cuttack Abhinav (Rotary); Cuttack Central (Rotary)
 RTY IND BU,8826436,Indian Institute of Tourism and Travel Management,ROTARACT CLUB,University,Ruma Mondal,3262,6,12,India,2,129.81,6,No,Yes,12462,12462,12462,129.81,TRUE,Zone 6,Bhubaneswar Ekamra Kshetra (Rotary),Bhubaneswar Ekamra Kshetra (Rotary)
-RTY IND BU,8826428,Atal Incubation Centre Nalanda Innovators,ROTARACT CLUB,University,Ruma Mondal,3262,6,12,India,3,129.81,6,No,Yes,12462,12462,12462,129.81,TRUE,Zone 6,None Reported,None Reported
+RTY IND BU,8826428,Atal Incubation Centre Nalanda Innovators,ROTARACT CLUB,University,Ruma Mondal,3262,6,12,India,3,129.81,6,No,Yes,12462,12462,12462,129.81,TRUE,Zone 6,,
 RTY IND BU,8826676,"Jan Shikshan Sansthan, Cuttack",ROTARACT CLUB,University,Ruma Mondal,3262,6,20,India,1,110.63,6,No,Yes,10620,10620,10620,110.63,TRUE,Zone 6,Cuttack Midtown (Rotary),Cuttack Midtown (Rotary)
 RTY IND BU,8827768,E-Club of Bhubaneswar,ROTARACT CLUB,Community,Ruma Mondal,3262,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,Bhubaneswar (Rotary); E-Club of District 3262 (Rotary),Bhubaneswar (Rotary); E-Club of District 3262 (Rotary)
 RTY IND BU,8827574,Cuttack,ROTARACT CLUB,Community,Ruma Mondal,3262,6,12,India,1,106.2,6,Yes,Yes,10195,10195,10195,106.2,TRUE,Zone 6,Cuttack (Rotary),Cuttack (Rotary)
@@ -1027,7 +1027,7 @@ RTY IND BU,8824032,Vedbyash Brahmapur,ROTARACT CLUB,University,Ruma Mondal,3262,
 RTY IND BU,218593,IHM Bhubaneswar,ROTARACT CLUB,University,Ruma Mondal,3262,6,2,India,3,31.83,6,No,Yes,3056,3056,3056,31.83,FALSE,Zone 6,Bhubaneswar Neeladri (Rotary),Bhubaneswar Neeladri (Rotary)
 RTY IND BU,8823621,ODM Business School (OBS),ROTARACT CLUB,University,Ruma Mondal,3262,6,1,India,4,21.02,6,No,Yes,2018,2018,2018,21.02,FALSE,Zone 6,Bhubaneswar Heritage (Rotary),Bhubaneswar Heritage (Rotary)
 RTY IND BU,217442,Salandi Nursing School,ROTARACT CLUB,University,Ruma Mondal,3262,6,1,India,4,21.02,6,No,Yes,2018,2018,2018,21.02,FALSE,Zone 6,Bhadrak (Rotary),Bhadrak (Rotary)
-RTY IND BU,8826551,Bhubaneswar Smart City,ROTARACT CLUB,Community,Ruma Mondal,3262,6,2,India,1,17.7,6,No,Yes,1699,1699,1699,17.7,FALSE,Zone 6,None Reported,None Reported
+RTY IND BU,8826551,Bhubaneswar Smart City,ROTARACT CLUB,Community,Ruma Mondal,3262,6,2,India,1,17.7,6,No,Yes,1699,1699,1699,17.7,FALSE,Zone 6,,
 RTY IND BU,8824250,Bhubaneswar Utkal Ollywood,ROTARACT CLUB,Community,Ruma Mondal,3262,6,1,India,2,17.31,6,No,Yes,1662,1662,1662,17.31,FALSE,Zone 6,Bhubaneswar Utkal (Rotary),Bhubaneswar Utkal (Rotary)
 RTY IND BU,8824038,Bhubaneswar Utkal Sakha,ROTARACT CLUB,Community,Ruma Mondal,3262,6,1,India,2,17.31,6,No,Yes,1662,1662,1662,17.31,FALSE,Zone 6,Bhubaneswar Utkal (Rotary),Bhubaneswar Utkal (Rotary)
 RTY IND BU,8823276,Cuttack Mahanagar,ROTARACT CLUB,Community,Ruma Mondal,3262,6,1,India,2,17.31,6,No,Yes,1662,1662,1662,17.31,FALSE,Zone 6,Cuttack Mahanagar (Rotary),Cuttack Mahanagar (Rotary)
@@ -1048,7 +1048,7 @@ RTY FA NEPAL BU,218457,Itabhatta Municipal,ROTARACT CLUB,Community,Riya Singh,32
 RTY FA NEPAL BU,213976,Sainamaina,ROTARACT CLUB,Community,Riya Singh,3292,6,14,Nepal,1,118.02,6,Yes,Yes,11330,11330,11330,118.02,TRUE,Zone 6,Sainamaina (Rotary),Sainamaina (Rotary)
 RTY FA NEPAL BU,8823369,Central Bouddha Land,ROTARACT CLUB,Community,Riya Singh,3292,6,15,Nepal,1,112.94,6,No,Yes,10842,10842,10842,112.94,TRUE,Zone 6,Central Lumbini (Rotary),Central Lumbini (Rotary)
 RTY FA NEPAL BU,217626,Shikhalapur,ROTARACT CLUB,Community,Riya Singh,3292,6,14,Nepal,1,105.41,6,No,Yes,10119,10119,10119,105.41,TRUE,Zone 6,Dhulikhel (Rotary),Dhulikhel (Rotary)
-RTY FA NEPAL BU,213526,Kapilvastu,ROTARACT CLUB,Community,Riya Singh,3292,6,14,Nepal,1,105.41,6,No,Yes,10119,10119,10119,105.41,TRUE,Zone 6,None Reported,None Reported
+RTY FA NEPAL BU,213526,Kapilvastu,ROTARACT CLUB,Community,Riya Singh,3292,6,14,Nepal,1,105.41,6,No,Yes,10119,10119,10119,105.41,TRUE,Zone 6,,
 RTY FA NEPAL BU,8824051,Bhairahawa Chautari,ROTARACT CLUB,Community,Riya Singh,3292,6,13,Nepal,1,97.88,6,No,Yes,9396,9396,9396,97.88,TRUE,Zone 6,Butwal Chautari (Rotary),Butwal Chautari (Rotary)
 RTY FA NEPAL BU,218434,Tilottama Suddhodhan,ROTARACT CLUB,Community,Riya Singh,3292,6,12,Nepal,1,93.51,6,Yes,Yes,8977,8977,8977,93.51,TRUE,Zone 6,Tilottama-Rupandehi (Rotary),Tilottama-Rupandehi (Rotary)
 RTY FA NEPAL BU,77220,Lamjung,ROTARACT CLUB,Community,Riya Singh,3292,6,11,Nepal,1,82.82,6,No,Yes,7951,7951,7951,82.82,TRUE,Zone 6,Lamjung (Rotary),Lamjung (Rotary)

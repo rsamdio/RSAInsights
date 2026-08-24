@@ -152,7 +152,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Sponsor Clubs', 
             id: 'Sponsor_Clubs', 
             accessorKey: 'Sponsor Clubs',
-            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+            accessorFn: row => {
+                const val = row['Sponsor Clubs'] || row.sponsorClubs || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         { 
             header: 'Outstanding (₹)*', 
@@ -207,7 +211,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Sponsor Clubs', 
             id: 'Sponsor_Clubs', 
             accessorKey: 'Sponsor Clubs',
-            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+            accessorFn: row => {
+                const val = row['Sponsor Clubs'] || row.sponsorClubs || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         {
             header: 'Action',
@@ -280,7 +288,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Sponsor Clubs', 
             id: 'Sponsor_Clubs', 
             accessorKey: 'Sponsor Clubs',
-            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+            accessorFn: row => {
+                const val = row['Sponsor Clubs'] || row.sponsorClubs || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         { header: 'Charter Date', id: 'Club_Charter_Date', accessorKey: 'Club Charter Date' },
         { header: 'Members', id: 'Member_Count', accessorKey: 'Member Count' },
@@ -329,7 +341,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Sponsor Clubs', 
             id: 'Sponsor_Clubs', 
             accessorKey: 'Sponsor Clubs',
-            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+            accessorFn: row => {
+                const val = row['Sponsor Clubs'] || row.sponsorClubs || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         { 
             header: 'Annual Fund', 
@@ -406,7 +422,11 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Sponsor Clubs', 
             id: 'Sponsor_Clubs', 
             accessorKey: 'Sponsor Clubs',
-            accessorFn: row => row['Sponsor Clubs'] || row.sponsorClubs || 'None Reported'
+            accessorFn: row => {
+                const val = row['Sponsor Clubs'] || row.sponsorClubs || '';
+                return val === 'None Reported' ? '' : val;
+            },
+            cell: info => info.getValue() || '---'
         },
         { header: 'Members', id: 'Total_Reported_Members', accessorKey: 'Total Reported Members' },
         {
