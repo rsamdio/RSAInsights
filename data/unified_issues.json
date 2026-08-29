@@ -42,7 +42,7 @@
     "outstandingUSD": 1409.73,
     "outstandingINR": 135334,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827363,
@@ -222,7 +222,7 @@
     "outstandingUSD": 505.42,
     "outstandingINR": 48520,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 90444,
@@ -575,14 +575,14 @@
     "zone": "Zone 4",
     "district": "3011",
     "base": "University",
-    "sponsorClubs": "Delhi Southex (Rotary)",
-    "Sponsor Clubs": "Delhi Southex (Rotary)",
+    "sponsorClubs": "",
+    "Sponsor Clubs": "",
     "isArrears": true,
     "outstanding": 24566,
     "outstandingUSD": 255.9,
     "outstandingINR": 24566,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827585,
@@ -3162,7 +3162,7 @@
     "outstandingUSD": 130.62,
     "outstandingINR": 12540,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 218200,
@@ -4617,7 +4617,7 @@
     "outstandingUSD": 110.34,
     "outstandingINR": 10593,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 218656,
@@ -5217,7 +5217,7 @@
     "outstandingUSD": 106.2,
     "outstandingINR": 10195,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8826949,
@@ -7692,7 +7692,7 @@
     "outstandingUSD": 77.44,
     "outstandingINR": 7434,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827030,
@@ -14787,7 +14787,7 @@
     "outstandingUSD": 16.59,
     "outstandingINR": 1593,
     "isAtRisk": false,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 215928,
@@ -15792,7 +15792,7 @@
     "outstandingUSD": 5.53,
     "outstandingINR": 531,
     "isAtRisk": false,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 90434,
@@ -16095,21 +16095,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 86531,
-    "name": "Jamal Mohamed College for Women",
-    "zone": "Zone 5",
-    "district": "3000",
-    "base": "University",
-    "sponsorClubs": "Tiruchirapalli (Rotary)",
-    "Sponsor Clubs": "Tiruchirapalli (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 215181,
     "name": "Karur Ilanthalir",
     "zone": "Zone 5",
@@ -16395,21 +16380,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8826750,
-    "name": "GD Goenka University, Sohna",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "Community",
-    "sponsorClubs": "Gurgaon (Rotary)",
-    "Sponsor Clubs": "Gurgaon (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8826684,
     "name": "IILM University Gurugram",
     "zone": "Zone 4",
@@ -16635,21 +16605,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8825286,
-    "name": "RRC AEC Surampalem",
-    "zone": "Zone 7",
-    "district": "3020",
-    "base": "University",
-    "sponsorClubs": "Rajahmundry River City (Rotary)",
-    "Sponsor Clubs": "Rajahmundry River City (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 47217,
     "name": "Visakha Sattelite City",
     "zone": "Zone 7",
@@ -16657,36 +16612,6 @@
     "base": "Community",
     "sponsorClubs": "Waltair (Rotary)",
     "Sponsor Clubs": "Waltair (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8825696,
-    "name": "Vizag Couples PRISM",
-    "zone": "Zone 7",
-    "district": "3020",
-    "base": "University",
-    "sponsorClubs": "Vizag Couples (Rotary)",
-    "Sponsor Clubs": "Vizag Couples (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8825917,
-    "name": "Vizag Diamonds",
-    "zone": "Zone 7",
-    "district": "3020",
-    "base": "Community",
-    "sponsorClubs": "Vizag Diamonds (Rotary)",
-    "Sponsor Clubs": "Vizag Diamonds (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -16897,21 +16822,6 @@
     "base": "Community",
     "sponsorClubs": "Satana Baglan (Rotary)",
     "Sponsor Clubs": "Satana Baglan (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8825810,
-    "name": "Symbiosis Law School Nagpur",
-    "zone": "Zone 6",
-    "district": "3030",
-    "base": "University",
-    "sponsorClubs": "Nagpur Down Town (Rotary)",
-    "Sponsor Clubs": "Nagpur Down Town (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -17310,21 +17220,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8826202,
-    "name": "Nabha",
-    "zone": "Zone 4",
-    "district": "3090",
-    "base": "Community",
-    "sponsorClubs": "",
-    "Sponsor Clubs": "",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 213301,
     "name": "Sriganganagar East",
     "zone": "Zone 4",
@@ -17535,6 +17430,21 @@
     "isNoOfficers": true
   },
   {
+    "id": 212155,
+    "name": "United Allahabad",
+    "zone": "Zone 6",
+    "district": "3120",
+    "base": "University",
+    "sponsorClubs": "Allahabad Mid-Town (Rotary)",
+    "Sponsor Clubs": "Allahabad Mid-Town (Rotary)",
+    "isArrears": false,
+    "outstanding": 0,
+    "outstandingUSD": 0,
+    "outstandingINR": 0,
+    "isAtRisk": false,
+    "isNoOfficers": true
+  },
+  {
     "id": 217438,
     "name": "AIT",
     "zone": "Zone 7",
@@ -17662,21 +17572,6 @@
     "base": "Community",
     "sponsorClubs": "Pimpri Elite (Rotary)",
     "Sponsor Clubs": "Pimpri Elite (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 7283,
-    "name": "Poona South",
-    "zone": "Zone 7",
-    "district": "3131",
-    "base": "Community",
-    "sponsorClubs": "Pune South (Rotary)",
-    "Sponsor Clubs": "Pune South (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -17865,21 +17760,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 212623,
-    "name": "Bombay Hanging Garden",
-    "zone": "Zone 4",
-    "district": "3141",
-    "base": "Community",
-    "sponsorClubs": "Bombay Hanging Garden (Rotary)",
-    "Sponsor Clubs": "Bombay Hanging Garden (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8823527,
     "name": "Bombay Mulund Valley",
     "zone": "Zone 4",
@@ -17962,21 +17842,6 @@
     "base": "University",
     "sponsorClubs": "Bombay East (Rotary)",
     "Sponsor Clubs": "Bombay East (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 90867,
-    "name": "Khandwala College",
-    "zone": "Zone 4",
-    "district": "3141",
-    "base": "University",
-    "sponsorClubs": "Bombay North West-Malad (Rotary)",
-    "Sponsor Clubs": "Bombay North West-Malad (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -18232,21 +18097,6 @@
     "base": "University",
     "sponsorClubs": "Guntur Aadarsh (Rotary)",
     "Sponsor Clubs": "Guntur Aadarsh (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8823651,
-    "name": "Keshav Memorial Institute of Technology",
-    "zone": "Zone 7",
-    "district": "3150",
-    "base": "University",
-    "sponsorClubs": "Hyderabad East (Rotaract); Hyderabad East (Rotary)",
-    "Sponsor Clubs": "Hyderabad East (Rotaract); Hyderabad East (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -18592,21 +18442,6 @@
     "base": "University",
     "sponsorClubs": "Mysore South East (Rotary)",
     "Sponsor Clubs": "Mysore South East (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8826032,
-    "name": "Mysore Mid Town",
-    "zone": "Zone 7",
-    "district": "3181",
-    "base": "Community",
-    "sponsorClubs": "Mysore Mid-Town (Rotary)",
-    "Sponsor Clubs": "Mysore Mid-Town (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -19365,21 +19200,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8825825,
-    "name": "De Paul Institute of Technology",
-    "zone": "Zone 5",
-    "district": "3205",
-    "base": "University",
-    "sponsorClubs": "Cochin (Rotary)",
-    "Sponsor Clubs": "Cochin (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8824509,
     "name": "Sacred Heart College",
     "zone": "Zone 5",
@@ -19387,21 +19207,6 @@
     "base": "University",
     "sponsorClubs": "Cochin Downtown (Rotary)",
     "Sponsor Clubs": "Cochin Downtown (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 218056,
-    "name": "Adithya",
-    "zone": "Zone 5",
-    "district": "3206",
-    "base": "University",
-    "sponsorClubs": "Coimbatore (Rotary)",
-    "Sponsor Clubs": "Coimbatore (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -19447,21 +19252,6 @@
     "base": "University",
     "sponsorClubs": "Coimbatore Spectrum (Rotary)",
     "Sponsor Clubs": "Coimbatore Spectrum (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 42291,
-    "name": "Karunya University",
-    "zone": "Zone 5",
-    "district": "3206",
-    "base": "University",
-    "sponsorClubs": "Thondamuthur (Rotary)",
-    "Sponsor Clubs": "Thondamuthur (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -19837,21 +19627,6 @@
     "base": "Community",
     "sponsorClubs": "Jaffna (Rotary)",
     "Sponsor Clubs": "Jaffna (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 213599,
-    "name": "Kurunegala",
-    "zone": "Zone 5",
-    "district": "3220",
-    "base": "Community",
-    "sponsorClubs": "Kurunegala (Rotary)",
-    "Sponsor Clubs": "Kurunegala (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -20842,36 +20617,6 @@
     "base": "Community",
     "sponsorClubs": "",
     "Sponsor Clubs": "",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8823378,
-    "name": "Waling",
-    "zone": "Zone 6",
-    "district": "3292",
-    "base": "Community",
-    "sponsorClubs": "Waling (Rotary)",
-    "Sponsor Clubs": "Waling (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 43427,
-    "name": "Yala",
-    "zone": "Zone 6",
-    "district": "3292",
-    "base": "Community",
-    "sponsorClubs": "Yala (Rotary)",
-    "Sponsor Clubs": "Yala (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,

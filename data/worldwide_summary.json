@@ -1,27 +1,27 @@
 {
-  "totalClubs": 9731,
+  "totalClubs": 9778,
   "totalClubsDelta": {
-    "text": "+69 (0.7%)",
+    "text": "+116 (1.2%)",
     "type": "positive",
     "baseline": "vs July 1st"
   },
-  "totalMembers": 149379,
+  "totalMembers": 150212,
   "totalMembersDelta": {
-    "text": "+2607 (1.8%)",
+    "text": "+3440 (2.3%)",
     "type": "positive",
     "baseline": "vs July 1st"
   },
-  "avgMembersPerClub": 15.351,
+  "avgMembersPerClub": 15.362,
   "avgMembersDelta": {
-    "text": "+0.160 (1.1%)",
+    "text": "+0.171 (1.1%)",
     "type": "positive",
     "baseline": "vs July 1st"
   },
-  "totalInteractClubs": 20300,
-  "totalActiveInteractClubs": 18733,
-  "totalSuspendedInteractClubs": 1567,
+  "totalInteractClubs": 20362,
+  "totalActiveInteractClubs": 18800,
+  "totalSuspendedInteractClubs": 1562,
   "totalInteractDelta": {
-    "text": "+83 (0.4%)",
+    "text": "+215 (1.1%)",
     "type": "positive",
     "baseline": "vs July 1st"
   },
@@ -74,23 +74,23 @@
       " ": "Argentina",
       "Total Active Rotaract Clubs": 116,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 827,
+      "Total Reported Members": 825,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.730816077953715
+      "Members Growth (%)": 0.48721071863580995
     },
     {
       " ": "Armenia",
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 45,
+      "Total Reported Members": 35,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -10,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -22.22222222222222
     },
     {
       " ": "Aruba",
@@ -107,23 +107,23 @@
       " ": "Australia",
       "Total Active Rotaract Clubs": 36,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 421,
+      "Total Reported Members": 417,
       "Change in Clubs from Previous Quarter": -3,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": -2.7027027027027026,
-      "Members Growth (%)": 1.937046004842615
+      "Members Growth (%)": 0.9685230024213075
     },
     {
       " ": "Austria",
       "Total Active Rotaract Clubs": 36,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 646,
+      "Total Reported Members": 645,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.15503875968992248
+      "Members Growth (%)": 0
     },
     {
       " ": "Azerbaijan",
@@ -162,23 +162,23 @@
       " ": "Bangladesh",
       "Total Active Rotaract Clubs": 286,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1593,
+      "Total Reported Members": 1595,
       "Change in Clubs from Previous Quarter": 1,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0.3508771929824561,
-      "Members Growth (%)": 0.1257071024512885
+      "Members Growth (%)": 0.251414204902577
     },
     {
       " ": "Barbados",
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 90,
+      "Total Reported Members": 87,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.1739130434782608
+      "Members Growth (%)": -5.434782608695652
     },
     {
       " ": "Belgium",
@@ -206,12 +206,12 @@
       " ": "Benin",
       "Total Active Rotaract Clubs": 32,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 487,
+      "Total Reported Members": 485,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.41067761806981523
     },
     {
       " ": "Bermuda",
@@ -228,12 +228,12 @@
       " ": "Bolivia",
       "Total Active Rotaract Clubs": 39,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 544,
+      "Total Reported Members": 539,
       "Change in Clubs from Previous Quarter": 1,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 20,
+      "Members Growth Abs": 15,
       "Clubs Growth (%)": 2.631578947368421,
-      "Members Growth (%)": 3.816793893129771
+      "Members Growth (%)": 2.8625954198473282
     },
     {
       " ": "Bosnia and Herzegovina",
@@ -261,12 +261,12 @@
       " ": "Brazil",
       "Total Active Rotaract Clubs": 566,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 5150,
+      "Total Reported Members": 5145,
       "Change in Clubs from Previous Quarter": -3,
       "Clubs Growth Abs": -3,
-      "Members Growth Abs": 58,
+      "Members Growth Abs": 53,
       "Clubs Growth (%)": -0.5272407732864675,
-      "Members Growth (%)": 1.1390416339355853
+      "Members Growth (%)": 1.0408483896307934
     },
     {
       " ": "British Virgin Islands",
@@ -294,12 +294,12 @@
       " ": "Burkina Faso",
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 149,
+      "Total Reported Members": 151,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 1.342281879194631
     },
     {
       " ": "Burundi",
@@ -347,14 +347,14 @@
     },
     {
       " ": "Canada",
-      "Total Active Rotaract Clubs": 79,
+      "Total Active Rotaract Clubs": 81,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 950,
-      "Change in Clubs from Previous Quarter": 1,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 16,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.7130620985010707
+      "Total Reported Members": 959,
+      "Change in Clubs from Previous Quarter": 3,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 25,
+      "Clubs Growth (%)": 2.5316455696202533,
+      "Members Growth (%)": 2.676659528907923
     },
     {
       " ": "Cayman Islands",
@@ -371,23 +371,23 @@
       " ": "Chad",
       "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 73,
+      "Total Reported Members": 71,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -3.9473684210526314
+      "Members Growth (%)": -6.578947368421052
     },
     {
       " ": "Chile",
       "Total Active Rotaract Clubs": 15,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 146,
+      "Total Reported Members": 147,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.097902097902098
+      "Members Growth (%)": 2.797202797202797
     },
     {
       " ": "China, People's Republic of",
@@ -404,12 +404,12 @@
       " ": "Colombia",
       "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 500,
+      "Total Reported Members": 508,
       "Change in Clubs from Previous Quarter": 1,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 13,
+      "Members Growth Abs": 21,
       "Clubs Growth (%)": 1.7543859649122806,
-      "Members Growth (%)": 2.6694045174537986
+      "Members Growth (%)": 4.312114989733059
     },
     {
       " ": "Comoros",
@@ -437,12 +437,12 @@
       " ": "Congo, The Democratic Republic of the",
       "Total Active Rotaract Clubs": 19,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 237,
+      "Total Reported Members": 238,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.42194092827004215
     },
     {
       " ": "Cook Islands",
@@ -459,23 +459,23 @@
       " ": "Costa Rica",
       "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 70,
+      "Total Reported Members": 60,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -10,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -14.285714285714285
     },
     {
       " ": "Côte d'Ivoire",
       "Total Active Rotaract Clubs": 29,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 445,
+      "Total Reported Members": 447,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.44943820224719105
     },
     {
       " ": "Croatia",
@@ -558,12 +558,12 @@
       " ": "Ecuador",
       "Total Active Rotaract Clubs": 42,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 578,
+      "Total Reported Members": 585,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 15,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.4035087719298245
+      "Members Growth (%)": 2.631578947368421
     },
     {
       " ": "Egypt",
@@ -580,23 +580,23 @@
       " ": "El Salvador",
       "Total Active Rotaract Clubs": 9,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 95,
+      "Total Reported Members": 96,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.0416666666666665
+      "Members Growth (%)": 0
     },
     {
       " ": "England",
       "Total Active Rotaract Clubs": 29,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 315,
+      "Total Reported Members": 316,
       "Change in Clubs from Previous Quarter": 1,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 18,
+      "Members Growth Abs": 19,
       "Clubs Growth (%)": 3.571428571428571,
-      "Members Growth (%)": 6.0606060606060606
+      "Members Growth (%)": 6.397306397306397
     },
     {
       " ": "Equatorial Guinea",
@@ -635,12 +635,12 @@
       " ": "Ethiopia",
       "Total Active Rotaract Clubs": 27,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 500,
+      "Total Reported Members": 488,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 40,
+      "Members Growth Abs": 28,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 8.695652173913043
+      "Members Growth (%)": 6.086956521739131
     },
     {
       " ": "Fiji",
@@ -657,23 +657,23 @@
       " ": "Finland",
       "Total Active Rotaract Clubs": 5,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 38,
+      "Total Reported Members": 39,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 2.631578947368421
     },
     {
       " ": "France",
       "Total Active Rotaract Clubs": 96,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1150,
+      "Total Reported Members": 1151,
       "Change in Clubs from Previous Quarter": -1,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": -20,
+      "Members Growth Abs": -19,
       "Clubs Growth (%)": -1.0309278350515463,
-      "Members Growth (%)": -1.7094017094017095
+      "Members Growth (%)": -1.6239316239316242
     },
     {
       " ": "French Guiana",
@@ -723,23 +723,23 @@
       " ": "Germany",
       "Total Active Rotaract Clubs": 183,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3033,
+      "Total Reported Members": 3039,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 227,
+      "Members Growth Abs": 233,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 8.089807555238774
+      "Members Growth (%)": 8.303635067712046
     },
     {
       " ": "Ghana",
       "Total Active Rotaract Clubs": 68,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1939,
+      "Total Reported Members": 1941,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
+      "Members Growth Abs": 8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.3103983445421624
+      "Members Growth (%)": 0.4138644593895499
     },
     {
       " ": "Greece",
@@ -767,12 +767,12 @@
       " ": "Guadeloupe",
       "Total Active Rotaract Clubs": 1,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 17,
+      "Total Reported Members": 13,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -23.52941176470588
     },
     {
       " ": "Guam",
@@ -789,12 +789,12 @@
       " ": "Guatemala",
       "Total Active Rotaract Clubs": 19,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 170,
+      "Total Reported Members": 169,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.5882352941176471
     },
     {
       " ": "Guinea",
@@ -833,34 +833,34 @@
       " ": "Haiti",
       "Total Active Rotaract Clubs": 18,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 405,
+      "Total Reported Members": 406,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.24630541871921183
+      "Members Growth (%)": 0
     },
     {
       " ": "Honduras",
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 324,
+      "Total Reported Members": 315,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": -7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.6211180124223602
+      "Members Growth (%)": -2.1739130434782608
     },
     {
       " ": "Hong Kong",
       "Total Active Rotaract Clubs": 51,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 727,
+      "Total Reported Members": 728,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.27586206896551724
+      "Members Growth (%)": 0.41379310344827586
     },
     {
       " ": "Hungary",
@@ -886,25 +886,25 @@
     },
     {
       " ": "India",
-      "Total Active Rotaract Clubs": 2534,
+      "Total Active Rotaract Clubs": 2560,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 51463,
-      "Change in Clubs from Previous Quarter": 63,
-      "Clubs Growth Abs": 63,
-      "Members Growth Abs": 2094,
-      "Clubs Growth (%)": 2.5495750708215295,
-      "Members Growth (%)": 4.2415280844254495
+      "Total Reported Members": 51822,
+      "Change in Clubs from Previous Quarter": 89,
+      "Clubs Growth Abs": 89,
+      "Members Growth Abs": 2453,
+      "Clubs Growth (%)": 3.6017806556050185,
+      "Members Growth (%)": 4.968705057829812
     },
     {
       " ": "Indonesia",
-      "Total Active Rotaract Clubs": 34,
+      "Total Active Rotaract Clubs": 35,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 441,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 14,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.278688524590164
+      "Total Reported Members": 460,
+      "Change in Clubs from Previous Quarter": 1,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 33,
+      "Clubs Growth (%)": 2.941176470588235,
+      "Members Growth (%)": 7.728337236533958
     },
     {
       " ": "Ireland",
@@ -930,47 +930,47 @@
     },
     {
       " ": "Italy",
-      "Total Active Rotaract Clubs": 446,
+      "Total Active Rotaract Clubs": 445,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 6424,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -38,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.5880532342927886
+      "Total Reported Members": 6402,
+      "Change in Clubs from Previous Quarter": -1,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -60,
+      "Clubs Growth (%)": -0.2242152466367713,
+      "Members Growth (%)": -0.9285051067780872
     },
     {
       " ": "Jamaica",
       "Total Active Rotaract Clubs": 15,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 264,
+      "Total Reported Members": 262,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.7575757575757576
     },
     {
       " ": "Japan",
-      "Total Active Rotaract Clubs": 294,
+      "Total Active Rotaract Clubs": 293,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3090,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 59,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.9465522929726162
+      "Total Reported Members": 3079,
+      "Change in Clubs from Previous Quarter": -1,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": 48,
+      "Clubs Growth (%)": -0.3401360544217687,
+      "Members Growth (%)": 1.583635763774332
     },
     {
       " ": "Jordan",
-      "Total Active Rotaract Clubs": 2,
+      "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 8,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Total Reported Members": 16,
+      "Change in Clubs from Previous Quarter": 1,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 8,
+      "Clubs Growth (%)": 50,
+      "Members Growth (%)": 100
     },
     {
       " ": "Kazakhstan",
@@ -987,23 +987,23 @@
       " ": "Kenya",
       "Total Active Rotaract Clubs": 110,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2197,
+      "Total Reported Members": 2217,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 27,
+      "Members Growth Abs": 47,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.2442396313364055
+      "Members Growth (%)": 2.165898617511521
     },
     {
       " ": "Korea, Republic of",
-      "Total Active Rotaract Clubs": 201,
+      "Total Active Rotaract Clubs": 202,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3618,
-      "Change in Clubs from Previous Quarter": -4,
-      "Clubs Growth Abs": -4,
-      "Members Growth Abs": -127,
-      "Clubs Growth (%)": -1.951219512195122,
-      "Members Growth (%)": -3.391188251001335
+      "Total Reported Members": 3683,
+      "Change in Clubs from Previous Quarter": -3,
+      "Clubs Growth Abs": -3,
+      "Members Growth Abs": -62,
+      "Clubs Growth (%)": -1.4634146341463417,
+      "Members Growth (%)": -1.6555407209612818
     },
     {
       " ": "Kosovo",
@@ -1031,23 +1031,23 @@
       " ": "Lebanon",
       "Total Active Rotaract Clubs": 26,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 332,
+      "Total Reported Members": 324,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -18,
+      "Members Growth Abs": -26,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.142857142857142
+      "Members Growth (%)": -7.428571428571429
     },
     {
       " ": "Lesotho",
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 153,
+      "Total Reported Members": 157,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 12,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.517241379310345
+      "Members Growth (%)": 8.275862068965518
     },
     {
       " ": "Liberia",
@@ -1073,14 +1073,14 @@
     },
     {
       " ": "Lithuania",
-      "Total Active Rotaract Clubs": 8,
+      "Total Active Rotaract Clubs": 9,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 97,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -11,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -10.185185185185185
+      "Total Reported Members": 116,
+      "Change in Clubs from Previous Quarter": 1,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 8,
+      "Clubs Growth (%)": 12.5,
+      "Members Growth (%)": 7.4074074074074066
     },
     {
       " ": "Luxembourg",
@@ -1108,12 +1108,12 @@
       " ": "Madagascar",
       "Total Active Rotaract Clubs": 11,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 136,
+      "Total Reported Members": 135,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.4492753623188406
+      "Members Growth (%)": -2.1739130434782608
     },
     {
       " ": "Malawi",
@@ -1128,25 +1128,25 @@
     },
     {
       " ": "Malaysia",
-      "Total Active Rotaract Clubs": 43,
+      "Total Active Rotaract Clubs": 45,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1534,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -10,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.6476683937823834
+      "Total Reported Members": 1573,
+      "Change in Clubs from Previous Quarter": 2,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 29,
+      "Clubs Growth (%)": 4.651162790697675,
+      "Members Growth (%)": 1.878238341968912
     },
     {
       " ": "Mali",
       "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 274,
+      "Total Reported Members": 276,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.7299270072992701
     },
     {
       " ": "Malta",
@@ -1163,23 +1163,23 @@
       " ": "Martinique",
       "Total Active Rotaract Clubs": 1,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 15,
+      "Total Reported Members": 16,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 6.666666666666667
     },
     {
       " ": "Mauritius",
       "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 445,
+      "Total Reported Members": 446,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": -3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.8908685968819599
+      "Members Growth (%)": -0.6681514476614699
     },
     {
       " ": "Mayotte",
@@ -1194,14 +1194,14 @@
     },
     {
       " ": "Mexico",
-      "Total Active Rotaract Clubs": 251,
+      "Total Active Rotaract Clubs": 252,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2241,
-      "Change in Clubs from Previous Quarter": 3,
-      "Clubs Growth Abs": 3,
-      "Members Growth Abs": -23,
-      "Clubs Growth (%)": 1.2096774193548387,
-      "Members Growth (%)": -1.0159010600706713
+      "Total Reported Members": 2255,
+      "Change in Clubs from Previous Quarter": 4,
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": -9,
+      "Clubs Growth (%)": 1.6129032258064515,
+      "Members Growth (%)": -0.3975265017667844
     },
     {
       " ": "Moldova",
@@ -1262,12 +1262,12 @@
       " ": "Morocco",
       "Total Active Rotaract Clubs": 99,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1261,
+      "Total Reported Members": 1295,
       "Change in Clubs from Previous Quarter": 2,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": 15,
+      "Members Growth Abs": 49,
       "Clubs Growth (%)": 2.0618556701030926,
-      "Members Growth (%)": 1.2038523274478332
+      "Members Growth (%)": 3.932584269662921
     },
     {
       " ": "Mozambique",
@@ -1304,14 +1304,14 @@
     },
     {
       " ": "Nepal",
-      "Total Active Rotaract Clubs": 191,
+      "Total Active Rotaract Clubs": 193,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 4557,
-      "Change in Clubs from Previous Quarter": 2,
-      "Clubs Growth Abs": 2,
-      "Members Growth Abs": 98,
-      "Clubs Growth (%)": 1.0582010582010581,
-      "Members Growth (%)": 2.197802197802198
+      "Total Reported Members": 4739,
+      "Change in Clubs from Previous Quarter": 4,
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": 280,
+      "Clubs Growth (%)": 2.1164021164021163,
+      "Members Growth (%)": 6.279434850863422
     },
     {
       " ": "Netherlands",
@@ -1350,23 +1350,23 @@
       " ": "Niger",
       "Total Active Rotaract Clubs": 11,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 154,
+      "Total Reported Members": 143,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -12,
+      "Members Growth Abs": -23,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -7.228915662650602
+      "Members Growth (%)": -13.855421686746988
     },
     {
       " ": "Nigeria",
-      "Total Active Rotaract Clubs": 449,
+      "Total Active Rotaract Clubs": 452,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 4919,
-      "Change in Clubs from Previous Quarter": 4,
-      "Clubs Growth Abs": 4,
-      "Members Growth Abs": 86,
-      "Clubs Growth (%)": 0.8988764044943821,
-      "Members Growth (%)": 1.7794330643492655
+      "Total Reported Members": 4988,
+      "Change in Clubs from Previous Quarter": 7,
+      "Clubs Growth Abs": 7,
+      "Members Growth Abs": 155,
+      "Clubs Growth (%)": 1.5730337078651686,
+      "Members Growth (%)": 3.207117732257397
     },
     {
       " ": "Northern Mariana Islands",
@@ -1405,12 +1405,12 @@
       " ": "Pakistan",
       "Total Active Rotaract Clubs": 63,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 470,
+      "Total Reported Members": 466,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -28,
+      "Members Growth Abs": -32,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.622489959839357
+      "Members Growth (%)": -6.425702811244979
     },
     {
       " ": "Palestine",
@@ -1427,12 +1427,12 @@
       " ": "Panama",
       "Total Active Rotaract Clubs": 15,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 129,
+      "Total Reported Members": 131,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.380952380952381
+      "Members Growth (%)": 3.968253968253968
     },
     {
       " ": "Papua New Guinea",
@@ -1460,45 +1460,45 @@
       " ": "Peru",
       "Total Active Rotaract Clubs": 81,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 881,
+      "Total Reported Members": 880,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 39,
+      "Members Growth Abs": 38,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.631828978622328
+      "Members Growth (%)": 4.513064133016627
     },
     {
       " ": "Philippines",
-      "Total Active Rotaract Clubs": 634,
+      "Total Active Rotaract Clubs": 637,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 8153,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 202,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.5405609357313548
+      "Total Reported Members": 8189,
+      "Change in Clubs from Previous Quarter": 3,
+      "Clubs Growth Abs": 3,
+      "Members Growth Abs": 238,
+      "Clubs Growth (%)": 0.47318611987381703,
+      "Members Growth (%)": 2.993334171802289
     },
     {
       " ": "Poland",
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 116,
+      "Total Reported Members": 128,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.571428571428571
+      "Members Growth (%)": 14.285714285714285
     },
     {
       " ": "Portugal",
       "Total Active Rotaract Clubs": 45,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 367,
+      "Total Reported Members": 363,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -6,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.5420054200542005
+      "Members Growth (%)": -1.6260162601626018
     },
     {
       " ": "Puerto Rico",
@@ -1515,34 +1515,34 @@
       " ": "Réunion",
       "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 18,
+      "Total Reported Members": 17,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -28.000000000000004
+      "Members Growth (%)": -32
     },
     {
       " ": "Romania",
       "Total Active Rotaract Clubs": 59,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 963,
+      "Total Reported Members": 959,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 13,
+      "Members Growth Abs": 9,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.368421052631579
+      "Members Growth (%)": 0.9473684210526316
     },
     {
       " ": "Russian Federation",
       "Total Active Rotaract Clubs": 17,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 76,
+      "Total Reported Members": 77,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.3333333333333335
+      "Members Growth (%)": 2.666666666666667
     },
     {
       " ": "Rwanda",
@@ -1581,12 +1581,12 @@
       " ": "Saint Vincent and the Grenadines",
       "Total Active Rotaract Clubs": 1,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 51,
+      "Total Reported Members": 53,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 3.9215686274509802
     },
     {
       " ": "Samoa",
@@ -1625,23 +1625,23 @@
       " ": "Senegal",
       "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 73,
+      "Total Reported Members": 74,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 1.36986301369863
     },
     {
       " ": "Serbia",
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 182,
+      "Total Reported Members": 181,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.6216216216216217
+      "Members Growth (%)": -2.1621621621621623
     },
     {
       " ": "Seychelles",
@@ -1713,12 +1713,12 @@
       " ": "South Africa",
       "Total Active Rotaract Clubs": 33,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 356,
+      "Total Reported Members": 357,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.2801120448179272
+      "Members Growth (%)": 0
     },
     {
       " ": "South Sudan",
@@ -1746,23 +1746,23 @@
       " ": "Sri Lanka",
       "Total Active Rotaract Clubs": 95,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3838,
+      "Total Reported Members": 3763,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -306,
+      "Members Growth Abs": -381,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -7.384169884169885
+      "Members Growth (%)": -9.194015444015443
     },
     {
       " ": "Suriname",
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 92,
+      "Total Reported Members": 91,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -1.0869565217391304
     },
     {
       " ": "Sweden",
@@ -1790,34 +1790,34 @@
       " ": "Taiwan",
       "Total Active Rotaract Clubs": 157,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2255,
+      "Total Reported Members": 2229,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": -21,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.2222222222222222
+      "Members Growth (%)": -0.9333333333333335
     },
     {
       " ": "Tanzania, United Republic of",
       "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 427,
+      "Total Reported Members": 429,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -26,
+      "Members Growth Abs": -24,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.739514348785872
+      "Members Growth (%)": -5.298013245033113
     },
     {
       " ": "Thailand",
       "Total Active Rotaract Clubs": 52,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 642,
+      "Total Reported Members": 651,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.6191950464396285
+      "Members Growth (%)": 0.7739938080495357
     },
     {
       " ": "Timor-Leste",
@@ -1854,25 +1854,25 @@
     },
     {
       " ": "Tunisia",
-      "Total Active Rotaract Clubs": 28,
+      "Total Active Rotaract Clubs": 30,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 353,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.9444444444444444
+      "Total Reported Members": 373,
+      "Change in Clubs from Previous Quarter": 2,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 13,
+      "Clubs Growth (%)": 7.142857142857142,
+      "Members Growth (%)": 3.6111111111111107
     },
     {
       " ": "Turkey",
       "Total Active Rotaract Clubs": 132,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2172,
+      "Total Reported Members": 2169,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -23,
+      "Members Growth Abs": -26,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.0478359908883828
+      "Members Growth (%)": -1.184510250569476
     },
     {
       " ": "Turks and Caicos Islands",
@@ -1887,14 +1887,14 @@
     },
     {
       " ": "Uganda",
-      "Total Active Rotaract Clubs": 242,
+      "Total Active Rotaract Clubs": 244,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 5404,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 158,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.0118185284025922
+      "Total Reported Members": 5501,
+      "Change in Clubs from Previous Quarter": 2,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 255,
+      "Clubs Growth (%)": 0.8264462809917356,
+      "Members Growth (%)": 4.8608463591307665
     },
     {
       " ": "Ukraine",
@@ -1911,23 +1911,23 @@
       " ": "United Arab Emirates",
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 104,
+      "Total Reported Members": 102,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -1.9230769230769231
     },
     {
       " ": "United States",
-      "Total Active Rotaract Clubs": 511,
+      "Total Active Rotaract Clubs": 512,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 6183,
-      "Change in Clubs from Previous Quarter": 0,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.06473539407671144
+      "Total Reported Members": 6177,
+      "Change in Clubs from Previous Quarter": 1,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": -2,
+      "Clubs Growth (%)": 0.19569471624266144,
+      "Members Growth (%)": -0.03236769703835572
     },
     {
       " ": "United States Virgin Islands",
@@ -1944,23 +1944,23 @@
       " ": "Uruguay",
       "Total Active Rotaract Clubs": 22,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 141,
+      "Total Reported Members": 139,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -6,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -4.081632653061225
+      "Members Growth (%)": -5.442176870748299
     },
     {
       " ": "Venezuela",
       "Total Active Rotaract Clubs": 56,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 691,
+      "Total Reported Members": 697,
       "Change in Clubs from Previous Quarter": 0,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.2886002886002886
+      "Members Growth (%)": 0.5772005772005772
     },
     {
       " ": "Viet Nam",
@@ -1986,14 +1986,14 @@
     },
     {
       " ": "Zambia",
-      "Total Active Rotaract Clubs": 19,
+      "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 301,
-      "Change in Clubs from Previous Quarter": 2,
-      "Clubs Growth Abs": 2,
-      "Members Growth Abs": 39,
-      "Clubs Growth (%)": 11.76470588235294,
-      "Members Growth (%)": 14.885496183206106
+      "Total Reported Members": 318,
+      "Change in Clubs from Previous Quarter": 3,
+      "Clubs Growth Abs": 3,
+      "Members Growth Abs": 56,
+      "Clubs Growth (%)": 17.647058823529413,
+      "Members Growth (%)": 21.374045801526716
     },
     {
       " ": "Zimbabwe",
@@ -2036,25 +2036,25 @@
       "District": 64,
       "Total Active Rotaract Clubs": 145,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 754,
+      "Total Reported Members": 757,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 1,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0.6944444444444444,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.3978779840848806
     },
     {
       "District": 65,
       "Total Active Rotaract Clubs": 141,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 839,
+      "Total Reported Members": 838,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 1,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.23894862604540024
+      "Members Growth (%)": 0.11947431302270012
     },
     {
       "District": 1010,
@@ -2132,13 +2132,13 @@
       "District": 1130,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 81,
+      "Total Reported Members": 82,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 20,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 1.2345679012345678
     },
     {
       "District": 1145,
@@ -2300,13 +2300,13 @@
       "District": 1420,
       "Total Active Rotaract Clubs": 2,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 17,
+      "Total Reported Members": 18,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 17,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 5.88235294117647
     },
     {
       "District": 1440,
@@ -2346,15 +2346,15 @@
     },
     {
       "District": 1462,
-      "Total Active Rotaract Clubs": 8,
+      "Total Active Rotaract Clubs": 9,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 97,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 116,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 18,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -11,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -10.185185185185185
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 8,
+      "Clubs Growth (%)": 12.5,
+      "Members Growth (%)": 7.4074074074074066
     },
     {
       "District": 1470,
@@ -2384,13 +2384,13 @@
       "District": 1520,
       "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 82,
+      "Total Reported Members": 84,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 13,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 2.4390243902439024
     },
     {
       "District": 1550,
@@ -2576,13 +2576,13 @@
       "District": 1720,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 63,
+      "Total Reported Members": 64,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 13,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.5625
+      "Members Growth (%)": 0
     },
     {
       "District": 1730,
@@ -2648,7 +2648,19 @@
       "District": 1780,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 40,
+      "Total Reported Members": 39,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 13,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": -1,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": -2.5
+    },
+    {
+      "District": 1790,
+      "Total Active Rotaract Clubs": 7,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 77,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 13,
       "Clubs Growth Abs": 0,
@@ -2657,28 +2669,16 @@
       "Members Growth (%)": 0
     },
     {
-      "District": 1790,
-      "Total Active Rotaract Clubs": 7,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 78,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 13,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.2987012987012987
-    },
-    {
       "District": 1800,
       "Total Active Rotaract Clubs": 11,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 163,
+      "Total Reported Members": 162,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 15,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 14,
+      "Members Growth Abs": 13,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 9.395973154362416
+      "Members Growth (%)": 8.724832214765101
     },
     {
       "District": 1810,
@@ -2720,13 +2720,13 @@
       "District": 1841,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 189,
+      "Total Reported Members": 190,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 16,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 12,
+      "Members Growth Abs": 13,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 6.779661016949152
+      "Members Growth (%)": 7.344632768361582
     },
     {
       "District": 1842,
@@ -2804,13 +2804,13 @@
       "District": 1900,
       "Total Active Rotaract Clubs": 16,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 289,
+      "Total Reported Members": 294,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 15,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 24,
+      "Members Growth Abs": 29,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 9.056603773584905
+      "Members Growth (%)": 10.943396226415095
     },
     {
       "District": 1910,
@@ -2864,13 +2864,13 @@
       "District": 1920,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 257,
+      "Total Reported Members": 256,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.38910505836575876
     },
     {
       "District": 1930,
@@ -2888,13 +2888,13 @@
       "District": 1940,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 184,
+      "Total Reported Members": 185,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 15,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 15,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 8.875739644970414
+      "Members Growth (%)": 9.467455621301776
     },
     {
       "District": 1950,
@@ -2912,25 +2912,25 @@
       "District": 1960,
       "Total Active Rotaract Clubs": 14,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 117,
+      "Total Reported Members": 116,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 20,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.8547008547008548
     },
     {
       "District": 1970,
       "Total Active Rotaract Clubs": 31,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 250,
+      "Total Reported Members": 247,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 20,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.7936507936507936
+      "Members Growth (%)": -1.984126984126984
     },
     {
       "District": 1980,
@@ -2972,13 +2972,13 @@
       "District": 2031,
       "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 351,
+      "Total Reported Members": 353,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.2840909090909091
+      "Members Growth (%)": 0.2840909090909091
     },
     {
       "District": 2032,
@@ -3008,13 +3008,13 @@
       "District": 2042,
       "Total Active Rotaract Clubs": 18,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 239,
+      "Total Reported Members": 240,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -14,
+      "Members Growth Abs": -13,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.533596837944664
+      "Members Growth (%)": -5.138339920948617
     },
     {
       "District": 2050,
@@ -3044,25 +3044,25 @@
       "District": 2071,
       "Total Active Rotaract Clubs": 32,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 433,
+      "Total Reported Members": 430,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.23148148148148145
+      "Members Growth (%)": -0.4629629629629629
     },
     {
       "District": 2072,
       "Total Active Rotaract Clubs": 30,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 464,
+      "Total Reported Members": 466,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -6,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.276595744680851
+      "Members Growth (%)": -0.851063829787234
     },
     {
       "District": 2080,
@@ -3080,13 +3080,13 @@
       "District": 2090,
       "Total Active Rotaract Clubs": 36,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 409,
+      "Total Reported Members": 406,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.9876543209876543
+      "Members Growth (%)": 0.24691358024691357
     },
     {
       "District": 2101,
@@ -3104,25 +3104,25 @@
       "District": 2102,
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 312,
+      "Total Reported Members": 310,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 14,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.641025641025641
     },
     {
       "District": 2110,
-      "Total Active Rotaract Clubs": 60,
+      "Total Active Rotaract Clubs": 59,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 824,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 805,
+      "Change in Clubs from Previous Quarter": -1,
       "Zone": 14,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -24,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.8301886792452833
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -43,
+      "Clubs Growth (%)": -1.6666666666666667,
+      "Members Growth (%)": -5.070754716981132
     },
     {
       "District": 2120,
@@ -3140,13 +3140,13 @@
       "District": 2130,
       "Total Active Rotaract Clubs": 16,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 433,
+      "Total Reported Members": 434,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 13,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.23094688221709006
     },
     {
       "District": 2140,
@@ -3164,13 +3164,13 @@
       "District": 2150,
       "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 35,
+      "Total Reported Members": 34,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 13,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -2.857142857142857
     },
     {
       "District": 2160,
@@ -3224,25 +3224,25 @@
       "District": 2223,
       "Total Active Rotaract Clubs": 17,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 76,
+      "Total Reported Members": 77,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 17,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.3333333333333335
+      "Members Growth (%)": 2.666666666666667
     },
     {
       "District": 2231,
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 116,
+      "Total Reported Members": 128,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 18,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.571428571428571
+      "Members Growth (%)": 14.285714285714285
     },
     {
       "District": 2232,
@@ -3272,13 +3272,13 @@
       "District": 2241,
       "Total Active Rotaract Clubs": 60,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 979,
+      "Total Reported Members": 975,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 13,
+      "Members Growth Abs": 9,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.3457556935817805
+      "Members Growth (%)": 0.9316770186335404
     },
     {
       "District": 2310,
@@ -3344,37 +3344,37 @@
       "District": 2420,
       "Total Active Rotaract Clubs": 40,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 719,
+      "Total Reported Members": 720,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -43,
+      "Members Growth Abs": -42,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.6430446194225725
+      "Members Growth (%)": -5.511811023622047
     },
     {
       "District": 2430,
       "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 800,
+      "Total Reported Members": 798,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.1251564455569462
+      "Members Growth (%)": -0.1251564455569462
     },
     {
       "District": 2440,
       "Total Active Rotaract Clubs": 36,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 665,
+      "Total Reported Members": 663,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 19,
+      "Members Growth Abs": 17,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.941176470588235
+      "Members Growth (%)": 2.631578947368421
     },
     {
       "District": 2451,
@@ -3390,15 +3390,15 @@
     },
     {
       "District": 2452,
-      "Total Active Rotaract Clubs": 49,
+      "Total Active Rotaract Clubs": 50,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 617,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 605,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 21,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -18,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.8346456692913384
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": -30,
+      "Clubs Growth (%)": 2.0408163265306123,
+      "Members Growth (%)": -4.724409448818897
     },
     {
       "District": 2475,
@@ -3428,13 +3428,13 @@
       "District": 2483,
       "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 200,
+      "Total Reported Members": 199,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 21,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.477832512315271
+      "Members Growth (%)": -1.9704433497536946
     },
     {
       "District": 2485,
@@ -3536,13 +3536,13 @@
       "District": 2560,
       "Total Active Rotaract Clubs": 9,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 61,
+      "Total Reported Members": 62,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 1,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.6666666666666667
+      "Members Growth (%)": 3.3333333333333335
     },
     {
       "District": 2570,
@@ -3596,13 +3596,13 @@
       "District": 2610,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 52,
+      "Total Reported Members": 51,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 2,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 6.122448979591836
+      "Members Growth (%)": 4.081632653061225
     },
     {
       "District": 2620,
@@ -3704,13 +3704,13 @@
       "District": 2700,
       "Total Active Rotaract Clubs": 14,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 182,
+      "Total Reported Members": 173,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 3,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 9,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.202312138728324
+      "Members Growth (%)": 0
     },
     {
       "District": 2710,
@@ -3752,36 +3752,36 @@
       "District": 2740,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 41,
+      "Total Reported Members": 42,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 3,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.128205128205128
+      "Members Growth (%)": 7.6923076923076925
     },
     {
       "District": 2750,
       "Total Active Rotaract Clubs": 19,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 302,
+      "Total Reported Members": 303,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 2,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 20,
+      "Members Growth Abs": 21,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 7.092198581560284
+      "Members Growth (%)": 7.446808510638298
     },
     {
       "District": 2760,
-      "Total Active Rotaract Clubs": 9,
+      "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
       "Total Reported Members": 108,
-      "Change in Clubs from Previous Quarter": 0,
+      "Change in Clubs from Previous Quarter": -1,
       "Zone": 2,
-      "Clubs Growth Abs": 0,
+      "Clubs Growth Abs": -1,
       "Members Growth Abs": 10,
-      "Clubs Growth (%)": 0,
+      "Clubs Growth (%)": -11.11111111111111,
       "Members Growth (%)": 10.204081632653061
     },
     {
@@ -3800,13 +3800,13 @@
       "District": 2780,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 46,
+      "Total Reported Members": 42,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 2,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -8,
+      "Members Growth Abs": -12,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -14.814814814814813
+      "Members Growth (%)": -22.22222222222222
     },
     {
       "District": 2790,
@@ -3882,15 +3882,15 @@
     },
     {
       "District": 2982,
-      "Total Active Rotaract Clubs": 51,
+      "Total Active Rotaract Clubs": 53,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 798,
-      "Change in Clubs from Previous Quarter": 4,
+      "Total Reported Members": 832,
+      "Change in Clubs from Previous Quarter": 6,
       "Zone": 5,
-      "Clubs Growth Abs": 4,
-      "Members Growth Abs": 48,
-      "Clubs Growth (%)": 8.51063829787234,
-      "Members Growth (%)": 6.4
+      "Clubs Growth Abs": 6,
+      "Members Growth Abs": 82,
+      "Clubs Growth (%)": 12.76595744680851,
+      "Members Growth (%)": 10.933333333333334
     },
     {
       "District": 3000,
@@ -3908,13 +3908,13 @@
       "District": 3011,
       "Total Active Rotaract Clubs": 72,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1328,
+      "Total Reported Members": 1294,
       "Change in Clubs from Previous Quarter": 2,
       "Zone": 4,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": -64,
+      "Members Growth Abs": -98,
       "Clubs Growth (%)": 2.857142857142857,
-      "Members Growth (%)": -4.597701149425287
+      "Members Growth (%)": -7.040229885057471
     },
     {
       "District": 3012,
@@ -3930,63 +3930,63 @@
     },
     {
       "District": 3020,
-      "Total Active Rotaract Clubs": 44,
+      "Total Active Rotaract Clubs": 46,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 685,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 707,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 7,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -41,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.647382920110193
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": -19,
+      "Clubs Growth (%)": 4.545454545454546,
+      "Members Growth (%)": -2.6170798898071626
     },
     {
       "District": 3030,
       "Total Active Rotaract Clubs": 84,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1095,
+      "Total Reported Members": 1118,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 6,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 26,
+      "Members Growth Abs": 49,
       "Clubs Growth (%)": 1.2048192771084338,
-      "Members Growth (%)": 2.432179607109448
+      "Members Growth (%)": 4.583723105706268
     },
     {
       "District": 3040,
       "Total Active Rotaract Clubs": 41,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 582,
+      "Total Reported Members": 600,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 4,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 26,
+      "Members Growth Abs": 44,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.676258992805756
+      "Members Growth (%)": 7.913669064748201
     },
     {
       "District": 3053,
-      "Total Active Rotaract Clubs": 23,
+      "Total Active Rotaract Clubs": 24,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 336,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 356,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 4,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 20,
+      "Clubs Growth (%)": 4.3478260869565215,
+      "Members Growth (%)": 5.952380952380952
     },
     {
       "District": 3055,
-      "Total Active Rotaract Clubs": 53,
+      "Total Active Rotaract Clubs": 54,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 692,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 704,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 4,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -6,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.8595988538681949
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 6,
+      "Clubs Growth (%)": 1.8867924528301887,
+      "Members Growth (%)": 0.8595988538681949
     },
     {
       "District": 3056,
@@ -4004,61 +4004,61 @@
       "District": 3060,
       "Total Active Rotaract Clubs": 52,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1336,
+      "Total Reported Members": 1443,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 4,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": -115,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 1.9607843137254901,
-      "Members Growth (%)": -7.925568573397657
+      "Members Growth (%)": -0.5513439007580978
     },
     {
       "District": 3070,
       "Total Active Rotaract Clubs": 34,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 333,
+      "Total Reported Members": 335,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 4,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.0588235294117645
+      "Members Growth (%)": -1.4705882352941175
     },
     {
       "District": 3080,
-      "Total Active Rotaract Clubs": 82,
+      "Total Active Rotaract Clubs": 84,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2227,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 2051,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 4,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -112,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -4.7883710987601535
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": -288,
+      "Clubs Growth (%)": 2.4390243902439024,
+      "Members Growth (%)": -12.312954253954683
     },
     {
       "District": 3090,
       "Total Active Rotaract Clubs": 32,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 408,
+      "Total Reported Members": 413,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 4,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 6,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.2457002457002457
+      "Members Growth (%)": 1.4742014742014742
     },
     {
       "District": 3100,
       "Total Active Rotaract Clubs": 28,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 289,
+      "Total Reported Members": 293,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 6,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.3472222222222222
+      "Members Growth (%)": 1.7361111111111112
     },
     {
       "District": 3110,
@@ -4074,75 +4074,75 @@
     },
     {
       "District": 3120,
-      "Total Active Rotaract Clubs": 58,
+      "Total Active Rotaract Clubs": 60,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 897,
-      "Change in Clubs from Previous Quarter": 9,
+      "Total Reported Members": 920,
+      "Change in Clubs from Previous Quarter": 11,
       "Zone": 6,
-      "Clubs Growth Abs": 9,
-      "Members Growth Abs": 137,
-      "Clubs Growth (%)": 18.367346938775512,
-      "Members Growth (%)": 18.026315789473685
+      "Clubs Growth Abs": 11,
+      "Members Growth Abs": 160,
+      "Clubs Growth (%)": 22.448979591836736,
+      "Members Growth (%)": 21.052631578947366
     },
     {
       "District": 3131,
-      "Total Active Rotaract Clubs": 100,
+      "Total Active Rotaract Clubs": 101,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2040,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 1897,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 7,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -160,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -7.2727272727272725
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": -303,
+      "Clubs Growth (%)": 1,
+      "Members Growth (%)": -13.772727272727273
     },
     {
       "District": 3132,
-      "Total Active Rotaract Clubs": 36,
+      "Total Active Rotaract Clubs": 38,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 502,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 529,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 7,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -11,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.144249512670565
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 16,
+      "Clubs Growth (%)": 5.555555555555555,
+      "Members Growth (%)": 3.1189083820662766
     },
     {
       "District": 3141,
       "Total Active Rotaract Clubs": 128,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2821,
+      "Total Reported Members": 2915,
       "Change in Clubs from Previous Quarter": 4,
       "Zone": 4,
       "Clubs Growth Abs": 4,
-      "Members Growth Abs": 945,
+      "Members Growth Abs": 1039,
       "Clubs Growth (%)": 3.225806451612903,
-      "Members Growth (%)": 50.373134328358205
+      "Members Growth (%)": 55.38379530916845
     },
     {
       "District": 3142,
-      "Total Active Rotaract Clubs": 57,
+      "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1099,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 1119,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 4,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.365296803652968
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 24,
+      "Clubs Growth (%)": 1.7543859649122806,
+      "Members Growth (%)": 2.191780821917808
     },
     {
       "District": 3150,
       "Total Active Rotaract Clubs": 54,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2003,
+      "Total Reported Members": 1995,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 7,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -10,
       "Clubs Growth (%)": 1.8867924528301887,
-      "Members Growth (%)": -0.0997506234413965
+      "Members Growth (%)": -0.4987531172069825
     },
     {
       "District": 3160,
@@ -4158,111 +4158,111 @@
     },
     {
       "District": 3170,
-      "Total Active Rotaract Clubs": 129,
+      "Total Active Rotaract Clubs": 134,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1545,
-      "Change in Clubs from Previous Quarter": 21,
+      "Total Reported Members": 1653,
+      "Change in Clubs from Previous Quarter": 26,
       "Zone": 7,
-      "Clubs Growth Abs": 21,
-      "Members Growth Abs": 260,
-      "Clubs Growth (%)": 19.444444444444446,
-      "Members Growth (%)": 20.233463035019454
+      "Clubs Growth Abs": 26,
+      "Members Growth Abs": 368,
+      "Clubs Growth (%)": 24.074074074074073,
+      "Members Growth (%)": 28.638132295719842
     },
     {
       "District": 3181,
       "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 848,
+      "Total Reported Members": 839,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 7,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": -29,
+      "Members Growth Abs": -38,
       "Clubs Growth (%)": 1.7543859649122806,
-      "Members Growth (%)": -3.30672748004561
+      "Members Growth (%)": -4.3329532497149374
     },
     {
       "District": 3182,
       "Total Active Rotaract Clubs": 55,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 437,
+      "Total Reported Members": 436,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 7,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 6,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 1.8518518518518516,
-      "Members Growth (%)": 1.3921113689095126
+      "Members Growth (%)": 1.160092807424594
     },
     {
       "District": 3191,
       "Total Active Rotaract Clubs": 84,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1875,
+      "Total Reported Members": 1863,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 7,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 21,
+      "Members Growth Abs": 9,
       "Clubs Growth (%)": 1.2048192771084338,
-      "Members Growth (%)": 1.132686084142395
+      "Members Growth (%)": 0.48543689320388345
     },
     {
       "District": 3192,
-      "Total Active Rotaract Clubs": 87,
+      "Total Active Rotaract Clubs": 88,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2073,
-      "Change in Clubs from Previous Quarter": 1,
+      "Total Reported Members": 2082,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 7,
-      "Clubs Growth Abs": 1,
-      "Members Growth Abs": 37,
-      "Clubs Growth (%)": 1.1627906976744187,
-      "Members Growth (%)": 1.8172888015717092
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 46,
+      "Clubs Growth (%)": 2.3255813953488373,
+      "Members Growth (%)": 2.259332023575639
     },
     {
       "District": 3203,
       "Total Active Rotaract Clubs": 76,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1517,
+      "Total Reported Members": 1541,
       "Change in Clubs from Previous Quarter": 5,
       "Zone": 5,
       "Clubs Growth Abs": 5,
-      "Members Growth Abs": 68,
+      "Members Growth Abs": 92,
       "Clubs Growth (%)": 7.042253521126761,
-      "Members Growth (%)": 4.692891649413388
+      "Members Growth (%)": 6.349206349206349
     },
     {
       "District": 3204,
       "Total Active Rotaract Clubs": 26,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 256,
+      "Total Reported Members": 255,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 5,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.5873015873015872
+      "Members Growth (%)": 1.1904761904761905
     },
     {
       "District": 3205,
-      "Total Active Rotaract Clubs": 38,
+      "Total Active Rotaract Clubs": 37,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 644,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 626,
+      "Change in Clubs from Previous Quarter": -1,
       "Zone": 5,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 14,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.2222222222222223
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -4,
+      "Clubs Growth (%)": -2.631578947368421,
+      "Members Growth (%)": -0.6349206349206349
     },
     {
       "District": 3206,
       "Total Active Rotaract Clubs": 104,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1919,
+      "Total Reported Members": 1981,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 5,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 172,
+      "Members Growth Abs": 234,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 9.845449341728678
+      "Members Growth (%)": 13.394390383514596
     },
     {
       "District": 3211,
@@ -4278,27 +4278,27 @@
     },
     {
       "District": 3212,
-      "Total Active Rotaract Clubs": 86,
+      "Total Active Rotaract Clubs": 88,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 630,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 651,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 5,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.3184713375796179
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 23,
+      "Clubs Growth (%)": 2.3255813953488373,
+      "Members Growth (%)": 3.662420382165605
     },
     {
       "District": 3220,
       "Total Active Rotaract Clubs": 95,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3838,
+      "Total Reported Members": 3763,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 5,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -306,
+      "Members Growth Abs": -381,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -7.384169884169885
+      "Members Growth (%)": -9.194015444015443
     },
     {
       "District": 3231,
@@ -4316,121 +4316,121 @@
       "District": 3233,
       "Total Active Rotaract Clubs": 70,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 5819,
+      "Total Reported Members": 5816,
       "Change in Clubs from Previous Quarter": -1,
       "Zone": 5,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -16,
+      "Members Growth Abs": -19,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.27420736932305056
+      "Members Growth (%)": -0.32562125107112255
     },
     {
       "District": 3234,
       "Total Active Rotaract Clubs": 73,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1893,
+      "Total Reported Members": 1910,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 5,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": 17,
+      "Members Growth Abs": 34,
       "Clubs Growth (%)": -1.3513513513513513,
-      "Members Growth (%)": 0.906183368869936
+      "Members Growth (%)": 1.812366737739872
     },
     {
       "District": 3240,
-      "Total Active Rotaract Clubs": 56,
+      "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 798,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 6,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -25,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -3.0376670716889427
-    },
-    {
-      "District": 3250,
-      "Total Active Rotaract Clubs": 42,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 593,
+      "Total Reported Members": 850,
       "Change in Clubs from Previous Quarter": 2,
       "Zone": 6,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": 47,
-      "Clubs Growth (%)": 5,
-      "Members Growth (%)": 8.608058608058608
+      "Members Growth Abs": 27,
+      "Clubs Growth (%)": 3.571428571428571,
+      "Members Growth (%)": 3.2806804374240586
+    },
+    {
+      "District": 3250,
+      "Total Active Rotaract Clubs": 44,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 634,
+      "Change in Clubs from Previous Quarter": 4,
+      "Zone": 6,
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": 88,
+      "Clubs Growth (%)": 10,
+      "Members Growth (%)": 16.117216117216117
     },
     {
       "District": 3261,
-      "Total Active Rotaract Clubs": 20,
+      "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 155,
-      "Change in Clubs from Previous Quarter": 3,
+      "Total Reported Members": 171,
+      "Change in Clubs from Previous Quarter": 4,
       "Zone": 6,
-      "Clubs Growth Abs": 3,
-      "Members Growth Abs": 57,
-      "Clubs Growth (%)": 17.647058823529413,
-      "Members Growth (%)": 58.16326530612245
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": 73,
+      "Clubs Growth (%)": 23.52941176470588,
+      "Members Growth (%)": 74.48979591836735
     },
     {
       "District": 3262,
       "Total Active Rotaract Clubs": 75,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 669,
+      "Total Reported Members": 672,
       "Change in Clubs from Previous Quarter": 2,
       "Zone": 6,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": 23,
+      "Members Growth Abs": 26,
       "Clubs Growth (%)": 2.73972602739726,
-      "Members Growth (%)": 3.560371517027864
+      "Members Growth (%)": 4.024767801857585
     },
     {
       "District": 3271,
       "Total Active Rotaract Clubs": 30,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 265,
+      "Total Reported Members": 261,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 1,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -35,
+      "Members Growth Abs": -39,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -11.666666666666666
+      "Members Growth (%)": -13
     },
     {
       "District": 3292,
-      "Total Active Rotaract Clubs": 191,
+      "Total Active Rotaract Clubs": 193,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 4557,
-      "Change in Clubs from Previous Quarter": 2,
+      "Total Reported Members": 4739,
+      "Change in Clubs from Previous Quarter": 4,
       "Zone": 6,
-      "Clubs Growth Abs": 2,
-      "Members Growth Abs": 98,
-      "Clubs Growth (%)": 1.0582010582010581,
-      "Members Growth (%)": 2.197802197802198
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": 280,
+      "Clubs Growth (%)": 2.1164021164021163,
+      "Members Growth (%)": 6.279434850863422
     },
     {
       "District": 3300,
-      "Total Active Rotaract Clubs": 35,
+      "Total Active Rotaract Clubs": 37,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1406,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 1447,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 10,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -10,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.7062146892655368
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 31,
+      "Clubs Growth (%)": 5.714285714285714,
+      "Members Growth (%)": 2.189265536723164
     },
     {
       "District": 3310,
       "Total Active Rotaract Clubs": 22,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 424,
+      "Total Reported Members": 422,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": -3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.2352941176470588
+      "Members Growth (%)": -0.7058823529411765
     },
     {
       "District": 3330,
@@ -4460,13 +4460,13 @@
       "District": 3350,
       "Total Active Rotaract Clubs": 41,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 690,
+      "Total Reported Members": 699,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -10,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.4285714285714286
+      "Members Growth (%)": -0.14285714285714285
     },
     {
       "District": 3360,
@@ -4484,37 +4484,37 @@
       "District": 3410,
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 210,
+      "Total Reported Members": 209,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 1,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.47393364928909953
+      "Members Growth (%)": -0.9478672985781991
     },
     {
       "District": 3420,
-      "Total Active Rotaract Clubs": 22,
+      "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 231,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 251,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 1,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 15,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 6.944444444444445
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 35,
+      "Clubs Growth (%)": 4.545454545454546,
+      "Members Growth (%)": 16.203703703703702
     },
     {
       "District": 3450,
       "Total Active Rotaract Clubs": 68,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1050,
+      "Total Reported Members": 1051,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.28653295128939826
+      "Members Growth (%)": 0.38204393505253104
     },
     {
       "District": 3461,
@@ -4544,49 +4544,49 @@
       "District": 3470,
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 109,
+      "Total Reported Members": 110,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.9090909090909091
+      "Members Growth (%)": 0
     },
     {
       "District": 3481,
       "Total Active Rotaract Clubs": 15,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 176,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 9,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -5,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.7624309392265194
-    },
-    {
-      "District": 3482,
-      "Total Active Rotaract Clubs": 18,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 251,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 9,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 7,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.8688524590163933
-    },
-    {
-      "District": 3490,
-      "Total Active Rotaract Clubs": 12,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 155,
+      "Total Reported Members": 177,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
       "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.515723270440252
+      "Members Growth (%)": -2.209944751381215
+    },
+    {
+      "District": 3482,
+      "Total Active Rotaract Clubs": 18,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 253,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 9,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": 9,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": 3.6885245901639343
+    },
+    {
+      "District": 3490,
+      "Total Active Rotaract Clubs": 12,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 160,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 9,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": 1,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": 0.628930817610063
     },
     {
       "District": 3501,
@@ -4604,61 +4604,61 @@
       "District": 3502,
       "Total Active Rotaract Clubs": 10,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 197,
+      "Total Reported Members": 164,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -33,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -16.751269035532996
     },
     {
       "District": 3510,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 139,
+      "Total Reported Members": 138,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.7194244604316548
     },
     {
       "District": 3521,
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 172,
+      "Total Reported Members": 176,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 12,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 7.5
+      "Members Growth (%)": 10
     },
     {
       "District": 3522,
       "Total Active Rotaract Clubs": 29,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 433,
+      "Total Reported Members": 434,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 10,
+      "Members Growth Abs": 11,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.3640661938534278
+      "Members Growth (%)": 2.6004728132387704
     },
     {
       "District": 3523,
       "Total Active Rotaract Clubs": 15,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 207,
+      "Total Reported Members": 201,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 9,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.975609756097561
+      "Members Growth (%)": -1.951219512195122
     },
     {
       "District": 3590,
@@ -4796,25 +4796,25 @@
       "District": 3690,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 532,
+      "Total Reported Members": 594,
       "Change in Clubs from Previous Quarter": -1,
       "Zone": 11,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": -44,
+      "Members Growth Abs": 18,
       "Clubs Growth (%)": -7.142857142857142,
-      "Members Growth (%)": -7.638888888888889
+      "Members Growth (%)": 3.125
     },
     {
       "District": 3700,
-      "Total Active Rotaract Clubs": 7,
+      "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 177,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 180,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 12,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 3,
+      "Clubs Growth (%)": 14.285714285714285,
+      "Members Growth (%)": 1.694915254237288
     },
     {
       "District": 3710,
@@ -4892,85 +4892,85 @@
       "District": 3770,
       "Total Active Rotaract Clubs": 54,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 855,
+      "Total Reported Members": 859,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 16,
+      "Members Growth Abs": 20,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.907032181168057
+      "Members Growth (%)": 2.3837902264600714
     },
     {
       "District": 3780,
       "Total Active Rotaract Clubs": 57,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 567,
+      "Total Reported Members": 579,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -5,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.8741258741258742
+      "Members Growth (%)": 1.2237762237762237
     },
     {
       "District": 3790,
       "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 517,
+      "Total Reported Members": 510,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 21,
+      "Members Growth Abs": 14,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.233870967741935
+      "Members Growth (%)": 2.82258064516129
     },
     {
       "District": 3800,
       "Total Active Rotaract Clubs": 85,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1121,
+      "Total Reported Members": 1119,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 80,
+      "Members Growth Abs": 78,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 7.684918347742556
+      "Members Growth (%)": 7.492795389048991
     },
     {
       "District": 3810,
       "Total Active Rotaract Clubs": 71,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 877,
+      "Total Reported Members": 876,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.4540295119182747
+      "Members Growth (%)": -0.5675368898978433
     },
     {
       "District": 3820,
       "Total Active Rotaract Clubs": 91,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1181,
+      "Total Reported Members": 1182,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 10,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 18,
+      "Members Growth Abs": 19,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.5477214101461736
+      "Members Growth (%)": 1.633705932932072
     },
     {
       "District": 3830,
-      "Total Active Rotaract Clubs": 74,
+      "Total Active Rotaract Clubs": 75,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 906,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 912,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 10,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.8908685968819599
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 14,
+      "Clubs Growth (%)": 1.3513513513513513,
+      "Members Growth (%)": 1.55902004454343
     },
     {
       "District": 3850,
@@ -4986,27 +4986,27 @@
     },
     {
       "District": 3860,
-      "Total Active Rotaract Clubs": 88,
+      "Total Active Rotaract Clubs": 89,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1212,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 1215,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 10,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 61,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.299739357080799
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 64,
+      "Clubs Growth (%)": 1.1363636363636365,
+      "Members Growth (%)": 5.560382276281494
     },
     {
       "District": 3870,
-      "Total Active Rotaract Clubs": 22,
+      "Total Active Rotaract Clubs": 23,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 382,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 402,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 10,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.0582010582010581
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 24,
+      "Clubs Growth (%)": 4.545454545454546,
+      "Members Growth (%)": 6.349206349206349
     },
     {
       "District": 4060,
@@ -5022,15 +5022,15 @@
     },
     {
       "District": 4100,
-      "Total Active Rotaract Clubs": 29,
+      "Total Active Rotaract Clubs": 30,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 259,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 266,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 25,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.1450381679389312
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 4,
+      "Clubs Growth (%)": 3.4482758620689653,
+      "Members Growth (%)": 1.5267175572519083
     },
     {
       "District": 4110,
@@ -5048,13 +5048,13 @@
       "District": 4130,
       "Total Active Rotaract Clubs": 47,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 494,
+      "Total Reported Members": 504,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 25,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": -14,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 2.1739130434782608,
-      "Members Growth (%)": -2.7559055118110236
+      "Members Growth (%)": -0.7874015748031495
     },
     {
       "District": 4140,
@@ -5072,85 +5072,85 @@
       "District": 4170,
       "Total Active Rotaract Clubs": 44,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 365,
+      "Total Reported Members": 360,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.8152173913043478
+      "Members Growth (%)": -2.1739130434782608
     },
     {
       "District": 4185,
       "Total Active Rotaract Clubs": 34,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 309,
+      "Total Reported Members": 307,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 15,
+      "Members Growth Abs": 13,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.1020408163265305
+      "Members Growth (%)": 4.421768707482993
     },
     {
       "District": 4195,
       "Total Active Rotaract Clubs": 25,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 182,
+      "Total Reported Members": 186,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.546448087431694
+      "Members Growth (%)": 1.639344262295082
     },
     {
       "District": 4240,
       "Total Active Rotaract Clubs": 37,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 321,
+      "Total Reported Members": 314,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.6269592476489028
+      "Members Growth (%)": -1.5673981191222568
     },
     {
       "District": 4250,
       "Total Active Rotaract Clubs": 47,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 571,
+      "Total Reported Members": 561,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.35149384885764495
+      "Members Growth (%)": -1.4059753954305798
     },
     {
       "District": 4271,
       "Total Active Rotaract Clubs": 17,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 141,
+      "Total Reported Members": 142,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.444444444444445
+      "Members Growth (%)": 5.185185185185185
     },
     {
       "District": 4281,
       "Total Active Rotaract Clubs": 41,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 359,
+      "Total Reported Members": 366,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 25,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 7,
+      "Members Growth Abs": 14,
       "Clubs Growth (%)": 2.5,
-      "Members Growth (%)": 1.9886363636363635
+      "Members Growth (%)": 3.977272727272727
     },
     {
       "District": 4320,
@@ -5168,13 +5168,13 @@
       "District": 4340,
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 71,
+      "Total Reported Members": 72,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.4285714285714286
+      "Members Growth (%)": 2.857142857142857
     },
     {
       "District": 4355,
@@ -5192,61 +5192,61 @@
       "District": 4370,
       "Total Active Rotaract Clubs": 34,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 403,
+      "Total Reported Members": 407,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
+      "Members Growth Abs": -3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.707317073170732
+      "Members Growth (%)": -0.7317073170731708
     },
     {
       "District": 4380,
       "Total Active Rotaract Clubs": 22,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 288,
+      "Total Reported Members": 290,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 25,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.76678445229682
+      "Members Growth (%)": 2.4734982332155475
     },
     {
       "District": 4391,
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 144,
+      "Total Reported Members": 146,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.597122302158273
+      "Members Growth (%)": 5.0359712230215825
     },
     {
       "District": 4400,
       "Total Active Rotaract Clubs": 42,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 578,
+      "Total Reported Members": 585,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 15,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.4035087719298245
+      "Members Growth (%)": 2.631578947368421
     },
     {
       "District": 4420,
       "Total Active Rotaract Clubs": 22,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 215,
+      "Total Reported Members": 214,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.46511627906976744
     },
     {
       "District": 4440,
@@ -5264,49 +5264,49 @@
       "District": 4455,
       "Total Active Rotaract Clubs": 42,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 483,
+      "Total Reported Members": 476,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 38,
+      "Members Growth Abs": 31,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 8.539325842696629
+      "Members Growth (%)": 6.96629213483146
     },
     {
       "District": 4465,
       "Total Active Rotaract Clubs": 39,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 398,
+      "Total Reported Members": 404,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.2518891687657431
+      "Members Growth (%)": 1.7632241813602016
     },
     {
       "District": 4470,
       "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 209,
+      "Total Reported Members": 204,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.955665024630542
+      "Members Growth (%)": 0.49261083743842365
     },
     {
       "District": 4480,
       "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 161,
+      "Total Reported Members": 160,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 17,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 11.805555555555555
+      "Members Growth (%)": 11.11111111111111
     },
     {
       "District": 4490,
@@ -5324,37 +5324,37 @@
       "District": 4500,
       "Total Active Rotaract Clubs": 25,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 103,
+      "Total Reported Members": 106,
       "Change in Clubs from Previous Quarter": -4,
       "Zone": 24,
       "Clubs Growth Abs": -4,
-      "Members Growth Abs": -7,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": -13.793103448275861,
-      "Members Growth (%)": -6.363636363636363
+      "Members Growth (%)": -3.6363636363636362
     },
     {
       "District": 4510,
       "Total Active Rotaract Clubs": 26,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 226,
+      "Total Reported Members": 228,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.345291479820628
+      "Members Growth (%)": 2.242152466367713
     },
     {
       "District": 4521,
       "Total Active Rotaract Clubs": 27,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 249,
+      "Total Reported Members": 250,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 15,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 6.41025641025641
+      "Members Growth (%)": 6.837606837606838
     },
     {
       "District": 4530,
@@ -5372,13 +5372,13 @@
       "District": 4540,
       "Total Active Rotaract Clubs": 19,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 169,
+      "Total Reported Members": 171,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 10,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.968944099378882
+      "Members Growth (%)": 6.211180124223603
     },
     {
       "District": 4560,
@@ -5408,121 +5408,121 @@
       "District": 4571,
       "Total Active Rotaract Clubs": 18,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 124,
+      "Total Reported Members": 126,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 24,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 5.88235294117647,
-      "Members Growth (%)": 2.479338842975207
+      "Members Growth (%)": 4.132231404958678
     },
     {
       "District": 4590,
       "Total Active Rotaract Clubs": 17,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 171,
+      "Total Reported Members": 175,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": 4,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": 2.3391812865497075
+    },
+    {
+      "District": 4621,
+      "Total Active Rotaract Clubs": 19,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 173,
+      "Change in Clubs from Previous Quarter": -1,
+      "Zone": 24,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -9,
+      "Clubs Growth (%)": -5,
+      "Members Growth (%)": -4.945054945054945
+    },
+    {
+      "District": 4630,
+      "Total Active Rotaract Clubs": 11,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 75,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 23,
       "Clubs Growth Abs": 0,
       "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
       "Members Growth (%)": 0
     },
     {
-      "District": 4621,
-      "Total Active Rotaract Clubs": 19,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 171,
-      "Change in Clubs from Previous Quarter": -1,
-      "Zone": 24,
-      "Clubs Growth Abs": -1,
-      "Members Growth Abs": -11,
-      "Clubs Growth (%)": -5,
-      "Members Growth (%)": -6.043956043956044
-    },
-    {
-      "District": 4630,
-      "Total Active Rotaract Clubs": 11,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 73,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 23,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.666666666666667
-    },
-    {
       "District": 4640,
       "Total Active Rotaract Clubs": 26,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 309,
+      "Total Reported Members": 306,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 23,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 4,
-      "Members Growth (%)": 1.644736842105263
+      "Members Growth (%)": 0.6578947368421052
     },
     {
       "District": 4652,
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 198,
+      "Total Reported Members": 199,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.0618556701030926
+      "Members Growth (%)": 2.5773195876288657
     },
     {
       "District": 4660,
       "Total Active Rotaract Clubs": 22,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 320,
+      "Total Reported Members": 321,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 10,
+      "Members Growth Abs": 11,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.225806451612903
+      "Members Growth (%)": 3.5483870967741935
     },
     {
       "District": 4670,
       "Total Active Rotaract Clubs": 13,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 122,
+      "Total Reported Members": 127,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.6129032258064515
+      "Members Growth (%)": 2.4193548387096775
     },
     {
       "District": 4680,
       "Total Active Rotaract Clubs": 14,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 99,
+      "Total Reported Members": 104,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 6,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.0204081632653061
+      "Members Growth (%)": 6.122448979591836
     },
     {
       "District": 4690,
       "Total Active Rotaract Clubs": 39,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 544,
+      "Total Reported Members": 539,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 23,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 20,
+      "Members Growth Abs": 15,
       "Clubs Growth (%)": 2.631578947368421,
-      "Members Growth (%)": 3.816793893129771
+      "Members Growth (%)": 2.8625954198473282
     },
     {
       "District": 4700,
@@ -5540,13 +5540,13 @@
       "District": 4710,
       "Total Active Rotaract Clubs": 11,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 140,
+      "Total Reported Members": 119,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -3,
+      "Members Growth Abs": -24,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.097902097902098
+      "Members Growth (%)": -16.783216783216783
     },
     {
       "District": 4720,
@@ -5564,49 +5564,49 @@
       "District": 4730,
       "Total Active Rotaract Clubs": 17,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 145,
+      "Total Reported Members": 144,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.684931506849315
+      "Members Growth (%)": -1.36986301369863
     },
     {
       "District": 4740,
       "Total Active Rotaract Clubs": 21,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 251,
+      "Total Reported Members": 247,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.0325203252032518
+      "Members Growth (%)": 0.40650406504065045
     },
     {
       "District": 4751,
       "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 140,
+      "Total Reported Members": 141,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -5,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -3.4482758620689653
+      "Members Growth (%)": -2.7586206896551726
     },
     {
       "District": 4760,
       "Total Active Rotaract Clubs": 16,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 169,
+      "Total Reported Members": 168,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 24,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.1976047904191618
+      "Members Growth (%)": 0.5988023952095809
     },
     {
       "District": 4770,
@@ -5624,85 +5624,85 @@
       "District": 4780,
       "Total Active Rotaract Clubs": 11,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 128,
+      "Total Reported Members": 127,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.7874015748031495
+      "Members Growth (%)": 0
     },
     {
       "District": 4845,
       "Total Active Rotaract Clubs": 37,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 313,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 23,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.3205128205128205
-    },
-    {
-      "District": 4851,
-      "Total Active Rotaract Clubs": 24,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 169,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 23,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -1,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.5882352941176471
-    },
-    {
-      "District": 4895,
-      "Total Active Rotaract Clubs": 15,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 134,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 23,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4.6875
-    },
-    {
-      "District": 4905,
-      "Total Active Rotaract Clubs": 14,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 95,
+      "Total Reported Members": 315,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
       "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.260869565217391
+      "Members Growth (%)": 0.9615384615384616
+    },
+    {
+      "District": 4851,
+      "Total Active Rotaract Clubs": 24,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 168,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 23,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": -2,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": -1.1764705882352942
+    },
+    {
+      "District": 4895,
+      "Total Active Rotaract Clubs": 15,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 133,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 23,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": 5,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": 3.90625
+    },
+    {
+      "District": 4905,
+      "Total Active Rotaract Clubs": 14,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 94,
+      "Change in Clubs from Previous Quarter": 0,
+      "Zone": 23,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": 2,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": 2.1739130434782608
     },
     {
       "District": 4921,
       "Total Active Rotaract Clubs": 19,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 123,
+      "Total Reported Members": 122,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -3.149606299212598
+      "Members Growth (%)": -3.937007874015748
     },
     {
       "District": 4945,
       "Total Active Rotaract Clubs": 29,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 196,
+      "Total Reported Members": 194,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 23,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.5128205128205128
+      "Members Growth (%)": -0.5128205128205128
     },
     {
       "District": 4975,
@@ -5768,13 +5768,13 @@
       "District": 5040,
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 123,
+      "Total Reported Members": 121,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 28,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -1.6260162601626018
     },
     {
       "District": 5050,
@@ -5804,13 +5804,13 @@
       "District": 5080,
       "Total Active Rotaract Clubs": 5,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 39,
+      "Total Reported Members": 40,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 27,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.631578947368421
+      "Members Growth (%)": 5.263157894736842
     },
     {
       "District": 5100,
@@ -5876,13 +5876,13 @@
       "District": 5170,
       "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 37,
+      "Total Reported Members": 36,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 26,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -2.7027027027027026
     },
     {
       "District": 5180,
@@ -5936,37 +5936,37 @@
       "District": 5240,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 42,
+      "Total Reported Members": 41,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 26,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -2.380952380952381
     },
     {
       "District": 5280,
       "Total Active Rotaract Clubs": 10,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 91,
+      "Total Reported Members": 92,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 26,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.247191011235955
+      "Members Growth (%)": 3.3707865168539324
     },
     {
       "District": 5300,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 36,
+      "Total Reported Members": 40,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 26,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 6,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.88235294117647
+      "Members Growth (%)": 17.647058823529413
     },
     {
       "District": 5320,
@@ -5996,13 +5996,13 @@
       "District": 5340,
       "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 173,
+      "Total Reported Members": 163,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 26,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -10,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -5.780346820809249
     },
     {
       "District": 5360,
@@ -6020,13 +6020,13 @@
       "District": 5370,
       "Total Active Rotaract Clubs": 8,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 113,
+      "Total Reported Members": 114,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 28,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": -11.11111111111111,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.8849557522123894
     },
     {
       "District": 5390,
@@ -6126,15 +6126,15 @@
     },
     {
       "District": 5550,
-      "Total Active Rotaract Clubs": 5,
+      "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 52,
-      "Change in Clubs from Previous Quarter": 1,
+      "Total Reported Members": 77,
+      "Change in Clubs from Previous Quarter": 3,
       "Zone": 28,
-      "Clubs Growth Abs": 1,
-      "Members Growth Abs": 7,
-      "Clubs Growth (%)": 25,
-      "Members Growth (%)": 15.555555555555555
+      "Clubs Growth Abs": 3,
+      "Members Growth Abs": 32,
+      "Clubs Growth (%)": 75,
+      "Members Growth (%)": 71.11111111111111
     },
     {
       "District": 5580,
@@ -6176,13 +6176,13 @@
       "District": 5650,
       "Total Active Rotaract Clubs": 2,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 26,
+      "Total Reported Members": 29,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 29,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 4
+      "Members Growth (%)": 16
     },
     {
       "District": 5680,
@@ -6452,13 +6452,13 @@
       "District": 6170,
       "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 60,
+      "Total Reported Members": 61,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 31,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.263157894736842
+      "Members Growth (%)": 7.017543859649122
     },
     {
       "District": 6190,
@@ -6512,13 +6512,13 @@
       "District": 6270,
       "Total Active Rotaract Clubs": 1,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 45,
+      "Total Reported Members": 23,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 29,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -22,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -48.888888888888886
     },
     {
       "District": 6290,
@@ -6548,13 +6548,13 @@
       "District": 6330,
       "Total Active Rotaract Clubs": 5,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 55,
+      "Total Reported Members": 47,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 28,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -14.545454545454545
     },
     {
       "District": 6360,
@@ -6618,15 +6618,15 @@
     },
     {
       "District": 6450,
-      "Total Active Rotaract Clubs": 6,
+      "Total Active Rotaract Clubs": 7,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 64,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 68,
+      "Change in Clubs from Previous Quarter": 1,
       "Zone": 29,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.225806451612903
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 6,
+      "Clubs Growth (%)": 16.666666666666664,
+      "Members Growth (%)": 9.67741935483871
     },
     {
       "District": 6460,
@@ -6848,13 +6848,13 @@
       "District": 6900,
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 113,
+      "Total Reported Members": 111,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 34,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.7391304347826086
+      "Members Growth (%)": -3.4782608695652173
     },
     {
       "District": 6910,
@@ -6932,25 +6932,25 @@
       "District": 6970,
       "Total Active Rotaract Clubs": 9,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 181,
+      "Total Reported Members": 182,
       "Change in Clubs from Previous Quarter": -2,
       "Zone": 34,
       "Clubs Growth Abs": -2,
-      "Members Growth Abs": -19,
+      "Members Growth Abs": -18,
       "Clubs Growth (%)": -18.181818181818183,
-      "Members Growth (%)": -9.5
+      "Members Growth (%)": -9
     },
     {
       "District": 6980,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 37,
+      "Total Reported Members": 38,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 34,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 2.7027027027027026
     },
     {
       "District": 6990,
@@ -6992,25 +6992,25 @@
       "District": 7020,
       "Total Active Rotaract Clubs": 45,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 902,
+      "Total Reported Members": 901,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 34,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -2,
+      "Members Growth Abs": -3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.22123893805309736
+      "Members Growth (%)": -0.33185840707964603
     },
     {
       "District": 7030,
       "Total Active Rotaract Clubs": 46,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 844,
+      "Total Reported Members": 839,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 34,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": -9,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.4716981132075472
+      "Members Growth (%)": -1.0613207547169812
     },
     {
       "District": 7040,
@@ -7124,13 +7124,13 @@
       "District": 7280,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 32,
+      "Total Reported Members": 33,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 33,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.225806451612903
+      "Members Growth (%)": 6.451612903225806
     },
     {
       "District": 7305,
@@ -7184,13 +7184,13 @@
       "District": 7430,
       "Total Active Rotaract Clubs": 5,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 47,
+      "Total Reported Members": 46,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 32,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -2.127659574468085
     },
     {
       "District": 7450,
@@ -7304,13 +7304,13 @@
       "District": 7620,
       "Total Active Rotaract Clubs": 14,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 168,
+      "Total Reported Members": 182,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 33,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": 15,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.5988023952095809
+      "Members Growth (%)": 8.982035928143713
     },
     {
       "District": 7630,
@@ -7448,13 +7448,13 @@
       "District": 7815,
       "Total Active Rotaract Clubs": 6,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 35,
+      "Total Reported Members": 28,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 28,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -20
     },
     {
       "District": 7850,
@@ -7542,147 +7542,147 @@
     },
     {
       "District": 9010,
-      "Total Active Rotaract Clubs": 131,
+      "Total Active Rotaract Clubs": 133,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1618,
-      "Change in Clubs from Previous Quarter": 2,
+      "Total Reported Members": 1672,
+      "Change in Clubs from Previous Quarter": 4,
       "Zone": 22,
-      "Clubs Growth Abs": 2,
-      "Members Growth Abs": 8,
-      "Clubs Growth (%)": 1.550387596899225,
-      "Members Growth (%)": 0.4968944099378882
+      "Clubs Growth Abs": 4,
+      "Members Growth Abs": 62,
+      "Clubs Growth (%)": 3.10077519379845,
+      "Members Growth (%)": 3.8509316770186333
     },
     {
       "District": 9101,
       "Total Active Rotaract Clubs": 85,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1268,
+      "Total Reported Members": 1275,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": 0.5520504731861199
     },
     {
       "District": 9103,
       "Total Active Rotaract Clubs": 55,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 796,
+      "Total Reported Members": 783,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -12,
+      "Members Growth Abs": -25,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.4851485148514851
+      "Members Growth (%)": -3.094059405940594
     },
     {
       "District": 9104,
       "Total Active Rotaract Clubs": 68,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1939,
-      "Change in Clubs from Previous Quarter": 0,
-      "Zone": 22,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 6,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.3103983445421624
-    },
-    {
-      "District": 9111,
-      "Total Active Rotaract Clubs": 45,
-      "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 495,
+      "Total Reported Members": 1941,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
       "Members Growth Abs": 8,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.642710472279261
+      "Members Growth (%)": 0.4138644593895499
     },
     {
-      "District": 9112,
-      "Total Active Rotaract Clubs": 50,
+      "District": 9111,
+      "Total Active Rotaract Clubs": 45,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 710,
+      "Total Reported Members": 494,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -20,
+      "Members Growth Abs": 7,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.73972602739726
+      "Members Growth (%)": 1.4373716632443532
+    },
+    {
+      "District": 9112,
+      "Total Active Rotaract Clubs": 53,
+      "Total Suspended Rotaract Clubs": 0,
+      "Total Reported Members": 763,
+      "Change in Clubs from Previous Quarter": 3,
+      "Zone": 22,
+      "Clubs Growth Abs": 3,
+      "Members Growth Abs": 33,
+      "Clubs Growth (%)": 6,
+      "Members Growth (%)": 4.52054794520548
     },
     {
       "District": 9126,
       "Total Active Rotaract Clubs": 77,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 669,
+      "Total Reported Members": 666,
       "Change in Clubs from Previous Quarter": 2,
       "Zone": 22,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": 32,
+      "Members Growth Abs": 29,
       "Clubs Growth (%)": 2.666666666666667,
-      "Members Growth (%)": 5.023547880690738
+      "Members Growth (%)": 4.552590266875981
     },
     {
       "District": 9127,
       "Total Active Rotaract Clubs": 82,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 740,
+      "Total Reported Members": 746,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 22,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 10,
+      "Members Growth Abs": 16,
       "Clubs Growth (%)": 1.2345679012345678,
-      "Members Growth (%)": 1.36986301369863
+      "Members Growth (%)": 2.191780821917808
     },
     {
       "District": 9141,
       "Total Active Rotaract Clubs": 97,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 903,
+      "Total Reported Members": 906,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 24,
+      "Members Growth Abs": 27,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.7303754266211606
+      "Members Growth (%)": 3.0716723549488054
     },
     {
       "District": 9142,
       "Total Active Rotaract Clubs": 98,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1402,
+      "Total Reported Members": 1413,
       "Change in Clubs from Previous Quarter": 1,
       "Zone": 22,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 32,
+      "Members Growth Abs": 43,
       "Clubs Growth (%)": 1.0309278350515463,
-      "Members Growth (%)": 2.335766423357664
+      "Members Growth (%)": 3.1386861313868613
     },
     {
       "District": 9150,
       "Total Active Rotaract Clubs": 58,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 868,
+      "Total Reported Members": 867,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -4,
+      "Members Growth Abs": -5,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.45871559633027525
+      "Members Growth (%)": -0.573394495412844
     },
     {
       "District": 9210,
-      "Total Active Rotaract Clubs": 49,
+      "Total Active Rotaract Clubs": 50,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 651,
-      "Change in Clubs from Previous Quarter": 2,
+      "Total Reported Members": 668,
+      "Change in Clubs from Previous Quarter": 3,
       "Zone": 22,
-      "Clubs Growth Abs": 2,
-      "Members Growth Abs": 45,
-      "Clubs Growth (%)": 4.25531914893617,
-      "Members Growth (%)": 7.425742574257425
+      "Clubs Growth Abs": 3,
+      "Members Growth Abs": 62,
+      "Clubs Growth (%)": 6.382978723404255,
+      "Members Growth (%)": 10.231023102310232
     },
     {
       "District": 9212,
@@ -7700,85 +7700,85 @@
       "District": 9213,
       "Total Active Rotaract Clubs": 148,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 3261,
+      "Total Reported Members": 3295,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 107,
+      "Members Growth Abs": 141,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.3925174381737477
+      "Members Growth (%)": 4.470513633481294
     },
     {
       "District": 9214,
-      "Total Active Rotaract Clubs": 117,
+      "Total Active Rotaract Clubs": 119,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 2570,
-      "Change in Clubs from Previous Quarter": 0,
+      "Total Reported Members": 2635,
+      "Change in Clubs from Previous Quarter": 2,
       "Zone": 22,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 25,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.9823182711198428
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 90,
+      "Clubs Growth (%)": 1.7094017094017095,
+      "Members Growth (%)": 3.536345776031434
     },
     {
       "District": 9215,
       "Total Active Rotaract Clubs": 60,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1244,
+      "Total Reported Members": 1255,
       "Change in Clubs from Previous Quarter": 60,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 18,
+      "Members Growth Abs": 29,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.468189233278956
+      "Members Growth (%)": 2.365415986949429
     },
     {
       "District": 9216,
       "Total Active Rotaract Clubs": 78,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 1478,
+      "Total Reported Members": 1475,
       "Change in Clubs from Previous Quarter": 78,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 49,
+      "Members Growth Abs": 46,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 3.4289713086074176
+      "Members Growth (%)": 3.219034289713086
     },
     {
       "District": 9220,
       "Total Active Rotaract Clubs": 41,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 665,
+      "Total Reported Members": 664,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -17,
+      "Members Growth Abs": -18,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -2.4926686217008798
+      "Members Growth (%)": -2.6392961876832843
     },
     {
       "District": 9350,
       "Total Active Rotaract Clubs": 18,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 202,
+      "Total Reported Members": 203,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -11,
+      "Members Growth Abs": -10,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -5.164319248826291
+      "Members Growth (%)": -4.694835680751173
     },
     {
       "District": 9370,
       "Total Active Rotaract Clubs": 20,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 264,
+      "Total Reported Members": 268,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 22,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 15,
+      "Members Growth Abs": 19,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 6.024096385542169
+      "Members Growth (%)": 7.630522088353414
     },
     {
       "District": 9400,
@@ -7808,25 +7808,25 @@
       "District": 9510,
       "Total Active Rotaract Clubs": 3,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 27,
+      "Total Reported Members": 26,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 8,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -3.7037037037037033
     },
     {
       "District": 9560,
       "Total Active Rotaract Clubs": 12,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 263,
+      "Total Reported Members": 262,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 8,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 0,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0
+      "Members Growth (%)": -0.38022813688212925
     },
     {
       "District": 9620,
@@ -7940,13 +7940,13 @@
       "District": 9815,
       "Total Active Rotaract Clubs": 4,
       "Total Suspended Rotaract Clubs": 0,
-      "Total Reported Members": 73,
+      "Total Reported Members": 71,
       "Change in Clubs from Previous Quarter": 0,
       "Zone": 8,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 1,
+      "Members Growth Abs": -1,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.3888888888888888
+      "Members Growth (%)": -1.3888888888888888
     },
     {
       "District": 9830,
@@ -9201,20 +9201,20 @@
     {
       "Zone": "Zone 9",
       "Total Active Rotaract Clubs": 159,
-      "Total Reported Members": 2267,
+      "Total Reported Members": 2241,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
+      "Members Growth Abs": -33,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.30782761653474056
+      "Members Growth (%)": -1.4511873350923483
     },
     {
       "Zone": "Zone 1",
-      "Total Active Rotaract Clubs": 438,
-      "Total Reported Members": 2945,
-      "Clubs Growth Abs": 1,
-      "Members Growth Abs": 2,
-      "Clubs Growth (%)": 0.2288329519450801,
-      "Members Growth (%)": 0.06795786612300374
+      "Total Active Rotaract Clubs": 439,
+      "Total Reported Members": 2963,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 20,
+      "Clubs Growth (%)": 0.4576659038901602,
+      "Members Growth (%)": 0.6795786612300373
     },
     {
       "Zone": "Zone 19",
@@ -9228,236 +9228,236 @@
     {
       "Zone": "Zone 20",
       "Total Active Rotaract Clubs": 129,
-      "Total Reported Members": 1153,
+      "Total Reported Members": 1150,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 4,
+      "Members Growth Abs": 1,
       "Clubs Growth (%)": 0.78125,
-      "Members Growth (%)": 0.34812880765883375
+      "Members Growth (%)": 0.08703220191470844
     },
     {
       "Zone": "Zone 18",
-      "Total Active Rotaract Clubs": 30,
-      "Total Reported Members": 396,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -7,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.7369727047146404
+      "Total Active Rotaract Clubs": 31,
+      "Total Reported Members": 427,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": 24,
+      "Clubs Growth (%)": 3.3333333333333335,
+      "Members Growth (%)": 5.955334987593052
     },
     {
       "Zone": "Zone 17",
       "Total Active Rotaract Clubs": 32,
-      "Total Reported Members": 230,
+      "Total Reported Members": 232,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.8771929824561403
+      "Members Growth (%)": 1.7543859649122806
     },
     {
       "Zone": "Zone 13",
       "Total Active Rotaract Clubs": 135,
-      "Total Reported Members": 1922,
+      "Total Reported Members": 1923,
       "Clubs Growth Abs": -1,
-      "Members Growth Abs": -12,
+      "Members Growth Abs": -11,
       "Clubs Growth (%)": -0.7352941176470588,
-      "Members Growth (%)": -0.6204756980351602
+      "Members Growth (%)": -0.5687693898655636
     },
     {
       "Zone": "Zone 15",
       "Total Active Rotaract Clubs": 115,
-      "Total Reported Members": 1908,
+      "Total Reported Members": 1913,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 153,
+      "Members Growth Abs": 158,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 8.717948717948717
+      "Members Growth (%)": 9.002849002849004
     },
     {
       "Zone": "Zone 16",
       "Total Active Rotaract Clubs": 83,
-      "Total Reported Members": 1476,
+      "Total Reported Members": 1477,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 78,
+      "Members Growth Abs": 79,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 5.579399141630901
+      "Members Growth (%)": 5.650929899856939
     },
     {
       "Zone": "Zone 21",
-      "Total Active Rotaract Clubs": 464,
-      "Total Reported Members": 6247,
-      "Clubs Growth Abs": -1,
-      "Members Growth Abs": -33,
-      "Clubs Growth (%)": -0.21505376344086022,
-      "Members Growth (%)": -0.5254777070063694
+      "Total Active Rotaract Clubs": 465,
+      "Total Reported Members": 6226,
+      "Clubs Growth Abs": 0,
+      "Members Growth Abs": -54,
+      "Clubs Growth (%)": 0,
+      "Members Growth (%)": -0.8598726114649682
     },
     {
       "Zone": "Zone 14",
-      "Total Active Rotaract Clubs": 448,
-      "Total Reported Members": 6456,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -38,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.5851555281798583
+      "Total Active Rotaract Clubs": 447,
+      "Total Reported Members": 6434,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -60,
+      "Clubs Growth (%)": -0.2232142857142857,
+      "Members Growth (%)": -0.9239297813366184
     },
     {
       "Zone": "Zone 22",
-      "Total Active Rotaract Clubs": 1464,
-      "Total Reported Members": 22778,
-      "Clubs Growth Abs": 8,
-      "Members Growth Abs": 309,
-      "Clubs Growth (%)": 0.5494505494505495,
-      "Members Growth (%)": 1.375228092037919
+      "Total Active Rotaract Clubs": 1472,
+      "Total Reported Members": 23024,
+      "Clubs Growth Abs": 16,
+      "Members Growth Abs": 555,
+      "Clubs Growth (%)": 1.098901098901099,
+      "Members Growth (%)": 2.4700698740486895
     },
     {
       "Zone": "Zone 2",
-      "Total Active Rotaract Clubs": 104,
-      "Total Reported Members": 1312,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 37,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 2.9019607843137254
+      "Total Active Rotaract Clubs": 103,
+      "Total Reported Members": 1308,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": 33,
+      "Clubs Growth (%)": -0.9615384615384616,
+      "Members Growth (%)": 2.588235294117647
     },
     {
       "Zone": "Zone 3",
       "Total Active Rotaract Clubs": 137,
-      "Total Reported Members": 1368,
+      "Total Reported Members": 1360,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 8,
+      "Members Growth Abs": 0,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.5882352941176471
+      "Members Growth (%)": 0
     },
     {
       "Zone": "Zone 5",
-      "Total Active Rotaract Clubs": 908,
-      "Total Reported Members": 26538,
-      "Clubs Growth Abs": 8,
-      "Members Growth Abs": 700,
-      "Clubs Growth (%)": 0.8888888888888888,
-      "Members Growth (%)": 2.709188017648425
+      "Total Active Rotaract Clubs": 911,
+      "Total Reported Members": 26599,
+      "Clubs Growth Abs": 11,
+      "Members Growth Abs": 761,
+      "Clubs Growth (%)": 1.2222222222222223,
+      "Members Growth (%)": 2.945274402043502
     },
     {
       "Zone": "Zone 4",
-      "Total Active Rotaract Clubs": 655,
-      "Total Reported Members": 11904,
-      "Clubs Growth Abs": 12,
-      "Members Growth Abs": 771,
-      "Clubs Growth (%)": 1.8662519440124419,
-      "Members Growth (%)": 6.925357046618162
+      "Total Active Rotaract Clubs": 660,
+      "Total Reported Members": 11972,
+      "Clubs Growth Abs": 17,
+      "Members Growth Abs": 839,
+      "Clubs Growth (%)": 2.6438569206842923,
+      "Members Growth (%)": 7.536153777059193
     },
     {
       "Zone": "Zone 7",
-      "Total Active Rotaract Clubs": 681,
-      "Total Reported Members": 12178,
-      "Clubs Growth Abs": 26,
-      "Members Growth Abs": 42,
-      "Clubs Growth (%)": 3.969465648854962,
-      "Members Growth (%)": 0.34607778510217535
+      "Total Active Rotaract Clubs": 692,
+      "Total Reported Members": 12171,
+      "Clubs Growth Abs": 37,
+      "Members Growth Abs": 35,
+      "Clubs Growth (%)": 5.648854961832061,
+      "Members Growth (%)": 0.2883981542518128
     },
     {
       "Zone": "Zone 6",
-      "Total Active Rotaract Clubs": 576,
-      "Total Reported Members": 9238,
-      "Clubs Growth Abs": 19,
-      "Members Growth Abs": 373,
-      "Clubs Growth (%)": 3.4111310592459607,
-      "Members Growth (%)": 4.2075578116187256
+      "Total Active Rotaract Clubs": 585,
+      "Total Reported Members": 9582,
+      "Clubs Growth Abs": 28,
+      "Members Growth Abs": 717,
+      "Clubs Growth (%)": 5.026929982046679,
+      "Members Growth (%)": 8.087986463620982
     },
     {
       "Zone": "Zone 10",
-      "Total Active Rotaract Clubs": 827,
-      "Total Reported Members": 12028,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 186,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.5706806282722512
+      "Total Active Rotaract Clubs": 832,
+      "Total Reported Members": 12113,
+      "Clubs Growth Abs": 5,
+      "Members Growth Abs": 271,
+      "Clubs Growth (%)": 0.6045949214026602,
+      "Members Growth (%)": 2.2884647863536567
     },
     {
       "Zone": "Zone 12",
-      "Total Active Rotaract Clubs": 81,
-      "Total Reported Members": 1356,
-      "Clubs Growth Abs": -2,
-      "Members Growth Abs": -6,
-      "Clubs Growth (%)": -2.4096385542168677,
-      "Members Growth (%)": -0.4405286343612335
+      "Total Active Rotaract Clubs": 82,
+      "Total Reported Members": 1359,
+      "Clubs Growth Abs": -1,
+      "Members Growth Abs": -3,
+      "Clubs Growth (%)": -1.2048192771084338,
+      "Members Growth (%)": -0.22026431718061676
     },
     {
       "Zone": "Zone 11",
       "Total Active Rotaract Clubs": 120,
-      "Total Reported Members": 2262,
+      "Total Reported Members": 2324,
       "Clubs Growth Abs": -2,
-      "Members Growth Abs": -121,
+      "Members Growth Abs": -59,
       "Clubs Growth (%)": -1.639344262295082,
-      "Members Growth (%)": -5.077633235417541
+      "Members Growth (%)": -2.4758707511540075
     },
     {
       "Zone": "Zone 25",
-      "Total Active Rotaract Clubs": 510,
-      "Total Reported Members": 5158,
-      "Clubs Growth Abs": 4,
-      "Members Growth Abs": 1,
-      "Clubs Growth (%)": 0.7905138339920948,
-      "Members Growth (%)": 0.01939111886755866
+      "Total Active Rotaract Clubs": 511,
+      "Total Reported Members": 5169,
+      "Clubs Growth Abs": 5,
+      "Members Growth Abs": 12,
+      "Clubs Growth (%)": 0.9881422924901186,
+      "Members Growth (%)": 0.2326934264107039
     },
     {
       "Zone": "Zone 23",
       "Total Active Rotaract Clubs": 520,
-      "Total Reported Members": 5317,
+      "Total Reported Members": 5299,
       "Clubs Growth Abs": 2,
-      "Members Growth Abs": 79,
+      "Members Growth Abs": 61,
       "Clubs Growth (%)": 0.3861003861003861,
-      "Members Growth (%)": 1.5082092401680032
+      "Members Growth (%)": 1.1645666284841543
     },
     {
       "Zone": "Zone 24",
       "Total Active Rotaract Clubs": 380,
-      "Total Reported Members": 3140,
+      "Total Reported Members": 3151,
       "Clubs Growth Abs": -4,
-      "Members Growth Abs": 49,
+      "Members Growth Abs": 60,
       "Clubs Growth (%)": -1.0416666666666665,
-      "Members Growth (%)": 1.5852474927208025
+      "Members Growth (%)": 1.9411193788417986
     },
     {
       "Zone": "Zone 26",
       "Total Active Rotaract Clubs": 68,
-      "Total Reported Members": 863,
+      "Total Reported Members": 856,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 5,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.5827505827505828
+      "Members Growth (%)": -0.2331002331002331
     },
     {
       "Zone": "Zone 28",
-      "Total Active Rotaract Clubs": 99,
-      "Total Reported Members": 1129,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": 16,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": 1.4375561545372868
+      "Total Active Rotaract Clubs": 101,
+      "Total Reported Members": 1138,
+      "Clubs Growth Abs": 2,
+      "Members Growth Abs": 25,
+      "Clubs Growth (%)": 2.0202020202020203,
+      "Members Growth (%)": 2.2461814914645104
     },
     {
       "Zone": "Zone 27",
       "Total Active Rotaract Clubs": 50,
-      "Total Reported Members": 571,
+      "Total Reported Members": 572,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": 3,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.35149384885764495
+      "Members Growth (%)": 0.5272407732864675
     },
     {
       "Zone": "Zone 29",
-      "Total Active Rotaract Clubs": 33,
-      "Total Reported Members": 475,
-      "Clubs Growth Abs": 0,
-      "Members Growth Abs": -6,
-      "Clubs Growth (%)": 0,
-      "Members Growth (%)": -1.2474012474012475
+      "Total Active Rotaract Clubs": 34,
+      "Total Reported Members": 460,
+      "Clubs Growth Abs": 1,
+      "Members Growth Abs": -21,
+      "Clubs Growth (%)": 3.0303030303030303,
+      "Members Growth (%)": -4.365904365904366
     },
     {
       "Zone": "Zone 31",
       "Total Active Rotaract Clubs": 51,
-      "Total Reported Members": 543,
+      "Total Reported Members": 544,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": 3,
+      "Members Growth Abs": 4,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": 0.5555555555555556
+      "Members Growth (%)": 0.7407407407407408
     },
     {
       "Zone": "Zone 30",
@@ -9471,38 +9471,38 @@
     {
       "Zone": "Zone 34",
       "Total Active Rotaract Clubs": 154,
-      "Total Reported Members": 2784,
+      "Total Reported Members": 2778,
       "Clubs Growth Abs": -2,
-      "Members Growth Abs": -26,
+      "Members Growth Abs": -32,
       "Clubs Growth (%)": -1.282051282051282,
-      "Members Growth (%)": -0.9252669039145907
+      "Members Growth (%)": -1.1387900355871887
     },
     {
       "Zone": "Zone 32",
       "Total Active Rotaract Clubs": 75,
-      "Total Reported Members": 728,
+      "Total Reported Members": 727,
       "Clubs Growth Abs": 1,
-      "Members Growth Abs": 10,
+      "Members Growth Abs": 9,
       "Clubs Growth (%)": 1.3513513513513513,
-      "Members Growth (%)": 1.392757660167131
+      "Members Growth (%)": 1.2534818941504178
     },
     {
       "Zone": "Zone 33",
       "Total Active Rotaract Clubs": 86,
-      "Total Reported Members": 759,
+      "Total Reported Members": 774,
       "Clubs Growth Abs": 0,
-      "Members Growth Abs": -6,
+      "Members Growth Abs": 9,
       "Clubs Growth (%)": 0,
-      "Members Growth (%)": -0.7843137254901961
+      "Members Growth (%)": 1.1764705882352942
     },
     {
       "Zone": "Zone 8",
       "Total Active Rotaract Clubs": 59,
-      "Total Reported Members": 875,
+      "Total Reported Members": 871,
       "Clubs Growth Abs": -3,
-      "Members Growth Abs": 2,
+      "Members Growth Abs": -2,
       "Clubs Growth (%)": -4.838709677419355,
-      "Members Growth (%)": 0.22909507445589922
+      "Members Growth (%)": -0.22909507445589922
     }
   ],
   "interactDistrictData": [
@@ -10175,11 +10175,11 @@
     {
       "District": "2032",
       "Zone": "Zone 14",
-      "Total Active Interact Clubs": 10,
+      "Total Active Interact Clubs": 11,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 10,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 11,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 10
     },
     {
       "District": "2041",
@@ -10418,29 +10418,29 @@
     {
       "District": "2430",
       "Zone": "Zone 21",
-      "Total Active Interact Clubs": 44,
+      "Total Active Interact Clubs": 45,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 44,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 45,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 2.3
     },
     {
       "District": "2440",
       "Zone": "Zone 21",
-      "Total Active Interact Clubs": 38,
+      "Total Active Interact Clubs": 39,
       "Total Suspended Interact Clubs": 1,
-      "Total Interact Clubs": 39,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 40,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 2.6
     },
     {
       "District": "2451",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 50,
+      "Total Active Interact Clubs": 52,
       "Total Suspended Interact Clubs": 7,
-      "Total Interact Clubs": 57,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 59,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 3.5
     },
     {
       "District": "2452",
@@ -10499,11 +10499,11 @@
     {
       "District": "2500",
       "Zone": "Zone 1",
-      "Total Active Interact Clubs": 11,
+      "Total Active Interact Clubs": 12,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 11,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 12,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 9.1
     },
     {
       "District": "2510",
@@ -10607,11 +10607,11 @@
     {
       "District": "2620",
       "Zone": "Zone 2",
-      "Total Active Interact Clubs": 19,
+      "Total Active Interact Clubs": 20,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 19,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 20,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 5.3
     },
     {
       "District": "2630",
@@ -10652,11 +10652,11 @@
     {
       "District": "2670",
       "Zone": "Zone 3",
-      "Total Active Interact Clubs": 20,
+      "Total Active Interact Clubs": 21,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 20,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 21,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 5
     },
     {
       "District": "2680",
@@ -10823,11 +10823,11 @@
     {
       "District": "3000",
       "Zone": "Zone 5",
-      "Total Active Interact Clubs": 470,
+      "Total Active Interact Clubs": 502,
       "Total Suspended Interact Clubs": 17,
-      "Total Interact Clubs": 487,
-      "Interact Growth Abs": 9,
-      "Interact Growth (%)": 1.9
+      "Total Interact Clubs": 519,
+      "Interact Growth Abs": 41,
+      "Interact Growth (%)": 8.6
     },
     {
       "District": "3011",
@@ -10877,11 +10877,11 @@
     {
       "District": "3053",
       "Zone": "Zone 4",
-      "Total Active Interact Clubs": 50,
+      "Total Active Interact Clubs": 51,
       "Total Suspended Interact Clubs": 13,
-      "Total Interact Clubs": 63,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 1.6
+      "Total Interact Clubs": 64,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 3.2
     },
     {
       "District": "3055",
@@ -10913,20 +10913,20 @@
     {
       "District": "3070",
       "Zone": "Zone 4",
-      "Total Active Interact Clubs": 70,
+      "Total Active Interact Clubs": 71,
       "Total Suspended Interact Clubs": 16,
-      "Total Interact Clubs": 86,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 87,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 1.2
     },
     {
       "District": "3080",
       "Zone": "Zone 4",
-      "Total Active Interact Clubs": 240,
+      "Total Active Interact Clubs": 244,
       "Total Suspended Interact Clubs": 25,
-      "Total Interact Clubs": 265,
-      "Interact Growth Abs": 4,
-      "Interact Growth (%)": 1.5
+      "Total Interact Clubs": 269,
+      "Interact Growth Abs": 8,
+      "Interact Growth (%)": 3.1
     },
     {
       "District": "3090",
@@ -10985,11 +10985,11 @@
     {
       "District": "3141",
       "Zone": "Zone 4",
-      "Total Active Interact Clubs": 223,
-      "Total Suspended Interact Clubs": 28,
-      "Total Interact Clubs": 251,
-      "Interact Growth Abs": 5,
-      "Interact Growth (%)": 2
+      "Total Active Interact Clubs": 229,
+      "Total Suspended Interact Clubs": 26,
+      "Total Interact Clubs": 255,
+      "Interact Growth Abs": 9,
+      "Interact Growth (%)": 3.7
     },
     {
       "District": "3142",
@@ -11057,11 +11057,11 @@
     {
       "District": "3192",
       "Zone": "Zone 7",
-      "Total Active Interact Clubs": 209,
+      "Total Active Interact Clubs": 210,
       "Total Suspended Interact Clubs": 29,
-      "Total Interact Clubs": 238,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 0.4
+      "Total Interact Clubs": 239,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 0.8
     },
     {
       "District": "3203",
@@ -11111,11 +11111,11 @@
     {
       "District": "3212",
       "Zone": "Zone 5",
-      "Total Active Interact Clubs": 290,
+      "Total Active Interact Clubs": 291,
       "Total Suspended Interact Clubs": 12,
-      "Total Interact Clubs": 302,
-      "Interact Growth Abs": 3,
-      "Interact Growth (%)": 1
+      "Total Interact Clubs": 303,
+      "Interact Growth Abs": 4,
+      "Interact Growth (%)": 1.3
     },
     {
       "District": "3220",
@@ -11174,11 +11174,11 @@
     {
       "District": "3261",
       "Zone": "Zone 6",
-      "Total Active Interact Clubs": 49,
+      "Total Active Interact Clubs": 62,
       "Total Suspended Interact Clubs": 4,
-      "Total Interact Clubs": 53,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 66,
+      "Interact Growth Abs": 13,
+      "Interact Growth (%)": 24.5
     },
     {
       "District": "3262",
@@ -11390,11 +11390,11 @@
     {
       "District": "3522",
       "Zone": "Zone 9",
-      "Total Active Interact Clubs": 21,
+      "Total Active Interact Clubs": 22,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 21,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 22,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 4.8
     },
     {
       "District": "3523",
@@ -11426,11 +11426,11 @@
     {
       "District": "3610",
       "Zone": "Zone 12",
-      "Total Active Interact Clubs": 29,
+      "Total Active Interact Clubs": 30,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 29,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 30,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 3.4
     },
     {
       "District": "3620",
@@ -11579,11 +11579,11 @@
     {
       "District": "3770",
       "Zone": "Zone 10",
-      "Total Active Interact Clubs": 25,
+      "Total Active Interact Clubs": 26,
       "Total Suspended Interact Clubs": 3,
-      "Total Interact Clubs": 28,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 29,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 3.6
     },
     {
       "District": "3780",
@@ -11642,11 +11642,11 @@
     {
       "District": "3850",
       "Zone": "Zone 10",
-      "Total Active Interact Clubs": 31,
+      "Total Active Interact Clubs": 32,
       "Total Suspended Interact Clubs": 4,
-      "Total Interact Clubs": 35,
-      "Interact Growth Abs": 2,
-      "Interact Growth (%)": 6.1
+      "Total Interact Clubs": 36,
+      "Interact Growth Abs": 3,
+      "Interact Growth (%)": 9.1
     },
     {
       "District": "3860",
@@ -11921,11 +11921,11 @@
     {
       "District": "4521",
       "Zone": "Zone 24",
-      "Total Active Interact Clubs": 32,
+      "Total Active Interact Clubs": 33,
       "Total Suspended Interact Clubs": 4,
-      "Total Interact Clubs": 36,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 37,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 2.8
     },
     {
       "District": "4530",
@@ -12173,11 +12173,11 @@
     {
       "District": "4921",
       "Zone": "Zone 23",
-      "Total Active Interact Clubs": 14,
+      "Total Active Interact Clubs": 15,
       "Total Suspended Interact Clubs": 2,
-      "Total Interact Clubs": 16,
-      "Interact Growth Abs": -1,
-      "Interact Growth (%)": -5.9
+      "Total Interact Clubs": 17,
+      "Interact Growth Abs": 0,
+      "Interact Growth (%)": 0
     },
     {
       "District": "4945",
@@ -12308,11 +12308,11 @@
     {
       "District": "5160",
       "Zone": "Zone 27",
-      "Total Active Interact Clubs": 46,
+      "Total Active Interact Clubs": 47,
       "Total Suspended Interact Clubs": 3,
-      "Total Interact Clubs": 49,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 2.1
+      "Total Interact Clubs": 50,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 4.2
     },
     {
       "District": "5170",
@@ -12371,11 +12371,11 @@
     {
       "District": "5280",
       "Zone": "Zone 26",
-      "Total Active Interact Clubs": 44,
+      "Total Active Interact Clubs": 46,
       "Total Suspended Interact Clubs": 9,
-      "Total Interact Clubs": 53,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 55,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 3.8
     },
     {
       "District": "5300",
@@ -13046,8 +13046,8 @@
     {
       "District": "6840",
       "Zone": "Zone 31",
-      "Total Active Interact Clubs": 20,
-      "Total Suspended Interact Clubs": 7,
+      "Total Active Interact Clubs": 22,
+      "Total Suspended Interact Clubs": 5,
       "Total Interact Clubs": 27,
       "Interact Growth Abs": 0,
       "Interact Growth (%)": 0
@@ -13397,11 +13397,11 @@
     {
       "District": "7610",
       "Zone": "Zone 33",
-      "Total Active Interact Clubs": 31,
+      "Total Active Interact Clubs": 32,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 31,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 32,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 3.2
     },
     {
       "District": "7620",
@@ -13451,11 +13451,11 @@
     {
       "District": "7710",
       "Zone": "Zone 33",
-      "Total Active Interact Clubs": 27,
+      "Total Active Interact Clubs": 26,
       "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 27,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 26,
+      "Interact Growth Abs": -1,
+      "Interact Growth (%)": -3.7
     },
     {
       "District": "7720",
@@ -13685,29 +13685,29 @@
     {
       "District": "9210",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 120,
+      "Total Active Interact Clubs": 121,
       "Total Suspended Interact Clubs": 1,
-      "Total Interact Clubs": 121,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 0.8
+      "Total Interact Clubs": 122,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 1.7
     },
     {
       "District": "9213",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 193,
+      "Total Active Interact Clubs": 196,
       "Total Suspended Interact Clubs": 2,
-      "Total Interact Clubs": 195,
-      "Interact Growth Abs": 2,
-      "Interact Growth (%)": 1
+      "Total Interact Clubs": 198,
+      "Interact Growth Abs": 5,
+      "Interact Growth (%)": 2.6
     },
     {
       "District": "9214",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 126,
+      "Total Active Interact Clubs": 130,
       "Total Suspended Interact Clubs": 8,
-      "Total Interact Clubs": 134,
-      "Interact Growth Abs": 2,
-      "Interact Growth (%)": 1.5
+      "Total Interact Clubs": 138,
+      "Interact Growth Abs": 6,
+      "Interact Growth (%)": 4.5
     },
     {
       "District": "9215",
@@ -13739,17 +13739,17 @@
     {
       "District": "9350",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 98,
+      "Total Active Interact Clubs": 99,
       "Total Suspended Interact Clubs": 3,
-      "Total Interact Clubs": 101,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 102,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 1
     },
     {
       "District": "9370",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 117,
-      "Total Suspended Interact Clubs": 1,
+      "Total Active Interact Clubs": 118,
+      "Total Suspended Interact Clubs": 0,
       "Total Interact Clubs": 118,
       "Interact Growth Abs": -2,
       "Interact Growth (%)": -1.7
@@ -13757,20 +13757,20 @@
     {
       "District": "9400",
       "Zone": "Zone 22",
-      "Total Active Interact Clubs": 71,
+      "Total Active Interact Clubs": 70,
       "Total Suspended Interact Clubs": 5,
-      "Total Interact Clubs": 76,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 75,
+      "Interact Growth Abs": -1,
+      "Interact Growth (%)": -1.3
     },
     {
       "District": "9423",
       "Zone": "Zone 8",
-      "Total Active Interact Clubs": 8,
+      "Total Active Interact Clubs": 9,
       "Total Suspended Interact Clubs": 2,
-      "Total Interact Clubs": 10,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 11.1
+      "Total Interact Clubs": 11,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 22.2
     },
     {
       "District": "9510",
@@ -13933,78 +13933,24 @@
       "Total Interact Clubs": 3,
       "Interact Growth Abs": 0,
       "Interact Growth (%)": 0
-    },
-    {
-      "District": "9800",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 3,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 3,
-      "Interact Growth Abs": -12,
-      "Interact Growth (%)": -80
-    },
-    {
-      "District": "9815",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 4,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 4,
-      "Interact Growth Abs": -16,
-      "Interact Growth (%)": -80
-    },
-    {
-      "District": "9830",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 0,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 0,
-      "Interact Growth Abs": -5,
-      "Interact Growth (%)": -100
-    },
-    {
-      "District": "9920",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 9,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 9,
-      "Interact Growth Abs": -10,
-      "Interact Growth (%)": -52.6
-    },
-    {
-      "District": "9930",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 2,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 2,
-      "Interact Growth Abs": -6,
-      "Interact Growth (%)": -75
-    },
-    {
-      "District": "9999",
-      "Zone": "Zone 8",
-      "Total Active Interact Clubs": 3,
-      "Total Suspended Interact Clubs": 0,
-      "Total Interact Clubs": 3,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
     }
   ],
   "interactZoneData": [
     {
       "Zone": "Zone 9",
-      "Total Active Interact Clubs": 182,
+      "Total Active Interact Clubs": 183,
       "Total Suspended Interact Clubs": 22,
-      "Total Interact Clubs": 204,
-      "Interact Growth Abs": 3,
-      "Interact Growth (%)": 1.5
+      "Total Interact Clubs": 205,
+      "Interact Growth Abs": 4,
+      "Interact Growth (%)": 2
     },
     {
       "Zone": "Zone 1",
-      "Total Active Interact Clubs": 488,
+      "Total Active Interact Clubs": 489,
       "Total Suspended Interact Clubs": 148,
-      "Total Interact Clubs": 636,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 637,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 0.2
     },
     {
       "Zone": "Zone 19",
@@ -14064,91 +14010,91 @@
     },
     {
       "Zone": "Zone 21",
-      "Total Active Interact Clubs": 405,
+      "Total Active Interact Clubs": 407,
       "Total Suspended Interact Clubs": 15,
-      "Total Interact Clubs": 420,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
+      "Total Interact Clubs": 422,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 0.5
     },
     {
       "Zone": "Zone 14",
-      "Total Active Interact Clubs": 263,
+      "Total Active Interact Clubs": 264,
       "Total Suspended Interact Clubs": 8,
-      "Total Interact Clubs": 271,
-      "Interact Growth Abs": 3,
-      "Interact Growth (%)": 1.1
-    },
-    {
-      "Zone": "Zone 22",
-      "Total Active Interact Clubs": 1652,
-      "Total Suspended Interact Clubs": 119,
-      "Total Interact Clubs": 1771,
-      "Interact Growth Abs": 5,
-      "Interact Growth (%)": 0.3
-    },
-    {
-      "Zone": "Zone 2",
-      "Total Active Interact Clubs": 183,
-      "Total Suspended Interact Clubs": 1,
-      "Total Interact Clubs": 184,
-      "Interact Growth Abs": 0,
-      "Interact Growth (%)": 0
-    },
-    {
-      "Zone": "Zone 3",
-      "Total Active Interact Clubs": 247,
-      "Total Suspended Interact Clubs": 3,
-      "Total Interact Clubs": 250,
-      "Interact Growth Abs": -3,
-      "Interact Growth (%)": -1.2
-    },
-    {
-      "Zone": "Zone 5",
-      "Total Active Interact Clubs": 1864,
-      "Total Suspended Interact Clubs": 151,
-      "Total Interact Clubs": 2015,
-      "Interact Growth Abs": 20,
-      "Interact Growth (%)": 1
-    },
-    {
-      "Zone": "Zone 4",
-      "Total Active Interact Clubs": 1816,
-      "Total Suspended Interact Clubs": 257,
-      "Total Interact Clubs": 2073,
-      "Interact Growth Abs": 13,
-      "Interact Growth (%)": 0.6
-    },
-    {
-      "Zone": "Zone 7",
-      "Total Active Interact Clubs": 2105,
-      "Total Suspended Interact Clubs": 216,
-      "Total Interact Clubs": 2321,
-      "Interact Growth Abs": 21,
-      "Interact Growth (%)": 0.9
-    },
-    {
-      "Zone": "Zone 6",
-      "Total Active Interact Clubs": 2193,
-      "Total Suspended Interact Clubs": 127,
-      "Total Interact Clubs": 2320,
-      "Interact Growth Abs": 24,
-      "Interact Growth (%)": 1
-    },
-    {
-      "Zone": "Zone 10",
-      "Total Active Interact Clubs": 916,
-      "Total Suspended Interact Clubs": 56,
-      "Total Interact Clubs": 972,
-      "Interact Growth Abs": 14,
+      "Total Interact Clubs": 272,
+      "Interact Growth Abs": 4,
       "Interact Growth (%)": 1.5
     },
     {
+      "Zone": "Zone 22",
+      "Total Active Interact Clubs": 1663,
+      "Total Suspended Interact Clubs": 118,
+      "Total Interact Clubs": 1781,
+      "Interact Growth Abs": 15,
+      "Interact Growth (%)": 0.8
+    },
+    {
+      "Zone": "Zone 2",
+      "Total Active Interact Clubs": 184,
+      "Total Suspended Interact Clubs": 1,
+      "Total Interact Clubs": 185,
+      "Interact Growth Abs": 1,
+      "Interact Growth (%)": 0.5
+    },
+    {
+      "Zone": "Zone 3",
+      "Total Active Interact Clubs": 248,
+      "Total Suspended Interact Clubs": 3,
+      "Total Interact Clubs": 251,
+      "Interact Growth Abs": -2,
+      "Interact Growth (%)": -0.8
+    },
+    {
+      "Zone": "Zone 5",
+      "Total Active Interact Clubs": 1897,
+      "Total Suspended Interact Clubs": 151,
+      "Total Interact Clubs": 2048,
+      "Interact Growth Abs": 53,
+      "Interact Growth (%)": 2.7
+    },
+    {
+      "Zone": "Zone 4",
+      "Total Active Interact Clubs": 1828,
+      "Total Suspended Interact Clubs": 255,
+      "Total Interact Clubs": 2083,
+      "Interact Growth Abs": 23,
+      "Interact Growth (%)": 1.1
+    },
+    {
+      "Zone": "Zone 7",
+      "Total Active Interact Clubs": 2106,
+      "Total Suspended Interact Clubs": 216,
+      "Total Interact Clubs": 2322,
+      "Interact Growth Abs": 22,
+      "Interact Growth (%)": 1
+    },
+    {
+      "Zone": "Zone 6",
+      "Total Active Interact Clubs": 2206,
+      "Total Suspended Interact Clubs": 127,
+      "Total Interact Clubs": 2333,
+      "Interact Growth Abs": 37,
+      "Interact Growth (%)": 1.6
+    },
+    {
+      "Zone": "Zone 10",
+      "Total Active Interact Clubs": 918,
+      "Total Suspended Interact Clubs": 56,
+      "Total Interact Clubs": 974,
+      "Interact Growth Abs": 16,
+      "Interact Growth (%)": 1.7
+    },
+    {
       "Zone": "Zone 12",
-      "Total Active Interact Clubs": 185,
+      "Total Active Interact Clubs": 186,
       "Total Suspended Interact Clubs": 2,
-      "Total Interact Clubs": 187,
-      "Interact Growth Abs": -4,
-      "Interact Growth (%)": -2.1
+      "Total Interact Clubs": 188,
+      "Interact Growth Abs": -3,
+      "Interact Growth (%)": -1.6
     },
     {
       "Zone": "Zone 11",
@@ -14168,27 +14114,27 @@
     },
     {
       "Zone": "Zone 23",
-      "Total Active Interact Clubs": 533,
+      "Total Active Interact Clubs": 534,
       "Total Suspended Interact Clubs": 41,
-      "Total Interact Clubs": 574,
-      "Interact Growth Abs": 3,
-      "Interact Growth (%)": 0.5
-    },
-    {
-      "Zone": "Zone 24",
-      "Total Active Interact Clubs": 391,
-      "Total Suspended Interact Clubs": 50,
-      "Total Interact Clubs": 441,
-      "Interact Growth Abs": 3,
+      "Total Interact Clubs": 575,
+      "Interact Growth Abs": 4,
       "Interact Growth (%)": 0.7
     },
     {
+      "Zone": "Zone 24",
+      "Total Active Interact Clubs": 392,
+      "Total Suspended Interact Clubs": 50,
+      "Total Interact Clubs": 442,
+      "Interact Growth Abs": 4,
+      "Interact Growth (%)": 0.9
+    },
+    {
       "Zone": "Zone 26",
-      "Total Active Interact Clubs": 739,
+      "Total Active Interact Clubs": 741,
       "Total Suspended Interact Clubs": 40,
-      "Total Interact Clubs": 779,
-      "Interact Growth Abs": 6,
-      "Interact Growth (%)": 0.8
+      "Total Interact Clubs": 781,
+      "Interact Growth Abs": 8,
+      "Interact Growth (%)": 1
     },
     {
       "Zone": "Zone 28",
@@ -14200,11 +14146,11 @@
     },
     {
       "Zone": "Zone 27",
-      "Total Active Interact Clubs": 331,
+      "Total Active Interact Clubs": 332,
       "Total Suspended Interact Clubs": 16,
-      "Total Interact Clubs": 347,
-      "Interact Growth Abs": 1,
-      "Interact Growth (%)": 0.3
+      "Total Interact Clubs": 348,
+      "Interact Growth Abs": 2,
+      "Interact Growth (%)": 0.6
     },
     {
       "Zone": "Zone 29",
@@ -14216,8 +14162,8 @@
     },
     {
       "Zone": "Zone 31",
-      "Total Active Interact Clubs": 264,
-      "Total Suspended Interact Clubs": 20,
+      "Total Active Interact Clubs": 266,
+      "Total Suspended Interact Clubs": 18,
       "Total Interact Clubs": 284,
       "Interact Growth Abs": 1,
       "Interact Growth (%)": 0.4
@@ -14256,13 +14202,13 @@
     },
     {
       "Zone": "Zone 8",
-      "Total Active Interact Clubs": 218,
+      "Total Active Interact Clubs": 198,
       "Total Suspended Interact Clubs": 13,
-      "Total Interact Clubs": 231,
-      "Interact Growth Abs": -47,
-      "Interact Growth (%)": -16.9
+      "Total Interact Clubs": 211,
+      "Interact Growth Abs": 3,
+      "Interact Growth (%)": 1.4
     }
   ],
-  "dataAsOf": "13 Aug 2026",
-  "lastUpdated": "13 Aug 2026"
+  "dataAsOf": "27 Aug 2026",
+  "lastUpdated": "27 Aug 2026"
 }

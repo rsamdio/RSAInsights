@@ -15,15 +15,17 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
 2. **Historical Baseline Files:**
    - `basedata/1july.csv`: District-level Interact baseline for calculating growth.
    - `basedata/1julyCountries.csv`: Country-level Rotaract & Interact baseline (`Country,Clubs,Members,InteractClubs`).
-   - `basedata/Zone45678 - 9July2026.xlsx`: Zone 4–7 baseline for deltas.
+   - `basedata/Zone45678 - 9July2026.xlsx`: Zone 4 to 7 baseline for deltas.
 3. **Generated Data Payloads (`data/`):**
    - `data/dashboard_summary.json` & `data/worldwide_summary.json`: Top-level pre-aggregated metrics.
    - `data/all_clubs.json`: Master roster for all 2,820+ South Asian clubs.
    - `data/rotary_no_sponsor.json` & `data/rotary_no_interact.json`: Rotary clubs without Rotaract / Interact sponsorship.
    - `data/arrears.json` & `data/no_officers.json`: Compliance records.
    - `data/trf_contributions.json` & `data/new_clubs.json`: TRF and new club records.
+   - `data/district_officers.json` & `data/zone_summary.json`: Officer & district summaries.
+   - Matching `.csv` exports for all tabular datasets.
 
-## Data Pipeline Rules & Gotchas
+## Data Pipeline Rules & Invariants
 
 - **District-First Structural Fidelity:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`). Never hardcode static zone arrays.
 - **Raw Club-Level Aggregation:** Never rely on summary sheets for critical compliance metrics (arrears, dues, missing officers). The pipeline aggregates raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) to guarantee data purity.
@@ -42,4 +44,4 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
    ```bash
    npm run generate-data
    ```
-4. Verify generated JSON files in `data/` and run `npm run build` to confirm compilation.
+4. Verify generated JSON and CSV files in `data/` and run `npm run validate-harness` to confirm data integrity.

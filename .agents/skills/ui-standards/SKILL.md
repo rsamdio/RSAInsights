@@ -53,4 +53,5 @@ This skill defines the design, terminology, and component patterns for the Rotar
 
 - **Palette:** Primary Blue (`#0f4c81`), Green (`#1e8e3e`), Red (`#d93025`), Warning Amber (`#b06000`), Background (`#f8fafc`).
 - **Mobile First:** Multi-column grids must collapse to a single column (`1fr`) under `@media (max-width: 768px)`.
-- **Glassmorphism:** Rounded borders (`10px`–`12px`), subtle box shadows, and frosted badges (`backdrop-filter: blur(8px)`).
+- **Glassmorphism:** Rounded borders (`10px` to `12px`), subtle box shadows, and frosted badges (`backdrop-filter: blur(8px)`).
+- **Typography Rule:** Never use long em dashes (Unicode \u2014). Use colons, hyphens, commas, or parentheses.

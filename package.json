@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate-data": "node scripts/generate_dashboard_data.js"
+    "generate-data": "node scripts/generate_dashboard_data.js",
+    "validate-harness": "node scripts/validate_harness.js"
   },
   "dependencies": {
     "@tanstack/react-table": "^8.21.3",
