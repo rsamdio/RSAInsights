@@ -4,7 +4,7 @@ const path = require('path');
 
 const currMasterFile = 'fulldata/MasterData.xlsx';
 const prevMasterFile = 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
-const DATA_AS_OF_DATE = '27 Aug 2026'; // Configurable master data release date
+const DATA_AS_OF_DATE = '01 Sep 2026'; // Configurable master data release date
 const CURRENT_EXCHANGE_RATE = 96; // Monthly exchange rate (INR per USD) for current data
 const BASELINE_EXCHANGE_RATE = 95; // Fixed 1 July baseline exchange rate (INR per USD)
 
