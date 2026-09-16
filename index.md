@@ -13,7 +13,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | Styling | 100% Vanilla CSS (No Tailwind) | [app/globals.css](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/app/globals.css) |
 | Charts | Chart.js 4.5.1 + react-chartjs-2 5.3.1 | [components/charts/](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/charts) |
 | Data Tables | TanStack Table 8.21.3 | [components/tables/](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/tables) |
-| Animations | framer-motion 12.43.0 | [components/ui/MetricCard.js](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/ui/MetricCard.js) |
+| Animations | Zero-Runtime Vanilla CSS Keyframes | [app/globals.css](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/app/globals.css) |
 | Typography | Google Font: Inter (self-hosted) | [app/layout.js](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/app/layout.js) |
 | Analytics | Google Analytics (gtag.js: G-M9RZK0CBT5) | [components/ui/Analytics.js](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/ui/Analytics.js) |
 | ETL & Parser | SheetJS (xlsx 0.18.5) | [scripts/generate_dashboard_data.js](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/scripts/generate_dashboard_data.js) |

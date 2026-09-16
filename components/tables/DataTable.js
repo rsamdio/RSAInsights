@@ -8,7 +8,6 @@ import {
     getFilteredRowModel
 } from '@tanstack/react-table';
 import { useState, useEffect } from 'react';
-import Select from 'react-select';
 
 const pageSizeOptions = [
     { value: 15, label: 'Show 15' },
@@ -16,86 +15,6 @@ const pageSizeOptions = [
     { value: 50, label: 'Show 50' },
     { value: 100, label: 'Show 100' },
 ];
-
-const pageSizeSelectStyles = {
-    control: (provided, state) => ({
-        ...provided,
-        minHeight: '32px',
-        height: '32px',
-        width: '115px',
-        borderRadius: '6px',
-        border: state.isFocused ? '1px solid var(--primary)' : '1px solid var(--border-color)',
-        background: '#ffffff',
-        boxShadow: 'none',
-        fontSize: '13px',
-        cursor: 'pointer',
-        '&:hover': {
-            borderColor: 'var(--primary)'
-        }
-    }),
-    valueContainer: (provided) => ({
-        ...provided,
-        padding: '0 8px',
-        height: '32px',
-        display: 'flex',
-        alignItems: 'center'
-    }),
-    input: (provided) => ({
-        ...provided,
-        margin: '0px',
-        padding: '0px'
-    }),
-    singleValue: (provided) => ({
-        ...provided,
-        color: 'var(--text-main)',
-        fontWeight: 500,
-        margin: 0
-    }),
-    indicatorSeparator: () => ({
-        display: 'none'
-    }),
-    indicatorsContainer: (provided) => ({
-        ...provided,
-        height: '32px'
-    }),
-    dropdownIndicator: (provided) => ({
-        ...provided,
-        padding: '4px 6px',
-        color: 'var(--text-muted)',
-        '&:hover': {
-            color: 'var(--primary)'
-        }
-    }),
-    menu: (provided) => ({
-        ...provided,
-        fontSize: '13px',
-        borderRadius: '6px',
-        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
-        border: '1px solid var(--border-color)',
-        overflow: 'hidden',
-        zIndex: 9999
-    }),
-    menuPortal: (provided) => ({
-        ...provided,
-        zIndex: 9999
-    }),
-    option: (provided, state) => ({
-        ...provided,
-        backgroundColor: state.isSelected 
-            ? 'var(--primary)' 
-            : state.isFocused 
-                ? 'var(--primary-light)' 
-                : 'transparent',
-        color: state.isSelected 
-            ? '#ffffff' 
-            : state.isFocused 
-                ? 'var(--primary)' 
-                : 'var(--text-main)',
-        cursor: 'pointer',
-        padding: '6px 12px',
-        fontWeight: state.isSelected ? 600 : 400
-    })
-};
 
 export default function DataTable({ data, columns, onRowClick, exportFilename, initialSort = [] }) {
     const [sorting, setSorting] = useState(initialSort);
@@ -280,18 +199,19 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
                     <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                         Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}–{Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, table.getFilteredRowModel().rows.length)} of {table.getFilteredRowModel().rows.length} results
                     </span>
-                    <div style={{ width: '120px' }}>
-                        <Select
-                            instanceId={`page-size-select-${exportFilename || 'table'}`}
-                            isSearchable={false}
-                            options={pageSizeOptions}
-                            value={pageSizeOptions.find(opt => opt.value === table.getState().pagination.pageSize) || { value: table.getState().pagination.pageSize, label: `Show ${table.getState().pagination.pageSize}` }}
-                            onChange={opt => opt && table.setPageSize(Number(opt.value))}
-                            styles={pageSizeSelectStyles}
-                            menuPlacement="auto"
-                            menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
-                        />
-                    </div>
+                    <select
+                        id={`page-size-select-${exportFilename || 'table'}`}
+                        className="page-size-select"
+                        value={table.getState().pagination.pageSize}
+                        onChange={e => table.setPageSize(Number(e.target.value))}
+                        aria-label="Select rows per page"
+                    >
+                        {pageSizeOptions.map(opt => (
+                            <option key={opt.value} value={opt.value}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                     <button 

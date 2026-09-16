@@ -5,7 +5,7 @@
 - **Charts:** Chart.js and `react-chartjs-2` with `chartjs-plugin-datalabels` for visual analytics.
 - **Tables:** TanStack Table (`@tanstack/react-table`) with client-side sorting, pagination, and multi-field search.
 - **Styling:** Vanilla CSS (`app/globals.css`) with glassmorphism, responsive grids, and mobile-first styles (`@media (max-width: 768px)`). No Tailwind CSS.
-- **Animations:** `framer-motion` used in `MetricCard.js` for card entrance and hover lift animations.
+- **Animations:** Zero-runtime vanilla CSS keyframes in `app/globals.css` for card entrance and hover lift animations.
 - **Analytics:** Google Analytics (`gtag.js` ID: `G-M9RZK0CBT5`) with `strategy="afterInteractive"` and real-time App Router route tracking via `components/ui/Analytics.js`.
 - **Typography:** Self-hosted `next/font/google` (`Inter`) with `font-display: swap`.
 - **Filter Dropdowns:** `react-select` multi-select in `components/ui/HeaderFilters.js`.
@@ -69,7 +69,7 @@
 ### Client UI Primitives (`components/ui/`)
 - `HeaderFilters.js`: Multi-select for zone/district via `react-select`; on change pushes URL params, triggering server re-render.
 - `Tabs.js`: Tab switcher supporting lazy render via `content()` function pattern.
-- `MetricCard.js`: KPI card with `framer-motion` entrance and hover lift animation.
+- `MetricCard.js`: KPI card with pure CSS entrance and hover lift animations.
 - `Footer.js`: Static footer with data source, last updated, and asterisk disclaimer.
 - `Leaderboard.js`: Static leaderboard list renderer.
 - `Analytics.js`: Client GA tracker via `usePathname` / `useSearchParams`.

@@ -11,6 +11,7 @@
     "type": "positive",
     "baseline": "vs July 1st"
   },
+  "totalNewClubs": 184,
   "avgMembersPerClub": 15.45,
   "avgMembersDelta": {
     "text": "+0.259 (1.7%)",
@@ -14207,6 +14208,5217 @@
       "Total Interact Clubs": 213,
       "Interact Growth Abs": 5,
       "Interact Growth (%)": 2.4
+    }
+  ],
+  "newClubsDistrictData": [
+    {
+      "District": "1620",
+      "Zone": "",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2500",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2510",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2520",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2530",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2540",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2550",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2560",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2800",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2830",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "63",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "64",
+      "Zone": "1",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "65",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3271",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3410",
+      "Zone": "1",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3420",
+      "Zone": "1",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2570",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2580",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2590",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2600",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2610",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2620",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2750",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2760",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2770",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2780",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2790",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2820",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2840",
+      "Zone": "2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2630",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2640",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2650",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2660",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2670",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2680",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2690",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2700",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2710",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2720",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2730",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2740",
+      "Zone": "3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3011",
+      "Zone": "4",
+      "newClubs": 4,
+      "commNewClubs": 4,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3012",
+      "Zone": "4",
+      "newClubs": 5,
+      "commNewClubs": 1,
+      "univNewClubs": 4
+    },
+    {
+      "District": "3040",
+      "Zone": "4",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3053",
+      "Zone": "4",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3055",
+      "Zone": "4",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3056",
+      "Zone": "4",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3060",
+      "Zone": "4",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3070",
+      "Zone": "4",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3080",
+      "Zone": "4",
+      "newClubs": 4,
+      "commNewClubs": 3,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3090",
+      "Zone": "4",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3141",
+      "Zone": "4",
+      "newClubs": 5,
+      "commNewClubs": 5,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3142",
+      "Zone": "4",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2981",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2982",
+      "Zone": "5",
+      "newClubs": 9,
+      "commNewClubs": 2,
+      "univNewClubs": 7
+    },
+    {
+      "District": "3000",
+      "Zone": "5",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3203",
+      "Zone": "5",
+      "newClubs": 5,
+      "commNewClubs": 3,
+      "univNewClubs": 2
+    },
+    {
+      "District": "3204",
+      "Zone": "5",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3205",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3206",
+      "Zone": "5",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3211",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3212",
+      "Zone": "5",
+      "newClubs": 3,
+      "commNewClubs": 0,
+      "univNewClubs": 3
+    },
+    {
+      "District": "3220",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3231",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3233",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3234",
+      "Zone": "5",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3030",
+      "Zone": "6",
+      "newClubs": 4,
+      "commNewClubs": 2,
+      "univNewClubs": 2
+    },
+    {
+      "District": "3100",
+      "Zone": "6",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3110",
+      "Zone": "6",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3120",
+      "Zone": "6",
+      "newClubs": 13,
+      "commNewClubs": 8,
+      "univNewClubs": 5
+    },
+    {
+      "District": "3240",
+      "Zone": "6",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3250",
+      "Zone": "6",
+      "newClubs": 7,
+      "commNewClubs": 5,
+      "univNewClubs": 2
+    },
+    {
+      "District": "3261",
+      "Zone": "6",
+      "newClubs": 7,
+      "commNewClubs": 7,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3262",
+      "Zone": "6",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3291",
+      "Zone": "6",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3292",
+      "Zone": "6",
+      "newClubs": 4,
+      "commNewClubs": 4,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3020",
+      "Zone": "7",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 2
+    },
+    {
+      "District": "3131",
+      "Zone": "7",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 2
+    },
+    {
+      "District": "3132",
+      "Zone": "7",
+      "newClubs": 3,
+      "commNewClubs": 2,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3150",
+      "Zone": "7",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3160",
+      "Zone": "7",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3170",
+      "Zone": "7",
+      "newClubs": 29,
+      "commNewClubs": 9,
+      "univNewClubs": 20
+    },
+    {
+      "District": "3181",
+      "Zone": "7",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3182",
+      "Zone": "7",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3191",
+      "Zone": "7",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3192",
+      "Zone": "7",
+      "newClubs": 2,
+      "commNewClubs": 1,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9423",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9510",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9560",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9620",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9640",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9660",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9675",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9685",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9705",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9780",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9790",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9800",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9815",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9830",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9910",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9920",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9930",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9940",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9999",
+      "Zone": "8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "52",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3461",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3462",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3470",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3481",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3482",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3490",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3501",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3502",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3510",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3521",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3522",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3523",
+      "Zone": "9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3770",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3780",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3790",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3800",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3810",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3820",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3830",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3850",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3860",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3870",
+      "Zone": "10",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3330",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3340",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3350",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3360",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3300",
+      "Zone": "10",
+      "newClubs": 3,
+      "commNewClubs": 2,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3310",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3450",
+      "Zone": "10",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3600",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3620",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3630",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3640",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3650",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3690",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3730",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3740",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3750",
+      "Zone": "11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3590",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3610",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3661",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3662",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3670",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3680",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3700",
+      "Zone": "12",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "3710",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3721",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "3722",
+      "Zone": "12",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1510",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1520",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1640",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1650",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1660",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1670",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1680",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1690",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1700",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1710",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1720",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1730",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1740",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1750",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1760",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1770",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1780",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1790",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2130",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2140",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2150",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2160",
+      "Zone": "13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2031",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2032",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2041",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2042",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2050",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2060",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2071",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2072",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2080",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2090",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2101",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2102",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2110",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2120",
+      "Zone": "14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1800",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1810",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1820",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1850",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1860",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1870",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1890",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1900",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1940",
+      "Zone": "15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1830",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1841",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1842",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1880",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1930",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1950",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1980",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1990",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2000",
+      "Zone": "16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2325",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2335",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2355",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2365",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2395",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2405",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1385",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1390",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1410",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1420",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1430",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2223",
+      "Zone": "17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1360",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1440",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1450",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1461",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1462",
+      "Zone": "18",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1470",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1480",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2231",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2250",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2260",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2275",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2290",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2305",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2310",
+      "Zone": "18",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "62",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1010",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1030",
+      "Zone": "19",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "1040",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1060",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1070",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1080",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1090",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1100",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1150",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1160",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1180",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1190",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1210",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1220",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1260",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1285",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1320",
+      "Zone": "19",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1110",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1120",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1130",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1145",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1175",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1200",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1240",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1550",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1560",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1570",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1580",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1590",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1600",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1610",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1960",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1970",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2201",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2202",
+      "Zone": "20",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2203",
+      "Zone": "20",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "61",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1910",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1911",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1913",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1920",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2232",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2240",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2241",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2490",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "56",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "59",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "1912",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2420",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2430",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2440",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2452",
+      "Zone": "21",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2475",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2482",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2483",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2485",
+      "Zone": "21",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "2451",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9010",
+      "Zone": "22",
+      "newClubs": 4,
+      "commNewClubs": 3,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9101",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9103",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9104",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9111",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9112",
+      "Zone": "22",
+      "newClubs": 3,
+      "commNewClubs": 3,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9126",
+      "Zone": "22",
+      "newClubs": 3,
+      "commNewClubs": 3,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9127",
+      "Zone": "22",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9141",
+      "Zone": "22",
+      "newClubs": 2,
+      "commNewClubs": 1,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9142",
+      "Zone": "22",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9150",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9210",
+      "Zone": "22",
+      "newClubs": 3,
+      "commNewClubs": 2,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9213",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9214",
+      "Zone": "22",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 1
+    },
+    {
+      "District": "9215",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9216",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9220",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9350",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9370",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "9400",
+      "Zone": "22",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4630",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4640",
+      "Zone": "23",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4652",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4660",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4670",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4680",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4700",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4710",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4730",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4740",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4780",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4320",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4340",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4355",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4400",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4455",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4465",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4690",
+      "Zone": "23",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4845",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4851",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4895",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4905",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4921",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4945",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4975",
+      "Zone": "23",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4420",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4440",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4470",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4480",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4510",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4540",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4563",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4590",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4621",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4770",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4391",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4490",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4500",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4521",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4530",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4560",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4571",
+      "Zone": "24",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4720",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4751",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4760",
+      "Zone": "24",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4060",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4100",
+      "Zone": "25",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4110",
+      "Zone": "25",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4130",
+      "Zone": "25",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4140",
+      "Zone": "25",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4170",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4185",
+      "Zone": "25",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4195",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4240",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4250",
+      "Zone": "25",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "4271",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4281",
+      "Zone": "25",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4370",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "4380",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5790",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5810",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5840",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5870",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5890",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5910",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5930",
+      "Zone": "25",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5000",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5170",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5220",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5230",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5240",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5280",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5300",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5320",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5330",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5340",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5450",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5470",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5495",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5500",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5520",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5730",
+      "Zone": "26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5020",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5030",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5080",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5100",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5110",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5130",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5150",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5160",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5180",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5190",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5390",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5400",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5420",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5440",
+      "Zone": "27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5010",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5040",
+      "Zone": "28",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5050",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5060",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5360",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5370",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5550",
+      "Zone": "28",
+      "newClubs": 2,
+      "commNewClubs": 0,
+      "univNewClubs": 2
+    },
+    {
+      "District": "6290",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6310",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6330",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6360",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6380",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6400",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7010",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7040",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7070",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7080",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7090",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7790",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7815",
+      "Zone": "28",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5580",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5610",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5630",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5650",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5680",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5710",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5950",
+      "Zone": "29",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5960",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5970",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6000",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6220",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6250",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6270",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6420",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6440",
+      "Zone": "29",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6450",
+      "Zone": "29",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6540",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6560",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6580",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6600",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6630",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6650",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6670",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6690",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6710",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6740",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6760",
+      "Zone": "30",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6780",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6860",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6880",
+      "Zone": "30",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5750",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5770",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "5830",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6040",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6060",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6080",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6110",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6150",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6170",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6190",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6200",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6460",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6490",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6510",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6800",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6820",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6840",
+      "Zone": "31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7120",
+      "Zone": "32",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "District": "7180",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7210",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7230",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7255",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7390",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7410",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7430",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7450",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7475",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7590",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7780",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7850",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7870",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7890",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7910",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7930",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7950",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7980",
+      "Zone": "32",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7280",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7305",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7360",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7545",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7570",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7600",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7610",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7620",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7630",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7670",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7680",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7690",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7710",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7720",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7730",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7750",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7770",
+      "Zone": "33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6890",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6900",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6910",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6920",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6930",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6940",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6950",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6960",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6970",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6980",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "6990",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7000",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7020",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "District": "7030",
+      "Zone": "34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    }
+  ],
+  "newClubsCountryData": [
+    {
+      "Country": "Afghanistan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Åland Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Albania",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Algeria",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "American Samoa",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Andorra",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Angola",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Anguilla",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Antarctica",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Antigua and Barbuda",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Argentina",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Armenia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Aruba",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Australia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Austria",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Azerbaijan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bahamas",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bahrain",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bangladesh",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Barbados",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Belarus",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Belgium",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Belize",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Benin",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bermuda",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bhutan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bolivia",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bonaire",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bosnia and Herzegovina",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Botswana",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Brazil",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "British Virgin Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Brunei Darussalam",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Bulgaria",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Burkina Faso",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Burundi",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Cabo Verde",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Cambodia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Cameroon",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Canada",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 2
+    },
+    {
+      "Country": "Cayman Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Central African Republic",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Chad",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Chile",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "China, People's Republic of",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Colombia",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Comoros",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Congo",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Congo, The Democratic Republic of the",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Cook Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Costa Rica",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Côte d'Ivoire",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Croatia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Curaçao",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Cyprus",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Czech Republic",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Denmark",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Djibouti",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Dominica",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Dominican Republic",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Ecuador",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Egypt",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "El Salvador",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "England",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Equatorial Guinea",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Eritrea",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Estonia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Eswatini",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Ethiopia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Faroe Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Fiji",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Finland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "France",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "French Guiana",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "French Polynesia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Gabon",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Gambia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Georgia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Germany",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Ghana",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Gibraltar",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Greece",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Greenland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Grenada",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guadeloupe",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guam",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guatemala",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guernsey-Channel Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guinea",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guinea-Bissau",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Guyana",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Haiti",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Honduras",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Hong Kong",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Hungary",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Iceland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "India",
+      "newClubs": 122,
+      "commNewClubs": 67,
+      "univNewClubs": 55
+    },
+    {
+      "Country": "Indonesia",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Iraq",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Ireland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Isle of Man",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Israel",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Italy",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Jamaica",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Japan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Jersey-Channel Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Jordan",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Kazakhstan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Kenya",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Kiribati",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Korea, Republic of",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Kosovo",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Kyrgyzstan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Lao People's Democratic Republic",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Latvia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Lebanon",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Lesotho",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Liberia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Liechtenstein",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Lithuania",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Luxembourg",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Macao",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Madagascar",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Malawi",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Malaysia",
+      "newClubs": 3,
+      "commNewClubs": 2,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Maldives",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mali",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Malta",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Martinique",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mauritania",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mauritius",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mayotte",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mexico",
+      "newClubs": 7,
+      "commNewClubs": 6,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Micronesia, Federated States of",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Moldova",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Monaco",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Mongolia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Montenegro",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Montserrat",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Morocco",
+      "newClubs": 2,
+      "commNewClubs": 1,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Mozambique",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Myanmar",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Namibia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Nauru",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Nepal",
+      "newClubs": 4,
+      "commNewClubs": 4,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Netherlands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "New Caledonia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "New Zealand",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Nicaragua",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Niger",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Nigeria",
+      "newClubs": 11,
+      "commNewClubs": 9,
+      "univNewClubs": 2
+    },
+    {
+      "Country": "Norfolk Island",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Northern Ireland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Northern Mariana Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "North Macedonia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Norway",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Pakistan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Palau",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Palestine",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Panama",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Papua New Guinea",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Paraguay",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Peru",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Philippines",
+      "newClubs": 7,
+      "commNewClubs": 5,
+      "univNewClubs": 2
+    },
+    {
+      "Country": "Poland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Portugal",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Puerto Rico",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Réunion",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Romania",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Russian Federation",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Rwanda",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Barthélemy",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Kitts and Nevis",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Lucia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Martin",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Pierre and Miquelon",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Saint Vincent and the Grenadines",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Samoa",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "San Marino",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sao Tome and Principe",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Scotland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Senegal",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Serbia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Seychelles",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sierra Leone",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Singapore",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sint Maarten",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Slovakia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Slovenia",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Solomon Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "South Africa",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "South Sudan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Spain",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sri Lanka",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sudan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Suriname",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Sweden",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Switzerland",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Taiwan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Tajikistan",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Tanzania, United Republic of",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Thailand",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Timor-Leste",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Togo",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Tonga",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Trinidad and Tobago",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Tunisia",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Turkey",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Turks and Caicos Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Uganda",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Ukraine",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "United Arab Emirates",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "United States",
+      "newClubs": 4,
+      "commNewClubs": 3,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "United States Virgin Islands",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Uruguay",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Vanuatu",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Venezuela",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Viet Nam",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Wales",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Country": "Zambia",
+      "newClubs": 3,
+      "commNewClubs": 2,
+      "univNewClubs": 1
+    },
+    {
+      "Country": "Zimbabwe",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    }
+  ],
+  "newClubsZoneData": [
+    {
+      "Zone": "Zone 1",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 2",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 3",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 4",
+      "newClubs": 23,
+      "commNewClubs": 17,
+      "univNewClubs": 6
+    },
+    {
+      "Zone": "Zone 5",
+      "newClubs": 20,
+      "commNewClubs": 7,
+      "univNewClubs": 13
+    },
+    {
+      "Zone": "Zone 6",
+      "newClubs": 39,
+      "commNewClubs": 30,
+      "univNewClubs": 9
+    },
+    {
+      "Zone": "Zone 7",
+      "newClubs": 44,
+      "commNewClubs": 17,
+      "univNewClubs": 27
+    },
+    {
+      "Zone": "Zone 8",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 9",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 10",
+      "newClubs": 10,
+      "commNewClubs": 7,
+      "univNewClubs": 3
+    },
+    {
+      "Zone": "Zone 11",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 12",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Zone": "Zone 13",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 14",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 15",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 16",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 17",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 18",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 19",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Zone": "Zone 20",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 21",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 22",
+      "newClubs": 21,
+      "commNewClubs": 15,
+      "univNewClubs": 5
+    },
+    {
+      "Zone": "Zone 23",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 24",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 25",
+      "newClubs": 9,
+      "commNewClubs": 7,
+      "univNewClubs": 1
+    },
+    {
+      "Zone": "Zone 26",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 27",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 28",
+      "newClubs": 3,
+      "commNewClubs": 1,
+      "univNewClubs": 2
+    },
+    {
+      "Zone": "Zone 29",
+      "newClubs": 2,
+      "commNewClubs": 2,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 30",
+      "newClubs": 1,
+      "commNewClubs": 1,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 31",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 32",
+      "newClubs": 1,
+      "commNewClubs": 0,
+      "univNewClubs": 1
+    },
+    {
+      "Zone": "Zone 33",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
+    },
+    {
+      "Zone": "Zone 34",
+      "newClubs": 0,
+      "commNewClubs": 0,
+      "univNewClubs": 0
     }
   ],
   "dataAsOf": "15 Sep 2026",

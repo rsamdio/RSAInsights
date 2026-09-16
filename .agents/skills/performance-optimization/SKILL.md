@@ -25,7 +25,7 @@ This skill outlines optimization patterns and analytics standards for the dashbo
 ## Font Delivery & Compiler Optimizations
 
 - **Self-Hosted Typography:** Use `next/font/google` (`Inter`) in `app/layout.js` with `font-display: swap` to eliminate external render-blocking network requests.
-- **Package Tree-Shaking:** `next.config.mjs` configures `optimizePackageImports` for `chart.js`, `react-chartjs-2`, `react-select`, `@tanstack/react-table`, and `framer-motion`.
+- **Package Tree-Shaking:** `next.config.mjs` configures `optimizePackageImports` for `chart.js`, `react-chartjs-2`, `react-select`, and `@tanstack/react-table`.
 
 ## Google Analytics Tracking Standards
 

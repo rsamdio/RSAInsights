@@ -1,4 +1,3 @@
-'use client';
 import Leaderboard from '@/components/ui/Leaderboard';
 
 export default function ClubLeaderboardsSection({ allClubsData, trfData, arrearsData }) {

@@ -12,30 +12,31 @@ export default function NavigationProgress() {
         setIsNavigating(false);
         // Also ensure data-loading attribute is removed in case HeaderFilters set it
         document.documentElement.removeAttribute('data-loading');
-        
-        const handleAnchorClick = (e) => {
-            const target = e.currentTarget;
+    }, [pathname, searchParams]);
+
+    useEffect(() => {
+        const handleDocumentClick = (e) => {
+            const anchor = e.target.closest('a');
+            if (!anchor) return;
             
             // Only trigger on local links that change the URL
             if (
-                target.href &&
-                target.href.startsWith(window.location.origin) &&
-                target.target !== '_blank' &&
+                anchor.href &&
+                anchor.href.startsWith(window.location.origin) &&
+                anchor.target !== '_blank' &&
                 !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
                 // Don't trigger if it's the exact same URL (including hash/search)
-                target.href !== window.location.href
+                anchor.href !== window.location.href
             ) {
                 setIsNavigating(true);
             }
         };
 
-        const anchors = document.querySelectorAll('a[href]');
-        anchors.forEach(a => a.addEventListener('click', handleAnchorClick));
-        
+        document.addEventListener('click', handleDocumentClick);
         return () => {
-            anchors.forEach(a => a.removeEventListener('click', handleAnchorClick));
+            document.removeEventListener('click', handleDocumentClick);
         };
-    }, [pathname, searchParams]);
+    }, []);
 
     // Expose a global method so HeaderFilters can trigger it programmatically
     useEffect(() => {

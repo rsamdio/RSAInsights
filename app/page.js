@@ -518,6 +518,7 @@ export default async function GlobalDashboard({ searchParams }) {
                             'Rotary without Interact Club': z['Rotary without Interact Club'],
                             'Total Outstanding (INR)': z['Total Outstanding (INR)'] || z['TotalINR'],
                             'TotalINR': z['TotalINR'] || z['Total Outstanding (INR)'],
+                            'TotalClubsArrears': z['TotalClubsArrears'] || z['arrearsClubs'] || 0,
                             '% Clubs Arrears': z['% Clubs Arrears'],
                             'No Officer Total': z['No Officer Total'],
                             'Total Contributions USD': z['Total Contributions USD'],
@@ -544,8 +545,19 @@ export default async function GlobalDashboard({ searchParams }) {
                             'Club Status': c['Club Status'] || 'Active',
                             'Club ID': c['Club ID'] || c['Rotaract Club ID']
                         }))} 
-                        rotaryData={filteredRotaryData}
-                        rotaryNoInteractData={filteredRotaryNoInteractData}
+                        rotaryData={filteredRotaryData.map(r => ({
+                            'RI Zone': r['RI Zone'],
+                            'District': r.District,
+                            'Club Name': r['Club Name'],
+                            'Current Member Count': r['Current Member Count']
+                        }))}
+                        rotaryNoInteractData={filteredRotaryNoInteractData.map(r => ({
+                            'RI Zone': r['RI Zone'],
+                            'District': r.District,
+                            'Club Name': r['Club Name'],
+                            'Current Member Count': r['Current Member Count'],
+                            'Total Rotaract Sponsored': Number(r['Total Rotaract Sponsored'] ?? 0)
+                        }))}
                         newClubsData={filteredNewClubsData}
                         trfData={filteredTrfData}
                         allClubsData={filteredAllClubsData.map(c => ({

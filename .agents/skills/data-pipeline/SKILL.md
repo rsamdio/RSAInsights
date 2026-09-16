@@ -11,7 +11,7 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
 ## Data Sources & File Mapping
 
 1. **Active Master Data:** `fulldata/MasterData.xlsx`
-   - Sheets parsed: `Zone45678`, `All Rotaract Clubs`, `All Interact Clubs`, `Rotary Club Details`, `Rotaract by Country`, `Rotaract by District`, `Interact by District`, `Rotaract by Zone`, `No Rotaract club officers`, `Arrears`, `NewClubs`, `ClubsTRFContribution`, `District Officers_Simplified`, `District Officers`, `ZoneStructure`, `ZoneStructure_Future`.
+   - Sheets parsed: `Zone45678`, `All Rotaract Clubs`, `All Interact Clubs`, `Rotary Club Details`, `Rotaract by Country`, `Rotaract by District`, `Interact by District`, `Rotaract by Zone`, `No Rotaract club officers`, `Arrears`, `NewClubs`, `NewClubsByCountry`, `NewClubsByZone`, `NewClubsByDistrict`, `ClubsTRFContribution`, `District Officers_Simplified`, `District Officers`, `ZoneStructure`, `ZoneStructure_Future`.
 2. **Historical Baseline Files:**
    - `basedata/1july.csv`: District-level Interact baseline for calculating growth.
    - `basedata/1julyCountries.csv`: Country-level Rotaract & Interact baseline (`Country,Clubs,Members,InteractClubs`).

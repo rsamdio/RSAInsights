@@ -4,7 +4,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   experimental: {
-    optimizePackageImports: ['chart.js', 'react-chartjs-2', 'react-select', '@tanstack/react-table', 'framer-motion'],
+    optimizePackageImports: ['chart.js', 'react-chartjs-2', 'react-select', '@tanstack/react-table'],
   },
   async headers() {
     return [

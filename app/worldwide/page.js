@@ -58,7 +58,11 @@ export default function WorldwidePage() {
         districtData, 
         zoneData,
         interactDistrictData = [],
-        interactZoneData = []
+        interactZoneData = [],
+        totalNewClubs = 0,
+        newClubsDistrictData = [],
+        newClubsCountryData = [],
+        newClubsZoneData = []
     } = summary;
 
     // Process Top 10s for Leaderboards
@@ -225,6 +229,25 @@ export default function WorldwidePage() {
         .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: z['Interact Growth (%)'] || 0 }))
         .map(z => ({ label: z.label, value: `+${z.valueNum.toFixed(1)}%` }));
 
+    // --- New Clubs Leaderboards ---
+    const topDistrictsByNewClubs = [...newClubsDistrictData]
+        .filter(d => (d.newClubs || 0) > 0)
+        .sort((a, b) => (b.newClubs || 0) - (a.newClubs || 0))
+        .map(d => ({ label: `District ${d.District}`, valueNum: d.newClubs || 0 }))
+        .map(d => ({ label: d.label, value: d.valueNum.toLocaleString() }));
+
+    const topCountriesByNewClubs = [...newClubsCountryData]
+        .filter(c => (c.newClubs || 0) > 0)
+        .sort((a, b) => (b.newClubs || 0) - (a.newClubs || 0))
+        .map(c => ({ label: c.Country, valueNum: c.newClubs || 0 }))
+        .map(c => ({ label: c.label, value: c.valueNum.toLocaleString() }));
+
+    const topZonesByNewClubs = [...newClubsZoneData]
+        .filter(z => (z.newClubs || 0) > 0)
+        .sort((a, b) => (b.newClubs || 0) - (a.newClubs || 0))
+        .map(z => ({ label: z.Zone.toString().startsWith('Zone') ? z.Zone : `Zone ${z.Zone}`, valueNum: z.newClubs || 0 }))
+        .map(z => ({ label: z.label, value: z.valueNum.toLocaleString() }));
+
     const worldwideSchema = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
@@ -286,6 +309,12 @@ export default function WorldwidePage() {
                     value={avgMembersPerClub.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} 
                     trend={avgMembersDelta}
                 />
+                {totalNewClubs > 0 && (
+                    <MetricCard 
+                        title="New Chartered Clubs" 
+                        value={totalNewClubs.toLocaleString()} 
+                    />
+                )}
                 {totalInteractClubs > 0 && (
                     <MetricCard 
                         title="Total Interact Clubs" 
@@ -306,6 +335,7 @@ export default function WorldwidePage() {
                 <Leaderboard title="Districts by Clubs" description="Districts with the most active Rotaract clubs worldwide." data={topDistrictsByClubs} maxItems={10} />
                 <Leaderboard title="Districts by Club Growth" description="Districts with the largest increase in active clubs." data={topDistrictsByClubGrowthAbs} maxItems={10} />
                 <Leaderboard title="Districts by Club Growth (%)" description="Districts with the largest percentage increase in active clubs." data={topDistrictsByClubGrowth} maxItems={10} />
+                <Leaderboard title="Districts by New Clubs" description="Districts with the most newly chartered Rotaract clubs." data={topDistrictsByNewClubs} maxItems={10} />
                 <Leaderboard title="Districts by Interact Clubs" description="Districts with the most Interact clubs worldwide." data={topDistrictsByInteractClubs} maxItems={10} />
                 <Leaderboard title="Districts by Interact Club Growth" description="Districts with the largest increase in Interact clubs." data={topDistrictsByInteractGrowth} maxItems={10} />
                 <Leaderboard title="Districts by Interact Club Growth (%)" description="Districts with the largest percentage increase in Interact clubs." data={topDistrictsByInteractGrowthPct} maxItems={10} />
@@ -320,6 +350,7 @@ export default function WorldwidePage() {
                 <Leaderboard title="Countries by Clubs" description="Countries with the most active Rotaract clubs." data={topCountriesByClubs} maxItems={10} />
                 <Leaderboard title="Countries by Club Growth" description="Countries with the largest increase in active clubs." data={topCountriesByClubGrowthAbs} maxItems={10} />
                 <Leaderboard title="Countries by Club Growth (%)" description="Countries with the largest percentage increase in active clubs." data={topCountriesByClubGrowth} maxItems={10} />
+                <Leaderboard title="Countries by New Clubs" description="Countries with the most newly chartered Rotaract clubs." data={topCountriesByNewClubs} maxItems={10} />
             </div>
             
             <h3 style={{ margin: '10px 0 15px 0', fontSize: '20px', color: 'var(--text-main)' }}>By Zone</h3>
@@ -331,6 +362,7 @@ export default function WorldwidePage() {
                 <Leaderboard title="Zones by Clubs" description="Zones with the most active Rotaract clubs." data={topZonesByClubs} maxItems={10} />
                 <Leaderboard title="Zones by Club Growth" description="Zones with the largest increase in active clubs." data={topZonesByClubGrowthAbs} maxItems={10} />
                 <Leaderboard title="Zones by Club Growth (%)" description="Zones with the largest percentage increase in active clubs." data={topZonesByClubGrowth} maxItems={10} />
+                <Leaderboard title="Zones by New Clubs" description="Zones with the most newly chartered Rotaract clubs." data={topZonesByNewClubs} maxItems={10} />
                 <Leaderboard title="Zones by Interact Clubs" description="Zones with the most Interact clubs worldwide." data={topZonesByInteractClubs} maxItems={10} />
                 <Leaderboard title="Zones by Interact Club Growth" description="Zones with the largest increase in Interact clubs." data={topZonesByInteractGrowth} maxItems={10} />
                 <Leaderboard title="Zones by Interact Club Growth (%)" description="Zones with the largest percentage increase in Interact clubs." data={topZonesByInteractGrowthPct} maxItems={10} />

@@ -34,6 +34,9 @@ let newClubsSheet = readSheetAsJson(currWb, 'NewClubs', { defval: "", raw: false
 let districtOfficersSheet = readSheetAsJson(currWb, 'District Officers_Simplified');
 let rotaractByCountrySheet = readSheetAsJson(currWb, 'Rotaract by Country');
 let rotaractByDistrictSheet = readSheetAsJson(currWb, 'Rotaract by District');
+let newClubsByCountrySheet = readSheetAsJson(currWb, 'NewClubsByCountry');
+let newClubsByZoneSheet = readSheetAsJson(currWb, 'NewClubsByZone');
+let newClubsByDistrictSheet = readSheetAsJson(currWb, 'NewClubsByDistrict');
 let prevZoneSheet = [];
 if (prevMasterFile && fs.existsSync(prevMasterFile)) {
     console.log(`Processing Previous Data: ${prevMasterFile}`);
@@ -1036,11 +1039,53 @@ function calcDelta(curr, prev) {
 const avgMembersPerClub = totalWorldwideClubs > 0 ? parseFloat((totalWorldwideMembers / totalWorldwideClubs).toFixed(3)) : 0;
 const prevAvgMembersPerClub = prevWorldwideClubs > 0 ? parseFloat((prevWorldwideMembers / prevWorldwideClubs).toFixed(3)) : 0;
 
+// Process New Clubs Worldwide Data
+const newClubsDistrictData = (newClubsByDistrictSheet || [])
+    .map(r => ({
+        District: (r['District'] || '').toString().trim(),
+        Zone: (r['Zone'] || '').toString().trim(),
+        newClubs: parseInt(r['Rotaract']) || 0,
+        commNewClubs: parseInt(r['Community - Based']) || 0,
+        univNewClubs: parseInt(r['University - Based']) || 0
+    }))
+    .filter(r => r.District && r.District !== '0');
+
+const newClubsCountryData = (newClubsByCountrySheet || [])
+    .map(r => ({
+        Country: (r['Country'] || '').toString().trim(),
+        newClubs: parseInt(r['Rotaract']) || 0,
+        commNewClubs: parseInt(r['Community - Based']) || 0,
+        univNewClubs: parseInt(r['University - Based']) || 0
+    }))
+    .filter(r => r.Country && r.Country !== '');
+
+const zoneNewClubsAgg = {};
+(newClubsByZoneSheet || []).forEach(r => {
+    const zNum = (r['ZONE'] ?? r['Zone'] ?? '').toString().trim();
+    if (!zNum || zNum === '0') return;
+    const zKey = zNum.startsWith('Zone') ? zNum : `Zone ${zNum}`;
+    if (!zoneNewClubsAgg[zKey]) {
+        zoneNewClubsAgg[zKey] = {
+            Zone: zKey,
+            newClubs: 0,
+            commNewClubs: 0,
+            univNewClubs: 0
+        };
+    }
+    zoneNewClubsAgg[zKey].newClubs += parseInt(r['Rotaract']) || 0;
+    zoneNewClubsAgg[zKey].commNewClubs += parseInt(r['Community - Based']) || 0;
+    zoneNewClubsAgg[zKey].univNewClubs += parseInt(r['University - Based']) || 0;
+});
+const newClubsZoneData = Object.values(zoneNewClubsAgg);
+
+const totalWorldwideNewClubs = newClubsDistrictData.reduce((sum, r) => sum + r.newClubs, 0);
+
 const worldwideSummary = {
     totalClubs: totalWorldwideClubs,
     totalClubsDelta: prevWorldwideClubs > 0 ? calcDelta(totalWorldwideClubs, prevWorldwideClubs) : null,
     totalMembers: totalWorldwideMembers,
     totalMembersDelta: prevWorldwideMembers > 0 ? calcDelta(totalWorldwideMembers, prevWorldwideMembers) : null,
+    totalNewClubs: totalWorldwideNewClubs,
     avgMembersPerClub: avgMembersPerClub,
     avgMembersDelta: prevAvgMembersPerClub > 0 ? calcDelta(avgMembersPerClub, prevAvgMembersPerClub) : null,
     totalInteractClubs: totalWorldwideInteractClubs,
@@ -1052,6 +1097,9 @@ const worldwideSummary = {
     zoneData: rotaractByZoneSheet,
     interactDistrictData: interactDistrictData,
     interactZoneData: interactZoneData,
+    newClubsDistrictData: newClubsDistrictData,
+    newClubsCountryData: newClubsCountryData,
+    newClubsZoneData: newClubsZoneData,
     dataAsOf: DATA_AS_OF_DATE,
     lastUpdated: DATA_AS_OF_DATE
 };

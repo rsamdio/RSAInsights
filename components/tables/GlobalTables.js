@@ -91,7 +91,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             header: 'Arrears Clubs', 
             id: 'TotalClubsArrears',
             accessorKey: 'TotalClubsArrears',
-            accessorFn: row => Number(row.TotalClubsArrears || 0) 
+            accessorFn: row => Number(row.TotalClubsArrears ?? row.arrearsClubs ?? 0) 
         },
         { 
             header: 'No Officers', 
@@ -256,7 +256,12 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
         { header: 'District', accessorKey: 'District' },
         { header: 'Rotary Club Name', id: 'Club_Name', accessorKey: 'Club Name' },
         { header: 'Members', id: 'Current_Member_Count', accessorKey: 'Current Member Count' },
-        { header: 'Sponsored Rotaract', id: 'Total_Rotaract_Sponsored', accessorKey: 'Total Rotaract Sponsored' }
+        { 
+            header: 'Sponsored Rotaract', 
+            id: 'Total_Rotaract_Sponsored', 
+            accessorKey: 'Total Rotaract Sponsored',
+            cell: info => info.getValue() ?? 0
+        }
     ];
 
     const newClubsCols = [

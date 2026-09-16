@@ -7,6 +7,17 @@ import GlobalTables from '@/components/tables/GlobalTables';
 import TopChartsSection from '@/components/sections/TopChartsSection';
 import JsonLd from '@/components/seo/JsonLd';
 
+export const revalidate = false;
+
+export async function generateStaticParams() {
+    const summary = getDashboardSummary();
+    if (!summary || !summary.current || !summary.current.zones) return [];
+    return Object.keys(summary.current.zones).map(z => {
+        const cleanId = z.replace(/^Zone\s*/i, '');
+        return { zoneId: cleanId };
+    });
+}
+
 export async function generateMetadata({ params }) {
     const { zoneId } = await params;
     const cleanZoneNum = zoneId.toString().replace(/[^0-9]/g, '');
@@ -500,6 +511,7 @@ export default async function ZonePage({ params, searchParams }) {
                             'Rotary without Interact Club': z['Rotary without Interact Club'],
                             'Total Outstanding (INR)': z['Total Outstanding (INR)'] || z['TotalINR'],
                             'TotalINR': z['TotalINR'] || z['Total Outstanding (INR)'],
+                            'TotalClubsArrears': z['TotalClubsArrears'] || z['arrearsClubs'] || 0,
                             '% Clubs Arrears': z['% Clubs Arrears'],
                             'No Officer Total': z['No Officer Total'],
                             'Total Contributions USD': z['Total Contributions USD'],
@@ -515,7 +527,8 @@ export default async function ZonePage({ params, searchParams }) {
                             'Outstanding INR': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
                             'outstanding': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
                             ' USD Outstanding ': c[' USD Outstanding '] || c.outstandingUSD || 0,
-                            'NF Cust Number': c['NF Cust Number'] || c['Club ID'] || c.id
+                            'NF Cust Number': c['NF Cust Number'] || c['Club ID'] || c.id,
+                            'Club ID': c['Club ID'] || c['NF Cust Number'] || c.id
                         }))} 
                         officersData={filteredOfficersData.map(c => ({
                             'RI Zone': c['RI Zone'] || c.Zone,
@@ -526,8 +539,19 @@ export default async function ZonePage({ params, searchParams }) {
                             'Club Status': c['Club Status'] || 'Active',
                             'Club ID': c['Club ID'] || c['Rotaract Club ID']
                         }))} 
-                        rotaryData={filteredRotaryData}
-                        rotaryNoInteractData={filteredRotaryNoInteractData}
+                        rotaryData={filteredRotaryData.map(r => ({
+                            'RI Zone': r['RI Zone'],
+                            'District': r.District,
+                            'Club Name': r['Club Name'],
+                            'Current Member Count': r['Current Member Count']
+                        }))}
+                        rotaryNoInteractData={filteredRotaryNoInteractData.map(r => ({
+                            'RI Zone': r['RI Zone'],
+                            'District': r.District,
+                            'Club Name': r['Club Name'],
+                            'Current Member Count': r['Current Member Count'],
+                            'Total Rotaract Sponsored': Number(r['Total Rotaract Sponsored'] ?? 0)
+                        }))}
                         newClubsData={filteredNewClubsData}
                         trfData={filteredTrfData}
                         allClubsData={filteredAllClubsData.map(c => ({

@@ -1,14 +1,10 @@
-'use client';
-import { motion } from 'framer-motion';
-
 export default function Leaderboard({ title, description, data, isNegative = false, maxItems = 5 }) {
     const displayData = data.slice(0, maxItems);
 
     return (
-        <motion.div 
+        <div 
             className="card"
             style={{ padding: '20px', display: 'flex', flexDirection: 'column', height: '100%' }}
-            whileHover={{ boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}
         >
             <h3 style={{ margin: '0 0 5px 0', fontSize: '16px', fontWeight: '700', color: 'var(--text-main)' }}>
                 {title}
@@ -50,6 +46,6 @@ export default function Leaderboard({ title, description, data, isNegative = fal
                     ))}
                 </ul>
             )}
-        </motion.div>
+        </div>
     );
 }

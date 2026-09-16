@@ -1,8 +1,12 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import './globals.css';
-import HeaderFilters from '@/components/ui/HeaderFilters';
 import Footer from '@/components/ui/Footer';
+
+const HeaderFilters = dynamic(() => import('@/components/ui/HeaderFilters'), {
+  loading: () => <div style={{ minHeight: '38px', minWidth: '200px' }} />
+});
 
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
@@ -198,7 +202,7 @@ export default function RootLayout({ children }) {
           <header className="header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '18px', flexWrap: 'wrap' }}>
               <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none', color: 'inherit' }}>
-                <img src="/rsamdio.webp" alt="RSAMDIO Logo" style={{ height: '40px', width: 'auto', borderRadius: '4px' }} />
+                <img src="/rsamdio.webp" alt="RSAMDIO Logo" width="40" height="40" style={{ height: '40px', width: 'auto', borderRadius: '4px' }} />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                   <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold', lineHeight: '1.2' }}>Insights</h1>
                   <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Zones 4, 5, 6 & 7</span>
