@@ -7,69 +7,140 @@ export default function HeaderFilters() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const pathParams = useParams();
+    const pathname = usePathname();
     const [options, setOptions] = useState({ zones: [], districts: [], districtToZone: {} });
     const [mounted, setMounted] = useState(false);
     
     const initialZone = searchParams.get('zone');
     const initialDistrict = searchParams.get('district');
     
-    const parsedZones = initialZone ? initialZone.split(',').map(v => ({ value: v, label: v })) : [];
-    const parsedDistricts = initialDistrict ? initialDistrict.split(',').map(v => ({ value: v, label: `District ${v}` })) : [];
+    const parsedZones = initialZone ? initialZone.split(',').filter(Boolean).map(v => ({ value: v, label: v })) : [];
+    const parsedDistricts = initialDistrict ? initialDistrict.split(',').filter(Boolean).map(v => ({ value: v, label: `District ${v}` })) : [];
     
     const [selectedZone, setSelectedZone] = useState(parsedZones);
     const [selectedDistrict, setSelectedDistrict] = useState(parsedDistricts);
+
+    // Keep dropdowns in sync with active URL search parameters across all navigations
+    useEffect(() => {
+        const zoneParam = searchParams.get('zone');
+        const districtParam = searchParams.get('district');
+        
+        const newZones = zoneParam ? zoneParam.split(',').filter(Boolean).map(v => ({ value: v, label: v })) : [];
+        const newDistricts = districtParam ? districtParam.split(',').filter(Boolean).map(v => ({ value: v, label: `District ${v}` })) : [];
+        
+        setSelectedZone(newZones);
+        setSelectedDistrict(newDistricts);
+    }, [searchParams, pathname]);
 
     useEffect(() => {
         setMounted(true);
         fetch('/api/filters').then(r => r.json()).then(data => setOptions(data)).catch(() => {});
     }, []);
 
+    const isZoneRoute = !!pathParams?.zoneId;
+    const isDistrictRoute = !!pathParams?.districtId;
+    const isClubRoute = !!pathParams?.clubId;
+    const isWorldwideRoute = pathname === '/worldwide';
+
     const handleFilterChange = (type, selected) => {
-        const params = new URLSearchParams(searchParams);
-        
-        if (type === 'zone') {
-            setSelectedZone(selected || []);
-            if (selected && selected.length > 0) {
-                params.set('zone', selected.map(s => s.value).join(','));
-                
-                // Filter selected districts to only those within the newly selected zones
-                const validZones = new Set(selected.map(s => s.value));
-                const validSelectedDistricts = selectedDistrict.filter(d => {
-                    const distZone = options.districtToZone[d.value.replace('District ', '')] || options.districtToZone[d.value];
-                    return validZones.has(distZone);
-                });
-                
-                if (validSelectedDistricts.length > 0) {
-                    params.set('district', validSelectedDistricts.map(s => s.value).join(','));
-                    setSelectedDistrict(validSelectedDistricts);
-                } else {
-                    params.delete('district');
-                    setSelectedDistrict([]);
-                }
-            } else {
-                params.delete('zone');
-            }
-        } else if (type === 'district') {
-            setSelectedDistrict(selected || []);
-            if (selected && selected.length > 0) {
-                params.set('district', selected.map(s => s.value).join(','));
-            } else {
-                params.delete('district');
-            }
-        }
-        
-        const isZoneRoute = !!pathParams?.zoneId;
-        
         // Trigger visual feedback before navigation
         document.documentElement.setAttribute('data-loading', 'true');
         if (typeof window !== 'undefined' && window.triggerNavigationProgress) {
             window.triggerNavigationProgress();
         }
-        
-        if (isZoneRoute) {
-            params.delete('zone');
-            router.push(`/zone/${pathParams.zoneId}?${params.toString()}`, { scroll: false });
-        } else {
+
+        if (type === 'zone') {
+            const selectedList = selected || [];
+            setSelectedZone(selectedList);
+
+            if (selectedList.length === 0) {
+                // All zones cleared
+                setSelectedDistrict([]);
+                router.push('/', { scroll: false });
+                return;
+            }
+
+            if (isZoneRoute) {
+                if (selectedList.length === 1) {
+                    const nextZoneNum = selectedList[0].value.replace(/[^0-9]/g, '');
+                    router.push(`/zone/${nextZoneNum}`, { scroll: false });
+                } else {
+                    const zoneQuery = selectedList.map(s => s.value).join(',');
+                    router.push(`/?zone=${encodeURIComponent(zoneQuery)}`, { scroll: false });
+                }
+                return;
+            }
+
+            if (isDistrictRoute) {
+                if (selectedList.length === 1) {
+                    const nextZoneNum = selectedList[0].value.replace(/[^0-9]/g, '');
+                    router.push(`/zone/${nextZoneNum}`, { scroll: false });
+                } else {
+                    const zoneQuery = selectedList.map(s => s.value).join(',');
+                    router.push(`/?zone=${encodeURIComponent(zoneQuery)}`, { scroll: false });
+                }
+                return;
+            }
+
+            // On home page /
+            const params = new URLSearchParams(searchParams);
+            params.set('zone', selectedList.map(s => s.value).join(','));
+
+            // Filter selected districts to only those within the newly selected zones
+            const validZones = new Set(selectedList.map(s => s.value));
+            const validSelectedDistricts = selectedDistrict.filter(d => {
+                const distZone = options.districtToZone[d.value.replace('District ', '')] || options.districtToZone[d.value];
+                return validZones.has(distZone);
+            });
+
+            if (validSelectedDistricts.length > 0) {
+                params.set('district', validSelectedDistricts.map(s => s.value).join(','));
+                setSelectedDistrict(validSelectedDistricts);
+            } else {
+                params.delete('district');
+                setSelectedDistrict([]);
+            }
+
+            router.push(`/?${params.toString()}`, { scroll: false });
+        } else if (type === 'district') {
+            const selectedList = selected || [];
+            setSelectedDistrict(selectedList);
+
+            if (isDistrictRoute) {
+                if (selectedList.length === 1) {
+                    router.push(`/district/${selectedList[0].value}`, { scroll: false });
+                } else if (selectedList.length > 1) {
+                    const distQuery = selectedList.map(s => s.value).join(',');
+                    router.push(`/?district=${encodeURIComponent(distQuery)}`, { scroll: false });
+                } else {
+                    const distZone = options.districtToZone[pathParams.districtId];
+                    if (distZone) {
+                        router.push(`/zone/${distZone.replace(/[^0-9]/g, '')}`, { scroll: false });
+                    } else {
+                        router.push('/', { scroll: false });
+                    }
+                }
+                return;
+            }
+
+            if (isZoneRoute) {
+                const params = new URLSearchParams();
+                if (selectedList.length > 0) {
+                    params.set('district', selectedList.map(s => s.value).join(','));
+                    router.push(`/zone/${pathParams.zoneId}?${params.toString()}`, { scroll: false });
+                } else {
+                    router.push(`/zone/${pathParams.zoneId}`, { scroll: false });
+                }
+                return;
+            }
+
+            // On home page /
+            const params = new URLSearchParams(searchParams);
+            if (selectedList.length > 0) {
+                params.set('district', selectedList.map(s => s.value).join(','));
+            } else {
+                params.delete('district');
+            }
             router.push(`/?${params.toString()}`, { scroll: false });
         }
     };
@@ -127,12 +198,6 @@ export default function HeaderFilters() {
         })
     };
 
-    const pathname = usePathname();
-    const isZoneRoute = !!pathParams?.zoneId;
-    const isDistrictRoute = !!pathParams?.districtId;
-    const isClubRoute = !!pathParams?.clubId;
-    const isWorldwideRoute = pathname === '/worldwide';
-    
     if (!mounted || isClubRoute || isWorldwideRoute) return null;
     
     const pathZoneId = pathParams?.zoneId ? (pathParams.zoneId.startsWith('Zone') ? pathParams.zoneId : `Zone ${pathParams.zoneId}`) : null;
@@ -155,8 +220,7 @@ export default function HeaderFilters() {
                 options={options.zones} 
                 value={displayZone}
                 onChange={(s) => handleFilterChange('zone', s)}
-                isClearable={!isZoneRoute && !isDistrictRoute}
-                isDisabled={isZoneRoute || isDistrictRoute}
+                isClearable={true}
                 placeholder="All Zones" 
                 styles={customStyles}
             />
@@ -166,8 +230,7 @@ export default function HeaderFilters() {
                 options={availableDistricts} 
                 value={displayDistrict}
                 onChange={(s) => handleFilterChange('district', s)}
-                isClearable={!isDistrictRoute}
-                isDisabled={isDistrictRoute}
+                isClearable={true}
                 placeholder="All Districts" 
                 styles={customStyles}
             />

@@ -94,9 +94,25 @@ export default async function GlobalDashboard({ searchParams }) {
                     }
                 });
 
+                const distList = Object.values(filteredDistrictsForZone);
+                const zoneAggStats = {
+                    totalClubs: distList.reduce((sum, d) => sum + (d.totalClubs || 0), 0),
+                    totalMembers: distList.reduce((sum, d) => sum + (d.totalMembers || 0), 0),
+                    outstanding: distList.reduce((sum, d) => sum + (d.outstanding || 0), 0),
+                    arrearsClubs: distList.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
+                    atRisk: distList.reduce((sum, d) => sum + (d.atRisk || 0), 0),
+                    noOfficers: distList.reduce((sum, d) => sum + (d.noOfficers || 0), 0),
+                    totalRotary: distList.reduce((sum, d) => sum + (d.totalRotary || 0), 0),
+                    rotaryWithSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithSponsor || 0), 0),
+                    rotaryWithoutSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithoutSponsor || 0), 0),
+                    trfContributionsUSD: distList.reduce((sum, d) => sum + (d.trfContributionsUSD || 0), 0),
+                    newTotalClubs: distList.reduce((sum, d) => sum + (d.newTotalClubs || 0), 0),
+                };
+
                 filteredZones[zName] = {
                     ...zoneData,
-                    districts: filteredDistrictsForZone
+                    districts: filteredDistrictsForZone,
+                    stats: zoneAggStats
                 };
             }
         });
@@ -480,10 +496,14 @@ export default async function GlobalDashboard({ searchParams }) {
                         {zoneLabels.map(zLabel => {
                             const zStats = filteredZones[zLabel]?.stats;
                             if (!zStats) return null;
+                            const zoneDistricts = selectedDistricts.filter(d => {
+                                return filteredZones[zLabel]?.districts && filteredZones[zLabel].districts[d];
+                            });
+                            const queryParam = zoneDistricts.length > 0 ? `?district=${zoneDistricts.join(',')}` : '';
                             return (
                                 <Link 
                                     key={zLabel} 
-                                    href={`/zone/${zLabel.replace('Zone ', '')}`}
+                                    href={`/zone/${zLabel.replace('Zone ', '')}${queryParam}`}
                                     className="zone-dir-row"
                                 >
                                     <span style={{ fontSize: '18px' }}>{zLabel}</span>
