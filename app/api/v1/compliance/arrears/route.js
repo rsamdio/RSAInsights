@@ -14,7 +14,7 @@ export async function GET(request) {
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
         const base = searchParams.get('base') || '';
-        const atRiskOnly = searchParams.get('atRiskOnly') === 'true';
+        const atRiskOnly = (searchParams.get('atRiskOnly') || searchParams.get('at_risk_only')) === 'true';
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 

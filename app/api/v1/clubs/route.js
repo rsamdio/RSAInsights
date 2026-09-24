@@ -16,9 +16,9 @@ export async function GET(request) {
         const zone = searchParams.get('zone') || '';
         const base = searchParams.get('base') || '';
         const status = searchParams.get('status') || '';
-        const isArrearsParam = searchParams.get('isArrears');
-        const isAtRiskParam = searchParams.get('isAtRisk');
-        const isNoOfficersParam = searchParams.get('isNoOfficers');
+        const isArrearsParam = searchParams.get('isArrears') ?? searchParams.get('is_arrears');
+        const isAtRiskParam = searchParams.get('isAtRisk') ?? searchParams.get('is_at_risk');
+        const isNoOfficersParam = searchParams.get('isNoOfficers') ?? searchParams.get('is_no_officers');
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 

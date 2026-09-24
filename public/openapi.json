@@ -3,10 +3,10 @@
   "info": {
     "title": "Rotaract South Asia Analytics API",
     "version": "1.0.0",
-    "description": "Public, high-performance REST API providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs). All endpoints are open and unauthenticated.",
+    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs).\n\n### Model Context Protocol (MCP) Integration\nThis service includes a Model Context Protocol (MCP) server for direct use by AI assistants (Cursor, Claude Desktop, Antigravity, VS Code):\n- **Local Stdio Command:** `npm run mcp` or `node scripts/mcp_server.js`\n- **Remote HTTP Endpoint:** `POST https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0)\n- **Available AI Tools:** `search_clubs`, `get_club_profile`, `get_district_insights`, `get_zone_summary`, `find_compliance_risks`, `find_rotary_opportunities`, `get_foundation_giving`, `get_worldwide_rankings`.\n\nAll endpoints are open, unauthenticated, and CORS-enabled.",
     "contact": {
       "name": "Rotaract South Asia Analytics Team",
-      "url": "https://data.rotaractsouthasia.org"
+      "url": "https://insights.rsamdio.org"
     },
     "license": {
       "name": "Open Data Commons Open Database License (ODbL)",
@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "https://data.rotaractsouthasia.org",
+      "url": "https://insights.rsamdio.org",
       "description": "Production server"
     },
     {
@@ -31,7 +31,8 @@
     { "name": "Compliance", "description": "Financial arrears and missing officer compliance tracking" },
     { "name": "Opportunities", "description": "Rotary club sponsorship opportunities (Rotaract and Interact)" },
     { "name": "Foundation", "description": "The Rotary Foundation (TRF) contributions and giving statistics" },
-    { "name": "Worldwide", "description": "Global Rotaract and Interact leaderboards and growth metrics" }
+    { "name": "Worldwide", "description": "Global Rotaract and Interact leaderboards and growth metrics" },
+    { "name": "Model Context Protocol (MCP)", "description": "AI agent tools discovery and JSON-RPC 2.0 execution endpoint" }
   ],
   "paths": {
     "/api/v1/summary": {
@@ -531,6 +532,78 @@
           }
         }
       }
+    },
+    "/api/mcp": {
+      "get": {
+        "tags": ["Model Context Protocol (MCP)"],
+        "summary": "MCP Server Manifest & Tools Discovery",
+        "description": "Returns the Model Context Protocol (MCP) server metadata, protocol version, capabilities, and the full schema definitions for all 8 available AI tools.",
+        "operationId": "getMcpManifest",
+        "responses": {
+          "200": {
+            "description": "MCP server manifest and tool definitions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "server": { "type": "string", "example": "rotaract-south-asia-analytics" },
+                    "version": { "type": "string", "example": "1.0.0" },
+                    "protocolVersion": { "type": "string", "example": "2024-11-05" },
+                    "capabilities": { "type": "object" },
+                    "tools": { "type": "array", "items": { "type": "object" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Model Context Protocol (MCP)"],
+        "summary": "Execute MCP Tool via JSON-RPC 2.0",
+        "description": "Executes an AI tool via Model Context Protocol JSON-RPC 2.0 protocol (or lightweight payload: {\"tool\": \"search_clubs\", \"args\": {...}}). Supported methods: initialize, tools/list, and tools/call.",
+        "operationId": "executeMcpTool",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": { "type": "string", "example": "2.0" },
+                  "id": { "type": "integer", "example": 1 },
+                  "method": { "type": "string", "example": "tools/call" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string", "example": "search_clubs" },
+                      "arguments": { "type": "object" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tool execution result wrapped in JSON-RPC 2.0",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": { "type": "string", "example": "2.0" },
+                    "id": { "type": "integer", "example": 1 },
+                    "result": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -663,41 +736,95 @@
           "sponsoredInteractClubs": { "type": "array", "items": { "type": "object" } }
         }
       },
+      "ArrearsClubItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "8824847" },
+          "name": { "type": "string", "example": "Aarupadai Veedu Medical College & Hospital" },
+          "district": { "type": "string", "example": "2981" },
+          "zone": { "type": "string", "example": "Zone 5" },
+          "base": { "type": "string", "example": "University" },
+          "sponsorClubs": { "type": "string", "example": "Pondicherry Beach Town (Rotary)" },
+          "billableMembers": { "type": "integer", "example": 1 },
+          "outstandingINR": { "type": "number", "example": 2018 },
+          "outstandingUSD": { "type": "number", "example": 21.02 },
+          "isAtRisk": { "type": "boolean", "example": false }
+        }
+      },
       "ArrearsListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "type": "object" } },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/ArrearsClubItem" } },
           "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
           "total": { "type": "integer" },
           "limit": { "type": "integer" },
           "offset": { "type": "integer" }
         }
       },
+      "MissingOfficerClubItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "8824847" },
+          "name": { "type": "string", "example": "Aarupadai Veedu Medical College & Hospital" },
+          "district": { "type": "string", "example": "2981" },
+          "zone": { "type": "string", "example": "Zone 5" },
+          "base": { "type": "string", "example": "University" },
+          "sponsorClubs": { "type": "string", "example": "Pondicherry Beach Town (Rotary)" },
+          "status": { "type": "string", "example": "Active" }
+        }
+      },
       "MissingOfficersListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "type": "object" } },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/MissingOfficerClubItem" } },
           "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
           "total": { "type": "integer" },
           "limit": { "type": "integer" },
           "offset": { "type": "integer" }
+        }
+      },
+      "RotaryOpportunityClubItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "22000" },
+          "name": { "type": "string", "example": "Rotary Club of Madurai West" },
+          "district": { "type": "string", "example": "3000" },
+          "zone": { "type": "string", "example": "Zone 5" },
+          "members": { "type": "integer", "example": 45 },
+          "status": { "type": "string", "example": "Active" },
+          "totalRotaractSponsored": { "type": "integer", "example": 0 },
+          "totalInteractSponsored": { "type": "integer", "example": 1 }
         }
       },
       "RotaryOpportunityResponse": {
         "type": "object",
         "properties": {
           "opportunityType": { "type": "string", "example": "no_rotaract" },
-          "data": { "type": "array", "items": { "type": "object" } },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/RotaryOpportunityClubItem" } },
           "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
           "total": { "type": "integer" },
           "limit": { "type": "integer" },
           "offset": { "type": "integer" }
         }
       },
+      "TRFContributionItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "91234" },
+          "name": { "type": "string", "example": "Rotaract Club of Coimbatore Central" },
+          "district": { "type": "string", "example": "3201" },
+          "zone": { "type": "string", "example": "Zone 5" },
+          "sponsorClubs": { "type": "string", "example": "Rotary Club of Coimbatore" },
+          "annualFundUSD": { "type": "number", "example": 100 },
+          "polioPlusUSD": { "type": "number", "example": 50 },
+          "otherFundsUSD": { "type": "number", "example": 0 },
+          "totalContributionsUSD": { "type": "number", "example": 150 }
+        }
+      },
       "TRFListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "type": "object" } },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/TRFContributionItem" } },
           "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
           "total": { "type": "integer" },
           "limit": { "type": "integer" },
@@ -707,12 +834,31 @@
       "WorldwideStats": {
         "type": "object",
         "properties": {
-          "totalClubs": { "type": "integer" },
-          "totalMembers": { "type": "integer" },
-          "totalInteractClubs": { "type": "integer" },
+          "totalClubs": { "type": "integer", "example": 11453 },
+          "totalMembers": { "type": "integer", "example": 165430 },
+          "totalInteractClubs": { "type": "integer", "example": 14920 },
           "countryData": { "type": "array", "items": { "type": "object" } },
           "districtData": { "type": "array", "items": { "type": "object" } },
           "zoneData": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "MCPManifest": {
+        "type": "object",
+        "properties": {
+          "server": { "type": "string", "example": "rotaract-south-asia-analytics" },
+          "version": { "type": "string", "example": "1.0.0" },
+          "protocolVersion": { "type": "string", "example": "2024-11-05" },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "tools": { "type": "object" },
+              "resources": { "type": "object" },
+              "prompts": { "type": "object" }
+            }
+          },
+          "tools": { "type": "array", "items": { "type": "object" } },
+          "resources": { "type": "array", "items": { "type": "object" } },
+          "prompts": { "type": "array", "items": { "type": "object" } }
         }
       }
     }

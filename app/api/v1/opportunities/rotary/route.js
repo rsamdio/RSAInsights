@@ -11,7 +11,7 @@ const CACHE_HEADERS = {
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
-        const type = searchParams.get('type') || 'no_rotaract';
+        const type = searchParams.get('type') || searchParams.get('opportunity_type') || searchParams.get('opportunityType') || 'no_rotaract';
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
         const limit = searchParams.get('limit') || 25;
