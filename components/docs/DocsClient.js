@@ -4,20 +4,85 @@ import { useState } from 'react';
 
 const MCP_TOOLS = [
     {
+        name: 'get_summary',
+        label: 'Executive Summary',
+        badge: 'Macro KPIs',
+        description: 'Retrieve macro performance indicators and executive summary metrics for South Asia or scoped to a specific Zone (Zone 4, 5, 6, 7). Returns total clubs, reported members, financial arrears, total dues (INR/USD), clubs missing officers, TRF giving, new clubs, and university vs community breakdown.',
+        exampleArgs: { zone: 'Zone 5' },
+        examplePrompt: 'What are the overall membership, club counts, and arrears dues for Zone 5?',
+        params: [
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' }
+        ]
+    },
+    {
+        name: 'get_leaderboards',
+        label: 'Rankings & Leaderboards',
+        badge: 'Top Charts',
+        description: 'Retrieve top rankings across South Asia for largest clubs (by membership), top TRF donors, highest arrears dues, at-risk clubs, top districts (by clubs, members, TRF, arrears, or growth), and new charters. Supports optional scoping to a district, zone, or country.',
+        exampleArgs: { category: 'largest_clubs', limit: 5 },
+        examplePrompt: 'What are the top 5 largest Rotaract clubs in South Asia by reported membership?',
+        params: [
+            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
+            { name: 'district', type: 'string', required: false, desc: 'Optional 4-digit district filter (e.g. "3000")' },
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
+            { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", or "Sri Lanka"' },
+            { name: 'base', type: 'string', required: false, desc: 'Base filter: "Community" or "University"' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Number of top items (1-50, default 10)' }
+        ]
+    },
+    {
+        name: 'get_districts',
+        label: 'All Districts Directory',
+        badge: '44 Districts',
+        description: 'Retrieve all 44 Rotary districts in South Asia with comprehensive KPIs, leadership contacts (DG, DRR, DRC), financial health, TRF contributions, and growth metrics. Supports filtering by zone and sorting.',
+        exampleArgs: { sortBy: 'totalClubs', sortOrder: 'desc' },
+        examplePrompt: 'List all 44 districts sorted by total clubs descending.',
+        params: [
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort by: "totalClubs", "members", "arrearsClubs", "outstanding", "trf", "newClubs", "interactGrowth", "district"' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" or "asc"' }
+        ]
+    },
+    {
         name: 'search_clubs',
         label: 'Search & Filter Clubs',
         badge: 'Query Engine',
-        description: 'Search and filter across 2,870+ Rotaract clubs in South Asia (Zones 4, 5, 6, 7) by keyword, club ID, district, zone, base (Community/University), or compliance status.',
-        exampleArgs: { query: 'Delhi', limit: 3 },
-        examplePrompt: 'Find active university-based Rotaract clubs in Delhi with over 20 members.',
+        description: 'Search, filter, and sort across 2,870+ Rotaract clubs in South Asia. Use sortBy="members" to find largest clubs, or sortBy="outstanding" for highest dues. Supports filtering by country (India, Nepal, Sri Lanka) and Interact sponsorship.',
+        exampleArgs: { query: 'Delhi', sortBy: 'members', sortOrder: 'desc', limit: 3 },
+        examplePrompt: 'Find active university-based Rotaract clubs in Delhi sorted by membership.',
         params: [
             { name: 'query', type: 'string', required: false, desc: 'Search keyword matching club name, club ID, sponsor club, or country' },
             { name: 'district', type: 'string', required: false, desc: 'Rotary district number (e.g. "3000")' },
             { name: 'zone', type: 'string', required: false, desc: 'Rotary zone (e.g. "Zone 5" or "5")' },
+            { name: 'country', type: 'string', required: false, desc: 'Country: "India", "Nepal", or "Sri Lanka"' },
             { name: 'base', type: 'string', required: false, desc: 'Base type: "Community" or "University"' },
+            { name: 'sponsorsInteract', type: 'boolean', required: false, desc: 'Filter clubs sponsoring Interact clubs' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort field: "members", "outstanding", "trf", "interact", "name", or "charterDate"' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" (highest first) or "asc"' },
+            { name: 'minMembers', type: 'integer', required: false, desc: 'Minimum reported members filter' },
+            { name: 'maxMembers', type: 'integer', required: false, desc: 'Maximum reported members filter' },
+            { name: 'minOutstanding', type: 'number', required: false, desc: 'Minimum outstanding dues filter' },
             { name: 'isArrears', type: 'boolean', required: false, desc: 'Filter clubs with outstanding dues' },
             { name: 'isAtRisk', type: 'boolean', required: false, desc: 'Filter clubs at termination risk (dues >= $75 USD)' },
             { name: 'isNoOfficers', type: 'boolean', required: false, desc: 'Filter clubs missing reported officers' },
+            { name: 'isNewClub', type: 'boolean', required: false, desc: 'Filter newly chartered clubs' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Number of clubs to return (1-100, default 25)' },
+            { name: 'offset', type: 'integer', required: false, desc: 'Pagination offset (default 0)' }
+        ]
+    },
+    {
+        name: 'get_new_clubs',
+        label: 'Newly Chartered Clubs',
+        badge: 'New Charters',
+        description: 'Retrieve newly chartered Rotaract clubs in South Asia (126 clubs chartered during the current period) with charter dates, member counts, sponsor Rotary clubs, and district mapping.',
+        exampleArgs: { limit: 5 },
+        examplePrompt: 'Which new Rotaract clubs were chartered in District 3000?',
+        params: [
+            { name: 'district', type: 'string', required: false, desc: 'Optional district number filter' },
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter' },
+            { name: 'base', type: 'string', required: false, desc: 'Base filter: "Community" or "University"' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort field: "charterDate", "members", or "name"' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" or "asc"' },
             { name: 'limit', type: 'integer', required: false, desc: 'Number of clubs to return (1-100, default 25)' },
             { name: 'offset', type: 'integer', required: false, desc: 'Pagination offset (default 0)' }
         ]
@@ -26,11 +91,11 @@ const MCP_TOOLS = [
         name: 'get_club_profile',
         label: 'Universal Club Profile',
         badge: 'O(1) Hash Map',
-        description: 'Retrieve the complete dossier for a single Rotaract club by its Rotary Club ID, including membership, compliance status, dues outstanding, TRF giving, and sponsored Interact clubs.',
+        description: 'Retrieve the complete dossier for a single Rotaract club by its Rotary Club ID or club name, including membership, compliance status, dues outstanding, TRF giving, and sponsored Interact clubs.',
         exampleArgs: { clubId: '8824847' },
         examplePrompt: 'Get the full profile and compliance standing for club ID 8824847.',
         params: [
-            { name: 'clubId', type: 'string', required: true, desc: 'The unique Rotary Club ID (e.g. "8824847")' }
+            { name: 'clubId', type: 'string', required: true, desc: 'The unique Rotary Club ID or club name' }
         ]
     },
     {
@@ -59,14 +124,41 @@ const MCP_TOOLS = [
         name: 'find_compliance_risks',
         label: 'Compliance & Arrears Risks',
         badge: 'Risk Monitor',
-        description: 'Identify Rotaract clubs at risk of termination or non-compliance due to unpaid financial dues (arrears) or missing officer reporting.',
+        description: 'Identify Rotaract clubs at risk of termination or non-compliance due to unpaid financial dues (arrears) or missing officer reporting. Supports dual-risk queries.',
         exampleArgs: { riskType: 'at_risk_only', limit: 5 },
         examplePrompt: 'Which clubs have outstanding dues of $75 USD or more and are at immediate risk of termination?',
         params: [
-            { name: 'riskType', type: 'string', required: false, desc: 'Type of risk: "arrears", "missing_officers", or "at_risk_only"' },
+            { name: 'riskType', type: 'string', required: false, desc: 'Type: "arrears", "missing_officers", "at_risk_only", or "dual_risk"' },
             { name: 'district', type: 'string', required: false, desc: 'Optional district number filter' },
             { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter' },
+            { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", "Sri Lanka"' },
             { name: 'limit', type: 'integer', required: false, desc: 'Maximum clubs to return (1-100, default 25)' }
+        ]
+    },
+    {
+        name: 'find_dual_risk_clubs',
+        label: 'Dual Non-Compliance Risk',
+        badge: 'Highest Risk (761 Clubs)',
+        description: 'Find Rotaract clubs that have BOTH outstanding financial arrears AND missing officer reports simultaneously - the highest aggregate compliance risk group.',
+        exampleArgs: { limit: 5 },
+        examplePrompt: 'Show me the clubs with both financial arrears and missing officers in District 3000.',
+        params: [
+            { name: 'district', type: 'string', required: false, desc: 'Optional district number filter' },
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter' },
+            { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", "Sri Lanka"' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Maximum clubs to return (1-100, default 25)' }
+        ]
+    },
+    {
+        name: 'get_interact_analytics',
+        label: 'Interact Analytics & Sponsors',
+        badge: '8,921 Interact Clubs',
+        description: 'Retrieve Interact statistics across South Asia: 8,921 total Interact clubs, 137 Interact clubs sponsored by 65 Rotaract clubs, district/zone breakdowns, and suspended club tracking.',
+        exampleArgs: {},
+        examplePrompt: 'Which Rotaract clubs in South Asia sponsor Interact clubs?',
+        params: [
+            { name: 'district', type: 'string', required: false, desc: 'Optional district number filter' },
+            { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter' }
         ]
     },
     {
@@ -101,9 +193,13 @@ const MCP_TOOLS = [
         label: 'Worldwide Rankings & Growth',
         badge: 'Global Analytics',
         description: 'Retrieve worldwide Rotaract and Interact statistics, country growth rankings, and district leaderboards across the globe.',
-        exampleArgs: {},
+        exampleArgs: { type: 'summary' },
         examplePrompt: 'How does India rank globally in total Rotaract clubs and member growth?',
-        params: []
+        params: [
+            { name: 'type', type: 'string', required: false, desc: 'Focus: "summary", "country", "district", "interact", "new_clubs", or "all"' },
+            { name: 'country', type: 'string', required: false, desc: 'Filter country name' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit' }
+        ]
     }
 ];
 
@@ -199,7 +295,7 @@ export default function DocsClient() {
         }
     }, null, 2);
 
-    const httpConfig = `POST https://insights.rsamdio.org/api/mcp
+    const httpConfig = `POST https://insights.rsmda.org/api/mcp
 Content-Type: application/json
 
 {
@@ -316,7 +412,7 @@ Content-Type: application/json
                     }}
                 >
                     <span>📡 REST API Reference</span>
-                    <span style={{ fontSize: '11px', background: '#e6f0fa', color: '#0f4c81', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>13 Endpoints</span>
+                    <span style={{ fontSize: '11px', background: '#e6f0fa', color: '#0f4c81', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>19 Endpoints</span>
                 </button>
                 <button
                     onClick={() => setActiveTab('mcp')}
@@ -339,7 +435,7 @@ Content-Type: application/json
                     }}
                 >
                     <span>🤖 Model Context Protocol (MCP) Server</span>
-                    <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>8 AI Tools</span>
+                    <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>14 AI Tools</span>
                 </button>
             </div>
 
@@ -389,7 +485,7 @@ Content-Type: application/json
                             </div>
                             <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                                 <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#0f4c81', marginBottom: '4px' }}>🌐 Remote HTTP Endpoint</div>
-                                <div style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5' }}>Send JSON-RPC 2.0 requests to <code>https://insights.rsamdio.org/api/mcp</code>.</div>
+                                <div style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5' }}>Send JSON-RPC 2.0 requests to <code>https://insights.rsmda.org/api/mcp</code>.</div>
                             </div>
                             <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                                 <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#0f4c81', marginBottom: '4px' }}>🛡️ Zero Authentication</div>
@@ -512,7 +608,7 @@ Content-Type: application/json
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
                             <div>
                                 <h3 style={{ margin: 0, fontSize: '18px', color: '#1e293b' }}>Live MCP Tool Playground</h3>
-                                <div style={{ fontSize: '13px', color: '#64748b', marginTop: '2px' }}>Test any of the 8 MCP tools live in your browser against the API endpoint.</div>
+                                <div style={{ fontSize: '13px', color: '#64748b', marginTop: '2px' }}>Test any of the 14 MCP tools live in your browser against the API endpoint.</div>
                             </div>
                             <button
                                 onClick={handleRunTool}
@@ -725,7 +821,7 @@ Content-Type: application/json
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div>
                             <h3 style={{ margin: '8px 0 4px 0', fontSize: '20px', color: '#1e293b' }}>
-                                Available MCP Resources (4 Data URIs)
+                                Available MCP Resources (6 Data URIs)
                             </h3>
                             <p style={{ margin: 0, color: '#64748b', fontSize: '14px' }}>
                                 AI clients can directly attach or inspect these live contextual resources via MCP URI without invoking tools.
@@ -735,6 +831,8 @@ Content-Type: application/json
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
                             {[
                                 { uri: 'rotaract://summary', name: 'South Asia Executive Summary', desc: 'Real-time executive summary metrics and macro KPIs across Zones 4, 5, 6, and 7' },
+                                { uri: 'rotaract://leaderboards', name: 'South Asia Top Rankings & Leaderboards', desc: 'Master leaderboards for largest clubs, top TRF donors, highest arrears, and top districts' },
+                                { uri: 'rotaract://new-clubs', name: 'Newly Chartered Clubs Roster', desc: 'All 126 newly chartered clubs in South Asia with charter dates and sponsor clubs' },
                                 { uri: 'rotaract://worldwide', name: 'Worldwide Statistics & Country Standings', desc: 'Global statistics, country growth leaderboards, and district rankings across the world' },
                                 { uri: 'rotaract://zones', name: 'All 4 RI Zones Roster', desc: 'Macro demographics and district lists for Zones 4, 5, 6, and 7' },
                                 { uri: 'rotaract://districts', name: 'All 44 Districts Summary', desc: 'Complete roster of 44 districts with key performance indicators and leadership contacts' }
@@ -767,7 +865,7 @@ Content-Type: application/json
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div>
                             <h3 style={{ margin: '8px 0 4px 0', fontSize: '20px', color: '#1e293b' }}>
-                                Pre-Packaged AI Prompt Templates (3 Workflows)
+                                Pre-Packaged AI Prompt Templates (4 Workflows)
                             </h3>
                             <p style={{ margin: 0, color: '#64748b', fontSize: '14px' }}>
                                 Ready-to-run prompt templates for Claude Desktop and Cursor slash commands.
@@ -776,6 +874,7 @@ Content-Type: application/json
 
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
                             {[
+                                { name: 'club_rankings_dossier', label: 'Club Rankings & Leaderboards Briefing', args: 'district (optional), zone (optional)', desc: 'Generates an executive briefing comparing top clubs, largest clubs, and TRF giving leaders.' },
                                 { name: 'audit_district_compliance', label: 'District Compliance Audit', args: 'district (e.g. "3000")', desc: 'Deep automated audit of club arrears, termination dues risk, and officer reporting status.' },
                                 { name: 'sponsorship_opportunity_report', label: 'Sponsorship Opportunity Report', args: 'district (e.g. "3000")', desc: 'Identifies Rotary clubs without Rotaract or Interact sponsorship and produces extension targets.' },
                                 { name: 'zone_performance_comparison', label: 'Zone Performance Comparison', args: 'zone (e.g. "5")', desc: 'Macro performance analysis comparing club growth, university vs community split, and TRF giving.' }
