@@ -159,6 +159,13 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
             cell: info => info.getValue() || '---'
         },
         { 
+            header: 'Affected Members', 
+            id: 'Billable_Member_Count',
+            accessorKey: 'Billable Member Count',
+            accessorFn: row => Number(row['Billable Member Count'] ?? row.billableMembers ?? row.members ?? 0),
+            cell: info => Number(info.getValue() || 0).toLocaleString()
+        },
+        { 
             header: 'Outstanding (₹)*', 
             id: 'Outstanding_INR',
             accessorKey: 'Outstanding INR',

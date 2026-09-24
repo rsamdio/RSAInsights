@@ -19,6 +19,7 @@ This skill defines the design, terminology, and component patterns for the Rotar
   - `"Outstanding (₹)*"` and MetricCard `"Outstanding Dues*"` must carry an asterisk (`*`) to denote whole-number integer conversion and rounding at the club level, annotated with the footer disclaimer.
 - **Club Drilldown & Roster Table Columns:**
   - Drilldown tables listing individual Rotaract clubs (`DistrictTable`, `Clubs in Arrears`, `Missing Officers`, `New Clubs`, `TRF Contributions`, `All Clubs Roster`) must include a `"Sponsor Clubs"` column displaying the sponsoring Rotary or Rotaract club names and exporting cleanly to CSV.
+  - `"Clubs in Arrears"` table must include `"Affected Members"` displaying billable member count recorded for each club in arrears.
 - **Sponsorship & Youth Service:**
   - Dedicated drilldown tabs: `"Rotary w/o Rotaract"` and `"Rotary w/o Interact"`.
   - Terminology: Always use `"Sponsor Clubs"` (or `"Sponsor Club(s)"`) to reflect Rotaract, Rotary, and joint sponsorships.
