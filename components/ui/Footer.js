@@ -17,6 +17,8 @@ export default function Footer({ lastUpdated = '13 Aug 2026' }) {
                 <span>Data Source: Rotary International</span>
                 <span style={{ margin: '0 8px', color: 'var(--border-color)' }}>•</span>
                 <span>Last Updated: {lastUpdated}</span>
+                <span style={{ margin: '0 8px', color: 'var(--border-color)' }}>•</span>
+                <a href="/docs" style={{ color: 'var(--primary, #0284c7)', textDecoration: 'none' }}>API & Open Data</a>
             </div>
             <p style={{ maxWidth: '900px', margin: '0 auto 10px auto', fontSize: '11.5px', color: 'var(--text-muted)' }}>
                 <strong>* Outstanding Dues Note:</strong> Dues are converted from USD to INR at prevailing monthly exchange rates (₹96/USD for current data, ₹95/USD for 1 July baseline) and rounded to the nearest whole integer at the individual club level. Aggregate district, zone, and global sums are subject to minor variations due to club-level rounding.
