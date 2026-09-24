@@ -4,10 +4,21 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
     ListToolsRequestSchema,
     CallToolRequestSchema,
+    ListResourcesRequestSchema,
+    ReadResourceRequestSchema,
+    ListPromptsRequestSchema,
+    GetPromptRequestSchema,
     ErrorCode,
     McpError
 } from '@modelcontextprotocol/sdk/types.js';
-import { TOOLS_DEFINITIONS, executeTool } from '../lib/mcp/tools.js';
+import {
+    TOOLS_DEFINITIONS,
+    MCP_RESOURCES,
+    MCP_PROMPTS,
+    executeTool,
+    readResource,
+    getPrompt
+} from '../lib/mcp/tools.js';
 
 const server = new Server(
     {
@@ -16,11 +27,14 @@ const server = new Server(
     },
     {
         capabilities: {
-            tools: {}
+            tools: {},
+            resources: {},
+            prompts: {}
         }
     }
 );
 
+// Tools handlers
 server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
         tools: TOOLS_DEFINITIONS
@@ -36,6 +50,46 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         throw new McpError(
             ErrorCode.InternalError,
             `Error executing tool ${name}: ${error.message}`
+        );
+    }
+});
+
+// Resources handlers
+server.setRequestHandler(ListResourcesRequestSchema, async () => {
+    return {
+        resources: MCP_RESOURCES
+    };
+});
+
+server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+    const { uri } = request.params;
+    try {
+        const result = await readResource(uri);
+        return result;
+    } catch (error) {
+        throw new McpError(
+            ErrorCode.InvalidRequest,
+            `Error reading resource ${uri}: ${error.message}`
+        );
+    }
+});
+
+// Prompts handlers
+server.setRequestHandler(ListPromptsRequestSchema, async () => {
+    return {
+        prompts: MCP_PROMPTS
+    };
+});
+
+server.setRequestHandler(GetPromptRequestSchema, async (request) => {
+    const { name, arguments: args } = request.params;
+    try {
+        const result = await getPrompt(name, args || {});
+        return result;
+    } catch (error) {
+        throw new McpError(
+            ErrorCode.InvalidRequest,
+            `Error getting prompt ${name}: ${error.message}`
         );
     }
 });

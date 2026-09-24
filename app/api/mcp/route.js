@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
-import { TOOLS_DEFINITIONS, executeTool } from '@/lib/mcp/tools';
+import {
+    TOOLS_DEFINITIONS,
+    MCP_RESOURCES,
+    MCP_PROMPTS,
+    executeTool,
+    readResource,
+    getPrompt
+} from '@/lib/mcp/tools';
 
 export const dynamic = 'force-dynamic';
 
@@ -20,9 +27,13 @@ export async function GET() {
         version: '1.0.0',
         protocolVersion: '2024-11-05',
         capabilities: {
-            tools: {}
+            tools: {},
+            resources: {},
+            prompts: {}
         },
-        tools: TOOLS_DEFINITIONS
+        tools: TOOLS_DEFINITIONS,
+        resources: MCP_RESOURCES,
+        prompts: MCP_PROMPTS
     }, { headers: CORS_HEADERS });
 }
 
@@ -40,7 +51,11 @@ export async function POST(request) {
                     id,
                     result: {
                         protocolVersion: '2024-11-05',
-                        capabilities: { tools: {} },
+                        capabilities: {
+                            tools: {},
+                            resources: {},
+                            prompts: {}
+                        },
                         serverInfo: {
                             name: 'rotaract-south-asia-analytics',
                             version: '1.0.0'
@@ -49,6 +64,7 @@ export async function POST(request) {
                 }, { headers: CORS_HEADERS });
             }
 
+            // Tools handlers
             if (method === 'tools/list') {
                 return NextResponse.json({
                     jsonrpc: '2.0',
@@ -80,6 +96,71 @@ export async function POST(request) {
                     id,
                     result: executionResult
                 }, { headers: CORS_HEADERS });
+            }
+
+            // Resources handlers
+            if (method === 'resources/list') {
+                return NextResponse.json({
+                    jsonrpc: '2.0',
+                    id,
+                    result: {
+                        resources: MCP_RESOURCES
+                    }
+                }, { headers: CORS_HEADERS });
+            }
+
+            if (method === 'resources/read') {
+                const uri = params?.uri;
+                try {
+                    const result = await readResource(uri);
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id,
+                        result
+                    }, { headers: CORS_HEADERS });
+                } catch (err) {
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id,
+                        error: {
+                            code: -32602,
+                            message: err.message
+                        }
+                    }, { headers: CORS_HEADERS });
+                }
+            }
+
+            // Prompts handlers
+            if (method === 'prompts/list') {
+                return NextResponse.json({
+                    jsonrpc: '2.0',
+                    id,
+                    result: {
+                        prompts: MCP_PROMPTS
+                    }
+                }, { headers: CORS_HEADERS });
+            }
+
+            if (method === 'prompts/get') {
+                const name = params?.name;
+                const promptArgs = params?.arguments || {};
+                try {
+                    const result = await getPrompt(name, promptArgs);
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id,
+                        result
+                    }, { headers: CORS_HEADERS });
+                } catch (err) {
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id,
+                        error: {
+                            code: -32602,
+                            message: err.message
+                        }
+                    }, { headers: CORS_HEADERS });
+                }
             }
 
             return NextResponse.json({
