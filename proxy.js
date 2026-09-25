@@ -3,8 +3,9 @@ import { NextResponse } from 'next/server';
 export function proxy(request) {
   const host = request.headers.get('host') || '';
   
-  // Check if the request is coming from the old subdomains
+  // Check if the request is coming from the Netlify subdomain or old subdomains
   if (
+    host.includes('zone45678analysis.netlify.app') ||
     host.includes('4567.rsamdio') || 
     host.includes('45678.rsamdio')
   ) {

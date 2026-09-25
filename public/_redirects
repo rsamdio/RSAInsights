@@ -1,0 +1,10 @@
+# Netlify Domain Redirects
+# Redirect default Netlify subdomain to canonical production domain
+https://zone45678analysis.netlify.app/* https://insights.rsamdio.org/:splat 301!
+http://zone45678analysis.netlify.app/* https://insights.rsamdio.org/:splat 301!
+
+# Redirect legacy subdomains
+https://4567.rsamdio.org/* https://insights.rsamdio.org/:splat 301!
+http://4567.rsamdio.org/* https://insights.rsamdio.org/:splat 301!
+https://45678.rsamdio.org/* https://insights.rsamdio.org/:splat 301!
+http://45678.rsamdio.org/* https://insights.rsamdio.org/:splat 301!

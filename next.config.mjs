@@ -27,6 +27,21 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'zone45678analysis.netlify.app',
+          },
+        ],
+        destination: 'https://insights.rsamdio.org/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
