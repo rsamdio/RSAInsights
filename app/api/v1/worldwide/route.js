@@ -14,6 +14,7 @@ export async function GET(request) {
         const type = searchParams.get('type') || 'all';
         const country = searchParams.get('country') || '';
         const zone = searchParams.get('zone') || '';
+        const region = searchParams.get('region') || '';
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || '';
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const minMembers = searchParams.get('minMembers') || searchParams.get('min_members') || undefined;
@@ -23,6 +24,7 @@ export async function GET(request) {
             type,
             country,
             zone,
+            region,
             sortBy,
             sortOrder,
             minMembers,
