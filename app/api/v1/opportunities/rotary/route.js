@@ -15,6 +15,8 @@ export async function GET(request) {
         const type = searchParams.get('type') || searchParams.get('opportunity_type') || searchParams.get('opportunityType') || 'no_rotaract';
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
+        const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'district';
+        const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'asc';
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 
@@ -22,6 +24,8 @@ export async function GET(request) {
             type,
             district,
             zone,
+            sortBy,
+            sortOrder,
             limit,
             offset
         });

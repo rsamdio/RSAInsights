@@ -10,11 +10,20 @@ const HeaderFilters = dynamic(() => import('@/components/ui/HeaderFilters'), {
 
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
-import { getDashboardSummary } from '@/lib/api';
+import { getDashboardSummary, getAllClubs, getArrears } from '@/lib/api';
 import Analytics from '@/components/ui/Analytics';
 import NavigationProgress from '@/components/ui/NavigationProgress';
 import BackToTop from '@/components/ui/BackToTop';
 import JsonLd from '@/components/seo/JsonLd';
+
+if (!global._preloaded) {
+  global._preloaded = true;
+  try {
+    getAllClubs();
+    getDashboardSummary();
+    getArrears();
+  } catch {}
+}
 
 export const metadata = {
   metadataBase: new URL('https://insights.rsamdio.org'),

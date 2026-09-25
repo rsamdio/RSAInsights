@@ -83,8 +83,17 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/.well-known/openai-apps-challenge`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const text = (await res.text()).trim();
-        if (!text.includes('ph1AUVZWlyHGibAi2SQ9ICgqLrdDfm_ffAy65gQ9kLo')) throw new Error(`Unexpected token: ${text}`);
+        if (!text.includes('ph1AUVZW1yHGibAi2SQ9ICgqLrdDfm_fFaY65gQ9kLo')) throw new Error(`Unexpected token: ${text}`);
         return `Challenge Token Verified: ${text}`;
+    });
+
+    await test('DOCS', 'MCP Server Discovery Manifest (/.well-known/mcp-server.json)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/.well-known/mcp-server.json`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const pVer = data.protocolVersion || data.mcpVersion;
+        if (pVer !== '2026-07-28') throw new Error(`Expected MCP version 2026-07-28, got ${pVer}`);
+        return `MCP Manifest Verified: ${data.name} v${data.version}, protocol: ${pVer}`;
     });
 
     // ----------------------------------------------------
@@ -221,6 +230,14 @@ async function run() {
         return `Total: ${data.total} dual-risk clubs, Sample: ${data.data[0].name} (Dist ${data.data[0].district}, ₹${data.data[0].outstandingINR})`;
     });
 
+    await test('REST', 'GET /api/v1/compliance/unified?limit=2 (Unified Compliance Issues)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/unified?limit=2`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data.data) || !data.pagination) throw new Error('Expected successful unified compliance response');
+        return `Total: ${data.pagination.total} compliance issues tracked, Sample: ${data.data[0].name} (${data.data[0].isArrears ? 'Arrears' : 'Missing Officers'})`;
+    });
+
     await test('REST', 'GET /api/v1/interact (Interact Macro Analytics)', async () => {
         const res = await fetchWithRetry(`${prodBase}/api/v1/interact`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -329,6 +346,57 @@ async function run() {
         const data = await res.json();
         if (data.error) throw new Error(data.error.message);
         return `Protocol: ${data.result.protocolVersion}, Server: ${data.result.serverInfo.name} v${data.result.serverInfo.version}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (JSON-RPC ping)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ jsonrpc: '2.0', id: 'ping-1', method: 'ping' })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        return `Ping acknowledged, JSON-RPC id: ${data.id}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (JSON-RPC notifications/initialized)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })
+        });
+        if (res.status !== 204 && res.status !== 200) throw new Error(`Expected HTTP 204 or 200, got ${res.status}`);
+        return `Notification handled successfully (HTTP ${res.status})`;
+    });
+
+    await test('MCP', 'POST /api/mcp (Invalid JSON Parse Error)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: '{ malformed json: true '
+        });
+        if (res.status !== 400) throw new Error(`Expected HTTP 400, got ${res.status}`);
+        const data = await res.json();
+        if (data.error?.code !== -32700) throw new Error(`Expected error code -32700, got ${data.error?.code}`);
+        return `Correctly returned -32700 parse error on malformed payload`;
+    });
+
+    await test('MCP', 'POST /api/mcp (Param Guard: get_club_profile without clubId)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'guard-1',
+                method: 'tools/call',
+                params: { name: 'get_club_profile', arguments: {} }
+            })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!data.result?.isError) throw new Error('Expected isError=true for missing required clubId');
+        return `Guard triggered successfully: ${data.result.content[0].text}`;
     });
 
     await test('MCP', 'POST /api/mcp (tools/list)', async () => {

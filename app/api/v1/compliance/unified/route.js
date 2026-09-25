@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getArrearsList } from '@/lib/services/analyticsService';
+import { getUnifiedIssuesList } from '@/lib/services/analyticsService';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,6 +9,16 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
+/**
+ * GET /api/v1/compliance/unified
+ *
+ * Returns the unified compliance issues roster (1,330 clubs with financial arrears,
+ * missing officer reporting, or both).
+ *
+ * Query params:
+ *   district, zone, base, country, issueType (all|both|arrears|no_officers|at_risk),
+ *   minOutstanding, maxOutstanding, sortBy (outstanding|name|district), sortOrder, limit, offset
+ */
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
@@ -16,7 +26,7 @@ export async function GET(request) {
         const zone = searchParams.get('zone') || '';
         const base = searchParams.get('base') || '';
         const country = searchParams.get('country') || '';
-        const atRiskOnly = (searchParams.get('atRiskOnly') || searchParams.get('at_risk_only')) === 'true';
+        const issueType = searchParams.get('issueType') || searchParams.get('issue_type') || 'all';
         const minOutstanding = searchParams.get('minOutstanding') || searchParams.get('min_outstanding') || undefined;
         const maxOutstanding = searchParams.get('maxOutstanding') || searchParams.get('max_outstanding') || undefined;
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'outstanding';
@@ -24,12 +34,12 @@ export async function GET(request) {
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 
-        const result = await getArrearsList({
+        const result = await getUnifiedIssuesList({
             district,
             zone,
             base,
             country,
-            atRiskOnly,
+            issueType,
             minOutstanding,
             maxOutstanding,
             sortBy,
@@ -40,7 +50,7 @@ export async function GET(request) {
 
         return NextResponse.json(result, { headers: CACHE_HEADERS });
     } catch (error) {
-        console.error('API /v1/compliance/arrears error:', error);
-        return NextResponse.json({ error: 'Failed to retrieve arrears list' }, { status: 500 });
+        console.error('API /v1/compliance/unified error:', error);
+        return NextResponse.json({ error: 'Failed to retrieve unified compliance list' }, { status: 500 });
     }
 }

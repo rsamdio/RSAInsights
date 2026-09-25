@@ -19,6 +19,7 @@ export async function GET(request) {
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const minMembers = searchParams.get('minMembers') || searchParams.get('min_members') || undefined;
         const limit = searchParams.get('limit') || undefined;
+        const offset = searchParams.get('offset') || 0;
 
         const stats = await getWorldwideStats({
             type,
@@ -28,7 +29,8 @@ export async function GET(request) {
             sortBy,
             sortOrder,
             minMembers,
-            limit
+            limit,
+            offset
         });
 
         if (!stats) {

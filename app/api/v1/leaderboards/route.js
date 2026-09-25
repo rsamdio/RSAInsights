@@ -19,6 +19,7 @@ export async function GET(request) {
         const base = searchParams.get('base') || '';
         const scope = searchParams.get('scope') || 'south_asia';
         const limit = searchParams.get('limit') || 10;
+        const offset = searchParams.get('offset') || 0;
 
         const result = await getLeaderboards({
             category,
@@ -27,7 +28,8 @@ export async function GET(request) {
             country,
             base,
             scope,
-            limit
+            limit,
+            offset
         });
 
         return NextResponse.json(result, { headers: CACHE_HEADERS });

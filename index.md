@@ -8,8 +8,8 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 
 | Component | Technology | Source of Truth / Configuration |
 |---|---|---|
-| Framework | Next.js 16.3.0 (App Router) | [package.json](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/package.json), [next.config.mjs](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/next.config.mjs) |
-| UI Library | React 19.2.8 | [package.json](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/package.json) |
+| Framework | Next.js 16.3.6 (App Router) | [package.json](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/package.json), [next.config.mjs](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/next.config.mjs) |
+| UI Library | React 19.3.0 | [package.json](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/package.json) |
 | Styling | 100% Vanilla CSS (No Tailwind) | [app/globals.css](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/app/globals.css) |
 | Charts | Chart.js 4.5.1 + react-chartjs-2 5.3.1 | [components/charts/](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/charts) |
 | Data Tables | TanStack Table 8.21.3 | [components/tables/](file:///Users/zeospec/Dev/Code/rotaractsouthasiadata/components/tables) |
@@ -31,8 +31,8 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `app/club/[clubId]/page.js` | Universal Club Report: 2,820+ club profiles, TRF details, compliance action center | Club-level tasks |
 | `app/worldwide/page.js` | Worldwide Statistics: global club/member leaderboards, country rankings, baseline deltas | Global / Country stats |
 | `app/api/filters/route.js` | Server route providing dynamic filter options (cached 1d, stale 7d) | Filter backend tasks |
-| `app/api/v1/` | Public REST API endpoints (19 endpoints: summary, zones, districts, clubs, compliance, opportunities, TRF, leaderboards, interact, worldwide) | REST API tasks |
-| `app/api/mcp/route.js` | HTTP endpoint supporting JSON-RPC 2.0 MCP protocol | Remote MCP tasks |
+| `app/api/v1/` | Public REST API endpoints (20 endpoints: summary, zones, districts, clubs, compliance including unified, opportunities, TRF, leaderboards, interact, worldwide) | REST API tasks |
+| `app/api/mcp/route.js` | HTTP endpoint supporting JSON-RPC 2.0 MCP protocol (spec version 2026-07-28) | Remote MCP tasks |
 | `app/docs/page.js` & `public/docs.html` | Interactive API documentation (Scalar API reference UI) | API Docs tasks |
 | `public/openapi.json` | OpenAPI 3.1.0 specification covering all REST endpoints | API Spec tasks |
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
@@ -42,6 +42,12 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `lib/api.js` | Data Access Layer: file reader with mtime cache (`global.apiCache`), O(1) `getClubMap()` | Data querying / Helpers |
 | `scripts/generate_dashboard_data.js` | Master ETL pipeline: parses Excel/CSV files, computes rollups & deltas, writes JSON/CSV to `data/` | ETL / Master data tasks |
 | `scripts/validate_harness.js` | Agent harness validator: checks file references, data files, forbidden em dashes | Harness maintenance |
+| `scripts/verify_production.mjs` | Automated smoke & integration test suite verifying local or production endpoints | Production / Integration testing |
+| `proxy.js` | Next.js 16 host proxy middleware redirecting legacy and Netlify subdomains to primary domain | Routing / Middleware tasks |
+| `netlify.toml` & `public/_redirects` | Netlify edge routing, 301 force domain redirects (`zone45678analysis.netlify.app` to canonical) | Netlify deployment / Hosting |
+| `public/.well-known/mcp-server.json` | MCP server discovery manifest for platform integration and auto-discovery | MCP discovery |
+| `public/.well-known/openai-apps-challenge` & `app/.well-known/` | Domain ownership challenge verification endpoint for OpenAI App Directory submission | OpenAI verification |
+| `openai-skills/` | Pre-packaged OpenAI agent skills (compliance audit, sponsorship pipeline, worldwide benchmark, south asia overview) | OpenAI skill packaging |
 | `fulldata/` | Raw active master Excel workbooks (`MasterData.xlsx`) | Raw master data inputs |
 | `basedata/` | Historical baseline CSVs (`1july.csv`, `1julyCountries.csv`, `Zone45678 - 9July2026.xlsx`) | Baseline references |
 | `data/` | Pre-aggregated JSON and CSV files consumed by `lib/api.js` | Generated data artifacts |
@@ -96,6 +102,9 @@ npm run generate-data
 # Run full harness verification (file links, data integrity, no-em-dash check)
 npm run validate-harness
 
+# Run automated smoke and production verification test suite
+node scripts/verify_production.mjs https://insights.rsamdio.org
+
 # Run Model Context Protocol (MCP) server on stdio
 npm run mcp
 
@@ -126,7 +135,11 @@ When information sources conflict, agents must follow this strict precedence:
 
 1. **District as Primary Key:** Districts serve as the immutable primary key. Zones are dynamically mapped from district mappings (`districtToZone[dist]`). Never hardcode static zone-district associations.
 2. **Raw Sheet Prioritization:** Critical compliance metrics (arrears, dues, missing officers) are aggregated from raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`), never from summary sheets.
-3. **South Asia Geographic Scope:** Only RI Zones 4, 5, 6, and 7 are included. Non-South Asian districts (e.g. 9510, 9560, 9620, 9675) are strictly excluded in `generate_dashboard_data.js`.
+3. **Geographic Scoping & Dual Ranking:**
+   - South Asia is strictly RI Zones 4, 5, 6, and 7 (44 districts across India, Sri Lanka, and Nepal).
+   - Non-South Asian districts (e.g. 9510, 9560, 9620, 9675) are strictly excluded from South Asia aggregations.
+   - Worldwide queries cover all 599 global districts across 34 RI zones.
+   - Every district record carries dual rankings: `rank` (position within the requested scope/region) and `worldwideRank` (immutable position across all 599 global districts).
 4. **Currency Calculation & Rounding:**
    - Dues converted from USD to INR at `CURRENT_EXCHANGE_RATE` (default: 96 INR/USD) and rounded to the nearest integer at the club level (`Math.round(amtUSD * RATE)`).
    - TRF Foundation contributions are tracked globally in USD ($).

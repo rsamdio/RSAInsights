@@ -13,10 +13,11 @@ export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
         const zone = searchParams.get('zone');
+        const country = searchParams.get('country') || '';
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'district';
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'asc';
 
-        const districts = await getDistricts(zone, sortBy, sortOrder);
+        const districts = await getDistricts(zone, sortBy, sortOrder, country);
         return NextResponse.json({
             count: districts.length,
             districts

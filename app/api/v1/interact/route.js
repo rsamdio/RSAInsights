@@ -19,15 +19,17 @@ const CACHE_HEADERS = {
  * - District-level and zone-level growth trends
  *
  * Query params:
- *   district, zone
+ *   district, zone, country, base
  */
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
+        const country = searchParams.get('country') || '';
+        const base = searchParams.get('base') || '';
 
-        const result = await getInteractAnalytics({ district, zone });
+        const result = await getInteractAnalytics({ district, zone, country, base });
         return NextResponse.json(result, { headers: CACHE_HEADERS });
     } catch (error) {
         console.error('API /v1/interact error:', error);

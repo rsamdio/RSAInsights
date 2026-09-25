@@ -14,14 +14,14 @@ Follow this step-by-step protocol to build a targeted sponsorship pipeline:
 ### Step 1: Identify Rotary Clubs Without Rotaract
 Invoke `find_rotary_opportunities` with parameters:
 - `district`: Target district number (e.g. `3000`, `3141`).
-- `type`: `"no_rotaract"`
+- `opportunityType`: `"no_rotaract"`
 
 Extract the full list of active Rotary clubs in the district that currently sponsor zero Rotaract clubs.
 
 ### Step 2: Identify Rotary Clubs Without Interact
 Invoke `find_rotary_opportunities` with parameters:
 - `district`: Target district number.
-- `type`: `"no_interact"`
+- `opportunityType`: `"no_interact"`
 
 Extract the list of active Rotary clubs that currently sponsor zero Interact clubs.
 

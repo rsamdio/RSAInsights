@@ -13,14 +13,17 @@ Follow this step-by-step protocol to construct the worldwide comparative benchma
 
 ### Step 1: Query Global Growth Rankings
 Invoke `get_worldwide_rankings` with parameters:
-- `category`: `"growth"`
-- `limit`: `50` (or `sortOrder: "desc"`)
+- `type`: `"district"`
+- `sortBy`: `"member_growth_pct"`
+- `region`: `"south_asia"` (optional: to isolate South Asian districts) or omit for worldwide (599 districts)
+- `limit`: `50`
+- `sortOrder`: `"desc"`
 
-Identify the top-growing districts globally and pinpoint where South Asian districts (e.g. 3261, 3141, 3000) rank on the global leaderboard.
+Identify the top-growing districts globally and pinpoint where South Asian districts (e.g. 3261, 3141, 3000) rank on the global leaderboard with dual ranks (`rank` within scope, and `worldwideRank` across all 599 districts).
 
 ### Step 2: Query Global Country Standings
 Invoke `get_worldwide_rankings` with parameters:
-- `category`: `"countries"`
+- `type`: `"country"`
 - `limit`: `25`
 
 Retrieve global rankings by country for total Rotaract clubs and reported members, highlighting South Asian countries (India, Bangladesh, Sri Lanka, Nepal, Pakistan).

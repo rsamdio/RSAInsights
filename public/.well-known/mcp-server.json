@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "mcpEndpoint": "https://insights.rsamdio.org/api/mcp",
+  "protocolVersion": "2026-07-28",
+  "mcpVersion": "2026-07-28",
+  "name": "Rotaract South Asia Analytics",
+  "description": "Open analytics API for Rotaract and Rotary across South Asia (RI Zones 4, 5, 6, and 7). Covers 44 districts, 2,877 clubs, financial compliance, TRF giving, Interact statistics, and worldwide rankings.",
+  "tools": 14,
+  "resources": 8,
+  "prompts": 4,
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  },
+  "contact": {
+    "url": "https://insights.rsamdio.org"
+  }
+}

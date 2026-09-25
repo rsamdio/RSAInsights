@@ -23,6 +23,7 @@ export async function GET(request) {
         const minMembers = searchParams.get('minMembers') || searchParams.get('min_members') || undefined;
         const maxMembers = searchParams.get('maxMembers') || searchParams.get('max_members') || undefined;
         const minOutstanding = searchParams.get('minOutstanding') || searchParams.get('min_outstanding') || undefined;
+        const maxOutstanding = searchParams.get('maxOutstanding') || searchParams.get('max_outstanding') || undefined;
 
         const isArrearsParam = searchParams.get('isArrears') ?? searchParams.get('is_arrears');
         const isAtRiskParam = searchParams.get('isAtRisk') ?? searchParams.get('is_at_risk');
@@ -50,6 +51,7 @@ export async function GET(request) {
             minMembers,
             maxMembers,
             minOutstanding,
+            maxOutstanding,
             isArrears,
             isAtRisk,
             isNoOfficers,

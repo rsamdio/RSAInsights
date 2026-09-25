@@ -29,13 +29,14 @@ Extract:
 - Consecutive billing periods in arrears.
 
 ### Step 3: Granular Issue Breakdown
-Invoke `find_compliance_risks` with `district` and `issue: "all"` (or separate queries for `arrears` and `no_officers`).
+Invoke `find_compliance_risks` with `district` and `riskType: "arrears"`, and separately with `riskType: "missing_officers"`.
+(Note: For clubs with both issues simultaneously, always use `find_dual_risk_clubs` as identified in Step 2).
 Identify:
-- Clubs in single-risk arrears (financial only).
-- Clubs with missing officers only (administrative compliance).
+- Clubs in single-risk arrears (financial dues only).
+- Clubs with missing officers only (administrative compliance on MyRotary).
 
 ### Step 4: Top Club Strength Benchmark
-Invoke `get_leaderboards` with `district` and `category: "members"` to identify the top anchor clubs whose healthy status can support struggling clubs.
+Invoke `get_leaderboards` with `district` and `category: "largest_clubs"` to identify the top anchor clubs whose healthy status can support struggling clubs.
 
 ---
 

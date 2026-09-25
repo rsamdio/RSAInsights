@@ -20,12 +20,19 @@
 - `/club/[clubId]`: Universal Club Report (2,820+ clubs with KPI grid, Club Information & Sponsorship card, TRF table, and Compliance Action Center).
 - `/worldwide`: Worldwide Rotaract & Interact Statistics (Global leaderboards and growth statistics).
 - `/api/filters`: Server endpoint providing dynamic filter options (cached 1 day, stale-while-revalidate 7 days).
+- `/api/v1/*`: 20 public REST API endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
+- `/api/mcp`: Remote HTTP JSON-RPC 2.0 endpoint for Model Context Protocol (protocol version 2026-07-28).
+- `/docs`: Interactive Scalar API reference documentation.
+- `/.well-known/mcp-server.json`: MCP server discovery manifest.
+- `/.well-known/openai-apps-challenge`: Domain challenge verification for OpenAI App Directory.
 
 ---
 
 ## Key Architectural Invariants
 - **District as Primary Key:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`).
 - **Raw Sheet Prioritization:** Aggregate raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) rather than summary sheets.
+- **Geographic Scoping & Dual Ranking:** South Asia is strictly RI Zones 4, 5, 6, and 7 (44 districts). Global benchmarks cover all 599 districts. Records provide dual rankings: `rank` (scoped) and immutable `worldwideRank` (global).
+- **Domain & Subdomain Redirects:** All requests to `zone45678analysis.netlify.app` or legacy subdomains redirect with 301 to `https://insights.rsamdio.org/` via Netlify Edge (`public/_redirects`, `netlify.toml`), Next.js 16 host proxy (`proxy.js`), and Next config (`next.config.mjs`).
 - **Async Route Params:** Next.js App Router `params` and `searchParams` are Promises (`const { zoneId } = await params;`).
 - **O(1) Hash Map Lookups:** Use `getClubMap()` in `lib/api.js` for instant club lookups instead of scanning `all_clubs.json`.
 - **File-based Cache:** `readJsonFile()` in `lib/api.js` caches parsed JSON by mtime in `global.apiCache` (survives across renders in Node).
@@ -87,6 +94,19 @@
 - `DoughnutChart.js`: Chart.js doughnut wrapper.
 - `BarChart.js`: Chart.js bar wrapper.
 - `JsonLd.js`: SEO schema renderer for Organization, WebSite, Dataset, and Breadcrumb schemas.
+
+### API, MCP & Services
+- `lib/services/analyticsService.js`: Core domain service layer handling search, filtering, dual rankings, baselines, and aggregations.
+- `lib/mcp/tools.js`: MCP schemas for 14 tools, 8 resources, 4 prompts, output schemas, and tool execution dispatcher.
+- `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`).
+- `app/api/v1/`: 20 public REST endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
+- `app/api/mcp/route.js`: JSON-RPC 2.0 HTTP route serving MCP tools, resources, and prompts over HTTPS (protocol version 2026-07-28).
+- `public/.well-known/mcp-server.json`: MCP server discovery manifest.
+- `app/docs/page.js` & `public/docs.html`: Interactive API reference documentation with Scalar UI.
+- `public/openapi.json`: OpenAPI 3.1.0 specification defining all endpoints and models.
+- `proxy.js`: Next.js 16 host proxy middleware redirecting legacy/Netlify domains.
+- `public/_redirects` & `netlify.toml`: Netlify edge domain redirect rules (`zone45678analysis.netlify.app` -> `insights.rsamdio.org`).
+- `scripts/verify_production.mjs`: Automated integration & smoke test suite verifying endpoints and tool execution.
 
 ---
 

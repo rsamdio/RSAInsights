@@ -14,6 +14,8 @@ export async function GET(request) {
         const { searchParams } = new URL(request.url);
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
+        const base = searchParams.get('base') || '';
+        const country = searchParams.get('country') || '';
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'totalContributionsUSD';
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const limit = searchParams.get('limit') || 25;
@@ -22,6 +24,8 @@ export async function GET(request) {
         const result = await getTRFList({
             district,
             zone,
+            base,
+            country,
             sortBy,
             sortOrder,
             limit,

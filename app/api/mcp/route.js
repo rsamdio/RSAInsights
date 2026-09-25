@@ -10,12 +10,28 @@ import {
 
 export const dynamic = 'force-dynamic';
 
+const PROTOCOL_VERSION = '2026-07-28';
+const SERVER_NAME = 'rotaract-south-asia-analytics';
+const SERVER_VERSION = '1.1.0';
+
 const CORS_HEADERS = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Cache-Control': 'no-cache, no-transform'
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization, Mcp-Protocol-Version',
+    'Cache-Control': 'no-cache, no-transform',
+    'Mcp-Protocol-Version': PROTOCOL_VERSION
 };
+
+// Static MCP method responses (tool/resource/prompt listings) are safe to cache briefly.
+// They do not change between deployments.
+const STATIC_CACHE_HEADERS = {
+    ...CORS_HEADERS,
+    'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600'
+};
+
+function withTiming(headers, startMs) {
+    return { ...headers, 'X-Response-Time': `${Date.now() - startMs}ms` };
+}
 
 export async function OPTIONS() {
     return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
@@ -23,9 +39,9 @@ export async function OPTIONS() {
 
 export async function GET() {
     return NextResponse.json({
-        server: 'rotaract-south-asia-analytics',
-        version: '1.0.0',
-        protocolVersion: '2024-11-05',
+        server: SERVER_NAME,
+        version: SERVER_VERSION,
+        protocolVersion: PROTOCOL_VERSION,
         capabilities: {
             tools: {},
             resources: {},
@@ -34,45 +50,77 @@ export async function GET() {
         tools: TOOLS_DEFINITIONS,
         resources: MCP_RESOURCES,
         prompts: MCP_PROMPTS
-    }, { headers: CORS_HEADERS });
+    }, { headers: STATIC_CACHE_HEADERS });
 }
 
 export async function POST(request) {
+    const start = Date.now();
     try {
-        const body = await request.json();
+        let body;
+        try {
+            body = await request.json();
+        } catch (parseErr) {
+            return NextResponse.json({
+                jsonrpc: '2.0',
+                id: null,
+                error: {
+                    code: -32700,
+                    message: `Parse error: Invalid JSON payload (${parseErr.message})`
+                }
+            }, { status: 400, headers: withTiming(CORS_HEADERS, start) });
+        }
 
-        // Support standard JSON-RPC 2.0 protocol
+        // Standard JSON-RPC 2.0 protocol (MCP 2026-07-28 spec)
         if (body.jsonrpc === '2.0') {
             const { id, method, params } = body;
+            const responseId = id !== undefined ? id : null;
 
-            if (method === 'initialize') {
+            // Ping utility method (MCP standard health check)
+            if (method === 'ping') {
                 return NextResponse.json({
                     jsonrpc: '2.0',
-                    id,
+                    id: responseId,
+                    result: {}
+                }, { headers: withTiming(CORS_HEADERS, start) });
+            }
+
+            // Notifications (e.g. notifications/initialized, notifications/cancelled)
+            if (typeof method === 'string' && method.startsWith('notifications/')) {
+                return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
+            }
+
+            // server/discover: single call returning full capability manifest
+            // Used by platform bots (OpenAI, Anthropic, Google) on first connection
+            if (method === 'initialize' || method === 'server/discover') {
+                return NextResponse.json({
+                    jsonrpc: '2.0',
+                    id: responseId,
                     result: {
-                        protocolVersion: '2024-11-05',
+                        protocolVersion: PROTOCOL_VERSION,
                         capabilities: {
                             tools: {},
                             resources: {},
                             prompts: {}
                         },
                         serverInfo: {
-                            name: 'rotaract-south-asia-analytics',
-                            version: '1.0.0'
-                        }
+                            name: SERVER_NAME,
+                            version: SERVER_VERSION
+                        },
+                        // 2026-07-28: include full manifest in discover response
+                        tools: TOOLS_DEFINITIONS,
+                        resources: MCP_RESOURCES,
+                        prompts: MCP_PROMPTS
                     }
-                }, { headers: CORS_HEADERS });
+                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
             }
 
-            // Tools handlers
+            // Tools
             if (method === 'tools/list') {
                 return NextResponse.json({
                     jsonrpc: '2.0',
-                    id,
-                    result: {
-                        tools: TOOLS_DEFINITIONS
-                    }
-                }, { headers: CORS_HEADERS });
+                    id: responseId,
+                    result: { tools: TOOLS_DEFINITIONS }
+                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
             }
 
             if (method === 'tools/call') {
@@ -80,116 +128,114 @@ export async function POST(request) {
                 const toolArgs = params?.arguments || {};
                 const executionResult = await executeTool(toolName, toolArgs);
 
-                if (executionResult.isError) {
-                    return NextResponse.json({
-                        jsonrpc: '2.0',
-                        id,
-                        error: {
-                            code: -32603,
-                            message: executionResult.content?.[0]?.text || 'Tool execution error'
-                        }
-                    }, { headers: CORS_HEADERS });
-                }
-
                 return NextResponse.json({
                     jsonrpc: '2.0',
-                    id,
+                    id: responseId,
                     result: executionResult
-                }, { headers: CORS_HEADERS });
+                }, { headers: withTiming(CORS_HEADERS, start) });
             }
 
-            // Resources handlers
+            // Resources
             if (method === 'resources/list') {
                 return NextResponse.json({
                     jsonrpc: '2.0',
-                    id,
-                    result: {
-                        resources: MCP_RESOURCES
-                    }
-                }, { headers: CORS_HEADERS });
+                    id: responseId,
+                    result: { resources: MCP_RESOURCES }
+                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
             }
 
             if (method === 'resources/read') {
                 const uri = params?.uri;
+                if (!uri) {
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id: responseId,
+                        error: { code: -32602, message: 'Missing required parameter: "uri"' }
+                    }, { headers: withTiming(CORS_HEADERS, start) });
+                }
                 try {
                     const result = await readResource(uri);
                     return NextResponse.json({
                         jsonrpc: '2.0',
-                        id,
+                        id: responseId,
                         result
-                    }, { headers: CORS_HEADERS });
+                    }, { headers: withTiming(CORS_HEADERS, start) });
                 } catch (err) {
                     return NextResponse.json({
                         jsonrpc: '2.0',
-                        id,
-                        error: {
-                            code: -32602,
-                            message: err.message
-                        }
-                    }, { headers: CORS_HEADERS });
+                        id: responseId,
+                        error: { code: -32602, message: err.message }
+                    }, { headers: withTiming(CORS_HEADERS, start) });
                 }
             }
 
-            // Prompts handlers
+            // Prompts
             if (method === 'prompts/list') {
                 return NextResponse.json({
                     jsonrpc: '2.0',
-                    id,
-                    result: {
-                        prompts: MCP_PROMPTS
-                    }
-                }, { headers: CORS_HEADERS });
+                    id: responseId,
+                    result: { prompts: MCP_PROMPTS }
+                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
             }
 
             if (method === 'prompts/get') {
                 const name = params?.name;
+                if (!name) {
+                    return NextResponse.json({
+                        jsonrpc: '2.0',
+                        id: responseId,
+                        error: { code: -32602, message: 'Missing required parameter: "name"' }
+                    }, { headers: withTiming(CORS_HEADERS, start) });
+                }
                 const promptArgs = params?.arguments || {};
                 try {
                     const result = await getPrompt(name, promptArgs);
                     return NextResponse.json({
                         jsonrpc: '2.0',
-                        id,
+                        id: responseId,
                         result
-                    }, { headers: CORS_HEADERS });
+                    }, { headers: withTiming(CORS_HEADERS, start) });
                 } catch (err) {
                     return NextResponse.json({
                         jsonrpc: '2.0',
-                        id,
-                        error: {
-                            code: -32602,
-                            message: err.message
-                        }
-                    }, { headers: CORS_HEADERS });
+                        id: responseId,
+                        error: { code: -32602, message: err.message }
+                    }, { headers: withTiming(CORS_HEADERS, start) });
                 }
             }
 
             return NextResponse.json({
                 jsonrpc: '2.0',
-                id,
+                id: responseId,
                 error: {
                     code: -32601,
                     message: `Method '${method}' not found`
                 }
-            }, { status: 404, headers: CORS_HEADERS });
+            }, { status: 404, headers: withTiming(CORS_HEADERS, start) });
         }
 
-        // Support direct lightweight invocation: { tool: "search_clubs", args: { ... } }
+        // Lightweight direct invocation: { tool: "search_clubs", args: { ... } }
         const toolName = body.tool || body.name;
         const toolArgs = body.args || body.arguments || {};
 
         if (!toolName) {
             return NextResponse.json({
                 error: 'Missing required field "tool" or "name", or valid JSON-RPC 2.0 payload.'
-            }, { status: 400, headers: CORS_HEADERS });
+            }, { status: 400, headers: withTiming(CORS_HEADERS, start) });
         }
 
         const executionResult = await executeTool(toolName, toolArgs);
-        return NextResponse.json(executionResult, { headers: CORS_HEADERS });
+        return NextResponse.json(executionResult, { headers: withTiming(CORS_HEADERS, start) });
+
     } catch (error) {
         console.error('API /api/mcp error:', error);
         return NextResponse.json({
-            error: 'Failed to process MCP request',
-            details: error.message
-        }, { status: 500, headers: CORS_HEADERS });
+            jsonrpc: '2.0',
+            id: null,
+            error: {
+                code: -32603,
+                message: `Failed to process MCP request: ${error.message}`
+            }
+        }, { status: 500, headers: withTiming(CORS_HEADERS, start) });
     }
 }
