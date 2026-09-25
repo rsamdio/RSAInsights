@@ -22,7 +22,7 @@ const MCP_TOOLS = [
         exampleArgs: { category: 'largest_clubs', limit: 5 },
         examplePrompt: 'What are the top 5 largest Rotaract clubs in South Asia by reported membership?',
         params: [
-            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
+            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "districts_by_member_growth", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
             { name: 'district', type: 'string', required: false, desc: 'Optional 4-digit district filter (e.g. "3000")' },
             { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
             { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", or "Sri Lanka"' },

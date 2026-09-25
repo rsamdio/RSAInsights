@@ -287,6 +287,15 @@ async function run() {
         return `Top Growing District: Dist ${data.data[0]?.district} (+${data.data[0]?.interactGrowthAbs} Interact clubs)`;
     });
 
+    await test('REST', 'GET /api/v1/leaderboards?category=districts_by_member_growth (Rotaract Member Growth)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/leaderboards?category=districts_by_member_growth&limit=3`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const topDist = data.data?.[0];
+        if (topDist?.district !== '3261') throw new Error(`Expected District 3261 as rank 1, got ${topDist?.district}`);
+        return `Top Growing District in South Asia: Dist ${topDist.district} (${topDist.zone}) at +${topDist.membersGrowthPct.toFixed(1)}% (+${topDist.membersGrowthAbs} members)`;
+    });
+
     await test('REST', 'GET /api/v1/clubs/new?limit=5 (Newly Chartered Clubs)', async () => {
         const res = await fetchWithRetry(`${prodBase}/api/v1/clubs/new?limit=5`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -376,6 +385,7 @@ async function run() {
             });
             const data = await res.json();
             if (data.error) throw new Error(data.error.message);
+            if (!data.result.structuredContent) throw new Error('Missing structuredContent in tool result');
             const parsed = JSON.parse(data.result.content[0].text);
             return tool.verify(parsed);
         });

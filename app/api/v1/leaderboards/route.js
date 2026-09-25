@@ -15,6 +15,7 @@ export async function GET(request) {
         const category = searchParams.get('category') || 'all';
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
+        const country = searchParams.get('country') || '';
         const base = searchParams.get('base') || '';
         const limit = searchParams.get('limit') || 10;
 
@@ -22,6 +23,7 @@ export async function GET(request) {
             category,
             district,
             zone,
+            country,
             base,
             limit
         });
