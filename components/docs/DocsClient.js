@@ -197,8 +197,12 @@ const MCP_TOOLS = [
         examplePrompt: 'How does India rank globally in total Rotaract clubs and member growth?',
         params: [
             { name: 'type', type: 'string', required: false, desc: 'Focus: "summary", "country", "district", "interact", "new_clubs", or "all"' },
-            { name: 'country', type: 'string', required: false, desc: 'Filter country name' },
-            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit' }
+            { name: 'country', type: 'string', required: false, desc: 'Filter country name (e.g. "India", "Nepal")' },
+            { name: 'zone', type: 'string', required: false, desc: 'Filter Rotary zone (e.g. "6", "4", "19")' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort metric: "member_growth_pct" (default), "members", "clubs", "club_growth_pct", etc.' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" (default) or "asc"' },
+            { name: 'minMembers', type: 'integer', required: false, desc: 'Minimum reported members filter' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit (default 10)' }
         ]
     }
 ];
