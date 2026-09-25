@@ -949,8 +949,79 @@
           "Worldwide"
         ],
         "summary": "Worldwide Rotaract & Interact Statistics",
-        "description": "Global totals, country growth leaderboards, district rankings, and new club charter statistics.",
+        "description": "Global totals, country growth leaderboards, district rankings, and new club charter statistics. Supports sorting and filtering to find top-performing districts globally.",
         "operationId": "getWorldwideStats",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Focus dataset: 'summary', 'country', 'district', 'interact', 'new_clubs', or 'all'",
+            "schema": {
+              "type": "string",
+              "enum": ["all", "summary", "country", "district", "interact", "new_clubs"],
+              "default": "all"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Filter by country name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Filter by Rotary Zone (e.g. 6 or 'Zone 6')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort metric: 'member_growth_pct', 'member_growth_abs', 'members', 'clubs', 'club_growth_pct', or 'district'",
+            "schema": {
+              "type": "string",
+              "enum": ["member_growth_pct", "member_growth_abs", "members", "clubs", "club_growth_pct", "club_growth_abs", "district"]
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort order: 'desc' or 'asc'",
+            "schema": {
+              "type": "string",
+              "enum": ["desc", "asc"],
+              "default": "desc"
+            }
+          },
+          {
+            "name": "minMembers",
+            "in": "query",
+            "required": false,
+            "description": "Minimum reported members filter",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Limit number of records returned",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Worldwide statistics payload",
@@ -965,13 +1036,36 @@
         }
       }
     },
+    "/.well-known/openai-apps-challenge": {
+      "get": {
+        "tags": [
+          "Overview"
+        ],
+        "summary": "OpenAI Apps Domain Verification Challenge",
+        "description": "Returns the verification challenge token for registering MCP plugins on the OpenAI platform.",
+        "operationId": "getOpenAiChallenge",
+        "responses": {
+          "200": {
+            "description": "Plain text verification challenge token",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "ph1AUVZWlyHGibAi2SQ9ICgqLrdDfm_ffAy65gQ9kLo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/mcp": {
       "get": {
         "tags": [
           "Model Context Protocol (MCP)"
         ],
         "summary": "MCP Server Manifest & Tools Discovery",
-        "description": "Returns the Model Context Protocol (MCP) server metadata, protocol version, capabilities, and the full schema definitions for all 8 available AI tools.",
+        "description": "Returns the Model Context Protocol (MCP) server metadata, protocol version, capabilities, and the full schema definitions for all 14 available AI tools.",
         "operationId": "getMcpManifest",
         "responses": {
           "200": {

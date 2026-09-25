@@ -22,7 +22,7 @@ const MCP_TOOLS = [
         exampleArgs: { category: 'largest_clubs', limit: 5 },
         examplePrompt: 'What are the top 5 largest Rotaract clubs in South Asia by reported membership?',
         params: [
-            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
+            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "districts_by_member_growth", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
             { name: 'district', type: 'string', required: false, desc: 'Optional 4-digit district filter (e.g. "3000")' },
             { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
             { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", or "Sri Lanka"' },
@@ -197,8 +197,12 @@ const MCP_TOOLS = [
         examplePrompt: 'How does India rank globally in total Rotaract clubs and member growth?',
         params: [
             { name: 'type', type: 'string', required: false, desc: 'Focus: "summary", "country", "district", "interact", "new_clubs", or "all"' },
-            { name: 'country', type: 'string', required: false, desc: 'Filter country name' },
-            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit' }
+            { name: 'country', type: 'string', required: false, desc: 'Filter country name (e.g. "India", "Nepal")' },
+            { name: 'zone', type: 'string', required: false, desc: 'Filter Rotary zone (e.g. "6", "4", "19")' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort metric: "member_growth_pct" (default), "members", "clubs", "club_growth_pct", etc.' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" (default) or "asc"' },
+            { name: 'minMembers', type: 'integer', required: false, desc: 'Minimum reported members filter' },
+            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit (default 10)' }
         ]
     }
 ];

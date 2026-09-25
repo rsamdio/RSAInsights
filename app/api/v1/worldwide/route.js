@@ -8,9 +8,27 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
-export async function GET() {
+export async function GET(request) {
     try {
-        const stats = await getWorldwideStats();
+        const { searchParams } = new URL(request.url);
+        const type = searchParams.get('type') || 'all';
+        const country = searchParams.get('country') || '';
+        const zone = searchParams.get('zone') || '';
+        const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || '';
+        const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
+        const minMembers = searchParams.get('minMembers') || searchParams.get('min_members') || undefined;
+        const limit = searchParams.get('limit') || undefined;
+
+        const stats = await getWorldwideStats({
+            type,
+            country,
+            zone,
+            sortBy,
+            sortOrder,
+            minMembers,
+            limit
+        });
+
         if (!stats) {
             return NextResponse.json({ error: 'Worldwide statistics not found' }, { status: 404, headers: CACHE_HEADERS });
         }

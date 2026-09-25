@@ -79,6 +79,14 @@ async function run() {
         return `Status 200, Scalar Reference OK`;
     });
 
+    await test('DOCS', 'OpenAI Apps Challenge Token (/.well-known/openai-apps-challenge)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/.well-known/openai-apps-challenge`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = (await res.text()).trim();
+        if (!text.includes('ph1AUVZWlyHGibAi2SQ9ICgqLrdDfm_ffAy65gQ9kLo')) throw new Error(`Unexpected token: ${text}`);
+        return `Challenge Token Verified: ${text}`;
+    });
+
     // ----------------------------------------------------
     // Category 2: REST API Core Endpoints
     // ----------------------------------------------------
@@ -245,6 +253,15 @@ async function run() {
         return `Global Rotaract Clubs: ${data.totalClubs.toLocaleString()}, Global Members: ${data.totalMembers.toLocaleString()}, Interact: ${data.totalInteractClubs.toLocaleString()}`;
     });
 
+    await test('REST', 'GET /api/v1/worldwide?type=district&sortBy=member_growth_pct&limit=3 (Worldwide District Growth)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/worldwide?type=district&sortBy=member_growth_pct&limit=3`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const topDist = data.districts?.[0];
+        if (topDist?.district !== '3261') throw new Error(`Expected Rank 1 District 3261, got ${topDist?.district}`);
+        return `Top District: Dist ${topDist.district} (Zone ${topDist.zone}) at +${topDist.membersGrowthPct.toFixed(1)}% growth (+${topDist.membersGrowthAbs} members)`;
+    });
+
     await test('REST', 'GET /api/v1/leaderboards (Top Rankings Across Categories)', async () => {
         const res = await fetchWithRetry(`${prodBase}/api/v1/leaderboards?limit=5`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -268,6 +285,15 @@ async function run() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         return `Top Growing District: Dist ${data.data[0]?.district} (+${data.data[0]?.interactGrowthAbs} Interact clubs)`;
+    });
+
+    await test('REST', 'GET /api/v1/leaderboards?category=districts_by_member_growth (Rotaract Member Growth)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/leaderboards?category=districts_by_member_growth&limit=3`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const topDist = data.data?.[0];
+        if (topDist?.district !== '3261') throw new Error(`Expected District 3261 as rank 1, got ${topDist?.district}`);
+        return `Top Growing District in South Asia: Dist ${topDist.district} (${topDist.zone}) at +${topDist.membersGrowthPct.toFixed(1)}% (+${topDist.membersGrowthAbs} members)`;
     });
 
     await test('REST', 'GET /api/v1/clubs/new?limit=5 (Newly Chartered Clubs)', async () => {
@@ -315,8 +341,16 @@ async function run() {
         const data = await res.json();
         if (data.error) throw new Error(data.error.message);
         if (data.result.tools.length !== 14) throw new Error(`Expected 14 tools, got ${data.result.tools.length}`);
+        for (const tool of data.result.tools) {
+            if (!tool.annotations || tool.annotations.readOnlyHint !== true || tool.annotations.destructiveHint !== false || tool.annotations.openWorldHint !== false) {
+                throw new Error(`Tool ${tool.name} missing required OpenAI risk annotations (readOnlyHint, destructiveHint, openWorldHint)`);
+            }
+            if (!tool.outputSchema) {
+                throw new Error(`Tool ${tool.name} missing outputSchema definition`);
+            }
+        }
         const toolNames = data.result.tools.map(t => t.name).join(', ');
-        return `Registered ${data.result.tools.length} Tools: [${toolNames}]`;
+        return `Registered ${data.result.tools.length} Tools with valid annotations & outputSchema: [${toolNames}]`;
     });
 
     // Test All 14 MCP Tools Individually
@@ -334,7 +368,7 @@ async function run() {
         { name: 'get_interact_analytics', args: {}, verify: d => `Interact Clubs: ${d.overview?.totalInteractClubs}, Sponsored by Rotaract: ${d.overview?.totalInteractClubsSponsoredByRotaract}` },
         { name: 'find_rotary_opportunities', args: { opportunityType: 'no_rotaract', district: '3000', limit: 2 }, verify: d => `Opportunities in Dist 3000: ${d.total} clubs, Sample: ${d.data[0]?.name}` },
         { name: 'get_foundation_giving', args: { limit: 3 }, verify: d => `Total Donors: ${d.total}, Top Club: ${d.data[0]?.name} ($${d.data[0]?.totalContributionsUSD})` },
-        { name: 'get_worldwide_rankings', args: { type: 'summary' }, verify: d => `Worldwide Total Clubs: ${d.totalClubs?.toLocaleString()}` }
+        { name: 'get_worldwide_rankings', args: { type: 'district', sortBy: 'member_growth_pct', limit: 3 }, verify: d => `Rank 1 District: Dist ${d.districts?.[0]?.district} (+${d.districts?.[0]?.membersGrowthPct.toFixed(1)}% growth)` }
     ];
 
     for (const tool of mcpToolTests) {
@@ -351,6 +385,7 @@ async function run() {
             });
             const data = await res.json();
             if (data.error) throw new Error(data.error.message);
+            if (!data.result.structuredContent) throw new Error('Missing structuredContent in tool result');
             const parsed = JSON.parse(data.result.content[0].text);
             return tool.verify(parsed);
         });
