@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 
 const CACHE_HEADERS = {
     'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+    'Netlify-Vary': 'query',
     'Access-Control-Allow-Origin': '*',
 };
 

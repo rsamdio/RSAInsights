@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getMissingOfficersList } from '@/lib/services/analyticsService';
+import { getNewClubsList } from '@/lib/services/analyticsService';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,19 +15,15 @@ export async function GET(request) {
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
         const base = searchParams.get('base') || '';
-        const country = searchParams.get('country') || '';
-        const lastReportedBefore = searchParams.get('lastReportedBefore') || searchParams.get('last_reported_before') || '';
-        const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'name';
-        const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'asc';
+        const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'charterDate';
+        const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 
-        const result = await getMissingOfficersList({
+        const result = await getNewClubsList({
             district,
             zone,
             base,
-            country,
-            lastReportedBefore,
             sortBy,
             sortOrder,
             limit,
@@ -36,7 +32,7 @@ export async function GET(request) {
 
         return NextResponse.json(result, { headers: CACHE_HEADERS });
     } catch (error) {
-        console.error('API /v1/compliance/officers error:', error);
-        return NextResponse.json({ error: 'Failed to retrieve missing officers list' }, { status: 500 });
+        console.error('API /v1/clubs/new error:', error);
+        return NextResponse.json({ error: 'Failed to retrieve new clubs' }, { status: 500 });
     }
 }

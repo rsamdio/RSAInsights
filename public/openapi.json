@@ -3,10 +3,10 @@
   "info": {
     "title": "Rotaract South Asia Analytics API",
     "version": "1.0.0",
-    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs).\n\n### Model Context Protocol (MCP) Integration\nThis service includes a Model Context Protocol (MCP) server for direct use by AI assistants (Cursor, Claude Desktop, Antigravity, VS Code):\n- **Local Stdio Command:** `npm run mcp` or `node scripts/mcp_server.js`\n- **Remote HTTP Endpoint:** `POST https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0)\n- **Available AI Tools:** `search_clubs`, `get_club_profile`, `get_district_insights`, `get_zone_summary`, `find_compliance_risks`, `find_rotary_opportunities`, `get_foundation_giving`, `get_worldwide_rankings`.\n\nAll endpoints are open, unauthenticated, and CORS-enabled.",
+    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs).\n\n### Model Context Protocol (MCP) Integration\nThis service includes a Model Context Protocol (MCP) server for direct use by AI assistants (Cursor, Claude Desktop, Antigravity, VS Code):\n- **Local Stdio Command:** `npm run mcp` or `node scripts/mcp_server.js`\n- **Remote HTTP Endpoint:** `POST https://insights.rsmda.org/api/mcp` (JSON-RPC 2.0)\n- **Available AI Tools (14 tools):** `get_summary`, `get_leaderboards`, `get_districts`, `get_district_insights`, `get_zone_summary`, `search_clubs`, `get_club_profile`, `get_new_clubs`, `find_compliance_risks`, `find_dual_risk_clubs`, `get_interact_analytics`, `find_rotary_opportunities`, `get_foundation_giving`, `get_worldwide_rankings`.\n\nAll endpoints are open, unauthenticated, and CORS-enabled.",
     "contact": {
       "name": "Rotaract South Asia Analytics Team",
-      "url": "https://insights.rsamdio.org"
+      "url": "https://insights.rsmda.org"
     },
     "license": {
       "name": "Open Data Commons Open Database License (ODbL)",
@@ -15,8 +15,12 @@
   },
   "servers": [
     {
+      "url": "https://insights.rsmda.org",
+      "description": "Production server (Primary)"
+    },
+    {
       "url": "https://insights.rsamdio.org",
-      "description": "Production server"
+      "description": "Production server (Netlify mirror)"
     },
     {
       "url": "http://localhost:3000",
@@ -24,20 +28,53 @@
     }
   ],
   "tags": [
-    { "name": "Overview", "description": "High-level aggregate metrics and executive summaries" },
-    { "name": "Zones", "description": "Zone-level summaries and district breakdowns" },
-    { "name": "Districts", "description": "District performance indicators and leadership rosters" },
-    { "name": "Clubs", "description": "Master club roster search, filtering, and universal club dossiers" },
-    { "name": "Compliance", "description": "Financial arrears and missing officer compliance tracking" },
-    { "name": "Opportunities", "description": "Rotary club sponsorship opportunities (Rotaract and Interact)" },
-    { "name": "Foundation", "description": "The Rotary Foundation (TRF) contributions and giving statistics" },
-    { "name": "Worldwide", "description": "Global Rotaract and Interact leaderboards and growth metrics" },
-    { "name": "Model Context Protocol (MCP)", "description": "AI agent tools discovery and JSON-RPC 2.0 execution endpoint" }
+    {
+      "name": "Overview",
+      "description": "High-level aggregate metrics and executive summaries"
+    },
+    {
+      "name": "Leaderboards",
+      "description": "Rankings for largest clubs, top TRF donors, highest arrears, and district standings"
+    },
+    {
+      "name": "Zones",
+      "description": "Zone-level summaries and district breakdowns"
+    },
+    {
+      "name": "Districts",
+      "description": "District performance indicators and leadership rosters"
+    },
+    {
+      "name": "Clubs",
+      "description": "Master club roster search, filtering, and universal club dossiers"
+    },
+    {
+      "name": "Compliance",
+      "description": "Financial arrears and missing officer compliance tracking"
+    },
+    {
+      "name": "Opportunities",
+      "description": "Rotary club sponsorship opportunities (Rotaract and Interact)"
+    },
+    {
+      "name": "Foundation",
+      "description": "The Rotary Foundation (TRF) contributions and giving statistics"
+    },
+    {
+      "name": "Worldwide",
+      "description": "Global Rotaract and Interact leaderboards and growth metrics"
+    },
+    {
+      "name": "Model Context Protocol (MCP)",
+      "description": "AI agent tools discovery and JSON-RPC 2.0 execution endpoint"
+    }
   ],
   "paths": {
     "/api/v1/summary": {
       "get": {
-        "tags": ["Overview"],
+        "tags": [
+          "Overview"
+        ],
         "summary": "Executive Summary Metrics",
         "description": "Returns high-level aggregate KPI metrics for South Asia or scoped to a specific zone.",
         "operationId": "getSummary",
@@ -47,7 +84,9 @@
             "in": "query",
             "required": false,
             "description": "Optional zone filter (e.g. 'Zone 5' or '5')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -55,7 +94,9 @@
             "description": "Executive summary data successfully retrieved",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/SummaryResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryResponse"
+                }
               }
             }
           },
@@ -65,9 +106,86 @@
         }
       }
     },
+    "/api/v1/leaderboards": {
+      "get": {
+        "tags": [
+          "Leaderboards"
+        ],
+        "summary": "Ranked Leaderboards & Top Charts",
+        "description": "Returns top rankings across South Asia for largest clubs (by membership), top TRF donors, highest arrears dues, and top districts. Supports optional filtering by district, zone, base, and category.",
+        "operationId": "getLeaderboards",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "description": "Leaderboard category ('all', 'largest_clubs', 'community_clubs', 'university_clubs', 'trf_giving', 'highest_arrears', 'districts_by_clubs', 'districts_by_members', 'districts_by_trf', 'districts_by_arrears', 'districts_by_no_officers', 'new_clubs')",
+            "schema": {
+              "type": "string",
+              "default": "all"
+            }
+          },
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Scope rankings to a specific 4-digit district (e.g. '3000')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Scope rankings to a specific zone (e.g. 'Zone 5' or '5')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "base",
+            "in": "query",
+            "required": false,
+            "description": "Filter by base ('Community' or 'University')",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Community",
+                "University"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Number of top records to return (1-50, default 10)",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ranked leaderboards data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeaderboardsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/zones": {
       "get": {
-        "tags": ["Zones"],
+        "tags": [
+          "Zones"
+        ],
         "summary": "List All Zones",
         "description": "Returns all 4 South Asia zones with high-level statistics and district lists.",
         "operationId": "getZones",
@@ -79,10 +197,14 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "count": { "type": "integer" },
+                    "count": {
+                      "type": "integer"
+                    },
                     "zones": {
                       "type": "array",
-                      "items": { "$ref": "#/components/schemas/ZoneOverview" }
+                      "items": {
+                        "$ref": "#/components/schemas/ZoneOverview"
+                      }
                     }
                   }
                 }
@@ -94,7 +216,9 @@
     },
     "/api/v1/zones/{zoneId}": {
       "get": {
-        "tags": ["Zones"],
+        "tags": [
+          "Zones"
+        ],
         "summary": "Zone Deep Dive",
         "description": "Returns detailed metrics, district breakdowns, and district leadership for a specific zone.",
         "operationId": "getZoneDetails",
@@ -104,7 +228,9 @@
             "in": "path",
             "required": true,
             "description": "Zone identifier (e.g. '4', '5', '6', '7', or 'Zone 5')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -112,7 +238,9 @@
             "description": "Zone detail payload",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ZoneDetail" }
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneDetail"
+                }
               }
             }
           },
@@ -124,7 +252,9 @@
     },
     "/api/v1/districts": {
       "get": {
-        "tags": ["Districts"],
+        "tags": [
+          "Districts"
+        ],
         "summary": "List All Districts",
         "description": "Returns all 44 districts with key metrics and leadership contacts.",
         "operationId": "getDistricts",
@@ -134,7 +264,29 @@
             "in": "query",
             "required": false,
             "description": "Optional zone filter (e.g. 'Zone 4' or '4')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort field (totalClubs, members, arrearsClubs, outstanding, trf, newClubs, interactGrowth, district)",
+            "schema": {
+              "type": "string",
+              "default": "district"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort order (asc, desc)",
+            "schema": {
+              "type": "string",
+              "default": "asc"
+            }
           }
         ],
         "responses": {
@@ -145,10 +297,14 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "count": { "type": "integer" },
+                    "count": {
+                      "type": "integer"
+                    },
                     "districts": {
                       "type": "array",
-                      "items": { "$ref": "#/components/schemas/DistrictSummary" }
+                      "items": {
+                        "$ref": "#/components/schemas/DistrictSummary"
+                      }
                     }
                   }
                 }
@@ -160,7 +316,9 @@
     },
     "/api/v1/districts/{districtId}": {
       "get": {
-        "tags": ["Districts"],
+        "tags": [
+          "Districts"
+        ],
         "summary": "District Deep Dive",
         "description": "Returns full performance profile, leadership, and issue counts for a specific district.",
         "operationId": "getDistrictDetails",
@@ -170,7 +328,9 @@
             "in": "path",
             "required": true,
             "description": "Rotary district number (e.g. '3000', '3141')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -178,7 +338,9 @@
             "description": "District detail payload",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/DistrictDetail" }
+                "schema": {
+                  "$ref": "#/components/schemas/DistrictDetail"
+                }
               }
             }
           },
@@ -190,7 +352,9 @@
     },
     "/api/v1/clubs": {
       "get": {
-        "tags": ["Clubs"],
+        "tags": [
+          "Clubs"
+        ],
         "summary": "Search & Filter Clubs",
         "description": "Full-text search and multi-facet filtering across 2,870+ Rotaract clubs in South Asia.",
         "operationId": "searchClubs",
@@ -200,70 +364,162 @@
             "in": "query",
             "required": false,
             "description": "Search keyword matching club name, club ID, sponsor club, or country",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "district",
             "in": "query",
             "required": false,
             "description": "Filter by district number (e.g. '3000')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "zone",
             "in": "query",
             "required": false,
             "description": "Filter by RI zone (e.g. 'Zone 5')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "base",
             "in": "query",
             "required": false,
             "description": "Filter by base type ('Community' or 'University')",
-            "schema": { "type": "string", "enum": ["Community", "University"] }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Community",
+                "University"
+              ]
+            }
           },
           {
             "name": "status",
             "in": "query",
             "required": false,
             "description": "Filter by club status ('Active' or 'Terminated')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "isArrears",
             "in": "query",
             "required": false,
             "description": "Filter by financial arrears status",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "isAtRisk",
             "in": "query",
             "required": false,
             "description": "Filter by high termination risk status (>= $75 USD outstanding)",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "isNoOfficers",
             "in": "query",
             "required": false,
             "description": "Filter by missing reported club officers status",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isNewClub",
+            "in": "query",
+            "required": false,
+            "description": "Filter newly chartered clubs",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort field ('members', 'outstanding', 'name', 'id', 'charterDate', 'district')",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "members",
+                "outstanding",
+                "name",
+                "id",
+                "charterDate",
+                "district"
+              ]
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort order ('desc' for largest/highest first, 'asc' for lowest/alphabetical)",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          },
+          {
+            "name": "minMembers",
+            "in": "query",
+            "required": false,
+            "description": "Filter clubs with at least this many members",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "maxMembers",
+            "in": "query",
+            "required": false,
+            "description": "Filter clubs with at most this many members",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "minOutstanding",
+            "in": "query",
+            "required": false,
+            "description": "Filter clubs with outstanding dues in INR at least this amount",
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
             "description": "Number of records to return (1-100, default 25)",
-            "schema": { "type": "integer", "default": 25 }
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
             "description": "Record offset for pagination (default 0)",
-            "schema": { "type": "integer", "default": 0 }
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
           }
         ],
         "responses": {
@@ -271,7 +527,104 @@
             "description": "Paginated list of clubs",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ClubListResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/ClubListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/clubs/new": {
+      "get": {
+        "tags": [
+          "Clubs"
+        ],
+        "summary": "Newly Chartered Clubs",
+        "description": "Returns newly chartered Rotaract clubs in South Asia (126 clubs chartered in the current 2026 period) with charter dates, initial members, and sponsor Rotary clubs.",
+        "operationId": "getNewClubs",
+        "parameters": [
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Filter by district number (e.g. '3000')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Filter by RI zone (e.g. 'Zone 5')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "base",
+            "in": "query",
+            "required": false,
+            "description": "Filter by base type ('Community' or 'University')",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Community",
+                "University"
+              ]
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort field ('charterDate', 'members', 'name')",
+            "schema": {
+              "type": "string",
+              "default": "charterDate"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort direction ('desc' or 'asc')",
+            "schema": {
+              "type": "string",
+              "default": "desc"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Number of records to return (1-100, default 25)",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "description": "Record offset for pagination (default 0)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of newly chartered clubs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewClubsResponse"
+                }
               }
             }
           }
@@ -280,7 +633,9 @@
     },
     "/api/v1/clubs/{clubId}": {
       "get": {
-        "tags": ["Clubs"],
+        "tags": [
+          "Clubs"
+        ],
         "summary": "Universal Club Dossier",
         "description": "Retrieves the complete profile, compliance standing, TRF contributions, and sponsored Interact clubs for a single Rotaract club.",
         "operationId": "getClubProfile",
@@ -290,7 +645,9 @@
             "in": "path",
             "required": true,
             "description": "Unique Rotary Club ID (e.g. '8824847')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -298,7 +655,9 @@
             "description": "Universal club dossier",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ClubProfile" }
+                "schema": {
+                  "$ref": "#/components/schemas/ClubProfile"
+                }
               }
             }
           },
@@ -310,7 +669,9 @@
     },
     "/api/v1/compliance/arrears": {
       "get": {
-        "tags": ["Compliance"],
+        "tags": [
+          "Compliance"
+        ],
         "summary": "Clubs in Arrears",
         "description": "Retrieves Rotaract clubs with outstanding Rotary International dues and termination risk assessments.",
         "operationId": "getArrearsList",
@@ -320,40 +681,54 @@
             "in": "query",
             "required": false,
             "description": "Filter by district number",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "zone",
             "in": "query",
             "required": false,
             "description": "Filter by zone",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "atRiskOnly",
             "in": "query",
             "required": false,
             "description": "Filter only clubs at immediate risk of termination (>= $75 USD)",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "base",
             "in": "query",
             "required": false,
             "description": "Filter by base ('Community' or 'University')",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 25 }
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 0 }
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
           }
         ],
         "responses": {
@@ -361,7 +736,9 @@
             "description": "Paginated list of clubs in arrears",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ArrearsListResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/ArrearsListResponse"
+                }
               }
             }
           }
@@ -370,7 +747,9 @@
     },
     "/api/v1/compliance/officers": {
       "get": {
-        "tags": ["Compliance"],
+        "tags": [
+          "Compliance"
+        ],
         "summary": "Clubs Missing Officers",
         "description": "Retrieves Rotaract clubs that have not reported active club officers on MyRotary.",
         "operationId": "getMissingOfficersList",
@@ -380,32 +759,44 @@
             "in": "query",
             "required": false,
             "description": "Filter by district number",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "zone",
             "in": "query",
             "required": false,
             "description": "Filter by zone",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "base",
             "in": "query",
             "required": false,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 25 }
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 0 }
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
           }
         ],
         "responses": {
@@ -413,7 +804,9 @@
             "description": "Paginated list of clubs missing reported officers",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/MissingOfficersListResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/MissingOfficersListResponse"
+                }
               }
             }
           }
@@ -422,7 +815,9 @@
     },
     "/api/v1/opportunities/rotary": {
       "get": {
-        "tags": ["Opportunities"],
+        "tags": [
+          "Opportunities"
+        ],
         "summary": "Rotary Sponsorship Opportunities",
         "description": "Identifies Rotary clubs without sponsored Rotaract clubs or without Interact clubs.",
         "operationId": "getRotaryOpportunities",
@@ -432,31 +827,48 @@
             "in": "query",
             "required": false,
             "description": "Type of opportunity: 'no_rotaract' (default) or 'no_interact'",
-            "schema": { "type": "string", "enum": ["no_rotaract", "no_interact"], "default": "no_rotaract" }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no_rotaract",
+                "no_interact"
+              ],
+              "default": "no_rotaract"
+            }
           },
           {
             "name": "district",
             "in": "query",
             "required": false,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "zone",
             "in": "query",
             "required": false,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 25 }
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 0 }
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
           }
         ],
         "responses": {
@@ -464,7 +876,9 @@
             "description": "Paginated list of Rotary opportunity clubs",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/RotaryOpportunityResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/RotaryOpportunityResponse"
+                }
               }
             }
           }
@@ -473,7 +887,9 @@
     },
     "/api/v1/trf": {
       "get": {
-        "tags": ["Foundation"],
+        "tags": [
+          "Foundation"
+        ],
         "summary": "The Rotary Foundation (TRF) Contributions",
         "description": "Retrieves giving statistics, Annual Fund contributions, and PolioPlus donations per club.",
         "operationId": "getTRFContributions",
@@ -482,25 +898,35 @@
             "name": "district",
             "in": "query",
             "required": false,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "zone",
             "in": "query",
             "required": false,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 25 }
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
-            "schema": { "type": "integer", "default": 0 }
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
           }
         ],
         "responses": {
@@ -508,7 +934,9 @@
             "description": "Paginated list of TRF contributions",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/TRFListResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/TRFListResponse"
+                }
               }
             }
           }
@@ -517,7 +945,9 @@
     },
     "/api/v1/worldwide": {
       "get": {
-        "tags": ["Worldwide"],
+        "tags": [
+          "Worldwide"
+        ],
         "summary": "Worldwide Rotaract & Interact Statistics",
         "description": "Global totals, country growth leaderboards, district rankings, and new club charter statistics.",
         "operationId": "getWorldwideStats",
@@ -526,7 +956,9 @@
             "description": "Worldwide statistics payload",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/WorldwideStats" }
+                "schema": {
+                  "$ref": "#/components/schemas/WorldwideStats"
+                }
               }
             }
           }
@@ -535,7 +967,9 @@
     },
     "/api/mcp": {
       "get": {
-        "tags": ["Model Context Protocol (MCP)"],
+        "tags": [
+          "Model Context Protocol (MCP)"
+        ],
         "summary": "MCP Server Manifest & Tools Discovery",
         "description": "Returns the Model Context Protocol (MCP) server metadata, protocol version, capabilities, and the full schema definitions for all 8 available AI tools.",
         "operationId": "getMcpManifest",
@@ -547,11 +981,27 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "server": { "type": "string", "example": "rotaract-south-asia-analytics" },
-                    "version": { "type": "string", "example": "1.0.0" },
-                    "protocolVersion": { "type": "string", "example": "2024-11-05" },
-                    "capabilities": { "type": "object" },
-                    "tools": { "type": "array", "items": { "type": "object" } }
+                    "server": {
+                      "type": "string",
+                      "example": "rotaract-south-asia-analytics"
+                    },
+                    "version": {
+                      "type": "string",
+                      "example": "1.0.0"
+                    },
+                    "protocolVersion": {
+                      "type": "string",
+                      "example": "2024-11-05"
+                    },
+                    "capabilities": {
+                      "type": "object"
+                    },
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
                   }
                 }
               }
@@ -560,7 +1010,9 @@
         }
       },
       "post": {
-        "tags": ["Model Context Protocol (MCP)"],
+        "tags": [
+          "Model Context Protocol (MCP)"
+        ],
         "summary": "Execute MCP Tool via JSON-RPC 2.0",
         "description": "Executes an AI tool via Model Context Protocol JSON-RPC 2.0 protocol (or lightweight payload: {\"tool\": \"search_clubs\", \"args\": {...}}). Supported methods: initialize, tools/list, and tools/call.",
         "operationId": "executeMcpTool",
@@ -571,14 +1023,28 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "jsonrpc": { "type": "string", "example": "2.0" },
-                  "id": { "type": "integer", "example": 1 },
-                  "method": { "type": "string", "example": "tools/call" },
+                  "jsonrpc": {
+                    "type": "string",
+                    "example": "2.0"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "method": {
+                    "type": "string",
+                    "example": "tools/call"
+                  },
                   "params": {
                     "type": "object",
                     "properties": {
-                      "name": { "type": "string", "example": "search_clubs" },
-                      "arguments": { "type": "object" }
+                      "name": {
+                        "type": "string",
+                        "example": "search_clubs"
+                      },
+                      "arguments": {
+                        "type": "object"
+                      }
                     }
                   }
                 }
@@ -594,10 +1060,341 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "jsonrpc": { "type": "string", "example": "2.0" },
-                    "id": { "type": "integer", "example": 1 },
-                    "result": { "type": "object" }
+                    "jsonrpc": {
+                      "type": "string",
+                      "example": "2.0"
+                    },
+                    "id": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "result": {
+                      "type": "object"
+                    }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/compliance/dual-risk": {
+      "get": {
+        "tags": [
+          "Compliance"
+        ],
+        "summary": "Dual Risk Clubs (Arrears + Missing Officers)",
+        "description": "Returns clubs that simultaneously have both outstanding financial arrears AND missing officer reports (highest aggregate compliance risk, 761 clubs).",
+        "operationId": "getDualRiskList",
+        "parameters": [
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Optional district number filter (e.g. 3000)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Optional zone filter (e.g. Zone 5)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Filter by country",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "India",
+                "Nepal",
+                "Sri Lanka"
+              ]
+            }
+          },
+          {
+            "name": "base",
+            "in": "query",
+            "required": false,
+            "description": "Club base filter",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Community",
+                "University"
+              ]
+            }
+          },
+          {
+            "name": "minOutstanding",
+            "in": "query",
+            "required": false,
+            "description": "Minimum outstanding balance in INR",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort field",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "outstanding",
+                "name",
+                "district"
+              ],
+              "default": "outstanding"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort direction",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "desc"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Page size limit",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "description": "Page offset",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dual risk compliance list retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DualRiskResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/interact": {
+      "get": {
+        "tags": [
+          "Overview"
+        ],
+        "summary": "Interact Analytics & Rotaract Sponsorships",
+        "description": "Returns comprehensive Interact club analytics across South Asia: 8,921 total clubs, 735 suspended, 137 clubs sponsored by 65 Rotaract clubs, plus district/zone growth trends.",
+        "operationId": "getInteractAnalytics",
+        "parameters": [
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Optional district filter (e.g. 3000)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Optional zone filter (e.g. Zone 5)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Interact analytics successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InteractAnalyticsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/districts/{districtId}/clubs": {
+      "get": {
+        "tags": [
+          "Districts"
+        ],
+        "summary": "District Clubs Roster",
+        "description": "Lists all Rotaract clubs belonging to a specific district with filtering, sorting, and pagination.",
+        "operationId": "getDistrictClubs",
+        "parameters": [
+          {
+            "name": "districtId",
+            "in": "path",
+            "required": true,
+            "description": "4-digit Rotary district number (e.g. 3000)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "description": "Search term",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "base",
+            "in": "query",
+            "required": false,
+            "description": "Club base",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Community",
+                "University"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Club status",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Country filter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "description": "Sort field",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "members",
+                "outstanding",
+                "name",
+                "charterDate"
+              ]
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "description": "Sort direction",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Page size",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "description": "Page offset",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "District clubs retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/clubs/{clubId}/interact": {
+      "get": {
+        "tags": [
+          "Clubs"
+        ],
+        "summary": "Club Sponsored Interact Clubs",
+        "description": "Returns the list of Interact clubs directly sponsored by this Rotaract club.",
+        "operationId": "getClubInteractSponsorships",
+        "parameters": [
+          {
+            "name": "clubId",
+            "in": "path",
+            "required": true,
+            "description": "Rotary Club ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sponsored Interact clubs retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubInteractResponse"
                 }
               }
             }
@@ -611,53 +1408,120 @@
       "PaginationMeta": {
         "type": "object",
         "properties": {
-          "total": { "type": "integer", "description": "Total matching records" },
-          "limit": { "type": "integer", "description": "Records per page limit" },
-          "offset": { "type": "integer", "description": "Record offset index" },
-          "hasMore": { "type": "boolean", "description": "True if more records exist" }
+          "total": {
+            "type": "integer",
+            "description": "Total matching records"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Records per page limit"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Record offset index"
+          },
+          "hasMore": {
+            "type": "boolean",
+            "description": "True if more records exist"
+          }
         },
-        "required": ["total", "limit", "offset", "hasMore"]
+        "required": [
+          "total",
+          "limit",
+          "offset",
+          "hasMore"
+        ]
       },
       "SummaryResponse": {
         "type": "object",
         "properties": {
-          "dataAsOf": { "type": "string" },
-          "overall": { "type": "object" },
-          "previousOverall": { "type": "object", "nullable": true },
-          "zonesSummary": { "type": "array", "items": { "type": "object" } }
+          "dataAsOf": {
+            "type": "string"
+          },
+          "overall": {
+            "type": "object"
+          },
+          "previousOverall": {
+            "type": "object",
+            "nullable": true
+          },
+          "zonesSummary": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
       "ZoneOverview": {
         "type": "object",
         "properties": {
-          "zone": { "type": "string", "example": "Zone 5" },
-          "zoneNumber": { "type": "integer", "example": 5 },
-          "stats": { "type": "object" },
-          "districts": { "type": "array", "items": { "type": "string" } }
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "zoneNumber": {
+            "type": "integer",
+            "example": 5
+          },
+          "stats": {
+            "type": "object"
+          },
+          "districts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
       "ZoneDetail": {
         "type": "object",
         "properties": {
-          "zone": { "type": "string" },
-          "zoneNumber": { "type": "integer" },
-          "stats": { "type": "object" },
-          "districts": { "type": "array", "items": { "type": "object" } }
+          "zone": {
+            "type": "string"
+          },
+          "zoneNumber": {
+            "type": "integer"
+          },
+          "stats": {
+            "type": "object"
+          },
+          "districts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
       "DistrictSummary": {
         "type": "object",
         "properties": {
-          "district": { "type": "string", "example": "3000" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "stats": { "type": "object" },
+          "district": {
+            "type": "string",
+            "example": "3000"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "stats": {
+            "type": "object"
+          },
           "leadership": {
             "type": "object",
             "nullable": true,
             "properties": {
-              "dg": { "type": "string" },
-              "drr": { "type": "string" },
-              "drc": { "type": "string" }
+              "dg": {
+                "type": "string"
+              },
+              "drr": {
+                "type": "string"
+              },
+              "drc": {
+                "type": "string"
+              }
             }
           }
         }
@@ -665,17 +1529,34 @@
       "DistrictDetail": {
         "type": "object",
         "properties": {
-          "district": { "type": "string" },
-          "zone": { "type": "string" },
-          "stats": { "type": "object" },
-          "leadership": { "type": "object", "nullable": true },
+          "district": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          },
+          "stats": {
+            "type": "object"
+          },
+          "leadership": {
+            "type": "object",
+            "nullable": true
+          },
           "counts": {
             "type": "object",
             "properties": {
-              "totalClubs": { "type": "integer" },
-              "arrearsClubs": { "type": "integer" },
-              "noOfficersClubs": { "type": "integer" },
-              "trfContributingClubs": { "type": "integer" }
+              "totalClubs": {
+                "type": "integer"
+              },
+              "arrearsClubs": {
+                "type": "integer"
+              },
+              "noOfficersClubs": {
+                "type": "integer"
+              },
+              "trfContributingClubs": {
+                "type": "integer"
+              }
             }
           }
         }
@@ -683,182 +1564,709 @@
       "ClubSummary": {
         "type": "object",
         "properties": {
-          "id": { "type": "string", "example": "8824847" },
-          "name": { "type": "string", "example": "Aarupadai Veedu Medical College & Hospital" },
-          "district": { "type": "string", "example": "2981" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "base": { "type": "string", "example": "University" },
-          "status": { "type": "string", "example": "Active" },
-          "country": { "type": "string", "example": "India" },
-          "sponsorClubs": { "type": "string", "example": "Pondicherry Beach Town (Rotary)" },
-          "members": { "type": "integer", "example": 1 },
-          "isArrears": { "type": "boolean", "example": true },
-          "outstandingINR": { "type": "number", "example": 2018 },
-          "outstandingUSD": { "type": "number", "example": 21.02 },
-          "isAtRisk": { "type": "boolean", "example": false },
-          "isNoOfficers": { "type": "boolean", "example": true }
+          "id": {
+            "type": "string",
+            "example": "8824847"
+          },
+          "name": {
+            "type": "string",
+            "example": "Aarupadai Veedu Medical College & Hospital"
+          },
+          "district": {
+            "type": "string",
+            "example": "2981"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "base": {
+            "type": "string",
+            "example": "University"
+          },
+          "status": {
+            "type": "string",
+            "example": "Active"
+          },
+          "country": {
+            "type": "string",
+            "example": "India"
+          },
+          "sponsorClubs": {
+            "type": "string",
+            "example": "Pondicherry Beach Town (Rotary)"
+          },
+          "members": {
+            "type": "integer",
+            "example": 1
+          },
+          "isArrears": {
+            "type": "boolean",
+            "example": true
+          },
+          "outstandingINR": {
+            "type": "number",
+            "example": 2018
+          },
+          "outstandingUSD": {
+            "type": "number",
+            "example": 21.02
+          },
+          "isAtRisk": {
+            "type": "boolean",
+            "example": false
+          },
+          "isNoOfficers": {
+            "type": "boolean",
+            "example": true
+          }
         }
       },
       "ClubListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/ClubSummary" } },
-          "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
-          "total": { "type": "integer" },
-          "limit": { "type": "integer" },
-          "offset": { "type": "integer" }
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClubSummary"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
         }
       },
       "ClubProfile": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "district": { "type": "string" },
-          "zone": { "type": "string" },
-          "base": { "type": "string" },
-          "status": { "type": "string" },
-          "country": { "type": "string" },
-          "sponsorClubs": { "type": "string" },
-          "termReported": { "type": "string" },
-          "members": { "type": "integer" },
-          "isArrears": { "type": "boolean" },
-          "outstanding": { "type": "number" },
-          "isAtRisk": { "type": "boolean" },
-          "isNoOfficers": { "type": "boolean" },
-          "officerRole": { "type": "string" },
-          "officerLastReported": { "type": "string" },
-          "myRotaryAccount": { "type": "string" },
-          "trfTotal": { "type": "number" },
-          "trfAnnual": { "type": "number" },
-          "trfPolio": { "type": "number" },
-          "isNewClub": { "type": "boolean" },
-          "sponsoredInteractClubs": { "type": "array", "items": { "type": "object" } }
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "district": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "sponsorClubs": {
+            "type": "string"
+          },
+          "termReported": {
+            "type": "string"
+          },
+          "members": {
+            "type": "integer"
+          },
+          "isArrears": {
+            "type": "boolean"
+          },
+          "outstanding": {
+            "type": "number"
+          },
+          "isAtRisk": {
+            "type": "boolean"
+          },
+          "isNoOfficers": {
+            "type": "boolean"
+          },
+          "officerRole": {
+            "type": "string"
+          },
+          "officerLastReported": {
+            "type": "string"
+          },
+          "myRotaryAccount": {
+            "type": "string"
+          },
+          "trfTotal": {
+            "type": "number"
+          },
+          "trfAnnual": {
+            "type": "number"
+          },
+          "trfPolio": {
+            "type": "number"
+          },
+          "isNewClub": {
+            "type": "boolean"
+          },
+          "sponsoredInteractClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
       "ArrearsClubItem": {
         "type": "object",
         "properties": {
-          "id": { "type": "string", "example": "8824847" },
-          "name": { "type": "string", "example": "Aarupadai Veedu Medical College & Hospital" },
-          "district": { "type": "string", "example": "2981" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "base": { "type": "string", "example": "University" },
-          "sponsorClubs": { "type": "string", "example": "Pondicherry Beach Town (Rotary)" },
-          "billableMembers": { "type": "integer", "example": 1 },
-          "outstandingINR": { "type": "number", "example": 2018 },
-          "outstandingUSD": { "type": "number", "example": 21.02 },
-          "isAtRisk": { "type": "boolean", "example": false }
+          "id": {
+            "type": "string",
+            "example": "8824847"
+          },
+          "name": {
+            "type": "string",
+            "example": "Aarupadai Veedu Medical College & Hospital"
+          },
+          "district": {
+            "type": "string",
+            "example": "2981"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "base": {
+            "type": "string",
+            "example": "University"
+          },
+          "sponsorClubs": {
+            "type": "string",
+            "example": "Pondicherry Beach Town (Rotary)"
+          },
+          "billableMembers": {
+            "type": "integer",
+            "example": 1
+          },
+          "outstandingINR": {
+            "type": "number",
+            "example": 2018
+          },
+          "outstandingUSD": {
+            "type": "number",
+            "example": 21.02
+          },
+          "isAtRisk": {
+            "type": "boolean",
+            "example": false
+          }
         }
       },
       "ArrearsListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/ArrearsClubItem" } },
-          "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
-          "total": { "type": "integer" },
-          "limit": { "type": "integer" },
-          "offset": { "type": "integer" }
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArrearsClubItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
         }
       },
       "MissingOfficerClubItem": {
         "type": "object",
         "properties": {
-          "id": { "type": "string", "example": "8824847" },
-          "name": { "type": "string", "example": "Aarupadai Veedu Medical College & Hospital" },
-          "district": { "type": "string", "example": "2981" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "base": { "type": "string", "example": "University" },
-          "sponsorClubs": { "type": "string", "example": "Pondicherry Beach Town (Rotary)" },
-          "status": { "type": "string", "example": "Active" }
+          "id": {
+            "type": "string",
+            "example": "8824847"
+          },
+          "name": {
+            "type": "string",
+            "example": "Aarupadai Veedu Medical College & Hospital"
+          },
+          "district": {
+            "type": "string",
+            "example": "2981"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "base": {
+            "type": "string",
+            "example": "University"
+          },
+          "sponsorClubs": {
+            "type": "string",
+            "example": "Pondicherry Beach Town (Rotary)"
+          },
+          "status": {
+            "type": "string",
+            "example": "Active"
+          }
         }
       },
       "MissingOfficersListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/MissingOfficerClubItem" } },
-          "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
-          "total": { "type": "integer" },
-          "limit": { "type": "integer" },
-          "offset": { "type": "integer" }
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MissingOfficerClubItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
         }
       },
       "RotaryOpportunityClubItem": {
         "type": "object",
         "properties": {
-          "id": { "type": "string", "example": "22000" },
-          "name": { "type": "string", "example": "Rotary Club of Madurai West" },
-          "district": { "type": "string", "example": "3000" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "members": { "type": "integer", "example": 45 },
-          "status": { "type": "string", "example": "Active" },
-          "totalRotaractSponsored": { "type": "integer", "example": 0 },
-          "totalInteractSponsored": { "type": "integer", "example": 1 }
+          "id": {
+            "type": "string",
+            "example": "22000"
+          },
+          "name": {
+            "type": "string",
+            "example": "Rotary Club of Madurai West"
+          },
+          "district": {
+            "type": "string",
+            "example": "3000"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "members": {
+            "type": "integer",
+            "example": 45
+          },
+          "status": {
+            "type": "string",
+            "example": "Active"
+          },
+          "totalRotaractSponsored": {
+            "type": "integer",
+            "example": 0
+          },
+          "totalInteractSponsored": {
+            "type": "integer",
+            "example": 1
+          }
         }
       },
       "RotaryOpportunityResponse": {
         "type": "object",
         "properties": {
-          "opportunityType": { "type": "string", "example": "no_rotaract" },
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/RotaryOpportunityClubItem" } },
-          "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
-          "total": { "type": "integer" },
-          "limit": { "type": "integer" },
-          "offset": { "type": "integer" }
+          "opportunityType": {
+            "type": "string",
+            "example": "no_rotaract"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RotaryOpportunityClubItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
         }
       },
       "TRFContributionItem": {
         "type": "object",
         "properties": {
-          "id": { "type": "string", "example": "91234" },
-          "name": { "type": "string", "example": "Rotaract Club of Coimbatore Central" },
-          "district": { "type": "string", "example": "3201" },
-          "zone": { "type": "string", "example": "Zone 5" },
-          "sponsorClubs": { "type": "string", "example": "Rotary Club of Coimbatore" },
-          "annualFundUSD": { "type": "number", "example": 100 },
-          "polioPlusUSD": { "type": "number", "example": 50 },
-          "otherFundsUSD": { "type": "number", "example": 0 },
-          "totalContributionsUSD": { "type": "number", "example": 150 }
+          "id": {
+            "type": "string",
+            "example": "91234"
+          },
+          "name": {
+            "type": "string",
+            "example": "Rotaract Club of Coimbatore Central"
+          },
+          "district": {
+            "type": "string",
+            "example": "3201"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "sponsorClubs": {
+            "type": "string",
+            "example": "Rotary Club of Coimbatore"
+          },
+          "annualFundUSD": {
+            "type": "number",
+            "example": 100
+          },
+          "polioPlusUSD": {
+            "type": "number",
+            "example": 50
+          },
+          "otherFundsUSD": {
+            "type": "number",
+            "example": 0
+          },
+          "totalContributionsUSD": {
+            "type": "number",
+            "example": 150
+          }
         }
       },
       "TRFListResponse": {
         "type": "object",
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/TRFContributionItem" } },
-          "pagination": { "$ref": "#/components/schemas/PaginationMeta" },
-          "total": { "type": "integer" },
-          "limit": { "type": "integer" },
-          "offset": { "type": "integer" }
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TRFContributionItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
         }
       },
       "WorldwideStats": {
         "type": "object",
         "properties": {
-          "totalClubs": { "type": "integer", "example": 11453 },
-          "totalMembers": { "type": "integer", "example": 165430 },
-          "totalInteractClubs": { "type": "integer", "example": 14920 },
-          "countryData": { "type": "array", "items": { "type": "object" } },
-          "districtData": { "type": "array", "items": { "type": "object" } },
-          "zoneData": { "type": "array", "items": { "type": "object" } }
+          "totalClubs": {
+            "type": "integer",
+            "example": 11453
+          },
+          "totalMembers": {
+            "type": "integer",
+            "example": 165430
+          },
+          "totalInteractClubs": {
+            "type": "integer",
+            "example": 14920
+          },
+          "countryData": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "districtData": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "zoneData": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "LeaderboardsResponse": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "example": "largest_clubs"
+          },
+          "count": {
+            "type": "integer",
+            "example": 10
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "largestClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "topTRFClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "highestArrearsClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "topDistrictsByClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "topDistrictsByMembers": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "newClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "NewClubItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "8828727"
+          },
+          "name": {
+            "type": "string",
+            "example": "Chinnamanur Kurinji Stars"
+          },
+          "district": {
+            "type": "string",
+            "example": "3000"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "base": {
+            "type": "string",
+            "example": "Community"
+          },
+          "charterDate": {
+            "type": "string",
+            "example": "07-Sep-2026"
+          },
+          "members": {
+            "type": "integer",
+            "example": 18
+          },
+          "sponsorClubs": {
+            "type": "string",
+            "example": "Chinnamanur (Rotary)"
+          }
+        }
+      },
+      "NewClubsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NewClubItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "total": {
+            "type": "integer",
+            "example": 126
+          },
+          "limit": {
+            "type": "integer",
+            "example": 25
+          },
+          "offset": {
+            "type": "integer",
+            "example": 0
+          }
         }
       },
       "MCPManifest": {
         "type": "object",
         "properties": {
-          "server": { "type": "string", "example": "rotaract-south-asia-analytics" },
-          "version": { "type": "string", "example": "1.0.0" },
-          "protocolVersion": { "type": "string", "example": "2024-11-05" },
+          "server": {
+            "type": "string",
+            "example": "rotaract-south-asia-analytics"
+          },
+          "version": {
+            "type": "string",
+            "example": "1.0.0"
+          },
+          "protocolVersion": {
+            "type": "string",
+            "example": "2024-11-05"
+          },
           "capabilities": {
             "type": "object",
             "properties": {
-              "tools": { "type": "object" },
-              "resources": { "type": "object" },
-              "prompts": { "type": "object" }
+              "tools": {
+                "type": "object"
+              },
+              "resources": {
+                "type": "object"
+              },
+              "prompts": {
+                "type": "object"
+              }
             }
           },
-          "tools": { "type": "array", "items": { "type": "object" } },
-          "resources": { "type": "array", "items": { "type": "object" } },
-          "prompts": { "type": "array", "items": { "type": "object" } }
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "prompts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "DualRiskResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClubSummary"
+            }
+          },
+          "riskType": {
+            "type": "string",
+            "example": "dual_risk"
+          },
+          "description": {
+            "type": "string"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          }
+        }
+      },
+      "InteractAnalyticsResponse": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "object"
+          },
+          "overview": {
+            "type": "object",
+            "properties": {
+              "totalInteractClubs": {
+                "type": "integer",
+                "example": 8921
+              },
+              "suspendedInteractClubs": {
+                "type": "integer",
+                "example": 735
+              },
+              "activeInteractClubs": {
+                "type": "integer",
+                "example": 8186
+              },
+              "rotaractClubsSponsoringInteractCount": {
+                "type": "integer",
+                "example": 65
+              },
+              "totalInteractClubsSponsoredByRotaract": {
+                "type": "integer",
+                "example": 137
+              }
+            }
+          },
+          "rotaractSponsors": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "districts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "ClubInteractResponse": {
+        "type": "object",
+        "properties": {
+          "clubId": {
+            "type": "string",
+            "example": "8824847"
+          },
+          "clubName": {
+            "type": "string"
+          },
+          "district": {
+            "type": "string",
+            "example": "3000"
+          },
+          "zone": {
+            "type": "string",
+            "example": "Zone 5"
+          },
+          "sponsoredInteractCount": {
+            "type": "integer",
+            "example": 2
+          },
+          "sponsoredInteractClubs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       }
     }

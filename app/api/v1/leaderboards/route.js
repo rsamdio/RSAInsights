@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getRotaryOpportunityList } from '@/lib/services/analyticsService';
+import { getLeaderboards } from '@/lib/services/analyticsService';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,23 +12,23 @@ const CACHE_HEADERS = {
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
-        const type = searchParams.get('type') || searchParams.get('opportunity_type') || searchParams.get('opportunityType') || 'no_rotaract';
+        const category = searchParams.get('category') || 'all';
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
-        const limit = searchParams.get('limit') || 25;
-        const offset = searchParams.get('offset') || 0;
+        const base = searchParams.get('base') || '';
+        const limit = searchParams.get('limit') || 10;
 
-        const result = await getRotaryOpportunityList({
-            type,
+        const result = await getLeaderboards({
+            category,
             district,
             zone,
-            limit,
-            offset
+            base,
+            limit
         });
 
         return NextResponse.json(result, { headers: CACHE_HEADERS });
     } catch (error) {
-        console.error('API /v1/opportunities/rotary error:', error);
-        return NextResponse.json({ error: 'Failed to retrieve rotary opportunities' }, { status: 500 });
+        console.error('API /v1/leaderboards error:', error);
+        return NextResponse.json({ error: 'Failed to retrieve leaderboards' }, { status: 500 });
     }
 }

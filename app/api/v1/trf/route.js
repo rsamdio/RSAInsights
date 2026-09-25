@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 
 const CACHE_HEADERS = {
     'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+    'Netlify-Vary': 'query',
     'Access-Control-Allow-Origin': '*',
 };
 
@@ -13,12 +14,16 @@ export async function GET(request) {
         const { searchParams } = new URL(request.url);
         const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
+        const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'totalContributionsUSD';
+        const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 
         const result = await getTRFList({
             district,
             zone,
+            sortBy,
+            sortOrder,
             limit,
             offset
         });

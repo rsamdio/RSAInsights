@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getArrearsList } from '@/lib/services/analyticsService';
+import { getDualRiskList } from '@/lib/services/analyticsService';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,6 +9,15 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
+/**
+ * GET /api/v1/compliance/dual-risk
+ *
+ * Returns clubs that have BOTH outstanding financial arrears AND missing officer reports.
+ * These 761 clubs represent the highest aggregate compliance risk in South Asia.
+ *
+ * Query params:
+ *   district, zone, base, country, minOutstanding, sortBy (outstanding|name|district), sortOrder, limit, offset
+ */
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
@@ -16,29 +25,27 @@ export async function GET(request) {
         const zone = searchParams.get('zone') || '';
         const base = searchParams.get('base') || '';
         const country = searchParams.get('country') || '';
-        const atRiskOnly = (searchParams.get('atRiskOnly') || searchParams.get('at_risk_only')) === 'true';
         const minOutstanding = searchParams.get('minOutstanding') || searchParams.get('min_outstanding') || undefined;
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || 'outstanding';
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const limit = searchParams.get('limit') || 25;
         const offset = searchParams.get('offset') || 0;
 
-        const result = await getArrearsList({
+        const result = await getDualRiskList({
             district,
             zone,
             base,
             country,
-            atRiskOnly,
-            minOutstanding,
             sortBy,
             sortOrder,
+            minOutstanding,
             limit,
             offset
         });
 
         return NextResponse.json(result, { headers: CACHE_HEADERS });
     } catch (error) {
-        console.error('API /v1/compliance/arrears error:', error);
-        return NextResponse.json({ error: 'Failed to retrieve arrears list' }, { status: 500 });
+        console.error('API /v1/compliance/dual-risk error:', error);
+        return NextResponse.json({ error: 'Failed to retrieve dual-risk compliance list' }, { status: 500 });
     }
 }

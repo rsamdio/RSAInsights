@@ -31,12 +31,12 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `app/club/[clubId]/page.js` | Universal Club Report: 2,820+ club profiles, TRF details, compliance action center | Club-level tasks |
 | `app/worldwide/page.js` | Worldwide Statistics: global club/member leaderboards, country rankings, baseline deltas | Global / Country stats |
 | `app/api/filters/route.js` | Server route providing dynamic filter options (cached 1d, stale 7d) | Filter backend tasks |
-| `app/api/v1/` | Public REST API endpoints (summary, zones, districts, clubs, compliance, opportunities, TRF, worldwide) | REST API tasks |
+| `app/api/v1/` | Public REST API endpoints (19 endpoints: summary, zones, districts, clubs, compliance, opportunities, TRF, leaderboards, interact, worldwide) | REST API tasks |
 | `app/api/mcp/route.js` | HTTP endpoint supporting JSON-RPC 2.0 MCP protocol | Remote MCP tasks |
 | `app/docs/page.js` & `public/docs.html` | Interactive API documentation (Scalar API reference UI) | API Docs tasks |
 | `public/openapi.json` | OpenAPI 3.1.0 specification covering all REST endpoints | API Spec tasks |
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
-| `lib/mcp/tools.js` | MCP tool schemas (8 tools) and execution dispatcher | MCP Tool definitions |
+| `lib/mcp/tools.js` | MCP tool schemas (14 tools, 8 resources, 4 prompts) and execution dispatcher | MCP Tool definitions |
 | `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity | Stdio MCP tasks |
 | `app/globals.css` | Global styles, CSS variables, glassmorphism card classes, mobile breakpoints | Styling / Theme tasks |
 | `lib/api.js` | Data Access Layer: file reader with mtime cache (`global.apiCache`), O(1) `getClubMap()` | Data querying / Helpers |
