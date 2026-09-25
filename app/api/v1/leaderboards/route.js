@@ -17,6 +17,7 @@ export async function GET(request) {
         const zone = searchParams.get('zone') || '';
         const country = searchParams.get('country') || '';
         const base = searchParams.get('base') || '';
+        const scope = searchParams.get('scope') || 'south_asia';
         const limit = searchParams.get('limit') || 10;
 
         const result = await getLeaderboards({
@@ -25,6 +26,7 @@ export async function GET(request) {
             zone,
             country,
             base,
+            scope,
             limit
         });
 
