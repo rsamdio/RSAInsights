@@ -21,12 +21,19 @@ export const dynamic = 'force-dynamic';
 const SERVER_NAME = 'rotaract-south-asia-analytics';
 const SERVER_VERSION = '1.1.0';
 
-// MCP endpoints must never be cached by CDN proxies (Netlify/Cloudflare)
-// to prevent stale JSON from intercepting SSE streams.
+// MCP streaming and session endpoints must never be cached by CDN proxies
+// to ensure SSE connections and session handshakes remain real-time.
 const NO_CACHE_HEADERS = {
     ...CORS_HEADERS,
     'Cache-Control': 'no-cache, no-store, must-revalidate',
     'Pragma': 'no-cache'
+};
+
+// Static MCP discovery manifest (?format=json) can be safely cached at the edge CDN
+const MANIFEST_CACHE_HEADERS = {
+    ...CORS_HEADERS,
+    'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
+    'Netlify-Vary': 'query'
 };
 
 function withTiming(headers, startMs) {
@@ -56,7 +63,7 @@ export async function GET(request) {
             tools: TOOLS_DEFINITIONS,
             resources: MCP_RESOURCES,
             prompts: MCP_PROMPTS
-        }, { headers: NO_CACHE_HEADERS });
+        }, { headers: MANIFEST_CACHE_HEADERS });
     }
 
     // Default: Return SSE stream for all MCP clients connecting via GET (ChatGPT, Claude, Cursor)
