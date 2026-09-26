@@ -1,6 +1,6 @@
 ---
-name: District Compliance Audit
-description: Conducts an end-to-end compliance and health audit for any Rotary district in South Asia. Identifies dues arrears, missing officer reporting, and dual-risk clubs with an actionable remediation roadmap.
+name: district-compliance-audit
+description: Conduct an end-to-end compliance and health audit for any Rotary district in South Asia. Identifies dues arrears, missing officer reporting, and dual-risk clubs with an actionable remediation roadmap. Use when auditing, evaluating, or reviewing district compliance or club health.
 ---
 
 # District Compliance Audit Skill

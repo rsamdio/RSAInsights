@@ -1,6 +1,6 @@
 ---
-name: South Asia Overview
-description: Provides macro executive analytics, regional KPI summaries, and inter-zone performance comparisons across RI Zones 4, 5, 6, and 7 in South Asia.
+name: south-asia-overview
+description: Provide macro executive analytics, regional KPI summaries, and inter-zone performance comparisons across RI Zones 4, 5, 6, and 7 in South Asia. Use when requesting regional overviews, zone comparisons, or executive KPI summaries.
 ---
 
 # South Asia Overview Skill

@@ -13,6 +13,7 @@ import {
     CORS_HEADERS,
     SSE_HEADERS,
     DEFAULT_PROTOCOL_VERSION,
+    SUPPORTED_PROTOCOL_VERSIONS,
     negotiateProtocolVersion
 } from '@/lib/mcp/sse';
 
@@ -118,19 +119,34 @@ export async function POST(request) {
                 return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
             }
 
-            // Gracefully reject server/discover with spec-compliant Method Not Found (-32601).
-            // OpenAI's tool scanner probes server/discover first; returning -32601 signals that
-            // this server uses the standard MCP initialize + tools/list handshake (protocol 2024-11-05),
-            // enabling the tool scanner to proceed cleanly without "server/discover response was invalid" error.
+            // server/discover: MCP discovery handshake (spec 2026-07-28 and OpenAI Apps SDK scanner)
+            // Returns server identity, capabilities, and complete tool/resource/prompt manifest
             if (method === 'server/discover') {
+                const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
+                const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
-                    error: {
-                        code: -32601,
-                        message: "Method 'server/discover' not found"
+                    result: {
+                        protocolVersion: negotiatedVersion,
+                        supportedVersions: SUPPORTED_PROTOCOL_VERSIONS,
+                        capabilities: {
+                            tools: {},
+                            resources: {},
+                            prompts: {}
+                        },
+                        serverInfo: {
+                            name: SERVER_NAME,
+                            version: SERVER_VERSION
+                        },
+                        tools: TOOLS_DEFINITIONS,
+                        resources: MCP_RESOURCES,
+                        prompts: MCP_PROMPTS
                     }
-                }, 200, NO_CACHE_HEADERS);
+                }, 200, {
+                    ...NO_CACHE_HEADERS,
+                    'Mcp-Protocol-Version': negotiatedVersion
+                });
             }
 
             // Standard MCP initialize handshake (MCP 2024-11-05 specification)

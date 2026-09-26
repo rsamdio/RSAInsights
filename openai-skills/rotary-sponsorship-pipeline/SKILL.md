@@ -1,6 +1,6 @@
 ---
-name: Rotary Sponsorship Pipeline
-description: Generates strategic sponsorship expansion plans for District Governors and District Rotaract Chairs. Identifies Rotary clubs lacking Rotaract or Interact sponsorship and formulates charter opportunities.
+name: rotary-sponsorship-pipeline
+description: Generate strategic sponsorship expansion plans for District Governors and District Rotaract Chairs. Identifies Rotary clubs lacking Rotaract or Interact sponsorship and formulates charter opportunities. Use when planning youth sponsorship expansion or chartering new clubs.
 ---
 
 # Rotary Sponsorship Pipeline Skill

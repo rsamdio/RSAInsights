@@ -1,6 +1,6 @@
 ---
-name: Worldwide Growth Benchmark
-description: Benchmarks any South Asian Rotary district or zone against all 599 global districts, member growth percentages, and worldwide country standings.
+name: worldwide-growth-benchmark
+description: Benchmark any South Asian Rotary district or zone against all 599 global districts, member growth percentages, and worldwide country standings. Use when comparing districts or zones to global benchmarks or worldwide rankings.
 ---
 
 # Worldwide Growth Benchmark Skill
