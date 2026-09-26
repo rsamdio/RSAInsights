@@ -7,20 +7,19 @@ import {
     readResource,
     getPrompt
 } from '@/lib/mcp/tools';
+import {
+    createSseResponse,
+    sendSseMessage,
+    CORS_HEADERS,
+    SSE_HEADERS,
+    DEFAULT_PROTOCOL_VERSION,
+    negotiateProtocolVersion
+} from '@/lib/mcp/sse';
 
 export const dynamic = 'force-dynamic';
 
-const PROTOCOL_VERSION = '2026-07-28';
 const SERVER_NAME = 'rotaract-south-asia-analytics';
 const SERVER_VERSION = '1.1.0';
-
-const CORS_HEADERS = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization, Mcp-Protocol-Version',
-    'Cache-Control': 'no-cache, no-transform',
-    'Mcp-Protocol-Version': PROTOCOL_VERSION
-};
 
 // Static MCP method responses (tool/resource/prompt listings) are safe to cache briefly.
 // They do not change between deployments.
@@ -37,11 +36,21 @@ export async function OPTIONS() {
     return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
 }
 
-export async function GET() {
+export async function GET(request) {
+    const acceptHeader = request?.headers?.get('accept') || '';
+    const url = request?.url ? new URL(request.url) : null;
+    const isSse = acceptHeader.includes('text/event-stream') || url?.searchParams?.get('transport') === 'sse';
+
+    // Handle SSE probe and connection
+    if (isSse) {
+        return createSseResponse(request, '/api/mcp');
+    }
+
+    // Direct HTTP JSON discovery manifest
     return NextResponse.json({
         server: SERVER_NAME,
         version: SERVER_VERSION,
-        protocolVersion: PROTOCOL_VERSION,
+        protocolVersion: DEFAULT_PROTOCOL_VERSION,
         capabilities: {
             tools: {},
             resources: {},
@@ -55,33 +64,43 @@ export async function GET() {
 
 export async function POST(request) {
     const start = Date.now();
+    const url = request?.url ? new URL(request.url) : null;
+    const sessionId = url?.searchParams?.get('sessionId') || null;
+
+    function respond(responseObj, status = 200, headers = CORS_HEADERS) {
+        if (sessionId) {
+            sendSseMessage(sessionId, responseObj);
+        }
+        return NextResponse.json(responseObj, { status, headers: withTiming(headers, start) });
+    }
+
     try {
         let body;
         try {
             body = await request.json();
         } catch (parseErr) {
-            return NextResponse.json({
+            return respond({
                 jsonrpc: '2.0',
                 id: null,
                 error: {
                     code: -32700,
                     message: `Parse error: Invalid JSON payload (${parseErr.message})`
                 }
-            }, { status: 400, headers: withTiming(CORS_HEADERS, start) });
+            }, 400);
         }
 
-        // Standard JSON-RPC 2.0 protocol (MCP 2026-07-28 spec)
+        // Standard JSON-RPC 2.0 protocol (MCP specification)
         if (body.jsonrpc === '2.0') {
             const { id, method, params } = body;
             const responseId = id !== undefined ? id : null;
 
             // Ping utility method (MCP standard health check)
             if (method === 'ping') {
-                return NextResponse.json({
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: {}
-                }, { headers: withTiming(CORS_HEADERS, start) });
+                });
             }
 
             // Notifications (e.g. notifications/initialized, notifications/cancelled)
@@ -92,11 +111,18 @@ export async function POST(request) {
             // server/discover: single call returning full capability manifest
             // Used by platform bots (OpenAI, Anthropic, Google) on first connection
             if (method === 'initialize' || method === 'server/discover') {
-                return NextResponse.json({
+                const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
+                const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
+                const versionHeaders = {
+                    ...STATIC_CACHE_HEADERS,
+                    'Mcp-Protocol-Version': negotiatedVersion
+                };
+
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: {
-                        protocolVersion: PROTOCOL_VERSION,
+                        protocolVersion: negotiatedVersion,
                         capabilities: {
                             tools: {},
                             resources: {},
@@ -106,21 +132,20 @@ export async function POST(request) {
                             name: SERVER_NAME,
                             version: SERVER_VERSION
                         },
-                        // 2026-07-28: include full manifest in discover response
                         tools: TOOLS_DEFINITIONS,
                         resources: MCP_RESOURCES,
                         prompts: MCP_PROMPTS
                     }
-                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
+                }, 200, versionHeaders);
             }
 
             // Tools
             if (method === 'tools/list') {
-                return NextResponse.json({
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { tools: TOOLS_DEFINITIONS }
-                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
+                }, 200, STATIC_CACHE_HEADERS);
             }
 
             if (method === 'tools/call') {
@@ -128,90 +153,90 @@ export async function POST(request) {
                 const toolArgs = params?.arguments || {};
                 const executionResult = await executeTool(toolName, toolArgs);
 
-                return NextResponse.json({
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: executionResult
-                }, { headers: withTiming(CORS_HEADERS, start) });
+                });
             }
 
             // Resources
             if (method === 'resources/list') {
-                return NextResponse.json({
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { resources: MCP_RESOURCES }
-                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
+                }, 200, STATIC_CACHE_HEADERS);
             }
 
             if (method === 'resources/read') {
                 const uri = params?.uri;
                 if (!uri) {
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: 'Missing required parameter: "uri"' }
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 }
                 try {
                     const result = await readResource(uri);
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         result
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 } catch (err) {
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: err.message }
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 }
             }
 
             // Prompts
             if (method === 'prompts/list') {
-                return NextResponse.json({
+                return respond({
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { prompts: MCP_PROMPTS }
-                }, { headers: withTiming(STATIC_CACHE_HEADERS, start) });
+                }, 200, STATIC_CACHE_HEADERS);
             }
 
             if (method === 'prompts/get') {
                 const name = params?.name;
                 if (!name) {
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: 'Missing required parameter: "name"' }
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 }
                 const promptArgs = params?.arguments || {};
                 try {
                     const result = await getPrompt(name, promptArgs);
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         result
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 } catch (err) {
-                    return NextResponse.json({
+                    return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: err.message }
-                    }, { headers: withTiming(CORS_HEADERS, start) });
+                    });
                 }
             }
 
-            return NextResponse.json({
+            return respond({
                 jsonrpc: '2.0',
                 id: responseId,
                 error: {
                     code: -32601,
                     message: `Method '${method}' not found`
                 }
-            }, { status: 404, headers: withTiming(CORS_HEADERS, start) });
+            }, 404);
         }
 
         // Lightweight direct invocation: { tool: "search_clubs", args: { ... } }
@@ -219,23 +244,23 @@ export async function POST(request) {
         const toolArgs = body.args || body.arguments || {};
 
         if (!toolName) {
-            return NextResponse.json({
+            return respond({
                 error: 'Missing required field "tool" or "name", or valid JSON-RPC 2.0 payload.'
-            }, { status: 400, headers: withTiming(CORS_HEADERS, start) });
+            }, 400);
         }
 
         const executionResult = await executeTool(toolName, toolArgs);
-        return NextResponse.json(executionResult, { headers: withTiming(CORS_HEADERS, start) });
+        return respond(executionResult);
 
     } catch (error) {
         console.error('API /api/mcp error:', error);
-        return NextResponse.json({
+        return respond({
             jsonrpc: '2.0',
             id: null,
             error: {
                 code: -32603,
                 message: `Failed to process MCP request: ${error.message}`
             }
-        }, { status: 500, headers: withTiming(CORS_HEADERS, start) });
+        }, 500);
     }
 }

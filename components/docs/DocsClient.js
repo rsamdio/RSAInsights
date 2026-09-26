@@ -299,7 +299,7 @@ export default function DocsClient() {
         }
     }, null, 2);
 
-    const httpConfig = `POST https://insights.rsmda.org/api/mcp
+    const httpConfig = `POST https://insights.rsamdio.org/api/mcp
 Content-Type: application/json
 
 {
@@ -489,7 +489,7 @@ Content-Type: application/json
                             </div>
                             <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                                 <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#0f4c81', marginBottom: '4px' }}>🌐 Remote HTTP Endpoint</div>
-                                <div style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5' }}>Send JSON-RPC 2.0 requests to <code>https://insights.rsmda.org/api/mcp</code>.</div>
+                                <div style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5' }}>Send JSON-RPC 2.0 requests to <code>https://insights.rsamdio.org/api/mcp</code>.</div>
                             </div>
                             <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                                 <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#0f4c81', marginBottom: '4px' }}>🛡️ Zero Authentication</div>

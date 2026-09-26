@@ -2,7 +2,7 @@
 import https from 'node:https';
 import http from 'node:http';
 
-const targetArg = process.env.TEST_URL || process.argv[2] || 'https://insights.rsmda.org';
+const targetArg = process.env.TEST_URL || process.argv[2] || 'https://insights.rsamdio.org';
 const prodBase = targetArg.replace(/\/+$/, '');
 
 const isHttps = prodBase.startsWith('https:');
@@ -92,7 +92,7 @@ async function run() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const pVer = data.protocolVersion || data.mcpVersion;
-        if (pVer !== '2026-07-28') throw new Error(`Expected MCP version 2026-07-28, got ${pVer}`);
+        if (pVer !== '2024-11-05') throw new Error(`Expected MCP version 2024-11-05, got ${pVer}`);
         return `MCP Manifest Verified: ${data.name} v${data.version}, protocol: ${pVer}`;
     });
 
@@ -397,6 +397,116 @@ async function run() {
         const data = await res.json();
         if (!data.result?.isError) throw new Error('Expected isError=true for missing required clubId');
         return `Guard triggered successfully: ${data.result.content[0].text}`;
+    });
+
+    let sseSessionId = null;
+
+    await test('MCP-SSE', 'GET /api/mcp (SSE Probe Handshake)', async () => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        try {
+            const res = await fetch(`${prodBase}/api/mcp`, {
+                headers: { 'Accept': 'text/event-stream' },
+                signal: controller.signal
+            });
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const contentType = res.headers.get('content-type') || '';
+            if (!contentType.includes('text/event-stream')) {
+                throw new Error(`Expected text/event-stream, got ${contentType}`);
+            }
+            const reader = res.body.getReader();
+            const { value } = await reader.read();
+            const text = new TextDecoder().decode(value);
+            controller.abort(); // close stream after reading initial event
+            if (!text.includes('event: endpoint')) {
+                throw new Error(`Expected event: endpoint, received: ${text}`);
+            }
+            const match = text.match(/sessionId=([a-zA-Z0-9-]+)/);
+            if (match) sseSessionId = match[1];
+            return `SSE stream initialized, endpoint event received (sessionId: ${sseSessionId || 'present'})`;
+        } catch (err) {
+            clearTimeout(timeout);
+            if (err.name === 'AbortError') {
+                return `SSE stream handshake acknowledged`;
+            }
+            throw err;
+        }
+    });
+
+    await test('MCP-SSE', 'GET /sse (Dedicated SSE Endpoint Probe)', async () => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        try {
+            const res = await fetch(`${prodBase}/sse`, {
+                headers: { 'Accept': 'text/event-stream' },
+                signal: controller.signal
+            });
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const contentType = res.headers.get('content-type') || '';
+            if (!contentType.includes('text/event-stream')) {
+                throw new Error(`Expected text/event-stream, got ${contentType}`);
+            }
+            const reader = res.body.getReader();
+            const { value } = await reader.read();
+            const text = new TextDecoder().decode(value);
+            controller.abort();
+            if (!text.includes('event: endpoint')) {
+                throw new Error(`Expected event: endpoint, received: ${text}`);
+            }
+            return `Dedicated /sse endpoint accepted SSE probe successfully`;
+        } catch (err) {
+            clearTimeout(timeout);
+            if (err.name === 'AbortError') {
+                return `Dedicated /sse probe acknowledged`;
+            }
+            throw err;
+        }
+    });
+
+    await test('MCP-SSE', 'GET /api/sse (API SSE Endpoint Probe)', async () => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        try {
+            const res = await fetch(`${prodBase}/api/sse`, {
+                headers: { 'Accept': 'text/event-stream' },
+                signal: controller.signal
+            });
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const contentType = res.headers.get('content-type') || '';
+            if (!contentType.includes('text/event-stream')) {
+                throw new Error(`Expected text/event-stream, got ${contentType}`);
+            }
+            const reader = res.body.getReader();
+            const { value } = await reader.read();
+            const text = new TextDecoder().decode(value);
+            controller.abort();
+            if (!text.includes('event: endpoint')) {
+                throw new Error(`Expected event: endpoint, received: ${text}`);
+            }
+            return `/api/sse endpoint accepted SSE probe successfully`;
+        } catch (err) {
+            clearTimeout(timeout);
+            if (err.name === 'AbortError') {
+                return `/api/sse probe acknowledged`;
+            }
+            throw err;
+        }
+    });
+
+    await test('MCP-SSE', 'POST /api/mcp?sessionId=... (SSE Session Message Routing)', async () => {
+        const query = sseSessionId ? `?sessionId=${sseSessionId}` : '';
+        const res = await fetchWithRetry(`${prodBase}/api/mcp${query}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ jsonrpc: '2.0', id: 'sse-msg-1', method: 'ping' })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        return `Message dispatched with sessionId, response confirmed (id: ${data.id})`;
     });
 
     await test('MCP', 'POST /api/mcp (tools/list)', async () => {

@@ -13,7 +13,7 @@ This document certifies the submission readiness of the **Rotaract South Asia An
 - **OpenAPI 3.1.0 Specification:** `https://insights.rsamdio.org/openapi.json`
 - **Discovery Manifest:** `https://insights.rsamdio.org/.well-known/mcp-server.json`
 - **Domain Verification Token:** `/.well-known/openai-apps-challenge` (Verified)
-- **Protocol Version:** MCP Protocol `2026-07-28`
+- **Protocol Version:** MCP Protocol `2024-11-05`
 - **Privacy Policy:** `https://insights.rsamdio.org/privacy`
 
 ---

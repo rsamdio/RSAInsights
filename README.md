@@ -16,7 +16,7 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 - **Youth Service & Interact Ecosystem**: Tracking Rotary clubs without Rotaract/Interact sponsorship, Interact club growth, and expansion opportunity metrics.
 - **Public REST API (`/api/v1/`)**: 20 high-performance JSON endpoints covering summary, leaderboards, districts, clubs, compliance (including unified issues), opportunities, TRF, interact, and worldwide rankings.
 - **Interactive API Documentation (`/docs`)**: Modern interactive API reference powered by Scalar and OpenAPI 3.1.0 (`/openapi.json`).
-- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts supporting both local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`, protocol version 2026-07-28).
+- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts supporting both local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`, protocol version 2024-11-05).
 - **Production Host Routing**: Canonical production routing at `https://insights.rsamdio.org/` with 301 edge redirects for Netlify subdomains and legacy addresses.
 
 ---
