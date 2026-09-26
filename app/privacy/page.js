@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
                             fontWeight: 600,
                             textDecoration: 'none'
                         }}>
-                            Support & Contact Center →
+                            Contact Us →
                         </Link>
                         <a href="mailto:info@rsamdio.org" style={{
                             display: 'inline-flex',

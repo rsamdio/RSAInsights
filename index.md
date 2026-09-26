@@ -38,7 +38,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `app/docs/page.js` & `public/docs.html` | Interactive API documentation (Scalar API reference UI) | API Docs tasks |
 | `app/privacy/page.js` | Privacy policy: data handling, telemetry, MCP AI processing, zero-account architecture | Legal / Privacy tasks |
 | `app/terms/page.js` | Terms of service: ODbL open data license, permitted use, currency rounding, disclaimer | Legal / Terms tasks |
-| `app/contact/page.js` & `app/support/page.js` | Contact & support desk: direct emails, support form, FAQs, SLAs, MCP setup guides | User Support tasks |
+| `app/contact/page.js` | Official contact desk: directory emails, response SLAs, and developer resources | Contact & Inquiries tasks |
 | `public/openapi.json` | OpenAPI 3.1.0 specification covering all REST endpoints | API Spec tasks |
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
 | `lib/mcp/tools.js` | MCP tool schemas (14 tools, 8 resources, 4 prompts) and execution dispatcher | MCP Tool definitions |

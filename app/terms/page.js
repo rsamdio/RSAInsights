@@ -151,7 +151,7 @@ export default function TermsOfServicePage() {
                             fontWeight: 600,
                             textDecoration: 'none'
                         }}>
-                            Support & Inquiries →
+                            Contact Us →
                         </Link>
                         <Link href="/privacy" style={{
                             display: 'inline-flex',

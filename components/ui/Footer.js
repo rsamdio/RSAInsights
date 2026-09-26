@@ -24,7 +24,7 @@ export default function Footer({ lastUpdated = '13 Aug 2026' }) {
                 <span style={{ color: 'var(--border-color)' }}>•</span>
                 <a href="/terms" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Terms of Service</a>
                 <span style={{ color: 'var(--border-color)' }}>•</span>
-                <a href="/contact" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Contact & Support</a>
+                <a href="/contact" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Contact</a>
             </div>
             <p style={{ maxWidth: '900px', margin: '0 auto 10px auto', fontSize: '11.5px', color: 'var(--text-muted)' }}>
                 <strong>* Outstanding Dues Note:</strong> Dues are converted from USD to INR at prevailing monthly exchange rates (₹96/USD for current data, ₹95/USD for 1 July baseline) and rounded to the nearest whole integer at the individual club level. Aggregate district, zone, and global sums are subject to minor variations due to club-level rounding.
