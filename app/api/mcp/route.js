@@ -21,11 +21,12 @@ export const dynamic = 'force-dynamic';
 const SERVER_NAME = 'rotaract-south-asia-analytics';
 const SERVER_VERSION = '1.1.0';
 
-// Static MCP method responses (tool/resource/prompt listings) are safe to cache briefly.
-// They do not change between deployments.
-const STATIC_CACHE_HEADERS = {
+// MCP endpoints must never be cached by CDN proxies (Netlify/Cloudflare)
+// to prevent stale JSON from intercepting SSE streams.
+const NO_CACHE_HEADERS = {
     ...CORS_HEADERS,
-    'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600'
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache'
 };
 
 function withTiming(headers, startMs) {
@@ -37,29 +38,29 @@ export async function OPTIONS() {
 }
 
 export async function GET(request) {
-    const acceptHeader = request?.headers?.get('accept') || '';
     const url = request?.url ? new URL(request.url) : null;
-    const isSse = acceptHeader.includes('text/event-stream') || url?.searchParams?.get('transport') === 'sse';
+    const format = url?.searchParams?.get('format');
+    const isExplicitJson = format === 'json' || url?.searchParams?.get('info') === 'true';
 
-    // Handle SSE probe and connection
-    if (isSse) {
-        return createSseResponse(request, '/api/mcp');
+    // Direct HTTP JSON discovery manifest (only when explicitly requested via ?format=json or ?info=true)
+    if (isExplicitJson) {
+        return NextResponse.json({
+            server: SERVER_NAME,
+            version: SERVER_VERSION,
+            protocolVersion: DEFAULT_PROTOCOL_VERSION,
+            capabilities: {
+                tools: {},
+                resources: {},
+                prompts: {}
+            },
+            tools: TOOLS_DEFINITIONS,
+            resources: MCP_RESOURCES,
+            prompts: MCP_PROMPTS
+        }, { headers: NO_CACHE_HEADERS });
     }
 
-    // Direct HTTP JSON discovery manifest
-    return NextResponse.json({
-        server: SERVER_NAME,
-        version: SERVER_VERSION,
-        protocolVersion: DEFAULT_PROTOCOL_VERSION,
-        capabilities: {
-            tools: {},
-            resources: {},
-            prompts: {}
-        },
-        tools: TOOLS_DEFINITIONS,
-        resources: MCP_RESOURCES,
-        prompts: MCP_PROMPTS
-    }, { headers: STATIC_CACHE_HEADERS });
+    // Default: Return SSE stream for all MCP clients connecting via GET (ChatGPT, Claude, Cursor)
+    return createSseResponse(request, '/api/mcp');
 }
 
 export async function POST(request) {
@@ -114,7 +115,7 @@ export async function POST(request) {
                 const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
                 const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 const versionHeaders = {
-                    ...STATIC_CACHE_HEADERS,
+                    ...NO_CACHE_HEADERS,
                     'Mcp-Protocol-Version': negotiatedVersion
                 };
 
@@ -145,7 +146,7 @@ export async function POST(request) {
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { tools: TOOLS_DEFINITIONS }
-                }, 200, STATIC_CACHE_HEADERS);
+                }, 200, NO_CACHE_HEADERS);
             }
 
             if (method === 'tools/call') {
@@ -166,7 +167,7 @@ export async function POST(request) {
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { resources: MCP_RESOURCES }
-                }, 200, STATIC_CACHE_HEADERS);
+                }, 200, NO_CACHE_HEADERS);
             }
 
             if (method === 'resources/read') {
@@ -200,7 +201,7 @@ export async function POST(request) {
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { prompts: MCP_PROMPTS }
-                }, 200, STATIC_CACHE_HEADERS);
+                }, 200, NO_CACHE_HEADERS);
             }
 
             if (method === 'prompts/get') {

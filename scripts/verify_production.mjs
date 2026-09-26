@@ -325,7 +325,7 @@ async function run() {
     // Category 3: Model Context Protocol (MCP) Endpoints
     // ----------------------------------------------------
     await test('MCP', 'GET /api/mcp (Server Manifest)', async () => {
-        const res = await fetchWithRetry(`${prodBase}/api/mcp`);
+        const res = await fetchWithRetry(`${prodBase}/api/mcp?format=json`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         return `Server: ${data.server} v${data.version}, Tools: ${data.tools.length}, Resources: ${data.resources.length}, Prompts: ${data.prompts.length}`;
