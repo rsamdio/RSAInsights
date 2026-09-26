@@ -45,29 +45,31 @@ export async function OPTIONS() {
 }
 
 export async function GET(request) {
+    const acceptHeader = request?.headers?.get('accept') || '';
+    const isEventStream = acceptHeader.includes('text/event-stream');
     const url = request?.url ? new URL(request.url) : null;
-    const format = url?.searchParams?.get('format');
-    const isExplicitJson = format === 'json' || url?.searchParams?.get('info') === 'true';
+    const isExplicitSse = url?.searchParams?.get('transport') === 'sse';
 
-    // Direct HTTP JSON discovery manifest (only when explicitly requested via ?format=json or ?info=true)
-    if (isExplicitJson) {
-        return NextResponse.json({
-            server: SERVER_NAME,
-            version: SERVER_VERSION,
-            protocolVersion: DEFAULT_PROTOCOL_VERSION,
-            capabilities: {
-                tools: {},
-                resources: {},
-                prompts: {}
-            },
-            tools: TOOLS_DEFINITIONS,
-            resources: MCP_RESOURCES,
-            prompts: MCP_PROMPTS
-        }, { headers: MANIFEST_CACHE_HEADERS });
+    // If client explicitly requests SSE via header (e.g. ChatGPT Developer Mode, Claude Desktop)
+    // or query parameter, establish real-time SSE stream
+    if (isEventStream || isExplicitSse) {
+        return createSseResponse(request, '/api/mcp');
     }
 
-    // Default: Return SSE stream for all MCP clients connecting via GET (ChatGPT, Claude, Cursor)
-    return createSseResponse(request, '/api/mcp');
+    // Default for HTTP: Return JSON capability and tool discovery manifest
+    return NextResponse.json({
+        server: SERVER_NAME,
+        version: SERVER_VERSION,
+        protocolVersion: DEFAULT_PROTOCOL_VERSION,
+        capabilities: {
+            tools: {},
+            resources: {},
+            prompts: {}
+        },
+        tools: TOOLS_DEFINITIONS,
+        resources: MCP_RESOURCES,
+        prompts: MCP_PROMPTS
+    }, { headers: MANIFEST_CACHE_HEADERS });
 }
 
 export async function POST(request) {
@@ -116,9 +118,23 @@ export async function POST(request) {
                 return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
             }
 
-            // server/discover: single call returning full capability manifest
-            // Used by platform bots (OpenAI, Anthropic, Google) on first connection
-            if (method === 'initialize' || method === 'server/discover') {
+            // Gracefully reject server/discover with spec-compliant Method Not Found (-32601).
+            // OpenAI's tool scanner probes server/discover first; returning -32601 signals that
+            // this server uses the standard MCP initialize + tools/list handshake (protocol 2024-11-05),
+            // enabling the tool scanner to proceed cleanly without "server/discover response was invalid" error.
+            if (method === 'server/discover') {
+                return respond({
+                    jsonrpc: '2.0',
+                    id: responseId,
+                    error: {
+                        code: -32601,
+                        message: "Method 'server/discover' not found"
+                    }
+                }, 200, NO_CACHE_HEADERS);
+            }
+
+            // Standard MCP initialize handshake (MCP 2024-11-05 specification)
+            if (method === 'initialize') {
                 const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
                 const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 const versionHeaders = {
@@ -139,10 +155,7 @@ export async function POST(request) {
                         serverInfo: {
                             name: SERVER_NAME,
                             version: SERVER_VERSION
-                        },
-                        tools: TOOLS_DEFINITIONS,
-                        resources: MCP_RESOURCES,
-                        prompts: MCP_PROMPTS
+                        }
                     }
                 }, 200, versionHeaders);
             }

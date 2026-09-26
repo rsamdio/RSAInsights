@@ -13,12 +13,18 @@ export default function Footer({ lastUpdated = '13 Aug 2026' }) {
             lineHeight: '1.6',
             borderRadius: '0 0 12px 12px'
         }}>
-            <div style={{ marginBottom: '12px', fontWeight: 600, color: 'var(--text-main)', fontSize: '13px' }}>
+            <div style={{ marginBottom: '14px', fontWeight: 600, color: 'var(--text-main)', fontSize: '13px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
                 <span>Data Source: Rotary International</span>
-                <span style={{ margin: '0 8px', color: 'var(--border-color)' }}>•</span>
+                <span style={{ color: 'var(--border-color)' }}>•</span>
                 <span>Last Updated: {lastUpdated}</span>
-                <span style={{ margin: '0 8px', color: 'var(--border-color)' }}>•</span>
-                <a href="/docs" style={{ color: 'var(--primary, #0284c7)', textDecoration: 'none' }}>API & Open Data</a>
+                <span style={{ color: 'var(--border-color)' }}>•</span>
+                <a href="/docs" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>API & Open Data</a>
+                <span style={{ color: 'var(--border-color)' }}>•</span>
+                <a href="/privacy" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Privacy Policy</a>
+                <span style={{ color: 'var(--border-color)' }}>•</span>
+                <a href="/terms" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Terms of Service</a>
+                <span style={{ color: 'var(--border-color)' }}>•</span>
+                <a href="/contact" style={{ color: 'var(--primary, #0f4c81)', textDecoration: 'none' }}>Contact & Support</a>
             </div>
             <p style={{ maxWidth: '900px', margin: '0 auto 10px auto', fontSize: '11.5px', color: 'var(--text-muted)' }}>
                 <strong>* Outstanding Dues Note:</strong> Dues are converted from USD to INR at prevailing monthly exchange rates (₹96/USD for current data, ₹95/USD for 1 July baseline) and rounded to the nearest whole integer at the individual club level. Aggregate district, zone, and global sums are subject to minor variations due to club-level rounding.
