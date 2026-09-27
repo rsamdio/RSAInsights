@@ -738,7 +738,7 @@ Content-Type: application/json
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div>
                             <h3 style={{ margin: '8px 0 4px 0', fontSize: '20px', color: '#1e293b' }}>
-                                Available AI Tools Directory (8 Tools)
+                                Available AI Tools Directory (14 Tools)
                             </h3>
                             <p style={{ margin: 0, color: '#64748b', fontSize: '14px' }}>
                                 Your AI model can invoke any of the following tools automatically based on the user's conversational intent.

@@ -6,21 +6,19 @@
     "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs).\n\n### Model Context Protocol (MCP) Integration\nThis service includes a Model Context Protocol (MCP) server for direct use by AI assistants (Cursor, Claude Desktop, Antigravity, VS Code):\n- **Local Stdio Command:** `npm run mcp` or `node scripts/mcp_server.js`\n- **Remote HTTP Endpoint:** `POST https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0)\n- **Available AI Tools (14 tools):** `get_summary`, `get_leaderboards`, `get_districts`, `get_district_insights`, `get_zone_summary`, `search_clubs`, `get_club_profile`, `get_new_clubs`, `find_compliance_risks`, `find_dual_risk_clubs`, `get_interact_analytics`, `find_rotary_opportunities`, `get_foundation_giving`, `get_worldwide_rankings`.\n\nAll endpoints are open, unauthenticated, and CORS-enabled.",
     "contact": {
       "name": "Rotaract South Asia Analytics Team",
-      "url": "https://insights.rsamdio.org"
+      "url": "https://insights.rsamdio.org/contact",
+      "email": "info@rsamdio.org"
     },
     "license": {
       "name": "Open Data Commons Open Database License (ODbL)",
       "url": "https://opendatacommons.org/licenses/odbl/"
-    }
+    },
+    "termsOfService": "https://insights.rsamdio.org/terms"
   },
   "servers": [
     {
       "url": "https://insights.rsamdio.org",
-      "description": "Production server (Primary)"
-    },
-    {
-      "url": "http://localhost:3000",
-      "description": "Local development server"
+      "description": "Production server (Primary - TLS enforced)"
     }
   ],
   "tags": [
@@ -1295,7 +1293,8 @@
             "schema": {
               "type": "integer",
               "default": 25
-            }
+            },
+            "description": "Maximum number of records to return (1-100, default 25)"
           },
           {
             "name": "offset",
@@ -1304,7 +1303,8 @@
             "schema": {
               "type": "integer",
               "default": 0
-            }
+            },
+            "description": "Number of records to skip for pagination (default 0)"
           },
           {
             "name": "maxOutstanding",
@@ -1365,7 +1365,8 @@
             "required": false,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter by club institution base ('Community' or 'University')"
           },
           {
             "name": "limit",
@@ -1374,7 +1375,8 @@
             "schema": {
               "type": "integer",
               "default": 25
-            }
+            },
+            "description": "Maximum number of records to return (1-100, default 25)"
           },
           {
             "name": "offset",
@@ -1383,7 +1385,8 @@
             "schema": {
               "type": "integer",
               "default": 0
-            }
+            },
+            "description": "Number of records to skip for pagination (default 0)"
           }
         ],
         "responses": {
@@ -1431,7 +1434,8 @@
             "required": false,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter opportunities by 4-digit Rotary district number (e.g. '3000')"
           },
           {
             "name": "zone",
@@ -1439,7 +1443,8 @@
             "required": false,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter opportunities by Rotary zone (e.g. 'Zone 5' or '5')"
           },
           {
             "name": "limit",
@@ -1448,7 +1453,8 @@
             "schema": {
               "type": "integer",
               "default": 25
-            }
+            },
+            "description": "Maximum number of records to return (1-100, default 25)"
           },
           {
             "name": "offset",
@@ -1457,7 +1463,8 @@
             "schema": {
               "type": "integer",
               "default": 0
-            }
+            },
+            "description": "Number of records to skip for pagination (default 0)"
           },
           {
             "name": "sortBy",
@@ -1521,7 +1528,8 @@
             "required": false,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter TRF giving records by 4-digit district number (e.g. '3000')"
           },
           {
             "name": "zone",
@@ -1529,7 +1537,8 @@
             "required": false,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter TRF giving records by Rotary zone (e.g. 'Zone 5' or '5')"
           },
           {
             "name": "limit",
@@ -1538,7 +1547,8 @@
             "schema": {
               "type": "integer",
               "default": 25
-            }
+            },
+            "description": "Maximum records to return (1-100, default 25)"
           },
           {
             "name": "offset",
@@ -1547,7 +1557,8 @@
             "schema": {
               "type": "integer",
               "default": 0
-            }
+            },
+            "description": "Number of records to skip for pagination (default 0)"
           },
           {
             "name": "country",
@@ -3426,6 +3437,20 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "Optional API Key for elevated rate limits. All standard endpoints are public and accessible without authentication."
+      }
     }
-  }
+  },
+  "security": [
+    {},
+    {
+      "ApiKeyAuth": []
+    }
+  ]
 }

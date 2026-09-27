@@ -1,0 +1,16 @@
+interface:
+  display_name: "South Asia Overview"
+  short_description: "Macro executive analytics, regional KPI summaries, and inter-zone performance comparisons."
+  brand_color: "#005596"
+  default_prompt: "Provide an executive overview and zone comparison across South Asia"
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "rotaract-insights"
+      description: "Rotaract South Asia Analytics MCP server"
+      transport: "streamable_http"
+      url: "https://insights.rsamdio.org/api/mcp"
