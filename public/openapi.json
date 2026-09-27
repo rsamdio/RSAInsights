@@ -3,15 +3,15 @@
   "info": {
     "title": "Rotaract South Asia Analytics API",
     "version": "1.1.0",
-    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs).\n\n### Model Context Protocol (MCP) Integration\nThis service includes a Model Context Protocol (MCP) server for direct use by AI assistants (Cursor, Claude Desktop, Antigravity, VS Code):\n- **Local Stdio Command:** `npm run mcp` or `node scripts/mcp_server.js`\n- **Remote HTTP Endpoint:** `POST https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0)\n- **Available AI Tools (14 tools):** `get_summary`, `get_leaderboards`, `get_districts`, `get_district_insights`, `get_zone_summary`, `search_clubs`, `get_club_profile`, `get_new_clubs`, `find_compliance_risks`, `find_dual_risk_clubs`, `get_interact_analytics`, `find_rotary_opportunities`, `get_foundation_giving`, `get_worldwide_rankings`.\n\nAll endpoints are open, unauthenticated, and CORS-enabled.",
+    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs). All endpoints are open, unauthenticated, and CORS-enabled.",
     "contact": {
       "name": "Rotaract South Asia Analytics Team",
       "url": "https://insights.rsamdio.org/contact",
       "email": "info@rsamdio.org"
     },
     "license": {
-      "name": "Open Data Commons Open Database License (ODbL)",
-      "url": "https://opendatacommons.org/licenses/odbl/"
+      "name": "ODbL-1.0",
+      "identifier": "ODbL-1.0"
     },
     "termsOfService": "https://insights.rsamdio.org/terms"
   },
