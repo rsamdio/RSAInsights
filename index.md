@@ -58,7 +58,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `data/` | Pre-aggregated JSON and CSV files consumed by `lib/api.js` | Generated data artifacts |
 | `components/tables/` | TanStack DataTables (`DataTable.js`, `GlobalTables.js`, `DistrictTable.js`) | Table UI & CSV export |
 | `components/charts/` | Chart.js wrappers (`BarChart.js`, `DoughnutChart.js`) | Chart visualizations |
-| `components/sections/` | Server leaderboard sections (`TopChartsSection.js`, `ClubLeaderboardsSection.js`) | Leaderboard logic |
+| `components/sections/` | Server & client leaderboard sections (`TopChartsSection.js`, `ClubLeaderboardsSection.js`, `WorldwideLeaderboardsSection.js`, `WorldwideClubLeaderboards.js`) | Leaderboard logic |
 | `components/ui/` | UI primitives (`HeaderFilters.js`, `MetricCard.js`, `Tabs.js`, `Footer.js`, `Analytics.js`) | Reusable UI controls |
 | `components/seo/` | JSON-LD schema builder (`JsonLd.js`) | Structured data / SEO |
 
@@ -80,8 +80,8 @@ This index is the primary navigation layer for AI coding agents. It provides a d
                      [data/]
         - dashboard_summary.json  - all_clubs.json (2,820+ clubs)
         - zone_summary.json       - arrears.json & no_officers.json
-        - worldwide_summary.json  - trf_contributions.json
-        - unified_issues.json     - rotary_no_sponsor.json & rotary_no_interact.json
+        - worldwide_summary.json  - worldwide_clubs.json (9,820+ clubs)
+        - unified_issues.json     - trf_contributions.json
         - district_officers.json  - new_clubs.json (+ CSV equivalents)
                          │
                          ▼

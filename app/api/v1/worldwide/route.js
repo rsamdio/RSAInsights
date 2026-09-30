@@ -13,8 +13,10 @@ export async function GET(request) {
         const { searchParams } = new URL(request.url);
         const type = searchParams.get('type') || 'all';
         const country = searchParams.get('country') || '';
+        const district = searchParams.get('district') || '';
         const zone = searchParams.get('zone') || '';
         const region = searchParams.get('region') || '';
+        const base = searchParams.get('base') || '';
         const sortBy = searchParams.get('sortBy') || searchParams.get('sort_by') || '';
         const sortOrder = searchParams.get('sortOrder') || searchParams.get('sort_order') || 'desc';
         const minMembers = searchParams.get('minMembers') || searchParams.get('min_members') || undefined;
@@ -24,8 +26,10 @@ export async function GET(request) {
         const stats = await getWorldwideStats({
             type,
             country,
+            district,
             zone,
             region,
+            base,
             sortBy,
             sortOrder,
             minMembers,

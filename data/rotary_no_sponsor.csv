@@ -10,7 +10,7 @@ Zone 5,2981,Cuddalore Sangamam,Active,36,58449
 Zone 5,2981,Delta Pattukkottai,Active,52,228176
 Zone 5,2981,E-Club of Thanjavur Divas,Active,58,86714
 Zone 5,2981,Idumbavanam,Active,16,227960
-Zone 5,2981,Karaikal French City,Active,43,82693
+Zone 5,2981,Karaikal French City,Active,52,82693
 Zone 5,2981,Kariyapattinam,Active,14,227420
 Zone 5,2981,Kattumannarkoil,Active,33,67020
 Zone 5,2981,Kilvelur,Active,22,222559
@@ -28,11 +28,11 @@ Zone 5,2981,Kumbakonam Kings,Active,23,89392
 Zone 5,2981,Kumbakonam Maanagar,Active,41,224422
 Zone 5,2981,Kumbakonam Mahamaham,Active,51,28707
 Zone 5,2981,Kumbakonam Queens,Active,11,86520
-Zone 5,2981,Kumbakonam Temple City,Active,66,22852
+Zone 5,2981,Kumbakonam Temple City,Active,67,22852
 Zone 5,2981,Kumbakonam Tradition Land,Active,21,223365
-Zone 5,2981,Kumbakonam Universe,Active,18,227998
-Zone 5,2981,Kumbakonam Wisdom,Active,16,227123
-Zone 5,2981,Kuttalam,Active,66,78635
+Zone 5,2981,Kumbakonam Universe,Active,28,227998
+Zone 5,2981,Kumbakonam Wisdom,Active,15,227123
+Zone 5,2981,Kuttalam,Active,65,78635
 Zone 5,2981,Madukkur,Active,26,83354
 Zone 5,2981,Mannai Green City,Active,21,86008
 Zone 5,2981,Mannargudi Pride,Active,15,228020
@@ -46,28 +46,28 @@ Zone 5,2981,Mayuram,Active,84,15867
 Zone 5,2981,Mayuram Delta,Active,19,223228
 Zone 5,2981,Muthupet Lagoon,Active,29,227564
 Zone 5,2981,Muthupettai,Active,72,52274
-Zone 5,2981,Nagapattinam Mid Town,Active,27,82837
+Zone 5,2981,Nagapattinam Mid Town,Active,37,82837
 Zone 5,2981,Nagapattinam Queens,Active,20,228221
-Zone 5,2981,Nagapattinam Sanghamam,Active,28,222276
+Zone 5,2981,Nagapattinam Sanghamam,Active,31,222276
 Zone 5,2981,Nagapattinam Waves,Active,22,225546
-Zone 5,2981,Nagapattinam Wings,Active,43,88451
-Zone 5,2981,Nagore,Active,34,78754
+Zone 5,2981,Nagapattinam Wings,Active,48,88451
+Zone 5,2981,Nagore,Active,43,78754
 Zone 5,2981,Nannilam,Active,20,86331
 Zone 5,2981,Natchiarkoil Lamp City,Active,27,82878
 Zone 5,2981,Neyveli,Active,25,23514
-Zone 5,2981,Neyveli Arch Gate,Active,31,91001
+Zone 5,2981,Neyveli Arch Gate,Active,34,91001
 Zone 5,2981,Neyveli Green City,Active,28,222021
-Zone 5,2981,Neyveli Lignite City,Active,62,55739
+Zone 5,2981,Neyveli Lignite City,Active,66,55739
 Zone 5,2981,Neyveli Power City,Active,54,58341
-Zone 5,2981,Panruti,Active,114,31414
-Zone 5,2981,Papanasam,Active,82,31413
+Zone 5,2981,Panruti,Active,115,31414
+Zone 5,2981,Papanasam,Active,91,31413
 Zone 5,2981,Papanasam River City,Active,11,83319
 Zone 5,2981,Pattukkottai Kings,Active,59,91202
 Zone 5,2981,Pattukottai Mid Town,Active,34,82863
 Zone 5,2981,Pennadam,Active,41,15879
 Zone 5,2981,Peravurani,Active,27,83208
 Zone 5,2981,Pondicherry Agni Siragugal,Active,29,227672
-Zone 5,2981,Pondicherry Arikamedu Port,Active,19,226650
+Zone 5,2981,Pondicherry Arikamedu Port,Active,24,226650
 Zone 5,2981,Pondicherry Champions,Active,24,228181
 Zone 5,2981,Pondicherry Elites,Active,32,83779
 Zone 5,2981,Pondicherry French City,Active,18,64814
@@ -83,14 +83,14 @@ Zone 5,2981,Pondicherry Nexus,Active,23,226727
 Zone 5,2981,Pondicherry Phoenix,Active,40,225743
 Zone 5,2981,Pondicherry Port,Active,41,31589
 Zone 5,2981,Pondicherry Pothigai,Active,21,228213
-Zone 5,2981,Pondicherry Pride,Active,81,223432
+Zone 5,2981,Pondicherry Pride,Active,82,223432
 Zone 5,2981,Pondicherry Regal,Active,15,227122
 Zone 5,2981,Pondicherry White Town,Active,35,87691
 Zone 5,2981,Puducherry Vision,Active,36,226792
 Zone 5,2981,Royal Pattukkottai,Active,42,226340
 Zone 5,2981,Sirkali Temple Town,Active,55,83199
 Zone 5,2981,Tankcity Tiruvarur,Active,25,65756
-Zone 5,2981,Thanikkottagam,Active,20,228257
+Zone 5,2981,Thanikkottagam,Active,27,228257
 Zone 5,2981,Thanjavur,Active,72,15890
 Zone 5,2981,Thanjavur Big Temple,Active,52,83401
 Zone 5,2981,Thanjavur Cauvery,Active,71,52268
@@ -100,31 +100,30 @@ Zone 5,2981,Thanjavur East,Active,21,222297
 Zone 5,2981,Thanjavur Emperors,Active,34,87965
 Zone 5,2981,Thanjavur Galaxy,Active,29,223453
 Zone 5,2981,Thanjavur Kundhavai,Active,19,224186
-Zone 5,2981,Thanjavur Majestic City,Active,34,227138
+Zone 5,2981,Thanjavur Majestic City,Active,45,227138
 Zone 5,2981,Thanjavur Newtown,Active,25,30693
 Zone 5,2981,Thanjavur Warriors,Active,47,227180
 Zone 5,2981,Thirumullaivasal,Active,26,86514
 Zone 5,2981,Thiruvarur Mid Town,Active,4,89623
-Zone 5,2981,Thiruvonam,Active,33,228204
+Zone 5,2981,Thiruvonam,Active,35,228204
 Zone 5,2981,Tiruthuraipoondi Delta,Active,53,83301
-Zone 5,2981,Tiruturaipoondi,Active,61,22737
+Zone 5,2981,Tiruturaipoondi,Active,62,22737
 Zone 5,2981,Tiruvarur,Active,101,15895
 Zone 5,2981,Tittagudi,Active,31,226438
 Zone 5,2981,Ullikkottai,Active,15,227823
-Zone 5,2981,Vadakuthu,Active,20,82669
-Zone 5,2981,Vailankanni,Active,84,78717
+Zone 5,2981,Vadakuthu,Active,29,82669
 Zone 5,2981,Valangaiman,Active,26,67017
 Zone 5,2981,Vedaraniam,Active,45,28304
 Zone 5,2981,Veeranam Lake City,Active,28,222261
 Zone 5,2981,Velankanni Green City,Active,75,226965
 Zone 5,2981,Veppur,Active,38,89389
-Zone 5,2981,Vijayapuram,Active,39,223393
-Zone 5,2981,Virudhachalam Elite,Active,30,87693
+Zone 5,2981,Vijayapuram,Active,45,223393
+Zone 5,2981,Virudhachalam Elite,Active,29,87693
 Zone 5,2982,Attur,Active,77,31334
 Zone 5,2982,Attur Central,Active,17,225895
 Zone 5,2982,Attur Midtown,Active,47,86959
 Zone 5,2982,Chinna Salem,Active,83,51056
-Zone 5,2982,Dharmapuri,Active,64,15847
+Zone 5,2982,Dharmapuri,Active,77,15847
 Zone 5,2982,Dharmapuri Phoenix,Active,31,227924
 Zone 5,2982,Elampillai,Active,45,224714
 Zone 5,2982,Gingee Fort,Active,41,52229
@@ -137,7 +136,7 @@ Zone 5,2982,Hosur Rose City,Active,25,83278
 Zone 5,2982,Hosur Royals,Active,16,226202
 Zone 5,2982,Kaveripatnam,Active,28,83660
 Zone 5,2982,Krishnagiri,Active,44,23416
-Zone 5,2982,Maa-Nagar Krishnagiri,Active,41,80154
+Zone 5,2982,Maa-Nagar Krishnagiri,Active,42,80154
 Zone 5,2982,Mohanur,Active,44,83285
 Zone 5,2982,Namakkal Educational City,Active,33,83386
 Zone 5,2982,Namakkal Elite,Active,31,82879
@@ -148,25 +147,24 @@ Zone 5,2982,Namakkal Transport City,Active,77,82836
 Zone 5,2982,Omalur,Active,24,57867
 Zone 5,2982,Rasipuram Educational City,Active,15,83321
 Zone 5,2982,Rasipuram Royal,Active,56,89524
+Zone 5,2982,Salem Circle,Active,28,228335
 Zone 5,2982,Salem Cosmos,Active,29,50763
 Zone 5,2982,Salem Divine Hearts,Active,10,227328
-Zone 5,2982,Salem East,Active,28,31340
-Zone 5,2982,Salem Elite,Active,56,86597
+Zone 5,2982,Salem Elite,Active,60,86597
 Zone 5,2982,Salem Evergreen,Active,39,88871
 Zone 5,2982,Salem Fort,Active,42,82679
 Zone 5,2982,Salem Harmony,Active,35,227590
 Zone 5,2982,Salem Hillcity,Active,41,88115
 Zone 5,2982,Salem Majestic,Active,36,89917
-Zone 5,2982,Salem Miracle,Active,14,226203
+Zone 5,2982,Salem Miracle,Active,16,226203
 Zone 5,2982,Salem North,Active,38,15886
 Zone 5,2982,Salem Power Grand,Active,11,88177
 Zone 5,2982,Salem Royal Crown,Active,7,227955
 Zone 5,2982,Salem Rupavati,Active,25,90915
 Zone 5,2982,Salem Steel City,Active,17,227589
-Zone 5,2982,Salem Success,Active,20,226403
+Zone 5,2982,Salem Success,Active,22,226403
 Zone 5,2982,Salem Sunstar,Active,23,73402
 Zone 5,2982,Salem Texcity,Active,56,63034
-Zone 5,2982,Salem West,Active,19,15887
 Zone 5,2982,Salem Wonderful,Active,28,227061
 Zone 5,2982,Sankagiri,Active,34,64355
 Zone 5,2982,Sankarapuram,Active,77,29651
@@ -174,8 +172,8 @@ Zone 5,2982,Sankari West,Active,22,83803
 Zone 5,2982,Shoolagiri,Active,14,226164
 Zone 5,2982,Thalaivasal,Active,68,86962
 Zone 5,2982,Thiyagadurgam,Active,31,224937
-Zone 5,2982,Tindivanam Elite,Active,18,227121
-Zone 5,2982,Tiruchengode,Active,68,15892
+Zone 5,2982,Tindivanam Elite,Active,25,227121
+Zone 5,2982,Tiruchengode,Active,84,15892
 Zone 5,2982,Tiruchengode Redrock,Active,38,72970
 Zone 5,2982,Tiruchengode Sangamam,Active,28,91235
 Zone 5,2982,Tirukkoyilur Temple City,Active,49,224847
@@ -207,7 +205,7 @@ Zone 5,3000,Dindigul Sigaram,Active,15,228308
 Zone 5,3000,Gandarvakottai Vaagai,Active,12,226816
 Zone 5,3000,Gudalur Garden City,Active,25,88574
 Zone 5,3000,Inamkulathur,Active,15,228152
-Zone 5,3000,Jambukeshwaram,Active,25,59366
+Zone 5,3000,Jambukeshwaram,Active,26,59366
 Zone 5,3000,Jayakondam Best,Active,15,228236
 Zone 5,3000,Jayankondam,Active,38,85307
 Zone 5,3000,Karambakkudi,Active,50,59369
@@ -240,7 +238,6 @@ Zone 5,3000,Madurai Royal Kings,Active,11,227219
 Zone 5,3000,Madurai Sangamam,Active,15,86014
 Zone 5,3000,Madurai South,Active,41,15928
 Zone 5,3000,Madurai Sporting Amigos,Active,40,224502
-Zone 5,3000,Madurai Tamil Sangam,Active,7,227005
 Zone 5,3000,Madurai Texcity,Active,25,228279
 Zone 5,3000,Madurai Tycoons,Active,25,228259
 Zone 5,3000,Malaiyur,Active,27,227607
@@ -269,11 +266,13 @@ Zone 5,3000,Perambalur Pillars,Active,18,228229
 Zone 5,3000,Perambalur Sigaram,Active,17,227825
 Zone 5,3000,Pon. Puduppatti,Active,48,31418
 Zone 5,3000,Pudugai Vetri,Active,27,227937
+Zone 5,3000,Pudukkottai Bragathambal,Active,15,228330
 Zone 5,3000,Pudukkottai Central,Active,92,50480
 Zone 5,3000,Pudukkottai Dreams Fort,Active,26,227244
 Zone 5,3000,Pudukkottai Metro,Active,34,227596
 Zone 5,3000,Pudukkottai Palace City,Active,76,50212
 Zone 5,3000,Pudukkottai Perarasu,Active,471,227959
+Zone 5,3000,Pudukkottai Stars,Active,5,228350
 Zone 5,3000,Sendurai,Active,26,227291
 Zone 5,3000,Somarasampettai,Active,15,228154
 Zone 5,3000,Srirangam Thayar,Active,25,228307
@@ -285,7 +284,7 @@ Zone 5,3000,Theni Vaigai Siragugal,Active,14,227207
 Zone 5,3000,Theni Vaigai Star,Active,19,223042
 Zone 5,3000,Thirumayam Fort,Active,31,225655
 Zone 5,3000,Thiruvappur,Active,25,228161
-Zone 5,3000,Thogaimalai,Active,21,227456
+Zone 5,3000,Thogaimalai,Active,23,227456
 Zone 5,3000,Thuraiyur,Active,73,21317
 Zone 5,3000,Thuraiyur Golden City,Active,38,59589
 Zone 5,3000,Thuraiyur Imaiyam,Active,15,228274
@@ -304,9 +303,10 @@ Zone 5,3000,Tiruchy Central,Active,39,61144
 Zone 5,3000,Tiruchy Sangamam,Active,14,227609
 Zone 5,3000,Tiruchy Stars,Active,18,222423
 Zone 5,3000,Tiruverumpur Barath,Active,18,53972
-Zone 5,3000,T. Palur,Active,19,227311
+Zone 5,3000,T. Palur,Active,17,227311
 Zone 5,3000,Trichirapalli North,Active,18,84975
 Zone 5,3000,Trichirappalli Royal,Active,17,86017
+Zone 5,3000,Trichy Cancer Care,Active,25,228349
 Zone 5,3000,Trichy City,Active,22,86158
 Zone 5,3000,Trichy Clouds,Active,13,91252
 Zone 5,3000,Trichy DC Pride,Active,50,89976
@@ -318,12 +318,12 @@ Zone 5,3000,Trichy Kingmakers,Active,24,228286
 Zone 5,3000,Trichy Kings,Active,8,90711
 Zone 5,3000,Trichy Legends,Active,22,227480
 Zone 5,3000,Trichy Majestic,Active,39,227329
-Zone 5,3000,Trichy Matrix,Active,25,228282
+Zone 5,3000,Trichy Matrix,Active,17,228282
 Zone 5,3000,Trichy Nexus,Active,25,228249
 Zone 5,3000,Trichy Pioneers,Active,15,228153
 Zone 5,3000,Trichy Rainbow,Active,26,228198
 Zone 5,3000,Trichy River Town,Active,15,225527
-Zone 5,3000,Trichy River Town Gen Z,Active,15,228078
+Zone 5,3000,Trichy River Town Gen Z,Active,13,228078
 Zone 5,3000,Trichy Rockfort,Active,25,228296
 Zone 5,3000,Trichy Royal Kings,Active,25,228216
 Zone 5,3000,Trichy Thalir Thalaimurai,Active,15,228241
@@ -337,8 +337,8 @@ Zone 5,3000,Uthamapalayam Central,Active,20,228270
 Zone 5,3000,Varadarajanpettai,Active,15,228155
 Zone 5,3000,Viralimalai,Active,15,228089
 Zone 4,3011,Central Youth Shakti (Faridabad),Active,5,223054
-Zone 4,3011,Delhi,Active,25,15232
-Zone 4,3011,Delhi Adiva,Active,39,225488
+Zone 4,3011,Delhi,Active,24,15232
+Zone 4,3011,Delhi Adiva,Active,47,225488
 Zone 4,3011,Delhi Akash Megapolis,Active,23,65596
 Zone 4,3011,Delhi AMIGOS,Active,18,224262
 Zone 4,3011,Delhi Aura,Active,12,226157
@@ -351,7 +351,7 @@ Zone 4,3011,Delhi Divine Aces,Active,33,228222
 Zone 4,3011,Delhi Dynamic,Active,23,225449
 Zone 4,3011,Delhi Euphoria,Active,22,225642
 Zone 4,3011,Delhi Femina,Active,75,87625
-Zone 4,3011,Delhi Garden City,Active,62,26311
+Zone 4,3011,Delhi Garden City,Active,63,26311
 Zone 4,3011,Delhi Golfers,Active,15,227167
 Zone 4,3011,Delhi Heritage,Active,67,56006
 Zone 4,3011,Delhi Infinity,Active,42,87892
@@ -370,20 +370,19 @@ Zone 4,3011,Delhi Rajendra Place,Active,30,23718
 Zone 4,3011,Delhi Regalia,Active,55,90544
 Zone 4,3011,Delhi Regency Next,Active,32,88905
 Zone 4,3011,Delhi Rendezvous GenNext,Active,38,228032
-Zone 4,3011,Delhi Resources,Active,21,224707
+Zone 4,3011,Delhi Resources,Active,22,224707
 Zone 4,3011,Delhi Restoring Smiles,Active,13,88783
 Zone 4,3011,Delhi Safdarjung,Active,47,28380
 Zone 4,3011,Delhi Select,Active,19,227460
-Zone 4,3011,Delhi Soar High,Active,21,224674
-Zone 4,3011,Delhi South Central Next,Active,25,89026
+Zone 4,3011,Delhi Soar High,Active,22,224674
+Zone 4,3011,Delhi South Central Next,Active,27,89026
 Zone 4,3011,Delhi Southend Evolve,Active,22,226155
-Zone 4,3011,Delhi Southend Next,Active,77,83974
 Zone 4,3011,Delhi Southex,Active,32,83832
 Zone 4,3011,Delhi South Metropolitan,Active,24,24631
 Zone 4,3011,Delhi Stellar,Active,34,89564
 Zone 4,3011,Delhi Sunrise,Active,15,227918
 Zone 4,3011,Delhi Swastik Arambh,Active,15,228302
-Zone 4,3011,Delhi Vasant Valley,Active,40,31608
+Zone 4,3011,Delhi Vasant Valley,Active,41,31608
 Zone 4,3011,Delhi Vasant Vihar,Active,28,89332
 Zone 4,3011,E-Club of E.A.R.T.H,Active,24,226230
 Zone 4,3011,E-Club of Progressive Thinkers,Active,13,223011
@@ -405,7 +404,7 @@ Zone 4,3011,Faridabad Happiness,Active,18,224149
 Zone 4,3011,Faridabad Heritage,Active,57,91228
 Zone 4,3011,Faridabad Imperial,Active,49,224670
 Zone 4,3011,Faridabad IMT,Active,47,91213
-Zone 4,3011,Faridabad IMT Next,Active,12,225511
+Zone 4,3011,Faridabad IMT Next,Active,15,225511
 Zone 4,3011,Faridabad Industrial Town,Active,17,27006
 Zone 4,3011,Faridabad Josh,Active,19,225261
 Zone 4,3011,Faridabad Lifeline,Active,10,224189
@@ -418,13 +417,13 @@ Zone 4,3011,Faridabad Prerna,Active,4,225319
 Zone 4,3011,Faridabad Professionals,Active,10,91226
 Zone 4,3011,Faridabad Saffron,Active,15,228304
 Zone 4,3011,Faridabad Sanskar,Active,57,80572
-Zone 4,3011,Faridabad Sanskriti,Active,50,223182
+Zone 4,3011,Faridabad Sanskriti,Active,52,223182
 Zone 4,3011,Faridabad Sapphires,Active,32,225486
 Zone 4,3011,Faridabad Tulips,Active,41,90165
 Zone 4,3011,Gurgaon Bravehearts,Active,18,228266
 Zone 4,3011,Gurgaon Central,Active,46,225532
 Zone 4,3011,Gurgaon Civil Lines,Active,32,91215
-Zone 4,3011,Gurgaon Premier,Active,22,227193
+Zone 4,3011,Gurgaon Premier,Active,23,227193
 Zone 4,3011,Gurgaon Spundan,Active,22,228226
 Zone 4,3011,Narnaul Bellas,Active,24,91225
 Zone 4,3011,Narnaul City,Active,59,79706
@@ -436,7 +435,7 @@ Zone 4,3011,Palwal City,Active,21,84173
 Zone 4,3011,Palwal Parivar,Active,21,225645
 Zone 4,3011,Palwal Sanskar,Active,24,90420
 Zone 4,3011,Rewari City,Active,36,84178
-Zone 4,3011,Rewari Main,Active,38,30759
+Zone 4,3011,Rewari Main,Active,37,30759
 Zone 4,3011,Rewari Royals,Active,30,222796
 Zone 4,3011,Rohtak,Active,88,15295
 Zone 4,3011,Rohtak Central,Active,11,227159
@@ -444,14 +443,15 @@ Zone 4,3011,Rohtak City,Active,66,83840
 Zone 4,3011,Rohtak Heritage,Active,22,225503
 Zone 4,3011,Rohtak Next,Active,79,225516
 Zone 4,3011,Rohtak Royal,Active,7,88901
-Zone 4,3011,Rohtak Sapphire,Active,94,223180
+Zone 4,3011,Rohtak Sapphire,Active,93,223180
 Zone 4,3011,Rohtak Scholars,Active,338,87891
+Zone 4,3011,Rohtak Udaan,Active,15,228348
 Zone 4,3011,Sohna Central,Active,15,228268
-Zone 4,3011,South Gurugram,Active,24,227294
+Zone 4,3011,South Gurugram,Active,25,227294
 Zone 4,3012,Dadri,Active,54,15317
 Zone 4,3012,Dankaur,Active,6,223028
-Zone 4,3012,Delhi Aagaz,Active,2,222780
-Zone 4,3012,Delhi Accord,Active,24,223485
+Zone 4,3012,Delhi Aagaz,Active,6,222780
+Zone 4,3012,Delhi Accord,Active,19,223485
 Zone 4,3012,Delhi Akshar,Active,164,227592
 Zone 4,3012,Delhi Aspire,Active,14,87624
 Zone 4,3012,Delhi Bridge,Active,7,224721
@@ -459,11 +459,11 @@ Zone 4,3012,Delhi Civil Lines,Active,20,30018
 Zone 4,3012,Delhi Ekta,Active,17,228064
 Zone 4,3012,Delhi Karma,Active,23,88277
 Zone 4,3012,Delhi Legacy,Active,11,87447
-Zone 4,3012,Delhi Magnificent,Active,3,222627
-Zone 4,3012,Delhi Marvel,Active,3,222637
+Zone 4,3012,Delhi Magnificent,Active,6,222627
+Zone 4,3012,Delhi Marvel,Active,6,222637
 Zone 4,3012,Delhi Metro,Active,25,77205
 Zone 4,3012,Delhi Mystics,Active,13,224744
-Zone 4,3012,Delhi NCR Vibrant,Active,6,91066
+Zone 4,3012,Delhi NCR Vibrant,Active,7,91066
 Zone 4,3012,Delhi Riverside,Active,38,69616
 Zone 4,3012,Delhi Royal East,Active,17,225809
 Zone 4,3012,Delhi Superstars,Active,7,223404
@@ -481,7 +481,7 @@ Zone 4,3012,Ghaziabad Centurion,Active,12,222987
 Zone 4,3012,Ghaziabad Century,Active,11,90952
 Zone 4,3012,Ghaziabad City,Active,39,78334
 Zone 4,3012,Ghaziabad Diamond,Active,7,223392
-Zone 4,3012,Ghaziabad Divine,Active,3,222787
+Zone 4,3012,Ghaziabad Divine,Active,6,222787
 Zone 4,3012,Ghaziabad Elite,Active,40,91223
 Zone 4,3012,Ghaziabad Excellence,Active,6,76413
 Zone 4,3012,Ghaziabad Gold,Active,38,225763
@@ -510,7 +510,7 @@ Zone 4,3012,Ghaziabad Pratap Vihar,Active,7,223296
 Zone 4,3012,Ghaziabad Pride,Active,6,90343
 Zone 4,3012,Ghaziabad Rajdhani,Active,6,88792
 Zone 4,3012,Ghaziabad Raj Nagar,Active,6,223293
-Zone 4,3012,Ghaziabad Regency,Active,7,81399
+Zone 4,3012,Ghaziabad Regency,Active,10,81399
 Zone 4,3012,Ghaziabad Rhythm,Active,6,223217
 Zone 4,3012,Ghaziabad Saffron,Active,9,223374
 Zone 4,3012,Ghaziabad Shaurya,Active,11,225803
@@ -530,12 +530,12 @@ Zone 4,3012,Hapur Elite,Active,6,223435
 Zone 4,3012,Hapur Greater,Active,5,59706
 Zone 4,3012,Hapur Main,Active,22,225619
 Zone 4,3012,Hapur Platinum,Active,8,90598
-Zone 4,3012,Indirapuram,Active,18,83144
+Zone 4,3012,Indirapuram,Active,19,83144
 Zone 4,3012,Indirapuram Galore,Active,9,87596
 Zone 4,3012,Indirapuram Pariwar,Active,48,84255
 Zone 4,3012,Jindal Nagar,Active,24,15344
 Zone 4,3012,Modinagar,Active,18,15362
-Zone 4,3012,Modinagar Vibrance,Active,14,227405
+Zone 4,3012,Modinagar Vibrance,Active,15,227405
 Zone 4,3012,NCR Galaxy,Active,10,88155
 Zone 4,3012,New Ghaziabad,Active,17,83699
 Zone 4,3012,Noida Central,Active,56,50570
@@ -543,7 +543,7 @@ Zone 4,3012,Noida City,Active,21,57070
 Zone 4,3012,Noida Elegance,Active,21,221959
 Zone 4,3012,Noida Extension,Active,9,223391
 Zone 4,3012,Noida Iconic,Active,42,221877
-Zone 4,3012,Noida Indraprastha,Active,10,227382
+Zone 4,3012,Noida Indraprastha,Active,15,227382
 Zone 4,3012,Pilkhuwa,Active,18,15381
 Zone 4,3012,Pilkhuwa City,Active,43,89053
 Zone 4,3012,Shipra Sun City,Active,8,89651
@@ -551,20 +551,20 @@ Zone 4,3012,Sonepat Ardent,Active,47,222383
 Zone 4,3012,Sonepat City,Active,17,80573
 Zone 4,3012,Sonepat Education City,Active,9,88169
 Zone 4,3012,Sonepat Excellence,Active,11,88173
-Zone 4,3012,Sonepat Rising Star,Active,10,91013
+Zone 4,3012,Sonepat Rising Star,Active,11,91013
 Zone 4,3012,Sonepat Uptown,Active,7,26063
 Zone 7,3020,Amalapuram,Active,18,15552
 Zone 7,3020,AMTZ Vizag,Active,22,227218
 Zone 7,3020,Amudalavalasa Town,Active,21,51612
 Zone 7,3020,Anakapalle,Active,80,15553
 Zone 7,3020,Bezawada Stars,Active,14,225041
-Zone 7,3020,Bhimavaram,Active,23,15556
+Zone 7,3020,Bhimavaram,Active,19,15556
 Zone 7,3020,Bobbili Tigers,Active,25,86809
 Zone 7,3020,Eluru,Active,37,15564
 Zone 7,3020,Gannavaram,Active,25,50339
 Zone 7,3020,Godavari Palakol,Active,21,87044
 Zone 7,3020,Gollapudi,Active,30,86169
-Zone 7,3020,Greater Amaravathi,Active,17,228070
+Zone 7,3020,Greater Amaravati,Active,17,228070
 Zone 7,3020,Greater Visakha,Active,52,223517
 Zone 7,3020,Gudivada,Active,109,15565
 Zone 7,3020,Ichchapuram,Active,34,24299
@@ -581,8 +581,8 @@ Zone 7,3020,Mummidivaram,Active,18,26354
 Zone 7,3020,Narasapur,Active,28,50713
 Zone 7,3020,Narsipatnam,Active,30,65482
 Zone 7,3020,Nidadavole,Active,89,26355
-Zone 7,3020,Nidadavole Central,Active,43,81174
-Zone 7,3020,Nidadavole Mid Town,Active,26,225176
+Zone 7,3020,Nidadavole Central,Active,42,81174
+Zone 7,3020,Nidadavole Mid Town,Active,24,225176
 Zone 7,3020,Nuzvid Mango Town,Active,34,60814
 Zone 7,3020,Palakol,Active,63,51722
 Zone 7,3020,Palakol Sunrise,Active,19,225917
@@ -595,7 +595,7 @@ Zone 7,3020,Srikakulam,Active,24,15606
 Zone 7,3020,Srikakulam Central,Active,47,74962
 Zone 7,3020,Tanuku,Active,68,15608
 Zone 7,3020,Vijayawada Diamonds,Active,15,226062
-Zone 7,3020,Vijayawada East,Active,37,15613
+Zone 7,3020,Vijayawada East,Active,47,15613
 Zone 7,3020,Vijayawada Icons,Active,15,226108
 Zone 7,3020,Vijayawada Sree Durga,Active,34,62493
 Zone 7,3020,Visakha Centennial,Active,50,90681
@@ -603,25 +603,25 @@ Zone 7,3020,Visakhapatnam Central,Active,23,26201
 Zone 7,3020,Visakhapatnam South,Active,41,23310
 Zone 7,3020,Visakha Pearl City,Active,21,29996
 Zone 7,3020,Visakha Port City,Active,75,31018
-Zone 7,3020,Visakha Valley,Active,47,52222
+Zone 7,3020,Visakha Valley,Active,50,52222
 Zone 7,3020,Vishaka Smart City,Active,16,90741
 Zone 7,3020,Vizag Destiny,Active,4,224702
 Zone 7,3020,Vizag Hill View,Active,20,27708
 Zone 7,3020,Vizag Metro,Active,43,74042
 Zone 7,3020,Vizag Mid Town,Active,11,21686
-Zone 7,3020,Vizag Surabhi,Active,9,225887
+Zone 7,3020,Vizag Surabhi,Active,10,225887
 Zone 7,3020,Vizianagaram Fort,Active,10,223500
 Zone 7,3020,Vuyyuru,Active,19,15616
 Zone 6,3030,Achalpur,Active,12,15479
 Zone 6,3030,Akola,Active,25,15481
 Zone 6,3030,Akola Agrocity,Active,27,88460
 Zone 6,3030,Akola Central,Active,14,73603
-Zone 6,3030,Akola East,Active,52,23798
+Zone 6,3030,Akola East,Active,53,23798
 Zone 6,3030,Akola North,Active,45,79896
 Zone 6,3030,Akola Rajeshwar City,Active,15,228220
 Zone 6,3030,Akot,Active,24,15482
 Zone 6,3030,Akot Vision,Active,38,226550
-Zone 6,3030,Amravati,Active,36,15485
+Zone 6,3030,Amravati,Active,40,15485
 Zone 6,3030,Amravati Ambika,Active,38,225443
 Zone 6,3030,Amravati Indrapuri,Active,38,55485
 Zone 6,3030,Bhadrawati,Active,29,87085
@@ -644,7 +644,7 @@ Zone 6,3030,Erandol,Active,33,227202
 Zone 6,3030,Gadchiroli,Active,21,224146
 Zone 6,3030,Gondeshwar Sinnar,Active,43,88934
 Zone 6,3030,Igatpuri Green City,Active,31,227171
-Zone 6,3030,Jalgaon,Active,113,15512
+Zone 6,3030,Jalgaon,Active,117,15512
 Zone 6,3030,Jalgaon Central,Active,86,76282
 Zone 6,3030,Jalgaon Connect,Active,49,228225
 Zone 6,3030,Jalgaon East,Active,88,50340
@@ -666,7 +666,7 @@ Zone 6,3030,Manmad Magic,Active,13,226451
 Zone 6,3030,Milk City Sangam Chalisgaon,Active,36,60425
 Zone 6,3030,Nagpur Black Gold,Active,14,85991
 Zone 6,3030,Nagpur Central,Active,28,29516
-Zone 6,3030,Nagpur Golfers,Active,21,225909
+Zone 6,3030,Nagpur Golfers,Active,22,225909
 Zone 6,3030,Nagpur Green City,Active,43,31511
 Zone 6,3030,Nagpur Horizon,Active,63,225024
 Zone 6,3030,Nagpur Metro,Active,36,83300
@@ -709,7 +709,7 @@ Zone 4,3040,Bhelsha Vidisha,Active,9,225583
 Zone 4,3040,Bhoj Bhopal,Active,15,225007
 Zone 4,3040,Bhopal,Active,30,15153
 Zone 4,3040,Bhopal Capital,Active,8,58509
-Zone 4,3040,Bhopal Mid Town,Active,35,31442
+Zone 4,3040,Bhopal Mid Town,Active,36,31442
 Zone 4,3040,Bhopal North,Active,7,84181
 Zone 4,3040,Bhopal Sewa Sankalp,Active,16,227862
 Zone 4,3040,Bhopal Shaurya,Active,25,226511
@@ -725,7 +725,7 @@ Zone 4,3040,Dewas,Active,11,15164
 Zone 4,3040,Dhamnod Active,Active,8,85329
 Zone 4,3040,Dhar Central,Active,12,86075
 Zone 4,3040,Dhar Diomand,Active,6,89297
-Zone 4,3040,Dhar Galaxy,Active,7,89033
+Zone 4,3040,Dhar Galaxy,Active,8,89033
 Zone 4,3040,Diamond Dahod,Active,6,87649
 Zone 4,3040,Godhra,Active,31,15170
 Zone 4,3040,Greater Bhopal,Active,12,29124
@@ -741,7 +741,7 @@ Zone 4,3040,Indore Challengers,Active,7,226905
 Zone 4,3040,Indore Choithram,Active,29,89110
 Zone 4,3040,Indore Corporate,Active,6,88567
 Zone 4,3040,Indore Galaxy,Active,9,86052
-Zone 4,3040,Indore Grande,Active,26,73158
+Zone 4,3040,Indore Grande,Active,27,73158
 Zone 4,3040,Indore Greater,Active,21,24061
 Zone 4,3040,Indore Holkar,Active,9,50628
 Zone 4,3040,Indore Malvika,Active,8,29517
@@ -775,7 +775,7 @@ Zone 4,3040,Ratlam Prime,Active,43,85319
 Zone 4,3040,Sagar,Active,74,15192
 Zone 4,3040,Sagar Central,Active,38,23047
 Zone 4,3040,Sagar Grande,Active,8,85783
-Zone 4,3040,Sagar Nexus,Active,16,227855
+Zone 4,3040,Sagar Nexus,Active,17,227855
 Zone 4,3040,Sagar Phoenix,Active,19,84247
 Zone 4,3040,Sagar Sukun,Active,12,224890
 Zone 4,3040,Sehore,Active,29,15193
@@ -789,7 +789,7 @@ Zone 4,3053,Ajmer Metro,Active,5,82908
 Zone 4,3053,Ajmer Midtown,Active,73,15079
 Zone 4,3053,Ajmer Sanyogita,Active,15,227391
 Zone 4,3053,Alwar Aabha,Active,15,228006
-Zone 4,3053,Alwar Aravali,Active,51,84876
+Zone 4,3053,Alwar Aravali,Active,50,84876
 Zone 4,3053,Alwar Central,Active,17,90721
 Zone 4,3053,Alwar Fort,Active,60,74363
 Zone 4,3053,Alwar Greater,Active,75,84203
@@ -801,11 +801,11 @@ Zone 4,3053,Baran,Active,15,27887
 Zone 4,3053,Beawar,Active,11,15084
 Zone 4,3053,Bhind,Active,30,15085
 Zone 4,3053,Bhiwadi Achievers,Active,65,226928
-Zone 4,3053,Bhiwadi Shakti,Active,39,87234
+Zone 4,3053,Bhiwadi Shakti,Active,40,87234
 Zone 4,3053,Bhiwadi Tapukara,Active,5,88360
 Zone 4,3053,Bikaner Aadhya,Active,48,89237
 Zone 4,3053,Bikaner City,Active,4,224983
-Zone 4,3053,Bikaner Midtown,Active,96,85528
+Zone 4,3053,Bikaner Midtown,Active,98,85528
 Zone 4,3053,Bikaner Supreme,Active,7,225159
 Zone 4,3053,Dabra Sanjivni,Active,20,227191
 Zone 4,3053,Dabra Sugar City,Active,44,57529
@@ -819,7 +819,7 @@ Zone 4,3053,Gwalior Central,Active,61,27382
 Zone 4,3053,Gwalior Imperial,Active,80,84047
 Zone 4,3053,Gwalior Innovators,Active,29,226315
 Zone 4,3053,Gwalior Jagrati,Active,22,226344
-Zone 4,3053,Gwalior Laurels,Active,101,85360
+Zone 4,3053,Gwalior Laurels,Active,104,85360
 Zone 4,3053,Gwalior Mid-Town,Active,29,23785
 Zone 4,3053,Gwalior Regal,Active,13,87110
 Zone 4,3053,Gwalior Tansen,Active,38,77628
@@ -851,33 +851,35 @@ Zone 4,3053,Uprise Bikaner,Active,35,225509
 Zone 4,3055,Adipur Kutch,Active,20,68355
 Zone 4,3055,Adipur Samarth,Active,11,226932
 Zone 4,3055,Ahmedabad,Active,28,15075
-Zone 4,3055,Ahmedabad Atulya,Active,17,228012
+Zone 4,3055,Ahmedabad Atulya,Active,18,228012
 Zone 4,3055,Ahmedabad Biker's Paradise,Active,22,228061
 Zone 4,3055,Ahmedabad Chandkheda,Active,7,226129
-Zone 4,3055,Ahmedabad Divyam,Active,11,222300
+Zone 4,3055,Ahmedabad Divyam,Active,12,222300
 Zone 4,3055,Ahmedabad Elegance,Active,15,228263
 Zone 4,3055,Ahmedabad Elite,Active,11,82942
 Zone 4,3055,Ahmedabad Greater,Active,21,58643
-Zone 4,3055,Ahmedabad Heritage,Active,27,224628
+Zone 4,3055,Ahmedabad Heritage,Active,28,224628
 Zone 4,3055,Ahmedabad Imperial,Active,7,227199
 Zone 4,3055,Ahmedabad Mahanagar,Active,29,55197
 Zone 4,3055,Ahmedabad Narol,Active,13,85424
 Zone 4,3055,Ahmedabad Nexus,Active,25,226362
 Zone 4,3055,Ahmedabad River Front,Active,10,88852
 Zone 4,3055,Ahmedabad Royals,Active,17,224520
-Zone 4,3055,Ahmedabad Science City,Active,10,227197
+Zone 4,3055,Ahmedabad Science City,Active,7,227197
 Zone 4,3055,Ahmedabad Shantigram,Active,13,221967
 Zone 4,3055,Ahmedabad Sindhu Bhavan,Active,15,227624
 Zone 4,3055,Ahmedabad Skyline Capitals,Active,7,227830
-Zone 4,3055,Ahmedabad Skyline Jupiter,Active,6,227398
+Zone 4,3055,Ahmedabad Skyline Jupiter,Active,7,227398
 Zone 4,3055,Ahmedabad Skyline Patron,Active,7,227422
 Zone 4,3055,Ahmedabad Skyline Platinum,Active,7,227471
 Zone 4,3055,Ahmedabad Skyline Tejasvani,Active,7,227663
-Zone 4,3055,Ahmedabad Skyline Titans,Active,7,227692
-Zone 4,3055,Ahmedabad Solitaire,Active,1,226154
+Zone 4,3055,Ahmedabad Skyline Titans,Active,8,227692
+Zone 4,3055,Ahmedabad Solitaire,Active,8,226154
 Zone 4,3055,Ahmedabad South,Active,10,15077
+Zone 4,3055,Ahmedabad Spartans,Active,16,228332
 Zone 4,3055,Ahmedabad Supreme Stars,Active,16,227046
 Zone 4,3055,Ahmedabad Synergy,Active,7,227200
+Zone 4,3055,Ahmedabad Udaan,Active,15,228344
 Zone 4,3055,Ahore,Active,7,222732
 Zone 4,3055,Ambaji,Active,21,15081
 Zone 4,3055,Balotra Rani sa,Active,15,227621
@@ -891,7 +893,7 @@ Zone 4,3055,Capital Gandhinagar,Active,20,69275
 Zone 4,3055,Dahegam,Active,32,21349
 Zone 4,3055,Deodar,Active,4,226038
 Zone 4,3055,Himatnagar,Active,56,23580
-Zone 4,3055,Himatnagar Heritage,Active,40,228183
+Zone 4,3055,Himatnagar Heritage,Active,48,228183
 Zone 4,3055,Idar,Active,21,52341
 Zone 4,3055,Jaisalmer Goldencity,Active,5,89598
 Zone 4,3055,Jaisalmer Swarn Nagari,Active,24,63500
@@ -903,7 +905,7 @@ Zone 4,3055,Mansa,Active,16,15116
 Zone 4,3055,Mehsana,Active,67,15117
 Zone 4,3055,Modasa,Active,9,226169
 Zone 4,3055,Mount Abu,Active,6,22528
-Zone 4,3055,Mount Abu Arbudanchal,Active,28,226784
+Zone 4,3055,Mount Abu Arbudanchal,Active,27,226784
 Zone 4,3055,Mundra Corporate,Active,11,222250
 Zone 4,3055,Nakhatrana,Active,5,226883
 Zone 4,3055,Palanpur City,Active,67,70937
@@ -929,7 +931,7 @@ Zone 4,3056,Jaipur Dignity,Active,69,87005
 Zone 4,3056,Jaipur Diya,Active,7,224731
 Zone 4,3056,Jaipur East,Active,11,15100
 Zone 4,3056,Jaipur Emerald,Active,20,88957
-Zone 4,3056,Jaipur Gem City,Active,12,91160
+Zone 4,3056,Jaipur Gem City,Active,15,91160
 Zone 4,3056,Jaipur Global,Active,6,222706
 Zone 4,3056,Jaipur Golfers,Active,18,227181
 Zone 4,3056,Jaipur Greater,Active,4,222266
@@ -947,7 +949,7 @@ Zone 4,3056,Jaipur Marugandha,Active,38,51263
 Zone 4,3056,Jaipur Metro,Active,24,64654
 Zone 4,3056,Jaipur Mid Town,Active,117,22024
 Zone 4,3056,Jaipur North,Active,40,82643
-Zone 4,3056,Jaipur Oasis,Active,29,227812
+Zone 4,3056,Jaipur Oasis,Active,32,227812
 Zone 4,3056,Jaipur Organ Donation,Active,16,224624
 Zone 4,3056,Jaipur Pearl,Active,20,222743
 Zone 4,3056,Jaipur Pink City,Active,43,53335
@@ -965,7 +967,7 @@ Zone 4,3056,Jaipur Youth Connect,Active,16,228235
 Zone 4,3056,Kota,Active,492,15110
 Zone 4,3056,Kota Central,Active,40,67955
 Zone 4,3056,Kota Divine,Active,40,90414
-Zone 4,3056,Kota Round Town,Active,19,55412
+Zone 4,3056,Kota Round Town,Active,17,55412
 Zone 4,3056,Kota South,Active,25,89776
 Zone 4,3056,Kushalgarh,Active,24,222494
 Zone 4,3056,Malpura City,Active,18,73982
@@ -986,13 +988,13 @@ Zone 4,3056,Udaipur Mewar,Active,62,58447
 Zone 4,3056,Udaipur Pannadhai,Active,23,227203
 Zone 4,3056,Udaipur Udai,Active,21,85346
 Zone 4,3056,Udaipur Udyam,Active,13,225048
-Zone 4,3056,Udaipur Vasudha,Active,17,89494
-Zone 4,3056,Udaipur Yuva,Active,12,224776
+Zone 4,3056,Udaipur Vasudha,Active,19,89494
+Zone 4,3056,Udaipur Yuva,Active,15,224776
 Zone 4,3060,Anand,Active,19,15146
 Zone 4,3060,Anand Milkcity,Active,13,88991
 Zone 4,3060,Baroda Cosmopolitan,Active,65,51327
 Zone 4,3060,Baroda Greens,Active,18,91053
-Zone 4,3060,Baroda Jawaharnagar,Active,63,15175
+Zone 4,3060,Baroda Jawaharnagar,Active,64,15175
 Zone 4,3060,Baroda Kalanagari,Active,28,86080
 Zone 4,3060,Baroda Metro,Active,50,23843
 Zone 4,3060,Baroda Sunrise,Active,20,64778
@@ -1003,7 +1005,7 @@ Zone 4,3060,Bhavnagar Vibrant,Active,54,225198
 Zone 4,3060,Billimora,Active,21,15155
 Zone 4,3060,Borsad Suncity,Active,10,54809
 Zone 4,3060,Cambay,Active,23,15160
-Zone 4,3060,Chhoti Kashi Jamnagar,Active,69,89227
+Zone 4,3060,Chhoti Kashi Jamnagar,Active,72,89227
 Zone 4,3060,Chikhli River Front,Active,73,89348
 Zone 4,3060,Dadra & Nagar Haveli,Active,37,85099
 Zone 4,3060,Dahej,Active,33,86313
@@ -1049,11 +1051,12 @@ Zone 4,3060,Umreth,Active,5,15208
 Zone 4,3060,Una,Active,16,228002
 Zone 4,3060,Vadodara Aarambh,Active,16,227498
 Zone 4,3060,Vadodara Banyan City,Active,28,225155
-Zone 4,3060,Vadodara One,Active,38,91189
+Zone 4,3060,Vadodara One,Active,37,91189
 Zone 4,3060,Vallabh Vidyanagar,Active,8,15209
 Zone 4,3060,Vapi West,Active,39,82676
 Zone 4,3060,Veraval,Active,40,15211
 Zone 4,3060,Vyara,Active,22,15212
+Zone 4,3070,Adampur Doaba,Active,15,228329
 Zone 4,3070,Akhnoor Chenab,Active,9,226939
 Zone 4,3070,Amritsar Aastha,Active,29,85837
 Zone 4,3070,Amritsar East,Active,20,73300
@@ -1072,7 +1075,7 @@ Zone 4,3070,Begowal Greater,Active,16,223245
 Zone 4,3070,Chhoti Kashi Mandi,Active,22,224729
 Zone 4,3070,Dasuya Greater,Active,30,91194
 Zone 4,3070,Dharamshala City,Active,15,90442
-Zone 4,3070,Dharamshala - McLeod Ganj,Active,20,227279
+Zone 4,3070,Dharamshala - McLeod Ganj,Active,21,227279
 Zone 4,3070,Dharmsala,Active,51,15242
 Zone 4,3070,Dharmthal,Active,18,221898
 Zone 4,3070,Dinanagar Mid Town,Active,9,78474
@@ -1081,13 +1084,13 @@ Zone 4,3070,Ghumarwin,Active,12,221961
 Zone 4,3070,Goraya,Active,20,15249
 Zone 4,3070,Goraya Midtown,Active,21,53981
 Zone 4,3070,Hamirpur,Active,48,23255
-Zone 4,3070,Hoshiarpur,Active,20,15255
+Zone 4,3070,Hoshiarpur,Active,31,15255
 Zone 4,3070,Hoshiarpur Central,Active,8,27268
 Zone 4,3070,Hoshiarpur Mid Town,Active,21,26559
 Zone 4,3070,Jalandhar,Active,46,15259
 Zone 4,3070,Jalandhar Central,Active,12,23289
 Zone 4,3070,Jalandhar City,Active,33,59764
-Zone 4,3070,Jalandhar Civil Lines,Active,30,50810
+Zone 4,3070,Jalandhar Civil Lines,Active,32,50810
 Zone 4,3070,Jalandhar East,Active,25,26840
 Zone 4,3070,Jalandhar Eco,Active,17,91197
 Zone 4,3070,Jalandhar Greater,Active,13,63275
@@ -1095,7 +1098,7 @@ Zone 4,3070,Jalandhar Helping Hands,Active,21,224695
 Zone 4,3070,Jalandhar Midtown,Active,23,56355
 Zone 4,3070,Jammu,Active,4,88030
 Zone 4,3070,Jammu Aastha,Active,13,83862
-Zone 4,3070,Jammu Baahu,Active,7,224673
+Zone 4,3070,Jammu Baahu,Active,8,224673
 Zone 4,3070,Jammu Helping Hands,Active,9,225283
 Zone 4,3070,Jammu Mid Town,Active,13,65864
 Zone 4,3070,Jammu Stars,Active,14,223509
@@ -1129,10 +1132,10 @@ Zone 4,3070,Pathankot-Midtown,Active,73,23278
 Zone 4,3070,Pathankot Royal,Active,17,228196
 Zone 4,3070,Phagwara,Active,9,15288
 Zone 4,3070,Phagwara Central,Active,12,25134
-Zone 4,3070,Phagwara Gems,Active,25,224652
+Zone 4,3070,Phagwara Gems,Active,29,224652
 Zone 4,3070,Phagwara South East,Active,21,22734
 Zone 4,3070,Raikot Midtown,Active,19,27423
-Zone 4,3070,Rajouri,Active,16,80832
+Zone 4,3070,Rajouri,Active,17,80832
 Zone 4,3070,Rajouri Grand,Active,21,91209
 Zone 4,3070,Samba Central,Active,11,75243
 Zone 4,3070,Srinagar City,Active,4,91236
@@ -1145,7 +1148,7 @@ Zone 4,3070,Udhampur,Active,34,29503
 Zone 4,3070,Una,Active,29,15305
 Zone 4,3070,Una Greater,Active,20,85400
 Zone 4,3080,Ambala Cantt,Active,15,228272
-Zone 4,3080,Ambala City,Active,23,15309
+Zone 4,3080,Ambala City,Active,22,15309
 Zone 4,3080,Ambala Diamond,Active,30,224782
 Zone 4,3080,Ambala Industrial Area,Active,36,29079
 Zone 4,3080,Ambala Midtown,Active,17,222777
@@ -1156,9 +1159,8 @@ Zone 4,3080,Barara,Active,26,90430
 Zone 4,3080,Chandigarh Ajnali,Active,6,228001
 Zone 4,3080,Chandigarh Eyecare,Active,8,226176
 Zone 4,3080,Chandigarh Hopesville,Active,6,228037
-Zone 4,3080,Chandigarh Horizon,Active,20,227852
+Zone 4,3080,Chandigarh Horizon,Active,21,227852
 Zone 4,3080,Chandigarh Mountview,Active,18,227551
-Zone 4,3080,Chandigarh Periphery Zirakpur,Active,7,224153
 Zone 4,3080,Chandigarh Royale,Active,7,226759
 Zone 4,3080,Chandigarh Tricity,Active,25,226435
 Zone 4,3080,Cheeka,Active,51,225651
@@ -1168,7 +1170,7 @@ Zone 4,3080,Classic Yamunanagar,Active,9,223519
 Zone 4,3080,Cosmopolitan Chandigarh,Active,14,223536
 Zone 4,3080,Dehradun Royal,Active,8,226909
 Zone 4,3080,Deoband,Active,17,15328
-Zone 4,3080,Dera Bassi Town,Active,19,222387
+Zone 4,3080,Dera Bassi Town,Active,21,222387
 Zone 4,3080,Doon Vikas,Active,25,50572
 Zone 4,3080,E-Club of Doon District 3080,Active,31,84793
 Zone 4,3080,Gangoh,Active,15,57116
@@ -1184,7 +1186,7 @@ Zone 4,3080,Kankhal,Active,16,30729
 Zone 4,3080,Karnal Midtown,Active,22,24885
 Zone 4,3080,Karnal Royale,Active,8,226986
 Zone 4,3080,Kasauli,Active,20,15350
-Zone 4,3080,Kharar Heritage,Active,105,228261
+Zone 4,3080,Kharar Heritage,Active,107,228261
 Zone 4,3080,Kurukshetra Elite,Active,7,228090
 Zone 4,3080,Mohali,Active,20,21627
 Zone 4,3080,Mohali Greater,Active,12,227355
@@ -1200,7 +1202,6 @@ Zone 4,3080,Narwana,Active,34,15373
 Zone 4,3080,New Chandigarh,Active,15,223055
 Zone 4,3080,Panchkula,Active,73,22921
 Zone 4,3080,Panipat,Active,14,15378
-Zone 4,3080,Panipat Continental,Active,4,88805
 Zone 4,3080,Panipat Crown,Active,18,226907
 Zone 4,3080,Panipat Mid Town,Active,163,25125
 Zone 4,3080,Panipat Premier,Active,52,223099
@@ -1219,7 +1220,7 @@ Zone 4,3080,Rishikesh,Active,68,23517
 Zone 4,3080,Rishikesh Classic,Active,9,227724
 Zone 4,3080,Rishikesh Divas,Active,9,223051
 Zone 4,3080,Roorkee,Active,26,15383
-Zone 4,3080,Roorkee Central,Active,15,88038
+Zone 4,3080,Roorkee Central,Active,16,88038
 Zone 4,3080,Roorkee Elite,Active,11,226768
 Zone 4,3080,Roorkee Greater,Active,11,223513
 Zone 4,3080,Royal Shahabad Markanda,Active,8,226933
@@ -1229,7 +1230,7 @@ Zone 4,3080,Saharanpur Central,Active,31,30283
 Zone 4,3080,Saharanpur Classic,Active,28,84109
 Zone 4,3080,Saharanpur Continental,Active,10,57149
 Zone 4,3080,Saharanpur Greater,Active,4,82759
-Zone 4,3080,Saharanpur Harmony,Active,24,225026
+Zone 4,3080,Saharanpur Harmony,Active,26,225026
 Zone 4,3080,Saharanpur Midtown,Active,4,15385
 Zone 4,3080,Shimla Royal,Active,15,228271
 Zone 4,3080,Shri Anandpur Sahib,Active,18,89277
@@ -1237,7 +1238,7 @@ Zone 4,3080,Silvercity Mohali,Active,23,88495
 Zone 4,3080,Solan,Active,46,15395
 Zone 4,3080,Solan Midtown,Active,20,57804
 Zone 4,3080,Thanesar,Active,4,226132
-Zone 4,3080,Theog Hills,Active,19,85208
+Zone 4,3080,Theog Hills,Active,17,85208
 Zone 4,3080,Tricity Panchkula,Active,9,226762
 Zone 4,3080,Yamunanagar Elite,Active,7,227972
 Zone 4,3080,Yamuna Nagar Novel,Active,16,226706
@@ -1267,26 +1268,27 @@ Zone 4,3090,Budhlada,Active,8,15226
 Zone 4,3090,Central Hisar,Active,42,53717
 Zone 4,3090,Charkhi Dadri Champions,Active,5,227481
 Zone 4,3090,Dhuri,Active,15,25473
-Zone 4,3090,Dirba Dynamic,Active,4,225675
+Zone 4,3090,Dirba Dynamic,Active,6,225675
 Zone 4,3090,Faridkot,Active,47,15246
-Zone 4,3090,Faridkot Bargari,Active,11,227728
+Zone 4,3090,Faridkot Bargari,Active,4,227728
 Zone 4,3090,Faridkot Champions,Active,6,227386
 Zone 4,3090,Faridkot Sadiq,Active,4,227467
-Zone 4,3090,Fatehabad,Active,6,228062
+Zone 4,3090,Fatehabad,Active,7,228062
 Zone 4,3090,Fatehabad Champions,Active,7,227298
 Zone 4,3090,Fatehabad City,Active,6,89003
-Zone 4,3090,Fatehabad Dynamic,Active,5,226216
+Zone 4,3090,Fatehabad Dynamic,Active,6,226216
 Zone 4,3090,Fatehabad Elite Champions,Active,8,227853
 Zone 4,3090,Fatehabad Gold,Active,6,88606
 Zone 4,3090,Fatehabad Greater,Active,6,72156
 Zone 4,3090,Fatehabad Mid Town,Active,10,72157
 Zone 4,3090,Fatehabad Super Champions,Active,10,227503
+Zone 4,3090,Fatehabad Titans,Active,15,228328
 Zone 4,3090,Fatehabad Town,Active,38,70094
 Zone 4,3090,Fatehgarh Sahib Gold,Active,9,224641
 Zone 4,3090,Fazilka,Active,9,21907
 Zone 4,3090,Fazilka Champions,Active,5,227477
 Zone 4,3090,Ferozepur,Active,8,15248
-Zone 4,3090,Ferozepur Diamond,Active,3,224369
+Zone 4,3090,Ferozepur Diamond,Active,6,224369
 Zone 4,3090,Ferozepur Gold,Active,6,224398
 Zone 4,3090,Ferozepur Royal,Active,10,222482
 Zone 4,3090,Ferozpur Cantt.,Active,8,58568
@@ -1296,7 +1298,7 @@ Zone 4,3090,Giddarbaha,Active,6,225499
 Zone 4,3090,Gobindgarh,Active,10,227373
 Zone 4,3090,Goniana,Active,13,29397
 Zone 4,3090,Goniana Midtown,Active,26,74425
-Zone 4,3090,Guru Har Sahai,Active,4,224399
+Zone 4,3090,Guru Har Sahai,Active,6,224399
 Zone 4,3090,Hansi Super Champion,Active,6,227502
 Zone 4,3090,Hanumangarh City,Active,13,223050
 Zone 4,3090,Hisar Central Dynamic,Active,10,226170
@@ -1306,10 +1308,10 @@ Zone 4,3090,Hissar,Active,52,15253
 Zone 4,3090,Jaitu,Active,14,30999
 Zone 4,3090,Jalalabad (West),Active,6,224828
 Zone 4,3090,Kalanwali Champions,Active,9,227479
-Zone 4,3090,Khanouri Dynamic,Active,4,226100
+Zone 4,3090,Khanouri Dynamic,Active,6,226100
 Zone 4,3090,Kotkapura Royal,Active,14,88879
 Zone 4,3090,Maler Kotla,Active,57,15271
-Zone 4,3090,Malerkotla Dynamic,Active,4,225706
+Zone 4,3090,Malerkotla Dynamic,Active,6,225706
 Zone 4,3090,Malerkotla Midtown,Active,18,75043
 Zone 4,3090,Malout Champions,Active,20,227484
 Zone 4,3090,Mandi Adampur Champions,Active,5,227118
@@ -1317,28 +1319,28 @@ Zone 4,3090,Mandi Dabwali,Active,8,223100
 Zone 4,3090,Mandi Gharsana,Active,6,89631
 Zone 4,3090,Mandi Gobindgarh,Active,14,228028
 Zone 4,3090,Mandi Gobindgarh Gold,Active,5,222495
-Zone 4,3090,Mansa,Active,10,22038
+Zone 4,3090,Mansa,Active,9,22038
 Zone 4,3090,Mansa Champions,Active,7,228038
 Zone 4,3090,Mansa Diamond,Active,7,228034
-Zone 4,3090,Mansa Greater,Active,14,55735
-Zone 4,3090,Maur Mandi Dynamic,Active,4,225674
+Zone 4,3090,Mansa Greater,Active,13,55735
+Zone 4,3090,Maur Mandi Dynamic,Active,6,225674
 Zone 4,3090,Moga Greater,Active,12,74664
 Zone 4,3090,Moga Royal,Active,38,77630
 Zone 4,3090,Moga Stars,Active,10,89807
 Zone 4,3090,Moga Stars Champions,Active,5,227734
 Zone 4,3090,Moga Super Champions,Active,3,227487
-Zone 4,3090,Moonak Dynamic,Active,4,225672
+Zone 4,3090,Moonak Dynamic,Active,6,225672
 Zone 4,3090,Muktsar,Active,6,227493
 Zone 4,3090,Nabha,Active,67,15279
 Zone 4,3090,Nabha Central,Active,4,76048
 Zone 4,3090,Nagpur Fatehabad Dynamic,Active,5,226115
 Zone 4,3090,Padampur,Active,8,90774
 Zone 4,3090,Patiala,Active,51,15286
-Zone 4,3090,Patiala Central,Active,5,55854
+Zone 4,3090,Patiala Central,Active,6,55854
 Zone 4,3090,Patiala Champions,Active,6,227486
 Zone 4,3090,Patiala Greater,Active,16,30569
 Zone 4,3090,Patiala Kauli,Active,5,227572
-Zone 4,3090,Patran,Active,11,22612
+Zone 4,3090,Patran,Active,10,22612
 Zone 4,3090,Patran Midtown,Active,14,84361
 Zone 4,3090,Patran Royal,Active,17,222613
 Zone 4,3090,Rajpura Champions,Active,8,227833
@@ -1354,11 +1356,11 @@ Zone 4,3090,Samana Harmony,Active,15,228184
 Zone 4,3090,Samana Samarth,Active,15,228228
 Zone 4,3090,Samana Titan,Active,15,228178
 Zone 4,3090,Sangaria,Active,8,85810
-Zone 4,3090,Sangrur,Active,3,223546
-Zone 4,3090,Sangrur Dynamic,Active,4,225591
+Zone 4,3090,Sangrur,Active,5,223546
+Zone 4,3090,Sangrur Dynamic,Active,6,225591
 Zone 4,3090,Sangrur Royal,Active,8,56660
 Zone 4,3090,Sardulgarh Royal,Active,8,222027
-Zone 4,3090,Sherpur Dynamic,Active,4,225669
+Zone 4,3090,Sherpur Dynamic,Active,6,225669
 Zone 4,3090,Sirhind,Active,39,15299
 Zone 4,3090,Sirsa,Active,14,15300
 Zone 4,3090,Sirsa Champions,Active,8,227115
@@ -1369,30 +1371,30 @@ Zone 4,3090,Sirsa New Gen,Active,18,227188
 Zone 4,3090,Sirsa Paradise,Active,5,84824
 Zone 4,3090,Sirsa Senior,Active,38,84050
 Zone 4,3090,Sri Ganganagar,Active,65,15135
-Zone 4,3090,Sri Ganganagar Aastha,Active,4,225386
-Zone 4,3090,Sri Ganganagar Central,Active,4,225496
+Zone 4,3090,Sri Ganganagar Aastha,Active,6,225386
+Zone 4,3090,Sri Ganganagar Central,Active,6,225496
 Zone 4,3090,Sriganganagar Champions,Active,6,227297
 Zone 4,3090,Sri Ganganagar Classic,Active,10,225489
-Zone 4,3090,Sri Ganganagar Diamond,Active,5,225160
+Zone 4,3090,Sri Ganganagar Diamond,Active,6,225160
 Zone 4,3090,Sri Ganganagar Elite,Active,3,227568
 Zone 4,3090,Sri Ganganagar Grace,Active,11,224631
 Zone 4,3090,Sri Ganganagar Marwar,Active,23,83748
 Zone 4,3090,Sri Ganganagar Rajwara,Active,8,86889
 Zone 4,3090,Sri Ganganagar Ridhi Sidhi,Active,10,225618
-Zone 4,3090,Sri Ganganagar Rishabh,Active,4,226457
+Zone 4,3090,Sri Ganganagar Rishabh,Active,6,226457
 Zone 4,3090,Sri Ganganagar Royal,Active,9,225271
-Zone 4,3090,Sri Ganganagar Seniors,Active,4,225764
-Zone 4,3090,Sri Ganganagar Stars,Active,3,223223
-Zone 4,3090,Sri Ganganagar Udaan,Active,5,227574
+Zone 4,3090,Sri Ganganagar Seniors,Active,6,225764
+Zone 4,3090,Sri Ganganagar Stars,Active,6,223223
+Zone 4,3090,Sri Ganganagar Udaan,Active,6,227574
 Zone 4,3090,Sri Ganganagar Vibrant,Active,6,227870
 Zone 4,3090,Sunam City,Active,7,85009
-Zone 4,3090,Sunam Dynamic,Active,4,225573
-Zone 4,3090,Sunam Green,Active,4,225647
-Zone 4,3090,Sunam Mivaan,Active,4,226207
+Zone 4,3090,Sunam Dynamic,Active,6,225573
+Zone 4,3090,Sunam Green,Active,6,225647
+Zone 4,3090,Sunam Mivaan,Active,6,226207
 Zone 4,3090,Sunam NexGen,Active,6,228019
 Zone 4,3090,Sunam Star,Active,10,222319
 Zone 4,3090,Suratgarh,Active,17,22634
-Zone 4,3090,The Ganganagar,Active,4,224411
+Zone 4,3090,The Ganganagar,Active,6,224411
 Zone 4,3090,Tohana Champions,Active,15,227489
 Zone 4,3090,Tohana Town,Active,6,222288
 Zone 4,3090,Zira,Active,11,89887
@@ -1432,7 +1434,7 @@ Zone 6,3100,Hasanpur,Active,10,15338
 Zone 6,3100,Hasanpur Aakershan,Active,16,226367
 Zone 6,3100,Hasanpur Aastha,Active,20,72697
 Zone 6,3100,Industrial Area Bijnor,Active,18,29398
-Zone 6,3100,Khatauli,Active,15,15351
+Zone 6,3100,Khatauli,Active,16,15351
 Zone 6,3100,Khurja,Active,40,15352
 Zone 6,3100,Khurja Pragati,Active,7,224929
 Zone 6,3100,Khurja Shakti,Active,12,90665
@@ -1442,7 +1444,7 @@ Zone 6,3100,Meerut,Active,105,15358
 Zone 6,3100,Meerut Central,Active,8,15359
 Zone 6,3100,Meerut City,Active,10,25275
 Zone 6,3100,Meerut Cosmos,Active,11,82650
-Zone 6,3100,Meerut Defence,Active,11,90566
+Zone 6,3100,Meerut Defence,Active,13,90566
 Zone 6,3100,Meerut Friends,Active,8,81157
 Zone 6,3100,Meerut Galaxy,Active,5,225561
 Zone 6,3100,Meerut Icon,Active,15,227100
@@ -1467,7 +1469,7 @@ Zone 6,3100,Moradabad Bharat,Active,6,87014
 Zone 6,3100,Moradabad Brasscity Stars,Active,11,90849
 Zone 6,3100,Moradabad Bright,Active,6,85302
 Zone 6,3100,Moradabad Civil Lines,Active,12,56290
-Zone 6,3100,Moradabad (East),Active,36,15364
+Zone 6,3100,Moradabad (East),Active,34,15364
 Zone 6,3100,Moradabad Elite,Active,25,227110
 Zone 6,3100,Moradabad Essence,Active,7,225267
 Zone 6,3100,Moradabad Friends,Active,10,227466
@@ -1495,7 +1497,7 @@ Zone 6,3100,Muzaffarnagar Royal Tigers,Active,15,228273
 Zone 6,3100,Muzaffarnagar Sakhi,Active,6,225016
 Zone 6,3100,Muzaffarnagar Samarpan,Active,18,84347
 Zone 6,3100,Muzaffarnagar Sankalp,Active,15,228129
-Zone 6,3100,Muzaffarnagar Sanskrati,Active,10,79431
+Zone 6,3100,Muzaffarnagar Sanskrati,Active,9,79431
 Zone 6,3100,Muzaffarnagar Shakti,Active,6,227196
 Zone 6,3100,Muzaffarnagar Shikhar,Active,6,90607
 Zone 6,3100,Muzaffarnagar Stars,Active,14,90710
@@ -1580,7 +1582,7 @@ Zone 6,3110,Jhansi Fort,Active,9,50025
 Zone 6,3110,Kanpur Aryans,Active,13,223419
 Zone 6,3110,Kanpur Central,Active,52,27040
 Zone 6,3110,Kanpur Classic,Active,85,88530
-Zone 6,3110,Kanpur East,Active,17,15438
+Zone 6,3110,Kanpur East,Active,13,15438
 Zone 6,3110,Kanpur Eden,Active,6,224651
 Zone 6,3110,Kanpur Elite,Active,11,84782
 Zone 6,3110,Kanpur Galaxy,Active,25,226463
@@ -1610,9 +1612,9 @@ Zone 6,3110,Mathura Central,Active,58,82785
 Zone 6,3110,Mathura Fusion,Active,2,226599
 Zone 6,3110,Mathura Jasmine,Active,58,224640
 Zone 6,3110,Mathura Rational,Active,21,225125
-Zone 6,3110,Mathura West,Active,29,51055
+Zone 6,3110,Mathura West,Active,30,51055
 Zone 6,3110,Mukteshwar,Active,2,226364
-Zone 6,3110,Nainital,Active,34,15453
+Zone 6,3110,Nainital,Active,42,15453
 Zone 6,3110,New Bareilly,Active,12,31839
 Zone 6,3110,Orai,Active,13,15456
 Zone 6,3110,Pilibhit Matrshakti,Active,14,89586
@@ -1622,6 +1624,7 @@ Zone 6,3110,Rohilkhand Bareilly,Active,8,76415
 Zone 6,3110,Shahjahanpur,Active,13,15470
 Zone 6,3110,Shahjahanpur City,Active,4,79354
 Zone 6,3110,Shikohabad,Active,23,15471
+Zone 6,3110,Ujhani Classic,Active,20,228346
 Zone 6,3110,Unnao,Active,11,15476
 Zone 6,3110,Unnao City,Active,25,222643
 Zone 6,3110,Unnao Royal,Active,28,226956
@@ -1638,11 +1641,11 @@ Zone 6,3120,Bahraich,Active,37,15410
 Zone 6,3120,Ballia,Active,23,15411
 Zone 6,3120,Banaras Shine,Active,129,225568
 Zone 6,3120,Basti Central,Active,27,224427
-Zone 6,3120,Basti Greater,Active,9,90702
+Zone 6,3120,Basti Greater,Active,10,90702
 Zone 6,3120,Basti Midtown,Active,38,28332
 Zone 6,3120,Bhadohi,Active,18,228209
 Zone 6,3120,Bhira,Active,14,226327
-Zone 6,3120,Blood & Organ Donors Varanasi,Active,22,227198
+Zone 6,3120,Blood & Organ Donors Varanasi,Active,23,227198
 Zone 6,3120,Chattarpur,Active,20,86692
 Zone 6,3120,Chitrakoot Dham,Active,15,227966
 Zone 6,3120,Deoria,Active,13,63515
@@ -1674,7 +1677,7 @@ Zone 6,3120,Mirzapur Royals,Active,27,227225
 Zone 6,3120,Nautanwa,Active,11,21910
 Zone 6,3120,Nichlaul,Active,11,26147
 Zone 6,3120,Pallia Kalan,Active,23,22633
-Zone 6,3120,Pratapgarh Central,Active,11,87300
+Zone 6,3120,Pratapgarh Central,Active,10,87300
 Zone 6,3120,Rae Bareli,Active,44,15462
 Zone 6,3120,Renukoot,Active,40,15466
 Zone 6,3120,Sitapur,Active,37,15473
@@ -1693,7 +1696,7 @@ Zone 6,3120,Varanasi North,Active,81,28258
 Zone 6,3120,Varanasi Royals,Active,107,224774
 Zone 6,3120,Varanasi Rudraksha,Active,26,227185
 Zone 6,3120,Varanasi Sarnath,Active,16,27662
-Zone 6,3120,Varanasi Sarthak,Active,14,227186
+Zone 6,3120,Varanasi Sarthak,Active,12,227186
 Zone 6,3120,Varanasi Shivay,Active,19,223067
 Zone 6,3120,Varanasi Shiv Ganga,Active,50,66235
 Zone 6,3120,Varanasi Sunrise,Active,44,30836
@@ -1737,10 +1740,11 @@ Zone 7,3131,Pune Cosmopolitan,Active,50,86146
 Zone 7,3131,Pune Deccan Gymkhana,Active,39,63454
 Zone 7,3131,Pune Elegant,Active,26,226338
 Zone 7,3131,Pune Far East,Active,61,30952
+Zone 7,3131,Pune Gandhi Bhavan,Active,71,54361
 Zone 7,3131,Pune Hadapsar,Active,41,51498
 Zone 7,3131,Pune Haveli East,Active,32,85532
 Zone 7,3131,Pune Karvenagar,Active,22,27270
-Zone 7,3131,Pune Kharadi,Active,20,225547
+Zone 7,3131,Pune Kharadi,Active,25,225547
 Zone 7,3131,Pune-Kothrud,Active,57,26272
 Zone 7,3131,Pune Magarpatta Elite,Active,13,86614
 Zone 7,3131,Pune Pashan,Active,47,55414
@@ -1749,18 +1753,18 @@ Zone 7,3131,Pune Riverside,Active,41,26502
 Zone 7,3131,Pune Royal,Active,16,86181
 Zone 7,3131,Pune Sahawas,Active,39,83055
 Zone 7,3131,Pune Sanskruti,Active,28,227316
-Zone 7,3131,Pune Tilak Road,Active,66,26158
+Zone 7,3131,Pune Tilak Road,Active,69,26158
 Zone 7,3131,Pune Westend,Active,38,52038
 Zone 7,3131,Pune Yuva,Active,33,88417
 Zone 7,3131,Purandar,Active,42,85705
-Zone 7,3131,Raigad Fort,Active,30,224171
+Zone 7,3131,Raigad Fort,Active,31,224171
 Zone 7,3131,Rajgurunagar,Active,42,57284
 Zone 7,3131,Roha,Active,38,86435
 Zone 7,3131,Roha Central,Active,13,89568
 Zone 7,3131,Sarati Delight,Active,19,90061
 Zone 7,3131,Shikrapur,Active,14,85534
 Zone 7,3131,Supa Pargana,Active,16,223477
-Zone 7,3131,Talegaon Dabhade City,Active,63,87887
+Zone 7,3131,Talegaon Dabhade City,Active,60,87887
 Zone 7,3131,Talegaon MIDC,Active,44,81698
 Zone 7,3131,Thergaon,Active,28,224643
 Zone 7,3131,Walhekarwadi,Active,22,88449
@@ -1774,7 +1778,7 @@ Zone 7,3132,Akole Central,Active,29,223068
 Zone 7,3132,Aurangabad Cantonment,Active,20,82848
 Zone 7,3132,Aurangabad Metro,Active,24,52027
 Zone 7,3132,Aurangabad Midtown,Active,14,222047
-Zone 7,3132,Aurangabad West,Active,25,80072
+Zone 7,3132,Aurangabad West,Active,26,80072
 Zone 7,3132,Beed,Active,56,23044
 Zone 7,3132,Chakur,Active,21,78756
 Zone 7,3132,Chhatrapati Sambhajinagar New Town,Active,22,225795
@@ -1798,8 +1802,8 @@ Zone 7,3132,Koregaon,Active,11,15659
 Zone 7,3132,Kurduwadi,Active,25,74762
 Zone 7,3132,Latur,Active,89,15520
 Zone 7,3132,Latur Horizon,Active,21,77032
-Zone 7,3132,Latur Metro,Active,33,56878
-Zone 7,3132,Latur Shreyas,Active,39,88502
+Zone 7,3132,Latur Metro,Active,34,56878
+Zone 7,3132,Latur Shreyas,Active,38,88502
 Zone 7,3132,Lonand,Active,19,15521
 Zone 7,3132,Madha,Active,10,84741
 Zone 7,3132,Mahableshwar,Active,20,15523
@@ -1807,7 +1811,7 @@ Zone 7,3132,Majalgaon Central,Active,24,87975
 Zone 7,3132,Majalgaon City,Active,32,81155
 Zone 7,3132,Mangalwedha City,Active,21,225665
 Zone 7,3132,Manohar Ambajogai,Active,19,227265
-Zone 7,3132,Modnimb,Active,14,84030
+Zone 7,3132,Modnimb,Active,13,84030
 Zone 7,3132,Mukhed City,Active,28,224756
 Zone 7,3132,Murum City,Active,17,225892
 Zone 7,3132,Nanded,Active,67,15528
@@ -1838,9 +1842,9 @@ Zone 7,3132,Wadgaon Gupta,Active,13,226574
 Zone 7,3132,Wadvani,Active,20,88372
 Zone 7,3132,Waluj Mahanagar,Active,5,226913
 Zone 4,3141,Boisar-Tarapur,Active,67,30218
-Zone 4,3141,Bombay Bay View,Active,157,58247
+Zone 4,3141,Bombay Bay View,Active,158,58247
 Zone 4,3141,Bombay Cosmopolis,Active,46,226353
-Zone 4,3141,Bombay Harbour,Active,45,22141
+Zone 4,3141,Bombay Harbour,Active,47,22141
 Zone 4,3141,Bombay Metropolitan,Active,39,23800
 Zone 4,3141,Bombay Mid-City,Active,34,23437
 Zone 4,3141,Borivali Wonders,Active,21,223158
@@ -1853,15 +1857,15 @@ Zone 4,3141,Lokhandwala Kandivali,Active,19,79454
 Zone 4,3141,Manor Highway,Active,11,221966
 Zone 4,3141,Marine Drive Mumbai,Active,32,224516
 Zone 4,3141,Mulund,Active,54,15527
-Zone 4,3141,Mulund Oberoi Towers,Active,35,227912
+Zone 4,3141,Mulund Oberoi Towers,Active,36,227912
 Zone 4,3141,Mumbai 101,Active,30,89987
 Zone 4,3141,Mumbai 25,Active,22,226063
 Zone 4,3141,Mumbai Andheri,Active,14,28164
 Zone 4,3141,Mumbai Bravehearts,Active,34,91206
 Zone 4,3141,Mumbai City,Active,18,225600
 Zone 4,3141,Mumbai Coastline,Active,63,88143
-Zone 4,3141,Mumbai Crown,Active,40,228016
-Zone 4,3141,Mumbai Elegant Plus,Active,50,226411
+Zone 4,3141,Mumbai Crown,Active,41,228016
+Zone 4,3141,Mumbai Elegant Plus,Active,51,226411
 Zone 4,3141,Mumbai Elite,Active,17,221907
 Zone 4,3141,Mumbai GenX,Active,35,88412
 Zone 4,3141,Mumbai Ghatkopar West,Active,32,89747
@@ -1884,9 +1888,9 @@ Zone 4,3141,Mumbai United Vision,Active,34,228306
 Zone 4,3141,Mumbai West End,Active,53,90214
 Zone 4,3141,Mumbai World Towers,Active,94,226895
 Zone 4,3141,Organ Donation International,Active,121,225646
-Zone 4,3141,SkyCity Borivali,Active,70,226547
+Zone 4,3141,SkyCity Borivali,Active,71,226547
 Zone 4,3141,Umroli,Active,34,226446
-Zone 4,3141,Upper Kandivali,Active,11,222164
+Zone 4,3141,Upper Kandivali,Active,23,222164
 Zone 4,3141,Wada,Active,28,89753
 Zone 4,3142,Ambarnath Heritage,Active,42,227638
 Zone 4,3142,Ambarnath Industrial Area,Active,21,225502
@@ -1901,15 +1905,14 @@ Zone 4,3142,Bhiwandi Central,Active,27,30868
 Zone 4,3142,Bhiwandi Rural,Active,58,86152
 Zone 4,3142,Bhiwandi South,Active,13,27509
 Zone 4,3142,Diva Thane,Active,23,88576
-Zone 4,3142,Dombivli City,Active,50,53966
 Zone 4,3142,Dombivli Diamonds,Active,26,90258
 Zone 4,3142,Dombivli Industrial Area,Active,18,27385
 Zone 4,3142,Dombivli North,Active,17,79352
-Zone 4,3142,Dombivli Phoenix,Active,19,225528
+Zone 4,3142,Dombivli Phoenix,Active,20,225528
 Zone 4,3142,Dombivli Saudamini,Active,42,85002
 Zone 4,3142,Dombivli Up Town,Active,32,30547
 Zone 4,3142,Dombivli West,Active,11,27251
-Zone 4,3142,Dombivli Winners,Active,39,222248
+Zone 4,3142,Dombivli Winners,Active,40,222248
 Zone 4,3142,Hiranandani Ivan,Active,42,226307
 Zone 4,3142,Kalyan Diamonds,Active,35,86087
 Zone 4,3142,Kalyan Riverside,Active,28,81013
@@ -1929,17 +1932,17 @@ Zone 4,3142,Navi Mumbai Valley Golfers,Active,23,222475
 Zone 4,3142,New Regency Estate,Active,10,226313
 Zone 4,3142,Palava,Active,23,88910
 Zone 4,3142,Sindhunagar (Ulhasnagar),Active,10,222949
-Zone 4,3142,Thana West,Active,51,15544
+Zone 4,3142,Thana West,Active,53,15544
 Zone 4,3142,Thane Aces,Active,40,90117
 Zone 4,3142,Thane Amigos,Active,25,224887
-Zone 4,3142,Thane Blue Lotus,Active,17,228264
+Zone 4,3142,Thane Blue Lotus,Active,18,228264
 Zone 4,3142,Thane Central,Active,39,29903
 Zone 4,3142,Thane City,Active,16,225292
 Zone 4,3142,Thane Connoisseurs,Active,18,222229
 Zone 4,3142,Thane Garden City,Active,33,82480
 Zone 4,3142,Thane Horizon,Active,13,89508
-Zone 4,3142,Thane Lake City,Active,35,30186
-Zone 4,3142,Thane Mid Town,Active,34,26976
+Zone 4,3142,Thane Lake City,Active,36,30186
+Zone 4,3142,Thane Mid Town,Active,35,26976
 Zone 4,3142,Thane Orion,Active,10,222950
 Zone 4,3142,Thane Premium,Active,52,86092
 Zone 4,3142,Thane Pride,Active,11,226368
@@ -1947,7 +1950,7 @@ Zone 4,3142,Thane River Side,Active,20,224900
 Zone 4,3142,Thane Skyline,Active,34,82471
 Zone 4,3142,Thane Stars,Active,13,226689
 Zone 4,3142,Thane Urbania,Active,37,85221
-Zone 4,3142,Thane Vartak Nagar,Active,22,226152
+Zone 4,3142,Thane Vartak Nagar,Active,23,226152
 Zone 4,3142,Titwala,Active,27,88860
 Zone 4,3142,Ulhasnagar City,Active,10,226868
 Zone 4,3142,Ulhasnagar East,Active,16,27147
@@ -1956,7 +1959,7 @@ Zone 7,3150,Aashray Warangal,Active,35,227130
 Zone 7,3150,Abhyuday Hyderabad,Active,23,222293
 Zone 7,3150,Amaravati Capital City,Active,23,227017
 Zone 7,3150,Ameerpet Hyderabad,Active,28,56778
-Zone 7,3150,Andhra Paris Tenali,Active,30,227266
+Zone 7,3150,Andhra Paris Tenali,Active,31,227266
 Zone 7,3150,Ankura Warangal,Active,30,223279
 Zone 7,3150,Armoor,Active,43,26003
 Zone 7,3150,Bapatla,Active,26,22036
@@ -1974,7 +1977,7 @@ Zone 7,3150,Cyberabad,Active,21,83078
 Zone 7,3150,Darsi,Active,20,30866
 Zone 7,3150,Gajwel,Active,24,83362
 Zone 7,3150,Gems Nizamabad,Active,53,89179
-Zone 7,3150,General Datum,Active,57,226673
+Zone 7,3150,General Datum,Active,56,226673
 Zone 7,3150,Global Champions,Active,43,223263
 Zone 7,3150,Greater Hyderabad,Active,31,79552
 Zone 7,3150,Greater Vinukonda,Active,41,224246
@@ -1990,7 +1993,6 @@ Zone 7,3150,Hyderabad Ilaa,Active,19,228048
 Zone 7,3150,Hyderabad Mavericks,Active,52,91204
 Zone 7,3150,Hyderabad Mid-Town,Active,21,21400
 Zone 7,3150,Inkollu Central,Active,30,58533
-Zone 7,3150,Iris Hyderabad,Active,23,228049
 Zone 7,3150,Jagruti Hyderabad,Active,17,227170
 Zone 7,3150,Jagtial Central,Active,12,55325
 Zone 7,3150,Kamareddy,Active,36,15576
@@ -2005,7 +2007,7 @@ Zone 7,3150,LB Nagar Prerana,Active,23,227586
 Zone 7,3150,Macherla,Active,50,25133
 Zone 7,3150,Mahabubabad,Active,27,82598
 Zone 7,3150,Mancherial,Active,11,24123
-Zone 7,3150,Manjeera-Sangareddy,Active,21,57136
+Zone 7,3150,Manjeera-Sangareddy,Active,28,57136
 Zone 7,3150,Manuguru Black Diamond,Active,20,228111
 Zone 7,3150,Miryalguda,Active,21,15585
 Zone 7,3150,Narsampet,Active,22,57061
@@ -2013,7 +2015,7 @@ Zone 7,3150,Nizamabad,Active,105,15593
 Zone 7,3150,Ongole Bulls,Active,20,227345
 Zone 7,3150,Pangulur,Active,17,82534
 Zone 7,3150,Parchur Central,Active,41,59130
-Zone 7,3150,Pedanandipadu,Active,15,79554
+Zone 7,3150,Pedanandipadu,Active,17,79554
 Zone 7,3150,Piduguralla Lime City,Active,47,58639
 Zone 7,3150,Ponnur,Active,63,15596
 Zone 7,3150,Rainbow Vistas,Active,19,226798
@@ -2041,7 +2043,7 @@ Zone 7,3160,Bhalki Fort,Active,39,82824
 Zone 7,3160,Bidar,Active,86,15629
 Zone 7,3160,Bidar Fort,Active,30,51115
 Zone 7,3160,Bidar Infinite Impact,Active,15,228159
-Zone 7,3160,Bidar Queens,Active,26,86045
+Zone 7,3160,Bidar Queens,Active,27,86045
 Zone 7,3160,Challakere,Active,24,15708
 Zone 7,3160,Chickjajur,Active,25,25334
 Zone 7,3160,Chinmuladri Chitradurga,Active,16,89065
@@ -2055,7 +2057,7 @@ Zone 7,3160,Gangavathi Rice Bowl,Active,4,226162
 Zone 7,3160,Greater Karnul,Active,11,53334
 Zone 7,3160,Gudur West,Active,37,29734
 Zone 7,3160,Gulbarga,Active,74,15641
-Zone 7,3160,Gulbarga Midtown,Active,48,29951
+Zone 7,3160,Gulbarga Midtown,Active,40,29951
 Zone 7,3160,Gulbarga North,Active,45,29252
 Zone 7,3160,Gulbarga Sakhi,Active,13,90344
 Zone 7,3160,Gulbarga South,Active,25,88647
@@ -2073,7 +2075,7 @@ Zone 7,3160,Koilkuntla,Active,15,54633
 Zone 7,3160,Koppal,Active,14,15658
 Zone 7,3160,Kota Town,Active,11,89975
 Zone 7,3160,Kurnool New City,Active,14,62496
-Zone 7,3160,Naidupet Town,Active,22,89981
+Zone 7,3160,Naidupet Town,Active,27,89981
 Zone 7,3160,Nandyal,Active,46,15667
 Zone 7,3160,Nandyal Mid Town,Active,14,83875
 Zone 7,3160,Nellore,Active,42,15807
@@ -2089,14 +2091,14 @@ Zone 7,3160,Venkatagiri Town,Active,9,88713
 Zone 7,3160,Vijayanagar Heritage,Active,18,223266
 Zone 7,3160,Yemmiganur,Active,16,225334
 Zone 7,3170,Ankola,Active,25,29912
-Zone 7,3170,Ankola Rural,Active,19,81661
+Zone 7,3170,Ankola Rural,Active,23,81661
 Zone 7,3170,Atigre,Active,27,91070
 Zone 7,3170,Bagalkot,Active,92,15625
 Zone 7,3170,Bardez Coastal,Active,31,89677
 Zone 7,3170,Belgaum Midtown,Active,51,15627
 Zone 7,3170,Belgaum North,Active,28,57531
 Zone 7,3170,Belgaum Royals,Active,24,227543
-Zone 7,3170,Belgaum Sunrise,Active,17,226651
+Zone 7,3170,Belgaum Sunrise,Active,20,226651
 Zone 7,3170,Belur-Dharwad,Active,40,55833
 Zone 7,3170,Bijapur,Active,16,15630
 Zone 7,3170,Byadgi,Active,38,81017
@@ -2111,7 +2113,7 @@ Zone 7,3170,Haliyal,Active,25,228275
 Zone 7,3170,Hatkanangle Central,Active,15,87730
 Zone 7,3170,Horizon Kolhapur,Active,52,79537
 Zone 7,3170,Hubli Heritage,Active,15,222693
-Zone 7,3170,Hubli-North,Active,71,26428
+Zone 7,3170,Hubli-North,Active,74,26428
 Zone 7,3170,Hubli Phoenix,Active,21,226797
 Zone 7,3170,Ichalkaranji,Active,71,15649
 Zone 7,3170,Ichalkaranji Heritage,Active,44,76285
@@ -2154,7 +2156,7 @@ Zone 7,3170,Rotary District 3170 Synergy Passport,Active,27,224704
 Zone 7,3170,Sangli City,Active,13,52218
 Zone 7,3170,Shiroda,Active,4,52187
 Zone 7,3170,Shirol,Active,18,82240
-Zone 7,3170,Shirol Heritage City,Active,19,222044
+Zone 7,3170,Shirol Heritage City,Active,12,222044
 Zone 7,3170,Shiroli (M.I.D.C.),Active,39,15688
 Zone 7,3170,Talikoti,Active,15,58474
 Zone 7,3170,Vasco Port Town,Active,38,88636
@@ -2166,7 +2168,7 @@ Zone 7,3181,Bannur,Active,38,53757
 Zone 7,3181,Bantwal Town,Active,28,88290
 Zone 7,3181,B C Road City,Active,27,223058
 Zone 7,3181,Bellare Town,Active,35,78755
-Zone 7,3181,Belthangady,Active,72,15704
+Zone 7,3181,Belthangady,Active,75,15704
 Zone 7,3181,Birumale Hills Puttur,Active,13,225953
 Zone 7,3181,Central Mysore,Active,59,31372
 Zone 7,3181,Chamarajanagar,Active,48,15709
@@ -2234,8 +2236,8 @@ Zone 7,3182,Bhadravati,Active,54,15706
 Zone 7,3182,Central Hassan,Active,31,226618
 Zone 7,3182,Chickmagalur,Active,79,15712
 Zone 7,3182,Chikkamagaluru Ekatha,Active,26,227542
-Zone 7,3182,Gonibeedu,Active,43,50729
-Zone 7,3182,Hanubal,Active,23,24324
+Zone 7,3182,Gonibeedu,Active,46,50729
+Zone 7,3182,Hanubal,Active,25,24324
 Zone 7,3182,Hassan Hoysala,Active,35,88250
 Zone 7,3182,Hassan Sunrise,Active,26,52638
 Zone 7,3182,Hassan Tiger,Active,18,223238
@@ -2245,11 +2247,11 @@ Zone 7,3182,Kalasa,Active,45,55554
 Zone 7,3182,Kaup,Active,14,54007
 Zone 7,3182,Kokkarne,Active,23,224499
 Zone 7,3182,Koppa,Active,24,21908
-Zone 7,3182,Koppa Malnad,Active,21,62757
+Zone 7,3182,Koppa Malnad,Active,23,62757
 Zone 7,3182,Kota Brigade,Active,42,227945
 Zone 7,3182,Kota City,Active,52,85505
 Zone 7,3182,Kundapura Mid Town,Active,65,50260
-Zone 7,3182,Kundapura Riverside,Active,30,89571
+Zone 7,3182,Kundapura Riverside,Active,31,89571
 Zone 7,3182,Kundapura South,Active,60,23496
 Zone 7,3182,Kundapura Sunrise,Active,34,65537
 Zone 7,3182,Malpe Karavali,Active,15,227925
@@ -2272,12 +2274,12 @@ Zone 7,3182,Shivamoga Malenadu,Active,35,224575
 Zone 7,3182,Shivamogga Sahyadri,Active,20,227907
 Zone 7,3182,Siddapura-Hosangadi,Active,45,31341
 Zone 7,3182,Soraba,Active,42,87207
-Zone 7,3182,Tarikere,Active,74,15758
+Zone 7,3182,Tarikere,Active,75,15758
 Zone 7,3182,Thekkatte,Active,43,82801
 Zone 7,3182,Tirthahalli,Active,72,15760
 Zone 7,3182,Udupi-Udyavara,Active,19,64701
 Zone 7,3191,Anekal,Active,20,227770
-Zone 7,3191,Attibele Sarjapura,Active,31,87323
+Zone 7,3191,Attibele Sarjapura,Active,23,87323
 Zone 7,3191,Bangalore City Centre,Active,35,31703
 Zone 7,3191,Bangalore Cubbon Park,Active,91,31590
 Zone 7,3191,Bangalore Down Town,Active,37,27417
@@ -2287,23 +2289,23 @@ Zone 7,3191,Bangalore Metro,Active,25,29350
 Zone 7,3191,Bangalore Nagarabhavi,Active,31,83506
 Zone 7,3191,Bangalore Raja Rajeshwari Nagar Centennial,Active,37,68917
 Zone 7,3191,Bangalore Shankara Park,Active,28,88201
-Zone 7,3191,Bangalore Shantiniketan,Active,13,89466
+Zone 7,3191,Bangalore Shantiniketan,Active,14,89466
 Zone 7,3191,Bangalore Visionaries,Active,25,226406
 Zone 7,3191,Bangarpet,Active,14,222022
 Zone 7,3191,Bengaluru Aantarya,Active,6,225808
 Zone 7,3191,Bengaluru Banasiri,Active,24,227236
-Zone 7,3191,Bengaluru Bannerghatta Road,Active,20,227078
+Zone 7,3191,Bengaluru Bannerghatta Road,Active,22,227078
 Zone 7,3191,Bengaluru Centurions,Active,15,228117
 Zone 7,3191,Bengaluru Chandralayout,Active,34,90531
 Zone 7,3191,Bengaluru Elite,Active,15,228280
-Zone 7,3191,Bengaluru Gandhadagudi,Active,45,227582
+Zone 7,3191,Bengaluru Gandhadagudi,Active,44,227582
 Zone 7,3191,Bengaluru Jayanagar,Active,12,87113
 Zone 7,3191,Bengaluru Jnanabharathi,Active,24,227321
 Zone 7,3191,Bengaluru Kaggalipura,Active,17,227598
 Zone 7,3191,Bengaluru Naturalists,Active,19,227454
 Zone 7,3191,Bengaluru Reach Out,Active,19,87331
 Zone 7,3191,Bengaluru Samanvaya,Active,27,227915
-Zone 7,3191,Bengaluru Sankalp,Active,19,228185
+Zone 7,3191,Bengaluru Sankalp,Active,20,228185
 Zone 7,3191,Bengaluru Sarjapur Road,Active,20,227140
 Zone 7,3191,Bengaluru Seva Jyothi,Active,15,228017
 Zone 7,3191,Bengaluru Sports Catalyst,Active,27,228212
@@ -2317,7 +2319,7 @@ Zone 7,3191,E-Club of Bangalore Green City,Active,19,87137
 Zone 7,3191,Greater Jayanagar Bengaluru,Active,32,87532
 Zone 7,3191,Harohalli,Active,33,87414
 Zone 7,3191,Hoskote Central,Active,32,69893
-Zone 7,3191,Kanakapura,Active,42,15791
+Zone 7,3191,Kanakapura,Active,50,15791
 Zone 7,3191,Kanakapura Milk City,Active,13,225520
 Zone 7,3191,KGF Prime,Active,15,91227
 Zone 7,3191,Kolar,Active,68,15794
@@ -2330,8 +2332,8 @@ Zone 7,3191,Malur,Active,15,228165
 Zone 7,3191,Mekedatu Sangama,Active,27,225641
 Zone 7,3191,Mulbagal Central,Active,40,83546
 Zone 7,3191,Passport Bengaluru,Active,16,227667
-Zone 7,3191,Punganur Central,Active,27,31629
-Zone 7,3191,Ramgarh Rockers Ramanagara,Active,30,227523
+Zone 7,3191,Punganur Central,Active,30,31629
+Zone 7,3191,Ramgarh Rockers Ramanagara,Active,25,227523
 Zone 7,3191,Srikalahasti,Active,28,15816
 Zone 7,3191,Tirupati Greater City,Active,15,81256
 Zone 7,3191,Tirupati Nextgen,Active,13,227713
@@ -2342,21 +2344,21 @@ Zone 7,3192,Bangalore Aasare,Active,22,225700
 Zone 7,3192,Bangalore Central,Active,29,24067
 Zone 7,3192,Bangalore Engage India,Active,16,225165
 Zone 7,3192,Bangalore Global Yoga,Active,24,91205
-Zone 7,3192,Bangalore Gokul Vidya,Active,23,84647
-Zone 7,3192,Bangalore Greenpark,Active,17,91191
+Zone 7,3192,Bangalore Gokul Vidya,Active,24,84647
+Zone 7,3192,Bangalore Greenpark,Active,19,91191
 Zone 7,3192,Bangalore Hessarghatta Road,Active,32,225621
 Zone 7,3192,Bangalore Jakkur,Active,13,91136
 Zone 7,3192,Bangalore Mahanandi,Active,15,228013
 Zone 7,3192,Bangalore Malgudi,Active,51,87009
-Zone 7,3192,Bangalore Nexgen,Active,17,228290
-Zone 7,3192,Bangalore North Hub,Active,20,228265
+Zone 7,3192,Bangalore NexGen,Active,17,228290
+Zone 7,3192,Bangalore North Hub,Active,58,228265
 Zone 7,3192,Bangalore Peenya,Active,60,15772
 Zone 7,3192,Bangalore PJC,Active,42,225100
 Zone 7,3192,Bangalore Rajajinagar,Active,19,62495
 Zone 7,3192,Bangalore Sadashivanagar,Active,20,80571
 Zone 7,3192,Bengaluru Abbigere,Active,48,222234
 Zone 7,3192,Bengaluru Arunodaya,Active,45,227165
-Zone 7,3192,Bengaluru Bluejay Karunadu,Active,33,223436
+Zone 7,3192,Bengaluru Bluejay Karunadu,Active,35,223436
 Zone 7,3192,Bengaluru Heritage North,Active,34,87115
 Zone 7,3192,Bengaluru Kamadhenu,Active,21,223584
 Zone 7,3192,Bengaluru Lake World,Active,10,91121
@@ -2369,9 +2371,9 @@ Zone 7,3192,Bengaluru Zionhills,Active,15,226388
 Zone 7,3192,B G Nagara Central,Active,20,227176
 Zone 7,3192,Bharathinagar Central,Active,31,76672
 Zone 7,3192,Chikbalapur Central,Active,20,227295
-Zone 7,3192,Greater Vidyaranyapura,Active,32,228068
-Zone 7,3192,Kaveri Siri,Active,12,226996
-Zone 7,3192,Koratagere,Active,22,226236
+Zone 7,3192,Greater Vidyaranyapura,Active,35,228068
+Zone 7,3192,Kaveri Siri,Active,10,226996
+Zone 7,3192,Koratagere,Active,21,226236
 Zone 7,3192,Madhugiri,Active,17,15800
 Zone 7,3192,Mandavya,Active,76,227383
 Zone 7,3192,Mandya,Active,33,15804
@@ -2381,7 +2383,7 @@ Zone 7,3192,Nittur,Active,15,87210
 Zone 7,3192,Praani Mitra,Active,11,226990
 Zone 7,3192,Siddara Betta,Active,23,87156
 Zone 7,3192,Siragate Yallapura Tumakuru,Active,10,227299
-Zone 7,3192,Sompura,Active,34,225497
+Zone 7,3192,Sompura,Active,35,225497
 Zone 7,3192,Tarabanahalli,Active,17,226233
 Zone 7,3192,Tavarekere Prime,Active,24,225501
 Zone 7,3192,Tiptur,Active,50,15759
@@ -2398,14 +2400,14 @@ Zone 5,3203,Arasur,Active,15,228150
 Zone 5,3203,Avanashi,Active,43,15829
 Zone 5,3203,Avinashi Next Generation,Active,30,223209
 Zone 5,3203,Bhavani,Active,30,228277
-Zone 5,3203,Bhavani Carpet City,Active,69,82698
-Zone 5,3203,Boyampalayam,Active,39,86942
+Zone 5,3203,Bhavani Carpet City,Active,70,82698
+Zone 5,3203,Boyampalayam,Active,38,86942
 Zone 5,3203,Chengappalli,Active,40,225369
 Zone 5,3203,Chennimalai Nex Gen,Active,15,228148
 Zone 5,3203,Cheyur,Active,34,85800
 Zone 5,3203,Chithode,Active,11,224386
 Zone 5,3203,D.G. Pudur,Active,33,227718
-Zone 5,3203,Dharapuram Winners,Active,18,227651
+Zone 5,3203,Dharapuram Winners,Active,17,227651
 Zone 5,3203,Doddampalayam,Active,25,227517
 Zone 5,3203,Erode Chakras,Active,34,226654
 Zone 5,3203,Erode Metro,Active,72,85354
@@ -2413,20 +2415,20 @@ Zone 5,3203,Erode Phoenix,Active,15,228149
 Zone 5,3203,Gobi Uzhavan,Active,22,91011
 Zone 5,3203,Gudalur,Active,46,226950
 Zone 5,3203,Gudalur Blue Mountain,Active,18,223317
-Zone 5,3203,Gudalur Valley,Active,31,81867
+Zone 5,3203,Gudalur Valley,Active,32,81867
 Zone 5,3203,Kadambur Hills,Active,17,227634
 Zone 5,3203,Karanampettai Rock City,Active,25,225390
 Zone 5,3203,Karumathampatti,Active,22,223155
-Zone 5,3203,Karuvalur,Active,51,226652
+Zone 5,3203,Karuvalur,Active,52,226652
 Zone 5,3203,Kavindapadi,Active,56,90925
 Zone 5,3203,Ketti Valley,Active,36,23635
 Zone 5,3203,Koduvai,Active,44,228091
 Zone 5,3203,Kolappalur,Active,16,227588
 Zone 5,3203,Kotagiri,Active,39,83039
-Zone 5,3203,Kovilpalayam,Active,31,228025
-Zone 5,3203,Kundah,Active,15,86721
-Zone 5,3203,Kunnathur,Active,29,223121
-Zone 5,3203,Mettupalayam Prime,Active,32,223040
+Zone 5,3203,Kovilpalayam,Active,32,228025
+Zone 5,3203,Kundah,Active,16,86721
+Zone 5,3203,Kunnathur,Active,30,223121
+Zone 5,3203,Mettupalayam Prime,Active,31,223040
 Zone 5,3203,Mudumalai,Active,16,227538
 Zone 5,3203,Nambiyur Uzhavan,Active,25,91006
 Zone 5,3203,Nilgiris Richmount,Active,17,224999
@@ -2436,13 +2438,13 @@ Zone 5,3203,Palladam Rainbow,Active,38,79536
 Zone 5,3203,Periyanaickenpalayam,Active,18,227264
 Zone 5,3203,Periyanaickenpalayam North,Active,15,227673
 Zone 5,3203,Pongalur,Active,28,228030
-Zone 5,3203,Sakthi Mahalingapuram,Active,26,76580
+Zone 5,3203,Sakthi Mahalingapuram,Active,27,76580
 Zone 5,3203,Sathy Tigers,Active,136,225715
 Zone 5,3203,Sirumugai,Active,35,223219
 Zone 5,3203,Sivagiri,Active,29,223124
 Zone 5,3203,Somanur,Active,4,86220
-Zone 5,3203,Somanur Tex City,Active,74,226151
-Zone 5,3203,Thalavadi Hills,Active,34,224407
+Zone 5,3203,Somanur Tex City,Active,75,226151
+Zone 5,3203,Thalavadi Hills,Active,36,224407
 Zone 5,3203,Thekkalur,Active,49,221939
 Zone 5,3203,The Nilgiris,Active,47,15875
 Zone 5,3203,Tiruppur Dream City,Active,16,221883
@@ -2478,7 +2480,7 @@ Zone 5,3204,Calicut,Active,27,15831
 Zone 5,3204,Calicut Airport,Active,15,228029
 Zone 5,3204,Calicut Beach,Active,40,31374
 Zone 5,3204,Calicut Cultural City,Active,15,228072
-Zone 5,3204,Calicut Green City,Active,17,87606
+Zone 5,3204,Calicut Green City,Active,18,87606
 Zone 5,3204,Calicut Hilite City,Active,49,224199
 Zone 5,3204,Calicut Metropolis,Active,10,53483
 Zone 5,3204,Calicut Midtown,Active,58,15833
@@ -2486,11 +2488,11 @@ Zone 5,3204,Calicut Newtown,Active,31,226029
 Zone 5,3204,Calicut North,Active,13,226931
 Zone 5,3204,Calicut Port City,Active,20,63855
 Zone 5,3204,Calicut Pride,Active,9,225014
-Zone 5,3204,Calicut Radiance,Active,20,226234
+Zone 5,3204,Calicut Radiance,Active,21,226234
 Zone 5,3204,Calicut Smart City,Active,28,81702
 Zone 5,3204,Calicut South,Active,27,27022
 Zone 5,3204,Calicut Uptown,Active,28,73279
-Zone 5,3204,Calicut West,Active,37,75724
+Zone 5,3204,Calicut West,Active,36,75724
 Zone 5,3204,Cannanore,Active,53,15834
 Zone 5,3204,Cannanore Seaside,Active,33,29123
 Zone 5,3204,Chemperi,Active,20,225874
@@ -2514,7 +2516,7 @@ Zone 5,3204,Kodanchery,Active,25,227023
 Zone 5,3204,Koduvally,Active,22,227024
 Zone 5,3204,Kondotty,Active,22,86157
 Zone 5,3204,Kottakkal,Active,25,223586
-Zone 5,3204,Kunhimangalam,Active,14,86590
+Zone 5,3204,Kunhimangalam,Active,16,86590
 Zone 5,3204,Kuthuparamba,Active,20,27121
 Zone 5,3204,Kuttiady Mid Town,Active,40,86360
 Zone 5,3204,Kuttikol,Active,15,228131
@@ -2533,8 +2535,8 @@ Zone 5,3204,Parappa,Active,30,224977
 Zone 5,3204,Parappanangadi,Active,15,228119
 Zone 5,3204,Pariyaram,Active,30,225858
 Zone 5,3204,Payyanur Central,Active,27,223480
-Zone 5,3204,Payyanur Elite,Active,24,226713
-Zone 5,3204,Pepper Town Pulpally,Active,47,224373
+Zone 5,3204,Payyanur Elite,Active,25,226713
+Zone 5,3204,Pepper Town Pulpally,Active,46,224373
 Zone 5,3204,Perambra,Active,37,53567
 Zone 5,3204,Perinthalmanna,Active,34,25399
 Zone 5,3204,Pookkottumpadam,Active,17,228022
@@ -2563,12 +2565,12 @@ Zone 5,3205,Cardamom City Nedumkandam,Active,31,224479
 Zone 5,3205,Chalakudy South,Active,29,80892
 Zone 5,3205,Chalakudy Town,Active,18,225854
 Zone 5,3205,Cochin Central,Active,60,26839
-Zone 5,3205,Cochin City,Active,45,74143
+Zone 5,3205,Cochin City,Active,48,74143
 Zone 5,3205,Cochin Cosmos,Active,29,88291
 Zone 5,3205,Cochin Frontiers,Active,5,223520
 Zone 5,3205,Cochin Global,Active,99,65758
 Zone 5,3205,Cochin Harbour,Active,49,22452
-Zone 5,3205,Cochin Heritage,Active,43,88211
+Zone 5,3205,Cochin Heritage,Active,41,88211
 Zone 5,3205,Cochin International,Active,41,57526
 Zone 5,3205,Cochin Knights,Active,68,60974
 Zone 5,3205,Cochin Lakeside,Active,18,90322
@@ -2617,7 +2619,7 @@ Zone 5,3205,Perinjanam,Active,15,82584
 Zone 5,3205,Perumbavoor,Active,63,22147
 Zone 5,3205,Perumbavoor Central,Active,31,82020
 Zone 5,3205,Piravom,Active,34,52269
-Zone 5,3205,Piravom River Valley,Active,14,85676
+Zone 5,3205,Piravom River Valley,Active,16,85676
 Zone 5,3205,Rajakkad,Active,21,224460
 Zone 5,3205,Rajakumary,Active,25,228284
 Zone 5,3205,Rivercity Thodupuzha,Active,27,227520
@@ -2637,20 +2639,19 @@ Zone 5,3206,Coimbatore Blossom,Active,24,226773
 Zone 5,3206,Coimbatore Cotton City,Active,32,80414
 Zone 5,3206,Coimbatore Cyber City,Active,44,84959
 Zone 5,3206,Coimbatore Gem,Active,22,228237
-Zone 5,3206,Coimbatore Global,Active,29,227751
 Zone 5,3206,Coimbatore Industrial City,Active,21,90545
 Zone 5,3206,Coimbatore Legend,Active,34,78752
-Zone 5,3206,Coimbatore Mitrutva,Active,32,226711
+Zone 5,3206,Coimbatore Mitrutva,Active,33,226711
 Zone 5,3206,Coimbatore New Town,Active,23,225886
-Zone 5,3206,Coimbatore Phoenix,Active,15,222268
+Zone 5,3206,Coimbatore Phoenix,Active,16,222268
 Zone 5,3206,Coimbatore Rise,Active,34,227094
 Zone 5,3206,Coimbatore Royals,Active,40,224325
-Zone 5,3206,Coimbatore Sangamam,Active,37,227675
+Zone 5,3206,Coimbatore Sangamam,Active,38,227675
 Zone 5,3206,Coimbatore Siruvani,Active,23,227209
 Zone 5,3206,Coimbatore Swasthik,Active,20,228023
 Zone 5,3206,Coimbatore Urban,Active,38,227909
 Zone 5,3206,Coimbatore Wind City,Active,41,82802
-Zone 5,3206,E-Club of Coimbatore Pride,Active,34,223254
+Zone 5,3206,E-Club of Coimbatore Pride,Active,36,223254
 Zone 5,3206,Koduvayur,Active,20,53416
 Zone 5,3206,Kovai,Active,26,224981
 Zone 5,3206,Mannarghat,Active,41,27096
@@ -2683,7 +2684,7 @@ Zone 5,3211,Ashtamudy Lake Side,Active,24,55573
 Zone 5,3211,Attingal Town,Active,29,223467
 Zone 5,3211,Balaramapuram,Active,17,26918
 Zone 5,3211,Changanacherry,Active,21,15908
-Zone 5,3211,Changanacherry Town,Active,34,223395
+Zone 5,3211,Changanacherry Town,Active,33,223395
 Zone 5,3211,Chathannoor,Active,29,22595
 Zone 5,3211,Chavara Mineral Coast,Active,16,51688
 Zone 5,3211,Cherthala Green City,Active,15,87141
@@ -2718,7 +2719,7 @@ Zone 5,3211,Kollam Metro,Active,65,61862
 Zone 5,3211,Kollam Palace City,Active,32,60870
 Zone 5,3211,Kollam Residency,Active,24,61800
 Zone 5,3211,Kollam Royal City,Active,31,84191
-Zone 5,3211,Kottarakkara,Active,30,25356
+Zone 5,3211,Kottarakkara,Active,31,25356
 Zone 5,3211,Kottayam,Active,76,15921
 Zone 5,3211,Kottayam Central,Active,55,81938
 Zone 5,3211,Kottayam Gandhi Nagar,Active,29,61978
@@ -2726,9 +2727,9 @@ Zone 5,3211,Kottayam North,Active,56,15922
 Zone 5,3211,Kottiyam,Active,11,71834
 Zone 5,3211,Kozhencherry,Active,51,15924
 Zone 5,3211,Kozhuvanal,Active,28,85508
-Zone 5,3211,Krishnapuram Royals,Active,19,86917
+Zone 5,3211,Krishnapuram Royals,Active,22,86917
 Zone 5,3211,Kulanada,Active,19,85935
-Zone 5,3211,Kumarakom,Active,22,227482
+Zone 5,3211,Kumarakom,Active,21,227482
 Zone 5,3211,Kundara,Active,18,15925
 Zone 5,3211,Kundara Central,Active,32,61799
 Zone 5,3211,Kundara Mid Town,Active,18,61366
@@ -2745,7 +2746,7 @@ Zone 5,3211,Nallila Royals,Active,25,227515
 Zone 5,3211,Nedumoncavu,Active,24,61802
 Zone 5,3211,Neyyattinkara,Active,18,52287
 Zone 5,3211,Oachira,Active,20,224825
-Zone 5,3211,Oachira Heritage Town,Active,17,225911
+Zone 5,3211,Oachira Heritage Town,Active,19,225911
 Zone 5,3211,Palai,Active,158,22793
 Zone 5,3211,Pandalam,Active,13,26824
 Zone 5,3211,Pandalam Town,Active,12,61976
@@ -2756,7 +2757,7 @@ Zone 5,3211,Pathanamthitta Metro,Active,19,60612
 Zone 5,3211,Pathanamthitta South,Active,13,62492
 Zone 5,3211,Pathanapuram,Active,32,26560
 Zone 5,3211,Peruva,Active,30,86720
-Zone 5,3211,Poovar,Active,13,91081
+Zone 5,3211,Poovar,Active,12,91081
 Zone 5,3211,Punalur,Active,36,15938
 Zone 5,3211,Punalur Mid Town,Active,23,50855
 Zone 5,3211,Punalur Riverside,Active,20,55479
@@ -2802,8 +2803,8 @@ Zone 5,3211,Trivandrum West,Active,19,15957
 Zone 5,3211,Vagamon,Active,18,227384
 Zone 5,3211,Vaikom,Active,54,15959
 Zone 5,3211,Vaikom Lake City,Active,54,222084
-Zone 5,3211,Vaikom Town,Active,30,62000
-Zone 5,3211,Varkala,Active,28,15961
+Zone 5,3211,Vaikom Town,Active,38,62000
+Zone 5,3211,Varkala,Active,30,15961
 Zone 5,3211,Varkala Town,Active,16,226158
 Zone 5,3211,Vembanad Pallipuram,Active,27,224823
 Zone 5,3212,Alangulam,Active,30,57869
@@ -2849,10 +2850,10 @@ Zone 5,3212,Nagercoil Supreme,Active,39,90629
 Zone 5,3212,Nagercoil Thendral,Active,11,222686
 Zone 5,3212,Nellai Elite,Active,17,228247
 Zone 5,3212,Palayamkottai,Active,29,90593
-Zone 5,3212,Palayamkottai Central,Active,12,91168
+Zone 5,3212,Palayamkottai Central,Active,16,91168
 Zone 5,3212,Paramakudi,Active,49,62619
 Zone 5,3212,Pavoorchatram,Active,20,226492
-Zone 5,3212,Pearl City Tuticorin,Active,65,30148
+Zone 5,3212,Pearl City Tuticorin,Active,70,30148
 Zone 5,3212,Phoenix Nagercoil,Active,20,89142
 Zone 5,3212,Puliangudi,Active,25,51289
 Zone 5,3212,Rajapalayam Central,Active,20,82546
@@ -2880,7 +2881,7 @@ Zone 5,3212,Thuckalay,Active,21,21542
 Zone 5,3212,Tirunelveli Avira,Active,18,224933
 Zone 5,3212,Tirunelveli North,Active,14,23936
 Zone 5,3212,Tirunelveli Porunai,Active,35,222586
-Zone 5,3212,Tirunelveli Star,Active,26,86485
+Zone 5,3212,Tirunelveli Star,Active,25,86485
 Zone 5,3212,Tirunelveli Town,Active,34,21753
 Zone 5,3212,Tirunelveli Venuvanam,Active,16,59224
 Zone 5,3212,Tiruthangal,Active,23,84670
@@ -2934,7 +2935,7 @@ Zone 5,3231,Chengai Chennai Corridor,Active,15,88802
 Zone 5,3231,Chengam,Active,17,226973
 Zone 5,3231,Chetpet,Active,40,27493
 Zone 5,3231,Cheyyar Royals,Active,20,225388
-Zone 5,3231,Cheyyar Temple City,Active,35,84981
+Zone 5,3231,Cheyyar Temple City,Active,38,84981
 Zone 5,3231,Cheyyar Town,Active,25,87736
 Zone 5,3231,Eagle Town Thirukkazhukundram,Active,39,58011
 Zone 5,3231,Gudiyatham,Active,144,23806
@@ -2972,11 +2973,11 @@ Zone 5,3231,Tiruvannamalai Galaxy,Active,17,227290
 Zone 5,3231,Tiruvannamalai Pride,Active,26,87273
 Zone 5,3231,Tiruvannamalai Rainbow,Active,15,227565
 Zone 5,3231,Tiruvannamalai Vegan,Active,54,86393
-Zone 5,3231,Uthiramerur,Active,57,78256
+Zone 5,3231,Uthiramerur,Active,72,78256
 Zone 5,3231,Vandavasi,Active,49,26763
 Zone 5,3231,Vandavasi Town,Active,46,87215
 Zone 5,3231,Vaniyambadi Mid Town,Active,21,74546
-Zone 5,3231,Vellore Achievers,Active,40,225287
+Zone 5,3231,Vellore Achievers,Active,41,225287
 Zone 5,3231,Vellore Cosmos,Active,40,51285
 Zone 5,3231,Vellore East,Active,27,24261
 Zone 5,3231,Vellore Evergreen,Active,19,227747
@@ -2992,21 +2993,21 @@ Zone 5,3231,Vellore Stars,Active,17,222954
 Zone 5,3231,Walajapet,Active,55,50068
 Zone 5,3233,Agaram,Active,19,222664
 Zone 5,3233,Annanagar West,Active,19,86330
-Zone 5,3233,Aura Chennai,Active,17,224701
+Zone 5,3233,Aura Chennai,Active,18,224701
 Zone 5,3233,Chennai Accord,Active,25,88849
 Zone 5,3233,Chennai Akshaya,Active,18,222065
 Zone 5,3233,Chennai Amity,Active,15,228146
 Zone 5,3233,Chennai Aram,Active,24,222496
 Zone 5,3233,Chennai Aristo,Active,30,222550
 Zone 5,3233,Chennai Banyan Tree,Active,22,226944
-Zone 5,3233,Chennai Beehives,Active,42,90682
-Zone 5,3233,Chennai Castle,Active,35,226912
+Zone 5,3233,Chennai Beehives,Active,43,90682
+Zone 5,3233,Chennai Castle,Active,37,226912
 Zone 5,3233,Chennai Central Elite,Active,47,87631
 Zone 5,3233,Chennai Coral,Active,16,222532
 Zone 5,3233,Chennai Crown,Active,19,222555
 Zone 5,3233,Chennai Hindustan,Active,12,225340
 Zone 5,3233,Chennai Icons,Active,211,226554
-Zone 5,3233,Chennai IT City,Active,42,84442
+Zone 5,3233,Chennai IT City,Active,43,84442
 Zone 5,3233,Chennai Kings,Active,24,88977
 Zone 5,3233,Chennai Kodambakkam,Active,39,78432
 Zone 5,3233,Chennai Korattur,Active,40,88181
@@ -3026,7 +3027,7 @@ Zone 5,3233,Chennai Verve,Active,10,227273
 Zone 5,3233,Chennai Vibrance,Active,18,227905
 Zone 5,3233,E-Club of Chennai,Active,21,85282
 Zone 5,3233,Madras Bay City,Active,11,87472
-Zone 5,3233,Madras Connemara,Active,55,89530
+Zone 5,3233,Madras Connemara,Active,56,89530
 Zone 5,3233,Madras Down Town,Active,52,29249
 Zone 5,3233,Madras Golden City,Active,37,55436
 Zone 5,3233,Madras Miracles,Active,35,227317
@@ -3039,14 +3040,14 @@ Zone 5,3233,Singara Chennai,Active,13,222469
 Zone 5,3233,Tharamani,Active,23,222588
 Zone 5,3233,United Chennai,Active,28,86463
 Zone 5,3234,Centennial Madras,Active,37,226370
-Zone 5,3234,Chennai Amigos,Active,25,226911
+Zone 5,3234,Chennai Amigos,Active,26,226911
 Zone 5,3234,Chennai Anchorage,Active,51,226581
 Zone 5,3234,Chennai Ashok Pillar,Active,20,225707
 Zone 5,3234,Chennai Classic,Active,14,224322
 Zone 5,3234,Chennai Evergreen,Active,63,89911
 Zone 5,3234,Chennai Harmony,Active,17,90244
-Zone 5,3234,Chennai Kilpauk,Active,39,51318
-Zone 5,3234,Chennai Kotturpuram,Active,39,90319
+Zone 5,3234,Chennai Kilpauk,Active,40,51318
+Zone 5,3234,Chennai Kotturpuram,Active,40,90319
 Zone 5,3234,Chennai Legacy,Active,31,90112
 Zone 5,3234,Chennai Melody,Active,27,225589
 Zone 5,3234,Chennai Metrozone,Active,25,90250
@@ -3056,7 +3057,7 @@ Zone 5,3234,Chennai Mugappair,Active,29,88706
 Zone 5,3234,Chennai Nadi,Active,38,223398
 Zone 5,3234,Chennai Nandavanam,Active,26,223220
 Zone 5,3234,Chennai Poes Garden,Active,31,223294
-Zone 5,3234,Chennai Port City,Active,48,83508
+Zone 5,3234,Chennai Port City,Active,49,83508
 Zone 5,3234,Chennai Prestige,Active,42,89025
 Zone 5,3234,Chennai Renaissance,Active,32,88685
 Zone 5,3234,Chennai Sapphires,Active,15,225612
@@ -3070,22 +3071,22 @@ Zone 5,3234,Chennai Triumph,Active,26,223169
 Zone 5,3234,Chennai Vikas,Active,12,223542
 Zone 5,3234,Chennai Visai,Active,23,226948
 Zone 5,3234,Chennai Warriors,Active,26,223439
-Zone 5,3234,E-Club of Chennai Shakthi,Active,41,223428
 Zone 5,3234,Global Nexus,Active,25,226904
 Zone 5,3234,Madras Ashoknagar,Active,19,23214
 Zone 5,3234,Madras Besant Nagar,Active,27,50271
 Zone 5,3234,Madras Gold Coast Animal Lovers,Active,15,227829
 Zone 5,3234,Madras Heritage,Active,26,89771
 Zone 5,3234,Madras Magnum,Active,43,85531
-Zone 5,3234,Madras Marina,Active,23,26736
+Zone 5,3234,Madras Marina,Active,25,26736
 Zone 5,3234,Madras Mylapore Uptown,Active,20,25517
 Zone 5,3234,Madras Next Gen,Active,77,85243
-Zone 5,3234,Madras Silver Beach,Active,22,27905
-Zone 5,3234,Madras Sunshine,Active,59,227875
+Zone 5,3234,Madras Silver Beach,Active,23,27905
+Zone 5,3234,Madras Sunshine,Active,60,227875
 Zone 5,3234,Madras Traditional,Active,21,88467
-Zone 6,3240,Aizawl,Active,32,28959
+Zone 6,3240,Aizawl,Active,33,28959
 Zone 6,3240,Alipurduar,Active,15,228092
 Zone 6,3240,Amenity Bardhaman,Active,18,85765
+Zone 6,3240,Asansol Elite,Active,22,228345
 Zone 6,3240,Asansol Green City,Active,18,88268
 Zone 6,3240,Asansol Royal Bengal,Active,15,90664
 Zone 6,3240,Balurghat,Active,15,73618
@@ -3094,7 +3095,7 @@ Zone 6,3240,Barddhaman Diamond,Active,45,224367
 Zone 6,3240,Bardhaman Heritage,Active,21,72836
 Zone 6,3240,Bolpur Rangamati,Active,22,86129
 Zone 6,3240,Borderland Karimganj,Active,33,87417
-Zone 6,3240,Burdwan Greater,Active,29,51219
+Zone 6,3240,Burdwan Greater,Active,33,51219
 Zone 6,3240,Burdwan South,Active,47,51343
 Zone 6,3240,Chanchal,Active,28,62007
 Zone 6,3240,Cherry Blossom Shillong,Active,14,222665
@@ -3129,7 +3130,7 @@ Zone 6,3240,Nagaon,Active,52,58465
 Zone 6,3240,Orchid City Shillong,Active,38,63156
 Zone 6,3240,Polo City Imphal,Active,44,82870
 Zone 6,3240,Raiganj,Active,41,61981
-Zone 6,3240,Santiniketan Birbhum,Active,17,228267
+Zone 6,3240,Santiniketan Birbhum,Active,19,228267
 Zone 6,3240,Shillong Heritage,Active,34,90374
 Zone 6,3240,Shillong Highlands,Active,13,227412
 Zone 6,3240,Shree Bhumi Agartala,Active,17,228136
@@ -3138,7 +3139,7 @@ Zone 6,3240,Siliguri,Active,51,16195
 Zone 6,3240,Siliguri Central,Active,21,87487
 Zone 6,3240,Siliguri Green,Active,49,83471
 Zone 6,3240,Siliguri Metropolitan,Active,45,89723
-Zone 6,3240,Siliguri Midtown,Active,58,26869
+Zone 6,3240,Siliguri Midtown,Active,59,26869
 Zone 6,3240,Siliguri Umeed,Active,14,226430
 Zone 6,3240,Siliguri Uttorayon,Active,66,86130
 Zone 6,3240,Siliguri Uttorayon Believers,Active,34,222256
@@ -3166,10 +3167,10 @@ Zone 6,3250,Daltonganj,Active,25,16014
 Zone 6,3250,Damodar Valley,Active,18,52371
 Zone 6,3250,Darbhanga,Active,45,16016
 Zone 6,3250,Darbhanga City,Active,22,227410
-Zone 6,3250,Darbhanga Vidyapati,Active,16,89528
+Zone 6,3250,Darbhanga Vidyapati,Active,20,89528
 Zone 6,3250,Deoghar,Active,39,16017
 Zone 6,3250,Dhanbad Central,Active,117,86232
-Zone 6,3250,Dhanbad North,Active,18,89600
+Zone 6,3250,Dhanbad North,Active,19,89600
 Zone 6,3250,Dhanbad South,Active,21,16019
 Zone 6,3250,E-club of Nex Gen Global,Active,15,227996
 Zone 6,3250,Gardanibagh Patna,Active,4,223175
@@ -3180,7 +3181,7 @@ Zone 6,3250,Giridih Couple,Active,48,86277
 Zone 6,3250,Giridih Greater,Active,39,61425
 Zone 6,3250,Giridih Nexgen,Active,20,227351
 Zone 6,3250,Giridih Vibrant,Active,17,228316
-Zone 6,3250,Gopalganj City,Active,18,223147
+Zone 6,3250,Gopalganj City,Active,20,223147
 Zone 6,3250,Gumla,Active,24,84096
 Zone 6,3250,Hazaribagh Jagriti,Active,24,221909
 Zone 6,3250,Jamshedpur Green,Active,12,226359
@@ -3303,7 +3304,7 @@ Zone 6,3261,Rourkela Marvels,Active,26,226139
 Zone 6,3261,Rourkela Pride,Active,29,226470
 Zone 6,3261,Rourkela Royal,Active,55,83745
 Zone 6,3261,Rourkela Smart City,Active,7,221893
-Zone 6,3261,Rourkela Superstars,Active,9,225306
+Zone 6,3261,Rourkela Superstars,Active,10,225306
 Zone 6,3261,Rourkela Urban,Active,13,225882
 Zone 6,3261,Sambalpur Central,Active,39,28963
 Zone 6,3261,Sambalpur City,Active,16,86696
@@ -3311,7 +3312,7 @@ Zone 6,3261,Sambalpur Royals,Active,16,228125
 Zone 6,3261,Sambalpur West,Active,44,50378
 Zone 6,3261,Seoni Greater,Active,3,225243
 Zone 6,3261,Shahdol,Active,39,84450
-Zone 6,3261,Sundargarh Town,Active,40,50379
+Zone 6,3261,Sundargarh Town,Active,45,50379
 Zone 6,3261,Titilagarh,Active,13,16072
 Zone 6,3261,Veerbhumi Sambalpur,Active,7,89708
 Zone 6,3261,Virat Shahdol,Active,12,223181
@@ -3338,7 +3339,7 @@ Zone 6,3262,Bhograi New Vision,Active,10,225916
 Zone 6,3262,Bhubaneswar Amity,Active,17,222281
 Zone 6,3262,Bhubaneswar Angela,Active,16,223166
 Zone 6,3262,Bhubaneswar Centennial,Active,41,67255
-Zone 6,3262,Bhubaneswar Confluence,Active,56,80091
+Zone 6,3262,Bhubaneswar Confluence,Active,58,80091
 Zone 6,3262,Bhubaneswar Elite,Active,39,58343
 Zone 6,3262,Bhubaneswar Flamingo,Active,23,224175
 Zone 6,3262,Bhubaneswar Galaxy,Active,18,223018
@@ -3349,17 +3350,17 @@ Zone 6,3262,Bhubaneswar New Horizon,Active,23,76786
 Zone 6,3262,Bhubaneswar Phoenix,Active,13,226469
 Zone 6,3262,Bhubaneswar Premium,Active,15,228014
 Zone 6,3262,Bhubaneswar Sunrise,Active,38,224893
-Zone 6,3262,Bhubaneswar Temple City,Active,17,225742
+Zone 6,3262,Bhubaneswar Temple City,Active,18,225742
 Zone 6,3262,Bhubaneswar Unique,Active,40,90557
 Zone 6,3262,Biraja Kshetra,Active,22,91232
-Zone 6,3262,Brahmapur Creative,Active,12,227340
+Zone 6,3262,Brahmapur Creative,Active,13,227340
 Zone 6,3262,Chatrapur-Ganjam,Active,17,79912
 Zone 6,3262,Choudwar,Active,25,56058
 Zone 6,3262,Cuttack Greenfield,Active,26,77991
 Zone 6,3262,Cuttack Mahanadi,Active,20,86603
 Zone 6,3262,Cuttack Millennium,Active,22,76968
 Zone 6,3262,Cuttack Sunshine,Active,19,227740
-Zone 6,3262,Dhauli Bhubaneswar,Active,7,226827
+Zone 6,3262,Dhauli Bhubaneswar,Active,16,226827
 Zone 6,3262,E-Club of Mahodadhi,Active,29,223409
 Zone 6,3262,Fellowship Bhubaneswar,Active,43,224148
 Zone 6,3262,Gopalpur-On-Sea,Active,10,86065
@@ -3369,6 +3370,7 @@ Zone 6,3262,Jajpur,Active,17,30113
 Zone 6,3262,Jaraka,Active,31,84819
 Zone 6,3262,Jeypore,Active,34,16034
 Zone 6,3262,Joda,Active,40,67975
+Zone 6,3262,Kataka Heritage,Active,15,228334
 Zone 6,3262,Kendujhar Green,Active,10,88670
 Zone 6,3262,Khandagiri,Active,16,224218
 Zone 6,3262,Kharabela-Kalinga Nagar,Active,18,88645
@@ -3384,42 +3386,42 @@ Zone 6,3262,Puri Midtown,Active,10,224886
 Zone 6,3262,Puri Sagar,Active,20,90395
 Zone 6,3262,Rairangpur Royal,Active,13,88275
 Zone 6,3262,Rayagada,Active,21,30685
-Zone 6,3262,Saswata Balasore,Active,33,87039
+Zone 6,3262,Saswata Balasore,Active,34,87039
 Zone 6,3262,Shri Jagannath Dham,Active,67,55874
 Zone 6,3262,Smart City Bhubaneswar,Active,6,223224
 Zone 6,3262,Srikshetra Puri,Active,14,84844
 Zone 6,3262,Subarnnarekha Raibania,Active,11,90327
 Zone 6,3262,Talcher,Active,31,223268
 Zone 6,3262,Udala,Active,30,89699
-Unknown,3291,Aabahamaan Kolkata,Active,30,222228
+Unknown,3291,Aabahamaan Kolkata,Active,31,222228
 Unknown,3291,Aadhunik Kolkata,Active,13,224463
 Unknown,3291,Aarohee Calcutta,Active,18,222305
 Unknown,3291,Amelia Kolkata,Active,18,224648
 Unknown,3291,Ankuran Kolkata,Active,11,225841
 Unknown,3291,Arunoday Howrah,Active,14,223562
 Unknown,3291,Ballygunge,Active,30,16145
-Unknown,3291,Ballygunge South,Active,14,89334
+Unknown,3291,Ballygunge South,Active,22,89334
 Unknown,3291,Ballygunge Uptown,Active,14,86748
 Unknown,3291,Barrackpore,Active,23,16147
 Unknown,3291,Behala,Active,37,16149
 Unknown,3291,Belur,Active,84,16150
-Unknown,3291,Belvedere Gardens Calcutta,Active,14,31255
+Unknown,3291,Belvedere Gardens Calcutta,Active,15,31255
 Unknown,3291,Bengal Dreamers,Active,19,227098
 Unknown,3291,Bengal Presidency,Active,9,224598
 Unknown,3291,Bidhannagar,Active,29,60877
-Unknown,3291,Budge Budge,Active,22,16151
+Unknown,3291,Budge Budge,Active,23,16151
 Unknown,3291,Calcutta,Active,198,16153
 Unknown,3291,Calcutta Acropolis,Active,18,90657
 Unknown,3291,Calcutta Amory,Active,18,223498
 Unknown,3291,Calcutta Avyanna,Active,50,88622
 Unknown,3291,Calcutta Camaraderie,Active,6,90658
 Unknown,3291,Calcutta Centenary,Active,10,90740
-Unknown,3291,Calcutta Changemakers,Active,18,227528
+Unknown,3291,Calcutta Changemakers,Active,19,227528
 Unknown,3291,Calcutta Charnock City,Active,15,82823
 Unknown,3291,Calcutta Chowrenghee,Active,92,53323
-Unknown,3291,Calcutta Dalhousie,Active,24,64914
+Unknown,3291,Calcutta Dalhousie,Active,25,64914
 Unknown,3291,Calcutta Dhakuria,Active,17,25561
-Unknown,3291,Calcutta Down Town,Active,6,16154
+Unknown,3291,Calcutta Down Town,Active,10,16154
 Unknown,3291,Calcutta East Central,Active,17,31146
 Unknown,3291,Calcutta Elevates,Active,9,222980
 Unknown,3291,Calcutta Elite,Active,19,226389
@@ -3442,7 +3444,7 @@ Unknown,3291,Calcutta Mega City,Active,33,63155
 Unknown,3291,Calcutta Metro City,Active,25,30869
 Unknown,3291,Calcutta Metropolitan,Active,26,23842
 Unknown,3291,Calcutta Metropolitan East,Active,29,25148
-Unknown,3291,Calcutta Metropolitan Harmony,Active,33,228121
+Unknown,3291,Calcutta Metropolitan Harmony,Active,36,228121
 Unknown,3291,Calcutta Metro South,Active,16,28107
 Unknown,3291,Calcutta Mideast,Active,14,21074
 Unknown,3291,Calcutta Mid South,Active,17,29325
@@ -3456,8 +3458,8 @@ Unknown,3291,Calcutta New Horizons,Active,14,223497
 Unknown,3291,Calcutta New Town,Active,23,53568
 Unknown,3291,Calcutta North-East,Active,33,23802
 Unknown,3291,Calcutta North Suburban,Active,31,29140
-Unknown,3291,Calcutta Old City,Active,27,28320
-Unknown,3291,Calcutta Park Point,Active,28,31079
+Unknown,3291,Calcutta Old City,Active,31,28320
+Unknown,3291,Calcutta Park Point,Active,30,31079
 Unknown,3291,Calcutta Pointers,Active,42,223406
 Unknown,3291,Calcutta Presidency,Active,48,87026
 Unknown,3291,Calcutta Renaissance,Active,20,72076
@@ -3479,7 +3481,7 @@ Unknown,3291,Calcutta Victoria,Active,42,29579
 Unknown,3291,Calcutta Visionaries,Active,92,85107
 Unknown,3291,Calcutta West Ridge,Active,22,27153
 Unknown,3291,Calcutta Yuvis,Active,34,83002
-Unknown,3291,Central Calcutta,Active,126,22067
+Unknown,3291,Central Calcutta,Active,125,22067
 Unknown,3291,Central Gardens Calcutta,Active,13,53865
 Unknown,3291,Chandan Nagar,Active,24,16158
 Unknown,3291,Contai,Active,40,24383
@@ -3520,7 +3522,7 @@ Unknown,3291,New Ballygunge,Active,9,31767
 Unknown,3291,North Calcutta,Active,19,16186
 Unknown,3291,Port Blair,Active,29,16188
 Unknown,3291,Port Blair NextGen,Active,28,223161
-Unknown,3291,Purulia,Active,90,16189
+Unknown,3291,Purulia,Active,91,16189
 Unknown,3291,Rabindra Sarobar,Active,23,29776
 Unknown,3291,Salt Lake Central,Active,27,30032
 Unknown,3291,"Salt Lake City, Calcutta",Active,46,16191
@@ -3531,7 +3533,8 @@ Unknown,3291,Salt Lake Silicon Valley,Active,24,90507
 Unknown,3291,Serampore,Active,27,16193
 Unknown,3291,Sonargaon Kolkata,Active,11,89646
 Unknown,3291,Sonarpur,Active,22,23960
-Unknown,3291,South Calcutta,Active,23,16196
+Unknown,3291,South Calcutta,Active,24,16196
+Unknown,3291,Sundarban,Active,13,23172
 Unknown,3291,Tollygunge,Active,25,16200
 Zone 6,3292,Samdrup Paro,Active,16,227868
 Zone 6,3292,Thimphu,Active,27,84427
@@ -3541,14 +3544,14 @@ Zone 6,3292,Boudha,Active,21,90233
 Zone 6,3292,Burtibang Dhorpatan,Active,12,90184
 Zone 6,3292,Butwal Metro,Active,25,228305
 Zone 6,3292,Capital Butwal,Active,27,221964
-Zone 6,3292,Central Banke,Active,29,222032
+Zone 6,3292,Central Banke,Active,35,222032
 Zone 6,3292,Central Kapilvastu,Active,22,223422
 Zone 6,3292,Dhulikhel Shikhalapur,Active,14,226059
-Zone 6,3292,E-Club of Medicofusion Hybrid Nepal,Active,42,221981
+Zone 6,3292,E-Club of Medicofusion Hybrid Nepal,Active,44,221981
 Zone 6,3292,E-Club of Namobuddha,Active,18,226271
 Zone 6,3292,"Gandaki, Pokhara",Active,14,225051
 Zone 6,3292,Gorkha,Active,31,60435
-Zone 6,3292,Greenland Kathmandu,Active,27,222560
+Zone 6,3292,Greenland Kathmandu,Active,28,222560
 Zone 6,3292,Ilam,Active,10,224522
 Zone 6,3292,Itahari Yugal,Active,16,223568
 Zone 6,3292,Kapan,Active,19,88043
@@ -3568,5 +3571,5 @@ Zone 6,3292,Pokhara Valley,Active,38,226771
 Zone 6,3292,Purbi Chitwan,Active,32,222611
 Zone 6,3292,Rampur,Active,19,222151
 Zone 6,3292,Rapti,Active,25,225137
-Zone 6,3292,Resunga Gulmi,Active,23,225457
+Zone 6,3292,Resunga Gulmi,Active,24,225457
 Zone 6,3292,Solukhumbu,Active,16,224543

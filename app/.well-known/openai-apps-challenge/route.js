@@ -3,7 +3,7 @@
 
 export const dynamic = 'force-dynamic';
 
-const CHALLENGE_TOKEN = process.env.OPENAI_APPS_CHALLENGE_TOKEN || 'ph1AUVZWlyHGibAi2SQ9ICgqLrdDfm_ffAy65gQ9kLo';
+const CHALLENGE_TOKEN = process.env.OPENAI_APPS_CHALLENGE_TOKEN || 'ph1AUVZW1yHGibAi2SQ9ICgqLrdDfm_fFaY65gQ9kLo';
 
 export async function GET() {
     return new Response(CHALLENGE_TOKEN, {

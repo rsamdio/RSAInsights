@@ -4,7 +4,7 @@ const path = require('path');
 
 const currMasterFile = 'fulldata/MasterData.xlsx';
 const prevMasterFile = 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
-const DATA_AS_OF_DATE = '15 Sep 2026'; // Configurable master data release date
+const DATA_AS_OF_DATE = '30 Sep 2026'; // Configurable master data release date
 const CURRENT_EXCHANGE_RATE = 96; // Monthly exchange rate (INR per USD) for current data
 const BASELINE_EXCHANGE_RATE = 95; // Fixed 1 July baseline exchange rate (INR per USD)
 
@@ -22,7 +22,11 @@ function parseCurrency(val) {
 console.log(`Processing Current Data: ${currMasterFile}`);
 const currWb = xlsx.readFile(currMasterFile);
 
-const zoneSheet = readSheetAsJson(currWb, 'Zone45678');
+const zoneSheet = readSheetAsJson(currWb, 'Zone45678').filter(row => {
+    const dist = (row['RI District'] || '').toString().trim();
+    const zone = (row['RI Zone'] || '').toString().trim();
+    return dist && dist !== 'Grand Total' && zone;
+});
 let arrearsSheet = readSheetAsJson(currWb, 'Arrears');
 let noOfficersSheet = readSheetAsJson(currWb, 'No Rotaract club officers');
 let rotarySheet = readSheetAsJson(currWb, 'Rotary Club Details');
@@ -37,11 +41,15 @@ let rotaractByDistrictSheet = readSheetAsJson(currWb, 'Rotaract by District');
 let newClubsByCountrySheet = readSheetAsJson(currWb, 'NewClubsByCountry');
 let newClubsByZoneSheet = readSheetAsJson(currWb, 'NewClubsByZone');
 let newClubsByDistrictSheet = readSheetAsJson(currWb, 'NewClubsByDistrict');
+let worldwideClubsSheet = readSheetAsJson(currWb, 'World Wide Rotaract Clubs');
 let prevZoneSheet = [];
 if (prevMasterFile && fs.existsSync(prevMasterFile)) {
     console.log(`Processing Previous Data: ${prevMasterFile}`);
     const prevWb = xlsx.readFile(prevMasterFile);
-    prevZoneSheet = readSheetAsJson(prevWb, prevWb.SheetNames[0]); // First sheet is the summary
+    prevZoneSheet = readSheetAsJson(prevWb, prevWb.SheetNames[0]).filter(row => {
+        const dist = (row['RI District'] || '').toString().trim();
+        return dist && dist !== 'Grand Total';
+    });
 }
 
 const prevJulyData = {};
@@ -1080,6 +1088,40 @@ const newClubsZoneData = Object.values(zoneNewClubsAgg);
 
 const totalWorldwideNewClubs = newClubsDistrictData.reduce((sum, r) => sum + r.newClubs, 0);
 
+// Process Worldwide Rotaract Clubs
+const worldwideClubs = (worldwideClubsSheet || [])
+    .map(r => ({
+        clubId: String(r['Rotaract Club ID'] || '').trim(),
+        clubName: (r['Rotaract Club Name'] || '').toString().trim(),
+        district: (r['District'] || '').toString().trim(),
+        country: (r['Country/Geographic Area'] || '').toString().trim(),
+        base: (r['Rotaract Club Base'] || '').toString().trim() || 'Unknown',
+        status: (r['Rotaract Club Status'] || '').toString().trim() || 'Active',
+        members: parseInt(r['Total Reported Members']) || 0,
+        reportedTerm: (r['President /Advisor Term Reported'] || '').toString().trim(),
+        sponsorClubs: (r['Sponsor Clubs'] || '').toString().trim()
+    }))
+    .filter(c => c.clubName || c.clubId)
+    .sort((a, b) => b.members - a.members);
+
+let commRank = 1;
+let univRank = 1;
+worldwideClubs.forEach((c, idx) => {
+    c.worldwideRank = idx + 1;
+    const baseLower = c.base.toLowerCase();
+    if (baseLower === 'community') {
+        c.baseRank = commRank++;
+    } else if (baseLower === 'university') {
+        c.baseRank = univRank++;
+    }
+});
+
+const topClubsWorldwide = worldwideClubs.slice(0, 100);
+const topCommunityClubsWorldwide = worldwideClubs.filter(c => c.base.toLowerCase() === 'community').slice(0, 100);
+const topUniversityClubsWorldwide = worldwideClubs.filter(c => c.base.toLowerCase() === 'university').slice(0, 100);
+
+fs.writeFileSync('data/worldwide_clubs.json', JSON.stringify(worldwideClubs, null, 2));
+
 const worldwideSummary = {
     totalClubs: totalWorldwideClubs,
     totalClubsDelta: prevWorldwideClubs > 0 ? calcDelta(totalWorldwideClubs, prevWorldwideClubs) : null,
@@ -1100,6 +1142,11 @@ const worldwideSummary = {
     newClubsDistrictData: newClubsDistrictData,
     newClubsCountryData: newClubsCountryData,
     newClubsZoneData: newClubsZoneData,
+    topClubsWorldwide: topClubsWorldwide,
+    topCommunityClubsWorldwide: topCommunityClubsWorldwide,
+    topUniversityClubsWorldwide: topUniversityClubsWorldwide,
+    totalCommunityClubsWorldwide: commRank - 1,
+    totalUniversityClubsWorldwide: univRank - 1,
     dataAsOf: DATA_AS_OF_DATE,
     lastUpdated: DATA_AS_OF_DATE
 };

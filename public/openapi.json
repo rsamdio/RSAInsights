@@ -409,7 +409,7 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "description": "Number of top records to return (1-50, default 10)",
+            "description": "Number of top records to return (1-100, default 10)",
             "schema": {
               "type": "integer",
               "default": 10
@@ -1612,7 +1612,7 @@
             "name": "type",
             "in": "query",
             "required": false,
-            "description": "Focus dataset: 'summary', 'country', 'district', 'interact', 'new_clubs', or 'all'",
+            "description": "Focus dataset: 'clubs', 'summary', 'country', 'district', 'interact', 'new_clubs', or 'all'",
             "schema": {
               "type": "string",
               "enum": [
@@ -1621,9 +1621,34 @@
                 "country",
                 "district",
                 "interact",
-                "new_clubs"
+                "new_clubs",
+                "clubs"
               ],
               "default": "all"
+            }
+          },
+          {
+            "name": "base",
+            "in": "query",
+            "required": false,
+            "description": "Filter worldwide clubs by base: 'all' (default), 'community', or 'university'",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "all",
+                "community",
+                "university"
+              ],
+              "default": "all"
+            }
+          },
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Filter worldwide clubs or districts by district number",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -1677,7 +1702,8 @@
                 "clubs",
                 "club_growth_pct",
                 "club_growth_abs",
-                "district"
+                "district",
+                "name"
               ]
             }
           },
@@ -3150,6 +3176,44 @@
             }
           },
           "zoneData": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "clubs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rank": { "type": "integer" },
+                "worldwideRank": { "type": "integer" },
+                "baseRank": { "type": "integer" },
+                "clubId": { "type": "string" },
+                "clubName": { "type": "string" },
+                "district": { "type": "string" },
+                "country": { "type": "string" },
+                "base": { "type": "string" },
+                "status": { "type": "string" },
+                "members": { "type": "integer" },
+                "reportedTerm": { "type": "string" },
+                "sponsorClubs": { "type": "string" }
+              }
+            }
+          },
+          "topClubsWorldwide": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "topCommunityClubsWorldwide": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "topUniversityClubsWorldwide": {
             "type": "array",
             "items": {
               "type": "object"

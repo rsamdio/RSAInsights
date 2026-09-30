@@ -114,6 +114,7 @@ const expectedJsonFiles = [
     'rotary_no_interact.json',
     'unified_issues.json',
     'worldwide_summary.json',
+    'worldwide_clubs.json',
     'new_clubs.json',
     'trf_contributions.json',
     'district_officers.json'

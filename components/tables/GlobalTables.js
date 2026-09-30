@@ -4,6 +4,11 @@ import DataTable from './DataTable';
 import Link from 'next/link';
 
 export default function GlobalTables({ zoneTableData, arrearsData, officersData, rotaryData, rotaryNoInteractData, newClubsData, trfData, allClubsData }) {
+    const validZoneData = (zoneTableData || []).filter(row => {
+        const d = (row['RI District'] || '').toString().trim();
+        return d && d !== 'Grand Total';
+    });
+
     const districtCols = [
         { 
             header: 'District', 
@@ -459,7 +464,7 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
     ];
 
     const tabsData = [
-        { label: 'District Summary', content: () => <DataTable data={zoneTableData} columns={districtCols} exportFilename="District_Summary" /> },
+        { label: 'District Summary', content: () => <DataTable data={validZoneData} columns={districtCols} exportFilename="District_Summary" /> },
         { label: 'Clubs in Arrears', content: () => <DataTable data={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" /> },
         { label: 'Missing Officers', content: () => <DataTable data={officersData} columns={officersCols} exportFilename="Missing_Officers" /> },
         { label: 'Rotary w/o Rotaract', content: () => <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" /> },
