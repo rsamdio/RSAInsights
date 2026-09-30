@@ -92,7 +92,7 @@
                   "$ref": "#/components/schemas/SummaryResponse"
                 },
                 "example": {
-                  "dataAsOf": "15 Sep 2026",
+                  "dataAsOf": "30 Sep 2026",
                   "overall": {
                     "outstanding": 10768977,
                     "arrearsClubs": 1021,

@@ -10,7 +10,7 @@ const HeaderFilters = dynamic(() => import('@/components/ui/HeaderFilters'), {
 
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
-import { getDashboardSummary, getAllClubs, getArrears } from '@/lib/api';
+import { getDashboardSummary, getAllClubs, getArrears, getDataAsOfDate } from '@/lib/api';
 import Analytics from '@/components/ui/Analytics';
 import NavigationProgress from '@/components/ui/NavigationProgress';
 import BackToTop from '@/components/ui/BackToTop';
@@ -173,8 +173,7 @@ const globalSchemas = [
 ];
 
 export default function RootLayout({ children }) {
-  const summary = getDashboardSummary();
-  const dataAsOf = summary?.dataAsOf || summary?.lastUpdated || '13 Aug 2026';
+  const dataAsOf = getDataAsOfDate();
   let formattedDate = dataAsOf;
   if (dataAsOf && (dataAsOf.includes('T') || dataAsOf.includes('-'))) {
     try {

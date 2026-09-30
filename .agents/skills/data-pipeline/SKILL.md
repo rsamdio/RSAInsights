@@ -39,9 +39,18 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
 ## How to Update Master Data
 
 1. Place the new master Excel file in `fulldata/MasterData.xlsx`.
-2. Update the `DATA_AS_OF_DATE` and `CURRENT_EXCHANGE_RATE` constants at the top of `scripts/generate_dashboard_data.js` (e.g., `'13 Aug 2026'`, `96`).
-3. Run the generator script:
+2. Update the release date and exchange rates in `data/metadata.json` (the single source of truth for all components, APIs, and ETL scripts):
+   ```json
+   {
+     "dataAsOf": "30 Sep 2026",
+     "lastUpdated": "30 Sep 2026",
+     "currentExchangeRateINR": 96,
+     "baselineExchangeRateINR": 95
+   }
+   ```
+3. Run the generator script (or `npm run build`, which automatically runs it before building):
    ```bash
    npm run generate-data
    ```
 4. Verify generated JSON and CSV files in `data/` and run `npm run validate-harness` to confirm data integrity.
+

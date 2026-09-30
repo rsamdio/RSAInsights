@@ -2,11 +2,36 @@ const xlsx = require('xlsx');
 const fs = require('fs');
 const path = require('path');
 
+// =================================================================================================
+// SINGLE SOURCE OF TRUTH:
+// To change the data release date, exchange rates, or baseline dates across the entire dashboard:
+// -> Edit "data/metadata.json"  OR  Run: npm run set-date "<Date>" (e.g. npm run set-date "30 Sep 2026")
+// It will automatically propagate to all UI badges, footers, REST APIs, and MCP endpoints.
+// =================================================================================================
+let metadata = {};
+const metaPath = path.join(__dirname, '..', 'data', 'metadata.json');
+try {
+    if (fs.existsSync(metaPath)) {
+        metadata = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    }
+} catch (e) {
+    console.warn('Notice: Could not load data/metadata.json, falling back to defaults.');
+}
+
 const currMasterFile = 'fulldata/MasterData.xlsx';
 const prevMasterFile = 'basedata/Zone45678 - 9July2026.xlsx'; // Defaulting to 9 July for deltas
-const DATA_AS_OF_DATE = '30 Sep 2026'; // Configurable master data release date
-const CURRENT_EXCHANGE_RATE = 96; // Monthly exchange rate (INR per USD) for current data
-const BASELINE_EXCHANGE_RATE = 95; // Fixed 1 July baseline exchange rate (INR per USD)
+const DATA_AS_OF_DATE = process.env.DATA_AS_OF_DATE || metadata.dataAsOf || '30 Sep 2026'; // Configurable master data release date
+const CURRENT_EXCHANGE_RATE = Number(process.env.CURRENT_EXCHANGE_RATE || metadata.currentExchangeRateINR) || 96; // Monthly exchange rate (INR per USD) for current data
+const BASELINE_EXCHANGE_RATE = Number(process.env.BASELINE_EXCHANGE_RATE || metadata.baselineExchangeRateINR) || 95; // Fixed 1 July baseline exchange rate (INR per USD)
+
+// Sync metadata.json if updated
+if (metadata.dataAsOf !== DATA_AS_OF_DATE || metadata.currentExchangeRateINR !== CURRENT_EXCHANGE_RATE) {
+    metadata.dataAsOf = DATA_AS_OF_DATE;
+    metadata.lastUpdated = DATA_AS_OF_DATE;
+    metadata.currentExchangeRateINR = CURRENT_EXCHANGE_RATE;
+    metadata.baselineExchangeRateINR = BASELINE_EXCHANGE_RATE;
+    fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + '\n');
+}
 
 function readSheetAsJson(wb, sheetName, options = { defval: "" }) {
     if (!wb.SheetNames.includes(sheetName)) return [];

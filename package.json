@@ -5,9 +5,10 @@
   "main": "scripts/generate_dashboard_data.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate_dashboard_data.js && next build",
     "start": "next start",
     "generate-data": "node scripts/generate_dashboard_data.js",
+    "set-date": "node scripts/set_date.js",
     "validate-harness": "node scripts/validate_harness.js",
     "mcp": "node scripts/mcp_server.js"
   },

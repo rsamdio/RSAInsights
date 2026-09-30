@@ -78,11 +78,12 @@ This index is the primary navigation layer for AI coding agents. It provides a d
                          │
                          ▼
                      [data/]
-        - dashboard_summary.json  - all_clubs.json (2,820+ clubs)
-        - zone_summary.json       - arrears.json & no_officers.json
-        - worldwide_summary.json  - worldwide_clubs.json (9,820+ clubs)
-        - unified_issues.json     - trf_contributions.json
-        - district_officers.json  - new_clubs.json (+ CSV equivalents)
+        - metadata.json (release date & rates) - all_clubs.json (2,820+ clubs)
+        - dashboard_summary.json  - arrears.json & no_officers.json
+        - zone_summary.json       - worldwide_clubs.json (9,820+ clubs)
+        - worldwide_summary.json  - trf_contributions.json
+        - unified_issues.json     - new_clubs.json (+ CSV equivalents)
+        - district_officers.json
                          │
                          ▼
                     [lib/api.js]
@@ -103,6 +104,9 @@ npm run dev
 
 # Run master data generation / ETL pipeline
 npm run generate-data
+
+# Update data release date everywhere (single source of truth)
+npm run set-date "30 Sep 2026"
 
 # Run full harness verification (file links, data integrity, no-em-dash check)
 npm run validate-harness

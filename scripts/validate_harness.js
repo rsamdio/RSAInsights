@@ -105,6 +105,7 @@ docFiles.forEach(docFile => {
 console.log('\n\x1b[1m[2/4] Checking Data Payloads & Schema Integrity...\x1b[0m');
 
 const expectedJsonFiles = [
+    'metadata.json',
     'dashboard_summary.json',
     'zone_summary.json',
     'all_clubs.json',

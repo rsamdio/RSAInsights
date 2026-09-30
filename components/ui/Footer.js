@@ -1,6 +1,8 @@
 'use client';
 
-export default function Footer({ lastUpdated = '13 Aug 2026' }) {
+import metadata from '@/data/metadata.json';
+
+export default function Footer({ lastUpdated = metadata.lastUpdated }) {
     return (
         <footer style={{
             marginTop: '60px',
