@@ -149,6 +149,9 @@ function createEmptyStats() {
         arrearsClubs: 0,
         atRisk: 0,
         noOfficers: 0,
+        compliantClubs: 0,
+        reportedOfficers: 0,
+        paidClubs: 0,
         totalClubs: 0,
         totalMembers: 0,
         totalRotary: 0,
@@ -819,6 +822,38 @@ Object.keys(summary.zones).forEach(z => {
         curr.clubsGrowthPct = clubsGrowthPct;
         curr.interactGrowthAbs = interactGrowthAbs;
         curr.interactGrowthPct = interactGrowthPct;
+    });
+});
+
+// Calculate district-level compliance from allClubsSheet
+const distCompMap = {};
+allClubsSheet.forEach(c => {
+    const dist = (c['District'] || '').toString().replace(/\.0$/, '');
+    if (!dist) return;
+    if (!distCompMap[dist]) {
+        distCompMap[dist] = { compliantClubs: 0, reportedOfficers: 0, paidClubs: 0 };
+    }
+    const isPaid = (c['Arrears'] !== 'Yes');
+    const isReported = (c['Officers'] === 'Yes');
+    if (isPaid) distCompMap[dist].paidClubs++;
+    if (isReported) distCompMap[dist].reportedOfficers++;
+    if (isPaid && isReported) distCompMap[dist].compliantClubs++;
+});
+
+Object.keys(summary.zones).forEach(z => {
+    const zoneData = summary.zones[z];
+    Object.keys(zoneData.districts).forEach(d => {
+        const curr = zoneData.districts[d];
+        const comp = distCompMap[d] || { compliantClubs: 0, reportedOfficers: 0, paidClubs: 0 };
+        curr.compliantClubs = comp.compliantClubs;
+        curr.reportedOfficers = comp.reportedOfficers;
+        curr.paidClubs = comp.paidClubs;
+        zoneData.stats.compliantClubs = (zoneData.stats.compliantClubs || 0) + comp.compliantClubs;
+        zoneData.stats.reportedOfficers = (zoneData.stats.reportedOfficers || 0) + comp.reportedOfficers;
+        zoneData.stats.paidClubs = (zoneData.stats.paidClubs || 0) + comp.paidClubs;
+        summary.overall.compliantClubs = (summary.overall.compliantClubs || 0) + comp.compliantClubs;
+        summary.overall.reportedOfficers = (summary.overall.reportedOfficers || 0) + comp.reportedOfficers;
+        summary.overall.paidClubs = (summary.overall.paidClubs || 0) + comp.paidClubs;
     });
 });
 

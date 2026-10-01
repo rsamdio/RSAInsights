@@ -133,6 +133,9 @@ export default async function ZonePage({ params, searchParams }) {
                     arrearsClubs: distList.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
                     atRisk: distList.reduce((sum, d) => sum + (d.atRisk || 0), 0),
                     noOfficers: distList.reduce((sum, d) => sum + (d.noOfficers || 0), 0),
+                    compliantClubs: distList.reduce((sum, d) => sum + (d.compliantClubs || 0), 0),
+                    reportedOfficers: distList.reduce((sum, d) => sum + (d.reportedOfficers || 0), 0),
+                    paidClubs: distList.reduce((sum, d) => sum + (d.paidClubs || 0), 0),
                     totalRotary: distList.reduce((sum, d) => sum + (d.totalRotary || 0), 0),
                     rotaryWithSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithSponsor || 0), 0),
                     rotaryWithoutSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithoutSponsor || 0), 0),
@@ -164,6 +167,9 @@ export default async function ZonePage({ params, searchParams }) {
             arrearsClubs: selectedDistStats.reduce((sum, d) => sum + (d.arrearsClubs || 0), 0),
             atRisk: selectedDistStats.reduce((sum, d) => sum + (d.atRisk || 0), 0),
             noOfficers: selectedDistStats.reduce((sum, d) => sum + (d.noOfficers || 0), 0),
+            compliantClubs: selectedDistStats.reduce((sum, d) => sum + (d.compliantClubs || 0), 0),
+            reportedOfficers: selectedDistStats.reduce((sum, d) => sum + (d.reportedOfficers || 0), 0),
+            paidClubs: selectedDistStats.reduce((sum, d) => sum + (d.paidClubs || 0), 0),
             
             totalRotary: selectedDistStats.reduce((sum, d) => sum + (d.totalRotary || 0), 0),
             rotaryWithSponsor: selectedDistStats.reduce((sum, d) => sum + (d.rotaryWithSponsor || 0), 0),
@@ -239,6 +245,9 @@ export default async function ZonePage({ params, searchParams }) {
             arrearsClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.arrearsClubs || 0), 0),
             atRisk: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.atRisk || 0), 0),
             noOfficers: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.noOfficers || 0), 0),
+            compliantClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.compliantClubs || 0), 0),
+            reportedOfficers: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.reportedOfficers || 0), 0),
+            paidClubs: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.paidClubs || 0), 0),
             
             totalRotary: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.totalRotary || 0), 0),
             rotaryWithSponsor: Object.values(filteredZones).reduce((sum, z) => sum + (z.stats.rotaryWithSponsor || 0), 0),
@@ -432,6 +441,56 @@ export default async function ZonePage({ params, searchParams }) {
         },
     };
 
+    // Compute district compliance from filtered clubs for exact leaderboard rankings
+    const distCompMap = {};
+    filteredAllClubsData.forEach(c => {
+        const dist = (c['District'] || c.district || '').toString().replace(/\.0$/, '');
+        if (!dist) return;
+        if (!distCompMap[dist]) {
+            distCompMap[dist] = { district: dist, total: 0, compliant: 0, reported: 0, paid: 0 };
+        }
+        distCompMap[dist].total += 1;
+        const isPaid = (c['Arrears'] !== 'Yes' && c.isArrears !== true);
+        const isReported = (c['Officers'] === 'Yes' && c.isNoOfficers !== true);
+        if (isPaid) distCompMap[dist].paid += 1;
+        if (isReported) distCompMap[dist].reported += 1;
+        if (isPaid && isReported) distCompMap[dist].compliant += 1;
+    });
+    const complianceData = Object.values(distCompMap).map(d => ({
+        ...d,
+        compPct: d.total > 0 ? (d.compliant / d.total) * 100 : 0,
+        paidPct: d.total > 0 ? (d.paid / d.total) * 100 : 0,
+        reportPct: d.total > 0 ? (d.reported / d.total) * 100 : 0
+    })).filter(d => d.total > 0);
+
+    // Build optimized club payload for member leaderboards (Overall, Community, University)
+    const topOverall = [...filteredAllClubsData]
+        .sort((a, b) => Number(b['Total Reported Members'] || 0) - Number(a['Total Reported Members'] || 0))
+        .slice(0, 100);
+    const topComm = [...filteredAllClubsData]
+        .filter(c => (c['Rotaract Club Base'] || '').toString().toLowerCase().includes('community'))
+        .sort((a, b) => Number(b['Total Reported Members'] || 0) - Number(a['Total Reported Members'] || 0))
+        .slice(0, 100);
+    const topUniv = [...filteredAllClubsData]
+        .filter(c => (c['Rotaract Club Base'] || '').toString().toLowerCase().includes('university'))
+        .sort((a, b) => Number(b['Total Reported Members'] || 0) - Number(a['Total Reported Members'] || 0))
+        .slice(0, 100);
+
+    const leaderboardClubsMap = new Map();
+    [...topOverall, ...topComm, ...topUniv].forEach(c => {
+        const id = c['Club ID'] || c['Rotaract Club ID'];
+        if (id && !leaderboardClubsMap.has(id)) {
+            leaderboardClubsMap.set(id, {
+                'Club ID': id,
+                'Club Name': c['Club Name'] || c['Rotaract Club Name'],
+                'District': c['District'],
+                'Rotaract Club Base': c['Rotaract Club Base'],
+                'Total Reported Members': c['Total Reported Members'] || 0
+            });
+        }
+    });
+    const leaderboardClubsData = Array.from(leaderboardClubsMap.values());
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <JsonLd schema={zoneSchema} />
@@ -492,10 +551,9 @@ export default async function ZonePage({ params, searchParams }) {
                 arrearsData={[...filteredArrearsData]
                     .sort((a, b) => Number(b['Outstanding INR'] || b.outstanding || 0) - Number(a['Outstanding INR'] || a.outstanding || 0))
                     .slice(0, 100)} 
-                allClubsData={[...filteredAllClubsData]
-                    .sort((a, b) => Number(b['Total Reported Members'] || 0) - Number(a['Total Reported Members'] || 0))
-                    .slice(0, 100)} 
+                allClubsData={leaderboardClubsData} 
                 trfData={filteredTrfData} 
+                complianceData={complianceData}
             />
 
             <h2 className="section-title">Districts in {fullZoneName}</h2>

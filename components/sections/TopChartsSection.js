@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Leaderboard from '../ui/Leaderboard';
 
-export default function TopChartsSection({ summary, arrearsData, allClubsData, trfData }) {
+export default function TopChartsSection({ summary, arrearsData, allClubsData, trfData, complianceData }) {
     const [limit, setLimit] = useState(5);
 
     // 1. Top Contributing Clubs
@@ -193,6 +193,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: `${d.missingPct.toFixed(1)}%`,
+            subLabel: <span>{d.noOfficers} of {d.totalClubs} clubs</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.missingPct / maxVal) * 100)))
         }));
     }, [distStats]);
@@ -361,19 +362,45 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: d.noOfficers.toLocaleString(),
+            subLabel: <span>{((d.noOfficers / d.totalClubs) * 100).toFixed(1)}% missing</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.noOfficers / maxVal) * 100)))
         }));
     }, [distStats]);
 
-    // Compute exact compliance from allClubsData
+    // Compute exact compliance from complianceData (server-provided) or fallback to distStats
     const distCompList = useMemo(() => {
+        if (complianceData && complianceData.length > 0) {
+            return complianceData;
+        }
+
+        // Fallback 1: Derive from distStats if available
+        if (distStats && distStats.length > 0) {
+            return distStats.map(d => {
+                const total = d.totalClubs || 0;
+                const reported = d.reportedOfficers !== undefined ? d.reportedOfficers : Math.max(0, total - (d.noOfficers || 0));
+                const compliant = d.compliantClubs !== undefined ? d.compliantClubs : 0;
+                const paid = d.paidClubs !== undefined ? d.paidClubs : Math.max(0, total - (d.arrearsClubs || 0));
+                return {
+                    district: d.district,
+                    total,
+                    compliant,
+                    reported,
+                    paid,
+                    compPct: total > 0 ? (compliant / total) * 100 : 0,
+                    reportPct: total > 0 ? (reported / total) * 100 : 0,
+                    paidPct: total > 0 ? (paid / total) * 100 : 0
+                };
+            }).filter(d => d.total > 0);
+        }
+
+        // Fallback 2: Compute from allClubsData if provided
         const distCompliance = {};
         if (allClubsData) {
             allClubsData.forEach(c => {
                 const dist = c['District'] ? c['District'].toString().replace(/\.0$/, '') : '';
                 if (!dist) return;
                 if (!distCompliance[dist]) {
-                    distCompliance[dist] = { total: 0, compliant: 0, reported: 0, paid: 0 };
+                    distCompliance[dist] = { district: dist, total: 0, compliant: 0, reported: 0, paid: 0 };
                 }
                 distCompliance[dist].total += 1;
                 
@@ -386,14 +413,13 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
             });
         }
 
-        return Object.keys(distCompliance).map(d => ({
-            district: d,
-            ...distCompliance[d],
-            compPct: (distCompliance[d].compliant / distCompliance[d].total) * 100,
-            paidPct: (distCompliance[d].paid / distCompliance[d].total) * 100,
-            reportPct: (distCompliance[d].reported / distCompliance[d].total) * 100
+        return Object.values(distCompliance).map(d => ({
+            ...d,
+            compPct: d.total > 0 ? (d.compliant / d.total) * 100 : 0,
+            paidPct: d.total > 0 ? (d.paid / d.total) * 100 : 0,
+            reportPct: d.total > 0 ? (d.reported / d.total) * 100 : 0
         })).filter(d => d.total > 0);
-    }, [allClubsData]);
+    }, [complianceData, distStats, allClubsData]);
 
     // 16. Highest % Fully Compliant Clubs
     const topFullyCompliant = useMemo(() => {
@@ -403,6 +429,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: `${d.compPct.toFixed(1)}%`,
+            subLabel: <span>{d.compliant} of {d.total} clubs</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.compPct / maxVal) * 100)))
         }));
     }, [distCompList]);
@@ -416,6 +443,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: d.compliant.toLocaleString(),
+            subLabel: <span>{d.compPct.toFixed(1)}% compliant</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.compliant / maxVal) * 100)))
         }));
     }, [distCompList]);
@@ -428,6 +456,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: `${d.reportPct.toFixed(1)}%`,
+            subLabel: <span>{d.reported} of {d.total} clubs</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.reportPct / maxVal) * 100)))
         }));
     }, [distCompList]);
@@ -441,6 +470,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         return list.map(d => ({
             label: `District ${d.district}`,
             value: d.reported.toLocaleString(),
+            subLabel: <span>{d.reportPct.toFixed(1)}% reported</span>,
             progressPct: Math.max(4, Math.min(100, Math.round((d.reported / maxVal) * 100)))
         }));
     }, [distCompList]);
