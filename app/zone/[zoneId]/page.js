@@ -139,8 +139,27 @@ export default async function ZonePage({ params, searchParams }) {
                     totalRotary: distList.reduce((sum, d) => sum + (d.totalRotary || 0), 0),
                     rotaryWithSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithSponsor || 0), 0),
                     rotaryWithoutSponsor: distList.reduce((sum, d) => sum + (d.rotaryWithoutSponsor || 0), 0),
+                    arrUniv: distList.reduce((sum, d) => sum + (d.arrUniv || 0), 0),
+                    arrComm: distList.reduce((sum, d) => sum + (d.arrComm || 0), 0),
+                    noOffUniv: distList.reduce((sum, d) => sum + (d.noOffUniv || 0), 0),
+                    noOffComm: distList.reduce((sum, d) => sum + (d.noOffComm || 0), 0),
+                    trfClubs: distList.reduce((sum, d) => sum + (d.trfClubs || 0), 0),
                     trfContributionsUSD: distList.reduce((sum, d) => sum + (d.trfContributionsUSD || 0), 0),
+                    trfAnnualUSD: distList.reduce((sum, d) => sum + (d.trfAnnualUSD || 0), 0),
+                    trfPolioUSD: distList.reduce((sum, d) => sum + (d.trfPolioUSD || 0), 0),
+                    trfOtherUSD: distList.reduce((sum, d) => sum + (d.trfOtherUSD || 0), 0),
+                    trfEndowmentUSD: distList.reduce((sum, d) => sum + (d.trfEndowmentUSD || 0), 0),
                     newTotalClubs: distList.reduce((sum, d) => sum + (d.newTotalClubs || 0), 0),
+                    totalUniv: distList.reduce((sum, d) => sum + (d.totalUniv || 0), 0),
+                    totalComm: distList.reduce((sum, d) => sum + (d.totalComm || 0), 0),
+                    membersUniv: distList.reduce((sum, d) => sum + (d.membersUniv || 0), 0),
+                    membersComm: distList.reduce((sum, d) => sum + (d.membersComm || 0), 0),
+                    totalInteractClubs: distList.reduce((sum, d) => sum + (d.totalInteractClubs || 0), 0),
+                    suspendedInteractClubs: distList.reduce((sum, d) => sum + (d.suspendedInteractClubs || 0), 0),
+                    rotaractWithInteract: distList.reduce((sum, d) => sum + (d.rotaractWithInteract || 0), 0),
+                    rotaryWithInteract: distList.reduce((sum, d) => sum + (d.rotaryWithInteract || 0), 0),
+                    rotaryWithoutInteract: distList.reduce((sum, d) => sum + (d.rotaryWithoutInteract || 0), 0),
+                    rotaryWithSuspendedInteract: distList.reduce((sum, d) => sum + (d.rotaryWithSuspendedInteract || 0), 0)
                 };
 
                 filteredZones[zName] = {

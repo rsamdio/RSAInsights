@@ -424,7 +424,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
     // 16. Highest % Fully Compliant Clubs
     const topFullyCompliant = useMemo(() => {
         const list = [...distCompList]
-            .sort((a, b) => b.compPct - a.compPct);
+            .sort((a, b) => (b.compPct - a.compPct) || (b.compliant - a.compliant));
         const maxVal = list.length > 0 ? (list[0].compPct || 1) : 1;
         return list.map(d => ({
             label: `District ${d.district}`,
@@ -438,7 +438,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
     const topDistCompliantAbs = useMemo(() => {
         const list = [...distCompList]
             .filter(s => s.compliant > 0)
-            .sort((a, b) => b.compliant - a.compliant);
+            .sort((a, b) => (b.compliant - a.compliant) || (b.compPct - a.compPct));
         const maxVal = list.length > 0 ? (list[0].compliant || 1) : 1;
         return list.map(d => ({
             label: `District ${d.district}`,
@@ -451,7 +451,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
     // 17. Highest % Clubs Reporting Officers
     const topReportedOfficers = useMemo(() => {
         const list = [...distCompList]
-            .sort((a, b) => b.reportPct - a.reportPct);
+            .sort((a, b) => (b.reportPct - a.reportPct) || (b.reported - a.reported));
         const maxVal = list.length > 0 ? (list[0].reportPct || 1) : 1;
         return list.map(d => ({
             label: `District ${d.district}`,
@@ -465,7 +465,7 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
     const topReportedOfficersAbs = useMemo(() => {
         const list = [...distCompList]
             .filter(s => s.reported > 0)
-            .sort((a, b) => b.reported - a.reported);
+            .sort((a, b) => (b.reported - a.reported) || (b.reportPct - a.reportPct));
         const maxVal = list.length > 0 ? (list[0].reported || 1) : 1;
         return list.map(d => ({
             label: `District ${d.district}`,
