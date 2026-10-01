@@ -18,6 +18,7 @@ This document certifies the submission readiness of the **Rotaract South Asia An
 - **Terms of Service:** `https://insights.rsamdio.org/terms`
 - **Contact Desk:** `https://insights.rsamdio.org/contact`
 - **Official Contact Email:** `info@rsamdio.org`
+- **Demo Walkthrough Video:** `https://kommodo.ai/recordings/9MjZFB2CtgkObgU2u7WW`
 
 ---
 

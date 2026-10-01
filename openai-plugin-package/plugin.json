@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "rotaract-insights",
+  "name": "app_6abe1e08de148191ba09e8df055ecff5",
   "version": "1.0.0",
   "description": "Institutional analytics, KPIs, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, 7).",
   "author": {
@@ -105,25 +105,11 @@
             }
           ]
         },
-        "demo_recording_url": "https://insights.rsamdio.org",
+        "demo_recording_url": "https://kommodo.ai/recordings/9MjZFB2CtgkObgU2u7WW",
         "commerce": false,
         "commerce_description": "This plugin does not sell products or process payments. All data is informational and read-only."
       },
       "publication": {
-        "countries": [
-          "IN",
-          "NP",
-          "LK",
-          "US",
-          "GB",
-          "CA",
-          "AU",
-          "DE",
-          "FR",
-          "SG",
-          "AE",
-          "JP"
-        ],
         "release_notes": "Initial release of Rotaract Insights plugin providing 14 MCP tools for executive dashboard KPIs, Rotary districts, Rotaract clubs, compliance tracking, and Interact sponsorship data."
       }
     }
