@@ -66,7 +66,25 @@ export default async function DistrictPage({ params }) {
     const { districtId } = await params;
     const districtData = await getDistrictData(districtId);
     
-    if (!districtData) return <div style={{ padding: '20px' }}>District {districtId} not found.</div>;
+    if (!districtData) {
+        return (
+            <div style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+                <div className="card" style={{ padding: '50px 30px' }}>
+                    <div style={{ fontSize: '48px', marginBottom: '15px' }}>🔍</div>
+                    <h2 style={{ margin: '0 0 10px 0', color: 'var(--text-main)' }}>District Not Found</h2>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '25px' }}>
+                        District <strong>{districtId}</strong> could not be located in the master directory for Zones 4, 5, 6 & 7.
+                    </p>
+                    <Link 
+                        href="/" 
+                        style={{ display: 'inline-block', background: 'var(--primary)', color: '#fff', padding: '10px 20px', borderRadius: '6px', textDecoration: 'none', fontWeight: 600 }}
+                    >
+                        ← Back to Global Dashboard
+                    </Link>
+                </div>
+            </div>
+        );
+    }
     
     const stats = districtData.stats;
     const allIssues = await getUnifiedIssues();

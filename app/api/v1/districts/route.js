@@ -20,6 +20,7 @@ export async function GET(request) {
         const districts = await getDistricts(zone, sortBy, sortOrder, country);
         return NextResponse.json({
             count: districts.length,
+            total: districts.length,
             districts
         }, { headers: CACHE_HEADERS });
     } catch (error) {

@@ -197,7 +197,13 @@ export default function DataTable({ data, columns, onRowClick, exportFilename, i
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                     <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                        Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}–{Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, table.getFilteredRowModel().rows.length)} of {table.getFilteredRowModel().rows.length} results
+                        {(() => {
+                            const totalRows = table.getFilteredRowModel().rows.length;
+                            if (totalRows === 0) return 'Showing 0 results';
+                            const start = table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1;
+                            const end = Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, totalRows);
+                            return `Showing ${start}-${end} of ${totalRows} results`;
+                        })()}
                     </span>
                     <select
                         id={`page-size-select-${exportFilename || 'table'}`}

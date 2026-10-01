@@ -8,10 +8,10 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 
 ## 🚀 Key Features
 
-- **Executive Dashboard (`/`)**: Multi-select Zone & District filtering, real-time KPI cards, demographic distributions, top leaderboards, and deep data drilldown tables.
+- **Executive Dashboard (`/`)**: Multi-select Zone & District filtering, interactive KPI cards, demographic distributions, top leaderboards, and deep data drilldown tables.
 - **Zone Drilldown (`/zone/[zoneId]`)**: Granular zone-level analytics, district comparison directories, and demographic breakdowns.
 - **District Deep Dive (`/district/[districtId]`)**: District officer directories, compliance alerts (arrears, missing officers), TRF impact, and club rosters.
-- **Universal Club Report (`/club/[clubId]`)**: Dedicated profiles for all 2,820+ clubs across South Asia featuring membership standing, sponsorship details, TRF contributions, and compliance status.
+- **Universal Club Report (`/club/[clubId]`)**: Dedicated profiles for Rotaract clubs across South Asia featuring membership standing, sponsorship details, TRF contributions, and compliance status.
 - **Worldwide Statistics (`/worldwide`)**: Global Rotaract & Interact club and membership leaderboards with quarter-over-quarter and baseline growth analysis.
 - **Youth Service & Interact Ecosystem**: Tracking Rotary clubs without Rotaract/Interact sponsorship, Interact club growth, and expansion opportunity metrics.
 - **Public REST API (`/api/v1/`)**: 20 high-performance JSON endpoints covering summary, leaderboards, districts, clubs, compliance (including unified issues), opportunities, TRF, interact, and worldwide rankings.
@@ -46,7 +46,7 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 │   ├── docs/                 # Interactive API documentation
 │   ├── .well-known/          # Domain verification challenge
 │   └── api/                  # API endpoints
-│       ├── v1/               # 19 Public REST endpoints
+│       ├── v1/               # 20 Public REST endpoints
 │       ├── mcp/              # Remote MCP JSON-RPC 2.0 endpoint
 │       └── filters/          # UI filter options endpoint
 ├── components/               # Reusable React components
@@ -105,7 +105,7 @@ Run the local MCP stdio server for Cursor, Claude Desktop, or Antigravity:
 ```bash
 npm run mcp
 ```
-Or connect via HTTP JSON-RPC 2.0 at `POST https://insights.rsamdio.org/api/mcp`.
+Or connect remotely via SSE at `https://insights.rsamdio.org/sse` or HTTP JSON-RPC 2.0 at `POST https://insights.rsamdio.org/api/mcp`.
 
 ### 6. Automated Testing & Verification
 ```bash

@@ -47,6 +47,25 @@ function parseCurrency(val) {
 console.log(`Processing Current Data: ${currMasterFile}`);
 const currWb = xlsx.readFile(currMasterFile);
 
+// Pre-flight Schema & Sheet Assertions
+const REQUIRED_SHEETS = [
+    'Zone45678',
+    'Arrears',
+    'No Rotaract club officers',
+    'Rotary Club Details',
+    'All Rotaract Clubs',
+    'All Interact Clubs',
+    'Interact by District',
+    'ClubsTRFContribution',
+    'NewClubs',
+    'District Officers_Simplified'
+];
+const missingSheets = REQUIRED_SHEETS.filter(s => !currWb.SheetNames.includes(s));
+if (missingSheets.length > 0) {
+    console.warn(`\n[ETL Warning] Missing expected sheet(s) in ${currMasterFile}: ${missingSheets.join(', ')}`);
+    console.warn(`Available sheets in workbook: ${currWb.SheetNames.join(', ')}\n`);
+}
+
 const zoneSheet = readSheetAsJson(currWb, 'Zone45678').filter(row => {
     const dist = (row['RI District'] || '').toString().trim();
     const zone = (row['RI Zone'] || '').toString().trim();

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rotaract-insights",
+  "version": "1.0.0",
+  "description": "Institutional analytics, KPIs, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, 7).",
+  "author": {
+    "name": "Rotaract Insights",
+    "email": "insights@rsamdio.org",
+    "url": "https://insights.rsamdio.org"
+  },
+  "homepage": "https://insights.rsamdio.org",
+  "repository": "https://github.com/zeospec/rotaractsouthasiadata",
+  "license": "MIT",
+  "keywords": [
+    "rotary",
+    "rotaract",
+    "insights",
+    "south-asia",
+    "analytics",
+    "compliance",
+    "districts",
+    "charter",
+    "interact"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rotaract Insights",
+        "shortDescription": "South Asia Rotaract Analytics",
+        "longDescription": "Rotaract Insights delivers executive KPIs, district intelligence, membership demographics, and compliance monitoring for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, and 7), covering India, Nepal, and Sri Lanka. Query financial arrears, missing officer reports, Foundation (TRF) contributions, Interact sponsorship, and worldwide benchmarks directly in ChatGPT.",
+        "developerName": "Rotaract Insights",
+        "category": "Data & Analytics",
+        "capabilities": [
+          "District KPIs",
+          "Club Directory & Compliance",
+          "Foundation Giving",
+          "Interact Analytics"
+        ],
+        "websiteURL": "https://insights.rsamdio.org",
+        "supportURL": "https://insights.rsamdio.org/contact",
+        "privacyPolicyURL": "https://insights.rsamdio.org/privacy",
+        "termsOfServiceURL": "https://insights.rsamdio.org/terms",
+        "defaultPrompt": [
+          "Show Rotaract Insights executive summary KPIs",
+          "Which districts have the highest membership in Zone 5?",
+          "Find Rotaract clubs at risk of termination in India"
+        ],
+        "brandColor": "#D91B5C",
+        "brandColorDark": "#E83A78",
+        "composerIcon": "./assets/icon.png",
+        "composerIconDark": "./assets/icon-dark.png",
+        "logo": "./assets/logo.png",
+        "logoDark": "./assets/logo-dark.png",
+        "screenshots": [
+          "./assets/screenshot.png"
+        ]
+      },
+      "onboardingSkill": "./skills/south-asia-overview/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Executive macro summary retrieval",
+              "prompt": "Show the top-level South Asia Rotaract executive dashboard summary.",
+              "tools_triggered": "get_summary",
+              "expected_behavior": "Return macro KPIs covering total clubs, total reported members, financial arrears in INR and USD, missing officer reports, and zone breakdowns."
+            },
+            {
+              "description": "Multi-district rankings and leadership contacts",
+              "prompt": "List the top Rotary districts in Zone 5 sorted by reported membership.",
+              "tools_triggered": "get_districts",
+              "expected_behavior": "Return the list of districts in Zone 5 sorted by member count with leadership contacts (DG, DRR, DRC) and club counts."
+            },
+            {
+              "description": "Single district deep-dive dossier",
+              "prompt": "Give me a deep dive analysis on District 3191 including leadership, KPIs, and top clubs.",
+              "tools_triggered": "get_district_insights",
+              "expected_behavior": "Return comprehensive district metrics for District 3191 with leadership contacts, top 5 largest clubs, TRF giving, and compliance status."
+            },
+            {
+              "description": "Compliance and termination risk detection",
+              "prompt": "Which Rotaract clubs in South Asia have unpaid dues of $75 USD or higher placing them at risk?",
+              "tools_triggered": "find_compliance_risks",
+              "expected_behavior": "Return the list of at-risk clubs with outstanding balance amounts in INR and USD, sponsor club names, and district numbers."
+            },
+            {
+              "description": "Interact club sponsorship analytics",
+              "prompt": "Show Interact sponsorship statistics for Rotaract clubs in Sri Lanka.",
+              "tools_triggered": "get_interact_analytics",
+              "expected_behavior": "Return Interact overview metrics, sponsored club rosters, and active vs suspended counts for Sri Lanka."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported financial transaction or payment processing",
+              "prompt": "Pay my Rotaract club dues of $75 using my credit card."
+            },
+            {
+              "description": "Unsupported data modification or deletion",
+              "prompt": "Delete District 3000 from the database and remove all its clubs."
+            },
+            {
+              "description": "Out of scope non-Rotary general query",
+              "prompt": "Book a flight from New Delhi to Colombo for next Tuesday."
+            }
+          ]
+        },
+        "demo_recording_url": "https://insights.rsamdio.org",
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments. All data is informational and read-only."
+      },
+      "publication": {
+        "countries": [
+          "IN",
+          "NP",
+          "LK",
+          "US",
+          "GB",
+          "CA",
+          "AU",
+          "DE",
+          "FR",
+          "SG",
+          "AE",
+          "JP"
+        ],
+        "release_notes": "Initial release of Rotaract Insights plugin providing 14 MCP tools for executive dashboard KPIs, Rotary districts, Rotaract clubs, compliance tracking, and Interact sponsorship data."
+      }
+    }
+  }
+}

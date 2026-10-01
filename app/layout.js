@@ -162,7 +162,7 @@ const globalSchemas = [
     '@type': 'Dataset',
     '@id': 'https://insights.rsamdio.org/#dataset',
     name: 'Rotaract South Asia Membership, Performance and Compliance Master Dataset',
-    description: 'Master directory and performance analytics for 2,820+ Rotaract clubs, 40+ districts, and 4 zones (Zones 4, 5, 6 & 7) across South Asia.',
+    description: 'Master directory and performance analytics for Rotaract clubs, districts, and zones (Zones 4, 5, 6 & 7) across South Asia.',
     url: 'https://insights.rsamdio.org',
     creator: {
       '@id': 'https://insights.rsamdio.org/#organization',

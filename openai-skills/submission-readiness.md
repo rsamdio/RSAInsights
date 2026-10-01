@@ -5,8 +5,8 @@ This document certifies the submission readiness of the **Rotaract South Asia An
 ---
 
 ## 1. Application & Plugin Profile
-- **Plugin Name:** Rotaract South Asia Analytics
-- **Short Description:** Real-time analytics, compliance tracking, and rankings for 2,820+ Rotaract clubs and 44 districts across Rotary International Zones 4, 5, 6, and 7.
+- **Plugin Name:** Rotaract Insights
+- **Short Description:** Institutional analytics, compliance tracking, and rankings for Rotaract clubs and Rotary districts across Rotary International Zones 4, 5, 6, and 7.
 - **MCP Endpoint URL:** `https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0 over HTTPS)
 - **REST API Base URL:** `https://insights.rsamdio.org/api/v1`
 - **Interactive Documentation:** `https://insights.rsamdio.org/docs`
@@ -25,18 +25,18 @@ This document certifies the submission readiness of the **Rotaract South Asia An
 - **Tools (14):**
   1. `get_summary`: Executive macro KPIs for South Asia or scoped to a zone.
   2. `get_leaderboards`: Multi-category rankings (largest clubs, TRF giving, arrears, new clubs, growth).
-  3. `get_districts`: Complete roster of 44 districts with performance metrics and leadership contacts.
+  3. `get_districts`: Complete roster of Rotary districts with performance metrics and leadership contacts.
   4. `get_district_insights`: Detailed district dossier with club rosters, averages, and leadership.
   5. `get_zone_summary`: Zone-level summary and district breakdown across Zones 4, 5, 6, and 7.
-  6. `search_clubs`: Full-text search and multi-facet filtering across 2,820+ clubs.
+  6. `search_clubs`: Full-text search and multi-facet filtering across Rotaract clubs.
   7. `get_club_profile`: Complete dossier for an individual Rotaract club.
-  8. `get_new_clubs`: 126 newly chartered clubs in the current period.
+  8. `get_new_clubs`: Newly chartered clubs in the current period.
   9. `find_compliance_risks`: Single-risk compliance queries (arrears, at-risk, missing officers).
   10. `find_dual_risk_clubs`: Highest-priority clubs with both arrears and missing officers.
   11. `get_interact_analytics`: Interact statistics and Rotaract sponsorship connections.
   12. `find_rotary_opportunities`: Rotary clubs lacking Rotaract or Interact sponsorship.
   13. `get_foundation_giving`: The Rotary Foundation contributions from Rotaract clubs.
-  14. `get_worldwide_rankings`: Global district and country benchmarks across 599 districts.
+  14. `get_worldwide_rankings`: Global district and country benchmarks across worldwide districts.
 - **Resources (8):**
   `rotaract://summary`, `rotaract://leaderboards`, `rotaract://new-clubs`, `rotaract://interact`, `rotaract://worldwide`, `rotaract://zones`, `rotaract://districts`, `rotaract://dual-risk`.
 - **Prompts (4):**
@@ -64,7 +64,7 @@ Data is synchronized and refreshed regularly with active timestamp indicators di
 - **Invocation:** `get_summary()`
 - **Expected Status:** Success (`isError: false`)
 - **Key Validation Points:**
-  - Contains `overall` object with `totalClubs` (2,820+), `totalReportedMembers` (82,000+).
+  - Contains `overall` object with `totalClubs` and `totalReportedMembers`.
   - Contains `zonesSummary` array with data for Zones 4, 5, 6, and 7.
   - Contains `dataAsOf` freshness timestamp string.
 
@@ -87,8 +87,8 @@ Data is synchronized and refreshed regularly with active timestamp indicators di
 - **Expected Status:** Success (`isError: false`)
 - **Key Validation Points:**
   - Returns top South Asian districts with dual rankings:
-    - `worldwideRank`: 1 to 599 global ranking.
-    - `southAsiaRank`: 1 to 44 regional ranking.
+    - `worldwideRank`: Global ranking among worldwide districts.
+    - `southAsiaRank`: Regional ranking within South Asia.
     - `memberGrowthPct` and `netMemberChange`.
 
 #### Test Case 5: Universal Club Profile Lookup

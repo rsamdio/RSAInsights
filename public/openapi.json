@@ -3,7 +3,7 @@
   "info": {
     "title": "Rotaract South Asia Analytics API",
     "version": "1.1.0",
-    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; 44 districts; 2,870+ clubs). All endpoints are open, unauthenticated, and CORS-enabled.",
+    "description": "Public, high-performance REST API and Model Context Protocol (MCP) server providing open analytics data for Rotaract and Rotary across South Asia (Zones 4, 5, 6, and 7; Rotary districts; active Rotaract clubs). All endpoints are open, unauthenticated, and CORS-enabled.",
     "contact": {
       "name": "Rotaract South Asia Analytics Team",
       "url": "https://insights.rsamdio.org/contact",
@@ -57,6 +57,10 @@
     {
       "name": "Worldwide",
       "description": "Global Rotaract and Interact leaderboards and growth metrics"
+    },
+    {
+      "name": "Tables",
+      "description": "On-demand lightweight table datasets for client drilldowns"
     },
     {
       "name": "Model Context Protocol (MCP)",
@@ -562,7 +566,7 @@
           "Districts"
         ],
         "summary": "List All Districts",
-        "description": "Returns all 44 districts with key metrics and leadership contacts.",
+        "description": "Returns Rotary districts with key metrics and leadership contacts.",
         "operationId": "getDistricts",
         "parameters": [
           {
@@ -613,6 +617,9 @@
                   "type": "object",
                   "properties": {
                     "count": {
+                      "type": "integer"
+                    },
+                    "total": {
                       "type": "integer"
                     },
                     "districts": {
@@ -876,7 +883,7 @@
           "Clubs"
         ],
         "summary": "Search & Filter Clubs",
-        "description": "Full-text search and multi-facet filtering across 2,870+ Rotaract clubs in South Asia.",
+        "description": "Full-text search and multi-facet filtering across all Rotaract clubs in South Asia.",
         "operationId": "searchClubs",
         "parameters": [
           {
@@ -2575,6 +2582,72 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/table-data/{tab}": {
+      "get": {
+        "tags": [
+          "Tables"
+        ],
+        "summary": "On-demand Table Data",
+        "description": "Returns lightweight, trimmed table records for on-demand lazy loading in dashboard data tables.",
+        "operationId": "getTableData",
+        "parameters": [
+          {
+            "name": "tab",
+            "in": "path",
+            "required": true,
+            "description": "Identifier of the table dataset to retrieve",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "arrears",
+                "officers",
+                "rotary",
+                "rotary_no_interact",
+                "new_clubs",
+                "trf",
+                "all_clubs"
+              ]
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": false,
+            "description": "Optional Rotary zone filter (e.g. 'Zone 5' or '5')",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "description": "Optional comma-separated Rotary district filter (e.g. '3000' or '3000,3011')",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Table records retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or unknown table tab"
           }
         }
       }

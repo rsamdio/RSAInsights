@@ -1,5 +1,29 @@
 # Netlify Configuration File
 
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Netlify-Vary = "query"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Netlify-Vary = "query"
+    Cache-Control = "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+
 [[redirects]]
   from = "https://zone45678analysis.netlify.app/*"
   to = "https://insights.rsamdio.org/:splat"

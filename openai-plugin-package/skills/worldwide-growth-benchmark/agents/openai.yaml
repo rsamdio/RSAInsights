@@ -1,0 +1,16 @@
+interface:
+  display_name: "Worldwide Growth Benchmark"
+  short_description: "Benchmark South Asian Rotary districts and zones against 599 global districts."
+  brand_color: "#005596"
+  default_prompt: "Benchmark District [number] against worldwide growth leaderboards"
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "rotaract-insights"
+      description: "Rotaract South Asia Analytics MCP server"
+      transport: "streamable_http"
+      url: "https://insights.rsamdio.org/api/mcp"

@@ -1,4 +1,4 @@
-import { getDashboardSummary, getArrears, getNoOfficers, getRotaryNoSponsor, getRotaryNoInteract, getZoneSummary, getAllClubs, getTRFContributions, getNewClubs } from '@/lib/api';
+import { getDashboardSummary, getArrears, getZoneSummary, getAllClubs, getTRFContributions } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
 import Link from 'next/link';
 import DoughnutChart from '@/components/charts/DoughnutChart';
@@ -45,9 +45,6 @@ export default async function GlobalDashboard({ searchParams }) {
     const { zone, district } = await searchParams;
     const summary = await getDashboardSummary();
     const arrearsData = await getArrears() || [];
-    const officersData = await getNoOfficers() || [];
-    const rotaryData = await getRotaryNoSponsor() || [];
-    const rotaryNoInteractData = await getRotaryNoInteract() || [];
     const zoneTableData = await getZoneSummary() || [];
     const allClubsData = await getAllClubs() || [];
     const trfData = await getTRFContributions() || [];
@@ -59,10 +56,6 @@ export default async function GlobalDashboard({ searchParams }) {
     let filteredZones = { ...summary.current.zones };
     let filteredZoneTableData = zoneTableData;
     let filteredArrearsData = arrearsData;
-    let filteredOfficersData = officersData;
-    let filteredRotaryData = rotaryData;
-    let filteredRotaryNoInteractData = rotaryNoInteractData;
-    let filteredNewClubsData = await getNewClubs() || [];
     let filteredTrfData = trfData;
     let filteredAllClubsData = allClubsData;
 
@@ -74,10 +67,6 @@ export default async function GlobalDashboard({ searchParams }) {
     if (selectedDistricts.length > 0) {
         filteredZoneTableData = filteredZoneTableData.filter(z => selectedDistricts.includes(z['RI District'].toString()));
         filteredArrearsData = filteredArrearsData.filter(c => selectedDistricts.includes(c.District?.toString()));
-        filteredOfficersData = filteredOfficersData.filter(c => selectedDistricts.includes(c.District?.toString()));
-        filteredRotaryData = filteredRotaryData.filter(c => selectedDistricts.includes(c.District?.toString()));
-        filteredRotaryNoInteractData = filteredRotaryNoInteractData.filter(c => selectedDistricts.includes(c.District?.toString()));
-        filteredNewClubsData = filteredNewClubsData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredTrfData = filteredTrfData.filter(c => selectedDistricts.includes(c.District?.toString()));
         filteredAllClubsData = filteredAllClubsData.filter(c => selectedDistricts.includes(c.District?.toString()));
         
@@ -196,10 +185,6 @@ export default async function GlobalDashboard({ searchParams }) {
         
         filteredZoneTableData = filteredZoneTableData.filter(z => formattedZones.includes(normalizeZoneName(z['RI Zone'])));
         filteredArrearsData = filteredArrearsData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
-        filteredOfficersData = filteredOfficersData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
-        filteredRotaryData = filteredRotaryData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
-        filteredRotaryNoInteractData = filteredRotaryNoInteractData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
-        filteredNewClubsData = filteredNewClubsData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredTrfData = filteredTrfData.filter(c => formattedZones.includes(normalizeZoneName(c['RI Zone'])));
         filteredAllClubsData = filteredAllClubsData.filter(c => c['Zone'] && formattedZones.includes(normalizeZoneName(c['Zone'])));
         
@@ -463,7 +448,17 @@ export default async function GlobalDashboard({ searchParams }) {
                 <BarChart data={officersBaseChart} title="Missing Officers by Base" />
             </section>
 
-            <TopChartsSection summary={{ zones: filteredZones }} arrearsData={filteredArrearsData} allClubsData={filteredAllClubsData} trfData={filteredTrfData} />
+            {/* Optimized leaderboard payloads: UI limit selector supports up to 100 items */}
+            <TopChartsSection 
+                summary={{ zones: filteredZones }} 
+                arrearsData={[...filteredArrearsData]
+                    .sort((a, b) => Number(b['Outstanding INR'] || b.outstanding || 0) - Number(a['Outstanding INR'] || a.outstanding || 0))
+                    .slice(0, 100)} 
+                allClubsData={[...filteredAllClubsData]
+                    .sort((a, b) => Number(b['Total Reported Members'] || 0) - Number(a['Total Reported Members'] || 0))
+                    .slice(0, 100)} 
+                trfData={filteredTrfData} 
+            />
 
             <section style={{ marginBottom: '40px' }}>
                 <Link href="/worldwide" style={{ textDecoration: 'none' }}>
@@ -543,52 +538,9 @@ export default async function GlobalDashboard({ searchParams }) {
                             'No Officer Total': z['No Officer Total'],
                             'Total Contributions USD': z['Total Contributions USD'],
                             'NewTotalClubs': z['NewTotalClubs']
-                        }))} 
-                        arrearsData={filteredArrearsData.map(c => ({
-                            'RI Zone': c['RI Zone'] || c['Current Zone'] || c.Zone,
-                            'District': c.District,
-                            'Club Name': c['Club Name'],
-                            'Club Base': c['Club Base'],
-                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
-                            'Billable Member Count': c['Billable Member Count'] || 0,
-                            'Outstanding INR': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
-                            'outstanding': c['Outstanding INR'] || c.outstanding || c.outstandingINR || 0,
-                            ' USD Outstanding ': c[' USD Outstanding '] || c.outstandingUSD || 0,
-                            'NF Cust Number': c['NF Cust Number'] || c['Club ID'] || c.id
-                        }))} 
-                        officersData={filteredOfficersData.map(c => ({
-                            'RI Zone': c['RI Zone'] || c.Zone,
-                            'District': c.District,
-                            'Rotaract Club Name': c['Rotaract Club Name'] || c['Club Name'],
-                            'Club Base': c['Club Base'] || c['Rotaract Club Base'],
-                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
-                            'Club Status': c['Club Status'] || 'Active',
-                            'Club ID': c['Club ID'] || c['Rotaract Club ID']
-                        }))} 
-                        rotaryData={filteredRotaryData.map(r => ({
-                            'RI Zone': r['RI Zone'],
-                            'District': r.District,
-                            'Club Name': r['Club Name'],
-                            'Current Member Count': r['Current Member Count']
                         }))}
-                        rotaryNoInteractData={filteredRotaryNoInteractData.map(r => ({
-                            'RI Zone': r['RI Zone'],
-                            'District': r.District,
-                            'Club Name': r['Club Name'],
-                            'Current Member Count': r['Current Member Count'],
-                            'Total Rotaract Sponsored': Number(r['Total Rotaract Sponsored'] ?? 0)
-                        }))}
-                        newClubsData={filteredNewClubsData}
-                        trfData={filteredTrfData}
-                        allClubsData={filteredAllClubsData.map(c => ({
-                            'Zone': c['RI Zone'] || c.Zone || c.zone,
-                            'District': c.District || c.district,
-                            'Club ID': c['Club ID'] || c.id,
-                            'Club Name': c['Club Name'] || c.name,
-                            'Rotaract Club Base': c['Rotaract Club Base'] || c.base,
-                            'Sponsor Clubs': c['Sponsor Clubs'] || c.sponsorClubs || 'None Reported',
-                            'Total Reported Members': c['Total Reported Members'] ?? c.members ?? 0
-                        }))}
+                        zone={zone}
+                        district={district}
                     />
                 </div>
             </section>

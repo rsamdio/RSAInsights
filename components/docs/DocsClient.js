@@ -18,25 +18,27 @@ const MCP_TOOLS = [
         name: 'get_leaderboards',
         label: 'Rankings & Leaderboards',
         badge: 'Top Charts',
-        description: 'Retrieve top rankings across South Asia for largest clubs (by membership), top TRF donors, highest arrears dues, at-risk clubs, top districts (by clubs, members, TRF, arrears, or growth), and new charters. Supports optional scoping to a district, zone, or country.',
+        description: 'Retrieve top rankings across South Asia or worldwide for largest clubs (by membership), top TRF donors, highest arrears dues, at-risk clubs, top districts (by clubs, members, member growth, TRF, arrears, or Interact growth), and new charters. Supports optional scoping to a district, zone, or country.',
         exampleArgs: { category: 'largest_clubs', limit: 5 },
         examplePrompt: 'What are the top 5 largest Rotaract clubs in South Asia by reported membership?',
         params: [
-            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "districts_by_member_growth", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_growth", "new_clubs", or "all"' },
+            { name: 'category', type: 'string', required: false, desc: 'Category: "largest_clubs", "districts_by_member_growth", "community_clubs", "university_clubs", "trf_giving", "highest_arrears", "at_risk_clubs", "districts_by_clubs", "districts_by_members", "districts_by_trf", "districts_by_arrears", "districts_by_no_officers", "districts_by_growth", "new_clubs", or "all"' },
+            { name: 'scope', type: 'string', required: false, desc: 'Geographic scope: "south_asia" (default, Zones 4, 5, 6, 7) or "worldwide" (across all 599 districts globally)' },
             { name: 'district', type: 'string', required: false, desc: 'Optional 4-digit district filter (e.g. "3000")' },
             { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
             { name: 'country', type: 'string', required: false, desc: 'Filter by country: "India", "Nepal", or "Sri Lanka"' },
             { name: 'base', type: 'string', required: false, desc: 'Base filter: "Community" or "University"' },
-            { name: 'limit', type: 'integer', required: false, desc: 'Number of top items (1-50, default 10)' }
+            { name: 'limit', type: 'integer', required: false, desc: 'Number of top items (1-100, default 10)' },
+            { name: 'offset', type: 'integer', required: false, desc: 'Number of items to skip for pagination (default 0)' }
         ]
     },
     {
         name: 'get_districts',
         label: 'All Districts Directory',
-        badge: '44 Districts',
-        description: 'Retrieve all 44 Rotary districts in South Asia with comprehensive KPIs, leadership contacts (DG, DRR, DRC), financial health, TRF contributions, and growth metrics. Supports filtering by zone and sorting.',
+        badge: 'Districts Roster',
+        description: 'Retrieve Rotary districts in South Asia with comprehensive KPIs, leadership contacts (DG, DRR, DRC), financial health, TRF contributions, and growth metrics. Supports filtering by zone and sorting.',
         exampleArgs: { sortBy: 'totalClubs', sortOrder: 'desc' },
-        examplePrompt: 'List all 44 districts sorted by total clubs descending.',
+        examplePrompt: 'List districts sorted by total clubs descending.',
         params: [
             { name: 'zone', type: 'string', required: false, desc: 'Optional zone filter (e.g. "Zone 5" or "5")' },
             { name: 'sortBy', type: 'string', required: false, desc: 'Sort by: "totalClubs", "members", "arrearsClubs", "outstanding", "trf", "newClubs", "interactGrowth", "district"' },
@@ -47,7 +49,7 @@ const MCP_TOOLS = [
         name: 'search_clubs',
         label: 'Search & Filter Clubs',
         badge: 'Query Engine',
-        description: 'Search, filter, and sort across 2,870+ Rotaract clubs in South Asia. Use sortBy="members" to find largest clubs, or sortBy="outstanding" for highest dues. Supports filtering by country (India, Nepal, Sri Lanka) and Interact sponsorship.',
+        description: 'Search, filter, and sort across Rotaract clubs in South Asia. Use sortBy="members" to find largest clubs, or sortBy="outstanding" for highest dues. Supports filtering by country (India, Nepal, Sri Lanka) and Interact sponsorship.',
         exampleArgs: { query: 'Delhi', sortBy: 'members', sortOrder: 'desc', limit: 3 },
         examplePrompt: 'Find active university-based Rotaract clubs in Delhi sorted by membership.',
         params: [
@@ -138,8 +140,8 @@ const MCP_TOOLS = [
     {
         name: 'find_dual_risk_clubs',
         label: 'Dual Non-Compliance Risk',
-        badge: 'Highest Risk (761 Clubs)',
-        description: 'Find Rotaract clubs that have BOTH outstanding financial arrears AND missing officer reports simultaneously - the highest aggregate compliance risk group.',
+        badge: 'Highest Risk (744 Clubs)',
+        description: 'Find Rotaract clubs that have BOTH outstanding financial arrears AND missing officer reports simultaneously: the highest aggregate compliance risk group.',
         exampleArgs: { limit: 5 },
         examplePrompt: 'Show me the clubs with both financial arrears and missing officers in District 3000.',
         params: [
@@ -152,8 +154,8 @@ const MCP_TOOLS = [
     {
         name: 'get_interact_analytics',
         label: 'Interact Analytics & Sponsors',
-        badge: '8,921 Interact Clubs',
-        description: 'Retrieve Interact statistics across South Asia: 8,921 total Interact clubs, 137 Interact clubs sponsored by 65 Rotaract clubs, district/zone breakdowns, and suspended club tracking.',
+        badge: '9,070+ Interact Clubs',
+        description: 'Retrieve Interact statistics across South Asia: 9,070+ total Interact clubs, 137 Interact clubs sponsored by 65 Rotaract clubs, district/zone breakdowns, and suspended club tracking.',
         exampleArgs: {},
         examplePrompt: 'Which Rotaract clubs in South Asia sponsor Interact clubs?',
         params: [
@@ -192,24 +194,28 @@ const MCP_TOOLS = [
         name: 'get_worldwide_rankings',
         label: 'Worldwide Rankings & Growth',
         badge: 'Global Analytics',
-        description: 'Retrieve worldwide Rotaract and Interact statistics, country growth rankings, and district leaderboards across the globe.',
-        exampleArgs: { type: 'summary' },
-        examplePrompt: 'How does India rank globally in total Rotaract clubs and member growth?',
+        description: 'Retrieve worldwide Rotaract and Interact statistics, global club leaderboards (community vs university), country growth rankings, and district leaderboards across all 599 districts globally.',
+        exampleArgs: { type: 'clubs', limit: 5 },
+        examplePrompt: 'What are the top 5 largest Rotaract clubs in the world by reported membership?',
         params: [
-            { name: 'type', type: 'string', required: false, desc: 'Focus: "summary", "country", "district", "interact", "new_clubs", or "all"' },
-            { name: 'country', type: 'string', required: false, desc: 'Filter country name (e.g. "India", "Nepal")' },
-            { name: 'zone', type: 'string', required: false, desc: 'Filter Rotary zone (e.g. "6", "4", "19")' },
-            { name: 'sortBy', type: 'string', required: false, desc: 'Sort metric: "member_growth_pct" (default), "members", "clubs", "club_growth_pct", etc.' },
-            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" (default) or "asc"' },
+            { name: 'type', type: 'string', required: false, desc: 'Focus: "clubs" (global club leaderboards), "summary" (macro totals), "country" (country rankings), "district" (all 599 districts), "interact" (Interact stats), "new_clubs" (charter trends), or "all"' },
+            { name: 'base', type: 'string', required: false, desc: 'Filter worldwide clubs by base: "all" (default), "community", or "university"' },
+            { name: 'district', type: 'string', required: false, desc: 'Filter by district number (e.g. "3000", "3233")' },
+            { name: 'country', type: 'string', required: false, desc: 'Filter country name (e.g. "India", "United States", "Sri Lanka")' },
+            { name: 'zone', type: 'string', required: false, desc: 'Filter Rotary zone (e.g. "6", "4", "4,5,6,7", "South Asia")' },
+            { name: 'region', type: 'string', required: false, desc: 'Geographic region: "south_asia", "southeast_asia", "pacific", "europe", "north_america", "latin_america", or "worldwide"' },
+            { name: 'sortBy', type: 'string', required: false, desc: 'Sort metric: "members" (default for clubs), "member_growth_pct" (default for districts), "member_growth_abs", "clubs", "name", or "district"' },
+            { name: 'sortOrder', type: 'string', required: false, desc: 'Sort order: "desc" (highest first) or "asc"' },
             { name: 'minMembers', type: 'integer', required: false, desc: 'Minimum reported members filter' },
-            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit (default 10)' }
+            { name: 'limit', type: 'integer', required: false, desc: 'Page size limit (1-100, default 10)' },
+            { name: 'offset', type: 'integer', required: false, desc: 'Pagination offset (default 0)' }
         ]
     }
 ];
 
 export default function DocsClient() {
     const [activeTab, setActiveTab] = useState('api');
-    const [activeClientTab, setActiveClientTab] = useState('claude');
+    const [activeClientTab, setActiveClientTab] = useState('cursor');
     const [copiedKey, setCopiedKey] = useState('');
     
     // Live Tool Tester state
@@ -275,42 +281,49 @@ export default function DocsClient() {
         }
     };
 
+    const cursorConfig = JSON.stringify({
+        name: "rotaract-south-asia",
+        type: "sse",
+        url: "https://insights.rsamdio.org/sse"
+    }, null, 2);
+
     const claudeConfig = JSON.stringify({
         mcpServers: {
             "rotaract-south-asia": {
-                command: "node",
-                args: ["<ABSOLUTE_PATH_TO_REPO>/scripts/mcp_server.js"]
+                command: "npx",
+                args: ["-y", "mcp-remote", "https://insights.rsamdio.org/sse"]
             }
         }
-    }, null, 2);
-
-    const cursorConfig = JSON.stringify({
-        name: "rotaract-south-asia",
-        type: "command",
-        command: "node <ABSOLUTE_PATH_TO_REPO>/scripts/mcp_server.js"
     }, null, 2);
 
     const antigravityConfig = JSON.stringify({
         mcpServers: {
             "rotaract-south-asia": {
+                url: "https://insights.rsamdio.org/sse"
+            }
+        }
+    }, null, 2);
+
+    const httpConfig = `curl -X POST https://insights.rsamdio.org/api/mcp \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/call",
+    "params": {
+      "name": "get_summary",
+      "arguments": { "zone": "Zone 5" }
+    }
+  }'`;
+
+    const stdioConfig = JSON.stringify({
+        mcpServers: {
+            "rotaract-south-asia": {
                 command: "node",
                 args: ["<ABSOLUTE_PATH_TO_REPO>/scripts/mcp_server.js"]
             }
         }
     }, null, 2);
-
-    const httpConfig = `POST https://insights.rsamdio.org/api/mcp
-Content-Type: application/json
-
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "tools/call",
-  "params": {
-    "name": "search_clubs",
-    "arguments": { "query": "Delhi", "limit": 5 }
-  }
-}`;
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '50px' }}>
@@ -345,7 +358,7 @@ Content-Type: application/json
                         Rotaract South Asia Analytics API & MCP Server
                     </h2>
                     <p style={{ margin: 0, color: '#64748b', fontSize: '14.5px', maxWidth: '780px', lineHeight: '1.6' }}>
-                        Open, verified analytics for Rotaract Zones 4, 5, 6, and 7 (44 districts, 2,870+ clubs).
+                        Open, verified analytics for Rotaract Zones 4, 5, 6, and 7 across South Asia.
                         Explore via standard REST endpoints or empower AI coding assistants with the Model Context Protocol (MCP) server.
                     </p>
                 </div>
@@ -416,7 +429,7 @@ Content-Type: application/json
                     }}
                 >
                     <span>📡 REST API Reference</span>
-                    <span style={{ fontSize: '11px', background: '#e6f0fa', color: '#0f4c81', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>19 Endpoints</span>
+                    <span style={{ fontSize: '11px', background: '#e6f0fa', color: '#0f4c81', padding: '2px 8px', borderRadius: '10px', fontWeight: 600 }}>20 Public Endpoints</span>
                 </button>
                 <button
                     onClick={() => setActiveTab('mcp')}
@@ -519,10 +532,11 @@ Content-Type: application/json
                         {/* Client Selector Pills */}
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                             {[
-                                { id: 'claude', name: 'Claude Desktop' },
-                                { id: 'cursor', name: 'Cursor IDE' },
+                                { id: 'cursor', name: 'Cursor IDE (SSE Cloud)' },
+                                { id: 'claude', name: 'Claude Desktop (Cloud)' },
                                 { id: 'antigravity', name: 'Antigravity / Gemini' },
-                                { id: 'http', name: 'Remote HTTP / JSON-RPC' }
+                                { id: 'http', name: 'cURL / JSON-RPC' },
+                                { id: 'stdio', name: 'Local Stdio (Dev)' }
                             ].map(c => (
                                 <button
                                     key={c.id}
@@ -560,17 +574,19 @@ Content-Type: application/json
                                 lineHeight: '1.5'
                             }}>
                                 <pre style={{ margin: 0 }}>
-                                    {activeClientTab === 'claude' && claudeConfig}
                                     {activeClientTab === 'cursor' && cursorConfig}
+                                    {activeClientTab === 'claude' && claudeConfig}
                                     {activeClientTab === 'antigravity' && antigravityConfig}
                                     {activeClientTab === 'http' && httpConfig}
+                                    {activeClientTab === 'stdio' && stdioConfig}
                                 </pre>
                             </div>
                             <button
                                 onClick={() => {
-                                    const text = activeClientTab === 'claude' ? claudeConfig :
-                                        activeClientTab === 'cursor' ? cursorConfig :
-                                        activeClientTab === 'antigravity' ? antigravityConfig : httpConfig;
+                                    const text = activeClientTab === 'cursor' ? cursorConfig :
+                                        activeClientTab === 'claude' ? claudeConfig :
+                                        activeClientTab === 'antigravity' ? antigravityConfig :
+                                        activeClientTab === 'http' ? httpConfig : stdioConfig;
                                     handleCopy('client_config', text);
                                 }}
                                 style={{
@@ -590,11 +606,12 @@ Content-Type: application/json
                                 {copiedKey === 'client_config' ? '✔ Copied!' : 'Copy Config'}
                             </button>
                         </div>
-                        <div style={{ fontSize: '12.5px', color: '#64748b' }}>
-                            {activeClientTab === 'claude' && 'Add this block to claude_desktop_config.json located in your Claude Application Support directory.'}
-                            {activeClientTab === 'cursor' && 'Add in Cursor under Settings > Features > MCP Servers (Command type).'}
-                            {activeClientTab === 'antigravity' && 'Add to your mcp_config.json file in ~/.gemini/config/.'}
-                            {activeClientTab === 'http' && 'Send HTTP POST requests with Content-Type: application/json to execute tools directly over the web.'}
+                        <div style={{ fontSize: '12.5px', color: '#64748b', lineHeight: '1.5' }}>
+                            {activeClientTab === 'cursor' && 'Zero installation: In Cursor, navigate to Settings > Features > MCP > Add New MCP Server. Select Type: SSE and set Server URL to https://insights.rsamdio.org/sse.'}
+                            {activeClientTab === 'claude' && 'Zero installation: Add this block to claude_desktop_config.json in your Claude Application Support directory. It uses npx mcp-remote to connect to the live cloud server.'}
+                            {activeClientTab === 'antigravity' && 'Zero installation: Add to your mcp_config.json file in ~/.gemini/config/ to enable all 14 tools and 8 resources in Antigravity.'}
+                            {activeClientTab === 'http' && 'Send standard JSON-RPC 2.0 POST requests directly to https://insights.rsamdio.org/api/mcp. Unauthenticated, CORS-enabled, and instant.'}
+                            {activeClientTab === 'stdio' && 'For developers working locally within the cloned repository. Replace <ABSOLUTE_PATH_TO_REPO> with your local path to run via StdioServerTransport.'}
                         </div>
                     </div>
 
@@ -825,7 +842,7 @@ Content-Type: application/json
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div>
                             <h3 style={{ margin: '8px 0 4px 0', fontSize: '20px', color: '#1e293b' }}>
-                                Available MCP Resources (6 Data URIs)
+                                Available MCP Resources (8 Data URIs)
                             </h3>
                             <p style={{ margin: 0, color: '#64748b', fontSize: '14px' }}>
                                 AI clients can directly attach or inspect these live contextual resources via MCP URI without invoking tools.
@@ -834,12 +851,14 @@ Content-Type: application/json
 
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
                             {[
-                                { uri: 'rotaract://summary', name: 'South Asia Executive Summary', desc: 'Real-time executive summary metrics and macro KPIs across Zones 4, 5, 6, and 7' },
+                                { uri: 'rotaract://summary', name: 'South Asia Executive Summary', desc: 'Executive summary metrics and macro KPIs across Zones 4, 5, 6, and 7' },
                                 { uri: 'rotaract://leaderboards', name: 'South Asia Top Rankings & Leaderboards', desc: 'Master leaderboards for largest clubs, top TRF donors, highest arrears, and top districts' },
-                                { uri: 'rotaract://new-clubs', name: 'Newly Chartered Clubs Roster', desc: 'All 126 newly chartered clubs in South Asia with charter dates and sponsor clubs' },
+                                { uri: 'rotaract://new-clubs', name: 'Newly Chartered Clubs Roster', desc: 'Roster of newly chartered clubs in South Asia with charter dates and sponsor clubs' },
+                                { uri: 'rotaract://interact', name: 'Interact Analytics & Rotaract Sponsorships', desc: 'Overview of Interact clubs and clubs sponsored by Rotaract clubs in South Asia' },
                                 { uri: 'rotaract://worldwide', name: 'Worldwide Statistics & Country Standings', desc: 'Global statistics, country growth leaderboards, and district rankings across the world' },
                                 { uri: 'rotaract://zones', name: 'All 4 RI Zones Roster', desc: 'Macro demographics and district lists for Zones 4, 5, 6, and 7' },
-                                { uri: 'rotaract://districts', name: 'All 44 Districts Summary', desc: 'Complete roster of 44 districts with key performance indicators and leadership contacts' }
+                                { uri: 'rotaract://districts', name: 'Districts Summary', desc: 'Complete roster of districts across South Asia with key performance indicators and leadership contacts' },
+                                { uri: 'rotaract://dual-risk', name: 'High Risk Dual Non-Compliance Roster', desc: 'Roster of Rotaract clubs having both unpaid financial arrears and missing officer reports' }
                             ].map(res => (
                                 <div
                                     key={res.uri}

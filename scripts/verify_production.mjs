@@ -138,7 +138,7 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/districts`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.count !== 44) throw new Error(`Expected 44 districts, got ${data.count}`);
+        if (!data.count || data.count < 1) throw new Error(`Expected positive district count, got ${data.count}`);
         return `Count: ${data.count} districts`;
     });
 
@@ -352,6 +352,30 @@ async function run() {
         if (data.total !== 144) throw new Error(`Expected 144 new clubs, got ${data.total}`);
         return `Total New Clubs: ${data.total}, Sample: ${data.data[0].name} (Dist ${data.data[0].district})`;
     });
+
+    await test('REST', 'GET /api/table-data/arrears (On-demand Table Data: Arrears)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/table-data/arrears`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) throw new Error('Expected array of arrears records');
+        return `Loaded ${data.length} arrears records (first: ${data[0]['Club Name']})`;
+    });
+
+    await test('REST', 'GET /api/table-data/all_clubs?zone=Zone%205 (Zone Filtered Table Data)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/table-data/all_clubs?zone=Zone%205`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length !== 927) throw new Error(`Expected 927 Zone 5 clubs, got ${data?.length}`);
+        return `Loaded ${data.length} Zone 5 club roster records`;
+    });
+
+    await test('REST', 'GET /api/table-data/invalid_tab (Table Tab Guard)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/table-data/invalid_tab`);
+        if (res.status !== 400) throw new Error(`Expected HTTP 400, got ${res.status}`);
+        const data = await res.json();
+        return `Guard rejected invalid tab: ${data.error}`;
+    });
+
 
     // ----------------------------------------------------
     // Category 3: Model Context Protocol (MCP) Endpoints

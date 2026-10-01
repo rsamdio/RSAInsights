@@ -1,9 +1,126 @@
 'use client';
+import { useState, useEffect, useRef } from 'react';
 import Tabs from '@/components/ui/Tabs';
 import DataTable from './DataTable';
 import Link from 'next/link';
 
-export default function GlobalTables({ zoneTableData, arrearsData, officersData, rotaryData, rotaryNoInteractData, newClubsData, trfData, allClubsData }) {
+function LazyTabContent({ tabKey, initialData, columns, exportFilename, zone, district, cache }) {
+    const cacheKey = `${tabKey}:${zone || 'all'}:${district || 'all'}`;
+    const cachedData = cache?.current?.[cacheKey];
+
+    const [data, setData] = useState(initialData || cachedData || null);
+    const [loading, setLoading] = useState(!initialData && !cachedData);
+    const [error, setError] = useState(null);
+    const [retryCount, setRetryCount] = useState(0);
+
+    useEffect(() => {
+        if (initialData) {
+            setData(initialData);
+            setLoading(false);
+            return;
+        }
+
+        if (cache?.current?.[cacheKey]) {
+            setData(cache.current[cacheKey]);
+            setLoading(false);
+            return;
+        }
+
+        let isMounted = true;
+        const controller = new AbortController();
+        setLoading(true);
+        setError(null);
+
+        const params = new URLSearchParams();
+        if (district) params.set('district', district);
+        if (zone) params.set('zone', zone);
+
+        const url = `/api/table-data/${tabKey}${params.toString() ? `?${params.toString()}` : ''}`;
+
+        fetch(url, { signal: controller.signal })
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                return res.json();
+            })
+            .then(json => {
+                if (isMounted) {
+                    const loaded = Array.isArray(json) ? json : [];
+                    if (cache?.current) {
+                        cache.current[cacheKey] = loaded;
+                    }
+                    setData(loaded);
+                    setLoading(false);
+                }
+            })
+            .catch(err => {
+                if (err.name === 'AbortError') return;
+                if (isMounted) {
+                    console.error(`Failed to load ${tabKey} table:`, err);
+                    setError(err.message);
+                    setLoading(false);
+                }
+            });
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, [tabKey, zone, district, initialData, cacheKey, cache, retryCount]);
+
+    if (loading) {
+        return (
+            <div style={{ padding: '24px 8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px', alignItems: 'center' }}>
+                    <div className="skeleton-pulse" style={{ width: '220px', height: '36px', borderRadius: '6px' }} />
+                    <div className="skeleton-pulse" style={{ width: '120px', height: '36px', borderRadius: '6px' }} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="skeleton-pulse" style={{ width: '100%', height: '44px', borderRadius: '4px' }} />
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div style={{ padding: '30px', textAlign: 'center', color: 'var(--danger)' }}>
+                <p>Failed to load records ({error}).</p>
+                <button 
+                    type="button"
+                    onClick={() => { 
+                        if (cache?.current) {
+                            delete cache.current[cacheKey];
+                        }
+                        setError(null); 
+                        setRetryCount(c => c + 1);
+                    }}
+                    style={{ padding: '6px 16px', borderRadius: '6px', border: '1px solid var(--border-color)', background: '#fff', cursor: 'pointer' }}
+                >
+                    Retry
+                </button>
+            </div>
+        );
+    }
+
+    return <DataTable data={data || []} columns={columns} exportFilename={exportFilename} />;
+}
+
+export default function GlobalTables({ 
+    zoneTableData, 
+    zone, 
+    district, 
+    arrearsData, 
+    officersData, 
+    rotaryData, 
+    rotaryNoInteractData, 
+    newClubsData, 
+    trfData, 
+    allClubsData 
+}) {
+    const tabCache = useRef({});
+
     const validZoneData = (zoneTableData || []).filter(row => {
         const d = (row['RI District'] || '').toString().trim();
         return d && d !== 'Grand Total';
@@ -465,13 +582,13 @@ export default function GlobalTables({ zoneTableData, arrearsData, officersData,
 
     const tabsData = [
         { label: 'District Summary', content: () => <DataTable data={validZoneData} columns={districtCols} exportFilename="District_Summary" /> },
-        { label: 'Clubs in Arrears', content: () => <DataTable data={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" /> },
-        { label: 'Missing Officers', content: () => <DataTable data={officersData} columns={officersCols} exportFilename="Missing_Officers" /> },
-        { label: 'Rotary w/o Rotaract', content: () => <DataTable data={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" /> },
-        { label: 'Rotary w/o Interact', content: () => <DataTable data={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" /> },
-        { label: 'New Clubs', content: () => <DataTable data={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" /> },
-        { label: 'TRF Contributions', content: () => <DataTable data={trfData} columns={trfCols} exportFilename="TRF_Contributions" /> },
-        { label: 'All Clubs Roster', content: () => <DataTable data={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" /> }
+        { label: 'Clubs in Arrears', content: () => <LazyTabContent key={`arrears:${zone || 'all'}:${district || 'all'}`} tabKey="arrears" initialData={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'Missing Officers', content: () => <LazyTabContent key={`officers:${zone || 'all'}:${district || 'all'}`} tabKey="officers" initialData={officersData} columns={officersCols} exportFilename="Missing_Officers" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'Rotary w/o Rotaract', content: () => <LazyTabContent key={`rotary:${zone || 'all'}:${district || 'all'}`} tabKey="rotary" initialData={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'Rotary w/o Interact', content: () => <LazyTabContent key={`rotary_no_interact:${zone || 'all'}:${district || 'all'}`} tabKey="rotary_no_interact" initialData={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'New Clubs', content: () => <LazyTabContent key={`new_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="new_clubs" initialData={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'TRF Contributions', content: () => <LazyTabContent key={`trf:${zone || 'all'}:${district || 'all'}`} tabKey="trf" initialData={trfData} columns={trfCols} exportFilename="TRF_Contributions" zone={zone} district={district} cache={tabCache} /> },
+        { label: 'All Clubs Roster', content: () => <LazyTabContent key={`all_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="all_clubs" initialData={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" zone={zone} district={district} cache={tabCache} /> }
     ];
 
     return <Tabs tabs={tabsData} />;

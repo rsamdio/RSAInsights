@@ -156,7 +156,7 @@ When information sources conflict, agents must follow this strict precedence:
 5. **Styling & CSS Invariants:** Pure Vanilla CSS in `app/globals.css`. Never introduce Tailwind CSS. Glassmorphism cards, CSS variables, mobile-first responsive styles (`@media (max-width: 768px)`).
 6. **Async Route Params:** In Next.js App Router, `params` and `searchParams` are Promises (`const { zoneId } = await params;`).
 7. **O(1) Hash Map Lookups:** Use `getClubMap()` in `lib/api.js` for instant club lookups on `/club/[clubId]`. Never scan `all_clubs.json` linearly for single club queries.
-8. **Lazy Tab Mounting:** `GlobalTables.js` uses render functions `() => <DataTable />` so only the active tab mounts TanStack table state in the DOM.
+8. **Tab-on-Demand Data Loading:** `GlobalTables.js` fetches secondary tabs on demand via `/api/table-data/[tab]` with in-memory caching, keeping initial HTML payloads under 600 KB (down from 5.8 MB).
 9. **Strict No-Em-Dash Rule:** Never use long em dashes (Unicode \u2014) anywhere in agent-generated content, documentation, comments, commit messages, or UI copy. Use hyphens (`-`), colons (`:`), commas (`,`), or parentheses.
 
 ---
