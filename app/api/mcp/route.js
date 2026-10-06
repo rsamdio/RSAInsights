@@ -16,6 +16,7 @@ import {
     SUPPORTED_PROTOCOL_VERSIONS,
     negotiateProtocolVersion
 } from '@/lib/mcp/sse';
+import { logMcpRequest, extractClientIp } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,16 +47,34 @@ export async function OPTIONS() {
 }
 
 export async function GET(request) {
+    const start = Date.now();
     const acceptHeader = request?.headers?.get('accept') || '';
     const isEventStream = acceptHeader.includes('text/event-stream');
     const url = request?.url ? new URL(request.url) : null;
     const isExplicitSse = url?.searchParams?.get('transport') === 'sse';
+    const userAgent = request?.headers?.get('user-agent') || 'unknown';
+    const ip = extractClientIp(request);
 
     // If client explicitly requests SSE via header (e.g. ChatGPT Developer Mode, Claude Desktop)
     // or query parameter, establish real-time SSE stream
     if (isEventStream || isExplicitSse) {
+        logMcpRequest({
+            method: 'sse/connect',
+            status: 200,
+            durationMs: Date.now() - start,
+            userAgent,
+            ip
+        });
         return createSseResponse(request, '/api/mcp');
     }
+
+    logMcpRequest({
+        method: 'manifest/get',
+        status: 200,
+        durationMs: Date.now() - start,
+        userAgent,
+        ip
+    });
 
     // Default for HTTP: Return JSON capability and tool discovery manifest
     return NextResponse.json({
@@ -77,11 +96,25 @@ export async function POST(request) {
     const start = Date.now();
     const url = request?.url ? new URL(request.url) : null;
     const sessionId = url?.searchParams?.get('sessionId') || null;
+    const userAgent = request?.headers?.get('user-agent') || 'unknown';
+    const ip = extractClientIp(request);
+    let requestMethod = 'unknown';
+    let negotiatedVersion = null;
 
     function respond(responseObj, status = 200, headers = CORS_HEADERS) {
         if (sessionId) {
             sendSseMessage(sessionId, responseObj);
         }
+        logMcpRequest({
+            method: requestMethod,
+            status,
+            durationMs: Date.now() - start,
+            userAgent,
+            ip,
+            sessionId,
+            protocolVersion: negotiatedVersion,
+            error: responseObj?.error?.message || responseObj?.error || null
+        });
         return NextResponse.json(responseObj, { status, headers: withTiming(headers, start) });
     }
 
@@ -90,6 +123,7 @@ export async function POST(request) {
         try {
             body = await request.json();
         } catch (parseErr) {
+            requestMethod = 'jsonrpc/parse-error';
             return respond({
                 jsonrpc: '2.0',
                 id: null,
@@ -103,6 +137,7 @@ export async function POST(request) {
         // Standard JSON-RPC 2.0 protocol (MCP specification)
         if (body.jsonrpc === '2.0') {
             const { id, method, params } = body;
+            requestMethod = method || 'unknown';
             const responseId = id !== undefined ? id : null;
 
             // Ping utility method (MCP standard health check)
@@ -116,6 +151,14 @@ export async function POST(request) {
 
             // Notifications (e.g. notifications/initialized, notifications/cancelled)
             if (typeof method === 'string' && method.startsWith('notifications/')) {
+                logMcpRequest({
+                    method,
+                    status: 204,
+                    durationMs: Date.now() - start,
+                    userAgent,
+                    ip,
+                    sessionId
+                });
                 return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
             }
 
@@ -188,7 +231,7 @@ export async function POST(request) {
             if (method === 'tools/call') {
                 const toolName = params?.name;
                 const toolArgs = params?.arguments || {};
-                const executionResult = await executeTool(toolName, toolArgs);
+                const executionResult = await executeTool(toolName, toolArgs, { source: 'http' });
 
                 return respond({
                     jsonrpc: '2.0',
@@ -279,6 +322,7 @@ export async function POST(request) {
         // Lightweight direct invocation: { tool: "search_clubs", args: { ... } }
         const toolName = body.tool || body.name;
         const toolArgs = body.args || body.arguments || {};
+        requestMethod = `direct/${toolName || 'unknown'}`;
 
         if (!toolName) {
             return respond({
@@ -286,7 +330,7 @@ export async function POST(request) {
             }, 400);
         }
 
-        const executionResult = await executeTool(toolName, toolArgs);
+        const executionResult = await executeTool(toolName, toolArgs, { source: 'http-direct' });
         return respond(executionResult);
 
     } catch (error) {

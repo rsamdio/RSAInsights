@@ -1,0 +1,55 @@
+{
+  "connector": {
+    "displayName": "Rotaract Insights",
+    "shortDescription": "Executive analytics, district KPIs, and compliance tracking for Rotaract across South Asia.",
+    "longDescription": "Rotaract Insights provides institutional analytics, district performance metrics, membership demographics, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (Rotary International Zones 4, 5, 6, and 7), covering India, Nepal, and Sri Lanka. Query macro KPIs, financial dues in arrears (INR and USD), missing officer reports, The Rotary Foundation (TRF) giving, Interact club sponsorships, and worldwide benchmarks directly within Claude conversations.",
+    "category": "Data & Analytics",
+    "keywords": [
+      "rotary",
+      "rotaract",
+      "analytics",
+      "compliance",
+      "kpis",
+      "south-asia",
+      "districts",
+      "membership",
+      "interact"
+    ],
+    "brandColor": "#D91B5C",
+    "brandColorDark": "#E83A78",
+    "websiteURL": "https://rsamdio.org",
+    "appURL": "https://insights.rsamdio.org",
+    "supportURL": "https://insights.rsamdio.org/contact",
+    "privacyPolicyURL": "https://insights.rsamdio.org/privacy",
+    "termsOfServiceURL": "https://insights.rsamdio.org/terms",
+    "documentationURL": "https://insights.rsamdio.org/docs",
+    "openApiSpecURL": "https://insights.rsamdio.org/openapi.json",
+    "discoveryManifestURL": "https://insights.rsamdio.org/.well-known/mcp-server.json",
+    "demoVideoURL": "https://kommodo.ai/recordings/9MjZFB2CtgkObgU2u7WW"
+  },
+  "company": {
+    "name": "Rotaract South Asia MDIO",
+    "organizationFullName": "Rotaract South Asia Multi-District Information Organisation",
+    "organizationShort": "RSAMDIO",
+    "website": "https://rsamdio.org",
+    "email": "info@rsamdio.org",
+    "supportEmail": "insights@rsamdio.org",
+    "jurisdiction": "India",
+    "entityType": "Non-profit Youth Service Multi-District Information Organisation"
+  },
+  "connection": {
+    "mcpEndpoint": "https://insights.rsamdio.org/api/mcp",
+    "sseEndpoint": "https://insights.rsamdio.org/sse",
+    "transport": "streamable-http",
+    "protocolVersion": "2024-11-05",
+    "authentication": "none"
+  },
+  "dataHandling": {
+    "storesUserData": false,
+    "retentionDays": 0,
+    "processesPII": false,
+    "trainsModels": false,
+    "serverLogsPurgeDays": 30,
+    "readOnly": true
+  }
+}

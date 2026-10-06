@@ -44,7 +44,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params;
     try {
-        const result = await executeTool(name, args || {});
+        const result = await executeTool(name, args || {}, { source: 'stdio' });
         return result;
     } catch (error) {
         throw new McpError(

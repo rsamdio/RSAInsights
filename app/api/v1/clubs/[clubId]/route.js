@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getClubProfile } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +9,7 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
-export async function GET(request, { params }) {
+export const GET = withApiTelemetry(async function GET(request, { params }) {
     try {
         const { clubId } = await params;
         const profile = await getClubProfile(clubId);
@@ -24,4 +25,4 @@ export async function GET(request, { params }) {
         console.error('API /v1/clubs/[clubId] error:', error);
         return NextResponse.json({ error: 'Failed to retrieve club profile' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/clubs/[clubId]' });

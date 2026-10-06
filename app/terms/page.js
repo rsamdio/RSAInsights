@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Terms of Service',
-    description: 'Terms of Service and Data Usage Agreement for the Rotaract South Asia Analytics Dashboard, REST API, and Model Context Protocol (MCP) server.',
+    title: 'Terms of Service | Rotaract Insights',
+    description: 'Terms of Service and Data Usage Agreement for the Rotaract South Asia Analytics Dashboard, REST API, and Model Context Protocol (MCP) server for OpenAI ChatGPT, Anthropic Claude, and AI assistants.',
     alternates: {
         canonical: 'https://insights.rsamdio.org/terms',
     },
@@ -48,7 +48,7 @@ export default function TermsOfServicePage() {
                         1. Acceptance of Terms
                     </h2>
                     <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.7', color: 'var(--text-main)' }}>
-                        By accessing or using the <strong>Rotaract South Asia Insights Dashboard</strong> (<code>insights.rsamdio.org</code>), our public REST API endpoints (<code>/api/v1/*</code>), our Model Context Protocol (MCP) server, or any associated data feeds, you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, please do not use the services.
+                        By accessing or using the <strong>Rotaract South Asia Insights Dashboard</strong> (<code>insights.rsamdio.org</code>), our public REST API endpoints (<code>/api/v1/*</code>), our Model Context Protocol (MCP) server (accessible via OpenAI ChatGPT, Anthropic Claude, and MCP clients), or any associated data feeds, you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, please do not use the services.
                     </p>
                 </div>
 
@@ -78,7 +78,7 @@ export default function TermsOfServicePage() {
                     <ul style={{ margin: '0 0 14px 0', paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                         <li><strong>Leadership & District Operations:</strong> Reviewing club health, monitoring membership trends, tracking dues reconciliation, and celebrating TRF giving achievements.</li>
                         <li><strong>Research & Education:</strong> Academic study, youth development analysis, and community impact evaluations.</li>
-                        <li><strong>AI & Automation:</strong> Interfacing autonomous AI assistants (via MCP or REST) to query membership statistics, leadership rosters, and compliance summaries for authorized district research.</li>
+                        <li><strong>AI & Automation:</strong> Interfacing autonomous AI assistants (via MCP on OpenAI ChatGPT, Anthropic Claude, Claude Desktop, or REST) to query membership statistics, leadership rosters, and compliance summaries for authorized district research.</li>
                     </ul>
                     <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600, color: 'var(--danger, #d93025)' }}>
                         Prohibited Activities:
@@ -123,7 +123,7 @@ export default function TermsOfServicePage() {
                         6. Disclaimer of Warranties and Limitation of Liability
                     </h2>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', lineHeight: '1.7', color: 'var(--text-main)' }}>
-                        The service, datasets, REST APIs, and MCP endpoints are provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without warranties of any kind, either express or implied, including but not limited to uptime guarantees, completeness, or fitness for a particular purpose.
+                        The service, datasets, REST APIs, and MCP endpoints are provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without warranties of any kind, either express or implied, including but not limited to uptime guarantees, completeness, or fitness for a particular purpose. RSAMDIO operates independently of Rotary International, OpenAI, and Anthropic.
                     </p>
                     <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.7', color: 'var(--text-muted)' }}>
                         In no event shall RSAMDIO, its officers, developers, or Rotary International be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use this platform, including any decisions made based on published metrics.

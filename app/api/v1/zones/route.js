@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getZones } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +9,7 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
-export async function GET() {
+export const GET = withApiTelemetry(async function GET() {
     try {
         const zones = await getZones();
         return NextResponse.json({
@@ -19,4 +20,4 @@ export async function GET() {
         console.error('API /v1/zones error:', error);
         return NextResponse.json({ error: 'Failed to retrieve zones' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/zones' });

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getUnifiedIssuesList } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,7 +20,7 @@ const CACHE_HEADERS = {
  *   district, zone, base, country, issueType (all|both|arrears|no_officers|at_risk),
  *   minOutstanding, maxOutstanding, sortBy (outstanding|name|district), sortOrder, limit, offset
  */
-export async function GET(request) {
+export const GET = withApiTelemetry(async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
         const district = searchParams.get('district') || '';
@@ -53,4 +54,4 @@ export async function GET(request) {
         console.error('API /v1/compliance/unified error:', error);
         return NextResponse.json({ error: 'Failed to retrieve unified compliance list' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/compliance/unified' });

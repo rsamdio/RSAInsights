@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "Institutional analytics, KPIs, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, 7).",
   "author": {
-    "name": "Rotaract Insights",
+    "name": "Rotaract South Asia MDIO",
     "email": "insights@rsamdio.org",
-    "url": "https://insights.rsamdio.org"
+    "url": "https://rsamdio.org"
   },
-  "homepage": "https://insights.rsamdio.org",
+  "homepage": "https://rsamdio.org",
   "repository": "https://github.com/zeospec/rotaractsouthasiadata",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,7 @@
         "displayName": "Rotaract Insights",
         "shortDescription": "South Asia Rotaract Analytics",
         "longDescription": "Rotaract Insights delivers executive KPIs, district intelligence, membership demographics, and compliance monitoring for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, and 7), covering India, Nepal, and Sri Lanka. Query financial arrears, missing officer reports, Foundation (TRF) contributions, Interact sponsorship, and worldwide benchmarks directly in ChatGPT.",
-        "developerName": "Rotaract Insights",
+        "developerName": "Rotaract South Asia MDIO",
         "category": "Data & Analytics",
         "capabilities": [
           "District KPIs",
@@ -36,7 +36,7 @@
           "Foundation Giving",
           "Interact Analytics"
         ],
-        "websiteURL": "https://insights.rsamdio.org",
+        "websiteURL": "https://rsamdio.org",
         "supportURL": "https://insights.rsamdio.org/contact",
         "privacyPolicyURL": "https://insights.rsamdio.org/privacy",
         "termsOfServiceURL": "https://insights.rsamdio.org/terms",

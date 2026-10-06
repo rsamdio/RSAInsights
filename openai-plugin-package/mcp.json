@@ -4,6 +4,10 @@
     "Rotaract Insights": {
       "type": "streamable-http",
       "url": "https://insights.rsamdio.org/api/mcp"
+    },
+    "rotaract-insights": {
+      "type": "streamable-http",
+      "url": "https://insights.rsamdio.org/api/mcp"
     }
   }
 }

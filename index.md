@@ -43,6 +43,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
 | `lib/mcp/tools.js` | MCP tool schemas (14 tools, 8 resources, 4 prompts) and execution dispatcher | MCP Tool definitions |
 | `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity | Stdio MCP tasks |
+| `lib/telemetry/axiom.js` | Axiom telemetry client: non-blocking structured observability for REST API and MCP | Telemetry / Observability tasks |
 | `app/globals.css` | Global styles, CSS variables, glassmorphism card classes, mobile breakpoints | Styling / Theme tasks |
 | `lib/api.js` | Data Access Layer: file reader with mtime cache (`global.apiCache`), O(1) `getClubMap()` | Data querying / Helpers |
 | `scripts/generate_dashboard_data.js` | Master ETL pipeline: parses Excel/CSV files, computes rollups & deltas, writes JSON/CSV to `data/` | ETL / Master data tasks |
@@ -53,6 +54,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `public/.well-known/mcp-server.json` | MCP server discovery manifest for platform integration and auto-discovery | MCP discovery |
 | `public/.well-known/openai-apps-challenge` & `app/.well-known/` | Domain ownership challenge verification endpoint for OpenAI App Directory submission | OpenAI verification |
 | `openai-skills/` | Pre-packaged OpenAI agent skills (compliance audit, sponsorship pipeline, worldwide benchmark, south asia overview) | OpenAI skill packaging |
+| `claude-connector-submission/` | Anthropic Claude Connectors Directory submission package, step-by-step wizard guides, tools reference, and review notes | Claude connector submission |
 | `fulldata/` | Raw active master Excel workbooks (`MasterData.xlsx`) | Raw master data inputs |
 | `basedata/` | Historical baseline CSVs (`1july.csv`, `1julyCountries.csv`, `Zone45678 - 9July2026.xlsx`) | Baseline references |
 | `data/` | Pre-aggregated JSON and CSV files consumed by `lib/api.js` | Generated data artifacts |

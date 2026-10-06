@@ -98,6 +98,7 @@
 ### API, MCP & Services
 - `lib/services/analyticsService.js`: Core domain service layer handling search, filtering, dual rankings, baselines, and aggregations.
 - `lib/mcp/tools.js`: MCP schemas for 14 tools, 8 resources, 4 prompts, output schemas, and tool execution dispatcher.
+- `lib/telemetry/axiom.js`: Axiom telemetry client providing non-blocking structured observability for REST API and MCP.
 - `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`).
 - `app/api/v1/`: 20 public REST endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
 - `app/api/mcp/route.js`: JSON-RPC 2.0 HTTP route serving MCP tools, resources, and prompts over HTTPS (protocol version 2026-07-28).

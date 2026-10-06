@@ -8,6 +8,7 @@ import {
     getTRFContributions, 
     getAllClubs 
 } from '@/lib/api';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -37,7 +38,7 @@ function matchesDistrictFilter(itemDist, selectedDistricts) {
     return selectedDistricts.includes(cleanDist);
 }
 
-export async function GET(request, { params }) {
+export const GET = withApiTelemetry(async function GET(request, { params }) {
     try {
         const { tab } = await params;
         const { searchParams } = new URL(request.url);
@@ -202,4 +203,4 @@ export async function GET(request, { params }) {
         console.error('API /api/table-data/[tab] error:', error);
         return NextResponse.json({ error: 'Failed to retrieve table data' }, { status: 500 });
     }
-}
+}, { route: '/api/table-data/[tab]' });

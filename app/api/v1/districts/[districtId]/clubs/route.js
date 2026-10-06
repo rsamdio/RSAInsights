@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { searchClubs, normalizeDistrictId } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,7 +16,7 @@ const CACHE_HEADERS = {
  * REST sub-resource listing all Rotaract clubs belonging to a specific district.
  * Supports standard filtering, sorting, and pagination.
  */
-export async function GET(request, { params }) {
+export const GET = withApiTelemetry(async function GET(request, { params }) {
     try {
         const { districtId } = await params;
         const normalizedDistrict = normalizeDistrictId(districtId);
@@ -58,4 +59,4 @@ export async function GET(request, { params }) {
         console.error('API /v1/districts/[districtId]/clubs error:', error);
         return NextResponse.json({ error: 'Failed to retrieve district clubs' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/districts/[districtId]/clubs' });

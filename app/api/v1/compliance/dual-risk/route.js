@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import { getDualRiskList } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
 const CACHE_HEADERS = {
     'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
-    'Netlify-Vary': 'query',
     'Access-Control-Allow-Origin': '*',
 };
 
@@ -18,7 +18,7 @@ const CACHE_HEADERS = {
  * Query params:
  *   district, zone, base, country, minOutstanding, sortBy (outstanding|name|district), sortOrder, limit, offset
  */
-export async function GET(request) {
+export const GET = withApiTelemetry(async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
         const district = searchParams.get('district') || '';
@@ -48,4 +48,4 @@ export async function GET(request) {
         console.error('API /v1/compliance/dual-risk error:', error);
         return NextResponse.json({ error: 'Failed to retrieve dual-risk compliance list' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/compliance/dual-risk' });

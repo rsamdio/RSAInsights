@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getDistrictDetails } from '@/lib/services/analyticsService';
+import { withApiTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +9,7 @@ const CACHE_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 };
 
-export async function GET(request, { params }) {
+export const GET = withApiTelemetry(async function GET(request, { params }) {
     try {
         const { districtId } = await params;
         const districtDetails = await getDistrictDetails(districtId);
@@ -24,4 +25,4 @@ export async function GET(request, { params }) {
         console.error('API /v1/districts/[districtId] error:', error);
         return NextResponse.json({ error: 'Failed to retrieve district details' }, { status: 500 });
     }
-}
+}, { route: '/api/v1/districts/[districtId]' });

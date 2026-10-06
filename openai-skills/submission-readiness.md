@@ -6,6 +6,9 @@ This document certifies the submission readiness of the **Rotaract South Asia An
 
 ## 1. Application & Plugin Profile
 - **Plugin Name:** Rotaract Insights
+- **App ID / Package Name:** `app_6abe1e08de148191ba09e8df055ecff5`
+- **Developer Name:** Rotaract South Asia MDIO
+- **Developer URL:** `https://rsamdio.org`
 - **Short Description:** Institutional analytics, compliance tracking, and rankings for Rotaract clubs and Rotary districts across Rotary International Zones 4, 5, 6, and 7.
 - **MCP Endpoint URL:** `https://insights.rsamdio.org/api/mcp` (JSON-RPC 2.0 over HTTPS)
 - **REST API Base URL:** `https://insights.rsamdio.org/api/v1`

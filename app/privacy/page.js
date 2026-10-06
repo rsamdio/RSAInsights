@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Privacy Policy | Rotaract Insights',
-    description: 'Privacy Policy for Rotaract Insights, the South Asia Analytics Dashboard, public REST API, and Model Context Protocol (MCP) server for ChatGPT and AI platforms.',
+    description: 'Privacy Policy for Rotaract Insights, the South Asia Analytics Dashboard, public REST API, and Model Context Protocol (MCP) server for OpenAI ChatGPT, Anthropic Claude, and AI platforms.',
     alternates: {
         canonical: 'https://insights.rsamdio.org/privacy',
     },
@@ -48,10 +48,10 @@ export default function PrivacyPolicyPage() {
                         1. Overview and Scope
                     </h2>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', lineHeight: '1.7', color: 'var(--text-main)' }}>
-                        Rotaract South Asia Multi-District Information Organisation (RSAMDIO) operates <strong>Rotaract Insights</strong>, encompassing the analytical web dashboard (<code>insights.rsamdio.org</code>), the public REST API (<code>/api/v1/*</code>), and the Model Context Protocol (MCP) server for OpenAI ChatGPT, Codex, and AI assistants.
+                        Rotaract South Asia Multi-District Information Organisation (RSAMDIO) operates <strong>Rotaract Insights</strong>, encompassing the analytical web dashboard (<code>insights.rsamdio.org</code>), the public REST API (<code>/api/v1/*</code>), and the Model Context Protocol (MCP) server for AI assistants including OpenAI ChatGPT and Anthropic Claude.
                     </p>
                     <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.7', color: 'var(--text-muted)' }}>
-                        This Privacy Policy describes how information is collected, processed, retained, and safeguarded when you access our dashboard, download public datasets, query our REST APIs, or interact with the Rotaract Insights plugin through ChatGPT or agentic workflows.
+                        This Privacy Policy describes how information is collected, processed, retained, and safeguarded when you access our dashboard, download public datasets, query our REST APIs, or interact with our MCP server through ChatGPT, Claude, or custom agentic workflows.
                     </p>
                 </div>
 
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <ul style={{ margin: '0 0 14px 0', paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                         <li>
-                            <strong>ChatGPT Plugin and MCP Server:</strong> Zero end-user personal data is collected. The plugin accepts strictly analytical filter parameters (such as district numbers, club names, zone identifiers, or country names) necessary to fulfill your informational query. We do not require, request, or collect user account details, email addresses, names, or passwords.
+                            <strong>AI Assistant Connectors & MCP Servers (ChatGPT & Claude):</strong> Zero end-user personal data is collected. The MCP server accepts strictly analytical filter parameters (such as district numbers, club names, zone identifiers, or country names) necessary to fulfill your informational query. We do not require, request, or collect user account details, email addresses, names, or passwords.
                         </li>
                         <li>
                             <strong>Prohibition of Restricted Data:</strong> We do not collect, solicit, or process any Restricted Data as defined by platform safety policies, including:
@@ -114,7 +114,8 @@ export default function PrivacyPolicyPage() {
                     <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                         <li><strong>Cloudflare:</strong> Edge network proxy providing SSL/TLS termination, DDoS mitigation, and content delivery caching.</li>
                         <li><strong>Netlify:</strong> Cloud hosting infrastructure that hosts the Next.js application runtime and API serverless functions.</li>
-                        <li><strong>OpenAI Platform:</strong> When you invoke the Rotaract Insights plugin via ChatGPT or Codex, communication between OpenAI and our MCP server is governed by OpenAI's terms and privacy policies. No external third parties receive your queries.</li>
+                        <li><strong>OpenAI Platform:</strong> When you invoke the Rotaract Insights plugin via ChatGPT, communication between OpenAI and our MCP server is direct and governed by OpenAI's terms and privacy policies. No external third parties receive your queries.</li>
+                        <li><strong>Anthropic Claude Platform:</strong> When you connect Rotaract Insights to Claude via the Model Context Protocol (Claude Connectors Directory, Claude Desktop, or Claude for Work), communication between Anthropic and our MCP server is direct, encrypted in transit via TLS, and governed by Anthropic's terms and data privacy standards. We do not receive Claude user account profiles or session credentials.</li>
                         <li><strong>Google Analytics:</strong> Provides aggregate, anonymized website traffic statistics for the browser interface (subject to Google's standard privacy safeguards with IP anonymization enabled).</li>
                     </ul>
                 </div>
@@ -129,7 +130,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                         <li>
-                            <strong>Plugin and MCP Query Data (Zero Retention):</strong> Query parameters sent to the MCP server are processed entirely in-memory and discarded immediately upon generation of the response. We do not persist, log, or store chat messages, prompt texts, or query histories to any database or permanent storage.
+                            <strong>AI Connectors & MCP Query Data (Zero Retention):</strong> Query parameters sent to the MCP server from ChatGPT, Claude, or standalone MCP clients are processed entirely in-memory and discarded immediately upon generation of the response. We do not persist, log, or store chat messages, prompt texts, or query histories to any database or permanent storage.
                         </li>
                         <li>
                             <strong>Server Operational Access Logs (14-30 Days):</strong> Standard HTTP access logs (containing anonymized IP addresses, endpoint paths, response codes, and timestamps) are kept in secure, access-controlled infrastructure for diagnostic and security auditing for a maximum rolling window of 14 to 30 days, after which they are automatically purged.
@@ -149,7 +150,7 @@ export default function PrivacyPolicyPage() {
                         You retain full control over how you interact with Rotaract Insights:
                     </p>
                     <ul style={{ margin: '0 0 14px 0', paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
-                        <li><strong>Plugin Control:</strong> You can install, enable, disable, or remove the Rotaract Insights plugin at any time directly through the OpenAI ChatGPT Plugin and App settings.</li>
+                        <li><strong>Connector & Plugin Controls:</strong> You can install, enable, disable, disconnect, or remove Rotaract Insights at any time directly through OpenAI ChatGPT Plugin and App settings or Anthropic Claude Connector settings.</li>
                         <li><strong>Cookie & Telemetry Opt-Out:</strong> You can block cookies or disable JavaScript tracking in your browser or through privacy extensions (such as uBlock Origin or Privacy Badger) without losing access to the web dashboard.</li>
                         <li><strong>Accountless Access:</strong> Because our services require no registration or user accounts, there are no personal user profiles, tracking histories, or stored credentials associated with your identity.</li>
                         <li><strong>Data Protection Inquiries:</strong> Under applicable data protection regulations (such as GDPR, CCPA, and the Digital Personal Data Protection Act), you have the right to inquire about our data practices or request information by contacting our privacy team.</li>
@@ -185,7 +186,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                         <li><strong>TLS 1.3 Encryption:</strong> All web, API, and SSE streams require modern TLS encryption in transit.</li>
-                        <li><strong>Read-Only Architecture:</strong> All MCP tools and public endpoints are strictly read-only (<code>readOnlyHint: true</code>, <code>x-openai-isConsequential: false</code>). No user queries can modify master records.</li>
+                        <li><strong>Read-Only Architecture:</strong> All MCP tools and public endpoints are strictly read-only (<code>readOnlyHint: true</code>, <code>destructiveHint: false</code>, <code>idempotentHint: true</code>, <code>x-openai-isConsequential: false</code>). No user queries can modify master records.</li>
                         <li><strong>Edge CDN Protection:</strong> Distributed edge security with DDoS mitigation, automatic threat blocking, and strict Content Security Policies.</li>
                     </ul>
                 </div>
