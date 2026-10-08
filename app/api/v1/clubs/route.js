@@ -29,6 +29,7 @@ export const GET = withApiTelemetry(async function GET(request) {
         const isArrearsParam = searchParams.get('isArrears') ?? searchParams.get('is_arrears');
         const isAtRiskParam = searchParams.get('isAtRisk') ?? searchParams.get('is_at_risk');
         const isNoOfficersParam = searchParams.get('isNoOfficers') ?? searchParams.get('is_no_officers');
+        const isDualRiskParam = searchParams.get('isDualRisk') ?? searchParams.get('is_dual_risk');
         const isNewClubParam = searchParams.get('isNewClub') ?? searchParams.get('is_new_club');
         const sponsorsInteractParam = searchParams.get('sponsorsInteract') ?? searchParams.get('sponsors_interact');
         const limit = searchParams.get('limit') || 25;
@@ -37,6 +38,7 @@ export const GET = withApiTelemetry(async function GET(request) {
         const isArrears = isArrearsParam !== null ? isArrearsParam === 'true' : undefined;
         const isAtRisk = isAtRiskParam !== null ? isAtRiskParam === 'true' : undefined;
         const isNoOfficers = isNoOfficersParam !== null ? isNoOfficersParam === 'true' : undefined;
+        const isDualRisk = isDualRiskParam !== null ? isDualRiskParam === 'true' : undefined;
         const isNewClub = isNewClubParam !== null ? isNewClubParam === 'true' : undefined;
         const sponsorsInteract = sponsorsInteractParam !== null ? sponsorsInteractParam === 'true' : undefined;
 
@@ -56,6 +58,7 @@ export const GET = withApiTelemetry(async function GET(request) {
             isArrears,
             isAtRisk,
             isNoOfficers,
+            isDualRisk,
             isNewClub,
             sponsorsInteract,
             limit,

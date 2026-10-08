@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
                         <li><strong>Aggregate Reporting:</strong> Gauging aggregate community interest across regional zones and districts to optimize server caching and dataset updates.</li>
                     </ul>
                     <p style={{ margin: 0, fontSize: '13.5px', lineHeight: '1.6', color: 'var(--text-muted)', background: 'var(--bg-gradient, #f8f9fa)', padding: '14px', borderRadius: '8px', borderLeft: '4px solid var(--primary, #0f4c81)' }}>
-                        <strong>Zero Commercial Exploitation:</strong> We never monetize, sell, license, or reuse user queries or analytics data for advertising, commercial marketing, or automated profiling.
+                        <strong>Zero Commercial Exploitation & No AI Model Training:</strong> We never monetize, sell, license, or reuse user queries or analytics data for advertising, commercial marketing, or automated profiling. We never use user queries, prompts, or MCP tool execution parameters to train, fine-tune, or evaluate artificial intelligence or machine learning models.
                     </p>
                 </div>
 

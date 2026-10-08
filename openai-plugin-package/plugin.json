@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "app_6abe1e08de148191ba09e8df055ecff5",
+  "name": "app-6ab5fc441f8c81919b26dbd012f277f7",
   "version": "1.0.0",
   "description": "Institutional analytics, KPIs, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, 7).",
   "author": {

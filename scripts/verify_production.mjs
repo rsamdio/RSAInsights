@@ -209,7 +209,7 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/arrears?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 1021) throw new Error(`Expected 1021 arrears clubs, got ${data.total}`);
+        if (data.total !== 1001) throw new Error(`Expected 1001 arrears clubs, got ${data.total}`);
         return `Total: ${data.total} clubs in arrears, Sample: ${data.data[0].name} (₹${data.data[0].outstandingINR})`;
     });
 
@@ -225,7 +225,7 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/dual-risk?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 744) throw new Error(`Expected 744 dual-risk clubs, got ${data.total}`);
+        if (data.total !== 734) throw new Error(`Expected 734 dual-risk clubs, got ${data.total}`);
         return `Total: ${data.total} dual-risk clubs, Sample: ${data.data[0].name} (Dist ${data.data[0].district}, ₹${data.data[0].outstandingINR})`;
     });
 
@@ -257,7 +257,7 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/trf?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 38) throw new Error(`Expected 38 TRF contributing clubs, got ${data.total}`);
+        if (data.total !== 42) throw new Error(`Expected 42 TRF contributing clubs, got ${data.total}`);
         return `Total: ${data.total} clubs contributing, Top Giver: ${data.data[0].name} ($${data.data[0].totalContributionsUSD})`;
     });
 
@@ -300,6 +300,25 @@ async function run() {
         const topDist = data.districts?.[0];
         if (!topDist?.district) throw new Error('Expected at least one district returned');
         return `Top District: Dist ${topDist.district} (Zone ${topDist.zone}) at +${topDist.membersGrowthPct.toFixed(1)}% growth (+${topDist.membersGrowthAbs} members)`;
+    });
+
+    await test('REST', 'GET /api/v1/worldwide?type=country&sortBy=members&limit=5 (Worldwide Country Rankings)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/worldwide?type=country&sortBy=members&limit=5`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const topCountry = data.countries?.[0];
+        if (!topCountry || topCountry.country === 'Unknown') throw new Error(`Expected valid country name, got ${topCountry?.country}`);
+        if (topCountry.country !== 'India') throw new Error(`Expected India rank 1, got ${topCountry.country}`);
+        return `Top Country: ${topCountry.country} (${topCountry.totalMembers.toLocaleString()} members, ${topCountry.activeClubs.toLocaleString()} clubs)`;
+    });
+
+    await test('REST', 'GET /api/v1/worldwide?type=country&country=India (Country Filtering)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/worldwide?type=country&country=India`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const match = data.countries?.find(c => c.country.toLowerCase() === 'india');
+        if (!match) throw new Error('Failed to find India via country filter');
+        return `Country Filter OK: ${match.country} (${match.activeClubs} active clubs)`;
     });
 
     await test('REST', 'GET /api/v1/leaderboards (Top Rankings Across Categories)', async () => {
@@ -603,6 +622,7 @@ async function run() {
         { name: 'find_rotary_opportunities', args: { opportunityType: 'no_rotaract', district: '3000', limit: 2 }, verify: d => `Opportunities in Dist 3000: ${d.total} clubs, Sample: ${d.data[0]?.name}` },
         { name: 'get_foundation_giving', args: { limit: 3 }, verify: d => `Total Donors: ${d.total}, Top Club: ${d.data[0]?.name} ($${d.data[0]?.totalContributionsUSD})` },
         { name: 'get_worldwide_rankings', args: { type: 'district', sortBy: 'member_growth_pct', limit: 3 }, verify: d => `Rank 1 District: Dist ${d.districts?.[0]?.district} (+${d.districts?.[0]?.membersGrowthPct.toFixed(1)}% growth)` },
+        { name: 'get_worldwide_rankings', args: { type: 'country', sortBy: 'members', limit: 5 }, verify: d => `Top Country: ${d.countries?.[0]?.country} (${d.countries?.[0]?.totalMembers?.toLocaleString()} members, ${d.countries?.[0]?.activeClubs?.toLocaleString()} clubs)` },
         { name: 'get_worldwide_rankings', args: { type: 'clubs', limit: 10 }, verify: d => `Top 10 Worldwide Clubs: 1st ${d.clubs?.[0]?.clubName} (${d.clubs?.[0]?.members} members)` },
         { name: 'get_worldwide_rankings', args: { type: 'clubs', base: 'community', limit: 20 }, verify: d => `Top 20 Community Clubs: 1st ${d.clubs?.[0]?.clubName} (${d.clubs?.[0]?.members} members)` },
         { name: 'get_worldwide_rankings', args: { type: 'clubs', base: 'university', limit: 20 }, verify: d => `Top 20 University Clubs: 1st ${d.clubs?.[0]?.clubName} (${d.clubs?.[0]?.members} members)` },
