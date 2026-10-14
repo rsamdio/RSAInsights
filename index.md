@@ -42,8 +42,8 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `public/openapi.json` | OpenAPI 3.1.0 specification covering all REST endpoints | API Spec tasks |
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
 | `lib/mcp/tools.js` | MCP tool schemas (14 tools, 8 resources, 4 prompts) and execution dispatcher | MCP Tool definitions |
-| `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity | Stdio MCP tasks |
-| `lib/telemetry/axiom.js` | Axiom telemetry client: non-blocking structured observability for REST API and MCP | Telemetry / Observability tasks |
+| `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`), with automatic `.env.local` environment loading | Stdio MCP tasks |
+| `lib/telemetry/axiom.js` | Axiom telemetry client: non-blocking structured observability with serverless `flushTelemetry`, client attribution, and dual metrics | Telemetry / Observability tasks |
 | `app/globals.css` | Global styles, CSS variables, glassmorphism card classes, mobile breakpoints | Styling / Theme tasks |
 | `lib/api.js` | Data Access Layer: file reader with mtime cache (`global.apiCache`), O(1) `getClubMap()` | Data querying / Helpers |
 | `scripts/generate_dashboard_data.js` | Master ETL pipeline: parses Excel/CSV files, computes rollups & deltas, writes JSON/CSV to `data/` | ETL / Master data tasks |
@@ -160,6 +160,7 @@ When information sources conflict, agents must follow this strict precedence:
 7. **O(1) Hash Map Lookups:** Use `getClubMap()` in `lib/api.js` for instant club lookups on `/club/[clubId]`. Never scan `all_clubs.json` linearly for single club queries.
 8. **Tab-on-Demand Data Loading:** `GlobalTables.js` fetches secondary tabs on demand via `/api/table-data/[tab]` with in-memory caching, keeping initial HTML payloads under 600 KB (down from 5.8 MB).
 9. **Strict No-Em-Dash Rule:** Never use long em dashes (Unicode \u2014) anywhere in agent-generated content, documentation, comments, commit messages, or UI copy. Use hyphens (`-`), colons (`:`), commas (`,`), or parentheses.
+10. **Axiom Serverless Observability Guarantee:** Route handlers and MCP endpoints must await `flushTelemetry(800)` before serverless responses terminate to prevent AWS Lambda / Netlify execution freeze from severing unawaited telemetry dispatches. Local stdio MCP sessions auto-load `.env.local` for zero-configuration developer tracing. Cost tier strictly maintained at $0.00 / month.
 
 ---
 

@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { NextResponse } from 'next/server';
 import {
     TOOLS_DEFINITIONS,
@@ -16,7 +17,7 @@ import {
     SUPPORTED_PROTOCOL_VERSIONS,
     negotiateProtocolVersion
 } from '@/lib/mcp/sse';
-import { logMcpRequest, extractClientIp } from '@/lib/telemetry/axiom';
+import { logMcpRequest, extractClientIp, flushTelemetry } from '@/lib/telemetry/axiom';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,14 +59,18 @@ export async function GET(request) {
     // If client explicitly requests SSE via header (e.g. ChatGPT Developer Mode, Claude Desktop)
     // or query parameter, establish real-time SSE stream
     if (isEventStream || isExplicitSse) {
+        const sseSessionId = crypto.randomUUID();
         logMcpRequest({
             method: 'sse/connect',
             status: 200,
             durationMs: Date.now() - start,
             userAgent,
-            ip
+            ip,
+            sessionId: sseSessionId,
+            path: '/api/mcp'
         });
-        return createSseResponse(request, '/api/mcp');
+        await flushTelemetry(800);
+        return createSseResponse(request, '/api/mcp', sseSessionId);
     }
 
     logMcpRequest({
@@ -75,6 +80,7 @@ export async function GET(request) {
         userAgent,
         ip
     });
+    await flushTelemetry(800);
 
     // Default for HTTP: Return JSON capability and tool discovery manifest
     return NextResponse.json({
@@ -100,11 +106,28 @@ export async function POST(request) {
     const ip = extractClientIp(request);
     let requestMethod = 'unknown';
     let negotiatedVersion = null;
+    let respondMeta = {};
 
-    function respond(responseObj, status = 200, headers = CORS_HEADERS) {
+    async function respond(responseObj, status = 200, headers = CORS_HEADERS) {
         if (sessionId) {
             sendSseMessage(sessionId, responseObj);
         }
+        const nestedResult = responseObj?.result;
+        const toolIsError = Boolean(
+            responseObj?.isError
+            || nestedResult?.isError
+            || respondMeta.toolSuccess === false
+        );
+        const errorText = (
+            responseObj?.error?.message
+            || responseObj?.error
+            || (responseObj?.isError ? responseObj?.content?.[0]?.text : null)
+            || (nestedResult?.isError ? nestedResult?.content?.[0]?.text : null)
+            || null
+        );
+        const toolSuccess = respondMeta.tool !== undefined
+            ? (respondMeta.toolSuccess !== undefined ? Boolean(respondMeta.toolSuccess) : !toolIsError)
+            : undefined;
         logMcpRequest({
             method: requestMethod,
             status,
@@ -113,8 +136,12 @@ export async function POST(request) {
             ip,
             sessionId,
             protocolVersion: negotiatedVersion,
-            error: responseObj?.error?.message || responseObj?.error || null
+            error: errorText,
+            tool: respondMeta.tool || undefined,
+            toolSuccess,
+            requestId: respondMeta.requestId ?? undefined,
         });
+        await flushTelemetry(800);
         return NextResponse.json(responseObj, { status, headers: withTiming(headers, start) });
     }
 
@@ -159,6 +186,7 @@ export async function POST(request) {
                     ip,
                     sessionId
                 });
+                await flushTelemetry(800);
                 return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
             }
 
@@ -166,7 +194,7 @@ export async function POST(request) {
             // Returns server identity, capabilities, and complete tool/resource/prompt manifest
             if (method === 'server/discover') {
                 const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
-                const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
+                negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
@@ -195,7 +223,7 @@ export async function POST(request) {
             // Standard MCP initialize handshake (MCP 2024-11-05 specification)
             if (method === 'initialize') {
                 const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
-                const negotiatedVersion = negotiateProtocolVersion(requestedVersion);
+                negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 const versionHeaders = {
                     ...NO_CACHE_HEADERS,
                     'Mcp-Protocol-Version': negotiatedVersion
@@ -231,8 +259,19 @@ export async function POST(request) {
             if (method === 'tools/call') {
                 const toolName = params?.name;
                 const toolArgs = params?.arguments || {};
-                const executionResult = await executeTool(toolName, toolArgs, { source: 'http' });
+                const executionResult = await executeTool(toolName, toolArgs, {
+                    source: sessionId ? 'sse' : 'http',
+                    userAgent,
+                    ip,
+                    sessionId,
+                    requestId: responseId
+                });
 
+                respondMeta = {
+                    tool: toolName,
+                    toolSuccess: !executionResult?.isError,
+                    requestId: responseId
+                };
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
@@ -330,8 +369,19 @@ export async function POST(request) {
             }, 400);
         }
 
-        const executionResult = await executeTool(toolName, toolArgs, { source: 'http-direct' });
-        return respond(executionResult);
+        const executionResult = await executeTool(toolName, toolArgs, {
+            source: 'http-direct',
+            userAgent,
+            ip,
+            sessionId
+        });
+        const directStatus = executionResult?.isError ? 400 : 200;
+        respondMeta = {
+            tool: toolName,
+            toolSuccess: !executionResult?.isError,
+            requestId: null
+        };
+        return respond(executionResult, directStatus);
 
     } catch (error) {
         console.error('API /api/mcp error:', error);

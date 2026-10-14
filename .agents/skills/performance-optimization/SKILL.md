@@ -38,3 +38,10 @@ This skill outlines optimization patterns and analytics standards for the dashbo
 
 - **Initialization:** Use `strategy="afterInteractive"` on Google Tag Manager in `app/layout.js` to ensure 100% visit and bounce capture.
 - **App Router Client-Side Navigation Tracking:** Real-time route tracking is handled by `components/ui/Analytics.js` (`usePathname`, `useSearchParams`), automatically firing `gtag('config', ...)` on every client-side page transition and filter query change.
+
+## Axiom Observability & Serverless Anti-Freeze
+
+- **Non-Blocking Ingestion:** Telemetry ingestion via `lib/telemetry/axiom.js` schedules dispatches asynchronously via Next.js `after()` or tracking promises in `pendingTasks`.
+- **Serverless Flush Guarantee:** AWS Lambda / Netlify execution freezes immediately when HTTP responses finish. Route handlers coordinate with `flushTelemetry(timeoutMs = 800)` to ensure pending ingestion tasks complete before container freeze.
+- **Auto-Loaded Stdio Environment:** `scripts/mcp_server.js` automatically loads `.env.local` or `.env` at startup for zero-configuration tracing during Cursor, Claude Desktop, or CLI sessions.
+- **Cost Invariant:** Telemetry strictly operates at $0.00 / month on the Axiom Cloud Free tier (up to 500 GB / month).

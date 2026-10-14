@@ -146,11 +146,14 @@ The REST API endpoints and Model Context Protocol (MCP) server include structure
 | `DEBUG_TELEMETRY` | Set to `1` or `true` to print telemetry payloads to console | `false` |
 
 ### Ingested Event Types:
-- `api_request`: Path, normalized route, HTTP method, status code, latency (ms), query params, IP, user agent.
-- `mcp_tool`: MCP tool name, arguments, latency (ms), outcome (success/failure), error message, caller source (`http` vs `stdio`), result count.
-- `mcp_request`: Protocol methods (`initialize`, `server/discover`, `tools/list`, `tools/call`, `sse/connect`), status, latency.
+- `api_request`: Path, normalized route, HTTP method, status code, latency (ms), query parameters, caller IP, user agent, referer.
+- `mcp_tool`: MCP tool name, sanitized arguments, execution latency (ms), outcome (success/failure), error details, caller source (`http`, `sse`, `stdio`, `http-direct`), returned slice item count (`resultCount`), total matching database records (`totalMatches`), caller IP, user agent, session ID, JSON-RPC request ID.
+- `mcp_request`: Protocol methods (`initialize`, `server/discover`, `tools/list`, `tools/call`, `manifest/get`, `sse/connect`), status code, latency, user agent, caller IP, session ID, protocol version.
 
-When `AXIOM_TOKEN` is not configured, telemetry is safely disabled with zero overhead, network requests, or crashes.
+### Reliability & Delivery Guarantees:
+- **Serverless Anti-Freeze:** Route handlers coordinate with `flushTelemetry(800)` to ensure pending ingestion tasks complete before AWS Lambda / Netlify execution freezes on response completion.
+- **Auto-Loaded Stdio Environment:** `scripts/mcp_server.js` automatically loads `.env.local` or `.env` at startup for zero-configuration tracing during Cursor, Claude Desktop, or CLI sessions.
+- **Safe Fallback:** When `AXIOM_TOKEN` is not configured, telemetry is safely disabled with zero overhead, network requests, or crashes.
 
 ---
 
