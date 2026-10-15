@@ -76,7 +76,7 @@ const MCP_TOOLS = [
         name: 'get_new_clubs',
         label: 'Newly Chartered Clubs',
         badge: 'New Charters',
-        description: 'Retrieve newly chartered Rotaract clubs in South Asia (126 clubs chartered during the current period) with charter dates, member counts, sponsor Rotary clubs, and district mapping.',
+        description: 'Retrieve newly chartered Rotaract clubs in South Asia with charter dates, member counts, sponsor Rotary clubs, and district mapping. Read live `total` from the response.',
         exampleArgs: { limit: 5 },
         examplePrompt: 'Which new Rotaract clubs were chartered in District 3000?',
         params: [
@@ -140,7 +140,7 @@ const MCP_TOOLS = [
     {
         name: 'find_dual_risk_clubs',
         label: 'Dual Non-Compliance Risk',
-        badge: 'Highest Risk (744 Clubs)',
+        badge: 'Highest Risk Cohort',
         description: 'Find Rotaract clubs that have BOTH outstanding financial arrears AND missing officer reports simultaneously: the highest aggregate compliance risk group.',
         exampleArgs: { limit: 5 },
         examplePrompt: 'Show me the clubs with both financial arrears and missing officers in District 3000.',
@@ -154,8 +154,8 @@ const MCP_TOOLS = [
     {
         name: 'get_interact_analytics',
         label: 'Interact Analytics & Sponsors',
-        badge: '9,070+ Interact Clubs',
-        description: 'Retrieve Interact statistics across South Asia: 9,070+ total Interact clubs, 137 Interact clubs sponsored by 65 Rotaract clubs, district/zone breakdowns, and suspended club tracking.',
+        badge: 'Interact Analytics',
+        description: 'Retrieve Interact statistics across South Asia (Zones 4-7): district/zone breakdowns, suspended club tracking, and Rotaract-sponsored Interact clubs. Read live totals from the response overview.',
         exampleArgs: {},
         examplePrompt: 'Which Rotaract clubs in South Asia sponsor Interact clubs?',
         params: [

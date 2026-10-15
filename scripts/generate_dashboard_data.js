@@ -749,16 +749,15 @@ districtOfficersSheet = districtOfficersSheet.filter(row => row['District']).map
     return row;
 });
 
-// Filter Rotary Clubs with no Rotaract Sponsor
+// Filter Rotary Clubs with no Rotaract Sponsor (South Asia Zone45678 districts only)
 let rotaryNoSponsorSheet = rotarySheet.filter(row => {
-    return parseInt(row['Total Clubs Sponsored']) === 0 && row['District'];
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    return parseInt(row['Total Clubs Sponsored']) === 0 && dist && districtToZone[dist];
 }).map(row => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    row['RI Zone'] = districtToZone[dist] || 'Unknown';
-    row['District'] = dist;
     return {
-        'RI Zone': row['RI Zone'],
-        'District': row['District'],
+        'RI Zone': districtToZone[dist],
+        'District': dist,
         'Club Name': row['Club Name'],
         'Club Status': row['Club Status'],
         'Current Member Count': row['Current Member Count'],
@@ -766,14 +765,14 @@ let rotaryNoSponsorSheet = rotarySheet.filter(row => {
     };
 });
 
-// Filter Rotary Clubs with no Interact Sponsor
+// Filter Rotary Clubs with no Interact Sponsor (South Asia Zone45678 districts only)
 let rotaryNoInteractSheet = rotarySheet.filter(row => {
-    return (parseInt(row['Total Interact Clubs Sponsored']) || 0) === 0 && row['District'];
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '');
+    return (parseInt(row['Total Interact Clubs Sponsored']) || 0) === 0 && dist && districtToZone[dist];
 }).map(row => {
     const dist = (row['District'] || '').toString().replace(/\.0$/, '');
-    const zone = districtToZone[dist] || (row['Zone'] ? (String(row['Zone']).startsWith('Zone') ? row['Zone'] : `Zone ${row['Zone']}`) : 'Unknown');
     return {
-        'RI Zone': zone,
+        'RI Zone': districtToZone[dist],
         'District': dist,
         'Club Name': row['Club Name'] || row['Club Name with Rotary'] || 'Unknown Rotary Club',
         'Club Status': row['Club Status'] || 'Active',

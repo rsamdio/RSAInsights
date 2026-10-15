@@ -258,6 +258,13 @@ export async function POST(request) {
 
             if (method === 'tools/call') {
                 const toolName = params?.name;
+                if (!toolName) {
+                    return respond({
+                        jsonrpc: '2.0',
+                        id: responseId,
+                        error: { code: -32602, message: 'Missing required parameter: "name" (tool name)' }
+                    }, 400);
+                }
                 const toolArgs = params?.arguments || {};
                 const executionResult = await executeTool(toolName, toolArgs, {
                     source: sessionId ? 'sse' : 'http',

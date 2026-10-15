@@ -335,13 +335,13 @@ async function main() {
     await runTest('MCP', 'find_rotary_opportunities (no_rotaract)', async () => {
         const data = await callMcpTool('find_rotary_opportunities', { opportunityType: 'no_rotaract', limit: 3 });
         assertSanity(data);
-        if (data.total !== 3574) throw new Error(`Expected 3574 no-rotaract clubs, got ${data.total}`);
+        if (data.total !== 3431) throw new Error(`Expected 3431 South Asia no-rotaract clubs, got ${data.total}`);
         return `Rotary w/o Rotaract: ${data.total} clubs`;
     });
     await runTest('MCP', 'find_rotary_opportunities (no_interact)', async () => {
         const data = await callMcpTool('find_rotary_opportunities', { opportunityType: 'no_interact', limit: 3 });
         assertSanity(data);
-        if (data.total !== 3036) throw new Error(`Expected 3036 no-interact clubs, got ${data.total}`);
+        if (data.total !== 2953) throw new Error(`Expected 2953 South Asia no-interact clubs, got ${data.total}`);
         return `Rotary w/o Interact: ${data.total} clubs`;
     });
 
@@ -413,6 +413,116 @@ async function main() {
             return `Matched ${found.country}: ${found.activeClubs} clubs, ${found.totalMembers} members`;
         });
     }
+
+    // -------------------------------------------------------------------------
+    // 15. Edge-case / deep-pass regressions (test report + plan matrix)
+    // -------------------------------------------------------------------------
+    console.log('\n--- 15. Edge-case regressions ---');
+    await runTest('MCP', 'get_worldwide_rankings district=3233 limit=1', async () => {
+        const data = await callMcpTool('get_worldwide_rankings', { type: 'district', district: '3233', limit: 1 });
+        assertSanity(data);
+        if (String(data.districts?.[0]?.district) !== '3233') {
+            throw new Error(`Expected district 3233, got ${data.districts?.[0]?.district}`);
+        }
+        if (!data.districts[0].worldwideRank) throw new Error('Missing worldwideRank');
+        return `3233 worldwideRank=${data.districts[0].worldwideRank} southAsiaRank=${data.districts[0].southAsiaRank}`;
+    });
+    await runTest('MCP', 'get_worldwide_rankings district=0000 not found', async () => {
+        const data = await callMcpTool('get_worldwide_rankings', { type: 'district', district: '0000', limit: 1 });
+        if (!data.error || data.total !== 0 || (data.districts && data.districts.length !== 0)) {
+            throw new Error(`Expected not-found empty payload, got total=${data.total} error=${data.error} districts=${data.districts?.length}`);
+        }
+        return data.error;
+    });
+    await runTest('MCP', 'get_summary invalid zone errors', async () => {
+        const res = await fetch(`${BASE_URL}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'bad-zone',
+                method: 'tools/call',
+                params: { name: 'get_summary', arguments: { zone: '9' } }
+            })
+        });
+        const json = await res.json();
+        const text = json.result?.content?.[0]?.text || '';
+        if (!json.result?.isError && !/not found|unsupported|invalid/i.test(text)) {
+            throw new Error(`Expected error for zone 9, got: ${text.slice(0, 200)}`);
+        }
+        return 'zone 9 rejected';
+    });
+    await runTest('MCP', 'search_clubs isArrears="false" not truthy', async () => {
+        const data = await callMcpTool('search_clubs', { isArrears: 'false', limit: 5 });
+        assertSanity(data);
+        if (data.data?.some(c => c.isArrears)) throw new Error('isArrears=false returned arrears clubs');
+        return `non-arrears sample total=${data.total}`;
+    });
+    await runTest('MCP', 'search_clubs multi-zone 4,5,6,7', async () => {
+        const data = await callMcpTool('search_clubs', { zone: '4,5,6,7', limit: 100 });
+        assertSanity(data);
+        const [z4, z5, z6, z7] = await Promise.all([
+            callMcpTool('search_clubs', { zone: '4', limit: 1 }),
+            callMcpTool('search_clubs', { zone: '5', limit: 1 }),
+            callMcpTool('search_clubs', { zone: '6', limit: 1 }),
+            callMcpTool('search_clubs', { zone: '7', limit: 1 })
+        ]);
+        const expected = z4.total + z5.total + z6.total + z7.total;
+        if (data.total !== expected) throw new Error(`Expected multi-zone total ${expected}, got ${data.total}`);
+        if (data.data?.some(c => !['Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'].includes(c.zone))) {
+            throw new Error('Unexpected zone outside 4-7');
+        }
+        return `multi total=${data.total} (== sum of zones)`;
+    });
+    await runTest('MCP', 'get_leaderboards zone=5 TRF non-empty', async () => {
+        const data = await callMcpTool('get_leaderboards', { category: 'trf_giving', zone: '5', limit: 5 });
+        assertSanity(data);
+        if (!data.data?.length) throw new Error('TRF zone=5 returned empty');
+        if (data.data.some(c => c.zone && c.zone !== 'Zone 5')) throw new Error('Zone leak in TRF');
+        return `TRF zone5 count=${data.data.length}`;
+    });
+    await runTest('MCP', 'get_club_profile districtLeadership', async () => {
+        const data = await callMcpTool('get_club_profile', { clubId: '8825786' });
+        assertSanity(data);
+        if (!data.districtLeadership) throw new Error('Missing districtLeadership');
+        return `DG=${data.districtLeadership.dg || '(none)'} DRR=${data.districtLeadership.drr || '(none)'}`;
+    });
+    await runTest('MCP', 'search_clubs limitCapped', async () => {
+        const data = await callMcpTool('search_clubs', { limit: 250 });
+        if (!data.pagination?.limitCapped && !data.limitCapped) throw new Error('Expected limitCapped');
+        if ((data.pagination?.limit || data.limit) > 100) throw new Error('Limit not capped to 100');
+        return `limit=${data.pagination?.limit || data.limit} capped`;
+    });
+    await runTest('MCP', 'worldwide interact region=south_asia no zone 15/16/25', async () => {
+        const data = await callMcpTool('get_worldwide_rankings', {
+            type: 'interact',
+            region: 'south_asia',
+            limit: 100
+        });
+        assertSanity(data);
+        if (!data.total || data.total < 10) throw new Error(`Expected SA interact districts, got ${data.total}`);
+        const zoneNum = (z) => parseInt(String(z || '').replace(/\D/g, ''), 10);
+        const bad = (data.districts || []).filter(d => ![4, 5, 6, 7].includes(zoneNum(d.Zone || d.zone)));
+        if (bad.length) throw new Error(`Non-SA zone leak: ${bad.map(d => d.Zone).join(',')}`);
+        const fifteen = (data.districts || []).filter(d => [15, 16, 25].includes(zoneNum(d.Zone || d.zone)));
+        if (fifteen.length) throw new Error(`Substring zone leak: ${fifteen.map(d => d.Zone).join(',')}`);
+        return `SA interact districts=${data.total}`;
+    });
+    await runTest('MCP', 'tools/call missing name -> -32602', async () => {
+        const res = await fetch(`${BASE_URL}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'no-name',
+                method: 'tools/call',
+                params: { arguments: {} }
+            })
+        });
+        const json = await res.json();
+        if (json.error?.code !== -32602) throw new Error(`Expected -32602, got ${JSON.stringify(json.error)}`);
+        return json.error.message;
+    });
 
     console.log('\n====================================================');
     console.log(`DEEP TEST SUITE COMPLETE: ${passedTests} / ${totalTests} PASSED, ${failedTests} FAILED`);

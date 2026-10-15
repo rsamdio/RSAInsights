@@ -13,7 +13,7 @@ const CACHE_HEADERS = {
  * GET /api/v1/compliance/dual-risk
  *
  * Returns clubs that have BOTH outstanding financial arrears AND missing officer reports.
- * These 761 clubs represent the highest aggregate compliance risk in South Asia.
+ * Highest aggregate compliance risk in South Asia (both arrears and missing officers).
  *
  * Query params:
  *   district, zone, base, country, minOutstanding, sortBy (outstanding|name|district), sortOrder, limit, offset

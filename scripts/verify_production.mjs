@@ -249,8 +249,16 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/opportunities/rotary?type=no_rotaract&limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 3574) throw new Error(`Expected 3574 opportunity clubs, got ${data.total}`);
+        if (data.total !== 3431) throw new Error(`Expected 3431 South Asia opportunity clubs (no_rotaract), got ${data.total}`);
         return `Total: ${data.total} Rotary clubs without Rotaract sponsorship, Sample: ${data.data[0].name}`;
+    });
+
+    await test('REST', 'GET /api/v1/opportunities/rotary?type=no_interact&limit=2 (Rotary no Interact)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/opportunities/rotary?type=no_interact&limit=2`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.total !== 2953) throw new Error(`Expected 2953 South Asia opportunity clubs (no_interact), got ${data.total}`);
+        return `Total: ${data.total} Rotary clubs without Interact sponsorship, Sample: ${data.data[0].name}`;
     });
 
     await test('REST', 'GET /api/v1/trf?limit=2 (Foundation Giving)', async () => {
@@ -622,6 +630,15 @@ async function run() {
         { name: 'find_rotary_opportunities', args: { opportunityType: 'no_rotaract', district: '3000', limit: 2 }, verify: d => `Opportunities in Dist 3000: ${d.total} clubs, Sample: ${d.data[0]?.name}` },
         { name: 'get_foundation_giving', args: { limit: 3 }, verify: d => `Total Donors: ${d.total}, Top Club: ${d.data[0]?.name} ($${d.data[0]?.totalContributionsUSD})` },
         { name: 'get_worldwide_rankings', args: { type: 'district', sortBy: 'member_growth_pct', limit: 3 }, verify: d => `Rank 1 District: Dist ${d.districts?.[0]?.district} (+${d.districts?.[0]?.membersGrowthPct.toFixed(1)}% growth)` },
+        { name: 'get_worldwide_rankings', args: { type: 'district', district: '3233', limit: 1 }, verify: d => {
+            if (String(d.districts?.[0]?.district) !== '3233') throw new Error(`Expected district 3233, got ${d.districts?.[0]?.district}`);
+            if (!d.districts?.[0]?.worldwideRank) throw new Error('Missing worldwideRank for filtered district');
+            return `District 3233 worldwideRank=${d.districts[0].worldwideRank} southAsiaRank=${d.districts[0].southAsiaRank}`;
+        } },
+        { name: 'get_club_profile', args: { clubId: '8825786' }, verify: d => {
+            if (!d.districtLeadership) throw new Error('Missing districtLeadership on club profile');
+            return `Club ${d.name} leadership DG=${d.districtLeadership.dg || '(none)'} DRR=${d.districtLeadership.drr || '(none)'}`;
+        } },
         { name: 'get_worldwide_rankings', args: { type: 'country', sortBy: 'members', limit: 5 }, verify: d => `Top Country: ${d.countries?.[0]?.country} (${d.countries?.[0]?.totalMembers?.toLocaleString()} members, ${d.countries?.[0]?.activeClubs?.toLocaleString()} clubs)` },
         { name: 'get_worldwide_rankings', args: { type: 'clubs', limit: 10 }, verify: d => `Top 10 Worldwide Clubs: 1st ${d.clubs?.[0]?.clubName} (${d.clubs?.[0]?.members} members)` },
         { name: 'get_worldwide_rankings', args: { type: 'clubs', base: 'community', limit: 20 }, verify: d => `Top 20 Community Clubs: 1st ${d.clubs?.[0]?.clubName} (${d.clubs?.[0]?.members} members)` },

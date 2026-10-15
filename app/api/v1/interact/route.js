@@ -13,11 +13,10 @@ const CACHE_HEADERS = {
 /**
  * GET /api/v1/interact
  *
- * Returns Interact analytics across South Asia:
- * - 8,921 total Interact clubs
- * - 735 suspended Interact clubs
- * - 137 Interact clubs sponsored directly by 65 Rotaract clubs
+ * Returns Interact analytics across South Asia (Zones 4-7):
+ * - Live totals from dashboard summary (read response overview fields)
  * - District-level and zone-level growth trends
+ * - Rotaract-sponsored Interact clubs when present
  *
  * Query params:
  *   district, zone, country, base

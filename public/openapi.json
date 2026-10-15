@@ -1080,7 +1080,7 @@
           "Clubs"
         ],
         "summary": "Newly Chartered Clubs",
-        "description": "Returns newly chartered Rotaract clubs in South Asia (126 clubs chartered in the current 2026 period) with charter dates, initial members, and sponsor Rotary clubs.",
+        "description": "Returns newly chartered Rotaract clubs in South Asia with charter dates, initial members, and sponsor Rotary clubs. Read live total from the response.",
         "operationId": "getNewClubs",
         "parameters": [
           {
@@ -1994,7 +1994,7 @@
           "Compliance"
         ],
         "summary": "Dual Risk Clubs (Arrears + Missing Officers)",
-        "description": "Returns clubs that simultaneously have both outstanding financial arrears AND missing officer reports (highest aggregate compliance risk, 761 clubs).",
+        "description": "Returns clubs that simultaneously have both outstanding financial arrears AND missing officer reports (highest aggregate compliance risk). Read live total from the response.",
         "operationId": "getDualRiskList",
         "parameters": [
           {
@@ -2218,7 +2218,7 @@
           "Overview"
         ],
         "summary": "Interact Analytics & Rotaract Sponsorships",
-        "description": "Returns comprehensive Interact club analytics across South Asia: 8,921 total clubs, 735 suspended, 137 clubs sponsored by 65 Rotaract clubs, plus district/zone growth trends.",
+        "description": "Returns comprehensive Interact club analytics across South Asia (Zones 4-7): district/zone growth trends, suspended clubs, and Rotaract-sponsored Interact clubs. Read live totals from the response overview.",
         "operationId": "getInteractAnalytics",
         "parameters": [
           {
