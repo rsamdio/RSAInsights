@@ -1,7 +1,7 @@
 interface:
   display_name: "Rotary Sponsorship Pipeline"
   short_description: "Strategic sponsorship expansion plans for District Governors and District Rotaract Chairs."
-  brand_color: "#005596"
+  brand_color: "#D91B5C"
   default_prompt: "Find Rotary clubs without Rotaract sponsorship in District [number]"
 
 policy:

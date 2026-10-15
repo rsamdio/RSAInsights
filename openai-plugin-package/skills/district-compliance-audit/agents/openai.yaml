@@ -1,7 +1,7 @@
 interface:
   display_name: "District Compliance Audit"
   short_description: "End-to-end compliance and health audit for any Rotary district in South Asia."
-  brand_color: "#005596"
+  brand_color: "#D91B5C"
   default_prompt: "Audit compliance risks and club health for District [number]"
 
 policy:

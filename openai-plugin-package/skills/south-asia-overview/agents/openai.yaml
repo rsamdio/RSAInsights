@@ -1,7 +1,7 @@
 interface:
   display_name: "South Asia Overview"
   short_description: "Macro executive analytics, regional KPI summaries, and inter-zone performance comparisons."
-  brand_color: "#005596"
+  brand_color: "#D91B5C"
   default_prompt: "Provide an executive overview and zone comparison across South Asia"
 
 policy:

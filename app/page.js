@@ -5,6 +5,7 @@ import DoughnutChart from '@/components/charts/DoughnutChart';
 import BarChart from '@/components/charts/BarChart';
 import GlobalTables from '@/components/tables/GlobalTables';
 import TopChartsSection from '@/components/sections/TopChartsSection';
+import AiConnect from '@/components/ui/AiConnect';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = {
@@ -488,6 +489,8 @@ export default async function GlobalDashboard({ searchParams }) {
                 <MetricCard title="Clubs w/ TRF Contribution" value={overall.trfClubs?.toLocaleString()} delay={0.25} />
                 <MetricCard title="Total TRF Contributions" value={`$${overall.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
             </section>
+
+            <AiConnect />
 
             <h2 className="section-title">Demographics & Foundation Breakdown</h2>
             <section className="charts-grid three-cols" style={{ marginBottom: '40px' }}>

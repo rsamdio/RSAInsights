@@ -223,6 +223,102 @@ body {
 }
 
 /* Worldwide Banner Card */
+/* AI Connect (Claude directory badge) */
+.ai-connect {
+    background: #fdfbf7;
+    border: 1px solid #ebe6dc;
+    border-radius: 14px;
+    padding: 28px 28px 24px;
+    margin-bottom: 40px;
+}
+
+.ai-connect-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ai-connect-badge-link {
+    display: inline-block;
+    line-height: 0;
+    border-radius: 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.ai-connect-badge-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ai-connect-badge {
+    display: block;
+    width: 200px;
+    height: 60px;
+}
+
+.ai-connect-lives-label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #9a958a;
+    text-transform: uppercase;
+}
+
+.ai-connect-lives-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ai-connect-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 22px;
+}
+
+.ai-connect-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ai-connect-platform:hover {
+    color: var(--primary);
+}
+
+.ai-connect-mcp-note {
+    font-size: 12px;
+    font-style: italic;
+    color: #9a958a;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ai-connect-mcp-note:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .ai-connect {
+        padding: 20px;
+    }
+
+    .ai-connect-lives-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 .worldwide-banner {
     background: linear-gradient(135deg, #0f4c81 0%, #08294a 100%);
     border: 1px solid rgba(255, 255, 255, 0.12);

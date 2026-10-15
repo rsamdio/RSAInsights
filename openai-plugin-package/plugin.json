@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "app-6ab5fc441f8c81919b26dbd012f277f7",
+  "name": "rotaract-insights",
   "version": "1.0.0",
   "description": "Institutional analytics, KPIs, and compliance tracking for Rotaract clubs and Rotary districts across South Asia (RI Zones 4, 5, 6, 7).",
   "author": {
@@ -63,44 +63,44 @@
               "description": "Executive macro summary retrieval",
               "prompt": "Show the top-level South Asia Rotaract executive dashboard summary.",
               "tools_triggered": "get_summary",
-              "expected_behavior": "Return macro KPIs covering total clubs, total reported members, financial arrears in INR and USD, missing officer reports, and zone breakdowns."
+              "expected_behavior": "Return macro KPIs covering total clubs, total reported members, financial arrears in INR and USD, missing officer reports, and zone breakdowns for RI Zones 4, 5, 6, and 7."
             },
             {
               "description": "Multi-district rankings and leadership contacts",
               "prompt": "List the top Rotary districts in Zone 5 sorted by reported membership.",
               "tools_triggered": "get_districts",
-              "expected_behavior": "Return the list of districts in Zone 5 sorted by member count with leadership contacts (DG, DRR, DRC) and club counts."
+              "expected_behavior": "Return Zone 5 districts sorted by member count with leadership contacts (DG, DRR, DRC) and club counts. District 3000 should appear near the top by membership."
             },
             {
               "description": "Single district deep-dive dossier",
               "prompt": "Give me a deep dive analysis on District 3191 including leadership, KPIs, and top clubs.",
               "tools_triggered": "get_district_insights",
-              "expected_behavior": "Return comprehensive district metrics for District 3191 with leadership contacts, top 5 largest clubs, TRF giving, and compliance status."
+              "expected_behavior": "Return comprehensive district metrics for District 3191 (Zone 7) with leadership contacts, top clubs, TRF giving, and compliance status."
             },
             {
               "description": "Compliance and termination risk detection",
               "prompt": "Which Rotaract clubs in South Asia have unpaid dues of $75 USD or higher placing them at risk?",
               "tools_triggered": "find_compliance_risks",
-              "expected_behavior": "Return the list of at-risk clubs with outstanding balance amounts in INR and USD, sponsor club names, and district numbers."
+              "expected_behavior": "Call find_compliance_risks with riskType at_risk_only (dues >= $75 USD). Return at-risk clubs with outstandingINR and outstandingUSD, plus district numbers. Do not use the default arrears riskType alone."
             },
             {
               "description": "Interact club sponsorship analytics",
               "prompt": "Show Interact sponsorship statistics for Rotaract clubs in Sri Lanka.",
               "tools_triggered": "get_interact_analytics",
-              "expected_behavior": "Return Interact overview metrics, sponsored club rosters, and active vs suspended counts for Sri Lanka."
+              "expected_behavior": "Return country-scoped Interact overview for Sri Lanka, including total/active/suspended Interact club counts and any Rotaract-sponsored Interact clubs."
             }
           ],
           "negative": [
             {
-              "description": "Unsupported financial transaction or payment processing",
+              "description": "Refuse payment processing: plugin is read-only analytics and must not attempt dues payment or card checkout.",
               "prompt": "Pay my Rotaract club dues of $75 using my credit card."
             },
             {
-              "description": "Unsupported data modification or deletion",
+              "description": "Refuse destructive writes: plugin must not delete districts, clubs, or modify database records.",
               "prompt": "Delete District 3000 from the database and remove all its clubs."
             },
             {
-              "description": "Out of scope non-Rotary general query",
+              "description": "Refuse out-of-scope travel booking: plugin must clarify it only provides Rotaract/Rotary analytics for South Asia.",
               "prompt": "Book a flight from New Delhi to Colombo for next Tuesday."
             }
           ]
@@ -110,7 +110,7 @@
         "commerce_description": "This plugin does not sell products or process payments. All data is informational and read-only."
       },
       "publication": {
-        "release_notes": "Initial release of Rotaract Insights plugin providing 14 MCP tools for executive dashboard KPIs, Rotary districts, Rotaract clubs, compliance tracking, and Interact sponsorship data."
+        "release_notes": "Initial public release of Rotaract Insights: a read-only, unauthenticated MCP connector with 14 tools for South Asia (RI Zones 4-7) executive KPIs, district and club intelligence, dues/officer compliance, TRF giving, Interact sponsorship, Rotary extension opportunities, and worldwide benchmarks. No commerce or write actions."
       }
     }
   }

@@ -1,5 +1,6 @@
 import { getWorldwideSummary } from '@/lib/api';
 import MetricCard from '@/components/ui/MetricCard';
+import AiConnect from '@/components/ui/AiConnect';
 import WorldwideLeaderboardsSection from '@/components/sections/WorldwideLeaderboardsSection';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
@@ -130,6 +131,8 @@ export default function WorldwidePage() {
                     />
                 )}
             </section>
+
+            <AiConnect />
 
             <WorldwideLeaderboardsSection summary={summary} />
         </div>
