@@ -372,7 +372,7 @@
     "outstandingUSD": 302.29,
     "outstandingINR": 29020,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827051,
@@ -477,7 +477,7 @@
     "outstandingUSD": 272.09,
     "outstandingINR": 26121,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8826738,
@@ -897,7 +897,7 @@
     "outstandingUSD": 208.22,
     "outstandingINR": 19989,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827247,
@@ -4212,7 +4212,7 @@
     "outstandingUSD": 110.34,
     "outstandingINR": 10593,
     "isAtRisk": true,
-    "isNoOfficers": false
+    "isNoOfficers": true
   },
   {
     "id": 218656,
@@ -5667,7 +5667,7 @@
     "outstandingUSD": 89.19,
     "outstandingINR": 8562,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 8827624,
@@ -5847,7 +5847,7 @@
     "outstandingUSD": 86.95,
     "outstandingINR": 8347,
     "isAtRisk": true,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 213901,
@@ -9672,7 +9672,7 @@
     "outstandingUSD": 44.25,
     "outstandingINR": 4248,
     "isAtRisk": false,
-    "isNoOfficers": true
+    "isNoOfficers": false
   },
   {
     "id": 213199,
@@ -15465,21 +15465,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8823523,
-    "name": "Apeejay Stya University-Gurugram",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "University",
-    "sponsorClubs": "Delhi Premier (Rotary)",
-    "Sponsor Clubs": "Delhi Premier (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8825072,
     "name": "Delhi Ehsaas",
     "zone": "Zone 4",
@@ -15540,21 +15525,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 89542,
-    "name": "DTU Regency",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "University",
-    "sponsorClubs": "Delhi Regency (Rotary)",
-    "Sponsor Clubs": "Delhi Regency (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8826684,
     "name": "IILM University Gurugram",
     "zone": "Zone 4",
@@ -15562,21 +15532,6 @@
     "base": "University",
     "sponsorClubs": "Gurgaon (Rotary)",
     "Sponsor Clubs": "Gurgaon (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8827485,
-    "name": "National Association for Blind",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "University",
-    "sponsorClubs": "Delhi Heights (Rotaract); Delhi Heights (Rotary)",
-    "Sponsor Clubs": "Delhi Heights (Rotaract); Delhi Heights (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -15605,36 +15560,6 @@
     "zone": "Zone 4",
     "district": "3011",
     "base": "University",
-    "sponsorClubs": "Delhi South West (Rotary)",
-    "Sponsor Clubs": "Delhi South West (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 214806,
-    "name": "The North'Cap University",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "University",
-    "sponsorClubs": "Gurgaon (Rotary)",
-    "Sponsor Clubs": "Gurgaon (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 215103,
-    "name": "Visioners League",
-    "zone": "Zone 4",
-    "district": "3011",
-    "base": "Community",
     "sponsorClubs": "Delhi South West (Rotary)",
     "Sponsor Clubs": "Delhi South West (Rotary)",
     "isArrears": false,
@@ -16185,6 +16110,21 @@
     "isNoOfficers": true
   },
   {
+    "id": 8828803,
+    "name": "Bhuj Vibgyor",
+    "zone": "Zone 4",
+    "district": "3055",
+    "base": "Community",
+    "sponsorClubs": "Bhuj Wall City (Rotary)",
+    "Sponsor Clubs": "Bhuj Wall City (Rotary)",
+    "isArrears": false,
+    "outstanding": 0,
+    "outstandingUSD": 0,
+    "outstandingINR": 0,
+    "isAtRisk": false,
+    "isNoOfficers": true
+  },
+  {
     "id": 60137,
     "name": "Midtown Bhuj",
     "zone": "Zone 4",
@@ -16335,6 +16275,21 @@
     "isNoOfficers": true
   },
   {
+    "id": 8828105,
+    "name": "Ludhiana Supporter",
+    "zone": "Zone 4",
+    "district": "3070",
+    "base": "Community",
+    "sponsorClubs": "Ludhiana Greater (Rotary)",
+    "Sponsor Clubs": "Ludhiana Greater (Rotary)",
+    "isArrears": false,
+    "outstanding": 0,
+    "outstandingUSD": 0,
+    "outstandingINR": 0,
+    "isAtRisk": false,
+    "isNoOfficers": true
+  },
+  {
     "id": 8823358,
     "name": "DAV College for Girls Yamuna Nagar",
     "zone": "Zone 4",
@@ -16455,36 +16410,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 91715,
-    "name": "Barabanki",
-    "zone": "Zone 6",
-    "district": "3120",
-    "base": "University",
-    "sponsorClubs": "Barabanki (Rotary)",
-    "Sponsor Clubs": "Barabanki (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 7143,
-    "name": "Deoria",
-    "zone": "Zone 6",
-    "district": "3120",
-    "base": "Community",
-    "sponsorClubs": "Gorakhpur (Rotary)",
-    "Sponsor Clubs": "Gorakhpur (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8824949,
     "name": "Jaunpur",
     "zone": "Zone 6",
@@ -16522,21 +16447,6 @@
     "base": "University",
     "sponsorClubs": "Varanasi Central (Rotary)",
     "Sponsor Clubs": "Varanasi Central (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 212155,
-    "name": "United Allahabad",
-    "zone": "Zone 6",
-    "district": "3120",
-    "base": "University",
-    "sponsorClubs": "Allahabad Mid-Town (Rotary)",
-    "Sponsor Clubs": "Allahabad Mid-Town (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -16905,21 +16815,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 218546,
-    "name": "DGMC/Deviprasad Goenka Management College of Media Studies",
-    "zone": "Zone 4",
-    "district": "3141",
-    "base": "University",
-    "sponsorClubs": "Bombay Airport (Rotary)",
-    "Sponsor Clubs": "Bombay Airport (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 7439,
     "name": "Government Dental College",
     "zone": "Zone 4",
@@ -17070,21 +16965,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 83413,
-    "name": "B. K. Birla College",
-    "zone": "Zone 4",
-    "district": "3142",
-    "base": "University",
-    "sponsorClubs": "Kalyan (Rotary)",
-    "Sponsor Clubs": "Kalyan (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8823355,
     "name": "D Y Patil University School of Pharmacy",
     "zone": "Zone 4",
@@ -17137,21 +17017,6 @@
     "base": "University",
     "sponsorClubs": "Millennium City (Rotary)",
     "Sponsor Clubs": "Millennium City (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 91376,
-    "name": "G. Narayanamma Institute of Technology & Science(Women)",
-    "zone": "Zone 7",
-    "district": "3150",
-    "base": "University",
-    "sponsorClubs": "Hyderabad (Rotary)",
-    "Sponsor Clubs": "Hyderabad (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -17722,21 +17587,6 @@
     "base": "University",
     "sponsorClubs": "Parkala (Rotary)",
     "Sponsor Clubs": "Parkala (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 8826292,
-    "name": "Maharani Lakshmi Ammanni College",
-    "zone": "Zone 7",
-    "district": "3191",
-    "base": "University",
-    "sponsorClubs": "Bangalore East (Rotaract); Bangalore East (Rotary)",
-    "Sponsor Clubs": "Bangalore East (Rotaract); Bangalore East (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -18735,21 +18585,6 @@
     "isNoOfficers": true
   },
   {
-    "id": 8826867,
-    "name": "Crescent",
-    "zone": "Zone 5",
-    "district": "3233",
-    "base": "University",
-    "sponsorClubs": "Madras Mount (Rotary)",
-    "Sponsor Clubs": "Madras Mount (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
     "id": 8827166,
     "name": "Don Bosco Arts and Science College",
     "zone": "Zone 5",
@@ -18832,21 +18667,6 @@
     "base": "University",
     "sponsorClubs": "Aarch City - Madras (Rotary)",
     "Sponsor Clubs": "Aarch City - Madras (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 217321,
-    "name": "Presidency College",
-    "zone": "Zone 5",
-    "district": "3233",
-    "base": "University",
-    "sponsorClubs": "Chennai Info City (Rotary)",
-    "Sponsor Clubs": "Chennai Info City (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,
@@ -19222,21 +19042,6 @@
     "base": "Community",
     "sponsorClubs": "Bhubaneswar Excellence (Rotary)",
     "Sponsor Clubs": "Bhubaneswar Excellence (Rotary)",
-    "isArrears": false,
-    "outstanding": 0,
-    "outstandingUSD": 0,
-    "outstandingINR": 0,
-    "isAtRisk": false,
-    "isNoOfficers": true
-  },
-  {
-    "id": 218586,
-    "name": "Bhubaneswar Utkal Impetus",
-    "zone": "Zone 6",
-    "district": "3262",
-    "base": "Community",
-    "sponsorClubs": "Bhubaneswar Utkal (Rotary)",
-    "Sponsor Clubs": "Bhubaneswar Utkal (Rotary)",
     "isArrears": false,
     "outstanding": 0,
     "outstandingUSD": 0,

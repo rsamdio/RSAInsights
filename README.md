@@ -2,6 +2,8 @@
 
 # Rotaract South Asia Analytics Dashboard (Insights)
 
+<a href="https://claude.ai/directory/rsainsights"><img src="public/badges/connect-on-claude.svg" alt="Connect on Claude" width="140" height="42" /></a>
+
 An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO**, providing comprehensive membership, compliance, youth service (Interact), and TRF contribution metrics across **Zones 4, 5, 6 & 7** and worldwide.
 
 ---
@@ -16,7 +18,7 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 - **Youth Service & Interact Ecosystem**: Tracking Rotary clubs without Rotaract/Interact sponsorship, Interact club growth, and expansion opportunity metrics.
 - **Public REST API (`/api/v1/`)**: 20 high-performance JSON endpoints covering summary, leaderboards, districts, clubs, compliance (including unified issues), opportunities, TRF, interact, and worldwide rankings.
 - **Interactive API Documentation (`/docs`)**: Modern interactive API reference powered by Scalar and OpenAPI 3.1.0 (`/openapi.json`).
-- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts supporting both local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`). Dual-era: default `2025-11-25` (OpenAI-compatible legacy), full `2026-07-28` when requested (Claude modern connectors).
+- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts over local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`). HTTP is dual-era: default `2025-11-25` (OpenAI-compatible legacy), full `2026-07-28` when requested (Claude modern connectors). Stdio stays on the MCP SDK `2025-11-25` path until upstream ships `2026-07-28`.
 - **Production Host Routing**: Canonical production routing at `https://insights.rsamdio.org/` with 301 edge redirects for Netlify subdomains and legacy addresses.
 
 ---
@@ -101,11 +103,11 @@ npm run start
 ```
 
 ### 5. AI Assistant & Model Context Protocol (MCP)
-Run the local MCP stdio server for Cursor, Claude Desktop, or Antigravity:
+Run the local MCP stdio server for Cursor, Claude Desktop, or Antigravity (MCP SDK protocol `2025-11-25`):
 ```bash
 npm run mcp
 ```
-Or connect remotely via SSE at `https://insights.rsamdio.org/sse` or HTTP JSON-RPC 2.0 at `POST https://insights.rsamdio.org/api/mcp`.
+Or connect remotely via SSE at `https://insights.rsamdio.org/sse` or HTTP JSON-RPC 2.0 at `POST https://insights.rsamdio.org/api/mcp` (dual-era: default `2025-11-25`, full `2026-07-28` when negotiated).
 
 ### 6. Automated Testing & Verification
 ```bash

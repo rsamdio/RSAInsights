@@ -98,11 +98,12 @@
 ### API, MCP & Services
 - `lib/services/analyticsService.js`: Core domain service layer handling search, filtering, dual rankings, baselines, and aggregations.
 - `lib/mcp/tools.js`: MCP schemas for 14 tools, 8 resources, 4 prompts, output schemas, and tool execution dispatcher.
-- `lib/telemetry/axiom.js`: Axiom telemetry client providing non-blocking structured observability with serverless `flushTelemetry`, client attribution (`ip`, `userAgent`, `sessionId`, `requestId`), and dual metrics (`resultCount`, `totalMatches`).
-- `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`), with automatic `.env.local` environment loading.
+- `lib/mcp/sse.js`: Version policy hub (default `2025-11-25`, modern `2026-07-28`), dual-era `shapeMcpResult`, session protocol memory, CORS (`Mcp-Method` / `Mcp-Name`), and SSE stream dispatcher.
+- `lib/telemetry/axiom.js`: Axiom telemetry client with serverless `flushTelemetry`, client attribution (`ip`, `userAgent`, `sessionId`, `requestId`), dual metrics (`resultCount`, `totalMatches`), and dual-era fields (`protocolVersion`, `protocolEra`, `negotiationOutcome`, `resultType`, `errorCode`).
+- `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`); stays on MCP SDK `2025-11-25` (dual-era HTTP is separate); auto-loads `.env.local`.
 - `app/api/v1/`: 20 public REST endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
-- `app/api/mcp/route.js`, `app/sse/route.js`, `app/api/sse/route.js`: JSON-RPC 2.0 HTTP route and dedicated SSE transports serving MCP tools, resources, and prompts with connection logging and coordinated telemetry flush.
-- `public/.well-known/mcp-server.json`: MCP server discovery manifest.
+- `app/api/mcp/route.js`, `app/sse/route.js`, `app/api/sse/route.js`, `app/mcp/route.js`, `app/messages/route.js`: Dual-era JSON-RPC HTTP route plus SSE / alias transports with connection logging and coordinated telemetry flush.
+- `public/.well-known/mcp-server.json`: MCP discovery manifest (default `2025-11-25`, `supportedVersions` includes `2026-07-28`).
 - `app/docs/page.js` & `public/docs.html`: Interactive API reference documentation with Scalar UI.
 - `public/openapi.json`: OpenAPI 3.1.0 specification defining all endpoints and models.
 - `proxy.js`: Next.js 16 host proxy middleware redirecting legacy/Netlify domains.

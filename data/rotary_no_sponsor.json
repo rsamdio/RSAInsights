@@ -20,7 +20,7 @@
     "District": "2981",
     "Club Name": "Ayyampettai Delta",
     "Club Status": "Active",
-    "Current Member Count": 51,
+    "Current Member Count": 62,
     "Club ID": "222431"
   },
   {
@@ -252,7 +252,7 @@
     "District": "2981",
     "Club Name": "Kumbakonam Universe",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 30,
     "Club ID": "227998"
   },
   {
@@ -260,7 +260,7 @@
     "District": "2981",
     "Club Name": "Kumbakonam Wisdom",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 18,
     "Club ID": "227123"
   },
   {
@@ -292,7 +292,7 @@
     "District": "2981",
     "Club Name": "Mannargudi Pride",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 12,
     "Club ID": "228020"
   },
   {
@@ -316,7 +316,7 @@
     "District": "2981",
     "Club Name": "Mayiladuthurai Delta",
     "Club Status": "Active",
-    "Current Member Count": 53,
+    "Current Member Count": 54,
     "Club ID": "87718"
   },
   {
@@ -332,7 +332,7 @@
     "District": "2981",
     "Club Name": "Mayiladuthurai Pride",
     "Club Status": "Active",
-    "Current Member Count": 40,
+    "Current Member Count": 43,
     "Club ID": "90610"
   },
   {
@@ -612,7 +612,7 @@
     "District": "2981",
     "Club Name": "Pondicherry Legacy",
     "Club Status": "Active",
-    "Current Member Count": 23,
+    "Current Member Count": 24,
     "Club ID": "224440"
   },
   {
@@ -652,7 +652,7 @@
     "District": "2981",
     "Club Name": "Pondicherry Phoenix",
     "Club Status": "Active",
-    "Current Member Count": 40,
+    "Current Member Count": 41,
     "Club ID": "225743"
   },
   {
@@ -788,7 +788,7 @@
     "District": "2981",
     "Club Name": "Thanjavur Emperors",
     "Club Status": "Active",
-    "Current Member Count": 34,
+    "Current Member Count": 39,
     "Club ID": "87965"
   },
   {
@@ -868,7 +868,7 @@
     "District": "2981",
     "Club Name": "Tiruturaipoondi",
     "Club Status": "Active",
-    "Current Member Count": 62,
+    "Current Member Count": 63,
     "Club ID": "22737"
   },
   {
@@ -908,7 +908,7 @@
     "District": "2981",
     "Club Name": "Valangaiman",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 30,
     "Club ID": "67017"
   },
   {
@@ -916,7 +916,7 @@
     "District": "2981",
     "Club Name": "Vedaraniam",
     "Club Status": "Active",
-    "Current Member Count": 45,
+    "Current Member Count": 46,
     "Club ID": "28304"
   },
   {
@@ -1012,7 +1012,7 @@
     "District": "2982",
     "Club Name": "Elampillai",
     "Club Status": "Active",
-    "Current Member Count": 45,
+    "Current Member Count": 51,
     "Club ID": "224714"
   },
   {
@@ -1060,7 +1060,7 @@
     "District": "2982",
     "Club Name": "Hosur Lake View",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 20,
     "Club ID": "83284"
   },
   {
@@ -1068,7 +1068,7 @@
     "District": "2982",
     "Club Name": "Hosur Rose City",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 26,
     "Club ID": "83278"
   },
   {
@@ -1100,7 +1100,7 @@
     "District": "2982",
     "Club Name": "Maa-Nagar Krishnagiri",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 41,
     "Club ID": "80154"
   },
   {
@@ -1188,7 +1188,7 @@
     "District": "2982",
     "Club Name": "Salem Circle",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 29,
     "Club ID": "228335"
   },
   {
@@ -1236,7 +1236,7 @@
     "District": "2982",
     "Club Name": "Salem Harmony",
     "Club Status": "Active",
-    "Current Member Count": 35,
+    "Current Member Count": 37,
     "Club ID": "227590"
   },
   {
@@ -1244,7 +1244,7 @@
     "District": "2982",
     "Club Name": "Salem Hillcity",
     "Club Status": "Active",
-    "Current Member Count": 41,
+    "Current Member Count": 53,
     "Club ID": "88115"
   },
   {
@@ -1506,6 +1506,14 @@
   {
     "RI Zone": "Zone 5",
     "District": "3000",
+    "Club Name": "Ariyalur Chola Guts",
+    "Club Status": "Active",
+    "Current Member Count": 15,
+    "Club ID": "228366"
+  },
+  {
+    "RI Zone": "Zone 5",
+    "District": "3000",
     "Club Name": "Avudayarkovil Temple City",
     "Club Status": "Active",
     "Current Member Count": 15,
@@ -1652,7 +1660,7 @@
     "District": "3000",
     "Club Name": "Jambukeshwaram",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 25,
     "Club ID": "59366"
   },
   {
@@ -1868,8 +1876,16 @@
     "District": "3000",
     "Club Name": "Madurai Presidency",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 23,
     "Club ID": "221978"
+  },
+  {
+    "RI Zone": "Zone 5",
+    "District": "3000",
+    "Club Name": "Madurai Radiance",
+    "Club Status": "Active",
+    "Current Member Count": 15,
+    "Club ID": "228361"
   },
   {
     "RI Zone": "Zone 5",
@@ -2156,7 +2172,7 @@
     "District": "3000",
     "Club Name": "Pudukkottai Dreams Fort",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 25,
     "Club ID": "227244"
   },
   {
@@ -2188,7 +2204,7 @@
     "District": "3000",
     "Club Name": "Pudukkottai Stars",
     "Club Status": "Active",
-    "Current Member Count": 5,
+    "Current Member Count": 22,
     "Club ID": "228350"
   },
   {
@@ -2228,7 +2244,7 @@
     "District": "3000",
     "Club Name": "Theni",
     "Club Status": "Active",
-    "Current Member Count": 33,
+    "Current Member Count": 32,
     "Club ID": "15947"
   },
   {
@@ -2332,7 +2348,7 @@
     "District": "3000",
     "Club Name": "Tiruchirapalli Cosmopolitan",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 28,
     "Club ID": "227132"
   },
   {
@@ -2420,7 +2436,7 @@
     "District": "3000",
     "Club Name": "Tiruchy Stars",
     "Club Status": "Active",
-    "Current Member Count": 18,
+    "Current Member Count": 23,
     "Club ID": "222423"
   },
   {
@@ -2484,7 +2500,7 @@
     "District": "3000",
     "Club Name": "Trichy DC Pride",
     "Club Status": "Active",
-    "Current Member Count": 50,
+    "Current Member Count": 51,
     "Club ID": "89976"
   },
   {
@@ -2724,7 +2740,7 @@
     "District": "3011",
     "Club Name": "Delhi Akash Megapolis",
     "Club Status": "Active",
-    "Current Member Count": 23,
+    "Current Member Count": 24,
     "Club ID": "65596"
   },
   {
@@ -2780,7 +2796,7 @@
     "District": "3011",
     "Club Name": "Delhi Divine",
     "Club Status": "Active",
-    "Current Member Count": 60,
+    "Current Member Count": 61,
     "Club ID": "87402"
   },
   {
@@ -2884,7 +2900,7 @@
     "District": "3011",
     "Club Name": "Delhi NCR Visionaries",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 44,
     "Club ID": "228294"
   },
   {
@@ -2916,7 +2932,7 @@
     "District": "3011",
     "Club Name": "Delhi Platinum",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 27,
     "Club ID": "227134"
   },
   {
@@ -3540,7 +3556,7 @@
     "District": "3011",
     "Club Name": "Rohtak Next",
     "Club Status": "Active",
-    "Current Member Count": 79,
+    "Current Member Count": 80,
     "Club ID": "225516"
   },
   {
@@ -3580,7 +3596,7 @@
     "District": "3011",
     "Club Name": "Sohna Central",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 19,
     "Club ID": "228268"
   },
   {
@@ -3620,7 +3636,7 @@
     "District": "3012",
     "Club Name": "Delhi Accord",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 18,
     "Club ID": "223485"
   },
   {
@@ -3660,7 +3676,7 @@
     "District": "3012",
     "Club Name": "Delhi Ekta",
     "Club Status": "Active",
-    "Current Member Count": 17,
+    "Current Member Count": 18,
     "Club ID": "228064"
   },
   {
@@ -3710,14 +3726,6 @@
     "Club Status": "Active",
     "Current Member Count": 13,
     "Club ID": "224744"
-  },
-  {
-    "RI Zone": "Zone 4",
-    "District": "3012",
-    "Club Name": "Delhi NCR Vibrant",
-    "Club Status": "Active",
-    "Current Member Count": 7,
-    "Club ID": "91066"
   },
   {
     "RI Zone": "Zone 4",
@@ -3860,7 +3868,7 @@
     "District": "3012",
     "Club Name": "Ghaziabad Divine",
     "Club Status": "Active",
-    "Current Member Count": 6,
+    "Current Member Count": 5,
     "Club ID": "222787"
   },
   {
@@ -4052,7 +4060,7 @@
     "District": "3012",
     "Club Name": "Ghaziabad Paradise",
     "Club Status": "Active",
-    "Current Member Count": 32,
+    "Current Member Count": 33,
     "Club ID": "223016"
   },
   {
@@ -4252,7 +4260,7 @@
     "District": "3012",
     "Club Name": "Indirapuram",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 20,
     "Club ID": "83144"
   },
   {
@@ -4276,7 +4284,7 @@
     "District": "3012",
     "Club Name": "Jindal Nagar",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 30,
     "Club ID": "15344"
   },
   {
@@ -4292,7 +4300,7 @@
     "District": "3012",
     "Club Name": "Modinagar Vibrance",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 16,
     "Club ID": "227405"
   },
   {
@@ -4348,7 +4356,7 @@
     "District": "3012",
     "Club Name": "Noida Iconic",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 40,
     "Club ID": "221877"
   },
   {
@@ -4706,6 +4714,14 @@
   {
     "RI Zone": "Zone 7",
     "District": "3020",
+    "Club Name": "Peddapuram Samrajya",
+    "Club Status": "Active",
+    "Current Member Count": 38,
+    "Club ID": "224698"
+  },
+  {
+    "RI Zone": "Zone 7",
+    "District": "3020",
     "Club Name": "Rajahmundry",
     "Club Status": "Active",
     "Current Member Count": 30,
@@ -4780,7 +4796,7 @@
     "District": "3020",
     "Club Name": "Vijayawada Icons",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 26,
     "Club ID": "226108"
   },
   {
@@ -5100,7 +5116,7 @@
     "District": "3030",
     "Club Name": "Deolali",
     "Club Status": "Active",
-    "Current Member Count": 44,
+    "Current Member Count": 47,
     "Club ID": "15508"
   },
   {
@@ -5380,7 +5396,7 @@
     "District": "3030",
     "Club Name": "Nagpur Udyami",
     "Club Status": "Active",
-    "Current Member Count": 40,
+    "Current Member Count": 34,
     "Club ID": "227333"
   },
   {
@@ -5412,7 +5428,7 @@
     "District": "3030",
     "Club Name": "Nashik Vision Nxt",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 26,
     "Club ID": "85344"
   },
   {
@@ -5652,7 +5668,7 @@
     "District": "3040",
     "Club Name": "Bhelsha Vidisha",
     "Club Status": "Active",
-    "Current Member Count": 9,
+    "Current Member Count": 10,
     "Club ID": "225583"
   },
   {
@@ -5668,7 +5684,7 @@
     "District": "3040",
     "Club Name": "Bhopal",
     "Club Status": "Active",
-    "Current Member Count": 30,
+    "Current Member Count": 31,
     "Club ID": "15153"
   },
   {
@@ -5812,7 +5828,7 @@
     "District": "3040",
     "Club Name": "Dhar Galaxy",
     "Club Status": "Active",
-    "Current Member Count": 8,
+    "Current Member Count": 9,
     "Club ID": "89033"
   },
   {
@@ -5940,7 +5956,7 @@
     "District": "3040",
     "Club Name": "Indore Grande",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 26,
     "Club ID": "73158"
   },
   {
@@ -6196,7 +6212,7 @@
     "District": "3040",
     "Club Name": "Sagar Central",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 42,
     "Club ID": "23047"
   },
   {
@@ -6268,7 +6284,7 @@
     "District": "3040",
     "Club Name": "Sonkutch",
     "Club Status": "Active",
-    "Current Member Count": 39,
+    "Current Member Count": 38,
     "Club ID": "15199"
   },
   {
@@ -6612,7 +6628,7 @@
     "District": "3053",
     "Club Name": "Jodhpur",
     "Club Status": "Active",
-    "Current Member Count": 178,
+    "Current Member Count": 179,
     "Club ID": "15104"
   },
   {
@@ -6874,6 +6890,14 @@
   {
     "RI Zone": "Zone 4",
     "District": "3055",
+    "Club Name": "Ahmedabad Harmony",
+    "Club Status": "Active",
+    "Current Member Count": 15,
+    "Club ID": "228374"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3055",
     "Club Name": "Ahmedabad Heritage",
     "Club Status": "Active",
     "Current Member Count": 28,
@@ -6914,10 +6938,26 @@
   {
     "RI Zone": "Zone 4",
     "District": "3055",
+    "Club Name": "Ahmedabad Regal",
+    "Club Status": "Active",
+    "Current Member Count": 15,
+    "Club ID": "228352"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3055",
     "Club Name": "Ahmedabad River Front",
     "Club Status": "Active",
     "Current Member Count": 10,
     "Club ID": "88852"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3055",
+    "Club Name": "Ahmedabad Roundtown",
+    "Club Status": "Active",
+    "Current Member Count": 1,
+    "Club ID": "228380"
   },
   {
     "RI Zone": "Zone 4",
@@ -6956,7 +6996,7 @@
     "District": "3055",
     "Club Name": "Ahmedabad Skyline Capitals",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 14,
     "Club ID": "227830"
   },
   {
@@ -6964,7 +7004,7 @@
     "District": "3055",
     "Club Name": "Ahmedabad Skyline Jupiter",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 8,
     "Club ID": "227398"
   },
   {
@@ -6980,7 +7020,7 @@
     "District": "3055",
     "Club Name": "Ahmedabad Skyline Platinum",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 12,
     "Club ID": "227471"
   },
   {
@@ -6988,7 +7028,7 @@
     "District": "3055",
     "Club Name": "Ahmedabad Skyline Tejasvani",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 15,
     "Club ID": "227663"
   },
   {
@@ -6996,7 +7036,7 @@
     "District": "3055",
     "Club Name": "Ahmedabad Skyline Titans",
     "Club Status": "Active",
-    "Current Member Count": 8,
+    "Current Member Count": 15,
     "Club ID": "227692"
   },
   {
@@ -7114,14 +7154,6 @@
   {
     "RI Zone": "Zone 4",
     "District": "3055",
-    "Club Name": "Bhuj Wall City",
-    "Club Status": "Active",
-    "Current Member Count": 92,
-    "Club ID": "71954"
-  },
-  {
-    "RI Zone": "Zone 4",
-    "District": "3055",
     "Club Name": "Capital Gandhinagar",
     "Club Status": "Active",
     "Current Member Count": 20,
@@ -7148,7 +7180,7 @@
     "District": "3055",
     "Club Name": "Himatnagar",
     "Club Status": "Active",
-    "Current Member Count": 56,
+    "Current Member Count": 59,
     "Club ID": "23580"
   },
   {
@@ -7156,7 +7188,7 @@
     "District": "3055",
     "Club Name": "Himatnagar Heritage",
     "Club Status": "Active",
-    "Current Member Count": 48,
+    "Current Member Count": 51,
     "Club ID": "228183"
   },
   {
@@ -7740,7 +7772,7 @@
     "District": "3056",
     "Club Name": "Kota Divine",
     "Club Status": "Active",
-    "Current Member Count": 40,
+    "Current Member Count": 36,
     "Club ID": "90414"
   },
   {
@@ -7860,7 +7892,7 @@
     "District": "3056",
     "Club Name": "Udaipur Ashoka",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 8,
     "Club ID": "225322"
   },
   {
@@ -7892,7 +7924,7 @@
     "District": "3056",
     "Club Name": "Udaipur Pannadhai",
     "Club Status": "Active",
-    "Current Member Count": 23,
+    "Current Member Count": 22,
     "Club ID": "227203"
   },
   {
@@ -7980,7 +8012,7 @@
     "District": "3060",
     "Club Name": "Baroda Metro",
     "Club Status": "Active",
-    "Current Member Count": 50,
+    "Current Member Count": 51,
     "Club ID": "23843"
   },
   {
@@ -8020,7 +8052,7 @@
     "District": "3060",
     "Club Name": "Bhavnagar Vibrant",
     "Club Status": "Active",
-    "Current Member Count": 54,
+    "Current Member Count": 56,
     "Club ID": "225198"
   },
   {
@@ -8068,7 +8100,7 @@
     "District": "3060",
     "Club Name": "Dadra & Nagar Haveli",
     "Club Status": "Active",
-    "Current Member Count": 37,
+    "Current Member Count": 36,
     "Club ID": "85099"
   },
   {
@@ -8244,7 +8276,7 @@
     "District": "3060",
     "Club Name": "Rajkot Greater",
     "Club Status": "Active",
-    "Current Member Count": 155,
+    "Current Member Count": 156,
     "Club ID": "24912"
   },
   {
@@ -8740,7 +8772,7 @@
     "District": "3070",
     "Club Name": "Jalandhar East",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 26,
     "Club ID": "26840"
   },
   {
@@ -8766,6 +8798,14 @@
     "Club Status": "Active",
     "Current Member Count": 21,
     "Club ID": "224695"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3070",
+    "Club Name": "Jalandhar Legacy",
+    "Club Status": "Active",
+    "Current Member Count": 5,
+    "Club ID": "228378"
   },
   {
     "RI Zone": "Zone 4",
@@ -8844,7 +8884,7 @@
     "District": "3070",
     "Club Name": "Jogindernagar",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 37,
     "Club ID": "86866"
   },
   {
@@ -8852,7 +8892,7 @@
     "District": "3070",
     "Club Name": "Kangra",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 18,
     "Club ID": "15262"
   },
   {
@@ -8988,7 +9028,7 @@
     "District": "3070",
     "Club Name": "Manali",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 32,
     "Club ID": "25622"
   },
   {
@@ -9196,7 +9236,7 @@
     "District": "3080",
     "Club Name": "Ambala City",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 20,
     "Club ID": "15309"
   },
   {
@@ -9278,14 +9318,6 @@
     "Club Status": "Active",
     "Current Member Count": 6,
     "Club ID": "228037"
-  },
-  {
-    "RI Zone": "Zone 4",
-    "District": "3080",
-    "Club Name": "Chandigarh Horizon",
-    "Club Status": "Active",
-    "Current Member Count": 21,
-    "Club ID": "227852"
   },
   {
     "RI Zone": "Zone 4",
@@ -9372,7 +9404,7 @@
     "District": "3080",
     "Club Name": "Dera Bassi Town",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 22,
     "Club ID": "222387"
   },
   {
@@ -9458,6 +9490,14 @@
   {
     "RI Zone": "Zone 4",
     "District": "3080",
+    "Club Name": "Kaithal Royal Challengers",
+    "Club Status": "Active",
+    "Current Member Count": 15,
+    "Club ID": "228359"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3080",
     "Club Name": "Kaithal Shining Star",
     "Club Status": "Active",
     "Current Member Count": 20,
@@ -9492,7 +9532,7 @@
     "District": "3080",
     "Club Name": "Kasauli",
     "Club Status": "Active",
-    "Current Member Count": 20,
+    "Current Member Count": 19,
     "Club ID": "15350"
   },
   {
@@ -9500,7 +9540,7 @@
     "District": "3080",
     "Club Name": "Kharar Heritage",
     "Club Status": "Active",
-    "Current Member Count": 107,
+    "Current Member Count": 108,
     "Club ID": "228261"
   },
   {
@@ -9588,7 +9628,7 @@
     "District": "3080",
     "Club Name": "Nangal Hills",
     "Club Status": "Active",
-    "Current Member Count": 9,
+    "Current Member Count": 5,
     "Club ID": "228065"
   },
   {
@@ -9620,7 +9660,7 @@
     "District": "3080",
     "Club Name": "Panipat",
     "Club Status": "Active",
-    "Current Member Count": 14,
+    "Current Member Count": 13,
     "Club ID": "15378"
   },
   {
@@ -9660,7 +9700,7 @@
     "District": "3080",
     "Club Name": "Panipat Royale",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 31,
     "Club ID": "89925"
   },
   {
@@ -9820,7 +9860,7 @@
     "District": "3080",
     "Club Name": "Saharanpur Central",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 30,
     "Club ID": "30283"
   },
   {
@@ -10180,7 +10220,7 @@
     "District": "3090",
     "Club Name": "Faridkot Champions",
     "Club Status": "Active",
-    "Current Member Count": 6,
+    "Current Member Count": 13,
     "Club ID": "227386"
   },
   {
@@ -10196,7 +10236,7 @@
     "District": "3090",
     "Club Name": "Fatehabad",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 14,
     "Club ID": "228062"
   },
   {
@@ -10204,7 +10244,7 @@
     "District": "3090",
     "Club Name": "Fatehabad Champions",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 14,
     "Club ID": "227298"
   },
   {
@@ -10292,7 +10332,7 @@
     "District": "3090",
     "Club Name": "Fazilka",
     "Club Status": "Active",
-    "Current Member Count": 9,
+    "Current Member Count": 8,
     "Club ID": "21907"
   },
   {
@@ -10372,7 +10412,7 @@
     "District": "3090",
     "Club Name": "Gobindgarh",
     "Club Status": "Active",
-    "Current Member Count": 10,
+    "Current Member Count": 13,
     "Club ID": "227373"
   },
   {
@@ -10468,7 +10508,7 @@
     "District": "3090",
     "Club Name": "Kalanwali Champions",
     "Club Status": "Active",
-    "Current Member Count": 9,
+    "Current Member Count": 13,
     "Club ID": "227479"
   },
   {
@@ -10524,7 +10564,7 @@
     "District": "3090",
     "Club Name": "Mandi Adampur Champions",
     "Club Status": "Active",
-    "Current Member Count": 5,
+    "Current Member Count": 13,
     "Club ID": "227118"
   },
   {
@@ -10564,7 +10604,7 @@
     "District": "3090",
     "Club Name": "Mansa",
     "Club Status": "Active",
-    "Current Member Count": 9,
+    "Current Member Count": 15,
     "Club ID": "22038"
   },
   {
@@ -10572,7 +10612,7 @@
     "District": "3090",
     "Club Name": "Mansa Champions",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 15,
     "Club ID": "228038"
   },
   {
@@ -10580,7 +10620,7 @@
     "District": "3090",
     "Club Name": "Mansa Diamond",
     "Club Status": "Active",
-    "Current Member Count": 7,
+    "Current Member Count": 15,
     "Club ID": "228034"
   },
   {
@@ -10588,7 +10628,7 @@
     "District": "3090",
     "Club Name": "Mansa Greater",
     "Club Status": "Active",
-    "Current Member Count": 13,
+    "Current Member Count": 15,
     "Club ID": "55735"
   },
   {
@@ -10676,7 +10716,7 @@
     "District": "3090",
     "Club Name": "Nagpur Fatehabad Dynamic",
     "Club Status": "Active",
-    "Current Member Count": 5,
+    "Current Member Count": 15,
     "Club ID": "226115"
   },
   {
@@ -10732,7 +10772,7 @@
     "District": "3090",
     "Club Name": "Patran",
     "Club Status": "Active",
-    "Current Member Count": 10,
+    "Current Member Count": 11,
     "Club ID": "22612"
   },
   {
@@ -10742,6 +10782,14 @@
     "Club Status": "Active",
     "Current Member Count": 14,
     "Club ID": "84361"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3090",
+    "Club Name": "Patran Queens",
+    "Club Status": "Active",
+    "Current Member Count": 5,
+    "Club ID": "228379"
   },
   {
     "RI Zone": "Zone 4",
@@ -10796,7 +10844,7 @@
     "District": "3090",
     "Club Name": "Samana",
     "Club Status": "Active",
-    "Current Member Count": 48,
+    "Current Member Count": 49,
     "Club ID": "15297"
   },
   {
@@ -10830,6 +10878,14 @@
     "Club Status": "Active",
     "Current Member Count": 15,
     "Club ID": "228184"
+  },
+  {
+    "RI Zone": "Zone 4",
+    "District": "3090",
+    "Club Name": "Samana Prime",
+    "Club Status": "Active",
+    "Current Member Count": 16,
+    "Club ID": "228372"
   },
   {
     "RI Zone": "Zone 4",
@@ -10932,7 +10988,7 @@
     "District": "3090",
     "Club Name": "Sirsa Grace",
     "Club Status": "Active",
-    "Current Member Count": 6,
+    "Current Member Count": 13,
     "Club ID": "227119"
   },
   {
@@ -10996,7 +11052,7 @@
     "District": "3090",
     "Club Name": "Sriganganagar Champions",
     "Club Status": "Active",
-    "Current Member Count": 6,
+    "Current Member Count": 14,
     "Club ID": "227297"
   },
   {
@@ -11148,7 +11204,7 @@
     "District": "3090",
     "Club Name": "Sunam Star",
     "Club Status": "Active",
-    "Current Member Count": 10,
+    "Current Member Count": 9,
     "Club ID": "222319"
   },
   {
@@ -11532,7 +11588,7 @@
     "District": "3100",
     "Club Name": "Meerut",
     "Club Status": "Active",
-    "Current Member Count": 105,
+    "Current Member Count": 111,
     "Club ID": "15358"
   },
   {
@@ -11978,6 +12034,14 @@
   {
     "RI Zone": "Zone 6",
     "District": "3100",
+    "Club Name": "Muzaffarnagar Samrat",
+    "Club Status": "Active",
+    "Current Member Count": 5,
+    "Club ID": "228377"
+  },
+  {
+    "RI Zone": "Zone 6",
+    "District": "3100",
     "Club Name": "Muzaffarnagar Sankalp",
     "Club Status": "Active",
     "Current Member Count": 15,
@@ -11996,7 +12060,7 @@
     "District": "3100",
     "Club Name": "Muzaffarnagar Shakti",
     "Club Status": "Active",
-    "Current Member Count": 6,
+    "Current Member Count": 5,
     "Club ID": "227196"
   },
   {
@@ -12122,9 +12186,17 @@
   {
     "RI Zone": "Zone 6",
     "District": "3110",
+    "Club Name": "Agra Chanakya",
+    "Club Status": "Active",
+    "Current Member Count": 5,
+    "Club ID": "228381"
+  },
+  {
+    "RI Zone": "Zone 6",
+    "District": "3110",
     "Club Name": "Agra Divine",
     "Club Status": "Active",
-    "Current Member Count": 13,
+    "Current Member Count": 14,
     "Club ID": "227107"
   },
   {
@@ -12164,7 +12236,7 @@
     "District": "3110",
     "Club Name": "Agra North",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 29,
     "Club ID": "15402"
   },
   {
@@ -12324,7 +12396,7 @@
     "District": "3110",
     "Club Name": "Atulya Kanpur",
     "Club Status": "Active",
-    "Current Member Count": 33,
+    "Current Member Count": 41,
     "Club ID": "88001"
   },
   {
@@ -12340,7 +12412,7 @@
     "District": "3110",
     "Club Name": "Bareilly",
     "Club Status": "Active",
-    "Current Member Count": 113,
+    "Current Member Count": 111,
     "Club ID": "15413"
   },
   {
@@ -12556,7 +12628,7 @@
     "District": "3110",
     "Club Name": "Haldwani",
     "Club Status": "Active",
-    "Current Member Count": 50,
+    "Current Member Count": 51,
     "Club ID": "15431"
   },
   {
@@ -12604,7 +12676,7 @@
     "District": "3110",
     "Club Name": "Izatnagar Bareilly",
     "Club Status": "Active",
-    "Current Member Count": 18,
+    "Current Member Count": 19,
     "Club ID": "51396"
   },
   {
@@ -12740,7 +12812,7 @@
     "District": "3110",
     "Club Name": "Kanpur Metro",
     "Club Status": "Active",
-    "Current Member Count": 41,
+    "Current Member Count": 40,
     "Club ID": "50007"
   },
   {
@@ -12852,7 +12924,7 @@
     "District": "3110",
     "Club Name": "Kashipur",
     "Club Status": "Active",
-    "Current Member Count": 133,
+    "Current Member Count": 134,
     "Club ID": "26499"
   },
   {
@@ -13090,14 +13162,6 @@
   {
     "RI Zone": "Zone 6",
     "District": "3120",
-    "Club Name": "Allahabad Royals",
-    "Club Status": "Active",
-    "Current Member Count": 73,
-    "Club ID": "90070"
-  },
-  {
-    "RI Zone": "Zone 6",
-    "District": "3120",
     "Club Name": "Azamgarh",
     "Club Status": "Active",
     "Current Member Count": 28,
@@ -13132,7 +13196,7 @@
     "District": "3120",
     "Club Name": "Basti Central",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 28,
     "Club ID": "224427"
   },
   {
@@ -13196,7 +13260,7 @@
     "District": "3120",
     "Club Name": "Deoria",
     "Club Status": "Active",
-    "Current Member Count": 13,
+    "Current Member Count": 21,
     "Club ID": "63515"
   },
   {
@@ -13212,7 +13276,7 @@
     "District": "3120",
     "Club Name": "Elite Lucknow",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 17,
     "Club ID": "223092"
   },
   {
@@ -13292,7 +13356,7 @@
     "District": "3120",
     "Club Name": "Lakhimpur Central",
     "Club Status": "Active",
-    "Current Member Count": 53,
+    "Current Member Count": 55,
     "Club ID": "63857"
   },
   {
@@ -13450,17 +13514,9 @@
   {
     "RI Zone": "Zone 6",
     "District": "3120",
-    "Club Name": "Sitapur",
-    "Club Status": "Active",
-    "Current Member Count": 37,
-    "Club ID": "15473"
-  },
-  {
-    "RI Zone": "Zone 6",
-    "District": "3120",
     "Club Name": "Sultanpur",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 46,
     "Club ID": "15474"
   },
   {
@@ -13484,7 +13540,7 @@
     "District": "3120",
     "Club Name": "Varanasi Down Town",
     "Club Status": "Active",
-    "Current Member Count": 64,
+    "Current Member Count": 69,
     "Club ID": "66236"
   },
   {
@@ -13580,7 +13636,7 @@
     "District": "3120",
     "Club Name": "Varanasi Sarthak",
     "Club Status": "Active",
-    "Current Member Count": 12,
+    "Current Member Count": 11,
     "Club ID": "227186"
   },
   {
@@ -13588,7 +13644,7 @@
     "District": "3120",
     "Club Name": "Varanasi Shivay",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 16,
     "Club ID": "223067"
   },
   {
@@ -13604,7 +13660,7 @@
     "District": "3120",
     "Club Name": "Varanasi Sunrise",
     "Club Status": "Active",
-    "Current Member Count": 44,
+    "Current Member Count": 43,
     "Club ID": "30836"
   },
   {
@@ -13636,7 +13692,7 @@
     "District": "3120",
     "Club Name": "Varanasi Vrinda",
     "Club Status": "Active",
-    "Current Member Count": 69,
+    "Current Member Count": 68,
     "Club ID": "80791"
   },
   {
@@ -13668,7 +13724,7 @@
     "District": "3131",
     "Club Name": "Bhigwan",
     "Club Status": "Active",
-    "Current Member Count": 37,
+    "Current Member Count": 25,
     "Club ID": "85263"
   },
   {
@@ -13684,7 +13740,7 @@
     "District": "3131",
     "Club Name": "Chakan",
     "Club Status": "Active",
-    "Current Member Count": 56,
+    "Current Member Count": 51,
     "Club ID": "23747"
   },
   {
@@ -13700,7 +13756,7 @@
     "District": "3131",
     "Club Name": "Dynamic Bhosari",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 26,
     "Club ID": "223119"
   },
   {
@@ -13948,7 +14004,7 @@
     "District": "3131",
     "Club Name": "Pune Haveli East",
     "Club Status": "Active",
-    "Current Member Count": 32,
+    "Current Member Count": 29,
     "Club ID": "85532"
   },
   {
@@ -14020,7 +14076,7 @@
     "District": "3131",
     "Club Name": "Pune Sahawas",
     "Club Status": "Active",
-    "Current Member Count": 39,
+    "Current Member Count": 40,
     "Club ID": "83055"
   },
   {
@@ -14068,7 +14124,7 @@
     "District": "3131",
     "Club Name": "Raigad Fort",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 32,
     "Club ID": "224171"
   },
   {
@@ -14140,7 +14196,7 @@
     "District": "3131",
     "Club Name": "Thergaon",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 30,
     "Club ID": "224643"
   },
   {
@@ -14284,7 +14340,7 @@
     "District": "3132",
     "Club Name": "Dharashiv",
     "Club Status": "Active",
-    "Current Member Count": 87,
+    "Current Member Count": 78,
     "Club ID": "26501"
   },
   {
@@ -14316,7 +14372,7 @@
     "District": "3132",
     "Club Name": "Jalna Elite",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 30,
     "Club ID": "223179"
   },
   {
@@ -14452,7 +14508,7 @@
     "District": "3132",
     "Club Name": "Madha",
     "Club Status": "Active",
-    "Current Member Count": 10,
+    "Current Member Count": 12,
     "Club ID": "84741"
   },
   {
@@ -14748,7 +14804,7 @@
     "District": "3141",
     "Club Name": "Bombay Bay View",
     "Club Status": "Active",
-    "Current Member Count": 158,
+    "Current Member Count": 157,
     "Club ID": "58247"
   },
   {
@@ -14788,7 +14844,7 @@
     "District": "3141",
     "Club Name": "Borivali Wonders",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 19,
     "Club ID": "223158"
   },
   {
@@ -14828,7 +14884,7 @@
     "District": "3141",
     "Club Name": "Ghodbunder Mumbai",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 29,
     "Club ID": "226243"
   },
   {
@@ -14844,7 +14900,7 @@
     "District": "3141",
     "Club Name": "Manor Highway",
     "Club Status": "Active",
-    "Current Member Count": 11,
+    "Current Member Count": 10,
     "Club ID": "221966"
   },
   {
@@ -14962,14 +15018,6 @@
   {
     "RI Zone": "Zone 4",
     "District": "3141",
-    "Club Name": "Mumbai Glocal",
-    "Club Status": "Active",
-    "Current Member Count": 43,
-    "Club ID": "227914"
-  },
-  {
-    "RI Zone": "Zone 4",
-    "District": "3141",
     "Club Name": "Mumbai Goregaon West",
     "Club Status": "Active",
     "Current Member Count": 25,
@@ -15004,7 +15052,7 @@
     "District": "3141",
     "Club Name": "Mumbai Juhu Elite",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 26,
     "Club ID": "225560"
   },
   {
@@ -15076,7 +15124,7 @@
     "District": "3141",
     "Club Name": "Mumbai Sion",
     "Club Status": "Active",
-    "Current Member Count": 54,
+    "Current Member Count": 51,
     "Club ID": "15499"
   },
   {
@@ -15124,7 +15172,7 @@
     "District": "3141",
     "Club Name": "Umroli",
     "Club Status": "Active",
-    "Current Member Count": 34,
+    "Current Member Count": 31,
     "Club ID": "226446"
   },
   {
@@ -15156,7 +15204,7 @@
     "District": "3142",
     "Club Name": "Ambarnath Industrial Area",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 22,
     "Club ID": "225502"
   },
   {
@@ -15188,7 +15236,7 @@
     "District": "3142",
     "Club Name": "Badlapur Industrial Area",
     "Club Status": "Active",
-    "Current Member Count": 57,
+    "Current Member Count": 56,
     "Club ID": "53964"
   },
   {
@@ -15372,7 +15420,7 @@
     "District": "3142",
     "Club Name": "Navi Mumbai Bayside",
     "Club Status": "Active",
-    "Current Member Count": 36,
+    "Current Member Count": 38,
     "Club ID": "52345"
   },
   {
@@ -15564,7 +15612,7 @@
     "District": "3142",
     "Club Name": "Thane Premium",
     "Club Status": "Active",
-    "Current Member Count": 52,
+    "Current Member Count": 56,
     "Club ID": "86092"
   },
   {
@@ -15780,7 +15828,7 @@
     "District": "3150",
     "Club Name": "Chimakurthy",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 24,
     "Club ID": "85290"
   },
   {
@@ -16084,7 +16132,7 @@
     "District": "3150",
     "Club Name": "Miryalguda",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 22,
     "Club ID": "15585"
   },
   {
@@ -16100,7 +16148,7 @@
     "District": "3150",
     "Club Name": "Nizamabad",
     "Club Status": "Active",
-    "Current Member Count": 105,
+    "Current Member Count": 108,
     "Club ID": "15593"
   },
   {
@@ -16172,7 +16220,7 @@
     "District": "3150",
     "Club Name": "Saampradaya Hyderabad",
     "Club Status": "Active",
-    "Current Member Count": 45,
+    "Current Member Count": 53,
     "Club ID": "87161"
   },
   {
@@ -16324,7 +16372,7 @@
     "District": "3160",
     "Club Name": "Bhalki Fort",
     "Club Status": "Active",
-    "Current Member Count": 39,
+    "Current Member Count": 40,
     "Club ID": "82824"
   },
   {
@@ -16332,7 +16380,7 @@
     "District": "3160",
     "Club Name": "Bidar",
     "Club Status": "Active",
-    "Current Member Count": 86,
+    "Current Member Count": 88,
     "Club ID": "15629"
   },
   {
@@ -16354,9 +16402,17 @@
   {
     "RI Zone": "Zone 7",
     "District": "3160",
+    "Club Name": "Bidar Platinum Star",
+    "Club Status": "Active",
+    "Current Member Count": 24,
+    "Club ID": "228368"
+  },
+  {
+    "RI Zone": "Zone 7",
+    "District": "3160",
     "Club Name": "Bidar Queens",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 26,
     "Club ID": "86045"
   },
   {
@@ -16380,7 +16436,7 @@
     "District": "3160",
     "Club Name": "Chinmuladri Chitradurga",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 14,
     "Club ID": "89065"
   },
   {
@@ -16436,7 +16492,7 @@
     "District": "3160",
     "Club Name": "Gangavathi Rice Bowl",
     "Club Status": "Active",
-    "Current Member Count": 4,
+    "Current Member Count": 7,
     "Club ID": "226162"
   },
   {
@@ -16508,7 +16564,7 @@
     "District": "3160",
     "Club Name": "Hindupur",
     "Club Status": "Active",
-    "Current Member Count": 47,
+    "Current Member Count": 48,
     "Club ID": "15788"
   },
   {
@@ -16532,7 +16588,7 @@
     "District": "3160",
     "Club Name": "Hospet",
     "Club Status": "Active",
-    "Current Member Count": 128,
+    "Current Member Count": 126,
     "Club ID": "15645"
   },
   {
@@ -16742,6 +16798,14 @@
     "Club Status": "Active",
     "Current Member Count": 23,
     "Club ID": "81661"
+  },
+  {
+    "RI Zone": "Zone 7",
+    "District": "3170",
+    "Club Name": "Ashta",
+    "Club Status": "Active",
+    "Current Member Count": 21,
+    "Club ID": "227367"
   },
   {
     "RI Zone": "Zone 7",
@@ -16996,7 +17060,7 @@
     "District": "3170",
     "Club Name": "Karveer-Kolhapur",
     "Club Status": "Active",
-    "Current Member Count": 45,
+    "Current Member Count": 46,
     "Club ID": "27377"
   },
   {
@@ -17082,14 +17146,6 @@
   {
     "RI Zone": "Zone 7",
     "District": "3170",
-    "Club Name": "Margao Sunrise",
-    "Club Status": "Active",
-    "Current Member Count": 35,
-    "Club ID": "87642"
-  },
-  {
-    "RI Zone": "Zone 7",
-    "District": "3170",
     "Club Name": "Mhapsa Elite",
     "Club Status": "Active",
     "Current Member Count": 42,
@@ -17124,7 +17180,7 @@
     "District": "3170",
     "Club Name": "Mudhol",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 24,
     "Club ID": "15664"
   },
   {
@@ -17476,7 +17532,7 @@
     "District": "3181",
     "Club Name": "Madikeri",
     "Club Status": "Active",
-    "Current Member Count": 34,
+    "Current Member Count": 35,
     "Club ID": "15733"
   },
   {
@@ -17596,7 +17652,7 @@
     "District": "3181",
     "Club Name": "Mulky",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 29,
     "Club ID": "50303"
   },
   {
@@ -17604,7 +17660,7 @@
     "District": "3181",
     "Club Name": "Mysore Ambari",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 12,
     "Club ID": "89984"
   },
   {
@@ -17676,7 +17732,7 @@
     "District": "3181",
     "Club Name": "Periyapatna Mid Town",
     "Club Status": "Active",
-    "Current Member Count": 56,
+    "Current Member Count": 59,
     "Club ID": "31892"
   },
   {
@@ -17772,7 +17828,7 @@
     "District": "3181",
     "Club Name": "Yelanduru Greenway",
     "Club Status": "Active",
-    "Current Member Count": 14,
+    "Current Member Count": 16,
     "Club ID": "223101"
   },
   {
@@ -17838,14 +17894,6 @@
     "Club Status": "Active",
     "Current Member Count": 67,
     "Club ID": "23543"
-  },
-  {
-    "RI Zone": "Zone 7",
-    "District": "3182",
-    "Club Name": "Barkur",
-    "Club Status": "Active",
-    "Current Member Count": 57,
-    "Club ID": "56664"
   },
   {
     "RI Zone": "Zone 7",
@@ -17996,7 +18044,7 @@
     "District": "3182",
     "Club Name": "Kota Brigade",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 41,
     "Club ID": "227945"
   },
   {
@@ -18108,7 +18156,7 @@
     "District": "3182",
     "Club Name": "Saklaspur",
     "Club Status": "Active",
-    "Current Member Count": 55,
+    "Current Member Count": 58,
     "Club ID": "15750"
   },
   {
@@ -18316,7 +18364,7 @@
     "District": "3191",
     "Club Name": "Bangalore Shankara Park",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 18,
     "Club ID": "88201"
   },
   {
@@ -18356,7 +18404,7 @@
     "District": "3191",
     "Club Name": "Bengaluru Banasiri",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 21,
     "Club ID": "227236"
   },
   {
@@ -18364,7 +18412,7 @@
     "District": "3191",
     "Club Name": "Bengaluru Bannerghatta Road",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 24,
     "Club ID": "227078"
   },
   {
@@ -18372,7 +18420,7 @@
     "District": "3191",
     "Club Name": "Bengaluru Centurions",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 13,
     "Club ID": "228117"
   },
   {
@@ -18460,7 +18508,7 @@
     "District": "3191",
     "Club Name": "Bengaluru Sarjapur Road",
     "Club Status": "Active",
-    "Current Member Count": 20,
+    "Current Member Count": 21,
     "Club ID": "227140"
   },
   {
@@ -18476,7 +18524,7 @@
     "District": "3191",
     "Club Name": "Bengaluru Sports Catalyst",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 28,
     "Club ID": "228212"
   },
   {
@@ -18516,7 +18564,7 @@
     "District": "3191",
     "Club Name": "Chittoor Elite",
     "Club Status": "Active",
-    "Current Member Count": 17,
+    "Current Member Count": 16,
     "Club ID": "227341"
   },
   {
@@ -18676,7 +18724,7 @@
     "District": "3191",
     "Club Name": "Ramgarh Rockers Ramanagara",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 22,
     "Club ID": "227523"
   },
   {
@@ -18820,7 +18868,7 @@
     "District": "3192",
     "Club Name": "Bangalore North Hub",
     "Club Status": "Active",
-    "Current Member Count": 58,
+    "Current Member Count": 52,
     "Club ID": "228265"
   },
   {
@@ -19004,7 +19052,7 @@
     "District": "3192",
     "Club Name": "Madhugiri",
     "Club Status": "Active",
-    "Current Member Count": 17,
+    "Current Member Count": 18,
     "Club ID": "15800"
   },
   {
@@ -19044,7 +19092,7 @@
     "District": "3192",
     "Club Name": "Nittur",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 10,
     "Club ID": "87210"
   },
   {
@@ -19156,7 +19204,7 @@
     "District": "3203",
     "Club Name": "Ammapettai Cauvery",
     "Club Status": "Active",
-    "Current Member Count": 82,
+    "Current Member Count": 83,
     "Club ID": "223239"
   },
   {
@@ -19220,7 +19268,7 @@
     "District": "3203",
     "Club Name": "Boyampalayam",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 37,
     "Club ID": "86942"
   },
   {
@@ -19316,7 +19364,7 @@
     "District": "3203",
     "Club Name": "Gudalur",
     "Club Status": "Active",
-    "Current Member Count": 46,
+    "Current Member Count": 47,
     "Club ID": "226950"
   },
   {
@@ -19356,7 +19404,7 @@
     "District": "3203",
     "Club Name": "Karumathampatti",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 24,
     "Club ID": "223155"
   },
   {
@@ -19364,7 +19412,7 @@
     "District": "3203",
     "Club Name": "Karuvalur",
     "Club Status": "Active",
-    "Current Member Count": 52,
+    "Current Member Count": 53,
     "Club ID": "226652"
   },
   {
@@ -19430,22 +19478,6 @@
     "Club Status": "Active",
     "Current Member Count": 30,
     "Club ID": "223121"
-  },
-  {
-    "RI Zone": "Zone 5",
-    "District": "3203",
-    "Club Name": "Mettupalayam Prime",
-    "Club Status": "Active",
-    "Current Member Count": 31,
-    "Club ID": "223040"
-  },
-  {
-    "RI Zone": "Zone 5",
-    "District": "3203",
-    "Club Name": "Mudumalai",
-    "Club Status": "Active",
-    "Current Member Count": 16,
-    "Club ID": "227538"
   },
   {
     "RI Zone": "Zone 5",
@@ -19556,7 +19588,7 @@
     "District": "3203",
     "Club Name": "Somanur Tex City",
     "Club Status": "Active",
-    "Current Member Count": 75,
+    "Current Member Count": 76,
     "Club ID": "226151"
   },
   {
@@ -19564,7 +19596,7 @@
     "District": "3203",
     "Club Name": "Thalavadi Hills",
     "Club Status": "Active",
-    "Current Member Count": 36,
+    "Current Member Count": 38,
     "Club ID": "224407"
   },
   {
@@ -19588,7 +19620,7 @@
     "District": "3203",
     "Club Name": "Tiruppur Dream City",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 26,
     "Club ID": "221883"
   },
   {
@@ -19612,7 +19644,7 @@
     "District": "3203",
     "Club Name": "Tirupur East",
     "Club Status": "Active",
-    "Current Member Count": 52,
+    "Current Member Count": 51,
     "Club ID": "79178"
   },
   {
@@ -19620,7 +19652,7 @@
     "District": "3203",
     "Club Name": "Tirupur Kings",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 36,
     "Club ID": "228211"
   },
   {
@@ -19644,7 +19676,7 @@
     "District": "3203",
     "Club Name": "Tirupur Meridian",
     "Club Status": "Active",
-    "Current Member Count": 59,
+    "Current Member Count": 60,
     "Club ID": "91046"
   },
   {
@@ -19732,7 +19764,7 @@
     "District": "3203",
     "Club Name": "Udumalpet Millennium",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 16,
     "Club ID": "227666"
   },
   {
@@ -19796,7 +19828,7 @@
     "District": "3204",
     "Club Name": "Badagara",
     "Club Status": "Active",
-    "Current Member Count": 36,
+    "Current Member Count": 33,
     "Club ID": "22462"
   },
   {
@@ -19916,7 +19948,7 @@
     "District": "3204",
     "Club Name": "Calicut Radiance",
     "Club Status": "Active",
-    "Current Member Count": 21,
+    "Current Member Count": 23,
     "Club ID": "226234"
   },
   {
@@ -19964,7 +19996,7 @@
     "District": "3204",
     "Club Name": "Cannanore Seaside",
     "Club Status": "Active",
-    "Current Member Count": 33,
+    "Current Member Count": 34,
     "Club ID": "29123"
   },
   {
@@ -20148,7 +20180,7 @@
     "District": "3204",
     "Club Name": "Kuthuparamba",
     "Club Status": "Active",
-    "Current Member Count": 20,
+    "Current Member Count": 19,
     "Club ID": "27121"
   },
   {
@@ -20292,7 +20324,7 @@
     "District": "3204",
     "Club Name": "Payyanur Elite",
     "Club Status": "Active",
-    "Current Member Count": 25,
+    "Current Member Count": 26,
     "Club ID": "226713"
   },
   {
@@ -20300,7 +20332,7 @@
     "District": "3204",
     "Club Name": "Pepper Town Pulpally",
     "Club Status": "Active",
-    "Current Member Count": 46,
+    "Current Member Count": 45,
     "Club ID": "224373"
   },
   {
@@ -20596,7 +20628,7 @@
     "District": "3205",
     "Club Name": "Cochin Lakeside",
     "Club Status": "Active",
-    "Current Member Count": 18,
+    "Current Member Count": 17,
     "Club ID": "90322"
   },
   {
@@ -20820,7 +20852,7 @@
     "District": "3205",
     "Club Name": "Kochi Mahanagar",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 19,
     "Club ID": "89345"
   },
   {
@@ -20924,7 +20956,7 @@
     "District": "3205",
     "Club Name": "Parur",
     "Club Status": "Active",
-    "Current Member Count": 52,
+    "Current Member Count": 54,
     "Club ID": "15878"
   },
   {
@@ -21068,7 +21100,7 @@
     "District": "3206",
     "Club Name": "Alathur Central",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 30,
     "Club ID": "86363"
   },
   {
@@ -21220,7 +21252,7 @@
     "District": "3206",
     "Club Name": "E-Club of Coimbatore Pride",
     "Club Status": "Active",
-    "Current Member Count": 36,
+    "Current Member Count": 29,
     "Club ID": "223254"
   },
   {
@@ -21228,7 +21260,7 @@
     "District": "3206",
     "Club Name": "Koduvayur",
     "Club Status": "Active",
-    "Current Member Count": 20,
+    "Current Member Count": 23,
     "Club ID": "53416"
   },
   {
@@ -21260,7 +21292,7 @@
     "District": "3206",
     "Club Name": "Nemmara",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 32,
     "Club ID": "70037"
   },
   {
@@ -21324,7 +21356,7 @@
     "District": "3206",
     "Club Name": "Vadakkencherry Malabar",
     "Club Status": "Active",
-    "Current Member Count": 41,
+    "Current Member Count": 42,
     "Club ID": "51218"
   },
   {
@@ -21348,7 +21380,7 @@
     "District": "3211",
     "Club Name": "Alleppey",
     "Club Status": "Active",
-    "Current Member Count": 71,
+    "Current Member Count": 70,
     "Club ID": "15903"
   },
   {
@@ -21420,7 +21452,7 @@
     "District": "3211",
     "Club Name": "Anchalummood Central",
     "Club Status": "Active",
-    "Current Member Count": 10,
+    "Current Member Count": 11,
     "Club ID": "224879"
   },
   {
@@ -21484,7 +21516,7 @@
     "District": "3211",
     "Club Name": "Changanacherry Town",
     "Club Status": "Active",
-    "Current Member Count": 33,
+    "Current Member Count": 32,
     "Club ID": "223395"
   },
   {
@@ -21756,7 +21788,7 @@
     "District": "3211",
     "Club Name": "Kollam Royal City",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 28,
     "Club ID": "84191"
   },
   {
@@ -21804,7 +21836,7 @@
     "District": "3211",
     "Club Name": "Kottiyam",
     "Club Status": "Active",
-    "Current Member Count": 11,
+    "Current Member Count": 17,
     "Club ID": "71834"
   },
   {
@@ -21820,7 +21852,7 @@
     "District": "3211",
     "Club Name": "Kozhuvanal",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 31,
     "Club ID": "85508"
   },
   {
@@ -21956,7 +21988,7 @@
     "District": "3211",
     "Club Name": "Nedumoncavu",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 23,
     "Club ID": "61802"
   },
   {
@@ -22036,7 +22068,7 @@
     "District": "3211",
     "Club Name": "Pathanamthitta Metro",
     "Club Status": "Active",
-    "Current Member Count": 19,
+    "Current Member Count": 20,
     "Club ID": "60612"
   },
   {
@@ -22076,7 +22108,7 @@
     "District": "3211",
     "Club Name": "Punalur",
     "Club Status": "Active",
-    "Current Member Count": 36,
+    "Current Member Count": 37,
     "Club ID": "15938"
   },
   {
@@ -22100,7 +22132,7 @@
     "District": "3211",
     "Club Name": "Punnamada Lake City",
     "Club Status": "Active",
-    "Current Member Count": 11,
+    "Current Member Count": 12,
     "Club ID": "227363"
   },
   {
@@ -22372,7 +22404,7 @@
     "District": "3211",
     "Club Name": "Trivandrum Regal",
     "Club Status": "Active",
-    "Current Member Count": 40,
+    "Current Member Count": 37,
     "Club ID": "226899"
   },
   {
@@ -22436,7 +22468,7 @@
     "District": "3211",
     "Club Name": "Vaikom Town",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 39,
     "Club ID": "62000"
   },
   {
@@ -22540,7 +22572,7 @@
     "District": "3212",
     "Club Name": "Courtallam Sadhanaa",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 17,
     "Club ID": "226543"
   },
   {
@@ -22644,7 +22676,7 @@
     "District": "3212",
     "Club Name": "Karaikudi Heritage",
     "Club Status": "Active",
-    "Current Member Count": 56,
+    "Current Member Count": 55,
     "Club ID": "81254"
   },
   {
@@ -23052,7 +23084,7 @@
     "District": "3212",
     "Club Name": "Tirunelveli Porunai",
     "Club Status": "Active",
-    "Current Member Count": 35,
+    "Current Member Count": 39,
     "Club ID": "222586"
   },
   {
@@ -23164,7 +23196,7 @@
     "District": "3220",
     "Club Name": "Malé",
     "Club Status": "Active",
-    "Current Member Count": 50,
+    "Current Member Count": 52,
     "Club ID": "84902"
   },
   {
@@ -23196,7 +23228,7 @@
     "District": "3220",
     "Club Name": "Batticaloa Fort City",
     "Club Status": "Active",
-    "Current Member Count": 24,
+    "Current Member Count": 23,
     "Club ID": "227539"
   },
   {
@@ -23260,7 +23292,7 @@
     "District": "3220",
     "Club Name": "Kalmunai",
     "Club Status": "Active",
-    "Current Member Count": 14,
+    "Current Member Count": 16,
     "Club ID": "55074"
   },
   {
@@ -23516,7 +23548,7 @@
     "District": "3231",
     "Club Name": "Gudiyatham",
     "Club Status": "Active",
-    "Current Member Count": 144,
+    "Current Member Count": 148,
     "Club ID": "23806"
   },
   {
@@ -23532,7 +23564,7 @@
     "District": "3231",
     "Club Name": "Kalavai",
     "Club Status": "Active",
-    "Current Member Count": 16,
+    "Current Member Count": 17,
     "Club ID": "56666"
   },
   {
@@ -23636,7 +23668,7 @@
     "District": "3231",
     "Club Name": "Pernambut",
     "Club Status": "Active",
-    "Current Member Count": 18,
+    "Current Member Count": 22,
     "Club ID": "29650"
   },
   {
@@ -23748,7 +23780,7 @@
     "District": "3231",
     "Club Name": "Tiruvannamalai Deepam",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 26,
     "Club ID": "88692"
   },
   {
@@ -23980,7 +24012,7 @@
     "District": "3233",
     "Club Name": "Chennai Amity",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 16,
     "Club ID": "228146"
   },
   {
@@ -24020,7 +24052,7 @@
     "District": "3233",
     "Club Name": "Chennai Castle",
     "Club Status": "Active",
-    "Current Member Count": 37,
+    "Current Member Count": 38,
     "Club ID": "226912"
   },
   {
@@ -24220,7 +24252,7 @@
     "District": "3233",
     "Club Name": "Madras Bay City",
     "Club Status": "Active",
-    "Current Member Count": 11,
+    "Current Member Count": 16,
     "Club ID": "87472"
   },
   {
@@ -24228,7 +24260,7 @@
     "District": "3233",
     "Club Name": "Madras Connemara",
     "Club Status": "Active",
-    "Current Member Count": 56,
+    "Current Member Count": 57,
     "Club ID": "89530"
   },
   {
@@ -24324,7 +24356,7 @@
     "District": "3234",
     "Club Name": "Centennial Madras",
     "Club Status": "Active",
-    "Current Member Count": 37,
+    "Current Member Count": 38,
     "Club ID": "226370"
   },
   {
@@ -24372,7 +24404,7 @@
     "District": "3234",
     "Club Name": "Chennai Harmony",
     "Club Status": "Active",
-    "Current Member Count": 17,
+    "Current Member Count": 22,
     "Club ID": "90244"
   },
   {
@@ -24452,7 +24484,7 @@
     "District": "3234",
     "Club Name": "Chennai Nandavanam",
     "Club Status": "Active",
-    "Current Member Count": 26,
+    "Current Member Count": 25,
     "Club ID": "223220"
   },
   {
@@ -24476,7 +24508,7 @@
     "District": "3234",
     "Club Name": "Chennai Prestige",
     "Club Status": "Active",
-    "Current Member Count": 42,
+    "Current Member Count": 41,
     "Club ID": "89025"
   },
   {
@@ -24796,7 +24828,7 @@
     "District": "3240",
     "Club Name": "Cherry Blossom Shillong",
     "Club Status": "Active",
-    "Current Member Count": 14,
+    "Current Member Count": 15,
     "Club ID": "222665"
   },
   {
@@ -24860,7 +24892,7 @@
     "District": "3240",
     "Club Name": "Golaghat Elegance",
     "Club Status": "Active",
-    "Current Member Count": 27,
+    "Current Member Count": 28,
     "Club ID": "225179"
   },
   {
@@ -24948,7 +24980,7 @@
     "District": "3240",
     "Club Name": "Karala Valley Jalpaiguri",
     "Club Status": "Active",
-    "Current Member Count": 38,
+    "Current Member Count": 39,
     "Club ID": "88120"
   },
   {
@@ -25356,7 +25388,7 @@
     "District": "3250",
     "Club Name": "Deoghar",
     "Club Status": "Active",
-    "Current Member Count": 39,
+    "Current Member Count": 38,
     "Club ID": "16017"
   },
   {
@@ -25484,7 +25516,7 @@
     "District": "3250",
     "Club Name": "Jamshedpur Green",
     "Club Status": "Active",
-    "Current Member Count": 12,
+    "Current Member Count": 13,
     "Club ID": "226359"
   },
   {
@@ -25692,7 +25724,7 @@
     "District": "3250",
     "Club Name": "Patna Aryans",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 17,
     "Club ID": "88784"
   },
   {
@@ -25910,14 +25942,6 @@
     "Club Status": "Active",
     "Current Member Count": 42,
     "Club ID": "223059"
-  },
-  {
-    "RI Zone": "Zone 6",
-    "District": "3250",
-    "Club Name": "Tathagat Biharsharif",
-    "Club Status": "Active",
-    "Current Member Count": 63,
-    "Club ID": "222313"
   },
   {
     "RI Zone": "Zone 6",
@@ -26252,7 +26276,7 @@
     "District": "3261",
     "Club Name": "Raigarh Greater",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 16,
     "Club ID": "84402"
   },
   {
@@ -26316,7 +26340,7 @@
     "District": "3261",
     "Club Name": "Raipur Excellence",
     "Club Status": "Active",
-    "Current Member Count": 15,
+    "Current Member Count": 22,
     "Club ID": "228208"
   },
   {
@@ -26332,7 +26356,7 @@
     "District": "3261",
     "Club Name": "Raipur Greater",
     "Club Status": "Active",
-    "Current Member Count": 139,
+    "Current Member Count": 138,
     "Club ID": "31295"
   },
   {
@@ -26372,7 +26396,7 @@
     "District": "3261",
     "Club Name": "Raipur North",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 23,
     "Club ID": "29470"
   },
   {
@@ -26602,14 +26626,6 @@
   {
     "RI Zone": "Zone 6",
     "District": "3262",
-    "Club Name": "Banpur-Balugaon",
-    "Club Status": "Active",
-    "Current Member Count": 44,
-    "Club ID": "26039"
-  },
-  {
-    "RI Zone": "Zone 6",
-    "District": "3262",
     "Club Name": "Baramunda",
     "Club Status": "Active",
     "Current Member Count": 24,
@@ -26662,6 +26678,14 @@
     "Club Status": "Active",
     "Current Member Count": 10,
     "Club ID": "52971"
+  },
+  {
+    "RI Zone": "Zone 6",
+    "District": "3262",
+    "Club Name": "Berhampur Sunrise",
+    "Club Status": "Active",
+    "Current Member Count": 6,
+    "Club ID": "228376"
   },
   {
     "RI Zone": "Zone 6",
@@ -26724,7 +26748,7 @@
     "District": "3262",
     "Club Name": "Bhubaneswar Confluence",
     "Club Status": "Active",
-    "Current Member Count": 58,
+    "Current Member Count": 59,
     "Club ID": "80091"
   },
   {
@@ -26828,7 +26852,7 @@
     "District": "3262",
     "Club Name": "Biraja Kshetra",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 21,
     "Club ID": "91232"
   },
   {
@@ -26876,7 +26900,7 @@
     "District": "3262",
     "Club Name": "Cuttack Millennium",
     "Club Status": "Active",
-    "Current Member Count": 22,
+    "Current Member Count": 20,
     "Club ID": "76968"
   },
   {
@@ -26908,7 +26932,7 @@
     "District": "3262",
     "Club Name": "Fellowship Bhubaneswar",
     "Club Status": "Active",
-    "Current Member Count": 43,
+    "Current Member Count": 44,
     "Club ID": "224148"
   },
   {
@@ -26924,7 +26948,7 @@
     "District": "3262",
     "Club Name": "Infocity Bhubaneswar",
     "Club Status": "Active",
-    "Current Member Count": 29,
+    "Current Member Count": 30,
     "Club ID": "62772"
   },
   {
@@ -26932,7 +26956,7 @@
     "District": "3262",
     "Club Name": "Jagatsinghpur",
     "Club Status": "Active",
-    "Current Member Count": 13,
+    "Current Member Count": 11,
     "Club ID": "25397"
   },
   {
@@ -27140,7 +27164,7 @@
     "District": "3262",
     "Club Name": "Talcher",
     "Club Status": "Active",
-    "Current Member Count": 31,
+    "Current Member Count": 33,
     "Club ID": "223268"
   },
   {
@@ -27308,7 +27332,7 @@
     "District": "3292",
     "Club Name": "Kapilvastu Mid Town",
     "Club Status": "Active",
-    "Current Member Count": 28,
+    "Current Member Count": 27,
     "Club ID": "88040"
   },
   {
