@@ -21,7 +21,7 @@
 - `/worldwide`: Worldwide Rotaract & Interact Statistics (Global leaderboards and growth statistics).
 - `/api/filters`: Server endpoint providing dynamic filter options (cached 1 day, stale-while-revalidate 7 days).
 - `/api/v1/*`: 20 public REST API endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
-- `/api/mcp`: Remote HTTP JSON-RPC 2.0 endpoint for Model Context Protocol (protocol version 2026-07-28).
+- `/api/mcp`: Dual-era remote HTTP JSON-RPC 2.0 MCP endpoint (default `2025-11-25`, full `2026-07-28` when negotiated).
 - `/docs`: Interactive Scalar API reference documentation.
 - `/.well-known/mcp-server.json`: MCP server discovery manifest.
 - `/.well-known/openai-apps-challenge`: Domain challenge verification for OpenAI App Directory.

@@ -22,7 +22,7 @@ const nextConfig = {
         headers: [
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS' },
-          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Accept, X-API-Key' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Mcp-Method, Mcp-Name, Accept, X-API-Key' },
         ],
       },
       {
@@ -30,7 +30,23 @@ const nextConfig = {
         headers: [
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS' },
-          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Accept, X-API-Key' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Mcp-Method, Mcp-Name, Accept, X-API-Key' },
+        ],
+      },
+      {
+        source: '/mcp',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Mcp-Method, Mcp-Name, Accept, X-API-Key' },
+        ],
+      },
+      {
+        source: '/messages',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization, Mcp-Protocol-Version, Mcp-Method, Mcp-Name, Accept, X-API-Key' },
         ],
       },
     ];

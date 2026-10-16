@@ -92,8 +92,12 @@ async function run() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const pVer = data.protocolVersion || data.mcpVersion;
-        if (pVer !== '2024-11-05') throw new Error(`Expected MCP version 2024-11-05, got ${pVer}`);
-        return `MCP Manifest Verified: ${data.name} v${data.version}, protocol: ${pVer}`;
+        if (pVer !== '2025-11-25') throw new Error(`Expected MCP version 2025-11-25, got ${pVer}`);
+        const supported = data.supportedVersions || [];
+        if (!supported.includes('2025-11-25') || !supported.includes('2026-07-28')) {
+            throw new Error(`Expected supportedVersions to include 2025-11-25 and 2026-07-28, got ${JSON.stringify(supported)}`);
+        }
+        return `MCP Manifest Verified: ${data.name} v${data.version}, protocol: ${pVer}, supported: ${supported.join(', ')}`;
     });
 
     // ----------------------------------------------------
@@ -411,10 +415,16 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/mcp?format=json`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        return `Server: ${data.server} v${data.version}, Tools: ${data.tools.length}, Resources: ${data.resources.length}, Prompts: ${data.prompts.length}`;
+        if (data.protocolVersion !== '2025-11-25') {
+            throw new Error(`Expected default protocolVersion 2025-11-25, got ${data.protocolVersion}`);
+        }
+        if (!Array.isArray(data.supportedVersions) || !data.supportedVersions.includes('2026-07-28')) {
+            throw new Error('Manifest missing supportedVersions including 2026-07-28');
+        }
+        return `Server: ${data.server} v${data.version}, Protocol: ${data.protocolVersion}, Tools: ${data.tools.length}, Resources: ${data.resources.length}, Prompts: ${data.prompts.length}`;
     });
 
-    await test('MCP', 'POST /api/mcp (JSON-RPC initialize)', async () => {
+    await test('MCP', 'POST /api/mcp (JSON-RPC initialize legacy 2025-11-25)', async () => {
         const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -422,20 +432,113 @@ async function run() {
                 jsonrpc: '2.0',
                 id: 'init-1',
                 method: 'initialize',
+                params: { protocolVersion: '2025-11-25', capabilities: {} }
+            })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        if (data.result.protocolVersion !== '2025-11-25') {
+            throw new Error(`Expected 2025-11-25, got ${data.result.protocolVersion}`);
+        }
+        if (data.result.resultType) {
+            throw new Error('Legacy initialize must not include resultType');
+        }
+        return `Protocol: ${data.result.protocolVersion}, Server: ${data.result.serverInfo.name} v${data.result.serverInfo.version}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (JSON-RPC initialize still accepts 2024-11-05)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'init-legacy',
+                method: 'initialize',
                 params: { protocolVersion: '2024-11-05', capabilities: {} }
             })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (data.error) throw new Error(data.error.message);
-        return `Protocol: ${data.result.protocolVersion}, Server: ${data.result.serverInfo.name} v${data.result.serverInfo.version}`;
+        if (data.result.protocolVersion !== '2024-11-05') {
+            throw new Error(`Expected 2024-11-05, got ${data.result.protocolVersion}`);
+        }
+        return `Protocol: ${data.result.protocolVersion}`;
     });
 
-    await test('MCP', 'POST /api/mcp (JSON-RPC ping)', async () => {
+    await test('MCP', 'POST /api/mcp (modern 2026-07-28 tools/list has resultType)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Mcp-Protocol-Version': '2026-07-28',
+            },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'modern-list-1',
+                method: 'tools/list',
+                params: {
+                    _meta: {
+                        'io.modelcontextprotocol/protocolVersion': '2026-07-28',
+                        'io.modelcontextprotocol/clientCapabilities': { tools: {} },
+                        'io.modelcontextprotocol/clientInfo': { name: 'verify-suite', version: '1.0' },
+                    }
+                }
+            })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        if (data.result?.resultType !== 'complete') {
+            throw new Error(`Expected resultType complete, got ${data.result?.resultType}`);
+        }
+        if (!data.result?._meta?.['io.modelcontextprotocol/serverInfo']?.name) {
+            throw new Error('Missing modern serverInfo _meta');
+        }
+        if (data.result?.ttlMs === undefined || data.result?.cacheScope !== 'public') {
+            throw new Error('Missing cacheable ttlMs/cacheScope on modern tools/list');
+        }
+        if (!Array.isArray(data.result?.tools) || data.result.tools.length < 1) {
+            throw new Error('Modern tools/list missing tools array');
+        }
+        return `Modern tools/list: resultType=${data.result.resultType}, tools=${data.result.tools.length}, ttlMs=${data.result.ttlMs}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (unsupported version returns -32022)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Mcp-Protocol-Version': '1900-01-01',
+            },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'bad-ver-1',
+                method: 'tools/list',
+                params: {}
+            })
+        });
+        const data = await res.json();
+        if (!data.error || data.error.code !== -32022) {
+            throw new Error(`Expected error -32022, got ${JSON.stringify(data.error)}`);
+        }
+        if (!Array.isArray(data.error?.data?.supported) || !data.error.data.supported.includes('2026-07-28')) {
+            throw new Error('UnsupportedProtocolVersion missing supported list');
+        }
+        return `Rejected unsupported version; supported=${data.error.data.supported.join(', ')}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (JSON-RPC ping legacy)', async () => {
         const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ jsonrpc: '2.0', id: 'ping-1', method: 'ping' })
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'ping-1',
+                method: 'ping',
+                params: { protocolVersion: '2025-11-25' }
+            })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();

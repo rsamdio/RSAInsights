@@ -32,7 +32,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `app/worldwide/page.js` | Worldwide Statistics: global club/member leaderboards, country rankings, baseline deltas | Global / Country stats |
 | `app/api/filters/route.js` | Server route providing dynamic filter options (cached 1d, stale 7d) | Filter backend tasks |
 | `app/api/v1/` | Public REST API endpoints (20 endpoints: summary, zones, districts, clubs, compliance including unified, opportunities, TRF, leaderboards, interact, worldwide) | REST API tasks |
-| `app/api/mcp/route.js` | HTTP endpoint supporting JSON-RPC 2.0 MCP protocol and SSE probe (spec version 2024-11-05) | Remote MCP tasks |
+| `app/api/mcp/route.js` | Dual-era HTTP MCP endpoint (default `2025-11-25`, full `2026-07-28` when requested) with SSE probe | Remote MCP tasks |
 | `app/sse/route.js`, `app/api/sse/route.js`, `app/mcp/route.js`, `app/messages/route.js` | Dedicated MCP transports (SSE stream, Streamable HTTP, message ingress) for OpenAI/ChatGPT probes | MCP transport endpoints |
 | `lib/mcp/sse.js` | MCP SSE transport stream generator, keepalive heartbeat, and session dispatcher | MCP SSE tasks |
 | `app/docs/page.js` & `public/docs.html` | Interactive API documentation (Scalar API reference UI) | API Docs tasks |

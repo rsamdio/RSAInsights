@@ -1898,7 +1898,7 @@
                     },
                     "protocolVersion": {
                       "type": "string",
-                      "example": "2024-11-05"
+                      "example": "2025-11-25"
                     },
                     "capabilities": {
                       "type": "object"
@@ -3425,7 +3425,7 @@
           },
           "protocolVersion": {
             "type": "string",
-            "example": "2024-11-05"
+            "example": "2025-11-25"
           },
           "capabilities": {
             "type": "object",

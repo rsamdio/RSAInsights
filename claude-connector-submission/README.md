@@ -11,7 +11,7 @@ The 10 steps below mirror the Claude submission wizard shown in the portal.
 - **MCP Endpoint URL:** `https://insights.rsamdio.org/api/mcp`
 - **Transport Type:** `streamable-http` (JSON-RPC 2.0 over HTTPS)
 - **Fallback SSE Endpoint:** `https://insights.rsamdio.org/sse`
-- **Protocol Versions Supported:** `2024-11-05`, `2026-07-28`
+- **Protocol Versions Supported:** `2024-11-05`, `2025-03-26`, `2025-06-18`, `2025-11-25` (default), `2026-07-28` (modern)
 - **Connection Status:** Verified (Green checkmark)
 
 > **Action:** If reconnecting after updating annotations, click **Re-connect** in the Claude portal.

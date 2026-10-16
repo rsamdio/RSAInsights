@@ -18,7 +18,7 @@ RSAMDIO is a recognized regional Rotary Multi-District Information Organisation 
 ---
 
 ## 2. Server Technical Architecture
-- **Protocol:** Model Context Protocol (MCP standard 2024-11-05 and 2026-07-28 auto-negotiation)
+- **Protocol:** Model Context Protocol dual-era (default `2025-11-25`; full `2026-07-28` when requested, with older legacy versions still accepted)
 - **Transport:** Streamable HTTP (JSON-RPC 2.0 over HTTPS)
 - **Production Endpoint:** `https://insights.rsamdio.org/api/mcp`
 - **Fallback SSE Endpoint:** `https://insights.rsamdio.org/sse`

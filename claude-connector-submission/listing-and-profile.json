@@ -41,7 +41,7 @@
     "mcpEndpoint": "https://insights.rsamdio.org/api/mcp",
     "sseEndpoint": "https://insights.rsamdio.org/sse",
     "transport": "streamable-http",
-    "protocolVersion": "2024-11-05",
+    "protocolVersion": "2025-11-25",
     "authentication": "none"
   },
   "dataHandling": {

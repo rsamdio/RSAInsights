@@ -12,10 +12,17 @@ import {
     createSseResponse,
     sendSseMessage,
     CORS_HEADERS,
-    SSE_HEADERS,
     DEFAULT_PROTOCOL_VERSION,
     SUPPORTED_PROTOCOL_VERSIONS,
-    negotiateProtocolVersion
+    negotiateProtocolOrReject,
+    resolveVersionSources,
+    extractClientInfo,
+    extractClientCapabilities,
+    rememberSessionProtocolVersion,
+    isModernProtocol,
+    protocolEra,
+    shapeMcpResult,
+    MCP_META_KEYS,
 } from '@/lib/mcp/sse';
 import { logMcpRequest, extractClientIp, flushTelemetry } from '@/lib/telemetry/axiom';
 
@@ -24,15 +31,12 @@ export const dynamic = 'force-dynamic';
 const SERVER_NAME = 'rotaract-south-asia-analytics';
 const SERVER_VERSION = '1.1.0';
 
-// MCP streaming and session endpoints must never be cached by CDN proxies
-// to ensure SSE connections and session handshakes remain real-time.
 const NO_CACHE_HEADERS = {
     ...CORS_HEADERS,
     'Cache-Control': 'no-cache, no-store, must-revalidate',
     'Pragma': 'no-cache'
 };
 
-// Static MCP discovery manifest (?format=json) can be safely cached at the edge CDN
 const MANIFEST_CACHE_HEADERS = {
     ...CORS_HEADERS,
     'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
@@ -41,6 +45,13 @@ const MANIFEST_CACHE_HEADERS = {
 
 function withTiming(headers, startMs) {
     return { ...headers, 'X-Response-Time': `${Date.now() - startMs}ms` };
+}
+
+function versionHeaders(version, base = NO_CACHE_HEADERS) {
+    return {
+        ...base,
+        'Mcp-Protocol-Version': version || DEFAULT_PROTOCOL_VERSION,
+    };
 }
 
 export async function OPTIONS() {
@@ -56,8 +67,6 @@ export async function GET(request) {
     const userAgent = request?.headers?.get('user-agent') || 'unknown';
     const ip = extractClientIp(request);
 
-    // If client explicitly requests SSE via header (e.g. ChatGPT Developer Mode, Claude Desktop)
-    // or query parameter, establish real-time SSE stream
     if (isEventStream || isExplicitSse) {
         const sseSessionId = crypto.randomUUID();
         logMcpRequest({
@@ -67,7 +76,10 @@ export async function GET(request) {
             userAgent,
             ip,
             sessionId: sseSessionId,
-            path: '/api/mcp'
+            path: '/api/mcp',
+            protocolVersion: DEFAULT_PROTOCOL_VERSION,
+            protocolEra: protocolEra(DEFAULT_PROTOCOL_VERSION),
+            negotiationOutcome: 'defaulted',
         });
         await flushTelemetry(800);
         return createSseResponse(request, '/api/mcp', sseSessionId);
@@ -78,15 +90,19 @@ export async function GET(request) {
         status: 200,
         durationMs: Date.now() - start,
         userAgent,
-        ip
+        ip,
+        path: '/api/mcp',
+        protocolVersion: DEFAULT_PROTOCOL_VERSION,
+        protocolEra: protocolEra(DEFAULT_PROTOCOL_VERSION),
+        negotiationOutcome: 'defaulted',
     });
     await flushTelemetry(800);
 
-    // Default for HTTP: Return JSON capability and tool discovery manifest
     return NextResponse.json({
         server: SERVER_NAME,
         version: SERVER_VERSION,
         protocolVersion: DEFAULT_PROTOCOL_VERSION,
+        supportedVersions: SUPPORTED_PROTOCOL_VERSIONS,
         capabilities: {
             tools: {},
             resources: {},
@@ -105,29 +121,52 @@ export async function POST(request) {
     const userAgent = request?.headers?.get('user-agent') || 'unknown';
     const ip = extractClientIp(request);
     let requestMethod = 'unknown';
-    let negotiatedVersion = null;
+    let negotiatedVersion = DEFAULT_PROTOCOL_VERSION;
+    let requestedProtocolVersion = null;
+    let negotiationOutcome = 'defaulted';
+    let clientName = null;
+    let clientVersion = null;
     let respondMeta = {};
+    let loggedResultType = null;
 
     async function respond(responseObj, status = 200, headers = CORS_HEADERS) {
-        if (sessionId) {
-            sendSseMessage(sessionId, responseObj);
+        let payload = responseObj;
+
+        if (payload?.result && typeof payload.result === 'object' && !payload.error) {
+            payload = {
+                ...payload,
+                result: shapeMcpResult(payload.result, {
+                    version: negotiatedVersion,
+                    method: requestMethod,
+                    serverName: SERVER_NAME,
+                    serverVersion: SERVER_VERSION,
+                }),
+            };
+            loggedResultType = payload.result?.resultType || null;
         }
-        const nestedResult = responseObj?.result;
+
+        if (sessionId) {
+            sendSseMessage(sessionId, payload);
+        }
+
+        const nestedResult = payload?.result;
         const toolIsError = Boolean(
-            responseObj?.isError
+            payload?.isError
             || nestedResult?.isError
             || respondMeta.toolSuccess === false
         );
         const errorText = (
-            responseObj?.error?.message
-            || responseObj?.error
-            || (responseObj?.isError ? responseObj?.content?.[0]?.text : null)
+            payload?.error?.message
+            || (typeof payload?.error === 'string' ? payload.error : null)
+            || (payload?.isError ? payload?.content?.[0]?.text : null)
             || (nestedResult?.isError ? nestedResult?.content?.[0]?.text : null)
             || null
         );
+        const errorCode = payload?.error?.code ?? respondMeta.errorCode ?? null;
         const toolSuccess = respondMeta.tool !== undefined
             ? (respondMeta.toolSuccess !== undefined ? Boolean(respondMeta.toolSuccess) : !toolIsError)
             : undefined;
+
         logMcpRequest({
             method: requestMethod,
             status,
@@ -135,14 +174,25 @@ export async function POST(request) {
             userAgent,
             ip,
             sessionId,
-            protocolVersion: negotiatedVersion,
+            protocolVersion: negotiatedVersion || undefined,
+            requestedProtocolVersion,
+            protocolEra: protocolEra(negotiatedVersion) || undefined,
+            negotiationOutcome,
             error: errorText,
+            errorCode,
+            path: '/api/mcp',
             tool: respondMeta.tool || undefined,
             toolSuccess,
             requestId: respondMeta.requestId ?? undefined,
+            clientName,
+            clientVersion,
+            resultType: loggedResultType,
         });
         await flushTelemetry(800);
-        return NextResponse.json(responseObj, { status, headers: withTiming(headers, start) });
+        return NextResponse.json(payload, {
+            status,
+            headers: withTiming(versionHeaders(negotiatedVersion, headers), start),
+        });
     }
 
     try {
@@ -161,14 +211,84 @@ export async function POST(request) {
             }, 400);
         }
 
-        // Standard JSON-RPC 2.0 protocol (MCP specification)
+        const clientInfo = extractClientInfo(body);
+        clientName = clientInfo.clientName;
+        clientVersion = clientInfo.clientVersion;
+
+        // Wire markers only count as "requested"; SSE session is a fallback, not a client ask.
+        const versionSources = resolveVersionSources(request, body, sessionId);
+        requestedProtocolVersion = versionSources.wire;
+        const versionToNegotiate = versionSources.wire || versionSources.session || null;
+        const negotiation = negotiateProtocolOrReject(versionToNegotiate);
+        negotiationOutcome = negotiation.outcome;
+
+        if (negotiation.outcome === 'rejected') {
+            negotiatedVersion = null;
+            requestMethod = body?.method || 'protocol/negotiate';
+            respondMeta = {
+                requestId: body?.id !== undefined ? body.id : null,
+                errorCode: -32022,
+            };
+            return respond({
+                jsonrpc: '2.0',
+                id: body?.id !== undefined ? body.id : null,
+                error: negotiation.error,
+            }, 400);
+        }
+
+        negotiatedVersion = negotiation.version;
+        if (sessionId) {
+            rememberSessionProtocolVersion(sessionId, negotiatedVersion);
+        }
+
+        const modern = isModernProtocol(negotiatedVersion);
+        const clientCapabilities = extractClientCapabilities(body);
+        const paramsMeta = body?.params?._meta || body?._meta || {};
+        const declaredModernMeta = Boolean(paramsMeta?.[MCP_META_KEYS.protocolVersion]);
+
+        // Standard JSON-RPC 2.0 protocol
         if (body.jsonrpc === '2.0') {
             const { id, method, params } = body;
             requestMethod = method || 'unknown';
             const responseId = id !== undefined ? id : null;
+            respondMeta = { requestId: responseId };
 
-            // Ping utility method (MCP standard health check)
+            // True modern requests (version in _meta) must declare clientCapabilities
+            // Header-only modern after legacy initialize remains dual-era compatible.
+            if (
+                modern
+                && declaredModernMeta
+                && method
+                && method !== 'server/discover'
+                && !String(method).startsWith('notifications/')
+                && !clientCapabilities
+            ) {
+                respondMeta.errorCode = -32021;
+                return respond({
+                    jsonrpc: '2.0',
+                    id: responseId,
+                    error: {
+                        code: -32021,
+                        message: 'Missing required client capability metadata',
+                        data: {
+                            requiredCapabilities: [MCP_META_KEYS.clientCapabilities],
+                        },
+                    },
+                }, 400);
+            }
+
+            // Ping: legacy only. Modern clients get method-not-found.
             if (method === 'ping') {
+                if (modern) {
+                    return respond({
+                        jsonrpc: '2.0',
+                        id: responseId,
+                        error: {
+                            code: -32601,
+                            message: "Method 'ping' not found"
+                        }
+                    }, 404);
+                }
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
@@ -184,17 +304,24 @@ export async function POST(request) {
                     durationMs: Date.now() - start,
                     userAgent,
                     ip,
-                    sessionId
+                    sessionId,
+                    protocolVersion: negotiatedVersion,
+                    requestedProtocolVersion,
+                    protocolEra: protocolEra(negotiatedVersion),
+                    negotiationOutcome,
+                    path: '/api/mcp',
+                    requestId: responseId,
+                    clientName,
+                    clientVersion,
                 });
                 await flushTelemetry(800);
-                return new NextResponse(null, { status: 204, headers: withTiming(CORS_HEADERS, start) });
+                return new NextResponse(null, {
+                    status: 204,
+                    headers: withTiming(versionHeaders(negotiatedVersion, CORS_HEADERS), start),
+                });
             }
 
-            // server/discover: MCP discovery handshake (spec 2026-07-28 and OpenAI Apps SDK scanner)
-            // Returns server identity, capabilities, and complete tool/resource/prompt manifest
             if (method === 'server/discover') {
-                const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
-                negotiatedVersion = negotiateProtocolVersion(requestedVersion);
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
@@ -214,21 +341,11 @@ export async function POST(request) {
                         resources: MCP_RESOURCES,
                         prompts: MCP_PROMPTS
                     }
-                }, 200, {
-                    ...NO_CACHE_HEADERS,
-                    'Mcp-Protocol-Version': negotiatedVersion
-                });
+                }, 200, NO_CACHE_HEADERS);
             }
 
-            // Standard MCP initialize handshake (MCP 2024-11-05 specification)
+            // Legacy initialize handshake (still answered for dual-era / OpenAI)
             if (method === 'initialize') {
-                const requestedVersion = params?.protocolVersion || request.headers.get('mcp-protocol-version');
-                negotiatedVersion = negotiateProtocolVersion(requestedVersion);
-                const versionHeaders = {
-                    ...NO_CACHE_HEADERS,
-                    'Mcp-Protocol-Version': negotiatedVersion
-                };
-
                 return respond({
                     jsonrpc: '2.0',
                     id: responseId,
@@ -244,10 +361,9 @@ export async function POST(request) {
                             version: SERVER_VERSION
                         }
                     }
-                }, 200, versionHeaders);
+                }, 200, NO_CACHE_HEADERS);
             }
 
-            // Tools
             if (method === 'tools/list') {
                 return respond({
                     jsonrpc: '2.0',
@@ -259,6 +375,7 @@ export async function POST(request) {
             if (method === 'tools/call') {
                 const toolName = params?.name;
                 if (!toolName) {
+                    respondMeta.errorCode = -32602;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
@@ -271,7 +388,10 @@ export async function POST(request) {
                     userAgent,
                     ip,
                     sessionId,
-                    requestId: responseId
+                    requestId: responseId,
+                    protocolVersion: negotiatedVersion,
+                    protocolEra: protocolEra(negotiatedVersion),
+                    resultType: modern ? 'complete' : null,
                 });
 
                 respondMeta = {
@@ -286,7 +406,6 @@ export async function POST(request) {
                 });
             }
 
-            // Resources
             if (method === 'resources/list') {
                 return respond({
                     jsonrpc: '2.0',
@@ -298,11 +417,12 @@ export async function POST(request) {
             if (method === 'resources/read') {
                 const uri = params?.uri;
                 if (!uri) {
+                    respondMeta.errorCode = -32602;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: 'Missing required parameter: "uri"' }
-                    });
+                    }, 400);
                 }
                 try {
                     const result = await readResource(uri);
@@ -312,15 +432,15 @@ export async function POST(request) {
                         result
                     });
                 } catch (err) {
+                    respondMeta.errorCode = -32602;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: err.message }
-                    });
+                    }, 400);
                 }
             }
 
-            // Prompts
             if (method === 'prompts/list') {
                 return respond({
                     jsonrpc: '2.0',
@@ -332,11 +452,12 @@ export async function POST(request) {
             if (method === 'prompts/get') {
                 const name = params?.name;
                 if (!name) {
+                    respondMeta.errorCode = -32602;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: 'Missing required parameter: "name"' }
-                    });
+                    }, 400);
                 }
                 const promptArgs = params?.arguments || {};
                 try {
@@ -347,11 +468,12 @@ export async function POST(request) {
                         result
                     });
                 } catch (err) {
+                    respondMeta.errorCode = -32602;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
                         error: { code: -32602, message: err.message }
-                    });
+                    }, 400);
                 }
             }
 
@@ -380,15 +502,62 @@ export async function POST(request) {
             source: 'http-direct',
             userAgent,
             ip,
-            sessionId
+            sessionId,
+            protocolVersion: negotiatedVersion,
+            protocolEra: protocolEra(negotiatedVersion),
+            resultType: modern ? 'complete' : null,
         });
+
+        // Direct invoke is not JSON-RPC; for modern clients wrap into a JSON-RPC-like result
+        // only when they sent modern protocol markers. Otherwise keep classic tool payload.
+        if (modern) {
+            respondMeta = {
+                tool: toolName,
+                toolSuccess: !executionResult?.isError,
+                requestId: null
+            };
+            return respond({
+                jsonrpc: '2.0',
+                id: null,
+                result: executionResult,
+            }, executionResult?.isError ? 400 : 200);
+        }
+
         const directStatus = executionResult?.isError ? 400 : 200;
         respondMeta = {
             tool: toolName,
             toolSuccess: !executionResult?.isError,
             requestId: null
         };
-        return respond(executionResult, directStatus);
+
+        // Classic direct response still goes through respond() for telemetry; skip result shaping
+        // by passing a non-jsonrpc object without .result
+        if (sessionId) {
+            sendSseMessage(sessionId, executionResult);
+        }
+        logMcpRequest({
+            method: requestMethod,
+            status: directStatus,
+            durationMs: Date.now() - start,
+            userAgent,
+            ip,
+            sessionId,
+            protocolVersion: negotiatedVersion,
+            requestedProtocolVersion,
+            protocolEra: protocolEra(negotiatedVersion),
+            negotiationOutcome,
+            error: executionResult?.isError ? executionResult?.content?.[0]?.text : null,
+            path: '/api/mcp',
+            tool: toolName,
+            toolSuccess: !executionResult?.isError,
+            clientName,
+            clientVersion,
+        });
+        await flushTelemetry(800);
+        return NextResponse.json(executionResult, {
+            status: directStatus,
+            headers: withTiming(versionHeaders(negotiatedVersion), start),
+        });
 
     } catch (error) {
         console.error('API /api/mcp error:', error);

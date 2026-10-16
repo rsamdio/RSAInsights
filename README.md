@@ -16,7 +16,7 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 - **Youth Service & Interact Ecosystem**: Tracking Rotary clubs without Rotaract/Interact sponsorship, Interact club growth, and expansion opportunity metrics.
 - **Public REST API (`/api/v1/`)**: 20 high-performance JSON endpoints covering summary, leaderboards, districts, clubs, compliance (including unified issues), opportunities, TRF, interact, and worldwide rankings.
 - **Interactive API Documentation (`/docs`)**: Modern interactive API reference powered by Scalar and OpenAPI 3.1.0 (`/openapi.json`).
-- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts supporting both local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`, protocol version 2024-11-05).
+- **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts supporting both local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`). Dual-era: default `2025-11-25` (OpenAI-compatible legacy), full `2026-07-28` when requested (Claude modern connectors).
 - **Production Host Routing**: Canonical production routing at `https://insights.rsamdio.org/` with 301 edge redirects for Netlify subdomains and legacy addresses.
 
 ---
@@ -140,15 +140,16 @@ The REST API endpoints and Model Context Protocol (MCP) server include structure
 ### Environment Variables:
 | Variable | Description | Default |
 |---|---|---|
-| `AXIOM_TOKEN` | Axiom API Token with Ingest permission | (Disabled if omitted) |
+| `AXIOM_TOKEN` | Axiom API Token with Ingest permission (`AXIOM_API_TOKEN` alias also accepted) | (Disabled if omitted) |
 | `AXIOM_DATASET` | Target dataset name | `rotaract-analytics` |
 | `AXIOM_ORG_ID` | Optional organization ID | None |
+| `AXIOM_URL` | Axiom API base URL | `https://api.axiom.co` |
 | `DEBUG_TELEMETRY` | Set to `1` or `true` to print telemetry payloads to console | `false` |
 
 ### Ingested Event Types:
 - `api_request`: Path, normalized route, HTTP method, status code, latency (ms), query parameters, caller IP, user agent, referer.
-- `mcp_tool`: MCP tool name, sanitized arguments, execution latency (ms), outcome (success/failure), error details, caller source (`http`, `sse`, `stdio`, `http-direct`), returned slice item count (`resultCount`), total matching database records (`totalMatches`), caller IP, user agent, session ID, JSON-RPC request ID.
-- `mcp_request`: Protocol methods (`initialize`, `server/discover`, `tools/list`, `tools/call`, `manifest/get`, `sse/connect`), status code, latency, user agent, caller IP, session ID, protocol version.
+- `mcp_tool`: MCP tool name, sanitized arguments, execution latency (ms), outcome (success/failure), error details, caller source (`http`, `sse`, `stdio`, `http-direct`), returned slice item count (`resultCount`), total matching database records (`totalMatches`), caller IP, user agent, session ID, JSON-RPC request ID, optional `protocolVersion` / `protocolEra` / `resultType`.
+- `mcp_request`: Protocol methods (`initialize`, `server/discover`, `tools/list`, `tools/call`, `manifest/get`, `sse/connect`), status code, latency, user agent, caller IP, session ID, negotiated `protocolVersion`, optional `requestedProtocolVersion`, `protocolEra` (`legacy`|`modern`), `negotiationOutcome`, `errorCode`, bounded `clientName`/`clientVersion`, and `resultType` when present.
 
 ### Reliability & Delivery Guarantees:
 - **Serverless Anti-Freeze:** Route handlers coordinate with `flushTelemetry(800)` to ensure pending ingestion tasks complete before AWS Lambda / Netlify execution freezes on response completion.
