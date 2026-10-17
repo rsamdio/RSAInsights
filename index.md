@@ -32,7 +32,7 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `app/worldwide/page.js` | Worldwide Statistics: global club/member leaderboards, country rankings, baseline deltas | Global / Country stats |
 | `app/api/filters/route.js` | Server route providing dynamic filter options (cached 1d, stale 7d) | Filter backend tasks |
 | `app/api/v1/` | Public REST API endpoints (20 endpoints: summary, zones, districts, clubs, compliance including unified, opportunities, TRF, leaderboards, interact, worldwide) | REST API tasks |
-| `app/api/mcp/route.js` | Dual-era HTTP MCP endpoint (default `2025-11-25`, full `2026-07-28` when requested) with SSE probe | Remote MCP tasks |
+| `app/api/mcp/route.js` | Dual-era HTTP MCP endpoint (default `2025-11-25`, full `2026-07-28` when requested) with SSE probe; answers `resources/templates/list` with an empty list; legacy ping only (modern ping returns `-32601`) | Remote MCP tasks |
 | `app/sse/route.js`, `app/api/sse/route.js`, `app/mcp/route.js`, `app/messages/route.js` | Dedicated MCP transports (SSE stream, Streamable HTTP, message ingress) for OpenAI/ChatGPT probes | MCP transport endpoints |
 | `lib/mcp/sse.js` | MCP version policy hub (default `2025-11-25`, modern `2026-07-28`), dual-era result shaping, CORS, SSE stream/session memory | MCP protocol / SSE tasks |
 | `app/docs/page.js` & `public/docs.html` | Interactive API documentation (Scalar API reference UI) | API Docs tasks |
@@ -42,13 +42,15 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `public/openapi.json` | OpenAPI 3.1.0 specification covering all REST endpoints | API Spec tasks |
 | `lib/services/analyticsService.js` | Unified query, search, filtering, and pagination service layer | Service layer tasks |
 | `lib/mcp/tools.js` | MCP tool schemas (14 tools, 8 resources, 4 prompts) and execution dispatcher | MCP Tool definitions |
-| `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`); SDK protocol `2025-11-25`; auto-loads `.env.local` | Stdio MCP tasks |
+| `scripts/mcp_server.js` | Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`); SDK protocol `2025-11-25`; registers empty `resources/templates/list`; auto-loads `.env.local` | Stdio MCP tasks |
 | `lib/telemetry/axiom.js` | Axiom telemetry client: non-blocking ingest, `flushTelemetry(800)`, dual-era MCP fields (`protocolVersion`, `protocolEra`, `negotiationOutcome`, `resultType`), dual metrics | Telemetry / Observability tasks |
 | `app/globals.css` | Global styles, CSS variables, glassmorphism card classes, mobile breakpoints | Styling / Theme tasks |
 | `lib/api.js` | Data Access Layer: file reader with mtime cache (`global.apiCache`), O(1) `getClubMap()` | Data querying / Helpers |
 | `scripts/generate_dashboard_data.js` | Master ETL pipeline: parses Excel/CSV files, computes rollups & deltas, writes JSON/CSV to `data/` | ETL / Master data tasks |
 | `scripts/validate_harness.js` | Agent harness validator: checks file references, data files, forbidden em dashes | Harness maintenance |
 | `scripts/verify_production.mjs` | Automated smoke & integration test suite verifying local or production endpoints | Production / Integration testing |
+| `scripts/deep_test_suite.mjs` | Exhaustive MCP tool + REST regression suite (structural census checks) | Deep integration testing |
+| `scripts/extreme_qa_suite.mjs` | Extreme edge-case matrix: all tools/resources/prompts, REST, parity, high load (`npm run qa:extreme`) | Pre-deploy hard QA |
 | `proxy.js` | Next.js 16 host proxy middleware redirecting legacy and Netlify subdomains to primary domain | Routing / Middleware tasks |
 | `netlify.toml` & `public/_redirects` | Netlify edge routing, 301 force domain redirects (`zone45678analysis.netlify.app` to canonical) | Netlify deployment / Hosting |
 | `public/.well-known/mcp-server.json` | MCP server discovery manifest for platform integration and auto-discovery | MCP discovery |
@@ -115,6 +117,12 @@ npm run validate-harness
 
 # Run automated smoke and production verification test suite
 node scripts/verify_production.mjs https://insights.rsamdio.org
+
+# Deep MCP/REST regression suite
+node scripts/deep_test_suite.mjs http://localhost:3010
+
+# Extreme edge-case + high-load QA (optional LOAD_CONCURRENCY / LOAD_ROUNDS)
+npm run qa:extreme -- http://localhost:3010
 
 # Run Model Context Protocol (MCP) server on stdio
 npm run mcp

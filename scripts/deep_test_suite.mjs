@@ -1,7 +1,9 @@
-// Exhaustive Deep Test Suite for All MCP Tools & REST APIs
+// Exhaustive Deep Test Suite for All MCP Tools & REST APIs.
+// Do not pin volatile census totals; update data via ETL, not test constants.
+// Keep exact asserts only for true invariants (known club/district IDs, protocol codes, filter correctness).
 import http from 'node:http';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.TEST_URL || process.argv[2] || 'http://localhost:3000';
 
 let totalTests = 0;
 let passedTests = 0;
@@ -209,7 +211,10 @@ async function main() {
     await runTest('MCP', 'get_new_clubs (default)', async () => {
         const data = await callMcpTool('get_new_clubs', { limit: 5 });
         assertSanity(data);
-        if (data.total !== 144) throw new Error(`Expected 144 new clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive new-clubs total, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected new-clubs sample rows');
         return `Total: ${data.total}, 1st: ${data.data[0]?.name} (Charter: ${data.data[0]?.charterDate})`;
     });
     await runTest('MCP', 'get_new_clubs (zone=4)', async () => {
@@ -236,12 +241,15 @@ async function main() {
         return `Found by name: ${data.name} (${data.members} members)`;
     });
     await runTest('MCP', 'get_club_profile (non-existent: 999999999)', async () => {
-        try {
-            await callMcpTool('get_club_profile', { clubId: '999999999' });
-            throw new Error('Should have failed for non-existent club');
-        } catch (err) {
-            return `Safely rejected: ${err.message}`;
+        const data = await callMcpTool('get_club_profile', { clubId: '999999999' });
+        const errText = typeof data === 'string' ? data : (data?.error || JSON.stringify(data));
+        if (!/not found/i.test(errText)) {
+            throw new Error(`Expected not-found error, got: ${errText}`);
         }
+        if (!errText.includes('search_clubs')) {
+            throw new Error(`Expected search_clubs self-healing guidance, got: ${errText}`);
+        }
+        return `Self-healing not-found mentions search_clubs`;
     });
 
     // -------------------------------------------------------------------------
@@ -260,6 +268,25 @@ async function main() {
         if (data.country !== 'Nepal') throw new Error(`Expected country Nepal, got ${data.country}`);
         return `Nepal Dist 3292: ${data.stats?.totalClubs} clubs, Members: ${data.stats?.totalMembers}`;
     });
+    await runTest('MCP', 'get_district_insights (out-of-scope: 9999)', async () => {
+        const data = await callMcpTool('get_district_insights', { district: '9999' });
+        const errText = typeof data === 'string'
+            ? data
+            : (data?.error || (typeof data?.message === 'string' ? data.message : JSON.stringify(data)));
+        if (!/not found/i.test(errText)) {
+            throw new Error(`Expected not-found error, got: ${errText}`);
+        }
+        if (!errText.includes('get_worldwide_rankings') && !errText.includes('get_districts')) {
+            throw new Error(`Expected get_worldwide_rankings or get_districts guidance, got: ${errText}`);
+        }
+        if (errText.includes('top_districts')) {
+            throw new Error('Self-heal must not recommend invalid type top_districts');
+        }
+        if (!/type:\s*"district"/.test(errText)) {
+            throw new Error(`Expected type: "district" guidance, got: ${errText}`);
+        }
+        return `Self-healing district miss guides to worldwide type district`;
+    });
 
     // -------------------------------------------------------------------------
     // 8. TOOL: get_zone_summary
@@ -274,6 +301,17 @@ async function main() {
             return `${z}: ${data.districts?.length} districts, ${data.stats?.totalClubs} clubs, ${data.stats?.totalMembers} members`;
         });
     }
+    await runTest('MCP', 'get_zone_summary (out-of-scope: 22)', async () => {
+        const data = await callMcpTool('get_zone_summary', { zone: '22' });
+        const errText = typeof data === 'string' ? data : (data?.error || JSON.stringify(data));
+        if (!/outside|not found/i.test(errText)) {
+            throw new Error(`Expected out-of-scope error, got: ${errText}`);
+        }
+        if (!errText.includes('get_worldwide_rankings')) {
+            throw new Error(`Expected get_worldwide_rankings guidance, got: ${errText}`);
+        }
+        return `Self-healing zone miss guides to get_worldwide_rankings`;
+    });
 
     // -------------------------------------------------------------------------
     // 9. TOOL: find_compliance_risks
@@ -302,7 +340,10 @@ async function main() {
     await runTest('MCP', 'find_dual_risk_clubs (default)', async () => {
         const data = await callMcpTool('find_dual_risk_clubs', { limit: 5 });
         assertSanity(data);
-        if (data.total !== 734) throw new Error(`Expected 734 dual-risk clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 100) {
+            throw new Error(`Expected dual-risk total > 100, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected dual-risk sample rows');
         return `Total Dual-Risk: ${data.total}, Sample: ${data.data[0]?.name}`;
     });
     await runTest('MCP', 'find_dual_risk_clubs (zone=5)', async () => {
@@ -332,17 +373,43 @@ async function main() {
     // 12. TOOL: find_rotary_opportunities
     // -------------------------------------------------------------------------
     console.log('\n--- 12. find_rotary_opportunities ---');
+    let noRotaractTotal = 0;
     await runTest('MCP', 'find_rotary_opportunities (no_rotaract)', async () => {
         const data = await callMcpTool('find_rotary_opportunities', { opportunityType: 'no_rotaract', limit: 3 });
         assertSanity(data);
-        if (data.total !== 3431) throw new Error(`Expected 3431 South Asia no-rotaract clubs, got ${data.total}`);
+        if (data.opportunityType !== 'no_rotaract') {
+            throw new Error(`Expected opportunityType no_rotaract, got ${data.opportunityType}`);
+        }
+        if (!Number.isFinite(data.total) || data.total <= 1000) {
+            throw new Error(`Expected no_rotaract total > 1000, got ${data.total}`);
+        }
+        noRotaractTotal = data.total;
         return `Rotary w/o Rotaract: ${data.total} clubs`;
     });
     await runTest('MCP', 'find_rotary_opportunities (no_interact)', async () => {
         const data = await callMcpTool('find_rotary_opportunities', { opportunityType: 'no_interact', limit: 3 });
         assertSanity(data);
-        if (data.total !== 2953) throw new Error(`Expected 2953 South Asia no-interact clubs, got ${data.total}`);
+        if (data.opportunityType !== 'no_interact') {
+            throw new Error(`Expected opportunityType no_interact, got ${data.opportunityType}`);
+        }
+        if (!Number.isFinite(data.total) || data.total <= 1000) {
+            throw new Error(`Expected no_interact total > 1000, got ${data.total}`);
+        }
+        if (noRotaractTotal > 0 && data.total === noRotaractTotal) {
+            throw new Error(`no_interact total must differ from no_rotaract (${noRotaractTotal})`);
+        }
         return `Rotary w/o Interact: ${data.total} clubs`;
+    });
+    await runTest('MCP', 'find_rotary_opportunities type alias = opportunityType', async () => {
+        const data = await callMcpTool('find_rotary_opportunities', { type: 'no_interact', limit: 1 });
+        assertSanity(data);
+        if (data.opportunityType !== 'no_interact') {
+            throw new Error(`type alias must resolve to no_interact, got ${data.opportunityType}`);
+        }
+        if (!Number.isFinite(data.total) || data.total <= 1000) {
+            throw new Error(`Expected no_interact total via type alias > 1000, got ${data.total}`);
+        }
+        return `type alias ok: opportunityType=${data.opportunityType} total=${data.total}`;
     });
 
     // -------------------------------------------------------------------------
@@ -352,7 +419,10 @@ async function main() {
     await runTest('MCP', 'get_foundation_giving (default)', async () => {
         const data = await callMcpTool('get_foundation_giving', { limit: 5 });
         assertSanity(data);
-        if (data.total !== 42) throw new Error(`Expected 42 TRF contributors, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive TRF donor total, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected TRF sample rows');
         return `TRF Contributing Clubs: ${data.total}, Top: ${data.data[0]?.name} ($${data.data[0]?.totalContributionsUSD})`;
     });
     await runTest('MCP', 'get_foundation_giving (fundType: annual)', async () => {
@@ -522,6 +592,29 @@ async function main() {
         const json = await res.json();
         if (json.error?.code !== -32602) throw new Error(`Expected -32602, got ${JSON.stringify(json.error)}`);
         return json.error.message;
+    });
+    await runTest('MCP', 'get_worldwide_rankings rejects bogus type', async () => {
+        const data = await callMcpTool('get_worldwide_rankings', { type: 'bogus', limit: 3 });
+        const errText = typeof data === 'string' ? data : (data?.error || JSON.stringify(data));
+        if (!/Invalid type/i.test(errText) || !errText.includes('district')) {
+            throw new Error(`Expected invalid-type guidance, got: ${errText}`);
+        }
+        return 'bogus type rejected';
+    });
+    await runTest('MCP', 'get_worldwide_rankings top_districts alias', async () => {
+        const data = await callMcpTool('get_worldwide_rankings', {
+            type: 'top_districts',
+            sortBy: 'member_growth_pct',
+            limit: 3
+        });
+        if (data.error && !data.districts) throw new Error(`Alias failed: ${data.error}`);
+        if (!Array.isArray(data.districts) || data.districts.length === 0) {
+            throw new Error('Expected districts array from top_districts alias');
+        }
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive total, got ${data.total}`);
+        }
+        return `alias ok total=${data.total} returned=${data.districts.length}`;
     });
 
     console.log('\n====================================================');

@@ -42,6 +42,11 @@ export const GET = withApiTelemetry(async function GET(request) {
             return NextResponse.json({ error: 'Worldwide statistics not found' }, { status: 404, headers: CACHE_HEADERS });
         }
 
+        // Invalid type (after alias normalization) is a client error, not a missing dataset.
+        if (stats.error && Array.isArray(stats.validTypes)) {
+            return NextResponse.json(stats, { status: 400, headers: CACHE_HEADERS });
+        }
+
         return NextResponse.json(stats, { headers: CACHE_HEADERS });
     } catch (error) {
         console.error('API /v1/worldwide error:', error);

@@ -100,9 +100,9 @@
 - `lib/mcp/tools.js`: MCP schemas for 14 tools, 8 resources, 4 prompts, output schemas, and tool execution dispatcher.
 - `lib/mcp/sse.js`: Version policy hub (default `2025-11-25`, modern `2026-07-28`), dual-era `shapeMcpResult`, session protocol memory, CORS (`Mcp-Method` / `Mcp-Name`), and SSE stream dispatcher.
 - `lib/telemetry/axiom.js`: Axiom telemetry client with serverless `flushTelemetry`, client attribution (`ip`, `userAgent`, `sessionId`, `requestId`), dual metrics (`resultCount`, `totalMatches`), and dual-era fields (`protocolVersion`, `protocolEra`, `negotiationOutcome`, `resultType`, `errorCode`).
-- `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`); stays on MCP SDK `2025-11-25` (dual-era HTTP is separate); auto-loads `.env.local`.
+- `scripts/mcp_server.js`: Standalone stdio MCP server for Cursor, Claude Desktop, Antigravity (`npm run mcp`); stays on MCP SDK `2025-11-25` (dual-era HTTP is separate); registers empty `resources/templates/list`; auto-loads `.env.local`.
 - `app/api/v1/`: 20 public REST endpoints (summary, leaderboards, districts, clubs, compliance including unified, opportunities, TRF, interact, worldwide).
-- `app/api/mcp/route.js`, `app/sse/route.js`, `app/api/sse/route.js`, `app/mcp/route.js`, `app/messages/route.js`: Dual-era JSON-RPC HTTP route plus SSE / alias transports with connection logging and coordinated telemetry flush.
+- `app/api/mcp/route.js`, `app/sse/route.js`, `app/api/sse/route.js`, `app/mcp/route.js`, `app/messages/route.js`: Dual-era JSON-RPC HTTP route plus SSE / alias transports; HTTP answers `resources/templates/list` with an empty list; legacy ping only (modern `2026-07-28` ping returns `-32601` by design).
 - `public/.well-known/mcp-server.json`: MCP discovery manifest (default `2025-11-25`, `supportedVersions` includes `2026-07-28`).
 - `app/docs/page.js` & `public/docs.html`: Interactive API reference documentation with Scalar UI.
 - `public/openapi.json`: OpenAPI 3.1.0 specification defining all endpoints and models.

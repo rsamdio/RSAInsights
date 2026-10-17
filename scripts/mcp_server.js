@@ -8,6 +8,7 @@ import {
     ListToolsRequestSchema,
     CallToolRequestSchema,
     ListResourcesRequestSchema,
+    ListResourceTemplatesRequestSchema,
     ReadResourceRequestSchema,
     ListPromptsRequestSchema,
     GetPromptRequestSchema,
@@ -103,6 +104,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 server.setRequestHandler(ListResourcesRequestSchema, async () => {
     return {
         resources: MCP_RESOURCES
+    };
+});
+
+server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => {
+    return {
+        resourceTemplates: []
     };
 });
 

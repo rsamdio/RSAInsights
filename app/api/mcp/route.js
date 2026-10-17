@@ -277,9 +277,10 @@ export async function POST(request) {
                 }, 400);
             }
 
-            // Ping: legacy only. Modern clients get method-not-found.
+            // Ping: legacy only. Modern (2026-07-28) removed ping from the protocol.
             if (method === 'ping') {
                 if (modern) {
+                    respondMeta.errorCode = -32601;
                     return respond({
                         jsonrpc: '2.0',
                         id: responseId,
@@ -411,6 +412,14 @@ export async function POST(request) {
                     jsonrpc: '2.0',
                     id: responseId,
                     result: { resources: MCP_RESOURCES }
+                }, 200, NO_CACHE_HEADERS);
+            }
+
+            if (method === 'resources/templates/list') {
+                return respond({
+                    jsonrpc: '2.0',
+                    id: responseId,
+                    result: { resourceTemplates: [] }
                 }, 200, NO_CACHE_HEADERS);
             }
 

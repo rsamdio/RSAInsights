@@ -10,6 +10,7 @@
     "generate-data": "node scripts/generate_dashboard_data.js",
     "set-date": "node scripts/set_date.js",
     "validate-harness": "node scripts/validate_harness.js",
+    "qa:extreme": "node scripts/extreme_qa_suite.mjs",
     "mcp": "node scripts/mcp_server.js"
   },
   "dependencies": {

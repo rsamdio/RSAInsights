@@ -1,4 +1,6 @@
-// Comprehensive production and local verification script for REST API and MCP endpoints
+// Comprehensive production and local verification script for REST API and MCP endpoints.
+// Do not pin volatile census totals; update data via ETL, not test constants.
+// Keep exact asserts only for true invariants (4 zones, 44 districts, 14 tools, known club IDs, protocol codes).
 import https from 'node:https';
 import http from 'node:http';
 
@@ -108,7 +110,12 @@ async function run() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const cors = res.headers.get('access-control-allow-origin');
-        if (data.overall?.totalClubs !== 2894) throw new Error(`Expected 2894 clubs, got ${data.overall?.totalClubs}`);
+        if (!Number.isFinite(data.overall?.totalClubs) || data.overall.totalClubs <= 2000) {
+            throw new Error(`Expected South Asia club census > 2000, got ${data.overall?.totalClubs}`);
+        }
+        if (!Number.isFinite(data.overall?.totalMembers) || data.overall.totalMembers <= 0) {
+            throw new Error(`Expected positive totalMembers, got ${data.overall?.totalMembers}`);
+        }
         return `Total Clubs: ${data.overall.totalClubs}, Total Members: ${data.overall.totalMembers}, Dues: ₹${data.overall.outstanding.toLocaleString()}, CORS: ${cors}`;
     });
 
@@ -142,7 +149,7 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/districts`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (!data.count || data.count < 1) throw new Error(`Expected positive district count, got ${data.count}`);
+        if (data.count !== 44) throw new Error(`Expected 44 South Asia districts, got ${data.count}`);
         return `Count: ${data.count} districts`;
     });
 
@@ -190,7 +197,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/clubs?sponsorsInteract=true&limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 65) throw new Error(`Expected 65 clubs sponsoring Interact, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive Interact-sponsor club total, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected Interact-sponsor sample rows');
         return `Found ${data.total} clubs sponsoring Interact, Sample: ${data.data[0].name} (${data.data[0].sponsoredInteractCount} clubs)`;
     });
 
@@ -213,7 +223,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/arrears?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 1001) throw new Error(`Expected 1001 arrears clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 100) {
+            throw new Error(`Expected arrears total > 100, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected arrears sample rows');
         return `Total: ${data.total} clubs in arrears, Sample: ${data.data[0].name} (₹${data.data[0].outstandingINR})`;
     });
 
@@ -221,7 +234,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/officers?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 1034) throw new Error(`Expected 1034 missing officer clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 100) {
+            throw new Error(`Expected missing-officers total > 100, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected officers sample rows');
         return `Total: ${data.total} clubs with unreported officers, Sample: ${data.data[0].name}`;
     });
 
@@ -229,7 +245,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/compliance/dual-risk?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 734) throw new Error(`Expected 734 dual-risk clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 100) {
+            throw new Error(`Expected dual-risk total > 100, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected dual-risk sample rows');
         return `Total: ${data.total} dual-risk clubs, Sample: ${data.data[0].name} (Dist ${data.data[0].district}, ₹${data.data[0].outstandingINR})`;
     });
 
@@ -253,7 +272,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/opportunities/rotary?type=no_rotaract&limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 3431) throw new Error(`Expected 3431 South Asia opportunity clubs (no_rotaract), got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 1000) {
+            throw new Error(`Expected no_rotaract opportunity total > 1000, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected no_rotaract sample rows');
         return `Total: ${data.total} Rotary clubs without Rotaract sponsorship, Sample: ${data.data[0].name}`;
     });
 
@@ -261,7 +283,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/opportunities/rotary?type=no_interact&limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 2953) throw new Error(`Expected 2953 South Asia opportunity clubs (no_interact), got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 1000) {
+            throw new Error(`Expected no_interact opportunity total > 1000, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected no_interact sample rows');
         return `Total: ${data.total} Rotary clubs without Interact sponsorship, Sample: ${data.data[0].name}`;
     });
 
@@ -269,7 +294,10 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/trf?limit=2`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 42) throw new Error(`Expected 42 TRF contributing clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive TRF donor total, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected TRF sample rows');
         return `Total: ${data.total} clubs contributing, Top Giver: ${data.data[0].name} ($${data.data[0].totalContributionsUSD})`;
     });
 
@@ -277,7 +305,9 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/worldwide`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.totalClubs < 9800) throw new Error(`Expected at least 9800 worldwide clubs, got ${data.totalClubs}`);
+        if (!Number.isFinite(data.totalClubs) || data.totalClubs <= 9000) {
+            throw new Error(`Expected worldwide clubs > 9000, got ${data.totalClubs}`);
+        }
         return `Global Rotaract Clubs: ${data.totalClubs.toLocaleString()}, Global Members: ${data.totalMembers.toLocaleString()}, Interact: ${data.totalInteractClubs.toLocaleString()}`;
     });
 
@@ -363,7 +393,8 @@ async function run() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         const topDist = data.data?.[0];
-        if (topDist?.district !== '3261') throw new Error(`Expected District 3261 as rank 1, got ${topDist?.district}`);
+        if (!topDist?.district) throw new Error('Expected a top growing district row');
+        if (!Number.isFinite(topDist.membersGrowthPct)) throw new Error('Expected membersGrowthPct on top district');
         return `Top Growing District in South Asia: Dist ${topDist.district} (${topDist.zone}) at +${topDist.membersGrowthPct.toFixed(1)}% (+${topDist.membersGrowthAbs} members)`;
     });
 
@@ -380,7 +411,13 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/v1/clubs/new?limit=5`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.total !== 144) throw new Error(`Expected 144 new clubs, got ${data.total}`);
+        if (!Number.isFinite(data.total) || data.total <= 0) {
+            throw new Error(`Expected positive new-clubs total, got ${data.total}`);
+        }
+        if (!Array.isArray(data.data) || data.data.length === 0) throw new Error('Expected new-clubs sample rows');
+        if (data.total >= 5 && data.data.length !== 5) {
+            throw new Error(`Expected page size 5 when total>=5, got ${data.data.length}`);
+        }
         return `Total New Clubs: ${data.total}, Sample: ${data.data[0].name} (Dist ${data.data[0].district})`;
     });
 
@@ -396,7 +433,9 @@ async function run() {
         const res = await fetchWithRetry(`${prodBase}/api/table-data/all_clubs?zone=Zone%205`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (!Array.isArray(data) || data.length !== 927) throw new Error(`Expected 927 Zone 5 clubs, got ${data?.length}`);
+        if (!Array.isArray(data) || data.length <= 100) {
+            throw new Error(`Expected Zone 5 club roster length > 100, got ${data?.length}`);
+        }
         return `Loaded ${data.length} Zone 5 club roster records`;
     });
 
@@ -544,6 +583,72 @@ async function run() {
         const data = await res.json();
         if (data.error) throw new Error(data.error.message);
         return `Ping acknowledged, JSON-RPC id: ${data.id}`;
+    });
+
+    await test('MCP', 'POST /api/mcp (modern ping returns -32601)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Mcp-Protocol-Version': '2026-07-28',
+            },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'ping-modern-1',
+                method: 'ping',
+                params: {
+                    _meta: {
+                        'io.modelcontextprotocol/protocolVersion': '2026-07-28',
+                        'io.modelcontextprotocol/clientCapabilities': { tools: {} },
+                        'io.modelcontextprotocol/clientInfo': { name: 'verify-suite', version: '1.0' },
+                    }
+                }
+            })
+        });
+        if (res.status !== 404) throw new Error(`Expected HTTP 404, got ${res.status}`);
+        const data = await res.json();
+        if (!data.error || data.error.code !== -32601) {
+            throw new Error(`Expected error -32601 for modern ping, got ${JSON.stringify(data.error)}`);
+        }
+        return `Modern ping correctly rejected with -32601`;
+    });
+
+    await test('MCP', 'POST /api/mcp (modern resources/templates/list empty)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Mcp-Protocol-Version': '2026-07-28',
+            },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'templates-1',
+                method: 'resources/templates/list',
+                params: {
+                    _meta: {
+                        'io.modelcontextprotocol/protocolVersion': '2026-07-28',
+                        'io.modelcontextprotocol/clientCapabilities': { resources: {} },
+                        'io.modelcontextprotocol/clientInfo': { name: 'verify-suite', version: '1.0' },
+                    }
+                }
+            })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        if (!Array.isArray(data.result?.resourceTemplates)) {
+            throw new Error('Expected resourceTemplates array');
+        }
+        if (data.result.resourceTemplates.length !== 0) {
+            throw new Error(`Expected empty resourceTemplates, got ${data.result.resourceTemplates.length}`);
+        }
+        if (data.result?.resultType !== 'complete') {
+            throw new Error(`Expected resultType complete, got ${data.result?.resultType}`);
+        }
+        if (data.result?.ttlMs === undefined || data.result?.cacheScope !== 'public') {
+            throw new Error('Missing cacheable ttlMs/cacheScope on modern resources/templates/list');
+        }
+        return `Modern templates/list: empty array, resultType=${data.result.resultType}, ttlMs=${data.result.ttlMs}`;
     });
 
     await test('MCP', 'POST /api/mcp (JSON-RPC notifications/initialized)', async () => {
@@ -768,6 +873,112 @@ async function run() {
             return tool.verify(parsed);
         });
     }
+
+    await test('MCP-TOOL', 'get_district_insights self-heal uses type district', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'district-heal',
+                method: 'tools/call',
+                params: { name: 'get_district_insights', arguments: { district: '9999' } }
+            })
+        });
+        const data = await res.json();
+        if (!data.result?.isError) throw new Error('Expected isError for missing district');
+        const raw = data.result.content?.[0]?.text || '';
+        let guidance = raw;
+        try {
+            const parsed = JSON.parse(raw);
+            guidance = parsed?.error || raw;
+        } catch {
+            // content may already be plain text
+        }
+        if (guidance.includes('top_districts')) throw new Error('Must not recommend top_districts');
+        if (!/type:\s*"district"/.test(guidance)) {
+            throw new Error(`Expected type: "district" in guidance, got: ${guidance}`);
+        }
+        return 'self-heal recommends type district';
+    });
+
+    await test('MCP-TOOL', 'get_worldwide_rankings rejects bogus type', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'ww-bogus',
+                method: 'tools/call',
+                params: { name: 'get_worldwide_rankings', arguments: { type: 'bogus', limit: 3 } }
+            })
+        });
+        const data = await res.json();
+        if (!data.result?.isError) throw new Error('Expected isError for bogus type');
+        const text = data.result.content?.[0]?.text || '';
+        if (!/Invalid type/i.test(text) || !text.includes('district')) {
+            throw new Error(`Expected invalid-type guidance, got: ${text}`);
+        }
+        return 'bogus type rejected with validTypes list';
+    });
+
+    await test('MCP-TOOL', 'get_worldwide_rankings top_districts alias', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'ww-alias',
+                method: 'tools/call',
+                params: { name: 'get_worldwide_rankings', arguments: { type: 'top_districts', sortBy: 'member_growth_pct', limit: 3 } }
+            })
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        if (data.result?.isError) throw new Error(`Alias should succeed, got ${data.result.content?.[0]?.text}`);
+        const parsed = JSON.parse(data.result.content[0].text);
+        if (!Array.isArray(parsed.districts) || parsed.districts.length === 0) {
+            throw new Error('Expected districts array from top_districts alias');
+        }
+        if (!Number.isFinite(parsed.total) || parsed.total <= 0) {
+            throw new Error(`Expected positive district total, got ${parsed.total}`);
+        }
+        return `alias ok: returned ${parsed.districts.length} districts (total=${parsed.total})`;
+    });
+
+    await test('REST', 'GET /api/v1/worldwide?type=bogus rejects', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/v1/worldwide?type=bogus&limit=3`);
+        if (res.status !== 400) throw new Error(`Expected HTTP 400, got ${res.status}`);
+        const data = await res.json();
+        if (!data.error || !Array.isArray(data.validTypes)) {
+            throw new Error(`Expected error + validTypes, got ${JSON.stringify(data)}`);
+        }
+        return `REST invalid type rejected; validTypes=${data.validTypes.join(',')}`;
+    });
+
+    await test('MCP-TOOL', 'find_rotary_opportunities type alias = no_interact', async () => {
+        const res = await fetchWithRetry(`${prodBase}/api/mcp`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 'opp-type-alias',
+                method: 'tools/call',
+                params: { name: 'find_rotary_opportunities', arguments: { type: 'no_interact', limit: 1 } }
+            })
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        if (data.result?.isError) throw new Error(`Alias should succeed, got ${data.result.content?.[0]?.text}`);
+        const parsed = JSON.parse(data.result.content[0].text);
+        if (parsed.opportunityType !== 'no_interact') {
+            throw new Error(`Expected opportunityType no_interact via type alias, got ${parsed.opportunityType}`);
+        }
+        if (!Number.isFinite(parsed.total) || parsed.total <= 1000) {
+            throw new Error(`Expected no_interact total > 1000, got ${parsed.total}`);
+        }
+        return `type alias ok: opportunityType=${parsed.opportunityType} total=${parsed.total}`;
+    });
 
     // Test All 8 MCP Resources
     await test('MCP-RESOURCE', 'resources/list', async () => {
