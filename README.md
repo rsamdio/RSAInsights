@@ -2,6 +2,7 @@
 
 # Rotaract South Asia Analytics Dashboard (Insights)
 
+<a href="https://chatgpt.com/plugins/plugin_asdk_app_6ad0c19aaa448191806eefd29e8edec7"><img src="public/badges/get-it-on-chatgpt.svg" alt="Get it on ChatGPT" width="140" height="42" /></a>
 <a href="https://claude.ai/directory/rsainsights"><img src="public/badges/connect-on-claude.svg" alt="Connect on Claude" width="140" height="42" /></a>
 
 An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO**, providing comprehensive membership, compliance, youth service (Interact), and TRF contribution metrics across **Zones 4, 5, 6 & 7** and worldwide.
