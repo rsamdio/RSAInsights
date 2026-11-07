@@ -93,7 +93,8 @@
 - `ClubLeaderboardsSection.js`: Server component rendering club-level leaderboards for district pages.
 - `DoughnutChart.js`: Chart.js doughnut wrapper.
 - `BarChart.js`: Chart.js bar wrapper.
-- `JsonLd.js`: SEO schema renderer for Organization, WebSite, Dataset, and Breadcrumb schemas.
+- `JsonLd.js`: SEO schema renderer for Organization, WebSite, Dataset, WebAPI, SoftwareApplication, and Breadcrumb schemas.
+- `public/llms.txt`, `public/llms-full.txt`, `public/ai-overview.md`: LLM / GEO / AIO discovery files (llmstxt.org v2) for agents and answer engines.
 
 ### API, MCP & Services
 - `lib/services/analyticsService.js`: Core domain service layer handling search, filtering, dual rankings, baselines, and aggregations.

@@ -4,7 +4,7 @@ export default async function sitemap() {
   const baseUrl = 'https://insights.rsamdio.org';
   const now = new Date();
 
-  // 1. Static high-level routes
+  // 1. Static high-level routes (including AI / GEO discovery files)
   const staticRoutes = [
     {
       url: baseUrl,
@@ -23,6 +23,30 @@ export default async function sitemap() {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/llms.txt`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ai-overview.md`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/llms-full.txt`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/openapi.json`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/privacy`,

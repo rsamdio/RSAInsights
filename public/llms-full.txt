@@ -1,0 +1,61 @@
+# Rotaract South Asia MDIO Insights (Full Index)
+
+> Expanded LLM-oriented map of Rotaract Insights: dashboards, REST API surfaces, MCP transports, connector listings, and policy pages. Use this when a shorter `/llms.txt` context is insufficient. Canonical host: https://insights.rsamdio.org.
+
+Important notes for agents:
+
+- Prefer `/ai-overview.md`, `/openapi.json`, and `/.well-known/mcp-server.json` over scraping large HTML tables.
+- South Asia analytics are limited to Rotary International Zones 4, 5, 6, and 7.
+- Worldwide routes and `/api/v1/worldwide*` endpoints cover global Rotary districts.
+- Public REST and MCP access require no authentication.
+- Dataset license is ODbL-1.0. Cite RSAMDIO Insights and the data-as-of date when quoting figures.
+- Outstanding dues are shown in INR after club-level integer rounding. TRF values are USD.
+
+## Core product pages
+
+- [AI overview (Markdown)](https://insights.rsamdio.org/ai-overview.md): Authoritative factual brief for citation and tool routing
+- [Home dashboard](https://insights.rsamdio.org/): Executive KPIs, filters, charts, leaderboards, drilldown tables
+- [Worldwide statistics](https://insights.rsamdio.org/worldwide): Global Rotaract/Interact rankings and growth
+- [API docs](https://insights.rsamdio.org/docs): Interactive REST reference
+- [OpenAPI JSON](https://insights.rsamdio.org/openapi.json): Full REST schema
+- [Contact](https://insights.rsamdio.org/contact): Human support and developer contact desk
+- [Privacy](https://insights.rsamdio.org/privacy): Privacy and telemetry disclosures
+- [Terms](https://insights.rsamdio.org/terms): License and usage terms
+
+## Zone drilldowns
+
+- [Zone 4](https://insights.rsamdio.org/zone/4)
+- [Zone 5](https://insights.rsamdio.org/zone/5)
+- [Zone 6](https://insights.rsamdio.org/zone/6)
+- [Zone 7](https://insights.rsamdio.org/zone/7)
+
+## REST API (high-value endpoints)
+
+- [GET /api/v1/summary](https://insights.rsamdio.org/api/v1/summary): Executive South Asia or zone-scoped KPI summary
+- [GET /api/v1/leaderboards](https://insights.rsamdio.org/api/v1/leaderboards): Top clubs, districts, arrears, and TRF rankings
+- [GET /api/v1/districts](https://insights.rsamdio.org/api/v1/districts): District roster and performance indicators
+- [GET /api/v1/clubs](https://insights.rsamdio.org/api/v1/clubs): Searchable Rotaract club roster
+- [GET /api/v1/compliance](https://insights.rsamdio.org/api/v1/compliance): Arrears and missing-officer compliance datasets
+- [GET /api/v1/opportunities](https://insights.rsamdio.org/api/v1/opportunities): Rotary clubs without Rotaract or Interact sponsorship
+- [GET /api/v1/trf](https://insights.rsamdio.org/api/v1/trf): The Rotary Foundation contribution details
+- [GET /api/v1/interact](https://insights.rsamdio.org/api/v1/interact): Interact ecosystem metrics
+- [GET /api/v1/worldwide](https://insights.rsamdio.org/api/v1/worldwide): Worldwide summary metrics
+
+## MCP & AI platforms
+
+- [MCP server manifest](https://insights.rsamdio.org/.well-known/mcp-server.json)
+- [MCP HTTP endpoint](https://insights.rsamdio.org/api/mcp)
+- [MCP SSE transport](https://insights.rsamdio.org/sse)
+- [ChatGPT plugin](https://chatgpt.com/plugins/plugin_asdk_app_6ad0c19aaa448191806eefd29e8edec7)
+- [Claude connector](https://claude.ai/directory/rsainsights)
+
+## Discovery & crawlers
+
+- [llms.txt](https://insights.rsamdio.org/llms.txt): Curated short index (start here)
+- [robots.txt](https://insights.rsamdio.org/robots.txt)
+- [sitemap.xml](https://insights.rsamdio.org/sitemap.xml)
+
+## Optional
+
+- [Parent organization site](https://rsamdio.org): Rotaract South Asia MDIO organizational home
+- [Rotary International](https://www.rotary.org): Parent global organization context

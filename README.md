@@ -21,6 +21,7 @@ An executive analytics and intelligence dashboard for **Rotaract South Asia MDIO
 - **Interactive API Documentation (`/docs`)**: Modern interactive API reference powered by Scalar and OpenAPI 3.1.0 (`/openapi.json`).
 - **Model Context Protocol (MCP) Server**: 14 analytical AI tools, 8 resources, and 4 prompts over local stdio (`npm run mcp`) and remote HTTP (`POST /api/mcp`). HTTP is dual-era: default `2025-11-25` (OpenAI-compatible legacy), full `2026-07-28` when requested (Claude modern connectors). Stdio stays on the MCP SDK `2025-11-25` path until upstream ships `2026-07-28`.
 - **Production Host Routing**: Canonical production routing at `https://insights.rsamdio.org/` with 301 edge redirects for Netlify subdomains and legacy addresses.
+- **SEO / GEO / AIO**: `/llms.txt` (llmstxt.org v2), `/llms-full.txt`, `/ai-overview.md`, enriched JSON-LD (Organization, WebSite, Dataset, WebAPI, SoftwareApplication), AI-crawler-aware `robots.txt`, and sitemap entries for discovery files.
 
 ---
 

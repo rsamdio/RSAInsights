@@ -65,6 +65,8 @@ This index is the primary navigation layer for AI coding agents. It provides a d
 | `components/sections/` | Server & client leaderboard sections (`TopChartsSection.js`, `ClubLeaderboardsSection.js`, `WorldwideLeaderboardsSection.js`, `WorldwideClubLeaderboards.js`) | Leaderboard logic |
 | `components/ui/` | UI primitives (`HeaderFilters.js`, `MetricCard.js`, `Tabs.js`, `Footer.js`, `Analytics.js`) | Reusable UI controls |
 | `components/seo/` | JSON-LD schema builder (`JsonLd.js`) | Structured data / SEO |
+| `public/llms.txt`, `public/llms-full.txt`, `public/ai-overview.md` | LLM / GEO / AIO discovery files (llmstxt.org v2) for agents and answer engines | AI SEO / agent routing |
+| `app/robots.js`, `app/sitemap.js` | Crawler policy (incl. major AI bots) and URL inventory including discovery files | Search + AI crawl tasks |
 
 ---
 

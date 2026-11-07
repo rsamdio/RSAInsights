@@ -102,6 +102,45 @@ async function run() {
         return `MCP Manifest Verified: ${data.name} v${data.version}, protocol: ${pVer}, supported: ${supported.join(', ')}`;
     });
 
+    await test('SEO', 'llms.txt (AI discovery index)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/llms.txt`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        if (!text.startsWith('# Rotaract South Asia MDIO Insights')) {
+            throw new Error('Missing llms.txt H1 title');
+        }
+        if (!text.includes('https://insights.rsamdio.org/ai-overview.md')) {
+            throw new Error('Missing ai-overview.md link in llms.txt');
+        }
+        if (!text.includes('/api/mcp')) {
+            throw new Error('Missing MCP endpoint reference in llms.txt');
+        }
+        return `llms.txt OK (${text.length} bytes)`;
+    });
+
+    await test('SEO', 'ai-overview.md (citation-ready markdown)', async () => {
+        const res = await fetchWithRetry(`${prodBase}/ai-overview.md`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        if (!text.includes('Zones 4, 5, 6, and 7')) {
+            throw new Error('Missing South Asia zone coverage in ai-overview.md');
+        }
+        return `ai-overview.md OK (${text.length} bytes)`;
+    });
+
+    await test('SEO', 'robots.txt allows public pages and lists sitemap', async () => {
+        const res = await fetchWithRetry(`${prodBase}/robots.txt`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        if (!text.includes('Sitemap: https://insights.rsamdio.org/sitemap.xml')) {
+            throw new Error('Missing sitemap directive in robots.txt');
+        }
+        if (!text.includes('Disallow: /api/')) {
+            throw new Error('Expected /api/ disallow for crawler indexing');
+        }
+        return 'robots.txt OK';
+    });
+
     // ----------------------------------------------------
     // Category 2: REST API Core Endpoints
     // ----------------------------------------------------

@@ -14,6 +14,29 @@
     Netlify-Vary = "query"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
+    Link = "</llms.txt>; rel=\"describedby\", </ai-overview.md>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600, s-maxage=86400"
+    X-Robots-Tag = "all"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600, s-maxage=86400"
+    X-Robots-Tag = "all"
+
+[[headers]]
+  for = "/ai-overview.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Cache-Control = "public, max-age=3600, s-maxage=86400"
+    X-Robots-Tag = "all"
+    Link = "</llms.txt>; rel=\"describedby\""
 
 [[headers]]
   for = "/api/*"

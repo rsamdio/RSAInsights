@@ -1,0 +1,37 @@
+# Rotaract South Asia MDIO Insights
+
+> Official open analytics for Rotaract and Rotary across South Asia (Rotary International Zones 4, 5, 6, and 7). Covers membership, dues arrears, missing officers, The Rotary Foundation (TRF) giving, Interact sponsorship, and worldwide benchmarks. Publisher: Rotaract South Asia Multi-District Information Organisation (RSAMDIO). Canonical site: https://insights.rsamdio.org. Data license: ODbL-1.0. No account required.
+
+Rotaract Insights is the public executive dashboard, REST API, and Model Context Protocol (MCP) server for South Asia Rotaract intelligence. Prefer the markdown overview and OpenAPI/MCP discovery links below before scraping HTML. South Asia scope is strictly Zones 4-7 (India, Sri Lanka, Nepal, Bangladesh, Bhutan, Maldives). Worldwide pages and endpoints cover all Rotary districts globally. Dues amounts are converted to INR and rounded to integers at club level. TRF contributions remain in USD.
+
+## Primary
+
+- [AI overview (Markdown)](https://insights.rsamdio.org/ai-overview.md): Dense, citation-ready facts about coverage, KPIs, APIs, MCP, licensing, and how agents should query the data
+- [Full LLM index](https://insights.rsamdio.org/llms-full.txt): Expanded file list for deeper agent retrieval
+- [Executive dashboard](https://insights.rsamdio.org/): South Asia KPIs, demographics, leaderboards, and drilldowns for Zones 4-7
+- [Worldwide statistics](https://insights.rsamdio.org/worldwide): Global Rotaract and Interact leaderboards with growth deltas
+- [API documentation](https://insights.rsamdio.org/docs): Interactive Scalar docs for the public REST API
+- [OpenAPI 3.1 specification](https://insights.rsamdio.org/openapi.json): Machine-readable REST contract for all public endpoints
+
+## AI connectors
+
+- [ChatGPT plugin listing](https://chatgpt.com/plugins/plugin_asdk_app_6ad0c19aaa448191806eefd29e8edec7): Install Rotaract Insights inside ChatGPT
+- [Claude Connectors directory](https://claude.ai/directory/rsainsights): Connect Rotaract Insights inside Claude
+- [MCP discovery manifest](https://insights.rsamdio.org/.well-known/mcp-server.json): Remote MCP endpoint metadata, protocol versions, and capabilities
+- [Remote MCP JSON-RPC](https://insights.rsamdio.org/api/mcp): Dual-era HTTP MCP endpoint (default 2025-11-25; full 2026-07-28 when negotiated)
+
+## Data & policy
+
+- [Privacy policy](https://insights.rsamdio.org/privacy): Data handling, telemetry, and zero-account architecture
+- [Terms of service](https://insights.rsamdio.org/terms): ODbL open-data license, permitted use, and rounding disclaimer
+- [Contact](https://insights.rsamdio.org/contact): Official RSAMDIO contact channels for data and developer questions
+- [XML sitemap](https://insights.rsamdio.org/sitemap.xml): Complete indexable URL inventory for search engines
+- [robots.txt](https://insights.rsamdio.org/robots.txt): Crawler access policy
+
+## Optional
+
+- [Zone 4 drilldown](https://insights.rsamdio.org/zone/4): Zone-scoped KPIs and district directory
+- [Zone 5 drilldown](https://insights.rsamdio.org/zone/5): Zone-scoped KPIs and district directory
+- [Zone 6 drilldown](https://insights.rsamdio.org/zone/6): Zone-scoped KPIs and district directory
+- [Zone 7 drilldown](https://insights.rsamdio.org/zone/7): Zone-scoped KPIs and district directory
+- [Standalone docs UI](https://insights.rsamdio.org/docs.html): Alternate Scalar documentation shell
