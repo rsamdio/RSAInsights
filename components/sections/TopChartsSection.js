@@ -3,6 +3,27 @@
 import { useState, useMemo } from 'react';
 import Leaderboard from '../ui/Leaderboard';
 
+function buildDistrictGrowthBoard(distStats, getVal, { asPercent = false } = {}) {
+    // Include gains and declines in one ranked list (no > 0 filter).
+    const list = [...(distStats || [])]
+        .map(d => ({ district: d.district, val: Number(getVal(d)) || 0 }))
+        .sort((a, b) => b.val - a.val);
+    const maxAbs = list.reduce((max, d) => Math.max(max, Math.abs(d.val)), 0) || 1;
+    return list.map(d => {
+        const sign = d.val > 0 ? '+' : '';
+        return {
+            label: `District ${d.district}`,
+            value: asPercent
+                ? `${sign}${d.val.toFixed(1)}%`
+                : `${sign}${d.val.toLocaleString()}`,
+            progressPct: d.val === 0
+                ? 0
+                : Math.max(4, Math.min(100, Math.round((Math.abs(d.val) / maxAbs) * 100))),
+            color: d.val < 0 ? 'var(--danger)' : undefined
+        };
+    });
+}
+
 export default function TopChartsSection({ summary, arrearsData, allClubsData, trfData, complianceData }) {
     const [limit, setLimit] = useState(5);
 
@@ -475,54 +496,23 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         }));
     }, [distCompList]);
 
-    // Growth Metrics
-    const topDistMembersGrowthAbs = useMemo(() => {
-        const list = [...distStats]
-            .filter(d => (d.membersGrowthAbs || 0) > 0)
-            .sort((a, b) => (b.membersGrowthAbs || 0) - (a.membersGrowthAbs || 0));
-        const maxVal = list.length > 0 ? (list[0].membersGrowthAbs || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${(d.membersGrowthAbs || 0).toLocaleString()}`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.membersGrowthAbs / maxVal) * 100)))
-        }));
-    }, [distStats]);
-
-    const topDistMembersGrowthPct = useMemo(() => {
-        const list = [...distStats]
-            .filter(d => (d.membersGrowthPct || 0) > 0)
-            .sort((a, b) => (b.membersGrowthPct || 0) - (a.membersGrowthPct || 0));
-        const maxVal = list.length > 0 ? (list[0].membersGrowthPct || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${(d.membersGrowthPct || 0).toFixed(1)}%`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.membersGrowthPct / maxVal) * 100)))
-        }));
-    }, [distStats]);
-
-    const topDistClubsGrowthAbs = useMemo(() => {
-        const list = [...distStats]
-            .filter(d => (d.clubsGrowthAbs || 0) > 0)
-            .sort((a, b) => (b.clubsGrowthAbs || 0) - (a.clubsGrowthAbs || 0));
-        const maxVal = list.length > 0 ? (list[0].clubsGrowthAbs || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${(d.clubsGrowthAbs || 0).toLocaleString()}`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.clubsGrowthAbs / maxVal) * 100)))
-        }));
-    }, [distStats]);
-
-    const topDistClubsGrowthPct = useMemo(() => {
-        const list = [...distStats]
-            .filter(d => (d.clubsGrowthPct || 0) > 0)
-            .sort((a, b) => (b.clubsGrowthPct || 0) - (a.clubsGrowthPct || 0));
-        const maxVal = list.length > 0 ? (list[0].clubsGrowthPct || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${(d.clubsGrowthPct || 0).toFixed(1)}%`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.clubsGrowthPct / maxVal) * 100)))
-        }));
-    }, [distStats]);
+    // Growth metrics: one ranked list per board, including declines (no > 0 filter).
+    const topDistMembersGrowthAbs = useMemo(
+        () => buildDistrictGrowthBoard(distStats, d => d.membersGrowthAbs),
+        [distStats]
+    );
+    const topDistMembersGrowthPct = useMemo(
+        () => buildDistrictGrowthBoard(distStats, d => d.membersGrowthPct, { asPercent: true }),
+        [distStats]
+    );
+    const topDistClubsGrowthAbs = useMemo(
+        () => buildDistrictGrowthBoard(distStats, d => d.clubsGrowthAbs),
+        [distStats]
+    );
+    const topDistClubsGrowthPct = useMemo(
+        () => buildDistrictGrowthBoard(distStats, d => d.clubsGrowthPct, { asPercent: true }),
+        [distStats]
+    );
 
     // Interact Ecosystem Leaderboards
     const topDistInteractClubs = useMemo(() => {
@@ -537,32 +527,25 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
         }));
     }, [distStats]);
 
-    const topDistInteractGrowth = useMemo(() => {
-        const list = [...distStats]
-            .map(s => ({ ...s, growth: (s.totalInteractClubs || 0) - (s.prevInteractClubs || 0) }))
-            .filter(s => s.growth > 0)
-            .sort((a, b) => b.growth - a.growth);
-        const maxVal = list.length > 0 ? (list[0].growth || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${d.growth.toLocaleString()}`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.growth / maxVal) * 100)))
-        }));
-    }, [distStats]);
-
-    const topDistInteractGrowthPct = useMemo(() => {
-        const list = [...distStats]
-            .filter(s => (s.prevInteractClubs || 0) > 0)
-            .map(s => ({ ...s, growthPct: (((s.totalInteractClubs || 0) - (s.prevInteractClubs || 0)) / s.prevInteractClubs) * 100 }))
-            .filter(s => s.growthPct > 0)
-            .sort((a, b) => b.growthPct - a.growthPct);
-        const maxVal = list.length > 0 ? (list[0].growthPct || 1) : 1;
-        return list.map(d => ({
-            label: `District ${d.district}`,
-            value: `+${d.growthPct.toFixed(1)}%`,
-            progressPct: Math.max(4, Math.min(100, Math.round((d.growthPct / maxVal) * 100)))
-        }));
-    }, [distStats]);
+    const topDistInteractGrowth = useMemo(
+        () => buildDistrictGrowthBoard(
+            distStats,
+            s => (s.totalInteractClubs || 0) - (s.prevInteractClubs || 0)
+        ),
+        [distStats]
+    );
+    const topDistInteractGrowthPct = useMemo(
+        () => buildDistrictGrowthBoard(
+            distStats,
+            s => {
+                const prev = s.prevInteractClubs || 0;
+                if (prev <= 0) return 0;
+                return (((s.totalInteractClubs || 0) - prev) / prev) * 100;
+            },
+            { asPercent: true }
+        ),
+        [distStats]
+    );
 
     const topDistInteractHealth = useMemo(() => {
         const list = [...distStats]
@@ -716,15 +699,15 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                     badge={`Top ${Math.min(limit, topDistTotalMembers.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Member Growth"
-                    description="Districts with the largest increase in members since July 1."
+                    title="Member Growth"
+                    description="Districts ranked by net member change since July 1 (gains and declines)."
                     data={topDistMembersGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistMembersGrowthAbs.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Member Growth (%)"
-                    description="Districts with the largest percentage increase in members since July 1."
+                    title="Member Growth (%)"
+                    description="Districts ranked by percentage member change since July 1 (gains and declines)."
                     data={topDistMembersGrowthPct}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistMembersGrowthPct.length)}`}
@@ -737,15 +720,15 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                     badge={`Top ${Math.min(limit, topDistTotalClubs.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Club Growth"
-                    description="Districts with the largest increase in active clubs since July 1."
+                    title="Club Growth"
+                    description="Districts ranked by net club-count change since July 1 (gains and declines)."
                     data={topDistClubsGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistClubsGrowthAbs.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Club Growth (%)"
-                    description="Districts with the largest percentage increase in active clubs since July 1."
+                    title="Club Growth (%)"
+                    description="Districts ranked by percentage club-count change since July 1 (gains and declines)."
                     data={topDistClubsGrowthPct}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistClubsGrowthPct.length)}`}
@@ -798,15 +781,15 @@ export default function TopChartsSection({ summary, arrearsData, allClubsData, t
                     badge={`Top ${Math.min(limit, topDistInteractClubs.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Interact Growth"
-                    description="Districts with the largest increase in Interact clubs since July 1."
+                    title="Interact Growth"
+                    description="Districts ranked by net Interact club change since July 1 (gains and declines)."
                     data={topDistInteractGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistInteractGrowth.length)}`}
                 />
                 <Leaderboard
-                    title="Highest Interact Growth (%)"
-                    description="Districts with the largest percentage increase in Interact clubs since July 1."
+                    title="Interact Growth (%)"
+                    description="Districts ranked by percentage Interact club change since July 1 (gains and declines)."
                     data={topDistInteractGrowthPct}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, topDistInteractGrowthPct.length)}`}

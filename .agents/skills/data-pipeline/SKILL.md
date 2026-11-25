@@ -29,6 +29,7 @@ This skill guides the data ingestion, aggregation, and export pipeline for the R
 
 - **District-First Structural Fidelity:** Districts serve as the immutable primary key. Zones are dynamically mapped from the master district list (`districtToZone[dist]`). Never hardcode static zone arrays.
 - **Raw Club-Level Aggregation:** Never rely on summary sheets for critical compliance metrics (arrears, dues, missing officers). The pipeline aggregates raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`, `ClubsTRFContribution`, `New Rotaract Clubs`) to guarantee data purity.
+- **Baseline Compliance Cohort (Active-Only):** July baseline arrears and missing-officer counts used for deltas must intersect the July issue roster with today's active Rotaract clubs (`All Rotaract Clubs` / `Rotaract Club ID`). Terminated clubs are excluded from the baseline denominator; termination is not treated as resolving dues or officer reporting.
 - **Currency Conversion & Integer Rounding:**
   - Exchange rates are configured in `scripts/generate_dashboard_data.js` via `CURRENT_EXCHANGE_RATE` (e.g. `96` INR/USD for current data) and `BASELINE_EXCHANGE_RATE` (`95` INR/USD for July 1st baseline).
   - All club dues and rollups (district, zone, overall) must be converted to whole-number INR using `Math.round(amtUSD * RATE)`. No decimals are stored for INR dues.

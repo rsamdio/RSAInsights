@@ -3,6 +3,27 @@
 import { useState, useMemo } from 'react';
 import Leaderboard from '@/components/ui/Leaderboard';
 
+function buildSignedGrowthBoard(rows, getVal, getLabel, { asPercent = false } = {}) {
+    // Include gains and declines in one ranked list (no > 0 filter).
+    const list = [...(rows || [])]
+        .map(row => ({ label: getLabel(row), val: Number(getVal(row)) || 0 }))
+        .sort((a, b) => b.val - a.val);
+    const maxAbs = list.reduce((max, row) => Math.max(max, Math.abs(row.val)), 0) || 1;
+    return list.map(row => {
+        const sign = row.val > 0 ? '+' : '';
+        return {
+            label: row.label,
+            value: asPercent
+                ? `${sign}${row.val.toFixed(1)}%`
+                : `${sign}${row.val.toLocaleString()}`,
+            progressPct: row.val === 0
+                ? 0
+                : Math.max(4, Math.min(100, Math.round((Math.abs(row.val) / maxAbs) * 100))),
+            color: row.val < 0 ? 'var(--danger)' : undefined
+        };
+    });
+}
+
 export default function WorldwideLeaderboardsSection({ summary = {} }) {
     const [limit, setLimit] = useState(10);
 
@@ -90,31 +111,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const distByMemberGrowthAbsRaw = [...districtData]
-            .filter(d => (d['Members Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth Abs'] || 0) - (a['Members Growth Abs'] || 0));
-        const maxDistMemGrowthAbs = distByMemberGrowthAbsRaw.length > 0 ? (distByMemberGrowthAbsRaw[0]['Members Growth Abs'] || 1) : 1;
-        const topDistrictsByMemberGrowthAbs = distByMemberGrowthAbsRaw.map(d => {
-            const val = d['Members Growth Abs'] || 0;
-            return {
-                label: `District ${d['District']}`,
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistMemGrowthAbs) * 100)))
-            };
-        });
-
-        const distByMemberGrowthPctRaw = [...districtData]
-            .filter(d => (d['Members Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth (%)'] || 0) - (a['Members Growth (%)'] || 0));
-        const maxDistMemGrowthPct = distByMemberGrowthPctRaw.length > 0 ? (distByMemberGrowthPctRaw[0]['Members Growth (%)'] || 1) : 1;
-        const topDistrictsByMemberGrowth = distByMemberGrowthPctRaw.map(d => {
-            const val = d['Members Growth (%)'] || 0;
-            return {
-                label: `District ${d['District']}`,
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistMemGrowthPct) * 100)))
-            };
-        });
+        const topDistrictsByMemberGrowthAbs = buildSignedGrowthBoard(
+            districtData,
+            d => d['Members Growth Abs'],
+            d => `District ${d['District']}`
+        );
+        const topDistrictsByMemberGrowth = buildSignedGrowthBoard(
+            districtData,
+            d => d['Members Growth (%)'],
+            d => `District ${d['District']}`,
+            { asPercent: true }
+        );
 
         const distByClubsRaw = [...districtData]
             .sort((a, b) => (parseInt(b['Total Active Rotaract Clubs']) || 0) - (parseInt(a['Total Active Rotaract Clubs']) || 0));
@@ -128,31 +135,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const distByClubGrowthAbsRaw = [...districtData]
-            .filter(d => (d['Clubs Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth Abs'] || 0) - (a['Clubs Growth Abs'] || 0));
-        const maxDistClubGrowthAbs = distByClubGrowthAbsRaw.length > 0 ? (distByClubGrowthAbsRaw[0]['Clubs Growth Abs'] || 1) : 1;
-        const topDistrictsByClubGrowthAbs = distByClubGrowthAbsRaw.map(d => {
-            const val = d['Clubs Growth Abs'] || 0;
-            return {
-                label: `District ${d['District']}`,
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistClubGrowthAbs) * 100)))
-            };
-        });
-
-        const distByClubGrowthPctRaw = [...districtData]
-            .filter(d => (d['Clubs Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth (%)'] || 0) - (a['Clubs Growth (%)'] || 0));
-        const maxDistClubGrowthPct = distByClubGrowthPctRaw.length > 0 ? (distByClubGrowthPctRaw[0]['Clubs Growth (%)'] || 1) : 1;
-        const topDistrictsByClubGrowth = distByClubGrowthPctRaw.map(d => {
-            const val = d['Clubs Growth (%)'] || 0;
-            return {
-                label: `District ${d['District']}`,
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistClubGrowthPct) * 100)))
-            };
-        });
+        const topDistrictsByClubGrowthAbs = buildSignedGrowthBoard(
+            districtData,
+            d => d['Clubs Growth Abs'],
+            d => `District ${d['District']}`
+        );
+        const topDistrictsByClubGrowth = buildSignedGrowthBoard(
+            districtData,
+            d => d['Clubs Growth (%)'],
+            d => `District ${d['District']}`,
+            { asPercent: true }
+        );
 
         const distByNewClubsRaw = [...newClubsDistrictData]
             .filter(d => (d.newClubs || 0) > 0)
@@ -179,31 +172,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const distByInteractGrowthAbsRaw = [...interactDistrictData]
-            .filter(d => (d['Interact Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Interact Growth Abs'] || 0) - (a['Interact Growth Abs'] || 0));
-        const maxDistInteractGrowthAbs = distByInteractGrowthAbsRaw.length > 0 ? (distByInteractGrowthAbsRaw[0]['Interact Growth Abs'] || 1) : 1;
-        const topDistrictsByInteractGrowth = distByInteractGrowthAbsRaw.map(d => {
-            const val = d['Interact Growth Abs'] || 0;
-            return {
-                label: `District ${d.District}`,
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistInteractGrowthAbs) * 100)))
-            };
-        });
-
-        const distByInteractGrowthPctRaw = [...interactDistrictData]
-            .filter(d => (d['Interact Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Interact Growth (%)'] || 0) - (a['Interact Growth (%)'] || 0));
-        const maxDistInteractGrowthPct = distByInteractGrowthPctRaw.length > 0 ? (distByInteractGrowthPctRaw[0]['Interact Growth (%)'] || 1) : 1;
-        const topDistrictsByInteractGrowthPct = distByInteractGrowthPctRaw.map(d => {
-            const val = d['Interact Growth (%)'] || 0;
-            return {
-                label: `District ${d.District}`,
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxDistInteractGrowthPct) * 100)))
-            };
-        });
+        const topDistrictsByInteractGrowth = buildSignedGrowthBoard(
+            interactDistrictData,
+            d => d['Interact Growth Abs'],
+            d => `District ${d.District}`
+        );
+        const topDistrictsByInteractGrowthPct = buildSignedGrowthBoard(
+            interactDistrictData,
+            d => d['Interact Growth (%)'],
+            d => `District ${d.District}`,
+            { asPercent: true }
+        );
 
         // --- 3. Countries ---
         const validCountries = countryData.filter(c => (c[' '] || c['Country'] || '').trim() !== '');
@@ -233,31 +212,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const countryByMemGrowthAbsRaw = [...validCountries]
-            .filter(c => (c['Members Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth Abs'] || 0) - (a['Members Growth Abs'] || 0));
-        const maxCountryMemGrowthAbs = countryByMemGrowthAbsRaw.length > 0 ? (countryByMemGrowthAbsRaw[0]['Members Growth Abs'] || 1) : 1;
-        const topCountriesByMemberGrowthAbs = countryByMemGrowthAbsRaw.map(c => {
-            const val = c['Members Growth Abs'] || 0;
-            return {
-                label: c[' '] || c['Country'],
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxCountryMemGrowthAbs) * 100)))
-            };
-        });
-
-        const countryByMemGrowthPctRaw = [...validCountries]
-            .filter(c => (c['Members Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth (%)'] || 0) - (a['Members Growth (%)'] || 0));
-        const maxCountryMemGrowthPct = countryByMemGrowthPctRaw.length > 0 ? (countryByMemGrowthPctRaw[0]['Members Growth (%)'] || 1) : 1;
-        const topCountriesByMemberGrowth = countryByMemGrowthPctRaw.map(c => {
-            const val = c['Members Growth (%)'] || 0;
-            return {
-                label: c[' '] || c['Country'],
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxCountryMemGrowthPct) * 100)))
-            };
-        });
+        const topCountriesByMemberGrowthAbs = buildSignedGrowthBoard(
+            validCountries,
+            c => c['Members Growth Abs'],
+            c => c[' '] || c['Country']
+        );
+        const topCountriesByMemberGrowth = buildSignedGrowthBoard(
+            validCountries,
+            c => c['Members Growth (%)'],
+            c => c[' '] || c['Country'],
+            { asPercent: true }
+        );
 
         const countryByClubsRaw = [...validCountries]
             .sort((a, b) => (parseInt(b['Total Active Rotaract Clubs']) || 0) - (parseInt(a['Total Active Rotaract Clubs']) || 0));
@@ -271,31 +236,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const countryByClubGrowthAbsRaw = [...validCountries]
-            .filter(c => (c['Clubs Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth Abs'] || 0) - (a['Clubs Growth Abs'] || 0));
-        const maxCountryClubGrowthAbs = countryByClubGrowthAbsRaw.length > 0 ? (countryByClubGrowthAbsRaw[0]['Clubs Growth Abs'] || 1) : 1;
-        const topCountriesByClubGrowthAbs = countryByClubGrowthAbsRaw.map(c => {
-            const val = c['Clubs Growth Abs'] || 0;
-            return {
-                label: c[' '] || c['Country'],
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxCountryClubGrowthAbs) * 100)))
-            };
-        });
-
-        const countryByClubGrowthPctRaw = [...validCountries]
-            .filter(c => (c['Clubs Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth (%)'] || 0) - (a['Clubs Growth (%)'] || 0));
-        const maxCountryClubGrowthPct = countryByClubGrowthPctRaw.length > 0 ? (countryByClubGrowthPctRaw[0]['Clubs Growth (%)'] || 1) : 1;
-        const topCountriesByClubGrowth = countryByClubGrowthPctRaw.map(c => {
-            const val = c['Clubs Growth (%)'] || 0;
-            return {
-                label: c[' '] || c['Country'],
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxCountryClubGrowthPct) * 100)))
-            };
-        });
+        const topCountriesByClubGrowthAbs = buildSignedGrowthBoard(
+            validCountries,
+            c => c['Clubs Growth Abs'],
+            c => c[' '] || c['Country']
+        );
+        const topCountriesByClubGrowth = buildSignedGrowthBoard(
+            validCountries,
+            c => c['Clubs Growth (%)'],
+            c => c[' '] || c['Country'],
+            { asPercent: true }
+        );
 
         const countryByNewClubsRaw = [...newClubsCountryData]
             .filter(c => (c.newClubs || 0) > 0)
@@ -341,31 +292,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const zoneByMemGrowthAbsRaw = [...zoneData]
-            .filter(z => (z['Members Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth Abs'] || 0) - (a['Members Growth Abs'] || 0));
-        const maxZoneMemGrowthAbs = zoneByMemGrowthAbsRaw.length > 0 ? (zoneByMemGrowthAbsRaw[0]['Members Growth Abs'] || 1) : 1;
-        const topZonesByMemberGrowthAbs = zoneByMemGrowthAbsRaw.map(z => {
-            const val = z['Members Growth Abs'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneMemGrowthAbs) * 100)))
-            };
-        });
-
-        const zoneByMemGrowthPctRaw = [...zoneData]
-            .filter(z => (z['Members Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Members Growth (%)'] || 0) - (a['Members Growth (%)'] || 0));
-        const maxZoneMemGrowthPct = zoneByMemGrowthPctRaw.length > 0 ? (zoneByMemGrowthPctRaw[0]['Members Growth (%)'] || 1) : 1;
-        const topZonesByMemberGrowth = zoneByMemGrowthPctRaw.map(z => {
-            const val = z['Members Growth (%)'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneMemGrowthPct) * 100)))
-            };
-        });
+        const topZonesByMemberGrowthAbs = buildSignedGrowthBoard(
+            zoneData,
+            z => z['Members Growth Abs'],
+            formatZoneLabel
+        );
+        const topZonesByMemberGrowth = buildSignedGrowthBoard(
+            zoneData,
+            z => z['Members Growth (%)'],
+            formatZoneLabel,
+            { asPercent: true }
+        );
 
         const zoneByClubsRaw = [...zoneData]
             .sort((a, b) => (parseInt(b['Total Active Rotaract Clubs']) || 0) - (parseInt(a['Total Active Rotaract Clubs']) || 0));
@@ -379,31 +316,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const zoneByClubGrowthAbsRaw = [...zoneData]
-            .filter(z => (z['Clubs Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth Abs'] || 0) - (a['Clubs Growth Abs'] || 0));
-        const maxZoneClubGrowthAbs = zoneByClubGrowthAbsRaw.length > 0 ? (zoneByClubGrowthAbsRaw[0]['Clubs Growth Abs'] || 1) : 1;
-        const topZonesByClubGrowthAbs = zoneByClubGrowthAbsRaw.map(z => {
-            const val = z['Clubs Growth Abs'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneClubGrowthAbs) * 100)))
-            };
-        });
-
-        const zoneByClubGrowthPctRaw = [...zoneData]
-            .filter(z => (z['Clubs Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Clubs Growth (%)'] || 0) - (a['Clubs Growth (%)'] || 0));
-        const maxZoneClubGrowthPct = zoneByClubGrowthPctRaw.length > 0 ? (zoneByClubGrowthPctRaw[0]['Clubs Growth (%)'] || 1) : 1;
-        const topZonesByClubGrowth = zoneByClubGrowthPctRaw.map(z => {
-            const val = z['Clubs Growth (%)'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneClubGrowthPct) * 100)))
-            };
-        });
+        const topZonesByClubGrowthAbs = buildSignedGrowthBoard(
+            zoneData,
+            z => z['Clubs Growth Abs'],
+            formatZoneLabel
+        );
+        const topZonesByClubGrowth = buildSignedGrowthBoard(
+            zoneData,
+            z => z['Clubs Growth (%)'],
+            formatZoneLabel,
+            { asPercent: true }
+        );
 
         const zoneByNewClubsRaw = [...newClubsZoneData]
             .filter(z => (z.newClubs || 0) > 0)
@@ -430,31 +353,17 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
             };
         });
 
-        const zoneByInteractGrowthAbsRaw = [...interactZoneData]
-            .filter(z => (z['Interact Growth Abs'] || 0) > 0)
-            .sort((a, b) => (b['Interact Growth Abs'] || 0) - (a['Interact Growth Abs'] || 0));
-        const maxZoneInteractGrowthAbs = zoneByInteractGrowthAbsRaw.length > 0 ? (zoneByInteractGrowthAbsRaw[0]['Interact Growth Abs'] || 1) : 1;
-        const topZonesByInteractGrowth = zoneByInteractGrowthAbsRaw.map(z => {
-            const val = z['Interact Growth Abs'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toLocaleString()}`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneInteractGrowthAbs) * 100)))
-            };
-        });
-
-        const zoneByInteractGrowthPctRaw = [...interactZoneData]
-            .filter(z => (z['Interact Growth (%)'] || 0) > 0)
-            .sort((a, b) => (b['Interact Growth (%)'] || 0) - (a['Interact Growth (%)'] || 0));
-        const maxZoneInteractGrowthPct = zoneByInteractGrowthPctRaw.length > 0 ? (zoneByInteractGrowthPctRaw[0]['Interact Growth (%)'] || 1) : 1;
-        const topZonesByInteractGrowthPct = zoneByInteractGrowthPctRaw.map(z => {
-            const val = z['Interact Growth (%)'] || 0;
-            return {
-                label: formatZoneLabel(z),
-                value: `+${val.toFixed(1)}%`,
-                progressPct: Math.max(4, Math.min(100, Math.round((val / maxZoneInteractGrowthPct) * 100)))
-            };
-        });
+        const topZonesByInteractGrowth = buildSignedGrowthBoard(
+            interactZoneData,
+            z => z['Interact Growth Abs'],
+            formatZoneLabel
+        );
+        const topZonesByInteractGrowthPct = buildSignedGrowthBoard(
+            interactZoneData,
+            z => z['Interact Growth (%)'],
+            formatZoneLabel,
+            { asPercent: true }
+        );
 
         return {
             clubsOverall,
@@ -607,14 +516,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Districts by Member Growth"
-                    description="Districts with the largest increase in members."
+                    description="Districts ranked by net member change (gains and declines)."
                     data={sortedData.topDistrictsByMemberGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByMemberGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Districts by Member Growth (%)"
-                    description="Districts with the largest percentage increase in members."
+                    description="Districts ranked by percentage member change (gains and declines)."
                     data={sortedData.topDistrictsByMemberGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByMemberGrowth.length)}`}
@@ -628,14 +537,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Districts by Club Growth"
-                    description="Districts with the largest increase in active clubs."
+                    description="Districts ranked by net club-count change (gains and declines)."
                     data={sortedData.topDistrictsByClubGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByClubGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Districts by Club Growth (%)"
-                    description="Districts with the largest percentage increase in active clubs."
+                    description="Districts ranked by percentage club-count change (gains and declines)."
                     data={sortedData.topDistrictsByClubGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByClubGrowth.length)}`}
@@ -656,14 +565,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Districts by Interact Club Growth"
-                    description="Districts with the largest increase in Interact clubs."
+                    description="Districts ranked by net Interact club change (gains and declines)."
                     data={sortedData.topDistrictsByInteractGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByInteractGrowth.length)}`}
                 />
                 <Leaderboard
                     title="Districts by Interact Club Growth (%)"
-                    description="Districts with the largest percentage increase in Interact clubs."
+                    description="Districts ranked by percentage Interact club change (gains and declines)."
                     data={sortedData.topDistrictsByInteractGrowthPct}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByInteractGrowthPct.length)}`}
@@ -691,14 +600,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Countries by Member Growth"
-                    description="Countries with the largest increase in members."
+                    description="Countries ranked by net member change (gains and declines)."
                     data={sortedData.topCountriesByMemberGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topCountriesByMemberGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Countries by Member Growth (%)"
-                    description="Countries with the largest percentage increase in members."
+                    description="Countries ranked by percentage member change (gains and declines)."
                     data={sortedData.topCountriesByMemberGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topCountriesByMemberGrowth.length)}`}
@@ -712,14 +621,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Countries by Club Growth"
-                    description="Countries with the largest increase in active clubs."
+                    description="Countries ranked by net club-count change (gains and declines)."
                     data={sortedData.topCountriesByClubGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topCountriesByClubGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Countries by Club Growth (%)"
-                    description="Countries with the largest percentage increase in active clubs."
+                    description="Countries ranked by percentage club-count change (gains and declines)."
                     data={sortedData.topCountriesByClubGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topCountriesByClubGrowth.length)}`}
@@ -754,14 +663,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Zones by Member Growth"
-                    description="Zones with the largest increase in members."
+                    description="Zones ranked by net member change (gains and declines)."
                     data={sortedData.topZonesByMemberGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByMemberGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Zones by Member Growth (%)"
-                    description="Zones with the largest percentage increase in members."
+                    description="Zones ranked by percentage member change (gains and declines)."
                     data={sortedData.topZonesByMemberGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByMemberGrowth.length)}`}
@@ -775,14 +684,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Zones by Club Growth"
-                    description="Zones with the largest increase in active clubs."
+                    description="Zones ranked by net club-count change (gains and declines)."
                     data={sortedData.topZonesByClubGrowthAbs}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByClubGrowthAbs.length)}`}
                 />
                 <Leaderboard
                     title="Zones by Club Growth (%)"
-                    description="Zones with the largest percentage increase in active clubs."
+                    description="Zones ranked by percentage club-count change (gains and declines)."
                     data={sortedData.topZonesByClubGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByClubGrowth.length)}`}
@@ -803,14 +712,14 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 />
                 <Leaderboard
                     title="Zones by Interact Club Growth"
-                    description="Zones with the largest increase in Interact clubs."
+                    description="Zones ranked by net Interact club change (gains and declines)."
                     data={sortedData.topZonesByInteractGrowth}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByInteractGrowth.length)}`}
                 />
                 <Leaderboard
                     title="Zones by Interact Club Growth (%)"
-                    description="Zones with the largest percentage increase in Interact clubs."
+                    description="Zones ranked by percentage Interact club change (gains and declines)."
                     data={sortedData.topZonesByInteractGrowthPct}
                     maxItems={limit}
                     badge={`Top ${Math.min(limit, sortedData.topZonesByInteractGrowthPct.length)}`}

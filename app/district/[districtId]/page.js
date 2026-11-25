@@ -136,6 +136,27 @@ export default async function DistrictPage({ params }) {
         return { text: textStr, type: isGood ? 'positive' : 'negative', baseline: 'vs July 1' };
     };
 
+    const getComplianceComparison = (resolvedKey, terminatedKey) => {
+        if (!prevDistrictStats) return null;
+        const resolved = prevDistrictStats[resolvedKey] || 0;
+        const terminated = prevDistrictStats[terminatedKey] || 0;
+        if (!resolved && !terminated) return null;
+        return { resolved, terminated, baseline: 'vs July' };
+    };
+
+    const formatClubsShareValue = (count) => {
+        const share = stats.totalClubs > 0
+            ? ((count / stats.totalClubs) * 100).toFixed(1)
+            : '0.0';
+        return (
+            <>
+                {(count || 0).toLocaleString()}
+                <span className="value-unit"> clubs</span>
+                <span className="value-share"> ({share}%)</span>
+            </>
+        );
+    };
+
     const zoneTableData = allZoneTableData.filter(z => z['RI District'].toString() === districtId.toString());
     const arrearsData = allArrearsData.filter(c => c.District.toString() === districtId.toString());
     const officersData = allOfficersData.filter(c => c.District.toString() === districtId.toString());
@@ -333,9 +354,19 @@ export default async function DistrictPage({ params }) {
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues*" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
-                <MetricCard title="Clubs in Arrears" value={stats.arrearsClubs?.toLocaleString()} trend={getDelta('arrearsClubs')} delay={0.1} />
+                <MetricCard
+                    title="Clubs in Arrears"
+                    value={formatClubsShareValue(stats.arrearsClubs || 0)}
+                    comparison={getComplianceComparison('arrearsResolved', 'arrearsTerminated')}
+                    delay={0.1}
+                />
                 <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
-                <MetricCard title="Unreported Officers" value={stats.noOfficers?.toLocaleString()} trend={getDelta('noOfficers')} delay={0.2} />
+                <MetricCard
+                    title="Unreported Officers"
+                    value={formatClubsShareValue(stats.noOfficers || 0)}
+                    comparison={getComplianceComparison('noOfficersResolved', 'noOfficersTerminated')}
+                    delay={0.2}
+                />
                 <MetricCard title="Suspended Interact" value={stats.suspendedInteractClubs?.toLocaleString() || '0'} trend={stats.totalInteractClubs ? {text: `${Math.round(((stats.suspendedInteractClubs || 0) / stats.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
             

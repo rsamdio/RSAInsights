@@ -133,6 +133,56 @@ body {
     margin-bottom: auto;
 }
 
+.metric-card .value-unit {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.metric-card .value-share {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0;
+    margin-left: 4px;
+}
+
+.metric-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--text-main);
+}
+
+.metric-comparison-arrow {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.metric-comparison-resolved {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.metric-comparison-sep {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.metric-comparison-terminated {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.metric-comparison-baseline {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
 .trend {
     font-size: 13px;
     font-weight: 600;
@@ -154,6 +204,7 @@ body {
     border-color: #fdd;
 }
 .warning-card h3, .warning-card .value { color: var(--danger); }
+.warning-card .value-share { color: #c47a7a; }
 
 .zone-dir-row {
     display: flex;

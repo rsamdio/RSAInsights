@@ -161,6 +161,10 @@ function createEmptyStats() {
         arrComm: 0,
         noOffUniv: 0,
         noOffComm: 0,
+        arrearsResolved: 0,
+        arrearsTerminated: 0,
+        noOfficersResolved: 0,
+        noOfficersTerminated: 0,
         trfClubs: 0,
         trfContributionsUSD: 0,
         trfAnnualUSD: 0,
@@ -359,55 +363,120 @@ zoneSheet.forEach(row => {
     for (const key in toAdd) summary.overall[key] += toAdd[key];
 });
 
+// Baseline compliance deltas must exclude terminated clubs.
+// A July issue club that is no longer in today's active Rotaract roster did not
+// "resolve" arrears / missing officers; counting it as improvement inflates rates.
+const activeClubIds = new Set();
+allClubsSheet.forEach(row => {
+    const dist = (row['District'] || '').toString().replace(/\.0$/, '').trim();
+    if (!districtToZone[dist]) return;
+    const status = (row['Rotaract Club Status'] || 'Active').toString().trim().toLowerCase();
+    if (status && status !== 'active') return;
+    const id = (row['Rotaract Club ID'] || row['Club ID'] || '').toString().replace(/\.0$/, '').trim();
+    if (id) activeClubIds.add(id);
+});
+
+const currentArrearsClubIds = new Set();
+arrearsSheet.forEach(row => {
+    const id = (row['NF Cust Number'] || row['Club ID'] || '').toString().replace(/\.0$/, '').trim();
+    if (id) currentArrearsClubIds.add(id);
+});
+const currentOfficersClubIds = new Set();
+noOfficersSheet.forEach(row => {
+    const id = (row['Club ID'] || row['Rotaract Club ID'] || '').toString().replace(/\.0$/, '').trim();
+    if (id) currentOfficersClubIds.add(id);
+});
+
+function ensurePrevComplianceBucket(map, dist, extra = {}) {
+    if (!map[dist]) {
+        map[dist] = { count: 0, resolved: 0, terminated: 0, ...extra };
+    }
+    return map[dist];
+}
+
 const prevArrearsData = {};
+let prevArrearsExcludedTerminated = 0;
+let prevArrearsResolved = 0;
 try {
     const wbArrears = xlsx.readFile('basedata/Rotaract clubs in arrears - 9July2026.xlsx');
     const arrSheet = xlsx.utils.sheet_to_json(wbArrears.Sheets['Clubs']);
     arrSheet.forEach(row => {
-        const dist = (row['District'] || '').toString().trim();
+        const clubId = (row['NF Cust Number'] || row['Club ID'] || '').toString().replace(/\.0$/, '').trim();
+        const dist = (row['District'] || '').toString().replace(/\.0$/, '').trim();
+        if (!clubId || !dist || !districtToZone[dist]) return;
+
+        const bucket = ensurePrevComplianceBucket(prevArrearsData, dist, {
+            atRisk: 0, outstanding: 0, outstandingUSD: 0, arrUniv: 0, arrComm: 0
+        });
+
+        // Terminated clubs leave the active roster; that is not arrears resolution.
+        if (!activeClubIds.has(clubId)) {
+            bucket.terminated += 1;
+            prevArrearsExcludedTerminated += 1;
+            return;
+        }
+
+        bucket.count += 1;
+        if (!currentArrearsClubIds.has(clubId)) {
+            bucket.resolved += 1;
+            prevArrearsResolved += 1;
+        }
+
         const amtUSD = parseCurrency(row[' USD Outstanding ']);
         const amtINR = Math.round(amtUSD * BASELINE_EXCHANGE_RATE);
-        if (dist) {
-            if (!prevArrearsData[dist]) {
-                prevArrearsData[dist] = { count: 0, atRisk: 0, outstanding: 0, outstandingUSD: 0, arrUniv: 0, arrComm: 0 };
-            }
-            prevArrearsData[dist].count += 1;
-            prevArrearsData[dist].outstanding += amtINR;
-            prevArrearsData[dist].outstandingUSD += amtUSD;
-            if (amtUSD >= 75) {
-                prevArrearsData[dist].atRisk += 1;
-            }
-            const baseType = (row['Club Base'] || '').toString().toLowerCase();
-            if (baseType.includes('university')) {
-                prevArrearsData[dist].arrUniv += 1;
-            } else if (baseType.includes('community')) {
-                prevArrearsData[dist].arrComm += 1;
-            }
+        bucket.outstanding += amtINR;
+        bucket.outstandingUSD += amtUSD;
+        if (amtUSD >= 75) {
+            bucket.atRisk += 1;
+        }
+        const baseType = (row['Club Base'] || '').toString().toLowerCase();
+        if (baseType.includes('university')) {
+            bucket.arrUniv += 1;
+        } else if (baseType.includes('community')) {
+            bucket.arrComm += 1;
         }
     });
+    console.log(`Baseline arrears: ${prevArrearsResolved} resolved, ${prevArrearsExcludedTerminated} terminated (excluded from delta denominator).`);
 } catch (e) {
     console.error('Could not load Rotaract clubs in arrears - 9July2026.xlsx', e);
 }
 
 const prevOfficersData = {};
+let prevOfficersExcludedTerminated = 0;
+let prevOfficersResolved = 0;
 try {
     const wbOfficers = xlsx.readFile('basedata/Current_Officer_Not_Reported - 9July2026.xlsx');
     const offSheet = xlsx.utils.sheet_to_json(wbOfficers.Sheets['Rotaract club without Officer']);
     offSheet.forEach(row => {
-        const dist = (row['District'] || '').toString().trim();
-        if (dist) {
-            if (!prevOfficersData[dist]) {
-                prevOfficersData[dist] = { count: 0, noOffUniv: 0, noOffComm: 0 };
-            }
-            prevOfficersData[dist].count += 1;
-            const baseType = (row['Club Base'] || '').toString().toLowerCase();
-            if (baseType.includes('university')) {
-                prevOfficersData[dist].noOffUniv += 1;
-            } else if (baseType.includes('community')) {
-                prevOfficersData[dist].noOffComm += 1;
-            }
+        const clubId = (row['Club ID'] || row['Rotaract Club ID'] || '').toString().replace(/\.0$/, '').trim();
+        const dist = (row['District'] || '').toString().replace(/\.0$/, '').trim();
+        if (!clubId || !dist || !districtToZone[dist]) return;
+
+        const bucket = ensurePrevComplianceBucket(prevOfficersData, dist, {
+            noOffUniv: 0, noOffComm: 0
+        });
+
+        // Terminated clubs leave the active roster; that is not officer-report resolution.
+        if (!activeClubIds.has(clubId)) {
+            bucket.terminated += 1;
+            prevOfficersExcludedTerminated += 1;
+            return;
+        }
+
+        bucket.count += 1;
+        if (!currentOfficersClubIds.has(clubId)) {
+            bucket.resolved += 1;
+            prevOfficersResolved += 1;
+        }
+
+        const baseType = (row['Club Base'] || '').toString().toLowerCase();
+        if (baseType.includes('university')) {
+            bucket.noOffUniv += 1;
+        } else if (baseType.includes('community')) {
+            bucket.noOffComm += 1;
         }
     });
+    console.log(`Baseline missing officers: ${prevOfficersResolved} resolved, ${prevOfficersExcludedTerminated} terminated (excluded from delta denominator).`);
 } catch (e) {
     console.error('Could not load Current_Officer_Not_Reported - 9July2026.xlsx', e);
 }
@@ -436,6 +505,10 @@ prevZoneSheet.forEach(row => {
     let arrearsClubs = prevArrearsData[dist] ? prevArrearsData[dist].count : 0;
     let atRisk = prevArrearsData[dist] ? prevArrearsData[dist].atRisk : 0;
     let noOfficers = prevOfficersData[dist] ? prevOfficersData[dist].count : 0;
+    let arrearsResolved = prevArrearsData[dist] ? prevArrearsData[dist].resolved : 0;
+    let arrearsTerminated = prevArrearsData[dist] ? prevArrearsData[dist].terminated : 0;
+    let noOfficersResolved = prevOfficersData[dist] ? prevOfficersData[dist].resolved : 0;
+    let noOfficersTerminated = prevOfficersData[dist] ? prevOfficersData[dist].terminated : 0;
     // We only care about deltas for the main metrics, not necessarily Rotary ones for now, but we'll add them if they exist
     let totalClubs = parseInt(row['Total Clubs']) || 0;
     let totalMembers = 0;
@@ -458,6 +531,7 @@ prevZoneSheet.forEach(row => {
     const toAdd = {
         outstanding, arrearsClubs, atRisk, noOfficers, totalClubs, totalMembers, totalRotary, rotaryWithSponsor, rotaryWithoutSponsor,
         arrUniv, arrComm, noOffUniv, noOffComm,
+        arrearsResolved, arrearsTerminated, noOfficersResolved, noOfficersTerminated,
         totalInteractClubs: prevJulyData[dist] ? prevJulyData[dist].interactClubs : 0
     };
 

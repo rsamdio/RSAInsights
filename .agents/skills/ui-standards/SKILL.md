@@ -17,6 +17,7 @@ This skill defines the design, terminology, and component patterns for the Rotar
   - Column headers: `"Clubs"`, `"Members"`, `"Avg. Members/Club"`, `"Rotary Clubs"`, `"Rotary w/o Rotaract"`, `"Interact Clubs"`, `"Rotary w/o Interact"`, `"Outstanding (₹)*"`, `"Arrears Clubs"`, `"No Officers"`, `"Total TRF"`, `"Action"`.
   - `"Avg. Members/Club"` must be formatted to 2 decimal places (e.g. `15.65`, `50.82`).
   - `"Outstanding (₹)*"` and MetricCard `"Outstanding Dues*"` must carry an asterisk (`*`) to denote whole-number integer conversion and rounding at the club level, annotated with the footer disclaimer.
+  - Compliance comparison cards (`"Clubs in Arrears"`, `"Unreported Officers"`): show `N clubs (X%)` plus July cohort breakdown with green `resolved` (still-active clubs that cleared the issue) and red `terminated` (July issue clubs no longer active). Termination is never treated as resolution.
 - **Club Drilldown & Roster Table Columns:**
   - Drilldown tables listing individual Rotaract clubs (`DistrictTable`, `Clubs in Arrears`, `Missing Officers`, `New Clubs`, `TRF Contributions`, `All Clubs Roster`) must include a `"Sponsor Clubs"` column displaying the sponsoring Rotary or Rotaract club names and exporting cleanly to CSV.
   - `"Clubs in Arrears"` table must include `"Affected Members"` displaying billable member count recorded for each club in arrears.

@@ -156,6 +156,7 @@ When information sources conflict, agents must follow this strict precedence:
 
 1. **District as Primary Key:** Districts serve as the immutable primary key. Zones are dynamically mapped from district mappings (`districtToZone[dist]`). Never hardcode static zone-district associations.
 2. **Raw Sheet Prioritization:** Critical compliance metrics (arrears, dues, missing officers) are aggregated from raw club-level sheets (`All Rotaract Clubs`, `Rotaract clubs in arrears`, `No Rotaract club officers`), never from summary sheets.
+2b. **Baseline Compliance Cohort:** July arrears / missing-officer baseline deltas intersect the July issue roster with today's active Rotaract clubs only. Terminated clubs are excluded; termination is not treated as resolving the issue.
 3. **Geographic Scoping & Dual Ranking:**
    - South Asia is strictly RI Zones 4, 5, 6, and 7 (44 districts across India, Sri Lanka, and Nepal).
    - Non-South Asian districts (e.g. 9510, 9560, 9620, 9675) are strictly excluded from South Asia aggregations.
