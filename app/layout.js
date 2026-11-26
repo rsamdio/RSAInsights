@@ -7,6 +7,12 @@ import Footer from '@/components/ui/Footer';
 const HeaderFilters = dynamic(() => import('@/components/ui/HeaderFilters'), {
   loading: () => <div style={{ minHeight: '38px', minWidth: '200px' }} />
 });
+const HeaderNav = dynamic(() => import('@/components/ui/HeaderNav'), {
+  loading: () => <div className="header-nav" aria-hidden="true" />
+});
+const ClubSearch = dynamic(() => import('@/components/ui/ClubSearch'), {
+  loading: () => <div className="club-search" aria-hidden="true" />
+});
 
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
@@ -294,35 +300,31 @@ export default function RootLayout({ children }) {
           <Analytics />
         </Suspense>
         <div className="app-container">
-          <header className="header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '18px', flexWrap: 'wrap' }}>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none', color: 'inherit' }}>
-                <img src="/rsamdio.webp" alt="RSAMDIO Logo" width="40" height="40" style={{ height: '40px', width: 'auto', borderRadius: '4px' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                  <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold', lineHeight: '1.2' }}>Insights</h1>
-                  <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Zones 4, 5, 6 & 7</span>
+          <header className="header">
+            <div className="header-brand-cluster">
+              <Link href="/" className="header-brand-link">
+                <img src="/rsamdio.webp" alt="RSAMDIO Logo" width="40" height="40" className="header-logo" />
+                <div className="header-brand-text">
+                  <h1>Insights</h1>
+                  <span>Zones 4, 5, 6 & 7</span>
                 </div>
               </Link>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'var(--card-bg)',
-                border: '1px solid var(--border-color)',
-                padding: '5px 12px',
-                borderRadius: '20px',
-                fontSize: '12px',
-                color: 'var(--text-muted)',
-                fontWeight: 500,
-                boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
-              }}>
-                <span style={{ display: 'inline-block', width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--success)' }}></span>
-                <span>Data as of: <strong style={{ color: 'var(--text-main)' }}>{formattedDate}</strong></span>
+              <div className="header-data-badge">
+                <span className="header-data-dot" aria-hidden="true"></span>
+                <span>Data as of: <strong>{formattedDate}</strong></span>
               </div>
+              <Suspense fallback={<div className="header-nav" aria-hidden="true" />}>
+                <HeaderNav />
+              </Suspense>
             </div>
-            <Suspense fallback={<div>Loading filters...</div>}>
-              <HeaderFilters />
-            </Suspense>
+            <div className="header-controls">
+              <Suspense fallback={<div className="club-search" aria-hidden="true" />}>
+                <ClubSearch />
+              </Suspense>
+              <Suspense fallback={<div>Loading filters...</div>}>
+                <HeaderFilters />
+              </Suspense>
+            </div>
           </header>
           <main>{children}</main>
           <Footer lastUpdated={formattedDate} />

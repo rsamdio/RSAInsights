@@ -1,7 +1,17 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Leaderboard from '@/components/ui/Leaderboard';
+
+const WORLDWIDE_CATEGORIES = [
+    { id: 'club', label: 'By Club' },
+    { id: 'district', label: 'By District' },
+    { id: 'country', label: 'By Country' },
+    { id: 'zone', label: 'By Zone' },
+];
+const PRIMARY_DEPTHS = [5, 10, 20];
+const ADVANCED_DEPTHS = [50, 100];
+const DEPTH_STORAGE_KEY = 'worldwideChartsDepth';
 
 function buildSignedGrowthBoard(rows, getVal, getLabel, { asPercent = false } = {}) {
     // Include gains and declines in one ranked list (no > 0 filter).
@@ -26,6 +36,26 @@ function buildSignedGrowthBoard(rows, getVal, getLabel, { asPercent = false } = 
 
 export default function WorldwideLeaderboardsSection({ summary = {} }) {
     const [limit, setLimit] = useState(10);
+    const [category, setCategory] = useState('club');
+    const [showAdvancedDepth, setShowAdvancedDepth] = useState(false);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        try {
+            const stored = Number(sessionStorage.getItem(DEPTH_STORAGE_KEY));
+            if ([5, 10, 20, 50, 100].includes(stored)) {
+                setLimit(stored);
+                if (ADVANCED_DEPTHS.includes(stored)) setShowAdvancedDepth(true);
+            }
+        } catch {}
+    }, []);
+
+    const updateLimit = (num) => {
+        setLimit(num);
+        try {
+            sessionStorage.setItem(DEPTH_STORAGE_KEY, String(num));
+        } catch {}
+    };
 
     const {
         countryData = [],
@@ -414,6 +444,19 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
         newClubsZoneData
     ]);
 
+    const depthButtonStyle = (num) => ({
+        padding: '6px 14px',
+        border: 'none',
+        borderRadius: '6px',
+        fontSize: '13px',
+        fontWeight: '600',
+        cursor: 'pointer',
+        background: limit === num ? 'var(--primary)' : 'transparent',
+        color: limit === num ? '#ffffff' : 'var(--text-muted)',
+        boxShadow: limit === num ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
+        transition: 'all 0.15s ease'
+    });
+
     return (
         <section style={{ marginBottom: '50px' }}>
             {/* Master Header with Universal Depth Selector */}
@@ -423,7 +466,7 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                 alignItems: 'center',
                 flexWrap: 'wrap',
                 gap: '16px',
-                marginBottom: '28px',
+                marginBottom: '16px',
                 paddingBottom: '16px',
                 borderBottom: '1px solid var(--border-color)'
             }}>
@@ -431,7 +474,7 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                     Worldwide Leaderboards
                 </h2>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                     <span style={{ fontSize: '13px', fontWeight: '600', color: 'var(--text-muted)' }}>
                         Leaderboard Depth:
                     </span>
@@ -442,32 +485,66 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                         padding: '3px',
                         gap: '2px'
                     }}>
-                        {[5, 10, 20, 50, 100].map((num) => (
+                        {PRIMARY_DEPTHS.map((num) => (
                             <button
                                 key={num}
                                 type="button"
-                                onClick={() => setLimit(num)}
-                                style={{
-                                    padding: '6px 14px',
-                                    border: 'none',
-                                    borderRadius: '6px',
-                                    fontSize: '13px',
-                                    fontWeight: '600',
-                                    cursor: 'pointer',
-                                    background: limit === num ? 'var(--primary)' : 'transparent',
-                                    color: limit === num ? '#ffffff' : 'var(--text-muted)',
-                                    boxShadow: limit === num ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
-                                    transition: 'all 0.15s ease'
-                                }}
+                                onClick={() => updateLimit(num)}
+                                style={depthButtonStyle(num)}
                             >
                                 Top {num}
                             </button>
                         ))}
                     </div>
+                    <button
+                        type="button"
+                        className="charts-advanced-toggle"
+                        onClick={() => setShowAdvancedDepth((v) => !v)}
+                        aria-expanded={showAdvancedDepth}
+                    >
+                        {showAdvancedDepth ? 'Hide advanced depth' : 'Advanced depth'}
+                    </button>
+                    {showAdvancedDepth && (
+                        <div style={{
+                            display: 'inline-flex',
+                            background: '#e2e8f0',
+                            borderRadius: '8px',
+                            padding: '3px',
+                            gap: '2px'
+                        }}>
+                            {ADVANCED_DEPTHS.map((num) => (
+                                <button
+                                    key={num}
+                                    type="button"
+                                    onClick={() => updateLimit(num)}
+                                    style={depthButtonStyle(num)}
+                                >
+                                    Top {num}
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
 
+            <div className="charts-category-tabs" role="tablist" aria-label="Worldwide leaderboard categories">
+                {WORLDWIDE_CATEGORIES.map((item) => (
+                    <button
+                        key={item.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={category === item.id}
+                        className={`charts-category-tab${category === item.id ? ' is-active' : ''}`}
+                        onClick={() => setCategory(item.id)}
+                    >
+                        {item.label}
+                    </button>
+                ))}
+            </div>
+
             {/* Section 1: By Club */}
+            {category === 'club' && (
+            <div>
             <h3 style={{ margin: '0 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
                 By Club
             </h3>
@@ -494,9 +571,13 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                     badge={`Top ${Math.min(limit, sortedData.clubsUniversity.length)}`}
                 />
             </div>
+            </div>
+            )}
 
             {/* Section 2: By District */}
-            <h3 style={{ margin: '32px 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
+            {category === 'district' && (
+            <div>
+            <h3 style={{ margin: '0 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
                 By District
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
@@ -578,9 +659,13 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                     badge={`Top ${Math.min(limit, sortedData.topDistrictsByInteractGrowthPct.length)}`}
                 />
             </div>
+            </div>
+            )}
 
             {/* Section 3: By Country */}
-            <h3 style={{ margin: '32px 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
+            {category === 'country' && (
+            <div>
+            <h3 style={{ margin: '0 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
                 By Country
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
@@ -641,9 +726,13 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                     badge={`Top ${Math.min(limit, sortedData.topCountriesByNewClubs.length)}`}
                 />
             </div>
+            </div>
+            )}
 
             {/* Section 4: By Zone */}
-            <h3 style={{ margin: '32px 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
+            {category === 'zone' && (
+            <div>
+            <h3 style={{ margin: '0 0 16px 0', fontSize: '20px', color: 'var(--text-main)', fontWeight: '700' }}>
                 By Zone
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
@@ -725,6 +814,8 @@ export default function WorldwideLeaderboardsSection({ summary = {} }) {
                     badge={`Top ${Math.min(limit, sortedData.topZonesByInteractGrowthPct.length)}`}
                 />
             </div>
+            </div>
+            )}
         </section>
     );
 }

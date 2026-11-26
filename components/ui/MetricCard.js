@@ -1,12 +1,11 @@
-export default function MetricCard({ title, value, trend, comparison, isWarning = false, delay = 0 }) {
+import Link from 'next/link';
+
+export default function MetricCard({ title, value, trend, comparison, isWarning = false, delay = 0, href = null }) {
     const hasComparison = comparison
         && ((comparison.resolved || 0) > 0 || (comparison.terminated || 0) > 0);
 
-    return (
-        <div
-            className={`card metric-card ${isWarning ? 'warning-card' : ''}`}
-            style={delay > 0 ? { animationDelay: `${delay}s` } : undefined}
-        >
+    const body = (
+        <>
             <h3>{title}</h3>
             <div className="value">{value}</div>
             {hasComparison ? (
@@ -31,6 +30,26 @@ export default function MetricCard({ title, value, trend, comparison, isWarning 
                     {trend.baseline && <span style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 500 }}>{trend.baseline}</span>}
                 </div>
             ) : null}
+            {href ? (
+                <div className="metric-card-link-hint">View table →</div>
+            ) : null}
+        </>
+    );
+
+    const className = `card metric-card ${isWarning ? 'warning-card' : ''}${href ? ' metric-card-link' : ''}`;
+    const style = delay > 0 ? { animationDelay: `${delay}s` } : undefined;
+
+    if (href) {
+        return (
+            <Link href={href} className={className} style={style}>
+                {body}
+            </Link>
+        );
+    }
+
+    return (
+        <div className={className} style={style}>
+            {body}
         </div>
     );
 }

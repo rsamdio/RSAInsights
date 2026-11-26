@@ -1,8 +1,23 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Tabs from '@/components/ui/Tabs';
 import DataTable from './DataTable';
 import Link from 'next/link';
+
+const TAB_ALIASES = {
+    summary: 'summary',
+    districts: 'summary',
+    district: 'summary',
+    arrears: 'arrears',
+    officers: 'officers',
+    missing_officers: 'officers',
+    rotary: 'rotary',
+    rotary_no_interact: 'rotary_no_interact',
+    new_clubs: 'new_clubs',
+    trf: 'trf',
+    all_clubs: 'all_clubs',
+};
 
 function LazyTabContent({ tabKey, initialData, columns, exportFilename, zone, district, cache }) {
     const cacheKey = `${tabKey}:${zone || 'all'}:${district || 'all'}`;
@@ -107,7 +122,7 @@ function LazyTabContent({ tabKey, initialData, columns, exportFilename, zone, di
     return <DataTable data={data || []} columns={columns} exportFilename={exportFilename} />;
 }
 
-export default function GlobalTables({ 
+function GlobalTablesInner({ 
     zoneTableData, 
     zone, 
     district, 
@@ -120,6 +135,11 @@ export default function GlobalTables({
     allClubsData 
 }) {
     const tabCache = useRef({});
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
+    const rawTab = (searchParams.get('tab') || '').toLowerCase().trim();
+    const initialTabKey = TAB_ALIASES[rawTab] || null;
 
     const validZoneData = (zoneTableData || []).filter(row => {
         const d = (row['RI District'] || '').toString().trim();
@@ -581,15 +601,50 @@ export default function GlobalTables({
     ];
 
     const tabsData = [
-        { label: 'District Summary', content: () => <DataTable data={validZoneData} columns={districtCols} exportFilename="District_Summary" /> },
-        { label: 'Clubs in Arrears', content: () => <LazyTabContent key={`arrears:${zone || 'all'}:${district || 'all'}`} tabKey="arrears" initialData={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'Missing Officers', content: () => <LazyTabContent key={`officers:${zone || 'all'}:${district || 'all'}`} tabKey="officers" initialData={officersData} columns={officersCols} exportFilename="Missing_Officers" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'Rotary w/o Rotaract', content: () => <LazyTabContent key={`rotary:${zone || 'all'}:${district || 'all'}`} tabKey="rotary" initialData={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'Rotary w/o Interact', content: () => <LazyTabContent key={`rotary_no_interact:${zone || 'all'}:${district || 'all'}`} tabKey="rotary_no_interact" initialData={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'New Clubs', content: () => <LazyTabContent key={`new_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="new_clubs" initialData={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'TRF Contributions', content: () => <LazyTabContent key={`trf:${zone || 'all'}:${district || 'all'}`} tabKey="trf" initialData={trfData} columns={trfCols} exportFilename="TRF_Contributions" zone={zone} district={district} cache={tabCache} /> },
-        { label: 'All Clubs Roster', content: () => <LazyTabContent key={`all_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="all_clubs" initialData={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" zone={zone} district={district} cache={tabCache} /> }
+        { id: 'summary', label: 'District Summary', content: () => <DataTable data={validZoneData} columns={districtCols} exportFilename="District_Summary" /> },
+        { id: 'arrears', label: 'Clubs in Arrears', content: () => <LazyTabContent key={`arrears:${zone || 'all'}:${district || 'all'}`} tabKey="arrears" initialData={arrearsData} columns={arrearsCols} exportFilename="Clubs_In_Arrears" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'officers', label: 'Missing Officers', content: () => <LazyTabContent key={`officers:${zone || 'all'}:${district || 'all'}`} tabKey="officers" initialData={officersData} columns={officersCols} exportFilename="Missing_Officers" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'rotary', label: 'Rotary w/o Rotaract', content: () => <LazyTabContent key={`rotary:${zone || 'all'}:${district || 'all'}`} tabKey="rotary" initialData={rotaryData} columns={rotaryCols} exportFilename="Rotary_Without_Rotaract" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'rotary_no_interact', label: 'Rotary w/o Interact', content: () => <LazyTabContent key={`rotary_no_interact:${zone || 'all'}:${district || 'all'}`} tabKey="rotary_no_interact" initialData={rotaryNoInteractData} columns={rotaryNoInteractCols} exportFilename="Rotary_Without_Interact" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'new_clubs', label: 'New Clubs', content: () => <LazyTabContent key={`new_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="new_clubs" initialData={newClubsData} columns={newClubsCols} exportFilename="New_Clubs" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'trf', label: 'TRF Contributions', content: () => <LazyTabContent key={`trf:${zone || 'all'}:${district || 'all'}`} tabKey="trf" initialData={trfData} columns={trfCols} exportFilename="TRF_Contributions" zone={zone} district={district} cache={tabCache} /> },
+        { id: 'all_clubs', label: 'All Clubs Roster', content: () => <LazyTabContent key={`all_clubs:${zone || 'all'}:${district || 'all'}`} tabKey="all_clubs" initialData={allClubsData} columns={allClubsCols} exportFilename="All_Clubs_Roster" zone={zone} district={district} cache={tabCache} /> }
     ];
 
-    return <Tabs tabs={tabsData} />;
+    const handleTabChange = (tabId) => {
+        if (!tabId) return;
+        const params = new URLSearchParams(searchParams.toString());
+        if (tabId === 'summary') {
+            params.delete('tab');
+        } else {
+            params.set('tab', tabId);
+        }
+        const query = params.toString();
+        router.replace(`${pathname}${query ? `?${query}` : ''}#section-tables`, { scroll: false });
+    };
+
+    useEffect(() => {
+        if (!initialTabKey || typeof window === 'undefined') return;
+        const el = document.getElementById('section-tables');
+        if (!el) return;
+        const headerOffset = 110;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }, [initialTabKey]);
+
+    return (
+        <Tabs
+            tabs={tabsData}
+            initialTabKey={initialTabKey}
+            onTabChange={handleTabChange}
+        />
+    );
+}
+
+export default function GlobalTables(props) {
+    return (
+        <Suspense fallback={<div style={{ padding: '20px', color: 'var(--text-muted)' }}>Loading tables...</div>}>
+            <GlobalTablesInner {...props} />
+        </Suspense>
+    );
 }

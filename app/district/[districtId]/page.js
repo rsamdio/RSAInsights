@@ -6,6 +6,8 @@ import GlobalTables from '@/components/tables/GlobalTables';
 import BarChart from '@/components/charts/BarChart';
 import ClubLeaderboardsSection from '@/components/sections/ClubLeaderboardsSection';
 import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import SectionJumpBar from '@/components/ui/SectionJumpBar';
 
 export const revalidate = false; // build-time static, regenerated on next build
 
@@ -291,15 +293,26 @@ export default async function DistrictPage({ params }) {
         },
     };
 
+    const jumpItems = [
+        { id: 'section-summary', label: 'Summary' },
+        { id: 'section-compliance', label: 'Compliance' },
+        { id: 'section-charts', label: 'Top Charts' },
+        { id: 'section-tables', label: 'Tables' },
+    ];
+    const zoneHref = `/zone/${String(districtData.zone || '').replace(/^Zone\s*/i, '')}`;
+    const tablesHref = (tab) => `/district/${districtId}?tab=${tab}#section-tables`;
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <JsonLd schema={districtSchema} />
-            <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
-                <Link href={`/zone/${districtData.zone.replace('Zone ', '')}`} style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>
-                    ← Back to {districtData.zone}
-                </Link>
-                <h2 className="section-title" style={{ margin: 0 }}>Executive Summary - District {districtId}</h2>
-            </div>
+            <Breadcrumbs items={[
+                { label: 'Home', href: '/' },
+                { label: districtData.zone, href: zoneHref },
+                { label: `District ${districtId}` },
+            ]} />
+            <SectionJumpBar items={jumpItems} />
+            <div id="section-summary" className="page-section-anchor">
+            <h2 className="section-title" style={{ marginTop: 0 }}>Executive Summary - District {districtId}</h2>
             
             {distLeadership && (
                 <div className="card" style={{ marginBottom: '30px', display: 'flex', flexDirection: 'column', gap: '20px', background: 'linear-gradient(to bottom right, #e8f0fe, #fff)', borderLeft: '4px solid var(--primary)' }}>
@@ -323,7 +336,7 @@ export default async function DistrictPage({ params }) {
             <section className="metrics-grid three-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Total Rotaract Clubs" value={stats.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} delay={0.05} />
                 <MetricCard title="Total Members" value={stats.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} delay={0.1} />
-                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} delay={0.15} />
+                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} trend={avgDelta} delay={0.15} />
                 <MetricCard title="New Chartered Clubs" value={stats.newTotalClubs?.toLocaleString()} delay={0.2} />
                 <MetricCard title="Clubs w/ TRF Contribution" value={stats.trfClubs?.toLocaleString()} delay={0.25} />
                 <MetricCard title="Total TRF Contributions" value={`$${stats.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
@@ -351,6 +364,9 @@ export default async function DistrictPage({ params }) {
                 <MetricCard title="Rotaract Sponsoring Interact" value={stats.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} delay={0.2} />
             </section>
 
+            </div>
+
+            <div id="section-compliance" className="page-section-anchor">
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues*" value={`₹${Math.round(stats.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
@@ -359,6 +375,7 @@ export default async function DistrictPage({ params }) {
                     value={formatClubsShareValue(stats.arrearsClubs || 0)}
                     comparison={getComplianceComparison('arrearsResolved', 'arrearsTerminated')}
                     delay={0.1}
+                    href={tablesHref('arrears')}
                 />
                 <MetricCard title="Subject to Termination" value={stats.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
                 <MetricCard
@@ -366,6 +383,7 @@ export default async function DistrictPage({ params }) {
                     value={formatClubsShareValue(stats.noOfficers || 0)}
                     comparison={getComplianceComparison('noOfficersResolved', 'noOfficersTerminated')}
                     delay={0.2}
+                    href={tablesHref('officers')}
                 />
                 <MetricCard title="Suspended Interact" value={stats.suspendedInteractClubs?.toLocaleString() || '0'} trend={stats.totalInteractClubs ? {text: `${Math.round(((stats.suspendedInteractClubs || 0) / stats.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
@@ -375,16 +393,20 @@ export default async function DistrictPage({ params }) {
                 <BarChart data={arrearsBaseChart} title="Arrears by Base" />
                 <BarChart data={officersBaseChart} title="Missing Officers by Base" />
             </section>
+            </div>
             
+            <div id="section-charts" className="page-section-anchor">
             <ClubLeaderboardsSection 
                 allClubsData={allClubsData} 
                 trfData={trfData} 
                 arrearsData={arrearsData} 
             />
+            </div>
             
             <h2 className="section-title">Clubs with Issues in District {districtId}</h2>
             <DistrictTable districtClubs={districtClubs} />
 
+            <div id="section-tables" className="page-section-anchor">
             <h2 className="section-title" style={{ marginTop: '40px' }}>Deep Data Drilldown - District {districtId}</h2>
             <GlobalTables 
                 zoneTableData={zoneTableData} 
@@ -396,6 +418,7 @@ export default async function DistrictPage({ params }) {
                 trfData={trfData}
                 allClubsData={allClubsData}
             />
+            </div>
         </div>
     );
 }

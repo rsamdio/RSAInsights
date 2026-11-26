@@ -1,69 +1,109 @@
 'use client';
-import { useState, useEffect } from 'react';
 
-export default function Tabs({ tabs }) {
-    const [activeTab, setActiveTab] = useState(0);
+import { useEffect, useRef, useState } from 'react';
+
+export default function Tabs({ tabs, initialTabKey = null, onTabChange = null }) {
+    const resolveIndex = (key) => {
+        if (!key) return 0;
+        const idx = tabs.findIndex((tab) => tab.id === key || tab.key === key);
+        return idx >= 0 ? idx : 0;
+    };
+
+    const [activeTab, setActiveTab] = useState(() => resolveIndex(initialTabKey));
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(false);
+    const stripRef = useRef(null);
+
+    useEffect(() => {
+        setActiveTab(resolveIndex(initialTabKey));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialTabKey, tabs.length]);
+
+    const updateOverflow = () => {
+        const el = stripRef.current;
+        if (!el) return;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        setCanScrollLeft(el.scrollLeft > 4);
+        setCanScrollRight(maxScroll > 4 && el.scrollLeft < maxScroll - 4);
+    };
+
+    useEffect(() => {
+        const el = stripRef.current;
+        if (!el) return undefined;
+        updateOverflow();
+        el.addEventListener('scroll', updateOverflow, { passive: true });
+        window.addEventListener('resize', updateOverflow);
+        return () => {
+            el.removeEventListener('scroll', updateOverflow);
+            window.removeEventListener('resize', updateOverflow);
+        };
+    }, [tabs.length]);
 
     const handleTabClick = (index, e) => {
-        // Determine direction before updating state
         const isMovingForward = index > activeTab;
         const scrollAlignment = isMovingForward ? 'start' : 'end';
-        
-        // Add 1-frame delay to let browser paint the tab selection before mounting heavy tables
+
         setIsTransitioning(true);
         setActiveTab(index);
-        
+        if (typeof onTabChange === 'function') {
+            onTabChange(tabs[index]?.id || tabs[index]?.key || null, index);
+        }
+
         requestAnimationFrame(() => {
             setIsTransitioning(false);
+            updateOverflow();
         });
-        
-        // Auto-scroll the clicked tab based on direction
+
         if (e.target) {
             e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: scrollAlignment });
         }
     };
 
+    const scrollStrip = (direction) => {
+        const el = stripRef.current;
+        if (!el) return;
+        el.scrollBy({ left: direction * Math.max(160, el.clientWidth * 0.6), behavior: 'smooth' });
+    };
+
     return (
         <div style={{ width: '100%' }}>
-            <div 
-                style={{ 
-                    display: 'flex', 
-                    gap: '10px', 
-                    marginBottom: '20px', 
-                    borderBottom: '1px solid var(--border-color)', 
-                    paddingBottom: '10px', 
-                    overflowX: 'auto',
-                    scrollbarWidth: 'none', // Firefox
-                    msOverflowStyle: 'none', // IE and Edge
-                }}
-            >
-                <style>{`
-                    div::-webkit-scrollbar {
-                        display: none;
-                    }
-                `}</style>
-                {tabs.map((tab, index) => (
+            <div className="tabs-strip-wrap">
+                {canScrollLeft && (
                     <button
-                        key={index}
-                        onClick={(e) => handleTabClick(index, e)}
-                        style={{
-                            padding: '10px 20px',
-                            background: activeTab === index ? 'var(--primary)' : 'transparent',
-                            color: activeTab === index ? 'white' : 'var(--text-muted)',
-                            border: 'none',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            fontWeight: 600,
-                            fontSize: '14px',
-                            transition: 'all 0.2s',
-                            whiteSpace: 'nowrap',
-                            flexShrink: 0 // Prevent buttons from squishing
-                        }}
+                        type="button"
+                        className="tabs-chevron tabs-chevron-left"
+                        aria-label="Scroll tabs left"
+                        onClick={() => scrollStrip(-1)}
                     >
-                        {tab.label}
+                        ‹
                     </button>
-                ))}
+                )}
+                <div
+                    ref={stripRef}
+                    className={`tabs-strip${canScrollLeft ? ' fade-left' : ''}${canScrollRight ? ' fade-right' : ''}`}
+                >
+                    {tabs.map((tab, index) => (
+                        <button
+                            key={tab.id || tab.key || index}
+                            type="button"
+                            onClick={(e) => handleTabClick(index, e)}
+                            className={`tabs-strip-btn${activeTab === index ? ' is-active' : ''}`}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+                {canScrollRight && (
+                    <button
+                        type="button"
+                        className="tabs-chevron tabs-chevron-right"
+                        aria-label="Scroll tabs right"
+                        onClick={() => scrollStrip(1)}
+                    >
+                        ›
+                    </button>
+                )}
             </div>
             <div style={{ animation: 'fadeIn 0.3s ease-out' }}>
                 {isTransitioning ? (

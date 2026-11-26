@@ -7,6 +7,7 @@ import GlobalTables from '@/components/tables/GlobalTables';
 import TopChartsSection from '@/components/sections/TopChartsSection';
 import AiConnect from '@/components/ui/AiConnect';
 import JsonLd from '@/components/seo/JsonLd';
+import SectionJumpBar from '@/components/ui/SectionJumpBar';
 
 export const metadata = {
     title: {
@@ -503,16 +504,33 @@ export default async function GlobalDashboard({ searchParams }) {
     });
     const leaderboardClubsData = Array.from(leaderboardClubsMap.values());
 
+    const jumpItems = [
+        { id: 'section-summary', label: 'Summary' },
+        { id: 'section-compliance', label: 'Compliance' },
+        { id: 'section-charts', label: 'Top Charts' },
+        { id: 'section-zones', label: 'Zones' },
+        { id: 'section-tables', label: 'Tables' },
+    ];
+    const tablesHref = (tab) => {
+        const params = new URLSearchParams();
+        if (zone) params.set('zone', zone);
+        if (district) params.set('district', district);
+        params.set('tab', tab);
+        return `/?${params.toString()}#section-tables`;
+    };
+
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <JsonLd schema={homePageSchema} />
+            <SectionJumpBar items={jumpItems} />
+            <div id="section-summary" className="page-section-anchor">
             <h2 className="section-title" style={{ marginTop: 0 }}>
                 Executive Summary
             </h2>
             <section className="metrics-grid three-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Total Rotaract Clubs" value={overall.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} delay={0.05} />
                 <MetricCard title="Total Members" value={overall.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} delay={0.1} />
-                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} delay={0.15} />
+                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} trend={avgDelta} delay={0.15} />
                 <MetricCard title="New Chartered Clubs" value={overall.newTotalClubs?.toLocaleString()} delay={0.2} />
                 <MetricCard title="Clubs w/ TRF Contribution" value={overall.trfClubs?.toLocaleString()} delay={0.25} />
                 <MetricCard title="Total TRF Contributions" value={`$${overall.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
@@ -542,6 +560,9 @@ export default async function GlobalDashboard({ searchParams }) {
                 <MetricCard title="Rotaract Sponsoring Interact" value={overall.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} delay={0.2} />
             </section>
 
+            </div>
+
+            <div id="section-compliance" className="page-section-anchor">
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues*" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
@@ -550,6 +571,7 @@ export default async function GlobalDashboard({ searchParams }) {
                     value={formatClubsShareValue(overall.arrearsClubs || 0)}
                     comparison={getComplianceComparison('arrearsResolved', 'arrearsTerminated')}
                     delay={0.1}
+                    href={tablesHref('arrears')}
                 />
                 <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
                 <MetricCard
@@ -557,6 +579,7 @@ export default async function GlobalDashboard({ searchParams }) {
                     value={formatClubsShareValue(overall.noOfficers || 0)}
                     comparison={getComplianceComparison('noOfficersResolved', 'noOfficersTerminated')}
                     delay={0.2}
+                    href={tablesHref('officers')}
                 />
                 <MetricCard title="Suspended Interact" value={overall.suspendedInteractClubs?.toLocaleString() || '0'} trend={overall.totalInteractClubs ? {text: `${Math.round(((overall.suspendedInteractClubs || 0) / overall.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
@@ -566,8 +589,10 @@ export default async function GlobalDashboard({ searchParams }) {
                 <BarChart data={arrearsBaseChart} title="Arrears by Base" />
                 <BarChart data={officersBaseChart} title="Missing Officers by Base" />
             </section>
+            </div>
 
             {/* Optimized leaderboard payloads: UI limit selector supports up to 100 items */}
+            <div id="section-charts" className="page-section-anchor">
             <TopChartsSection 
                 summary={{ zones: filteredZones }} 
                 arrearsData={[...filteredArrearsData]
@@ -577,6 +602,7 @@ export default async function GlobalDashboard({ searchParams }) {
                 trfData={filteredTrfData} 
                 complianceData={complianceData}
             />
+            </div>
 
             <section style={{ marginBottom: '40px' }}>
                 <Link href="/worldwide" style={{ textDecoration: 'none' }}>
@@ -598,6 +624,7 @@ export default async function GlobalDashboard({ searchParams }) {
                 </Link>
             </section>
 
+            <div id="section-zones" className="page-section-anchor">
             <h2 className="section-title">Drill Down by Zone</h2>
             <section style={{ marginBottom: '40px' }}>
                 <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -625,6 +652,10 @@ export default async function GlobalDashboard({ searchParams }) {
                                         <span><strong>{zStats.totalMembers}</strong> Members</span>
                                         <span><strong>${zStats.trfContributionsUSD?.toLocaleString()}</strong> TRF</span>
                                         <span style={{ color: zStats.arrearsClubs > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{zStats.arrearsClubs}</strong> Arrears</span>
+                                        <span style={{ color: (zStats.noOfficers || 0) > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{zStats.noOfficers || 0}</strong> Officers</span>
+                                        {(zStats.atRisk != null) && (
+                                            <span style={{ color: zStats.atRisk > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{zStats.atRisk}</strong> At Risk</span>
+                                        )}
                                         <span style={{ color: 'var(--primary)', marginLeft: '10px' }}>Explore →</span>
                                     </div>
                                 </Link>
@@ -633,7 +664,9 @@ export default async function GlobalDashboard({ searchParams }) {
                     </div>
                 </div>
             </section>
+            </div>
 
+            <div id="section-tables" className="page-section-anchor">
             <h2 className="section-title">Deep Data Drilldown</h2>
             <section style={{ marginBottom: '40px' }}>
                 <div className="card">
@@ -662,6 +695,7 @@ export default async function GlobalDashboard({ searchParams }) {
                     />
                 </div>
             </section>
+            </div>
         </div>
     );
 }

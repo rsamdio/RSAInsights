@@ -6,6 +6,8 @@ import BarChart from '@/components/charts/BarChart';
 import GlobalTables from '@/components/tables/GlobalTables';
 import TopChartsSection from '@/components/sections/TopChartsSection';
 import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import SectionJumpBar from '@/components/ui/SectionJumpBar';
 
 export const revalidate = false;
 
@@ -538,18 +540,34 @@ export default async function ZonePage({ params, searchParams }) {
     });
     const leaderboardClubsData = Array.from(leaderboardClubsMap.values());
 
+    const jumpItems = [
+        { id: 'section-summary', label: 'Summary' },
+        { id: 'section-compliance', label: 'Compliance' },
+        { id: 'section-charts', label: 'Top Charts' },
+        { id: 'section-tables', label: 'Tables' },
+    ];
+    const zonePath = `/zone/${String(fullZoneName).replace(/^Zone\s*/i, '')}`;
+    const tablesHref = (tab) => {
+        const params = new URLSearchParams();
+        if (district) params.set('district', district);
+        params.set('tab', tab);
+        return `${zonePath}?${params.toString()}#section-tables`;
+    };
     return (
         <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
             <JsonLd schema={zoneSchema} />
-            <div style={{ display: 'flex', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
-                <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>← Back to Home</Link>
-                <h2 className="section-title" style={{ margin: 0 }}>Executive Summary - {fullZoneName}</h2>
-            </div>
+            <Breadcrumbs items={[
+                { label: 'Home', href: '/' },
+                { label: fullZoneName },
+            ]} />
+            <SectionJumpBar items={jumpItems} />
+            <div id="section-summary" className="page-section-anchor">
+            <h2 className="section-title" style={{ marginTop: 0 }}>Executive Summary - {fullZoneName}</h2>
             
             <section className="metrics-grid three-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Total Rotaract Clubs" value={overall.totalClubs?.toLocaleString()} trend={getDelta('totalClubs')} delay={0.05} />
                 <MetricCard title="Total Members" value={overall.totalMembers?.toLocaleString()} trend={getDelta('totalMembers')} delay={0.1} />
-                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} trend={avgDelta} delay={0.15} />
+                <MetricCard title="Average Membership" value={avgMembers.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} trend={avgDelta} delay={0.15} />
                 <MetricCard title="New Chartered Clubs" value={overall.newTotalClubs?.toLocaleString()} delay={0.2} />
                 <MetricCard title="Clubs w/ TRF Contribution" value={overall.trfClubs?.toLocaleString()} delay={0.25} />
                 <MetricCard title="Total TRF Contributions" value={`$${overall.trfContributionsUSD?.toLocaleString()}`} delay={0.3} />
@@ -577,6 +595,9 @@ export default async function ZonePage({ params, searchParams }) {
                 <MetricCard title="Rotaract Sponsoring Interact" value={overall.rotaractWithInteract?.toLocaleString() || '0'} trend={{text: `${rotaractSponsorPct}% of Rotaract Clubs`, type: 'positive'}} delay={0.2} />
             </section>
 
+            </div>
+
+            <div id="section-compliance" className="page-section-anchor">
             <h2 className="section-title">Compliance & Risks</h2>
             <section className="metrics-grid five-cols" style={{ marginBottom: '20px' }}>
                 <MetricCard title="Outstanding Dues*" value={`₹${Math.round(overall.outstanding || 0).toLocaleString('en-IN')}`} trend={getDelta('outstanding', 'inr')} delay={0.05} />
@@ -585,6 +606,7 @@ export default async function ZonePage({ params, searchParams }) {
                     value={formatClubsShareValue(overall.arrearsClubs || 0)}
                     comparison={getComplianceComparison('arrearsResolved', 'arrearsTerminated')}
                     delay={0.1}
+                    href={tablesHref('arrears')}
                 />
                 <MetricCard title="Subject to Termination" value={overall.atRisk?.toLocaleString()} isWarning={true} trend={getDelta('atRisk')} delay={0.15} />
                 <MetricCard
@@ -592,6 +614,7 @@ export default async function ZonePage({ params, searchParams }) {
                     value={formatClubsShareValue(overall.noOfficers || 0)}
                     comparison={getComplianceComparison('noOfficersResolved', 'noOfficersTerminated')}
                     delay={0.2}
+                    href={tablesHref('officers')}
                 />
                 <MetricCard title="Suspended Interact" value={overall.suspendedInteractClubs?.toLocaleString() || '0'} trend={overall.totalInteractClubs ? {text: `${Math.round(((overall.suspendedInteractClubs || 0) / overall.totalInteractClubs) * 100)}% of Interact`, type: 'negative'} : null} isWarning={true} delay={0.25} />
             </section>
@@ -601,8 +624,10 @@ export default async function ZonePage({ params, searchParams }) {
                 <BarChart data={arrearsBaseChart} title="Arrears by Base" />
                 <BarChart data={officersBaseChart} title="Missing Officers by Base" />
             </section>
+            </div>
 
             {/* Optimized leaderboard payloads: UI limit selector supports up to 100 items */}
+            <div id="section-charts" className="page-section-anchor">
             <TopChartsSection 
                 summary={{ zones: filteredZones }} 
                 arrearsData={[...filteredArrearsData]
@@ -612,6 +637,7 @@ export default async function ZonePage({ params, searchParams }) {
                 trfData={filteredTrfData} 
                 complianceData={complianceData}
             />
+            </div>
 
             <h2 className="section-title">Districts in {fullZoneName}</h2>
             <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '40px' }}>
@@ -630,6 +656,10 @@ export default async function ZonePage({ params, searchParams }) {
                                     <span><strong>{dStats.totalMembers}</strong> Members</span>
                                     <span><strong>${dStats.trfContributionsUSD?.toLocaleString() || '0'}</strong> TRF</span>
                                     <span style={{ color: dStats.arrearsClubs > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{dStats.arrearsClubs}</strong> Arrears</span>
+                                    <span style={{ color: (dStats.noOfficers || 0) > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{dStats.noOfficers || 0}</strong> Officers</span>
+                                    {(dStats.atRisk != null) && (
+                                        <span style={{ color: dStats.atRisk > 0 ? 'var(--danger)' : 'var(--success)' }}><strong>{dStats.atRisk}</strong> At Risk</span>
+                                    )}
                                     <span style={{ color: 'var(--primary)', marginLeft: '10px' }}>Explore →</span>
                                 </div>
                             </Link>
@@ -638,6 +668,7 @@ export default async function ZonePage({ params, searchParams }) {
                 </div>
             </div>
 
+            <div id="section-tables" className="page-section-anchor">
             <h2 className="section-title" style={{ marginTop: '40px' }}>Deep Data Drilldown - {fullZoneName}</h2>
             <section style={{ marginBottom: '40px' }}>
                 <div className="card">
@@ -666,6 +697,7 @@ export default async function ZonePage({ params, searchParams }) {
                     />
                 </div>
             </section>
+            </div>
         </div>
     );
 }

@@ -114,7 +114,7 @@ export default function WorldwidePage() {
                 />
                 <MetricCard 
                     title="Average Membership" 
-                    value={avgMembersPerClub.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} 
+                    value={avgMembersPerClub.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} 
                     trend={avgMembersDelta}
                 />
                 {totalNewClubs > 0 && (
